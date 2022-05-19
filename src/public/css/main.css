@@ -1,0 +1,81 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+	--dark: #212529;
+	--dark-light: #707070;
+	--light: #F8F9FA;
+	--white: #fff;
+	--success: #28a745;
+	--black: #000;
+}
+
+body {
+	font-family: monospace, Verdana, "Century gothic";
+	background-color: var(--dark-light);
+	width: 100%;
+
+}
+
+.container figure {
+	border-radius: 6px;
+	/* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50); */
+}
+
+.container figure img {
+	transition: all 500ms ease-out;
+}
+
+.container figure .options {
+	display: inline;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 1px solid red;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	transition: all 500ms ease-out;
+}
+
+
+.container figure .options a {
+	position: absolute;
+	top: 50%;
+}
+
+.container figure:hover>.options {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*Buttons carousel*/
+.carousel-control-next-icon {
+	background-image: url("../images/button/next.png");
+	/* transform: scale(1); */
+	width: 3vw;
+	height: 6vh;
+}
+
+.carousel-control-prev-icon {
+	background-image: url("../images/button/previous.png");
+	/* transform: scale(1); */
+	width: 3vw;
+	height: 6vh;
+}
+
+/* Media querie */
+@media screen and(max-width: 670px) {
+	.container figure img {
+		width: 100%;
+	}
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background</title>
+  <style>
+    .body {
+      background: #ccc;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .box-1 {
+      background: tomato;
+      height: 100px;
+      width: 100px;
+      margin: auto;
+    }
+
+    .box-image {
+      /* background-image: url(https://raw.githubusercontent.com/EniDev911/python-tk-desktop-apps/master/assets/screenshot/basic_calculator/01.png); */
+      /* background-color: bisque; */
+      /* background-origin: border-box; */
+      /* background-position: center; */
+      /* background-repeat: no-repeat; */
+      /* background-clip: content-box; */
+      background: #fff url("https://raw.githubusercontent.com/EniDev911/python-tk-desktop-apps/master/assets/screenshot/basic_calculator/01.png") no-repeat center;
+      background-size: contain;
+      height: 200px;
+      width: 200px;
+      border: 2px solid red;
+      cursor: ne-resize;
+    }
+
+
+    .box-border-image {
+      width: 200px;
+      height: 200px;
+      background-color: bisque;
+      border-image: url(https://raw.githubusercontent.com/EniDev911/python-tk-desktop-apps/master/assets/screenshot/basic_calculator/01.png) 20% round;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-1">
+  </div>
+
+  <div class="box-image">
+  </div>
+  <div class="box-image" style="position: float; float: left;">
+  </div>
+
+  <div class="box-image" style="display: float; position: float; float: right;">
+  </div>
+
+  <div class="box-border-image">
+
+</body>
+
+</html>
