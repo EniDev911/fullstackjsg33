@@ -16,19 +16,51 @@
 
 body {
 	font-family: monospace, Verdana, "Century gothic";
-	background-color: var(--dark-light);
+	background-color: var(--light);
 	width: 100%;
-
 }
 
-.container figure {
+.card {
+
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50);
+}
+
+/* .container figure {
 	border-radius: 6px;
-	/* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50); */
+} */
+
+.carousel-item {}
+
+.options {
+	display: block;
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 1px solid red;
+	text-align: center;
+	visibility: hidden;
+	background-color: rgba(10, 0, 55, 0.7);
+	border-radius: 5px;
+	text-align: center;
+	transition: all 500ms ease-in-out !important;
 }
 
-.container figure img {
-	transition: all 500ms ease-out;
+.container-fluid .options a {
+	position: relative;
+	top: 50%;
+
 }
+
+.container-fluid .carousel-item:hover>.options {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*
 
 .container figure .options {
 	display: inline;
@@ -53,11 +85,11 @@ body {
 	top: 50%;
 }
 
-.container figure:hover>.options {
+.container-fluid figure:hover>.options {
 	opacity: 1;
 	visibility: visible;
 }
-
+ */
 /*Buttons carousel*/
 .carousel-control-next-icon {
 	background-image: url("../images/button/next.png");
@@ -74,8 +106,17 @@ body {
 }
 
 /* Media querie */
-@media screen and(max-width: 670px) {
-	.container figure img {
-		width: 100%;
+@media screen and (max-width: 670px) {
+	/* .container figure>img {
+		display: block;
+		visibility: hidden;
+		width: 100vw !important;
+
+	} */
+
+	body {
+		background-color: #000;
 	}
+
+
 }
