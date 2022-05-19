@@ -14,7 +14,44 @@
 </head>
 
 <body>
-  <div class="container-fluid m-0 p-0">
+  <!-- nav -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient fixed-top border-bottom border-2 border-warning">
+    <div class="container">
+      <a href="#" class="navbar-brand">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- options -->
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+          <!-- modules dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Módulos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Módulo 1</a></li>
+              <li><a class="dropdown-item" href="#">Módulo 2</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Módulo final</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Tutoriales</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Desafíos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid mt-4 p-0">
     <div class="row my-4">
       <div class="col-12 col-md-4 col-lg-6 mx-auto my-auto">
         <div class="card">
@@ -23,10 +60,8 @@
             <div class="carousel-inner">
               <!-- Active item -->
               <div class="carousel-item active text-center">
-                <a href="./src/chanllenges/module-1/2-html/cv2/index.html" class="d-block w-100">
-                  <img src="./src/public/images/png/curriculum.png" alt="Curriculum Vitae" title="Curriculum Vitae"
-                    class="d-block w-100 rounded border border-warning border-2">
-                </a>
+                <img src="./src/public/images/png/curriculum.png" alt="Curriculum Vitae" title="Curriculum Vitae"
+                  class="d-block w-100 rounded border border-warning border-2">
                 <div class="options">
                   <a href="#" class="btn btn-warning">Ver demo</a>
                   <a href="#" class="btn btn-warning">Ver código</a>
@@ -34,10 +69,8 @@
               </div>
               <!-- Second item -->
               <div class="carousel-item text-center">
-                <a href="./src/chanllenges/module-1/3-css/landing-page/courses/index.html" class="d-block w-100">
-                  <img src="./src/public/images/png/landing-courses.png" alt="Landing Page" title="Landing Page"
-                    class="d-block w-100 rounded border border-warning border-2">
-                </a>
+                <img src="./src/public/images/png/landing-courses.png" alt="Landing Page" title="Landing Page"
+                  class="d-block w-100 rounded border border-warning border-2">
                 <div class="options">
                   <a href="#" class="btn btn-warning">Ver demo</a>
                   <a href="#" class="btn btn-warning">Ver código</a>
@@ -45,10 +78,8 @@
               </div>
               <!-- Third item -->
               <div class="carousel-item">
-                <a href="./src/chanllenges/module-1/4-positions/iguana-page/index.html" class="d-block w-100">
-                  <img src="./src/public/images/png/iguana-page.png" alt="Iguana Page" title="Iguana-Page"
-                    class="d-block w-100 rounded border border-warning border-2">
-                </a>
+                <img src="./src/public/images/png/iguana-page.png" alt="Iguana Page" title="Iguana-Page"
+                  class="d-block w-100 rounded border border-warning border-2">
                 <div class="options">
                   <a href="#" class="btn btn-warning">Ver demo</a>
                   <a href="#" class="btn btn-warning">Ver código</a>
