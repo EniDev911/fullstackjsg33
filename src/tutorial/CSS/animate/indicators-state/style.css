@@ -1,0 +1,59 @@
+body {
+    background: #bac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.status {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    margin: 12px;
+}
+
+.status:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: yellow;
+    animation: pulse 1.5s infinite ease-in;
+}
+
+.status.online,
+.status.online:before {
+    background-color: #72ff7d;
+}
+
+.status.wait,
+.status.wait:before {
+    background-color: #ffda72;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+.status.offline,
+.status.offline:before {
+    background-color: #ff4242;
+}
