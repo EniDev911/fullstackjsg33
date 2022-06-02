@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --box-border: #BEC1BB;
+  --white: #fff;
+  --main-bg: #E8EBE4;
+  --secondary: #A491D2;
+  --secondary-hover: #CDC3E6;
+  --gray: #BEC1BB;
+}
+
+html {
+  font-family: consolas;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', 'Open Sans Regular';
+  background: var(--main-bg);
+  height: auto;
+
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-section .logo {
+  width: 30%;
+  height: 30%;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 3%;
+}
+
+.main-section img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.main-section h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.main-section p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.chat-section {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-chat {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  border: 1px solid var(--box-border);
+  align-items: center;
+  background: var(--white);
+}
+
+.perfil-thumbnail {
+  margin: auto;
+  width: 15%;
+  height: 50%;
+}
+
+.perfil-thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.text-primary {
+  width: 40%;
+}
+
+.text-primary h4 {
+  font-family: 12px;
+  font-weight: normal;
+
+}
+
+.text-primary p {
+  font-size: 10px;
+}
+
+
+.perfil {
+  margin: auto;
+  width: 20%;
+  height: 65%;
+}
+
+.box-chat .perfil img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.box-chat .icons {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.box-chat button {
+  text-align: center;
+  padding: 4% 10%;
+  width: 60%;
+  margin: auto;
+  border: none;
+  background: var(--secondary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.box-chat button:hover {
+  background: var(--secondary-hover);
+}
+
+
+.box-chat button:focus {
+  background: var(--gray);
+}
+
+.box-chat .text {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.box-chat .text h4 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.box-chat .text p {
+  font-size: 10px;
+}
