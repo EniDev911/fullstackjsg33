@@ -103,6 +103,7 @@ body {
 
 .text-primary p {
   font-size: 10px;
+  color: var(--gray);
 }
 
 
