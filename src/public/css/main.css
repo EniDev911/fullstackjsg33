@@ -16,13 +16,21 @@
 
 body {
 	font-family: monospace, Verdana, "Century gothic";
-	background-color: var(--light);
+	/* background-color: var(--light); */
 	width: 100%;
+	background:
+		linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+		linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+		linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+		linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
 }
 
 .card {
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50);
-	animation: movelogo 1s infinite alternate;
 	animation-duration: 1s;
 	animation-timing-function: ease;
 	animation-delay: 0s;
@@ -46,8 +54,8 @@ body {
 
 }
 
-
-/* .options {
+/* 
+.options {
 	display: block;
 	position: absolute;
 	float: right;
@@ -62,34 +70,66 @@ body {
 	background-color: rgba(10, 0, 55, 0.7);
 	border-radius: 5px;
 	text-align: center;
-	transition: all 500ms ease-in-out !important;
-}
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: showoptions;
+} */
 
-.container-fluid .options a {
+/* .options a {
 	position: relative;
 	top: 50%;
+}
+
+@keyframes showoptions {
+	0% {
+		top: 0;
+	}
+
+	100% {
+		top: 100;
+	}
 
 } */
 
-/* .container-fluid .carousel-item:hover>.options {
+/* .container-fluid .carousel-item {
+	transition: all .4s ease-in-out;
+}
+
+.container-fluid .carousel-item:hover {
+	transition: all .4s ease-in-out;
+}
+
+.container-fluid .carousel-item:hover>.options {
+	transition: all .4s ease-in-out;
 	opacity: 1;
 	visibility: visible;
 } */
 
 
 /*Buttons carousel*/
-.carousel-control-next-icon {
+/* .carousel-control-next-icon {
 	background-image: url("../images/button/next.png");
-	/* transform: scale(1); */
-	width: 3vw;
-	height: 6vh;
 }
 
 .carousel-control-prev-icon {
 	background-image: url("../images/button/previous.png");
-	/* transform: scale(1); */
-	width: 3vw;
-	height: 6vh;
+} */
+
+.navbar {
+	background:
+		linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+		linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+		linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+		linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
 }
 
 /* Media querie */
