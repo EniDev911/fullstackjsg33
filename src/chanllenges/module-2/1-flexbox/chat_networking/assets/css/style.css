@@ -38,6 +38,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  background: rgb(255, 255, 250);
 }
 
 .main-section .logo {
