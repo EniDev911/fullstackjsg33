@@ -124,7 +124,16 @@ body {
   justify-content: space-evenly;
 }
 
-.box-chat button {
+.box-btn {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  border: 1px solid var(--box-border);
+  align-items: center;
+  background: var(--white);
+}
+
+.box-btn button {
   text-align: center;
   padding: 4% 10%;
   width: 60%;
@@ -135,12 +144,12 @@ body {
   cursor: pointer;
 }
 
-.box-chat button:hover {
+.box-btn button:hover {
   background: var(--secondary-hover);
 }
 
 
-.box-chat button:focus {
+.box-btn button:focus {
   background: var(--gray);
 }
 
