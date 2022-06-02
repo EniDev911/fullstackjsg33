@@ -21,17 +21,33 @@ body {
 }
 
 .card {
-
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50);
+	animation: movelogo 1s infinite alternate;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: movecard;
 }
 
-/* .container figure {
-	border-radius: 6px;
-} */
 
-.carousel-item {}
+@keyframes movecard {
+	0% {
 
-.options {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.01);
+	}
+
+}
+
+
+/* .options {
 	display: block;
 	position: absolute;
 	float: right;
@@ -53,12 +69,12 @@ body {
 	position: relative;
 	top: 50%;
 
-}
+} */
 
-.container-fluid .carousel-item:hover>.options {
+/* .container-fluid .carousel-item:hover>.options {
 	opacity: 1;
 	visibility: visible;
-}
+} */
 
 
 /*Buttons carousel*/

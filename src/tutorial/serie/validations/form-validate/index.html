@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://necolas.github.io/nomalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <main>
+    <form action="" class="formulario" id="formulario">
+      <!-- Grupo: usuario -->
+      <div class="formulario__grupo" id="grupo__usuario">
+        <label for="usuario" class="formulario__label">Usuario</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="jhon_doe">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
+          letras y guiones bajos.</p>
+      </div>
+      <!-- Grupo: Nombre -->
+      <div class="formulario__grupo" id="grupo__nombre">
+        <label for="nombre" class="formulario__label">Nombre</label>
+        <div class="formulario__grupo-input">
+          <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Jhon Doe">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El nombre tiene que ser mínimo de 4 dígitos y solo puede contener letras y
+          guiones bajos.</p>
+      </div>
+      <!-- Grupo: contraseña -->
+      <div class="formulario__grupo" id="grupo__password">
+        <label for="password" class="formulario__label">Usuario</label>
+        <div class="formulario__grupo-input">
+          <input type="password" class="formulario__input" name="password" id="password" placeholder="****">
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p class="formulario__input-error">El password tiene que ser de 4 a 16 dígitos y solo puede contener numeros,
+          letras y guiones bajos.</p>
+      </div>
+    </form>
+  </main>
+
+  <script src="validations.js"></script>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

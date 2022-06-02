@@ -15,7 +15,7 @@
 
 <body>
   <!-- nav -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient fixed-top border-bottom border-2 border-warning">
+  <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark bg-gradient border-bottom border-2 border-warning">
     <div class="container">
       <a href="#" class="navbar-brand">Inicio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,7 +32,7 @@
               aria-expanded="false">
               Módulos
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-dark text-light" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Módulo 1</a></li>
               <li><a class="dropdown-item" href="#">Módulo 2</a></li>
               <li>
@@ -51,8 +51,10 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid mt-4 p-0">
-    <div class="row my-4">
+
+  <!-- Module-1 -->
+  <div class="container-fluid">
+    <section id="module-1" class="row my-4">
       <div class="col-12 col-md-4 col-lg-6 mx-auto my-auto">
         <div class="card">
           <!-- Carrousel -->
@@ -100,10 +102,12 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+    </section>
   </div>
 
-  <script src="src/public/js/lib/bootstrap.bundle.min.js"></script>
+  <scpt src="src/public/js/lib/bootstrap.bundle.min.js">
+    </script>
+
 </body>
 
 </html>
