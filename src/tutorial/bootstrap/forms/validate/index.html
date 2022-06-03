@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validar Formulario</title>
+  <link rel="stylesheet" href="../../../../public/css/lib/bootstrap.min.css">
+</head>
+
+<body>
+  <h1 class="text-center">Validar formulario con bootstrap</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="shadow-lg p-3 mb-5 mt-4 bg-body p-5 rounded">
+          <form action="/procesar" class="row g-3 needs-validation justify-content-start" novalidate>
+            <div class="col-md-5 position-relative">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" required>
+              <div class="valid-tooltip">Campo completado</div>
+              <div class="invalid-tooltip">Este campo es obligatorio</div>
+            </div>
+            <div class="col-md-5 position-relative">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" id="apellido" id="apellido" name="apellido" class="form-control" required>
+              <div class="valid-tooltip">Campo completado</div>
+              <div class="invalid-tooltip">Este campo es obligatorio</div>
+            </div>
+            <div class="col-md-4 position-relative mt-5">
+              <select name="pais" id="pais" class="form-select-sm w-100" required>
+                <option selected disabled value="">Seleccione...</option>
+                <option value="1">México</option>
+                <option value="2">Perú</option>
+                <option value="3">Chile</option>
+                <option value="4">Argentina</option>
+              </select>
+              <div class="valid-tooltip">Campo completado</div>
+              <div class="invalid-tooltip">Este campo es obligatorio</div>
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-warning w-75 text-center">
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../../../../public/js/lib/bootstrap.bundle.min.js"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+
+</html>
