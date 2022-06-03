@@ -7,6 +7,7 @@
 }
 
 :root {
+
   --box-border: #BEC1BB;
   --white: #fff;
   --main-bg: #E8EBE4;
@@ -16,7 +17,6 @@
 }
 
 html {
-  font-family: consolas;
   height: 100%;
 }
 
@@ -24,7 +24,6 @@ body {
   font-family: 'Roboto', 'Open Sans Regular';
   background: var(--main-bg);
   height: auto;
-
 }
 
 .container {
