@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <!-- bootstrap 5v core css -->
+  <link rel="stylesheet" href="../../../public/css/lib/bootstrap.min.css">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-dark bg-gradient min-vh-100">
+  <div class="container">
+    <h1 class="text-center text-light">ToDo App</h1>
+    <div class="row mt-4">
+      <div class="col-12 col-md-6 mx-auto">
+        <form action="" id="form">
+          <div class="mb-4">
+            <input id="input" type="text" placeholder="Type a Task" class="form-control" autofocus="true">
+          </div>
+          <button type="submit" class="btn btn-outline-info w-100">Guardar</button>
+        </form>
+        <div id="tasklist">
+          <template id="template">
+            <div class="alert alert-warning shadow d-flex justify-content-between">
+              <p>Tarea</p>
+              <div id="actions-icon">
+                <i class="fas fa-check-circle fs-3 text-success me-2"></i>
+                <i class="fas fa-minus-circle fs-3 text-danger"></i>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
