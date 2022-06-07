@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,8 +7,8 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
-    width: 100%;
+    font-family: 'Roboto', Courier, monospace;
+    max-width: 100%;
     background: #ccc;
 }
 
@@ -17,6 +19,7 @@ body {
         'sidebar main'
         'footer footer';
     gap: 10px;
+
 }
 
 header.header {
@@ -30,23 +33,30 @@ header.header {
 
 aside.sidebar {
     grid-area: sidebar;
-    min-height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
-    padding-left: 10%;
-
+    padding-left: 13%;
 }
 
+aside.sidebar h3 {
+    margin-bottom: 10px;
+    color: rgb(52, 54, 57);
+    font-size: 1.1rem;
+}
+
+aside.sidebar span {
+    opacity: 0.8;
+    color: gray;
+    font-size: 0.9rem;
+}
 
 main.main {
     grid-area: main;
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 25px;
-
+    gap: 15px;
+    margin-right: 10px;
 }
 
 footer.footer {
@@ -60,12 +70,13 @@ footer.footer {
 .flex-product {
     display: flex;
     flex-direction: column;
-    height: 450px;
-    width: 340px;
-    justify-content: center;
+    height: 400px;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
 }
+
 
 .flex-product button {
     display: block;
@@ -77,11 +88,25 @@ footer.footer {
 }
 
 .flex-product .img-container {
-    width: 80%;
-    height: 60%;
+    width: 100%;
+    height: 70%;
+}
+
+.flex-product #last {
+    padding-top: 25px;
+    height: 75%;
 }
 
 .flex-product .img-container img {
     width: 100%;
     height: 100%;
+}
+
+.details {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
