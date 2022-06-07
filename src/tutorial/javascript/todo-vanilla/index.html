@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <!-- bootstrap 5v core css -->
+  <link rel="stylesheet" href="../../../public/css/lib/bootstrap.min.css">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Emoji CSS CDN -->
+  <link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
+  <style>
+    #input::placeholder {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+    }
+
+    ::placeholder::before {
+      content: "\f559";
+    }
+  </style>
+</head>
+
+<body class="bg-dark bg-gradient min-vh-100">
+  <div class="container">
+    <h1 class="text-center text-light">To-Do <span class="ec ec-clipboard"></span>
+    </h1>
+    <div class="row mt-4">
+      <div class="col-12 col-md-6 mx-auto">
+        <form action="" id="form">
+          <div class="mb-4">
+            <input id="input" type="text" placeholder="  Type a Task" class="form-control" autofocus="true">
+          </div>
+          <button type="submit"
+            class="btn btn-dark btn-outline-light w-50 d-flex justify-content-between mx-auto">Guardar <span
+              class="ec ec-floppy-disk"></span>
+          </button>
+        </form>
+        <div id="tasklist" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+  <!-- template -->
+  <template id="template">
+    <div class="alert alert-warning shadow d-flex justify-content-between align-items-center">
+      <p class="m-0">Tarea</p>
+      <div id="actions-icon">
+        <i class="fas fa-check-circle fs-3 text-success me-2" role="button"></i>
+        <i class="fas fa-minus-circle fs-3 text-danger" role="button"></i>
+      </div>
+    </div>
+  </template>
+  <script src="app.js"></script>
+</body>
+
+</html>

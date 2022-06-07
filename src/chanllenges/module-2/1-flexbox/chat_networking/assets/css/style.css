@@ -26,6 +26,10 @@ body {
   height: auto;
 }
 
+body.dark {
+  --main-bg: #000;
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -37,12 +41,12 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 255, 250);
+  background: rgb(255, 255, 249);
 }
 
 .main-section .logo {
-  width: 30%;
-  height: 30%;
+  width: 13rem;
+  height: 13rem;
   justify-content: center;
   align-self: center;
   margin-bottom: 3%;
@@ -81,8 +85,8 @@ body {
 
 .perfil-thumbnail {
   margin: auto;
-  width: 15%;
-  height: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .perfil-thumbnail img {
@@ -109,8 +113,8 @@ body {
 
 .perfil {
   margin: auto;
-  width: 20%;
-  height: 65%;
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
 .box-chat .perfil img {
@@ -168,4 +172,67 @@ body {
 
 .box-chat .text p {
   font-size: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .chat-section {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-section {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .perfil-thumbnail {
+    width: 4rem;
+    height: 3.6rem;
+  }
+
+  .text-primary h4 {
+    font-size: 1.4rem;
+  }
+
+  .text-primary p {
+    font-size: 1rem;
+  }
+
+  .box-chat {
+    height: 90px;
+  }
+
+  .perfil {
+    width: 4.6rem;
+    height: 4.1rem;
+  }
+
+  .text {
+    margin: 0;
+    margin-right: 4%;
+  }
+
+  .box-chat .text h4 {
+    font-size: 1.3rem;
+  }
+
+  .box-chat .text p {
+    font-size: 0.9rem;
+  }
+
+  .main-section {
+    width: 100%;
+    padding: 6%;
+  }
 }
