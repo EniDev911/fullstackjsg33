@@ -1,0 +1,17 @@
+/////////////////////////
+// 1. Patrones de colores
+/////////////////////////
+$principal: rgb(247, 91, 29);
+
+
+/////////////////////////////////
+// 2. Modificando variables de bs
+/////////////////////////////////
+$primary: $principal;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: true;
+$btn-padding-y: 0.4rem;
+$btn-padding-x: 1.5rem;
+$btn-border-radius: 1rem;
+@import "bootstrap"

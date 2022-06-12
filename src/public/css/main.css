@@ -4,19 +4,10 @@
 	box-sizing: border-box;
 }
 
-/* Colors */
-:root {
-	--dark: #212529;
-	--dark-light: #707070;
-	--light: #F8F9FA;
-	--white: #fff;
-	--success: #28a745;
-	--black: #000;
-}
+
 
 body {
 	font-family: monospace, Verdana, "Century gothic";
-	/* background-color: var(--light); */
 	width: 100%;
 	background:
 		linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
@@ -69,7 +60,6 @@ body {
 
 /* Media querie */
 @media screen and (max-width: 670px) {
-
 
 	body {
 		background:
