@@ -6,11 +6,6 @@
   --btn-inactive:
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -18,7 +13,7 @@ html {
 body {
   max-width: 100vw;
   font-family: 'Raleway', sans-serif;
-  background-color: #fff;
+  background-color: #0af;
 }
 
 /* Header section */
@@ -26,6 +21,7 @@ body {
 .header {
   width: 100%;
   min-height: 100vh;
+  position: relative;
   background-image: linear-gradient(-45deg, rgba(18, 3, 31, 0.8) 0%, rgba(2, 33, 74, 0.4) 100%), url("../imgs/header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,20 +29,17 @@ body {
   background-attachment: fixed;
   overflow: hidden;
   color: #fff;
-  margin: auto;
   text-align: center;
+  margin-bottom: 3%;
 }
 
 .header h1 {
   font-family: 'Fira Code', monospace;
   font-weight: 500;
   text-decoration: overline;
-  width: 100%;
   font-size: 3.2em;
-  text-align: center;
-  margin: 2em 0;
+  margin: 10% 0;
   color: cornsilk;
-
 }
 
 .header p {
@@ -54,7 +47,6 @@ body {
 }
 
 .header a {
-  display: inline;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -65,7 +57,7 @@ body {
   opacity: 0.6;
   font-size: 2.5em;
   padding: 0.1em 0;
-  transition: .3s
+  transition: background 0.3s ease-in-out;
 }
 
 .header a:hover {
@@ -77,61 +69,25 @@ body {
 
 /* End header */
 
-/* main and product sections */
+/* main and courses sections */
 .container {
-  padding: 1.5vw;
+  width: 100%;
 }
 
 /* Courses products */
 .course {
   display: block;
+  position: relative;
+  height: 360px;
   width: 90%;
-  margin: auto auto 2% auto;
+  margin: auto;
   border-radius: 6px;
   padding: 10px;
   box-shadow: 5px 5px 10px #8888885c;
   background: linear-gradient(90deg, rgba(133, 119, 143, 1) 0%, rgba(175, 208, 210, 0.7091211484593838) 50%, rgba(180, 176, 203, 0.5466561624649859) 100%);
+  transition: transform .3s ease-in;
   text-align: center;
-  overflow: hidden;
-  transition: transform 0.3s;
-  height: 70vh;
-}
-
-@media screen and (max-width: 570px) {
-  .course {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    width: 90%;
-    background-color: #ccc;
-    height: auto;
-  }
-
-  .course-img {
-    display: flex;
-    min-width: 100%;
-  }
-
-  .container-text {
-    min-width: 80%;
-  }
-
-  .galery {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    max-width: 100vw;
-  }
-
-  .galery-img {
-    min-width: 80%;
-    border: 1px solid red;
-  }
-
-  .galery-img img {
-    width: 100%;
-  }
-
+  margin-bottom: 2%;
 }
 
 .course:hover {
@@ -141,8 +97,8 @@ body {
 
 .course-img {
   display: inline-block;
+  width: 47%;
   height: 100%;
-  width: 50%;
 }
 
 .course img {
@@ -152,19 +108,27 @@ body {
 
 .container-text {
   float: right;
+  position: relative;
+  text-align: center;
   width: 50%;
   height: 100%;
 }
 
 .container-text h2 {
-  font-weight: 500;
-  font-size: 3vw;
+  margin-bottom: 3%;
+  font-size: 2.1em;
 }
 
 .container-text p {
-  padding: 10% 3%;
   text-align: justify;
-  font-size: 2.1vw;
+  font-size: 1.4em;
+}
+
+.container ul.price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .container-text li {
@@ -172,22 +136,40 @@ body {
   list-style: none;
 }
 
-.container-text li#old_price {
+.container-text li.old_price {
   color: ccc;
   text-decoration: line-through;
-  margin: 0 1vw;
-  font-size: 2.5vw;
+  margin: 0 2%;
+  font-size: 1.5em;
 }
 
-.container-text li#current_price {
+.container-text li.current_price {
   color: #3f751b;
-  margin: 0 1vw;
-  font-size: 3vw;
+  font-size: 1.6em;
 }
 
 .container-text li a img {
-  width: 3.3vw;
+  width: 2.3em;
 }
+
+/*   Galery   */
+.galery {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 100vw;
+}
+
+.galery-img {
+  min-width: 80%;
+  border: 1px solid red;
+}
+
+.galery-img img {
+  width: 100%;
+}
+
+
 
 /* Galery  */
 .galery {
@@ -200,7 +182,7 @@ body {
   display: inline-block;
   width: 30%;
   margin: 1%;
-  height: 60vh;
+  height: 300px;
   border: 1px solid var(--content-bg);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
@@ -216,8 +198,8 @@ footer {
   background-color: var(--content-bg);
   color: #fff;
   text-align: center;
-  max-width: 100vw;
-  min-height: 20vh;
+  width: 100%;
+  min-height: auto;
 }
 
 footer h2 {
@@ -264,4 +246,15 @@ textarea.input {
 .btn:hover {
   transform: scale(1.01);
   background-color: #501;
+}
+
+@media (max-width: 570px) {
+  .course {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 90%;
+    background-color: #ccc;
+    height: auto;
+  }
 }
