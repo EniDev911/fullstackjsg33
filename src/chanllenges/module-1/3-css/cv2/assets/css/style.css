@@ -1,21 +1,4 @@
-<<<<<<< HEAD
-* {
-/* margin: 0; */
-/* padding: 0; */
-}
-
-body {
-  width: 1280px;
-}
-
-header {
-  background-color: smooth;
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  margin: auto;
-=======
-body {
+* body {
 	width: 100%;
 	background: rgb(255, 254, 250);
 	background: linear-gradient(90deg, rgba(255, 254, 250, 1) 0%, rgba(254, 253, 248, 0.9500175070028011) 52%, rgba(255, 255, 255, 0.8911939775910365) 100%);
@@ -84,5 +67,4 @@ footer blockquote a img {
 
 footer blockquote a img:hover {
 	filter: opacity(0.4) drop-shadow(0 0 0 red);
->>>>>>> ec157618e85cd1dce153d54bee6ca26b54d06e9a
 }
