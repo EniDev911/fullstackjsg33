@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- core minified Bootstrap CSS -->
-  <link rel="stylesheet" href="src/public/css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="src/public/css/bootstrap.min.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <!-- Main - CSS -->
   <link rel="stylesheet" href="src/public/css/main.css">
@@ -15,7 +15,7 @@
 
 <body>
   <!-- nav -->
-  <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark border-bottom border-1 border-secondary">
+  <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark border-bottom border-1 border-primary">
     <div class="container">
       <a href="#" class="navbar-brand">
         <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_con_bg.png" class="img-fluid"
@@ -35,13 +35,12 @@
               aria-expanded="false">
               Módulos
             </a>
-            <ul class="dropdown-menu navbar-dark bg-dark bg-gradient" aria-labelledby="navbarDropdown">
-              <li id="mod_1"><a class="dropdown-item text-light" href="#" onclick="module_change(1)">Módulo 1</a></li>
-              <li><a class="dropdown-item text-light" href="#" onclick="module_change(2)">Módulo 2</a></li>
+            <ul class="dropdown-menu bg-primary bg-gradient" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" onclick="module_change(1)">Módulo 1</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item text-light" href="#">Módulo final</a></li>
+              <li><a class="dropdown-item" href="#" onclick="module_change(2)">Módulo 2</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -61,12 +60,12 @@
       <section class="row my-4 d-block">
         <div class="col-12 col-sm-10 col-md-4 col-lg-6 mx-auto my-5">
           <!-- controls -->
-          <div class="card border-0">
+          <div class="card border border-primary border-1">
             <button class="carousel-control-prev" type="button" data-bs-target="#rootCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <p class="bg-dark text-light text-center m-0 py-2 shadow border border-secondary">Módulo 1: Introducción al
+            <p class="bg-dark text-light text-center m-0 py-2 rounded fs-5">Módulo 1: Introducción al
               desarrollo web</p>
             <button class="carousel-control-next" type="button" data-bs-target="#rootCarousel" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -79,61 +78,66 @@
             <!-- Carrousel -->
             <div id="rootCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <!-- Active item -->
+                <!-- Active first item -->
                 <div class="carousel-item active">
+                  <div class="options bg-primary bg-gradient rounded-top py-2 text-center">
+                    <h2 class=" h5">Desafío 1: Curriculum Vitae</h2>
+                    <a href="src/chanllenges/module-1/2-html/cv2/index.html" target="_blank"
+                      class="btn btn-light btn-outline-dark">Ver demo</a>
+                    <a href="https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-1/2-html/cv2"
+                      target="_blank" class="btn btn-light btn-outline-dark">Ver código</a>
+                  </div>
                   <img src="./src/public/images/png/curriculum.png" alt="Curriculum Vitae Image"
                     title="Curriculum Vitae" class="d-block w-100 rounded" />
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-dark text-end m-0 p-0 pe-3">
-                    <h2 class="h5">Desafío 1: Curriculum Vitae</h2>
-                    <div class="options">
-                      <a href="src/chanllenges/module-1/2-html/cv2/index.html" target="_blank"
-                        class="btn btn-outline-dark">Ver demo</a>
-                      <a href="#" class="btn btn-outline-dark">Ver código</a>
-                    </div>
-                  </div>
                 </div>
                 <!-- Second item -->
                 <div class=" carousel-item">
-                  <img src="./src/public/images/png/landing-courses.png" alt="Landing Page" title="Landing Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-light text-end m-0 p-0 pe-3">
-                    <h2 class="h5 mb-0">Desafío 2: Landing Page</h2>
-                    <div class="options">
-                      <a href="src/chanllenges/module-1/3-css/landing-page/courses/index.html" target="_blank"
-                        class="btn btn-light btn-outline-dark">Ver demo</a>
-                      <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/index.html"
-                        target="_blank" class="btn btn-light btn-outline-dark">Ver código</a>
-                    </div>
+                  <div class="options bg-secondary bg-gradient rounded-top py-2 text-center">
+                    <h2 class="h5 text-light">Desafío 2: Landing Page</h2>
+                    <a href="src/chanllenges/module-1/3-css/landing-page/courses/index.html" target="_blank"
+                      class="btn btn-light btn-outline-dark">Ver demo</a>
+                    <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/"
+                      target="_blank" class="btn btn-light btn-outline-dark">Ver código</a>
                   </div>
+                  <img src="./src/public/images/png/landing-courses.png" alt="Landing Page" title="Landing Page"
+                    class="d-block w-100">
                 </div>
                 <!-- Third item -->
                 <div class="carousel-item">
-                  <img src="./src/public/images/png/iguana-page.png" alt="Iguana Page" title="Iguana-Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block start-0 text-success text-start m-0 p-0 ps-2"
-                    style="top: 5%;">
-                    <h2 class="h5">Desafío 3: Iguana Page</h2>
-                    <div class="options">
-                      <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/4-positions/iguana-page/index.html"
-                        target="_blank" class="btn btn-outline-success mb-1">Ver código</a><br>
-                      <a href="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-1/4-positions/iguana-page/index.html"
-                        target="_blank" class="btn btn-outline-success">Ver demo</a>
-                    </div>
+                  <div class="options bg-dark bg-gradient rounded-top text-center py-2">
+                    <h2 class="h5 text-success">Desafío 3: Iguana Page</h2>
+                    <a href="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-1/4-positions/iguana-page/index.html"
+                      target="_blank" class="btn btn-outline-success">Ver demo</a>
+                    <a href="
+                      https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/4-positions/iguana-page/"
+                      target="_blank" class="btn btn-outline-success">Ver código</a>
                   </div>
+                  <img src="./src/public/images/png/iguana-page.png" alt="Iguana Page" title="Iguana-Page"
+                    class="d-block w-100">
                 </div>
                 <!-- Four item -->
                 <div class="carousel-item">
-                  <img src="./src/public/images/png/portfolio-mobile.png" alt="Porfolio Page Image" title="Iguana-Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-light text-end m-0 p-0 pe-3">
-                    <h2 class="h5">Desafío Final: Portfolio</h2>
-                    <div class="options">
-                      <a href="https://enidev911.github.io/" target="_blank"
-                        class="btn btn-light btn-outline-danger border-0">Ver demo</a>
-                      <a href="https://github.com/EniDev911/EniDev911.github.io" target="_blank"
-                        class="btn btn-light btn-outline-danger border-0">Ver código</a>
-                    </div>
+                  <div class="options bg-success bg-gradient rounded-top text-center py-2">
+                    <h2 class="h5 text-light">Desafío 4: Bootstrap Cuppon</h2>
+                    <a href="src/chanllenges/module-1/5-bootstrap/cuppons/index.html" target="_blank"
+                      class="btn btn-outline-light">Ver demo</a>
+                    <a href="https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-1/5-bootstrap/cuppons"
+                      target="_blank" class="btn btn-outline-light">Ver código</a>
                   </div>
+                  <img src="./src/public/images/png/bootstrap.png" alt="Bootstrap challenge" title="Cuppon-Page"
+                    class="d-block w-100">
+                </div>
+                <!-- Five item -->
+                <div class="carousel-item">
+                  <div class="options bg-danger bg-gradient rounded-top py-2 text-center">
+                    <h2 class="h5 text-light">Desafío Final: Portfolio</h2>
+                    <a href="https://enidev911.github.io/" target="_blank" class="btn btn-outline-light">Ver
+                      demo</a>
+                    <a href="https://github.com/EniDev911/EniDev911.github.io" target="_blank"
+                      class="btn btn-outline-light">Ver código</a>
+                  </div>
+                  <img src="./src/public/images/png/portfolio-mobile.png" alt="Porfolio Page Image" title="Iguana-Page"
+                    class="d-block w-100">
                 </div>
               </div>
             </div>
@@ -148,12 +152,12 @@
       <section class="row my-4 d-block">
         <div class="col-12 col-sm-10 col-md-4 col-lg-6 mx-auto my-5">
           <!-- controls -->
-          <div class="card border-0">
+          <div class="card border border-primary border-1">
             <button class="carousel-control-prev" type="button" data-bs-target="#rootCarousel2" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <p class="bg-dark text-light text-center m-0 py-2 shadow border border-secondary">Módulo 2: CSS avanzado</p>
+            <p class="bg-dark text-light text-center m-0 py-2 rounded fs-5">Módulo 2: CSS avanzado</p>
             <button class="carousel-control-next" type="button" data-bs-target="#rootCarousel2" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
@@ -165,61 +169,28 @@
             <!-- Carrousel -->
             <div id="rootCarousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <!-- Active item -->
+                <!-- Active first item -->
                 <div class="carousel-item active">
-                  <img src="./src/public/images/png/chat-nertworking.png" alt="FLexbox" title="Chat Nertworling"
-                    class="d-block w-100 rounded" />
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-dark text-end m-0 p-0 pe-3">
-                    <h2 class="h5">Desafío 1: Chat flexbox</h2>
-                    <div class="options">
-                      <a href="#" target="_blank" class="btn btn-outline-dark mb-1">Ver código</a><br>
-                      <a href="src/chanllenges/module-2/1-flexbox/chat_networking/index.html" target="_blank"
-                        class="btn btn-outline-dark">Ver demo</a>
-                    </div>
+                  <div class="options bg-light bg-gradient rounded-top py-2 text-center border-bottom border-secondary">
+                    <h2 class=" h5">Desafío 1: Chat Flexbox</h2>
+                    <a href="src/chanllenges/module-2/1-flexbox/chat_networking/index.html" target="_blank"
+                      class="btn btn-light btn-outline-dark">Ver demo</a>
+                    <a href="#" class="btn btn-light btn-outline-dark">Ver código</a>
                   </div>
+                  <img src="./src/public/images/png/chat-nertworking.png" alt="Chat Nertworking"
+                    title="Curriculum Vitae" class="d-block w-100 rounded" />
                 </div>
                 <!-- Second item -->
                 <div class=" carousel-item">
-                  <img src="./src/public/images/png/landing-courses.png" alt="Landing Page" title="Landing Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-light text-end m-0 p-0 pe-3">
-                    <h2 class="h5 mb-0">Desafío 2: Landing Page</h2>
-                    <div class="options">
-                      <a href="src/chanllenges/module-2/2-grid/challenge_store/index.html" target="_blank"
-                        class="btn btn-light btn-outline-dark">Ver demo</a>
-                      <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/index.html"
-                        target="_blank" class="btn btn-light btn-outline-dark">Ver código</a>
-                    </div>
+                  <div class="options bg-info bg-gradient rounded-top py-2 text-center">
+                    <h2 class="h5 text-light">Desafío 2: Grid Ecommerce</h2>
+                    <a href="src/chanllenges/module-2/2-grid/challenge_store/index.html" target="_blank"
+                      class="btn btn-light btn-outline-dark">Ver demo</a>
+                    <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/index.html"
+                      target="_blank" class="btn btn-light btn-outline-dark">Ver código</a>
                   </div>
-                </div>
-                <!-- Third item -->
-                <div class="carousel-item">
-                  <img src="./src/public/images/png/iguana-page.png" alt="Iguana Page" title="Iguana-Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block start-0 text-success text-start m-0 p-0 ps-2"
-                    style="top: 5%;">
-                    <h2 class="h5">Desafío 3: Iguana Page</h2>
-                    <div class="options">
-                      <a href="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-1/4-positions/iguana-page/index.html"
-                        target="_blank" class="btn btn-outline-success">Ver demo</a>
-                      <a href="https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/4-positions/iguana-page/index.html"
-                        target="_blank" class="btn btn-outline-success">Ver código</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Four item -->
-                <div class="carousel-item">
-                  <img src="./src/public/images/png/portfolio-mobile.png" alt="Porfolio Page Image" title="Iguana-Page"
-                    class="d-block w-100 rounded">
-                  <div class="carousel-caption d-none d-md-block top-0 end-0 text-light text-end m-0 p-0 pe-3">
-                    <h2 class="h5">Desafío Final: Portfolio</h2>
-                    <div class="options">
-                      <a href="https://enidev911.github.io/" target="_blank"
-                        class="btn btn-light btn-outline-danger border-0">Ver demo</a>
-                      <a href="https://github.com/EniDev911/EniDev911.github.io" target="_blank"
-                        class="btn btn-light btn-outline-danger border-0">Ver código</a>
-                    </div>
-                  </div>
+                  <img src="./src/public/images/png/grid-ecommerce.png" alt="Grid Ecommerce" title="Landing Page"
+                    class="d-block w-100">
                 </div>
               </div>
             </div>
