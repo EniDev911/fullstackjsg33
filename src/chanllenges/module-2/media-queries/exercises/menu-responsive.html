@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu-Responsive</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      padding: 10px;
+      list-style: none;
+      color: white;
+      background-color: #749c2c;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul li {
+      padding: 5px;
+    }
+
+    .filtros {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .filtros div {
+      margin-bottom: 30px;
+    }
+
+    @media(min-width:576px) {
+      ul {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .filtros {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    @media(min-width:768px) {
+      ul {
+        justify-content: flex-end;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>Inicio</li>
+      <li>Sobre Nosotros</li>
+      <li>Contacto</li>
+    </ul>
+  </nav>
+  <section class="filtros">
+    <div>
+      <p>Buscar por nombre:</p>
+      <input type="text">
+    </div>
+    <div>
+      <p>Ordenar por:</p>
+      <select>
+        <option value="precio">Precio</option>
+        <option value="fecha">Fecha</option>
+      </select>
+    </div>
+    <div>
+      <p>Mostrar solo artículos: </p>
+      Nuevos <input type="checkbox">
+      usados <input type="checkbox">
+    </div>
+  </section>
+
+</body>
+
+</html>

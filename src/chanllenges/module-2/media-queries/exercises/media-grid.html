@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-Media</title>
+    <style>
+        p {
+            background: #749c2c;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 576px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (min-width: 768px) {
+                .grid {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <p>Desafío latam</p>
+        <p>Desafío latam</p>
+        <p>Desafío latam</p>
+        <p>Desafío latam</p>
+    </div>
+
+</body>
+
+</html>

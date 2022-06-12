@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            border: 1px solid black;
+            grid-template-rows: 1fr 15fr 1fr;
+            grid-template-areas:
+                'menu'
+                'seccion-principal'
+                'pie-de-pagina';
+        }
+
+        nav {
+            padding: 10px;
+            grid-area: menu;
+            background-color: #0037a1;
+        }
+
+        main {
+            grid-area: seccion-principal;
+            padding: 10px;
+        }
+
+        footer {
+            grid-area: pie-de-pagina;
+            background-color: #d02a1e;
+            color: white;
+            padding: 10px;
+        }
+
+        @media (min-width:992px) {
+            body {
+                grid-template-areas:
+                    'menu seccion-principal'
+                    'menu seccion-principal'
+                    'menu pie-de-pagina';
+                grid-template-columns: 6rem 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        Menú de navegación
+    </nav>
+    <main>Sección principal</main>
+    <footer>
+        Pie de página
+    </footer>
+
+</body>
+
+</html>
