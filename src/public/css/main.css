@@ -20,6 +20,11 @@ body {
 	background-size: 20px 20px;
 }
 
+.select-bg::selection {
+	background-color: rgba(255, 128, 17, 0.89);
+	color: #fff;
+}
+
 .card {
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50);
 	animation-duration: 1s;
