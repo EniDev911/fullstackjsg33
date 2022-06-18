@@ -6,14 +6,16 @@
   box-sizing: border-box;
 }
 
+
 body {
   width: 100%;
-  max-width: 100%;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
 
 .container-grid {
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-areas:
     'navigation'
@@ -99,12 +101,12 @@ article.flex {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 90%;
+  width: 95%;
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  margin: 5% auto auto auto;
+  margin: 5% auto;
 }
 
 .img {
@@ -157,10 +159,19 @@ button.btn {
 footer {
   grid-area: footer;
   width: 100%;
+  height: 100%;
+  display: table;
   background: #023d6e;
   color: #fff;
   text-align: center;
+}
+
+footer>p,
+footer>i {
+  display: table-row;
+  vertical-align: middle;
   padding: 8px 0;
+  font-size: 1.1rem;
 }
 
 article.tablet {
