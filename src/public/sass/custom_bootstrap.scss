@@ -2,16 +2,18 @@
 // 1. Patrones de colores
 /////////////////////////
 $principal: rgb(247, 91, 29);
-
+$exito: rgb(91, 237, 103);
 
 /////////////////////////////////
 // 2. Modificando variables de bs
 /////////////////////////////////
 $primary: $principal;
+$success: $exito;
+
 $enable-rounded: true;
 $enable-shadows: true;
 $enable-gradients: true;
 $btn-padding-y: 0.4rem;
 $btn-padding-x: 1.5rem;
-$btn-border-radius: 1rem;
+$btn-border-radius: 2rem;
 @import "bootstrap"

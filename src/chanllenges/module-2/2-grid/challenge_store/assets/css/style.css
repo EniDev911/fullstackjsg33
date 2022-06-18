@@ -85,6 +85,7 @@ footer.footer {
     border: 0;
     padding: 0.8rem;
     color: #fff;
+    cursor: pointer;
 }
 
 .flex-product .img-container {
