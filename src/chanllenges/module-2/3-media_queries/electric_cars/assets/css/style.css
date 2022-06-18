@@ -99,7 +99,7 @@ main {
 article.flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   width: 95%;
   border: 1px solid #ccc;
@@ -111,7 +111,7 @@ article.flex {
 
 .img {
   width: 90%;
-  height: 240px;
+  height: 100%;
   margin: auto;
 }
 
@@ -120,13 +120,17 @@ article.flex {
   height: 100%;
 }
 
+.description {
+  margin: 2% 0;
+}
+
 button.btn {
   background: #03579c;
   border: none;
   padding: 6px 10px;
   color: #fff;
   border-radius: 6px;
-  margin: auto;
+  margin: 2% auto;
   cursor: pointer;
 }
 
