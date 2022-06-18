@@ -259,6 +259,7 @@ article.desktop {
 
   article.desktop {
     display: flex;
+    width: 90%;
   }
 
   main {
