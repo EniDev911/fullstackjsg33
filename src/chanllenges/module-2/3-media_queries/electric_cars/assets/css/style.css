@@ -199,6 +199,11 @@ article.desktop {
     justify-content: end;
   }
 
+  .brand {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
   .menu li {
     margin: 0 2%;
   }
