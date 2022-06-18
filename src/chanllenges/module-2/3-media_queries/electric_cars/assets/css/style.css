@@ -99,7 +99,7 @@ article.flex {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 80%;
+  width: 90%;
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px 0;
@@ -259,7 +259,6 @@ article.desktop {
 
   article.desktop {
     display: flex;
-    width: 90%;
   }
 
   main {
