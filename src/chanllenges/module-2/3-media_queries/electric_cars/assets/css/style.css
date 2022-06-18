@@ -111,7 +111,7 @@ article.flex {
 
 .img {
   width: 90%;
-  height: 200px;
+  height: 240px;
   margin: auto;
 }
 
@@ -127,6 +127,7 @@ button.btn {
   color: #fff;
   border-radius: 6px;
   margin: auto;
+  cursor: pointer;
 }
 
 .pagination {
