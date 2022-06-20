@@ -150,13 +150,6 @@ button.btn {
   padding: 5px;
 }
 
-.pag:hover,
-.prev:hover,
-.next:hover {
-  background-color: #023d6e;
-  color: #fff;
-}
-
 .prev {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -231,10 +224,6 @@ article.desktop {
   .menu li {
     width: 100%;
     line-height: 3.2rem;
-  }
-
-  .menu li:hover {
-    background-color: #023d6e;
   }
 
   button.open-menu {
@@ -341,6 +330,26 @@ article.desktop {
 
   br {
     display: inline;
+  }
+
+}
+
+/* Media Hover */
+@media (hover: hover) {
+
+  .pag:hover,
+  .prev:hover,
+  .next:hover {
+    background-color: #023d6e;
+    color: #fff;
+  }
+
+  .menu li:hover {
+    background-color: #023d6e;
+  }
+
+  footer a:active {
+    color: rgb(255, 142, 49);
   }
 
 }
