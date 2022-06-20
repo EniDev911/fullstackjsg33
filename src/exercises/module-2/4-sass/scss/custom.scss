@@ -1,0 +1,14 @@
+$bg-primary: #f6a;
+$bg-secondary: #739c2d;
+
+table {
+    background: $bg-secondary;
+    border: none;
+
+    th {
+        color: #fff;
+        background: #000;
+        border: 0;
+        padding: 10px 0;
+    }
+}
