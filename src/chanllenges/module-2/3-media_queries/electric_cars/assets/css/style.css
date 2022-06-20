@@ -34,14 +34,13 @@ nav {
   align-items: center;
 }
 
-
 .brand {
   display: flex;
   align-items: center;
   justify-content: start;
   width: 100%;
   padding-left: 2%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .logo {
@@ -81,7 +80,6 @@ label {
 }
 
 .menu li {
-  display: block;
   width: 100%;
   background-color: #03579c;
   margin: 0;
@@ -241,7 +239,6 @@ article.desktop {
 
   .menu {
     position: relative;
-    display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: center;
@@ -325,7 +322,6 @@ article.desktop {
   }
 
   .menu {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -336,7 +332,6 @@ article.desktop {
   }
 
   .brand {
-    font-size: 1rem;
     justify-content: center;
     padding: 3% 0;
   }
@@ -344,7 +339,6 @@ article.desktop {
   .toggle-menu {
     display: none;
   }
-
 
   header {
     display: flex;
