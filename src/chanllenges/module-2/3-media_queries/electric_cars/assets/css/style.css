@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   width: 100%;
   font-family: 'Roboto', sans-serif;
@@ -14,12 +13,14 @@ body {
 
 .container-grid {
   width: 100%;
+  height: 100vh;
   display: grid;
   grid-template-areas:
     'navigation'
     'search'
     'main'
     'footer';
+  grid-template-rows: auto auto 1fr auto;
 }
 
 nav {
@@ -196,8 +197,9 @@ article.desktop {
     grid-template-areas:
       'navigation navigation'
       'search main'
-      'footer footer'
-    ;
+      'footer footer';
+    grid-template-rows: auto 1fr auto;
+
   }
 
   article.mobile {
@@ -262,8 +264,8 @@ article.desktop {
     grid-template-areas:
       'navigation search'
       'navigation main'
-      'footer main'
-    ;
+      'footer main';
+    grid-template-rows: auto;
   }
 
   article.mobile {
@@ -347,9 +349,4 @@ article.desktop {
   .menu li:hover {
     background-color: #023d6e;
   }
-
-  footer a:active {
-    color: rgb(255, 142, 49);
-  }
-
 }
