@@ -1,6 +1,6 @@
 ## Desafío 4 - Sass
 
-[Ver en github-pages](https://enidev911.github.io/fullstackjsg33/src/challenges/module-2/4-sass/bs-card-sass/)
+[Ver en github-pages](https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-2/4-sass/bs-card-sass/)
 
 
 Instalar sass de manera global a través de npm  
