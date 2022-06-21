@@ -1,0 +1,26 @@
+@mixin set_width_height($width, $height) {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+}
+
+div {
+  background-color: #f6a;
+  border: 1px solid black;
+
+  &#one {
+    @include set_width_height(100px, 100px);
+    background: #000;
+    color: #fff;
+  }
+
+  &#two {
+    @include set_width_height(200px, 200px);
+    background: #fc0;
+  }
+
+  &#three {
+    @include set_width_height(300px, 100px);
+  }
+}

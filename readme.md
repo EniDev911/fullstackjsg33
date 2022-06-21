@@ -8,10 +8,3 @@ Instalar sass de manera global a través de npm
 ```bash
 npm install -g sass
 ```
-
-Modificar el archivo `custom_bootstrap.scss` y compilar con el siguiente comando:  
-
-```bash
-J
-```
-src

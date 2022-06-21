@@ -1,0 +1,35 @@
+///////////////////////////////////////////
+// 1. Herramienta para exportar el CSS ///
+// paquete sass de npm: npm i -g sass ///
+// input: assets/sass/main.scss      ///
+// output: assets/css/main.min.css  ///
+// run: sass -w <input>:<output>   ///
+/////////////////////////////////////
+
+//////////////////////////////////////
+// 2. Modificando la fuente de bs ///
+////////////////////////////////////
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+$font-family-sans-serif: 'Kaushan Script', Neucha, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$headings-font-family: "Kaushan Script", cursive !default;
+
+/////////////////////////////////////////////////////////////////////
+// 3. Usando @extend para reutilizar estilos de una clase en otra///
+///////////////////////////////////////////////////////////////////
+.card {
+  @extend .bg-dark;
+  @extend .text-light;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// 4. Creando una variante de color e integrarlo como themes de bs   ////
+////////////////////////////////////////////////////////////////////////
+$claro: rgb(250, 255, 245);
+$rosado: #f8a;
+$oscuro: rgb(37, 37, 41);
+$theme-colors: (
+  "pink": $rosado,
+  "dark": $oscuro,
+  "light": $claro) !default;
+
+@import "bootstrap"

@@ -1,6 +1,10 @@
 const module_1 = document.getElementById("module-1");
 const module_2 = document.getElementById("module-2");
 
+/**
+ * 
+ * @param {string} module - The module to change 
+ */
 function module_change(module) {
   this.module = module;
   if (this.module === 1) {
