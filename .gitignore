@@ -1,4 +1,4 @@
-.vscode/
+
 *.zip
 *.mp3
 *.mp4
@@ -12,3 +12,5 @@ node_modules
 **/node_modules
 .sass-cache
 **/.sass-cache
+.vscode/
+**/.vscode/
