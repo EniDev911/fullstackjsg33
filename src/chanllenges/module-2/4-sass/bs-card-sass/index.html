@@ -13,14 +13,12 @@
 </head>
 
 <body>
-  <main class="container">
-    <section class="row">
-      <div class="col-10 col-sm-8 col-md-6 col-lg-4 mx-auto my-3">
-        <!-- CUSTOM CARD -->
-        <div class="card p-4">
-          <div class="card-header mx-auto">
-            <img src="assets/image/logo.svg" class="card-img-top" alt="logo sass">
-          </div>
+  <main class="container my-3">
+    <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- CUSTOM CARD 1 -->
+      <div class="col-10 mx-auto">
+        <div class="card px-3">
+          <img src="assets/image/logo.svg" class="card-img-top pt-3" alt="logo sass">
           <div class="card-body">
             <h2 class="card-title text-pink">
               Card title
@@ -29,18 +27,62 @@
             <button type="button" class="btn btn-pink text-light">Go somewhere</button>
           </div>
           <div class="card-footer text-center">
-            <p>EniDev911</p>
-            <a href="https://www.facebook.com/profile.php?id=100009064421475" target="_blank"
-              class="text-decoration-none text-pink">
-              <i class='bx bxl-facebook-circle fs-3'></i>
+            <a href="https://twitter.com/SassCSS" target="_blank" class="text-decoration-none text-pink">
+              <i class='bx bxl-twitter fs-3'></i>
             </a>
-            <a href="https://www.instagram.com/enidev911/" target="_blank" class="text-decoration-none text-pink">
-              <i class='bx bxl-instagram fs-3'></i>
+            <a href="https://github.com/sass" target="_blank" class="text-decoration-none text-pink">
+              <i class='bx bxl-github fs-3'></i>
+            </a>
+            <a href="https://sass-lang.com/" target="_blank" class="text-decoration-none text-pink">
+              <i class='bx bxl-sass fs-3'></i>
             </a>
           </div>
         </div>
-        <!-- END CARD -->
       </div>
+      <!-- END CARD -->
+      <!-- CUSTOM CARD 2 -->
+      <div class="col-10 mx-auto">
+        <div class="card font-monospace text-success">
+          <img src="assets/image/logo_enidev911.png" class="card-img-top w-50 align-self-end" alt="logo sass">
+          <div class="card-img-overlay w-50">
+            <h5 class="card-title">
+              EniDev911
+            </h5>
+            <hr class="text-yellow mt-1">
+            <p class="text-yellow">Developer <i class='bx bx-code'></i><br>DevOps <i
+                class='bx bx-terminal'></i><br>Admin <i class='bx bx-user-pin'></i></p>
+          </div>
+          <div class="card-body text-success text-end">
+            <p>Chilean programmer, computer programmer graduated from the AIEP institute.
+              Currently a freelance python
+              and javascript fullstack
+              developer.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://github.com/enidev911" target="_blank" class="card-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
+              class="card-link">Linkedin</a>
+          </div>
+          <img src="assets/image/logo_footer.png" class="card-img-bottom w-25 mx-auto pb-2" alt="logo">
+        </div>
+      </div>
+      <!-- END CARD -->
+      <!-- CUSTOM CARD 3 -->
+      <div class="col-10 mx-auto">
+        <div class="card font-monospace">
+          <img src="assets/image/git-bash.svg" class="card-img-top w-75 mx-auto pt-3" alt="logo git-bash">
+          <div class="card-body">
+            <h2 class="card-title text-yellow text-center">
+              Git-Bash
+            </h2>
+            <hr>
+            <p>Git Bash is an application for Microsoft Windows OS environments which provides Unix based shell
+              utilities & experience
+              for Git command line commands.</p>
+          </div>
+        </div>
+      </div>
+      <!-- END CARD -->
     </section>
   </main>
 </body>

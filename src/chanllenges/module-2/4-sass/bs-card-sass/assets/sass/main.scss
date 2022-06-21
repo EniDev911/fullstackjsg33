@@ -6,12 +6,16 @@
 // run: sass -w <input>:<output>   ///
 /////////////////////////////////////
 
-//////////////////////////////////////
-// 2. Modificando la fuente de bs ///
-////////////////////////////////////
+///////////////////////////////////////
+// 2. Modificando las fuente de bs ///
+/////////////////////////////////////
+/// normal
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 $font-family-sans-serif: 'Kaushan Script', Neucha, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$headings-font-family: "Kaushan Script", cursive !default;
+/// mono
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
+$font-family-monospace: 'JetBrains Mono', monospace !default;
 
 /////////////////////////////////////////////////////////////////////
 // 3. Usando @extend para reutilizar estilos de una clase en otra///
@@ -27,9 +31,14 @@ $headings-font-family: "Kaushan Script", cursive !default;
 $claro: rgb(250, 255, 245);
 $rosado: #f8a;
 $oscuro: rgb(37, 37, 41);
+$exito : rgb(17, 254, 25);
+$amarillo : hsl(60, 98%, 52%);
+
 $theme-colors: (
   "pink": $rosado,
   "dark": $oscuro,
+  "success": $exito,
+  "yellow": $amarillo,
   "light": $claro) !default;
 
 @import "bootstrap"
