@@ -26,24 +26,56 @@ nav {
     grid-area: navigation;
     background: rgb(2, 53, 2);
     width: 100%;
+    height: 50px;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2%;
+    position: relative;
 }
 
 .menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    transform: translateY(-1px);
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: transparent;
+    transition-property: transform background-color color;
+    transition-duration: .4s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
 }
 
-button.btn {
+.menu li {
+    line-height: 50px;
+    padding: 0 2%;
+}
+
+button.btn,
+label {
     border: none;
     font-size: 1.5rem;
     background: transparent;
     color: #fff;
     cursor: pointer;
+}
 
+.toggle-menu__checkbox {
+    display: none;
+}
+
+.toggle-menu__checkbox:checked+.menu {
+    visibility: visible;
+    background: rgb(2, 53, 2);
+    color: #fff;
+    transform: translateY(47px);
 }
 
 .brand {
@@ -195,15 +227,17 @@ br {
     }
 
     .menu {
-        display: flex;
-        list-style: none;
+        position: relative;
+        flex-direction: row;
+        visibility: visible;
+        transform: translateY(0%);
         width: 100%;
     }
 
-    .menu li {
-        padding: 2%;
-        cursor: pointer;
+    .toggle-menu__checkbox:checked+.menu {
+        transform: translateY(0%);
     }
+
 
     button.btn {
         display: none;
@@ -253,6 +287,7 @@ br {
         align-items: flex-start;
         justify-content: flex-start;
         padding: 0;
+        height: 100%;
     }
 
     .brand {
