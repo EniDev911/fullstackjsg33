@@ -1,12 +1,13 @@
 
 *.zip
+**/*.zip
 *.mp3
 *.mp4
 *.pdf
 *.txt
 *.xls
 Thumbs.db
-*/Thumbs.db
+**/Thumbs.db
 
 node_modules
 **/node_modules

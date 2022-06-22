@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", "sans-serif";
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-areas:
+        'navigation'
+        'search'
+        'main'
+        'footer';
+}
+
+nav {
+    grid-area: navigation;
+    background: rgb(2, 53, 2);
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+}
+
+.menu {
+    display: none;
+}
+
+button.btn {
+    border: none;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.brand {
+    display: flex;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+
+.icon {
+    margin-right: 10px;
+    line-height: 2.2rem;
+}
+
+header {
+    grid-area: search;
+    width: 100%;
+    text-align: center;
+    background: #ccc;
+    padding-bottom: 20px;
+}
+
+header p {
+    width: 100%;
+    padding: 15px;
+}
+
+select {
+    width: 90%;
+    padding: 1.5% 0;
+    border: 1px solid rgb(160, 159, 159);
+    border-radius: 5px;
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+}
+
+article.flex {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 1px solid rgb(160, 159, 159);
+    border-radius: 6px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin: 3% auto;
+}
+
+article .image {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+}
+
+article .image img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-ver {
+    background-color: rgb(2, 53, 2);
+    color: #fff;
+    padding: 1% 0;
+    border-radius: 5px;
+    border: none;
+    margin: 2% auto;
+    width: 5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    cursor: pointer
+}
+
+.pag,
+.prev,
+.next {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+}
+
+.prev {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.next {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+footer {
+    grid-area: footer;
+    background: rgb(1, 37, 1);
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+article.tablet {
+    display: none;
+}
+
+article.desktop {
+    display: none;
+}
+
+br {
+    display: none;
+}
+
+/* Tablet  */
+@media (min-width: 576px) {
+
+    /* Escondemos vista mobile */
+    article.mobile {
+        display: none;
+    }
+
+    /* Mostramos la vista tablet */
+    article.tablet {
+        display: flex;
+    }
+
+    .container-grid {
+        grid-template-areas:
+            'navigation navigation'
+            'search main'
+            'footer footer';
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu {
+        display: flex;
+        list-style: none;
+        width: 100%;
+    }
+
+    .menu li {
+        padding: 2%;
+        cursor: pointer;
+    }
+
+    button.btn {
+        display: none;
+    }
+
+    .pagination {
+        grid-column: span 2;
+    }
+
+}
+
+/* Vista Desktop */
+@media (min-width: 992px) {
+
+    /* Ocultamos la vista mobile */
+    article.mobile {
+        display: none;
+    }
+
+    /* Ocultamos la vista tablet */
+    article.tablet {
+        display: none;
+    }
+
+    /* Mostramos la vista escritorio */
+    article.desktop {
+        display: flex;
+    }
+
+    .container-grid {
+        grid-template-areas:
+            'navigation search'
+            'navigation main'
+            'footer main';
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .pagination {
+        grid-column: span 4;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .brand {
+        padding: 3%;
+        font-size: 1.1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    br {
+        display: inline;
+    }
+}
+
+@media (hover: hover) {
+
+    .pag:hover,
+    .prev:hover,
+    .next:hover {
+        background: #063300;
+        color: #fff;
+    }
+
+    .menu li:hover {
+        background: rgb(0, 27, 0);
+    }
+}
