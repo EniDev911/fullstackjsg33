@@ -92,6 +92,7 @@ article.flex {
     box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
     margin: 3% auto;
+    transition: all .3s ease-in-out;
 }
 
 article .image {
@@ -282,5 +283,10 @@ br {
 
     .menu li:hover {
         background: rgb(0, 27, 0);
+    }
+
+    article.flex:hover {
+        transform: scale(1.009);
+        box-shadow: 1px 2px 2px 6px rgba(1, 100, 1, 0.6);
     }
 }
