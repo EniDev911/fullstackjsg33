@@ -157,10 +157,12 @@ a {
     color: #fff;
 }
 
+/* Se debe mantener oculta la vista tablet */
 article.tablet {
     display: none;
 }
 
+/* Se debe mantener oculta la vista desktop */
 article.desktop {
     display: none;
 }
