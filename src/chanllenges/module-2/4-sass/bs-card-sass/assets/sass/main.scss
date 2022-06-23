@@ -32,12 +32,15 @@ $claro: rgb(250, 255, 245);
 $rosado: #f8a;
 $oscuro: rgb(37, 37, 41);
 $exito : rgb(17, 254, 25);
+$oliva: #729e2e;
 $amarillo : hsl(60, 98%, 52%);
+
 
 $theme-colors: (
   "pink": $rosado,
   "dark": $oscuro,
   "success": $exito,
+  "olive": $oliva,
   "yellow": $amarillo,
   "light": $claro) !default;
 
