@@ -129,6 +129,10 @@ body.dark {
   justify-content: space-evenly;
 }
 
+.box-chat .icons i {
+  cursor: pointer;
+}
+
 .box-btn {
   display: flex;
   justify-content: space-between;
