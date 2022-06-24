@@ -4,8 +4,6 @@
 	box-sizing: border-box;
 }
 
-
-
 body {
 	font-family: monospace, Verdana, "Century gothic";
 	width: 100%;
@@ -25,18 +23,19 @@ body {
 	color: #fff;
 }
 
-.card {
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.50);
-	animation-duration: 1s;
+.animate:hover {
+	animation-name: movecard;
+}
+
+.animate {
+	animation-duration: .9s;
 	animation-timing-function: ease;
 	animation-delay: 0s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-fill-mode: none;
 	animation-play-state: running;
-	animation-name: movecard;
 }
-
 
 @keyframes movecard {
 	0% {
@@ -45,11 +44,10 @@ body {
 	}
 
 	100% {
-		transform: scale(1.01);
+		transform: scale(1.1);
 	}
 
 }
-
 
 .navbar {
 	background:

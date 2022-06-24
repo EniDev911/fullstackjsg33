@@ -93,15 +93,18 @@ footer.footer {
     height: 70%;
 }
 
+.flex-product .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
 .flex-product #last {
     padding-top: 25px;
     height: 75%;
 }
 
-.flex-product .img-container img {
-    width: 100%;
-    height: 100%;
-}
+
 
 .details {
     width: 100%;
