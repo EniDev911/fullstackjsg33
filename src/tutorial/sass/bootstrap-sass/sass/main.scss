@@ -1,0 +1,17 @@
+$primary: purple;
+$success: olive;
+
+.card {
+    a {
+        color: orange;
+    }
+
+    &:hover,
+    & a:hover {
+        background-color: $primary  !important;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap';
