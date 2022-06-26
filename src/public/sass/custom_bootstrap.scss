@@ -1,13 +1,13 @@
-/////////////////////////
-// 1. Patrones de colores
-/////////////////////////
-$principal: rgb(247, 91, 29);
+////////////////////////////////
+//  Colors pallete
+//////////////////////////////
+$primary: rgb(247, 91, 29);
 $exito: rgb(91, 237, 103);
 
 /////////////////////////////////
 // 2. Modificando variables de bs
 /////////////////////////////////
-$primary: $principal;
+$primary: $primary;
 $success: $exito;
 
 $enable-rounded: true;
