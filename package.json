@@ -1,10 +1,9 @@
 {
   "name": "fullstackjsg33",
   "version": "1.0.0",
-  "description": "[Ver en github-pages](https://enidev911.github.io/fullstackjsg33/)",
-  "main": "index.js",
+  "description": "Repositorio del programa fullstack javascript g33 ADL.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-build": "sass src/public/sass/custom_bootstrap.scss:src/public/css/bootstrap.min.css --style compressed",
     "sass-watch": "sass -w src/public/sass/custom_bootstrap.scss:src/public/css/bootstrap.min.css --style compressed"
   },
   "repository": {
@@ -12,7 +11,7 @@
     "url": "git+https://github.com/EniDev911/fullstackjsg33.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "enidev911 <enidev911@gmail.com> (http://enidev911.github.io/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EniDev911/fullstackjsg33/issues"
