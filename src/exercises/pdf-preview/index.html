@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head prefix="og: https://ogp.me/ns#">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF PREVIEW</title>
+</head>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #ccc;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+  }
+
+  .container {
+
+    height: auto;
+    width: 60%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    border: 4px dotted #ccc;
+    box-shadow: 4px 8px 12px #0000003b;
+
+  }
+
+  .border {
+    border: 1px solid salmon;
+
+  }
+
+  embed {
+    margin-top: 3%;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-family: 'Century gothic';
+    font-style: italic;
+    font-size: 2.5rem;
+    text-decoration: overline rgb(129, 137, 255);
+  }
+
+  .file-select {
+    position: relative;
+    width: 40%;
+    margin: auto;
+    background-color: #5678EF;
+    transition: transform .4s ease-in-out;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 4px 8px 12px #0000003b;
+  }
+
+  .file-select:hover {
+    transform: scale(1.09);
+    background-color: #0024a6;
+  }
+
+  .file-select::before {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'Seleccionar';
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+  }
+
+
+  input[type="file"] {
+    opacity: 0;
+    height: 32px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <h1>VISUALIADOR DE PDF</h1>
+    <form>
+      <div class="file-select" id="file1">
+        <input type="file" name="pdfFile" id="pdfFile" aria-label="file" required>
+      </div>
+      <embed type="application/pdf" id="pdfPreview" width="500" height="500">
+    </form>
+  </div>
+
+  <script>
+    document.querySelector("#pdfFile").addEventListener("change", () => {
+      let pdfFile = document.querySelector("#pdfFile").files[0];
+      // let urlPdfFile = URL.createObjectURL(pdfFile) + "#toolbar=0";
+      let urlPdfFile = URL.createObjectURL(pdfFile);
+      pdfPreview = document.querySelector("#pdfPreview");
+      pdfPreview.setAttribute('src', urlPdfFile);
+      pdfPreview.classList.add('border');
+    })
+  </script>
+</body>
+
+</html>
