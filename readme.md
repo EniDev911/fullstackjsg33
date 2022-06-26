@@ -15,6 +15,6 @@ npm install -g sass
 Ejecutar sass para compilar
 
 ```bash
-npm run build-watch
+npm run sass-watch
 ```
 
