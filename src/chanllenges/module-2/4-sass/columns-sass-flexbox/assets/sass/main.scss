@@ -1,0 +1,59 @@
+body {
+    background: #333333;
+    padding: 2rem 1rem;
+    color: #fff;
+    font-size: 14px;
+}
+
+// Grid system
+$cols : 12;
+$gap : 24px;
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+
+    height: 100vh;
+    max-width: 1024px;
+}
+
+.gs\:grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $gap / -2;
+    margin-right: $gap / -2;
+}
+
+[class*="col-"],
+.col {
+    max-width: 100%;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+.col {
+    flex: 1 0 0;
+}
+
+@for $col from 1 through $cols {
+    .col-#{ $col } {
+        flex: 0 0 (100% / $cols) * $col;
+        max-width: (100% / $cols) * $col;
+    }
+
+}
+
+.col-ex {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid #f6c;
+}
+
+.border {
+    border: 1px solid #f6c;
+}

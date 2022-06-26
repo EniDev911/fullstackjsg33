@@ -1,0 +1,12 @@
+{
+  "name": "columns-sass-flexbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass -w assets/sass/main.scss:assets/css/style.min.css --style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
