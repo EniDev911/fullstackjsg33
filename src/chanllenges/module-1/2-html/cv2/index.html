@@ -10,7 +10,82 @@
     content="Curriculum Vitae, Curriculum, cv, FullStack JavaScript CV, Chilean Programmer Marco Antonio Contreras Herrera, JS Fullstack in Chile">
   <link rel="shorcut icon" type="image/ico" href="./assets/favicon/favicon.ico">
 </head>
-<body style="font-family: monospace, Verdana, 'arial semibold';">
+<style>
+  html{
+    background: rgb(210, 234, 250);
+  }
+  body{
+    font-family: monospace, Verdana, 'arial semibold';
+    max-width: 1200px;
+    width: 1000px;
+    margin: 20px auto;
+    border:  1px solid #ccc;
+    background: #fff;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
+
+  }
+
+  h1 {
+    font-size: 3em;
+    text-decoration: overline 8px #ccc;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 1.7em;
+  }
+  hr{
+    width: 92%;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+section
+{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 0 6%;
+  font-size: 1.3em;
+
+}
+
+section p,
+section ul li{
+  list-style: none;
+}
+
+section ul li img {
+  width: 25px;
+  height: 20px;
+}
+
+section ul.skills {
+  color: green;
+}
+
+footer {
+  font-size: 1.3em;
+}
+
+footer blockquote a {
+  text-decoration: none;
+}
+
+footer blockquote a img {
+  width: 40px;
+  height: 40px;
+  transition: filter .4s ease;
+}
+footer blockquote a img:hover {
+  filter: opacity(0.4) drop-shadow(1px 1px 14px gray);
+}
+</style>
+<body>
   <!-- header cv -->
   <header>
     <h1>Curriculum Vitae</h1><br>
@@ -77,25 +152,23 @@
   <!-- footer cv -->
   <footer>
     <blockquote>
-      <p><b>Source:</b> Desafío Latam.</p>
-      <p>
-        Social Media:<br>
+      <p><strong>Social Media:</strong> 
+      <br>
         <!-- facebook -->
         <a href="https://www.facebook.com/profile.php?id=100009064421475" target="_blank"><img
-            src="./assets/imgs/facebook.png" width="24" height="23" style="padding-bottom: 3px;"></a>
+            src="./assets/imgs/facebook.png"></a>
         <!-- twitter -->
-        <a href="https://twitter.com/MarcoContreraas" target="_blank"><img src="./assets/imgs/twitter.png"
-            width="30"></a><br>
-        Send me a message:<br>
+        <a href="https://twitter.com/MarcoContreraas" target="_blank"><img src="./assets/imgs/twitter.png"></a><br>
+        <strong>Send me a message:</strong><br>
         <!-- whatsapp -->
         <a href="https://api.whatsapp.com/send/?phone=56939131909&text=Hello+Marco%3A+I'm+testing+the+api+of+whatsapp&app_absent=0"
-          target="_blank"><img src="./assets/imgs/whatsapp.png" alt="" width="30"></a>
+          target="_blank"><img src="./assets/imgs/whatsapp.png" alt=""></a>
         <!-- gmail -->
         <a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"><img src="./assets/imgs/gmail.png"
-            alt="" width="30"></a><br>
+            alt="gmail logo"></a><br>
         <!-- Repository -->
-        Repositories:<br>
-        <a href="https://github.com/EniDev911"><img src="./assets/imgs/github.png" width="32"></a>
+        <strong>Repositories:</strong><br>
+        <a href="https://github.com/EniDev911"><img src="./assets/imgs/github.png" alt="github logo"></a>
       </p>
       <!-- Portfolio -->
       <a href="./portafolio.html" target="_blank">Go to portfolio</a>
