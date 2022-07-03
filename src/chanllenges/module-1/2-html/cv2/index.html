@@ -10,7 +10,7 @@
     content="Curriculum Vitae, Curriculum, cv, FullStack JavaScript CV, Chilean Programmer Marco Antonio Contreras Herrera, JS Fullstack in Chile">
   <link rel="shorcut icon" type="image/ico" href="./assets/favicon/favicon.ico">
 </head>
-<style>
+<style id="css">
   html{
     background: rgb(210, 234, 250);
   }
@@ -22,6 +22,7 @@
     border:  1px solid #ccc;
     background: #fff;
     box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
+    position: relative;
   }
 
   h1 {
@@ -91,8 +92,45 @@ footer blockquote a img {
 footer blockquote a img:hover {
   filter: opacity(0.4) drop-shadow(1px 1px 14px gray);
 }
+
+button#btn{
+  background: #529;
+  border:0;
+  padding:8px 3px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  left:0;
+  top:0;
+}
+
+@media screen and (min-width: 468px) {
+    body{
+      font-family: monospace, Verdana, 'arial semibold';
+      max-width: 992px;
+      width: 600px;
+      font-size: 0.8rem;
+      border:  1px solid #ccc;
+      background: #fff;
+      box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media screen and (min-width: 992px){
+    body{
+      font-family: monospace, Verdana, 'arial semibold';
+      max-width: 1200px;
+      width: 800px;
+      font-size: 0.8rem;
+      border:  1px solid #ccc;
+      background: #fff;
+      box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
+  }
+}
+  
 </style>
 <body>
+  <button type="button" id="btn" onclick="{toggleCss()}">REMOVER CSS</button>
   <!-- header cv -->
   <header>
     <h1>Curriculum Vitae</h1><br>
@@ -183,6 +221,21 @@ footer blockquote a img:hover {
     </blockquote>
   </footer>
   <!-- end footer -->
+  <script>
+    
+     let css = document.getElementById("css");
+     let parent = css.parentNode;
+     const toggleCss = () => {
+      if(document.head.contains(css)){
+        parent.removeChild(css);
+        document.getElementById("btn").innerHTML = "AÑADIR CSS"
+      }
+      else{
+        parent.appendChild(css);
+        document.getElementById("btn").innerHTML = "QUITAR CSS"
+      }
+     }
+  </script>
 </body>
 
 </html>
