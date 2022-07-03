@@ -19,6 +19,7 @@
   html{
     background: rgb(210, 234, 250);
     height: 100%;
+    display: flex;
   }
   body{
     font-family: monospace, Verdana, 'arial semibold';
@@ -28,7 +29,6 @@
     border:  1px solid #ccc;
     background: #fff;
     box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
-    position: relative;
   }
 
   h1 {
@@ -95,8 +95,9 @@
 
   button#btn{
     background: #529;
+    /* font-size: 2vw; */
     border:0;
-    padding:8px 3px;
+    padding:8px 15px;
     cursor: pointer;
     color: #fff;
     position: absolute;
@@ -220,7 +221,7 @@
       }
       else{
         parent.appendChild(css);
-        document.getElementById("btn").innerHTML = "QUITAR CSS"
+        document.getElementById("btn").innerHTML = "REMOVER CSS"
       }
      }
   </script>
