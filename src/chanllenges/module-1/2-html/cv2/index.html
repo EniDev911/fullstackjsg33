@@ -11,13 +11,19 @@
   <link rel="shorcut icon" type="image/ico" href="./assets/favicon/favicon.ico">
 </head>
 <style id="css">
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   html{
     background: rgb(210, 234, 250);
   }
   body{
     font-family: monospace, Verdana, 'arial semibold';
-    max-width: 1200px;
-    width: 1000px;
+    max-width: 100vw;
+    width: 85%;
+    min-height: 100vh;
     margin: 20px auto;
     border:  1px solid #ccc;
     background: #fff;
@@ -26,105 +32,86 @@
   }
 
   h1 {
-    font-size: 3em;
-    text-decoration: overline 8px #ccc;
+    font-size: 4vw;
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 3vw;
   }
   h3 {
-    font-size: 1.7em;
+    font-size: 2.5vw;
+    margin-bottom: 1.2vw;
   }
+
   hr{
     width: 92%;
+    height: 0.2vw;
+    background:#330;
+    margin: 1.3vw auto;
   }
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   header img{
+    width: 25vw;
     transition: transform .3s ease;
   }
+  
+  section
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0 3vw;
+    font-size: 1.5vw;
+  }
 
+  section p,
+  section ul li, ol{
+  list-style: none;
+  }
+
+  section ul li img {
+    width: 1.7vw !important;
+    height: 1.5vw !important;
+  }
+
+  footer {
+    font-size: 1.8vw;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  footer blockquote a {
+    text-decoration: none;
+  }
+
+  footer blockquote a img {
+    width: 4vw;
+    transition: filter .4s ease;
+  }
+
+  button#btn{
+    background: #529;
+    border:0;
+    padding:8px 3px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+
+@media (hover:hover) {
   header img:hover{
     transform: scale(1.03);
     filter: drop-shadow(2px 2px 12px #ccc);
+    filter: brightness(1.1);
   }
-
-section
-{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding: 0 6%;
-  font-size: 1.3em;
-
-}
-
-section p,
-section ul li{
-  list-style: none;
-}
-
-section ul li img {
-  width: 25px;
-  height: 20px;
-}
-
-section ul.skills {
-  color: green;
-}
-
-footer {
-  font-size: 1.3em;
-}
-
-footer blockquote a {
-  text-decoration: none;
-}
-
-footer blockquote a img {
-  width: 40px;
-  height: 40px;
-  transition: filter .4s ease;
-}
-footer blockquote a img:hover {
+  footer blockquote a img:hover {
   filter: opacity(0.4) drop-shadow(1px 1px 14px gray);
-}
-
-button#btn{
-  background: #529;
-  border:0;
-  padding:8px 3px;
-  cursor: pointer;
-  color: #fff;
-  position: absolute;
-  left:0;
-  top:0;
-}
-
-@media screen and (min-width: 468px) {
-    body{
-      font-family: monospace, Verdana, 'arial semibold';
-      max-width: 992px;
-      width: 600px;
-      font-size: 0.8rem;
-      border:  1px solid #ccc;
-      background: #fff;
-      box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
-  }
-}
-
-@media screen and (min-width: 992px){
-    body{
-      font-family: monospace, Verdana, 'arial semibold';
-      max-width: 1200px;
-      width: 800px;
-      font-size: 0.8rem;
-      border:  1px solid #ccc;
-      background: #fff;
-      box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
   }
 }
   
@@ -200,20 +187,22 @@ button#btn{
       <p><strong>Social Media:</strong> 
       <br>
         <!-- facebook -->
-        <a href="https://www.facebook.com/profile.php?id=100009064421475" target="_blank"><img
+        <a href="https://www.facebook.com/profile.php?id=100009064421475" target="_blank"><img height="37"
             src="./assets/imgs/facebook.png"></a>
         <!-- twitter -->
-        <a href="https://twitter.com/MarcoContreraas" target="_blank"><img src="./assets/imgs/twitter.png"></a><br>
+        <a href="https://twitter.com/MarcoContreraas" target="_blank"><img height="37" src="./assets/imgs/twitter.png"></a>
+        <!-- linkedin -->
+        <a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"><img height="37" src="./assets/imgs/linkedin.png"></a><br>
         <strong>Send me a message:</strong><br>
         <!-- whatsapp -->
         <a href="https://api.whatsapp.com/send/?phone=56939131909&text=Hello+Marco%3A+I'm+testing+the+api+of+whatsapp&app_absent=0"
-          target="_blank"><img src="./assets/imgs/whatsapp.png" alt=""></a>
+          target="_blank"><img height="37" src="./assets/imgs/whatsapp.png" alt=""></a>
         <!-- gmail -->
-        <a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"><img src="./assets/imgs/gmail.png"
+        <a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"><img height="37" src="./assets/imgs/gmail.png"
             alt="gmail logo"></a><br>
         <!-- Repository -->
         <strong>Repositories:</strong><br>
-        <a href="https://github.com/EniDev911"><img src="./assets/imgs/github.png" alt="github logo"></a>
+        <a href="https://github.com/EniDev911" target="_blank"><img height="37" src="./assets/imgs/github.png" alt="github logo"></a>
       </p>
       <!-- Portfolio -->
       <a href="./portafolio.html" target="_blank">Go to portfolio</a>
