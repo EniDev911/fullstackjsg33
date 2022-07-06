@@ -34,7 +34,7 @@ $oscuro: rgb(37, 37, 41);
 $exito : rgb(17, 254, 25);
 $oliva: #729e2e;
 $amarillo : hsl(60, 98%, 52%);
-
+$vainilla : #F7E018;
 
 $theme-colors: (
   "pink": $rosado,
@@ -42,6 +42,7 @@ $theme-colors: (
   "success": $exito,
   "olive": $oliva,
   "yellow": $amarillo,
+  "vanilla": $vainilla,
   "light": $claro) !default;
 
 @import "bootstrap"
