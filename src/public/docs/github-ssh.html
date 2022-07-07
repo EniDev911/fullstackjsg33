@@ -324,7 +324,6 @@
 
     .markdown-body pre {
       margin-top: 0;
-
       border: 2p105olid #ccc;
       margin-bottom: 0;
     }
@@ -1042,272 +1041,7 @@
       }
     }
   </style>
-  <style>
-    /*GitHub*/
-    .highlight {
-      background-color: #fff;
-      color: #333333;
-    }
-
-    .highlight .hll {
-      background-color: #ffffcc;
-    }
-
-    .highlight .c {
-      color: #999988;
-      font-style: italic
-    }
-
-    .highlight .err {
-      color: #a61717;
-      background-color: #e3d2d2
-    }
-
-    .highlight .k {
-      font-weight: bold
-    }
-
-    .highlight .o {
-      font-weight: bold
-    }
-
-    .highlight .cm {
-      color: #999988;
-      font-style: italic
-    }
-
-    .highlight .cp {
-      color: #999999;
-      font-weight: bold
-    }
-
-    .highlight .c1 {
-      color: #999988;
-      font-style: italic
-    }
-
-    .highlight .cs {
-      color: #999999;
-      font-weight: bold;
-      font-style: italic
-    }
-
-    .highlight .gd {
-      color: #000000;
-      background-color: #ffdddd
-    }
-
-    .highlight .ge {
-      font-style: italic
-    }
-
-    .highlight .gr {
-      color: #aa0000
-    }
-
-    .highlight .gh {
-      color: #999999
-    }
-
-    .highlight .gi {
-      color: #000000;
-      background-color: #ddffdd
-    }
-
-    .highlight .go {
-      color: #888888
-    }
-
-    .highlight .gp {
-      color: #555555
-    }
-
-    .highlight .gs {
-      font-weight: bold
-    }
-
-    .highlight .gu {
-      color: #800080;
-      font-weight: bold
-    }
-
-    .highlight .gt {
-      color: #aa0000
-    }
-
-    .highlight .kc {
-      font-weight: bold
-    }
-
-    .highlight .kd {
-      font-weight: bold
-    }
-
-    .highlight .kn {
-      font-weight: bold
-    }
-
-    .highlight .kp {
-      font-weight: bold
-    }
-
-    .highlight .kr {
-      font-weight: bold
-    }
-
-    .highlight .kt {
-      color: #445588;
-      font-weight: bold
-    }
-
-    .highlight .m {
-      color: #009999
-    }
-
-    .highlight .s {
-      color: #dd1144
-    }
-
-    .highlight .n {
-      color: #333333
-    }
-
-    .highlight .na {
-      color: teal
-    }
-
-    .highlight .nb {
-      color: #0086b3
-    }
-
-    .highlight .nc {
-      color: #445588;
-      font-weight: bold
-    }
-
-    .highlight .no {
-      color: teal
-    }
-
-    .highlight .ni {
-      color: purple
-    }
-
-    .highlight .ne {
-      color: #990000;
-      font-weight: bold
-    }
-
-    .highlight .nf {
-      color: #990000;
-      font-weight: bold
-    }
-
-    .highlight .nn {
-      color: #555555
-    }
-
-    .highlight .nt {
-      color: navy
-    }
-
-    .highlight .nv {
-      color: teal
-    }
-
-    .highlight .ow {
-      font-weight: bold
-    }
-
-    .highlight .w {
-      color: #bbbbbb
-    }
-
-    .highlight .mf {
-      color: #009999
-    }
-
-    .highlight .mh {
-      color: #009999
-    }
-
-    .highlight .mi {
-      color: #009999
-    }
-
-    .highlight .mo {
-      color: #009999
-    }
-
-    .highlight .sb {
-      color: #dd1144
-    }
-
-    .highlight .sc {
-      color: #dd1144
-    }
-
-    .highlight .sd {
-      color: #dd1144
-    }
-
-    .highlight .s2 {
-      color: #dd1144
-    }
-
-    .highlight .se {
-      color: #dd1144
-    }
-
-    .highlight .sh {
-      color: #dd1144
-    }
-
-    .highlight .si {
-      color: #dd1144
-    }
-
-    .highlight .sx {
-      color: #dd1144
-    }
-
-    .highlight .sr {
-      color: #009926
-    }
-
-    .highlight .s1 {
-      color: #dd1144
-    }
-
-    .highlight .ss {
-      color: #990073
-    }
-
-    .highlight .bp {
-      color: #999999
-    }
-
-    .highlight .vc {
-      color: teal
-    }
-
-    .highlight .vg {
-      color: teal
-    }
-
-    .highlight .vi {
-      color: teal
-    }
-
-    .highlight .il {
-      color: #009999
-    }
-
-    .highlight .gc {
-      color: #999;
-      background-color: #EAF2F5
-    }
-  </style>
+  <link rel="stylesheet" href="../css/themes/overlook.css">
   <title>git-bash</title>
 </head>
 
@@ -1351,12 +1085,15 @@
     </div>
 
     <ul>
-      <li><strong>-t rsa</strong>: Aquí especificamos el algoritmo de encriptación que queremos en este caso el más
+      <li><strong>-t <code>rsa</code></strong>: Aquí especificamos el algoritmo de encriptación que queremos en este
+        caso el más
         común es <strong>rsa</strong></li>
-      <li><strong>-b 4096</strong>: Aquí especificamos que tan compleja es la llave.</li>
+      <li><strong>-b <code>4096</code></strong>: Aquí especificamos que tan compleja es la llave (eL tamaño 4096 se
+        considera seguro).</li>
       <li><strong>-C <code>"user@email.com"</code></strong>: Aquí colocamos el email con el que se va a configurar la
         llave.</li>
     </ul>
+    <hr>
     <p><strong>(2)</strong>: </p>
     <p>&#x1f977; Se le pedirá lo siguiente el destino donde se almacenará la nueva llave generada (Si solo presiona
       <kbd>Enter</kbd> por lo general se almacena en el directorio del usuario en una subcarpeta oculta):
@@ -1366,17 +1103,19 @@
 </pre>
     </div>
 
-    <p>&#x1f977; Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se creara en la dirección por
+    <p>&#x1f977; Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se creara en la ubicación por
       defecto. </p>
     <blockquote>
-      <p>En mi caso voy a darle un nombre descriptivo como <strong>/c/Users/&lt;myUser>/.ssh/gh_rsa</strong> (gh:
-        github). <strong>Esto es opcional</strong> </p>
+      <p>Podemos darle un nombre descriptivo como <strong>/c/Users/&lt;myUser>/.ssh/gh_rsa</strong> (gh:
+        github). <strong>(Esto es opcional)</strong> </p>
     </blockquote>
     <p>&#x1f977; Luego nos va pedir ingresar una frase de contraseña segura la cual creará una capa adicional de
-      seguridad. Evitará que cualquier persona que obtenga acceso a la pc use esa clave sin la frase de contraseña. Sin
+      seguridad. Evitará que cualquier persona que obtenga acceso a la computadora use esa clave sin la frase de
+      contraseña. Sin
       embargo, será necesario que proporcione la frase de contraseña cada vez que se utilice la clave SSH. </p>
     <blockquote>
-      <p>A modo personal prefiero no utilizar una frase de confirmación ya que configurarlo en mi equipo personal y para
+      <p>A modo personal prefiero no utilizar una frase de confirmación ya que una llave lo suelo utilizar en mi equipo
+        personal y para
         el ejemplo de github es más productivo sin la frase.</p>
     </blockquote>
     <div class="highlight">
@@ -1412,7 +1151,7 @@ Enter same passphrase again:
     <p>&#x1f977; Verifica que el ssh-agent se esté ejecutando. </p>
     <div class="highlight">
       <pre><span class="c1"># correr el ssh-agent en segundo plano</span>
-<span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
+<span class="gu">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
 &gt; Agent pid 1412
 </pre>
     </div>
