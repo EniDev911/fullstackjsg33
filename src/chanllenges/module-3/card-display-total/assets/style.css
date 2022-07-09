@@ -1,0 +1,142 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+      background: linear-gradient(rgba(250, 255, 250, 0.9), rgba(80, 35, 110, 1));
+      border-radius: 5px;
+      box-shadow: 2px 3px 11px #000;
+      width: 80%;
+      height: auto;
+      padding: 15px 0;
+    }
+
+    .product-img {
+      height: 60%;
+      margin: auto;
+      width: 80%;
+    }
+
+    .product-img img {
+      mix-blend-mode: multiply;
+      height: 100%;
+      width: 100%;
+    }
+
+    .product-details {
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.3));
+      padding: 5px 10px;
+
+    }
+
+    .product-details h5 {
+      font-size: 100%;
+      margin: 0 0 10px 0;
+    }
+
+    .product-details input {
+      height: 1.7rem;
+      margin: 10px 0;
+    }
+
+    .product-details button {
+      border: 0;
+      border-radius: 4px;
+      padding: 8px 15px;
+      margin: 10px 0;
+    }
+
+    .product-details .product-color {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-details .product-quantity input {
+      width: 100%;
+    }
+
+    .product-details input#color {
+      width: 60%;
+    }
+
+    .product-details .price {
+      color: #fff;
+    }
+
+    /* ====DETAILS==== */
+    .details {
+      width: 80%;
+      border: 1px dotted #000;
+      margin: 10px auto;
+      padding: 20px;
+      font-size: 1.1rem;
+    }
+
+    .details span.color {
+      background: #000;
+      height: 1em;
+      border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      -webkit-border-radius: 0.5em;
+      display: inline-block;
+      line-height: 1em;
+      width: 1em;
+    }
+
+    @media (min-width: 576px) {
+      body {
+        max-width: 992px;
+        width: 100%;
+        flex-direction: row;
+        margin: auto;
+      }
+
+      .card {
+        width: 60%;
+        height: auto;
+        margin: auto;
+      }
+
+      .details {
+        font-size: 1rem;
+        width: 30%;
+        border: 2px dotted #333;
+      }
+    }
+
+    @media (min-width: 992px) {
+      body {
+        max-width: 1200px;
+        width: 60%;
+      }
+    }
+
+    @media (hover: hover) {
+      .product-details button:hover {
+        cursor: pointer;
+        background: rgb(160, 10, 160);
+        color: #fff;
+
+      }
+
+      .product-details input#color-input:hover {
+        cursor: pointer;
+      }
+    }
