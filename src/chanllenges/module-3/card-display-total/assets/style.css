@@ -53,6 +53,10 @@
     .product-details input {
       height: 1.7rem;
       margin: 10px 0;
+      color: #fff;
+      border-radius: 4px;
+      border: 1px solid #f89;
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.40));
     }
 
     .product-details button {

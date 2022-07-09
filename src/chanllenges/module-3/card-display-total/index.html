@@ -45,9 +45,10 @@
       colorText.value = colorInput.value;
     })
 
-    let getDetails = () => {
+    let precio = document.querySelector("span.price").innerHTML;
+    precio = precio.replace(".", "");
+    const getDetails = () => {
       let cantidad = document.querySelector("#cantidad").value;
-      let precio = document.querySelector("span.price").innerHTML;
       document.querySelector("span.total").innerHTML = (parseInt(cantidad) * parseInt(precio)).toString();
       document.querySelector("span.quantity").innerHTML = cantidad;
       document.querySelector("span.color").style.background = colorText.value;
