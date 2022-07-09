@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img id="imagen-a-trabajar" src="https://placedog.net/500" alt="">
+  <button onclick="{
+						element = document.querySelector('#imagen-a-trabajar')
+						element.style.borderRadius='30%'
+					}"> Agregar Bordes </button>
+  <button onclick="{
+  				element = document.querySelector('#imagen-a-trabajar')
+					element.style.borderRadius='0'
+					}"> Quitar Bordes </button>

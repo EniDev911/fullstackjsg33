@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <!-- Meta properties-->
+  <meta property="og:title" content="Card Display Total" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="website description" />
+  <meta property="og:url" content="og-url" />
+  <meta property="og:image" content="og-url-image" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
+  <title>Card Display Total</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+      background: linear-gradient(rgba(250, 255, 250, 0.9), rgba(80, 35, 110, 1));
+      border-radius: 5px;
+      box-shadow: 2px 3px 11px #000;
+      width: 20rem;
+      padding: 15px 0;
+    }
+
+    .product-img {
+      height: 60%;
+      margin: auto;
+      width: 80%;
+    }
+
+    .product-img img {
+      mix-blend-mode: multiply;
+      height: 100%;
+      width: 100%;
+    }
+
+    .product-details {
+    	text-align: center;
+    	color: #fff;
+    	background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0,0,0.3));
+    	padding: 5px 10px;
+
+    }
+
+    .product-details h5 {
+    	font-size: 100%;
+    	margin: 0 0 10px 0;
+    }
+
+    .product-details input{
+    	height: 1.7rem;
+    	margin: 10px 0;
+    }
+
+    .product-details button{
+    	border: 0;
+    	border-radius: 4px;
+    	padding: 8px 15px;
+    	margin: 10px 0;
+    }
+
+    .product-details .product-color {
+    	display: flex;
+    	align-items: center;
+    	justify-content: space-between;
+    }
+
+    .product-details .product-quantity input{
+    	width: 100%;
+    }
+
+    .product-details input#color{
+    	width: 60%;
+    }
+
+    .product-details .price{
+    	color: #fff;
+    }
+    .details {
+    	border: 1px dotted #000;
+    	margin: 0 30px;
+    	padding: 20px;
+    }
+
+    .details span.color{
+    	background: #000;
+    	height: 1em;
+   		border-radius: 0.5em;
+  		-moz-border-radius: 0.5em;
+  		-webkit-border-radius: 0.5em;
+  		display: inline-block;
+	  	line-height: 1em;
+  		width: 1em; 
+    }
+
+    @media (hover: hover){
+    	.product-details button:hover {
+    		cursor: pointer;
+    		background: rgb(160, 10, 160);
+    		color: #fff;
+
+    	}
+
+    	.product-details input#color-input:hover{
+    		cursor: pointer;
+    	}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="product-img">
+      <img src="assets/gamer.png" alt="">
+    </div>
+    <div class="product-details">
+      <h5>Laptop Gamer HP i9</h5>
+      <div class="product-quantity">
+        <input type="number" id="cantidad" placeholder="cantidad">
+      </div>
+      <div class="product-color">
+        <input type="text" placeholder="color ej: red" id="color-text">
+        <input type="color" name="" id="color-input">
+      </div>
+      <p>Precio: <span class="price">740.000</span></p>
+      <button type="button" onclick="{getDetails()}">Calcular</button>
+    </div>
+  </div>
+  <div class="details">
+    <p>Total: $<span class="total"></span></p>
+    <p>Cantidad: <span class="quantity"></span></p>
+    <p>Color: <span class="color"></span></p>
+  </div>
+  <script>
+    let precio = document.querySelector("span.price").innerHTML;
+
+
+    let colorText = document.querySelector("#color-text");
+
+    let colorInput = document.querySelector("#color-input");
+
+    colorInput.addEventListener("change", () => {
+      colorText.value = colorInput.value;
+    })
+
+    let getDetails = () => {
+      let cantidad = document.querySelector("#cantidad").value;
+      document.querySelector("span.total").innerHTML = (parseInt(cantidad) * parseInt(precio)).toString();
+      document.querySelector("span.quantity").innerHTML = cantidad;
+      document.querySelector("span.color").style.background = colorText.value;
+    }
+  </script>
+</body>
+
+</html>

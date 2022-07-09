@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise</title>
+</head>
+<body>
+	
+	<p>El arrendador declara que es propietario del inmueble, ubicado en <span id="info1">&#60;_____&#62;</span>, departamento <span id="info2">&#60;_____&#62;</span>, de la comuna <span id="info3">&#60;_____&#62;</span></p>
+	<hr>
+	<button type="button" onclick="{fillField()}">llenar campos</button>
+</body>
+
+<script>
+
+	const fillField = () => {
+		direccion = prompt("Dirección: ", "Av. Suecia");
+		departamento = prompt("Departamento: ", "dpto: 43");
+		comuna = prompt("Comuna: ", "El Maule");
+
+		document.querySelector("#info1").innerHTML = direccion;
+		document.querySelector("#info2").innerHTML = departamento;
+		document.querySelector("#info3").innerHTML = comuna;
+	}
+
+</script>
+</html>
