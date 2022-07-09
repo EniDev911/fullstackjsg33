@@ -24,7 +24,7 @@
     <div class="product-details">
       <h5>Laptop Gamer HP i9</h5>
       <div class="product-quantity">
-        <input type="number" id="quantity" placeholder="cantidad" min="1" pattern="^[0-9]+">
+        <input type="number" id="quantity" placeholder="cantidad" min="1" pattern="^[0-9]+" focus="true">
       </div>
       <div class="product-color">
         <input type="text" placeholder="color ej: red" id="color-text">
@@ -41,28 +41,34 @@
   </div>
   <!-- SCRIPT -->
   <script>
+    let quantity = document.querySelector("#quantity");
     let colorText = document.querySelector("#color-text");
     let colorInput = document.querySelector("#color-input");
+    let price = document.querySelector("span.price").innerHTML;
 
     colorInput.addEventListener("change", () => {
       colorText.value = colorInput.value;
     })
 
-    let price = document.querySelector("span.price").innerHTML;
     price = price.replace(".", "");
 
     const getDetails = () => {
-      let quantity = document.querySelector("#quantity").value;
-      let total = document.querySelector("span.total");
 
       if (quantity <= 0) {
         total.innerHTML = "";
-        document.querySelector("span.quantity").innerHTML = "";
+        document.querySelector("span.quantity").innerHTML = ""
+        colorText.value = "";
+
         return
       }
-      total.innerHTML = (parseInt(quantity) * parseInt(price)).toString();
-      document.querySelector("span.quantity").innerHTML = quantity;
+      let = result = (parseInt(quantity.value) * parseInt(price)).toString();
+      result = result.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      document.querySelector("span.total").innerHTML = result;
+      document.querySelector("span.quantity").innerHTML = quantity.value;
       document.querySelector("span.color").style.background = colorText.value;
+      colorText.value = "";
+      quantity.value = "";
+      colorInput.value = "";
     }
   </script>
 </body>
