@@ -6,10 +6,8 @@
   <meta property="og:title" content="Card Display Total" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Challenge javascript, calculate the total g33-ADL" />
-  <meta property="og:url"
-    content="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-3/card-display-total/" />
-  <meta property="og:image"
-    content="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-3/card-display-total/assets/og-banner.png" />
+  <meta property="og:url" content="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-3/card-display-total/" />
+  <meta property="og:image" content="https://enidev911.github.io/fullstackjsg33/src/chanllenges/module-3/card-display-total/assets/og-banner.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
   <link rel="stylesheet" href="assets/style.css">
@@ -55,11 +53,12 @@
 
     const getDetails = () => {
 
-      if (quantity <= 0) {
-        total.innerHTML = "";
-        document.querySelector("span.quantity").innerHTML = ""
+      if (parseInt(quantity.value) <= 0 || quantity.value == "") {
+        document.querySelector("span.total").innerHTML = "0";
+        document.querySelector("span.quantity").innerHTML = "0";
         colorText.value = "";
-
+        colorInput.value = "";
+        quantity.value = "";
         return
       }
       let = result = (parseInt(quantity.value) * parseInt(price)).toString();
