@@ -123,6 +123,10 @@
         width: 30%;
         border: 2px dotted #333;
       }
+
+      .product-details input#color-text {
+        width: 80%;
+      }
     }
 
     @media (min-width: 992px) {
@@ -130,6 +134,7 @@
         max-width: 1200px;
         width: 60%;
       }
+
     }
 
     @media (hover: hover) {
