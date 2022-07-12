@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <!-- Meta properties-->
+  <meta property="og:title" content="Conditions JS" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="website description" />
+  <meta property="og:url" content="og-url" />
+  <meta property="og:image" content="og-url-image" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
+  <!-- style -->
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Conditions JS</title>
+</head>
+
+<body>
+  <h1><span>Desafío 2:</span> Condiciones JavaScript</h1>
+  <div class="container">
+    <p><span>Parte 1</span>: Da clic sobre la imagen</p>
+    <img src="https://raw.githubusercontent.com/Enidev911/assets/main/png/logo/logo_sin_bg.png" alt="logo"><br><br>
+    <a href="part-two-stickers.html">Ir a la parte 2</a>
+  </div>
+</body>
+<!-- Script -->
+<script>
+  const logo = document.querySelector("img[alt='logo']");
+
+  logo.addEventListener("click", () => {
+    if (logo.style.border != "") {
+      logo.style.border = "";
+      return;
+    }
+    logo.style.padding = "2% 3% 3% 3%";
+    logo.style.border = "2px solid red";
+  })
+</script>
+
+</html>
