@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <!-- Meta properties-->
+  <meta property="og:title" content="Stickers" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="website description" />
+  <meta property="og:url" content="og-url" />
+  <meta property="og:image" content="og-url-image" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Stickers</title>
+</head>
+
+<body>
+  <h1><span>Desafío 2:</span> Condiciones JavaScript</h1>
+  <p><span>Parte 2</span>: Da clic sobre la imagen</p>
+  <div class="container">
+    <div class="flex">
+      <img class="stickers" src="assets/logo_sticker.png" alt="logo stickers">
+      <input type="number" min="0" max="10">
+    </div>
+    <div class="flex">
+      <img class="stickers" src="assets/g33_sticker.png" alt="logo stickers">
+      <input type="number" min="0" max="10">
+    </div>
+    <div class="flex">
+      <img class="stickers" src="assets/ninja_sticker.png" alt="logo stickers">
+      <input type="number" min="0" max="10">
+    </div>
+  </div>
+  <span id="message"></span>
+  <a href="#" onclick="{validate()}">Verificar</a>
+  <script>
+    const message = document.querySelector("#message");
+    const values = document.querySelectorAll("input");
+
+    const validate = () => {
+      let total = 0;
+
+      values.forEach((value) => {
+        total += parseInt(value.value);
+      })
+
+      if (total <= 10) {
+        message.style.color = "green";
+        message.innerHTML = `<strong>Disponible</strong>: llevas ${total} sticker`
+      }
+
+    }
+  </script>
+</body>
+</body>
+
+</html>
