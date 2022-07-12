@@ -14,67 +14,42 @@
   <title>Stickers</title>
 </head>
 
-
 <body>
+  <h1><span>Desafío 2:</span> Condiciones JavaScript</h1>
+  <p><span>Parte 2</span>: Da clic sobre la imagen</p>
   <div class="container">
-    <h1>Condiciones JavaScript</h1>
-
     <div class="flex">
       <img class="stickers" src="assets/logo_sticker.png" alt="logo stickers">
-      <div class="wrapper-counter">
-        <span class="minus">-</span>
-        <span class="num">01</span>
-        <span class="plus">+</span>
-      </div>
-      <span class="stick">EniDev911</span>
+      <input type="number" min="0" max="10">
     </div>
     <div class="flex">
       <img class="stickers" src="assets/g33_sticker.png" alt="logo stickers">
-      <div class="wrapper-counter">
-        <span class="minus">-</span>
-        <span class="num">01</span>
-        <span class="plus">+</span>
-      </div>
       <input type="number" min="0" max="10">
-
-      <span class="stick">G-33 ADL</span>
     </div>
     <div class="flex">
       <img class="stickers" src="assets/ninja_sticker.png" alt="logo stickers">
       <input type="number" min="0" max="10">
-      <span class="stick">Ninja Code</span>
     </div>
-    <span id="message"></span>
-    <a href="#" onclick="{validate()}">Verificar</a>
   </div>
+  <span id="message"></span>
+  <a href="#" onclick="{validate()}">Verificar</a>
   <script>
-
-    const plus = document.querySelector(".plus"),
-      minus = document.querySelector(".minus"),
-      num = document.querySelector(".num");
+    const message = document.querySelector("#message");
     const values = document.querySelectorAll("input");
 
-
-    plus.addEventListener("click", () => {
-      aux
-    });
-
-    const message = document.querySelector("#message");
-    // const values = document.querySelectorAll("input");
-
     const validate = () => {
-      let total = 0;
+        let total = 0;
 
-      values.forEach((value) => {
-        total += parseInt(value.value);
-      })
+        values.forEach((value) => {
+          total += parseInt(value.value);
+        })
 
-      if (total <= 10) {
-        message.style.color = "green";
-        message.innerHTML = `<strong>Disponible</strong>: llevas ${total} sticker`
-      }
+        if (total <= 10) {
+          message.style.color = "green";
+          message.innerHTML = `<strong>Disponible</strong>: llevas ${total} sticker`
 
-    }
+
+        }
   </script>
 </body>
 </body>
