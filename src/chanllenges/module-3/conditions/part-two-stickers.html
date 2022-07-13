@@ -15,41 +15,101 @@
 </head>
 
 <body>
-  <h1><span>Desafío 2:</span> Condiciones JavaScript</h1>
-  <p><span>Parte 2</span>: Da clic sobre la imagen</p>
   <div class="container">
+    <h1>Condiciones JavaScript</h1>
     <div class="flex">
       <img class="stickers" src="assets/logo_sticker.png" alt="logo stickers">
-      <input type="number" min="0" max="10">
+      <div class="wrapper-counter">
+        <span class="minus">-</span>
+        <input type="number" min="0" max="10" value="0" disabled>
+        <span class="plus">+</span>
+      </div>
+      <span class="stick">EniDev911</span>
     </div>
     <div class="flex">
       <img class="stickers" src="assets/g33_sticker.png" alt="logo stickers">
-      <input type="number" min="0" max="10">
+      <div class="wrapper-counter">
+        <span class="minus">-</span>
+        <input type="number" min="0" max="10" value="0" disabled>
+        <span class="plus">+</span>
+      </div>
+      <span class="stick">G-33 ADL</span>
     </div>
     <div class="flex">
       <img class="stickers" src="assets/ninja_sticker.png" alt="logo stickers">
-      <input type="number" min="0" max="10">
+      <div class="wrapper-counter">
+        <span class="minus">-</span>
+        <input type="number" min="0" max="10" value="0" disabled>
+        <span class="plus">+</span>
+      </div>
+      <span class="stick">Ninja Code</span>
     </div>
+    <span id="message"></span>
+    <a onclick="{validate()}">Verificar</a>
   </div>
-  <span id="message"></span>
-  <a href="#" onclick="{validate()}">Verificar</a>
   <script>
-    const message = document.querySelector("#message");
+    const plus = document.querySelectorAll(".plus"),
+      minus = document.querySelectorAll(".minus"),
+      num = document.querySelector(".num");
     const values = document.querySelectorAll("input");
 
-    const validate = () => {
-        let total = 0;
+    const message = document.querySelector("#message");
 
-        values.forEach((value) => {
-          total += parseInt(value.value);
-        })
+    let aux1 = 0,
+      aux2 = 0,
+      aux3 = 0;
 
-        if (total <= 10) {
-          message.style.color = "green";
-          message.innerHTML = `<strong>Disponible</strong>: llevas ${total} sticker`
+    // increment counter
+    plus.forEach((ele, index) => {
 
+      ele.addEventListener("click", () => {
 
+        if (index === 0 && values[0].value < 10) {
+          aux1++;
+          values[0].value = aux1;
+        } else if (index === 1 && values[1].value < 10) {
+          aux2++;
+          values[1].value = aux2;
+        } else if (values[2].value < 10) {
+          aux3++;
+          values[2].value = aux3;
         }
+
+      });
+    })
+
+    // decrement counter
+    minus.forEach((ele, index) => {
+
+      ele.addEventListener("click", () => {
+
+        if (index === 0 && values[0].value > 0) {
+          aux1--;
+          values[0].value = aux1;
+        } else if (index === 1 && values[1].value > 0) {
+          aux2--;
+          values[1].value = aux2;
+        } else if (values[2].value > 0) {
+          aux3--;
+          values[2].value = aux3;
+        }
+      });
+    })
+    // Validate
+    const validate = () => {
+      let total = 0;
+      values.forEach((value) => {
+        total += parseInt(value.value);
+      })
+      if (total <= 10) {
+        message.style.color = "green";
+        message.innerHTML = `<strong>Disponible</strong>: llevas ${total} sticker`
+      } else {
+        message.style.color = "red";
+        message.innerHTML = `<strong>llevas demasiados stickers</strong>`
+      }
+
+    }
   </script>
 </body>
 </body>
