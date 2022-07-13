@@ -57,7 +57,7 @@ p span {
   justify-content: space-around;
   align-items: center;
   /*border: 1px solid #f3c;*/
-  background: #222;
+  background: linear-gradient(#f0a0f5, #9198e5);
   padding: 3%;
 }
 
@@ -87,7 +87,6 @@ img.stickers {
   border: 3px dashed #fff;
   border-radius: 1px;
   background: #000;
-  /* background: transparent; */
 }
 
 
@@ -97,6 +96,7 @@ img.stickers {
   padding: 3px 45px;
   transform: rotate(-40deg);
   font-family: 'Stick', sans-serif;
+  font-size: 1.3rem;
   position: absolute;
   top: 23px;
   left: -33px;
@@ -174,7 +174,7 @@ a {
   border-radius: 5px;
   background: #000;
   color: #fff;
-  width: 100px;
+  width: auto;
 }
 
 @media (min-width:576px) {
