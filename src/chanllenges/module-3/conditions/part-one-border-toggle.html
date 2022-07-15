@@ -11,15 +11,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
   <!-- style -->
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/part-one.css">
   <title>Conditions JS</title>
 </head>
 
 <body>
-  <h1><span>Desafío 2:</span> Condiciones JavaScript</h1>
   <div class="container">
-    <p><span>Parte 1</span>: Da clic sobre la imagen</p>
-    <img src="https://raw.githubusercontent.com/Enidev911/assets/main/png/logo/logo_sin_bg.png" alt="logo"><br><br>
+    <h1>Condiciones JavaScript</h1>
+    <p><span>Parte 1</span>Da clic sobre la imagen</p>
+    <img src="https://raw.githubusercontent.com/Enidev911/assets/main/png/logo/logo_sin_bg.png" alt="logo">
     <a href="part-two-stickers.html">Ir a la parte 2</a>
   </div>
 </body>
@@ -30,10 +30,10 @@
   logo.addEventListener("click", () => {
     if (logo.style.border != "") {
       logo.style.border = "";
-      return;
+    } else {
+      logo.style.border = "2px solid red";
     }
-    logo.style.padding = "2% 3% 3% 3%";
-    logo.style.border = "2px solid red";
+
   })
 </script>
 

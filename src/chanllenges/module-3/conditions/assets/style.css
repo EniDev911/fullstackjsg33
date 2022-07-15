@@ -15,6 +15,7 @@ body {
   min-height: 100vh;
   font-size: 1.1rem;
   width: 100%;
+  background: linear-gradient(to top, #ccc, #444);
 }
 
 h1 {
@@ -58,12 +59,7 @@ p span {
   align-items: center;
   /*border: 1px solid #f3c;*/
   background: linear-gradient(#f0a0f5, #9198e5);
-  padding: 3%;
-}
-
-img[alt='logo'] {
-  border-radius: 50%;
-  width: 30%;
+  padding: 2.5rem;
 }
 
 .flex {
@@ -80,19 +76,18 @@ img[alt='logo'] {
 
 img.stickers {
   width: 100%;
-  height: 60%;
-  margin: auto;
+  height: 400px;
   /*filter: drop-shadow(1px 1px 20px rgb(180, 90, 190));*/
   filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
   border: 3px dashed #fff;
   border-radius: 1px;
   background: #000;
+  padding: 2rem;
 }
 
 
 .flex span.stick {
   background: rgb(180, 40, 120);
-  border-radius: 2px;
   padding: 3px 45px;
   transform: rotate(-40deg);
   font-family: 'Stick', sans-serif;
@@ -105,24 +100,24 @@ img.stickers {
 }
 
 
-
+/*==== COUNTER =======*/
 .wrapper-counter {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 10px;
   background: #fff;
-  width: auto;
+  width: 300px;
   height: 20%;
-  margin: 5% auto;
+  margin: 2rem auto;
   box-shadow: 2px 2px 8px #000;
 }
 
 
 input[type="number"]:disabled {
-  background: #f5c;
-  color: #000;
+  background: rgb(120, 40, 180);
+  color: #fff;
   padding: 1rem;
   border: none;
   font-size: 2rem;
@@ -145,8 +140,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-family: sans-serif;
   font-size: 2rem;
   font-weight: bold;
-  padding: 1rem;
-  width: 4rem;
+  /*padding: 1rem;*/
 }
 
 .wrapper-counter span.num {
@@ -184,15 +178,6 @@ a {
     align-items: center;
   }
 
-  h1 {
-    flex-basis: 100%;
-  }
-
-  img.stickers {
-    justify-self: flex-start;
-    align-self: flex-start;
-  }
-
   a {
     flex-basis: 100%;
   }
@@ -204,9 +189,18 @@ a {
     cursor: pointer;
   }
 
+  /* COUNTER */
   .wrapper-counter span:nth-child(1),
   .wrapper-counter span:nth-child(3) {
     cursor: pointer;
+  }
+
+  .wrapper-counter span.plus:hover {
+    background: #ccc;
+  }
+
+  .wrapper-counter span.minus:hover {
+    background: #ccc;
   }
 
   a:hover {

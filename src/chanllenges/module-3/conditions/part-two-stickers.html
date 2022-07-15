@@ -10,13 +10,218 @@
   <meta property="og:image" content="og-url-image" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrik-to-fit=no">
-  <link rel="stylesheet" href="assets/style.css">
+  <!-- <link rel="stylesheet" href="assets/style.css"> -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif, monospace;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  width: 100%;
+  background: linear-gradient(to top, #ccc, #444);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /*border: 1px solid #f3c;*/
+  background: linear-gradient(#f0a0f5, #9198e5);
+  padding: 2.5rem;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 1rem;
+  filter: drop-shadow(2px 2px 2px #222);
+  font-style: italic;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+p span {
+  background: rgb(30, 20, 50);
+  color: #fff;
+  border-radius: 4px;
+  padding: 3px 15px;
+  transform: rotate(-15deg);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  margin: auto;
+  height: 100%;
+  /* border: 2px solid #f4c; */
+  position: relative;
+  overflow: hidden;
+}
+
+img.stickers {
+  width: 100%;
+  height: 400px;
+  /*filter: drop-shadow(1px 1px 20px rgb(180, 90, 190));*/
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+  border: 3px dashed #fff;
+  border-radius: 1px;
+  background: #000;
+  padding: 2rem;
+}
+
+
+.flex span.stick {
+  background: rgb(180, 40, 120);
+  padding: 3px 45px;
+  transform: rotate(-40deg);
+  font-family: 'Stick', sans-serif;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 23px;
+  left: -33px;
+  color: #fff;
+  box-shadow: 2px 2px 8px #000;
+}
+
+
+/*==== COUNTER =======*/
+.wrapper-counter {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  background: #fff;
+  width: 300px;
+  height: 20%;
+  margin: 2rem auto;
+  box-shadow: 2px 2px 8px #000;
+}
+
+
+input[type="number"]:disabled {
+  background: rgb(120, 40, 180);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  font-size: 2rem;
+  text-align: center;
+  width: 6rem;
+  -moz-appearance: textfield;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.wrapper-counter span {
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  /*padding: 1rem;*/
+}
+
+.wrapper-counter span.num {
+  font-size: 1.6rem;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+
+}
+
+span#message {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+a {
+  display: block;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  width: auto;
+}
+
+/*@media (min-width:576px) {
+.container {
+flex-flow: row wrap;
+justify-content: center;
+align-items: center;
+}
+}*/
+
+@media (hover: hover) {
+  img[alt='logo'] {
+    cursor: pointer;
+  }
+
+  /* COUNTER */
+  .wrapper-counter span:nth-child(1),
+  .wrapper-counter span:nth-child(3) {
+    cursor: pointer;
+  }
+
+  .wrapper-counter span.plus:hover {
+    background: #ccc;
+  }
+
+  .wrapper-counter span.minus:hover {
+    background: #ccc;
+  }
+
+  a:hover {
+    background: #666;
+    cursor: pointer;
+  }
+
+}
+  </style>
   <title>Stickers</title>
 </head>
 
 <body>
   <div class="container">
     <h1>Condiciones JavaScript</h1>
+    <p><span>Parte 2</span> Lleva Stickers</p>
     <div class="flex">
       <img class="stickers" src="assets/logo_sticker.png" alt="logo stickers">
       <div class="wrapper-counter">
@@ -46,14 +251,14 @@
     </div>
     <span id="message"></span>
     <a onclick="{validate()}">Verificar</a>
+    <a href="part-three-password.html">Ir a la parte 3</a>
   </div>
   <script>
     const plus = document.querySelectorAll(".plus"),
       minus = document.querySelectorAll(".minus"),
-      num = document.querySelector(".num");
-    const values = document.querySelectorAll("input");
-
-    const message = document.querySelector("#message");
+      num = document.querySelector(".num"),
+      values = document.querySelectorAll("input"),
+      message = document.querySelector("#message");
 
     let aux1 = 0,
       aux2 = 0,
@@ -70,7 +275,7 @@
         } else if (index === 1 && values[1].value < 10) {
           aux2++;
           values[1].value = aux2;
-        } else if (values[2].value < 10) {
+        } else if (index === 2 && values[2].value < 10) {
           aux3++;
           values[2].value = aux3;
         }
@@ -89,7 +294,7 @@
         } else if (index === 1 && values[1].value > 0) {
           aux2--;
           values[1].value = aux2;
-        } else if (values[2].value > 0) {
+        } else if (index === 2 && values[2].value > 0) {
           aux3--;
           values[2].value = aux3;
         }
