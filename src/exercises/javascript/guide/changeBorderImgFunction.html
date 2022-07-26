@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bordes {
+      border: 2px dashed red;
+    }
+  </style>
+</head>
+
+<body>
+  <img id="img-1" src="http://placekitten.com/g/300/300" class="" alt="" onclick="agregarBordes('img-1')">
+  <img id="img-2" src="http://placekitten.com/g/300/300" class="" alt="" onclick="agregarBordes('img-2')">
+  <img id="img-3" src="http://placekitten.com/g/300/300" class="" alt="" onclick="agregarBordes('img-3')">
+  <script>
+    function agregarBordes(id) {
+      element = document.querySelector("#" + id);
+      // element.style.border = "2px dashed red";
+      element.classList.toggle("bordes");
+    }
+  </script>
+</body>
+
+</html>

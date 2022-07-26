@@ -1,0 +1,9 @@
+<body>
+  <div id="prueba">Click aqui</div>
+  <script>
+    document.getElementById("prueba").addEventListener("click", function(event) {
+      // presentar la cuenta de clicks realizados sobre el elemento con id "prueba"
+      event.target.innerHTML = "Conteo de Clicks: " + event.detail;
+    }, false);
+  </script>
+</body>
