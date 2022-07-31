@@ -1,0 +1,54 @@
+*{
+    text-align: center;
+}
+
+body{
+    background: #4e4d4d;
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    width:100vw;
+}
+
+nav{
+    padding: 20px 15%; 
+    border-right: solid 1px white;
+    height:100vh
+}
+
+nav section {
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+
+}
+nav div{
+    margin-bottom: 20px;
+}
+
+
+/* Propiedades */
+
+.propiedades {
+    padding: 0px 5%;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px
+}
+.propiedad{ 
+    margin: auto;
+    background: rgba(255, 255, 255, 0.068);
+    box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.39);
+}
+.propiedad .img{
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+.propiedad section{
+    padding: 10px 20px;
+}
+
+.propiedad section p{
+    margin: 0px
+}
