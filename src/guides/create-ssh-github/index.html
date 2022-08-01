@@ -26,7 +26,8 @@
 <body>
     <article class="markdown-body">
         <h2 align="center">
-            <img src="https://img.shields.io/badge/github-%23121011.svg?logo=github&logoColor=white" height="50" />
+            <img class="logo" src="https://img.shields.io/badge/github-%23121011.svg?logo=github&logoColor=white"
+                height="50" />
             <br><br>
             CONFIGURAR LLAVE SSH USANDO GITBASH
         </h2>
@@ -34,14 +35,15 @@
         <p><br>
             <a name="content"></a>
         </p>
-        <h2 id="contenido">Contenido<a class="headerlink" href="#contenido"></a></h2>
+        <h2 id="contenido">Contenido<a href="#contenido"></a></h2>
         <p>&#x1F4CD; <a href="#ssh-keygen">Generar una nueva llave</a><br />
             &#x1F4CD; <a href="#add-ssh-agent">Agregar la nueva llave al servicio de ssh-agent</a><br />
             &#x1F4CD; <a href="#add-ssh-github">Registrar la llave pública a tu cuenta de GitHub</a><br />
             &#x1F4CD; <a href="#test-connection">Probar conexión</a></p>
         <hr />
-        <h3 id="generar-par-de-clave-publica-y-privada"><a name="ssh-keygen"></a>Generar par de clave pública y privada
-            &#9875;<a href="#generar-par-de-clave-publica-y-privada"></a></h3>
+        <h3 id="generar-par-de-clave-publica-y-privada"><a name="ssh-keygen"></a>Generar par de clave pública y
+            privada <a href="#generar-par-de-clave-publica-y-privada"><i class="fa-solid fa-anchor"></i></a></i>
+        </h3>
         <p>Para generar los pares de claves haremos uso de la herramienta <strong>ssh-keygen</strong>. Este
             programa está disponible por medio de la línea de comandos para Linux, MacOSX y en <a
                 href="https://gitforwindows.org/"><strong>Git Bash</strong></a> en Windows.</p>
@@ -122,8 +124,8 @@
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
-        <h3 id="agregar-al-ssh-agent"><a name="add-ssh-agent"></a>Agregar llave al SSH-Agent &#9875;<a
-                href="#agregar-al-ssh-agent"></a></h3>
+        <h3 id="agregar-al-ssh-agent"><a name="add-ssh-agent"></a>Agregar llave al SSH-Agent <a
+                href="#agregar-al-ssh-agent"><i class="fa-solid fa-anchor"></i></a></h3>
         <p>El agente ssh (<a href="https://es.wikipedia.org/wiki/SSH-Agent">ssh-agent</a>) es un programa
             auxiliar que realiza un seguimiento de las claves de identidad del usuario y sus frases de contraseñas. El
             agente
@@ -148,7 +150,7 @@
             evaluación en la línea de
             comandos.</p>
         <p align="center">
-            <img src="assets/eval-ssh-agent.png" alt="ssh-agent" width="650"><br>
+            <img src="assets/eval-ssh-agent.png" alt="ssh-agent"><br>
             <b>Captura:</b> ejecutar comando eval (el <a href="https://es.wikipedia.org/wiki/Identificador_de_proceso"
                 target="_blank">pid</a> es diferente para cada computadora)
         </p>
@@ -175,7 +177,8 @@
         </p>
         <hr />
         <h3 id="agregar-la-clave-publica-a-tu-cuenta-de-github"><a name="add-ssh-github"></a>Registrar la llave pública
-            a GitHub &#9875;<a href="#agregar-la-clave-publica-a-tu-cuenta-de-github"></a></h3>
+            a GitHub <a href="#agregar-la-clave-publica-a-tu-cuenta-de-github"><i class="fa-solid fa-anchor"></i></a>
+        </h3>
         <p>En <strong>Git Bash</strong> podemos usar la herramienta
             <strong><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/clip"
                     target="_blank">clip</a></strong> de Windows
@@ -220,7 +223,7 @@
             <strong>Add SSH key</strong>.
         </p>
         <p align="center">
-            <img src="assets/new-ssh-key.png" alt="add-key" width="850">
+            <img src="assets/new-ssh-key.png" alt="add-key">
         </p>
 
         <ul>
@@ -234,7 +237,7 @@
             </li>
         </ul>
         <p align="center">
-            <img src="assets/new-ssh-key-add.png" alt="add-key" width="850">
+            <img src="assets/new-ssh-key-add.png" alt="add-key">
         </p>
         <p><img align="absmiddle" alt=":octocat:" class="gemoji" height="20px"
                 src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" width="20px"
@@ -250,7 +253,7 @@
         </p>
 
         <p align="center">
-            <img src="assets/new-ssh-key-added.png" alt="add-key" width="800"><br>
+            <img src="assets/new-ssh-key-added.png" alt="add-key"><br>
             <b>Captura:</b> aquí se almacenan las llaves creadas.
         </p>
 
@@ -258,8 +261,9 @@
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
-        <h3 id="probar-la-conexion-ssh-a-github"><a name="test-connection"></a>Probar la conexión SSH a GitHub &#9875;<a
-                href="#probar-la-conexion-ssh-a-github"></a></h3>
+        <h3 id="probar-la-conexion-ssh-a-github"><a name="test-connection"></a>Probar la conexión SSH a GitHub <a
+                href="#probar-la-conexion-ssh-a-github"><i class="fa-solid fa-anchor"></i>
+            </a></h3>
         <p><i class="fa-solid fa-terminal"></i> Ahora podemos probar nuestra conexión a través de SSH a GitHub. </p>
         <div class="highlight">
             <pre><span class="gu">ssh</span> -T git@github.com <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh -T git@github.com')}"></i>
@@ -267,7 +271,7 @@
         </div>
 
         <p align="center">
-            <img src="assets/test-connection.png" alt="validate" width="850"><br>
+            <img src="assets/test-connection.png" alt="validate"><br>
             <b>Captura:</b> Validar la conexión con github vía ssh.
         </p>
 
@@ -278,7 +282,6 @@
         </p>
         <hr />
         <p align="center">
-            Mis redes son:<br>
             <!-- facebook -->
             <a href="https://www.facebook.com/profile.php?id=100009064421475"><img class="logo"
                     src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
