@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articulos</title>
+  <style>
+    .articulo {
+      width: 250px;
+      padding: 10px;
+      background: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="articulos"></section>
+  <script>
+    const articulosSection = document.querySelector(".articulos")
+    const articulo = {
+      id: 31,
+      titulo: "Autos nuevos en Chile",
+      subtitulo: "El mercado de autos se normaliza",
+      descripcion: `No es novedad que los precios de los autos usados se han disparado debido
+                          a la falta en stock de autos nuevos, sin embargo
+                          puede que esto esté llegando a su fin...`
+    };
+
+    articulosSection.innerHTML = `
+          <article class="articulo">
+          <h4>${articulo.titulo}</h4>
+          <h6>${articulo.subtitulo}</h6>
+          <p>${articulo.descripcion}</p>
+          <a href="/articulo/${articulo.id}"><button>Ver más</button></a>`
+  </script>
+</body>
+
+</html>
