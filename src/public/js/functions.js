@@ -1,6 +1,7 @@
-const module_1 = document.getElementById("module-1");
-const module_2 = document.getElementById("module-2");
-const module_3 = document.getElementById("module-3");
+const module_1 = document.getElementById("module-1"),
+  module_2 = document.getElementById("module-2"),
+  module_3 = document.getElementById("module-3"),
+  btns_clone = document.querySelectorAll(".fa-clone");
 
 /**
  * 
@@ -41,8 +42,23 @@ function copy_clipboard(text) {
 
   document.execCommand('copy');
   document.body.removeChild(areaText);
+
   if (selection) {
     document.getSelection().removeAllRanges();
     document.getSelection().addRange(selection);
   }
 }
+
+btns_clone.forEach(btn => {
+  btn.classList.add("fa-regular");
+  btn.classList.remove("fa-solid");
+
+  btn.addEventListener("click", () => {
+    btn.classList.add("fa-solid");
+    btn.classList.remove("fa-regular");
+    setTimeout(() => {
+      btn.classList.add("fa-regular")
+      btn.classList.remove("fa-solid");
+    }, 3000)
+  })
+})
