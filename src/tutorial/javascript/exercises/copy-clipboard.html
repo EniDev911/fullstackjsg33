@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="contenido">
+    <button class="" id="copiar">Copiar</button>
+    <script>
+        function copyClipboard(text) {
+            if (typeof (text) != 'string') {
+                throw TypeError("The argument must be a string")
+            }
+            let areaText = document.createElement('textarea');
+            areaText.value = text
+            areaText.setAttribute('readonly', '');
+            areaText.style.position = 'absolute';
+            areaText.style.left = '-9999px';
+            document.body.appendChild(areaText);
+            let selection = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+
+            areaText.select();
+
+            document.execCommand('copy');
+            document.body.removeChild(areaText);
+
+            if (selection) {
+                document.getSelection().removeAllRanges();
+                document.getSelection().addRange(selection);
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById('copiar').addEventListener('click', () => {
+                let contenido = document.getElementById('contenido').value;
+                copyClipboard("HELLO")
+
+            })
+        }
+    </script>
+</body>
+
+</html>

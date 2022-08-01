@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Media */
+        @media only screen and (min-width: 480px) {
+            .markdown-body {
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .markdown-body {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../public/css/docs.css">
+    <link rel="stylesheet" href="../../public/css/themes/overlook.css">
+    <title>git-bash</title>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <h2 align="center">
+            <img src="https://img.shields.io/badge/github-%23121011.svg?logo=github&logoColor=white" height="50" />
+            <br><br>
+            CONFIGURAR LLAVE SSH USANDO GITBASH
+        </h2>
+
+        <p><br>
+            <a name="content"></a>
+        </p>
+        <h2 id="contenido">Contenido<a class="headerlink" href="#contenido"></a></h2>
+        <p>&#x1F4CD; <a href="#ssh-keygen">Generar una nueva llave</a><br />
+            &#x1F4CD; <a href="#add-ssh-agent">Agregar la nueva llave al servicio de ssh-agent</a><br />
+            &#x1F4CD; <a href="#add-ssh-github">Registrar la llave pública a tu cuenta de GitHub</a><br />
+            &#x1F4CD; <a href="#test-connection">Probar conexión</a></p>
+        <hr />
+        <h3 id="generar-par-de-clave-publica-y-privada"><a name="ssh-keygen"></a>Generar par de clave pública y privada
+            &#9875;<a href="#generar-par-de-clave-publica-y-privada"></a></h3>
+        <p>Para generar los pares de claves haremos uso de la herramienta <strong>ssh-keygen</strong>. Este
+            programa está disponible por medio de la línea de comandos para Linux, MacOSX y en <a
+                href="https://gitforwindows.org/"><strong>Git Bash</strong></a> en Windows.</p>
+        <p>Para esta guía voy a utilizar el programa <strong>Git Bash.</strong></p>
+        <p>En la mayoría de los casos cuando hemos instalado <strong>Git Bash</strong>, se nos habilitará la opción en
+            el
+            menú
+            contextual del clic derecho para abrirlo: </p>
+        <p align="center">
+            <img src="assets/open-git-bash.png" />
+        </p>
+
+        <hr />
+        <p><strong>1. Crear nueva clave</strong></p>
+        <p><i class="fa-solid fa-terminal"></i>
+            Comience creando una nueva clave, usando su correo electrónico como
+            etiqueta en la terminal
+        </p>
+        <div class="highlight">
+            <pre>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;user@email.com&quot; <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh-keygen -t rsa -b 4096 -C user@email.com', '.message')}"></i></span> <span id="message-"></span>
+</pre>
+        </div>
+        <p><strong>Explicación</strong>: </p>
+        <ul>
+            <li><strong>-t rsa</strong>: Especifica el algoritmo de encriptación en este
+                caso el más
+                común es <strong><a href="https://es.wikipedia.org/wiki/RSA" target="_blank">rsa</a></strong>.</li>
+            <li><strong>-b 4096</strong>: Especifica que tan compleja es la llave (eL tamaño 4096 se
+                considera seguro).</li>
+            <li><strong>-C "user@email.com"</strong>: Especifica el email con el que se va a configurar la
+                llave.</li>
+        </ul>
+        <hr>
+        <p><i class="fa-solid fa-terminal"></i> Se le pedirá donde almacenar la nueva llave
+            generada (Si solo presiona
+            <kbd>Enter</kbd> por lo general se almacena en el directorio del usuario en una subcarpeta oculta):
+        </p>
+        <div class="highlight">
+            <pre>Enter file in which to save the key (/c/Users/&lt;user&gt;/.ssh/id_rsa):
+</pre>
+        </div>
+
+        <p><i class="fa-solid fa-terminal"></i> Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se
+            creara en la ubicación por
+            defecto. </p>
+        <blockquote>
+            <p>Podemos darle un nombre descriptivo como <strong>/c/Users/&lt;myUser>/.ssh/gh_rsa</strong> (gh:
+                github). <strong>(Esto es opcional)</strong> </p>
+        </blockquote>
+        <p><i class="fa-solid fa-terminal"></i> Luego nos va pedir ingresar una frase de contraseña segura la cual
+            creará
+            una capa adicional de
+            seguridad. Evitará que cualquier persona que obtenga acceso a su computadora use esa clave sin la frase de
+            contraseña. Sin
+            embargo, será necesario que proporcione la frase de contraseña cada vez que se utilice la llave. </p>
+        <blockquote>
+            <p>A modo personal prefiero no utilizar una frase de confirmación ya que una llave SHH la suelo configurar
+                en mi
+                equipo
+                personal y para efecto de productividad sin la frase ahorro segundos de vida.</p>
+        </blockquote>
+        <div class="highlight">
+            <pre>Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: Enter same passphrase again:</pre>
+        </div>
+        <p><i class="fa-solid fa-terminal"></i> Luego nos va pedir confirmar</p>
+        <div class="highlight">
+            <pre>Enter same passphrase again:</pre>
+        </div>
+
+        <p><i class="fa-solid fa-terminal"></i> Por último nos devuelve el hash generado para la nueva llave creada.
+        </p>
+        <p align="center">
+            <img src="assets/ssh-keygen-generated.png">
+            <b>Captura:</b> Crear una nueva clave en GitBash
+        </p>
+
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="agregar-al-ssh-agent"><a name="add-ssh-agent"></a>Agregar llave al SSH-Agent &#9875;<a
+                href="#agregar-al-ssh-agent"></a></h3>
+        <p>El agente ssh (<a href="https://es.wikipedia.org/wiki/SSH-Agent">ssh-agent</a>) es un programa
+            auxiliar que realiza un seguimiento de las claves de identidad del usuario y sus frases de contraseñas. El
+            agente
+            puede usar las claves para iniciar sesión en otros servidores sin que el usuario escriba nuevamente una
+            contraseña
+            o frase de contraseña. En palabras simples podemos decir que se trata de un programa para contener llaves
+            privadas, utilizadas para la autenticación de claves públicas. </p>
+        <p>Antes de agregar una nueva clave SSH al servicio de <a
+                href="https://en.wikipedia.org/wiki/Ssh-agent">ssh-agent</a> para gestionar tus claves, debes haber
+            comprobado
+            las claves SSH existente y <a href="#ssh-keygen"><strong>generado una nueva clave SSH</strong></a> y
+            verificar que
+            se esté ejecutando el servicio.</p>
+        <p><strong>1. Paso</strong> </p>
+        <p><i class="fa-solid fa-terminal"></i> Verificar que el ssh-agent se esté ejecutando. </p>
+        <div class="highlight">
+            <pre><span class="gu">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span><i class="fa-solid fa-clone" onclick="{copy_clipboard('eval $(ssh-agent -s)')}"></i>
+</pre>
+        </div>
+
+        <p><code>eval</code>: Ejecuta un comando de shell y efectua una doble
+            evaluación en la línea de
+            comandos.</p>
+        <p align="center">
+            <img src="assets/eval-ssh-agent.png" alt="ssh-agent" width="650"><br>
+            <b>Captura:</b> ejecutar comando eval (el <a href="https://es.wikipedia.org/wiki/Identificador_de_proceso"
+                target="_blank">pid</a> es diferente para cada computadora)
+        </p>
+        <p><strong>2. Paso</strong> </p>
+        <p><i class="fa-solid fa-terminal"></i> Agrega tu llave <strong>ssh privada</strong> al
+            <strong>ssh-agent</strong>.
+            Si creaste tu llave con un
+            nombre distinto debes apuntar hacia donde se encuentre la llave que creaste. Si dejaste los valores
+            predeterminado
+            basta con copiar el siguiente comando.
+        </p>
+        <div class="highlight">
+            <pre><span class="gu">ssh-add</span> ~/.ssh/id_rsa <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh-add ~/.ssh/id_rsa')}"></i></pre>
+        </div>
+
+        <p align="center">
+            <img src="assets/ssh-agent-add.png" alt="add ssh-agent" width="650"><br>
+            <b>Captura:</b> añadir la llave ssh creada al ssh agent.
+        </p>
+
+        <p><i class="fa-solid fa-terminal"></i> Ahora el par de claves ssh está listo para usarse. </p>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="agregar-la-clave-publica-a-tu-cuenta-de-github"><a name="add-ssh-github"></a>Registrar la llave pública
+            a GitHub &#9875;<a href="#agregar-la-clave-publica-a-tu-cuenta-de-github"></a></h3>
+        <p>En <strong>Git Bash</strong> podemos usar la herramienta
+            <strong><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/clip"
+                    target="_blank">clip</a></strong> de Windows
+            para copiar tu clave de una manera sencilla y rápida.
+        </p>
+        <p><i class="fa-solid fa-terminal"></i> Copiar la clave pública al portapapeles &#x1f4cb;</p>
+        <div class="highlight">
+            <pre><span class="gu">clip</span> &lt; ~/.ssh/id_rsa.pub<i class="fa-solid fa-clone" onclick="{copy_clipboard('clip < ~/.ssh/id_rsa.pub')}"></i></pre>
+        </div>
+        <p><strong>Explicación:</strong></p>
+        <ul>
+            <li><strong>~</strong>: es un símbolo llamado <a
+                    href="https://es.wikipedia.org/wiki/Virgulilla#Inform%C3%A1tica" target="_blank">virgulilla</a> que
+                en los sistemas operativos UNIX se refiere al
+                valor
+                de la variable $HOME, esto es, el directorio del usuario que está logueado.</li><br>
+            <li><strong>id_rsa.pub</strong>: Este archivo es el que almacena el contenido de la llave pública, por ende,
+                debemos tener mucho cuidado en verificar que estemos copiando el contenido de este archivo y no de otro.
+            </li>
+        </ul>
+        <p align="center">
+            <img src="assets/clip-ssh-pub.png" height="100"><br>
+            <b>Captura:</b> copiar clave pública al portapapeles.
+        </p>
+        <p><img align="absmiddle" alt=":octocat:" class="gemoji" height="20px"
+                src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" width="20px"
+                style="background: transparent; box-shadow: none;" /> Ahora vamos a nuestra cuenta de <a
+                href="https://github.com/" target="_blank">GitHub</a> e
+            iniciamos sesión.</p>
+        <p>
+            En la esquina superior derecha de nuestra página, das clic en tu foto de perfil y despues da clic en
+            configuración.
+            En la barra lateral de configuración de usuario, da clic en llaves SSH y GPG</p>
+        <p align="center">
+            <img src="assets/github-settings.png" alt="github-settings" width="210">&nbsp;&nbsp;&nbsp;
+            <img src="assets/github-settings-ssh.png" alt="github-settings-gpg" width="300"
+                style="vertical-align: top;">
+        </p>
+        <p><img align="absmiddle" alt=":octocat:" class="gemoji" height="20px"
+                src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" width="20px"
+                style="background: transparent; box-shadow: none;" /> Haz clic en <strong>New SSH key</strong> o
+            <strong>Add SSH key</strong>.
+        </p>
+        <p align="center">
+            <img src="assets/new-ssh-key.png" alt="add-key" width="850">
+        </p>
+
+        <ul>
+            <li>En el campo &ldquo;<strong>Title</strong>&rdquo;, agrega una etiqueta descriptiva para la clave nueva.
+                Por
+                ejemplo, si estás usando tu equipo personal, es posible que llames a esta llave &ldquo;<strong>Personal
+                    laptop
+                    HP-360</strong>&rdquo;.</li>
+            <li>Copia la clave que está contenida en el portapapeles en el campo &ldquo;<strong>Key</strong>&rdquo;
+                <kbd>Ctrl</kbd> + <kbd>V</kbd>.
+            </li>
+        </ul>
+        <p align="center">
+            <img src="assets/new-ssh-key-add.png" alt="add-key" width="850">
+        </p>
+        <p><img align="absmiddle" alt=":octocat:" class="gemoji" height="20px"
+                src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" width="20px"
+                style="background: transparent; box-shadow: none;" /> Si se te solicita, confirma tu contraseña GitHub
+        </p>
+        <p align="center">
+            <img src="assets/confirm-password.png" alt="add-key" width="500">
+        </p>
+        <p><img align="absmiddle" alt=":octocat:" class="gemoji" height="20px"
+                src="https://github.githubassets.com/images/icons/emoji/octocat.png" title=":octocat:" width="20px"
+                style="background: transparent; box-shadow: none;" /> Está lista nuestra llave para poder utilizarla con
+            GitHub.
+        </p>
+
+        <p align="center">
+            <img src="assets/new-ssh-key-added.png" alt="add-key" width="800"><br>
+            <b>Captura:</b> aquí se almacenan las llaves creadas.
+        </p>
+
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="probar-la-conexion-ssh-a-github"><a name="test-connection"></a>Probar la conexión SSH a GitHub &#9875;<a
+                href="#probar-la-conexion-ssh-a-github"></a></h3>
+        <p><i class="fa-solid fa-terminal"></i> Ahora podemos probar nuestra conexión a través de SSH a GitHub. </p>
+        <div class="highlight">
+            <pre><span class="gu">ssh</span> -T git@github.com <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh -T git@github.com')}"></i>
+</pre>
+        </div>
+
+        <p align="center">
+            <img src="assets/test-connection.png" alt="validate" width="850"><br>
+            <b>Captura:</b> Validar la conexión con github vía ssh.
+        </p>
+
+        <p><i class="fa-solid fa-terminal"></i> Si la última línea contiene su nombre de usuario en GitHub, ¡está
+            autenticado correctamente!.</p>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <p align="center">
+            Mis redes son:<br>
+            <!-- facebook -->
+            <a href="https://www.facebook.com/profile.php?id=100009064421475"><img class="logo"
+                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
+                    width="40"></a>
+            <!-- github -->
+            <a href="https://github.com/EniDev911"><img class="logo"
+                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/github_circled.ico"
+                    width="40"></a>
+            <!-- twitter -->
+            <a href="https://twitter.com/MarcoContreraas"><img class="logo"
+                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/twitter_circled.ico"
+                    width="40"></a><br>
+            <!-- buymecoffe --><br>
+            <a href="https://www.buymeacoffee.com/9111592">
+                <img class="logo"
+                    src="https://raw.githubusercontent.com/EniDev911/assets/main/png/support/buymeacoffee.png"
+                    height="80"></a>
+        </p>
+    </article>
+
+    <!-- fontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+    <!-- functions -->
+    <script src="../../public/js/functions.js"></script>
+
+</body>
+
+</html>
