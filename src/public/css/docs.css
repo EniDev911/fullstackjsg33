@@ -52,14 +52,6 @@ body .markdown-body {
   font-weight: bold;
 }
 
-.markdown-body mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  border-radius: 3px;
-  font-weight: bold;
-}
-
 .markdown-body html input[disabled] {
   cursor: default;
 }

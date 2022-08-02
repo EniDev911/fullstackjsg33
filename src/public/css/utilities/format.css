@@ -1,0 +1,9 @@
+.mark {
+    background: #202020;
+    color: #fff;
+    font-style: italic;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 2px;
+    display: inline-block;
+}

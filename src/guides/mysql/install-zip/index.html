@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../public/css/themes/github.css">
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/utilities/format.css">
+  <title>MySQL instalación zip</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <p><a href="assets/banner.png">
+        <img alt="banner" src="assets/banner.png" /></a>
+    </p>
+    <p><br></p>
+    <p><a name="top"></a></p>
+    <h3 id="contenido">Contenido</h3>
+    <ol>
+      <li><a href="#install">Descarga y extrae los archivos.</a></li>
+      <li><a href="#options_file">Archivos de opciones</a></li>
+      <li><a href="#init">Inicializar servidor</a></li>
+      <li><a href="#first_connect">Primera conexión</a></li>
+      <li><a href="#change_password">Establecer contraseña</a></li>
+      <li><a href="#install_as_service">Configurar MySQL como un servicio</a></li>
+    </ol>
+    <hr />
+    <p><br></p>
+    <h3 id="descargar-archivo-zip-aqui"><a name="install"></a><a href="#descargar-archivo-zip-aqui"><i
+          class="fa-solid fa-anchor"></i></a>
+      DESCARGAR ARCHIVO ZIP
+      &#x25b6; <a href="https://dev.mysql.com/downloads/file/?id=509736">aquí</a></h3>
+    <p>Ya esta seleccionado el archivo, solo damos clic en donde está señalado en la siguiente ilustración y comenzará
+      la descarga.</p>
+    <p align="center">
+      <img class="logo" src="assets/01.png" alt="mysql page download" width="900"><br>
+      <b>Se iniciará la descarga</b><br>
+      <img class="logo" src="assets/02.png" alt="mysql picture" width="900"><br>
+      <b>Extraemos el contenido del archivo zip en el directorio deseado.</b><br>
+      <img class="logo" src="assets/03.png" alt="mysql picture" width="900">
+      <br>
+      <b>(En este caso la ubicación es "C:\MySQL8")</b>
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="archivo-de-opciones"><a name="options_file"></a><a class="headerlink" href="#archivo-de-opciones"
+        title="Permanent link"><i class="fa-solid fa-anchor"></i></a> ARCHIVO DE OPCIONES</h3>
+
+    <p>El archivo de opciones es la configuración que se utilizará para iniciar el servidor de base de datos
+      MySQL. Si es necesario especificarle opciones al servidor durante su inicio, esto también puede hacerse desde la
+      línea de
+      comandos pero es conveniente colocarlas en un archivo. </p>
+    <p>Esto es especialmente necesario en las siguiente circuntancias:</p>
+    <ol>
+      <li>
+        <p>El directorio de instalación o de datos son diferentes de los usados por defecto, Por ejemplo: </p>
+        <ul>
+          <li class="mark"><span style="font-style: normal;">&#x1f4c1;</span> C:\Program Files\MySQL\MySQL Server 8.x
+          </li>
+          <li class="mark"><span style="font-style: normal;">&#x1f4c1;</span> C:\Program Files\MySQL\MySQL Server
+            8.x\data</li>
+        </ul>
+      </li><br>
+      <li>
+        <p>Es necesario afinar la configuración del servidor para obtener mayor rendimiento.</p>
+      </li>
+    </ol>
+    <p>Los parámetros declarados dentro del archivo de opciones son leidos como la configuración para iniciar el
+      servidor de base de datos MySQL.</p>
+    <p>
+      El archivo dentro tiene una sección o directiva exclusiva para el servidor <strong><code>[mysqld]</code></strong>
+      donde se puede establecer las siguientes opciones: </p>
+    <ul>
+      <li><strong>basedir</strong>: el directorio base de instalación.<br />
+        (En el ejemplo de esta guía el directorio base es <strong>C:\MySQL8</strong>) </li>
+      <li><strong>datadir</strong>: la ubicación del directorio de datos.<br />
+        (Este se crea por defecto dentro del directorio base de instalación cuando inicializamos por primera vez el
+        servidor, por ende, es importante crear un archivo de opciones previamente para establecer donde queremos que se
+        cree este directorio de datos). </li>
+    </ul>
+    <h3 id="crear-y-editar-un-nuevo-archivo-de-opciones"><a class="headerlink"
+        href="#crear-y-editar-un-nuevo-archivo-de-opciones" title="Permanent link"><i
+          class="fa-solid fa-anchor"></i></a> Crear y editar un nuevo archivo de opciones</h3>
+    <p>Un archivo de opciones puede crearse y modificarse con cualquier editor de texto, como el bloc de notas lo
+      importante es guardar el archivo con el nombre de <code>my.ini <i class="fa-solid fa-file"></i></code> en el
+      directorio raíz de instalación Ej:
+      <span class="mark"><b style="font-style: normal;">&#x1f4c1;</b> C:\MySQL8</span>.
+    </p>
+    <p>La modificación de este archivo conlleva el actualizar las configuraciones del servidor al iniciarse, por lo que
+      cada vez que realicemos cambios en este archivo debemos detener el servidor e iniciarlo nuevamente una vez salvado
+      los cambios. </p>
+    <p align="center">
+      <img class="logo" src="assets/04.png" width="900"><br>
+      <b>En la raíz de donde se descomprimieron los archivos, creamos un nuevo archivo de opciones</b><br>
+      <img class="logo" src="assets/05.png" width="900"><br>
+    </p>
+
+    <p>A continuación un ejemplo de las opciones que tengo definidas en el archivo:</p>
+    <div class="highlight">
+      <pre>[client]
+port=3306
+socket=/temp/mysql.shock
+
+[mysqld]
+basedir=C:/MySQL8
+datadir=C:/data
+port=3306
+socket=/temp/mysql.shock
+key_buffer_size=16M
+max_allowed_packet=8M
+
+[mysqldump]
+quick
+</pre>
+    </div>
+
+    <p>Aunque MySQL ya viene con valores predeterminado en la configuración inicial, nos bastaría con solo indicar los
+      valores para las opciones <strong>basedir</strong> y <strong>datadir</strong>. </p>
+    <p>Los nombres de las rutas de acceso de Windows se especifican en los archivos de opciones mediante barras
+      diagonales (hacia adelante) en lugar de barras diagonales inversas. Si usa barras invertidas, duplíquelas Ej:</p>
+    <div class="highlight">
+      <pre><span class="p">[</span><span class="n">mysqld</span><span class="p">]</span>
+<span class="n">basedir</span><span class="o">=</span><span class="n">C</span><span class="p">:</span><span class="err">\\</span><span class="n">MySQL8</span>
+<span class="n">datadir</span><span class="o">=</span><span class="n">C</span><span class="p">:</span><span class="err">\\</span><span class="n">data</span>
+</pre>
+    </div>
+
+    <blockquote>
+      <p>nota: Si la carpeta que hemos definidos para los datos no existe, la creará por nosotros, pero si debe existir
+        el destino de ruta que hemos indicado.</p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="inicializar-el-servidor"><a name="init"></a>&#9875; INICIALIZAR EL SERVIDOR<a class="headerlink"
+        href="#inicializar-el-servidor" title="Permanent link"></a></h3>
+    <p>Como hemos apreciado el paquete ZIP no incluye un directorio <strong>data</strong>. Para inicializar una
+      instalación de MySQL, en caso de que no hayamos creando el archivo de opciones, se creara un directorio
+      <strong>data</strong> dentro del directorio de instalación y dentro de ese directorio se crearan las bases de
+      datos del sistema llenando las tablas del sistema MySQL.
+    </p>
+    <p>Usando el siguiente comando para inicializar el servidor:</p>
+    <div class="highlight">
+      <pre><span class="n">mysqld</span> <span class="o">--</span><span class="n">initialize</span> <span class="n">o</span> <span class="o">--</span><span class="n">initialize</span><span class="o">-</span><span class="n">insecure</span><span class="p">.</span>
+</pre>
+    </div>
+
+    <p><strong>Este comando hace lo siguiente:</strong> </p>
+    <ul>
+      <li>Incializa el directorio de datos de MySQL y crea las tablas del sistema.</li>
+      <li>Instala el esquema <a href="https://dev.mysql.com/doc/refman/8.0/en/sys-schema.html">sys</a></li>
+      <li>Crea una cuenta administrativa.</li>
+    </ul>
+    <p><strong>Implementación segura por defecto</strong></p>
+    <ul>
+      <li>Se crea una sola cuenta administrativa <strong>&lsquo;root&rsquo;@&rsquo;localhost&rsquo;</strong> con una
+        contraseña generada aleatoriamente, que se marca como caducada.</li>
+      <li>No se crean cuentas de usuario anónimo.</li>
+      <li>No se crea ninguna base de datos como <strong>test</strong> accesible para todos los usuarios.</li>
+      <li>La opción <strong><code>--random-password-file</code></strong> está disponible para controlar dónde se escribe
+        la contraseña aleatoria.</li>
+    </ul>
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/06.png"
+        width="800"><br>
+      <b>Esto puede tardar unos segundos o minutos</b><br>
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/07.png"
+        width="800"><br>
+      <b>Ahora corremos el servidor</b>
+    </p>
+
+    <p>Al permitir el acceso del firewall del sistema, nos debe mostrar el siguiente mensaje al ejecutarse.</p>
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/08.png"
+        width="800">
+    </p>
+
+    <p>La opción <code>--console</code> es para ver el <a href="https://es.wikipedia.org/wiki/Log">log</a> en la línea
+      de comandos y nos debe indicar que se encuentra listo para recibir conexiones entrantes.</p>
+    <p>En nuestro caso especificamos el destino para las bases de datos del sistema y el resto en
+      <strong><code>C:\data</code></strong> si no la encuentra la crea y almacena el contenido. Si desea utilizar un
+      directorio de datos en una ubicación diferente, debe copiar todo el contenido del directorio data en la nueva
+      ubicación. Por ejemplo, si desea utilizarlo <strong><code>C:\mydata</code></strong> como directorio de datos, se
+      puede hacer de dos formas:
+    </p>
+    <ol>
+      <li>
+        <p>Mueva todo el directorio data y todo su contenido desde la ubicación predeterminada. Por ejemplo
+          <strong><code>C:\Path\installation\data</code></strong> a <strong><code>C:\mydata</code></strong> y luego
+          detiene el servidor, realiza los cambios en el archivo de opciones y se vuelve a iniciar el servidor.
+        </p>
+      </li>
+      <li>
+        <p>Utilizar la opción <code>--datadir</code> para especificar la nueva ubicación del directorio de datos cada
+          vez que inicie el servidor. Ej:</p>
+      </li>
+    </ol>
+    <div class="highlight">
+      <pre><span class="n">mysqld</span> <span class="o">--</span><span class="n">datadir</span> <span class="s1">&#39;path\your\data&#39;</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/09.png"
+        width="800">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="primera-conexion"><a name="first_connect"></a>&#9875; PRIMERA CONEXIÓN<a class="headerlink"
+        href="#primera-conexion" title="Permanent link"></a></h3>
+    <p>Independiente de la configuración que hemos dado para conectarnos al servidor, primero que nada debemos
+      inicializarlo, y luego conectarnos como clientes, dentro de la carpeta <strong>data</strong> se encuentra un
+      archivo llamado con el nombre de tu equipo y la extensión <code>.err</code> abrimos ese archivo con el bloc de
+      nota y buscamos el password generado para el usuario root de manera temporal:</p>
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/10.png"
+        width="800"><br>
+      Abrimos el archivo con extensión .err<br>
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/11.png"
+        width="800"><br>
+      Copiamos el password<br>
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/12.png"
+        width="800">
+    </p>
+
+    <p>Ahora la primera tarea antes de comenzar a manipular bases de datos, será cambiar el password de nuestro usuario
+      root. De hecho si intentamos ejecutar un comando sql nos va a requerir esta acción ya que el password generado con
+      la inicialización tiene el estado de caducado.</p>
+    <p align="center">
+      <img src="assets/13.png" width="900">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="establecer-una-nueva-contrasena"><a name="change_password"></a>&#9875; ESTABLECER UNA NUEVA CONTRASEÑA<a
+        class="headerlink" href="#establecer-una-nueva-contrasena" title="Permanent link"></a></h3>
+    <p>La declaración <strong><code>ALTER_USER</code></strong> modifica las cuentas de MySQL. Permite modificar las
+      propiedades de autenticación, SSL/TLS, límite de recursos y administración de contraseñas para las cuentas
+      existentes. </p>
+    <p>Para cada cuenta afectada, <strong><code>ALTER USER</code></strong> modifica la fila correspondiente en la tabla
+      <code>mysql.user</code> del sistema para reflejar las propiedades especificadas en el extracto. Las propiedades no
+      especificadas conservan sus valores actuales.
+    </p>
+    <div class="highlight">
+      <pre><span class="k">ALTER</span> <span class="k">USER</span> <span class="k">USER</span><span class="p">()</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;proPassword123&#39;</span><span class="p">;</span>
+</pre>
+    </div>
+
+    <p>Esta sintaxis permite cambiar su propia contraseña sin nombrar literalmente su cuenta. A continuación hemos dado
+      un password al usuario root con el que nos conectamos la contraseña generada temporalmente por el servidor al
+      momento de su instalación.</p>
+    <p align="center">
+      <img src="assets/14.png" width="900">
+    </p>
+
+    <p>Ahora recargamos los privilegios con: </p>
+    <div class="highlight">
+      <pre><span class="n">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span>
+</pre>
+    </div>
+
+    <p>Ahora ya podemos conectarnos con la nueva contraseña que hemos asignado, podemos consultar en la tabla de usuario
+      el complemento de autenticación con el siguiente comando: </p>
+    <div class="highlight">
+      <pre><span class="k">SELECT</span> <span class="k">user</span><span class="p">,</span> <span class="n">plugin</span> <span class="k">FROM</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="p">;</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img class="logo" src="assets/15.png" width="900">
+    </p>
+
+    <p>Adicionalmente, podemos establecer esta ruta de donde lanzamos el servidor como variable de entorno para que nos
+      resulte más comodo lanzar el servidor desde cualquier ubicación. Con el siguiente comando podemos establecer la
+      ruta de instalación de MySQL a la variable <strong>path</strong> del usuario:</p>
+    <p><strong>En CMD</strong>:</p>
+    <div class="highlight">
+      <pre>SETX PATH <span class="s2">&quot;%path%;&quot;</span>C:\MySQL<span class="m">8</span>\bin\
+</pre>
+    </div>
+
+    <p><strong>Para invocar a mysql en CMD o PowerShell</strong>:</p>
+    <div class="highlight">
+      <pre>mysql -u root -p
+</pre>
+    </div>
+
+    <p>Cerramos la ventana de comandos y abrimos una nueva.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="configurar-mysql-como-un-servicio"><a name="install_as_service"></a>&#9875; CONFIGURAR MYSQL COMO UN
+      SERVICIO<a class="headerlink" href="#configurar-mysql-como-un-servicio" title="Permanent link"></a></h3>
+    <p>Nos posicionamos dentro del directorio de instalación e ingresamos a la carpeta bin y ejecutamos los siguientes
+      comandos. <strong>Para llevar a cabo estos pasos es necesario abrir la sesión de CMD con privilegios de
+        administrador</strong>.</p>
+    <p>El siguiente comando es para asegurarte de no tener ninguna instancia del servidor corriendo actualmente.<br />
+    <div class="highlight">
+      <pre>mysqladmin.exe -u root shutdown
+</pre>
+    </div>
+    </p>
+    <p>El siguiente comando registra MySQL como servicio. </p>
+    <div class="highlight">
+      <pre><span class="c">:: Se registra con el nombre pasado como argumento.</span>
+<span class="c">:: De lo contrario solo con el nombre MySQL por defecto.</span>
+mysqld --install <span class="s2">&quot;MySQL8&quot;</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/16.png"
+        width="800">
+    </p>
+
+    <p>Ahora ya podemos iniciar el servicio o detenerlo desde la línea de comandos, pero para llevar a cabo el proceso
+      tenemos que abrir una nueva ventana como <strong>administrador</strong>.</p>
+    <p><strong>Iniciar el servicio con el comando net</strong>
+    <div class="highlight">
+      <pre>net start MySQL
+</pre>
+    </div>
+    </p>
+    <p><strong>Detener el servicio con el comando:</strong>
+    <div class="highlight">
+      <pre>net stop MySQL
+</pre>
+    </div>
+    </p>
+    <p align="center">
+      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/17.png"
+        width="800">
+    </p>
+
+    <p><strong>Eliminar el servicio</strong><br />
+    <div class="highlight">
+      <pre>sc delete &quot;MySQL&quot;
+</pre>
+    </div>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <p align="center">
+      <!-- facebook -->
+      <a href="https://www.facebook.com/profile.php?id=100009064421475"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
+          width="40"></a>
+      <!-- github -->
+      <a href="https://github.com/EniDev911"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/github_circled.ico"
+          width="40"></a>
+      <!-- twitter -->
+      <a href="https://twitter.com/MarcoContreraas"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/twitter_circled.ico"
+          width="40"></a><br>
+      <!-- buymecoffe --><br>
+      <a href="https://www.buymeacoffee.com/9111592">
+        <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/support/buymeacoffee.png" height="80"></a>
+      <!-- home --><br><br><br>
+      <a href="/C:/Users/enidev911/Desktop/repository/enidev911_guides/README.md#mysql">
+        <img
+          src="https://img.shields.io/badge/regresar%20a%20inicio-%E2%86%A9-blue?style=for-the-badge&logo=files&logoColor=%23FAC173"
+          height="60"></a>
+    </p>
+  </article>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
