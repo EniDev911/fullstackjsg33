@@ -141,7 +141,11 @@ body .markdown-body {
 /* IMAGES */
 .markdown-body img {
   border-radius: 3px;
-  box-shadow: 2px 2px 2px var(--shadow);
+  box-shadow:
+    2px 0 2px var(--shadow),
+    0 2px 2px var(--shadow),
+    -2px 0px 2px var(--shadow);
+  ;
   max-width: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

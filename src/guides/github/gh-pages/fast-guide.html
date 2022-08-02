@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  <title>fast-guide</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h2 align="center">
+      <img class="logo" src="https://img.shields.io/badge/github-%23121011.svg?logo=github&logoColor=white" height="50">
+      <br><br>
+      CONFIGURAR GITHUB PAGES
+    </h2>
+
+    <h2 id="contenido">Contenido</h2>
+    <ul>
+      <li><a href="#basic-setting">Requerimientos</a></li>
+      <li><a href="#create-repository">Crear un nuevo repositorio en Github</a></li>
+      <li><a href="#create-repository-local">Crear un nuevo repositorio local</a></li>
+      <li><a href="#prepare">preparando el código</a></li>
+      <li><a href="#publish">publicando la página</a></li>
+    </ul>
+    <h2 id="configuracion-basica"><a name="basic-setting"></a>Requerimientos previos <a class="headerlink"
+        href="#configuracion-basica" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h2>
+    <ul>
+      <li>Instalar <a href="http://git-scm.com/downloads">Git</a></li>
+      <li>Registrar una cuenta en <a href="https://github.com">GitHub</a> <img align="absmiddle" alt=":octocat:"
+          class="gemoji" height="20px" src="https://github.githubassets.com/images/icons/emoji/octocat.png"
+          title=":octocat:" width="20px" style="background: transparent; box-shadow: none;" /></li>
+      <li>Una vez te hayas registrado, inicia sesión en <a href="https://github.com">https://github.com</a></li>
+    </ul>
+    <hr />
+    <h3 id="crear-un-nuevo-repositorio"><a name="create-repository"></a> Crear un nuevo repositorio <a
+        class="headerlink" href="#crear-un-nuevo-repositorio" title="Permanent link"><i class="fa-solid fa-anchor"></i>
+      </a></h3>
+    <ol>
+      <li>Iniciamos sesión en Github normalmente, luego hacemos clic en el ícono más
+        &ldquo;<strong><kbd>+</kbd></strong>&rdquo; en la barra superior para abrir un submenú; ahora hacemos clic
+        en la opción <strong>New repository</strong> para ir a la pantalla de <strong>Crear nuevo repositorio</strong>.
+      </li>
+    </ol>
+    <p align="center">
+      <img src="assets/new-repository.png" alt="" width="800"><br>
+      <b>Captura:</b> Crear un nuevo repositorio.
+    </p>
+
+    <ol start="2">
+      <li>En esta pantalla, completamos los campos <strong>Repository Name</strong>, el campo
+        <strong>Description</strong> es opcional y dejamos el repositorio como <strong>Public</strong> (las páginas de
+        Github no serán habilitadas para su visualización en repositorios privados). A continuación,
+        hacemos clic en el botón verde <strong>Create repository</strong> en la parte inferior de la pantalla.
+      </li>
+    </ol>
+    <p align="center">
+      <img src="assets/create-repository.png" alt="" width="800">
+    </p>
+
+    <ol start="3"> <a name="quick-start"></a>
+      <li>Ahora estamos en la pantalla de <strong>configuración rápida</strong> de los comandos que nos muestra luego
+        utilizaremos el 6. </li>
+    </ol>
+    <p align="center">
+      <img src="assets/quick-start.png" width="800" alt="quick setup">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="crear-un-nuevo-repositorio-local"><a name="create-repository-local"></a> Crear un nuevo repositorio local<a
+        class="headerlink" href="#crear-un-nuevo-repositorio-local" title="Permanent link"><i
+          class="fa-solid fa-anchor"></i>
+      </a></h3>
+
+    <p align="center">
+      <img src="assets/local-repository-add-remote.png" alt="add remote">
+    </p>
+    <ol start="1">
+      <li>Crea una nueva carpeta en nuestro sistema de archivos y entra en ella.
+      </li>
+    </ol><br>
+    <div class="highlight">
+      <pre><span class="gu">mkdir</span> gh-pages <span class="go">&amp;&amp;</span> <span class="gu">cd</span>  gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('mkdir gh-pages && cd gh-pages')}"></i>
+</pre>
+    </div>
+    <p><strong>Explicación</strong>: </p>
+    <ul>
+      <li><strong><a
+            href="https://en.wikipedia.org/wiki/Mkdir#:~:text=On%20Unix%2Dlike%20operating%20systems,directory%20b%20inside%20directory%20a%20."
+            target="_blank">mkdir</a></strong>:
+        comando para crear carpeta (make directory).</li>
+      <li><strong><a href="https://en.wikipedia.org/wiki/Cd_(command)" target="_blank">cd</a></strong>: comando para
+        cambiar de carpeta (change directory).</li>
+    </ul>
+    <blockquote>
+      <p>el &lsquo;<code>&amp;&amp;</code>&lsquo; es para garantizar que se ejecute el comando solo si se cumple el
+        primero.</p>
+    </blockquote>
+    <ol start="2">
+      <li>Crea un repositorio de Git vacío.
+      </li>
+    </ol><br>
+    <div class="highlight">
+      <pre><span class="gu">git</span> init <i class="fa-solid fa-clone" onclick="{copy_clipboard('git init')}"></i>
+</pre>
+    </div>
+    <ol start="3">
+      <li>Crea una rama con el nombre de <strong>gh-pages</strong>.
+      </li>
+    </ol><br>
+    <div class="highlight">
+      <pre><span class="gu">git</span> checkout -b gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('git checkout -b gh-pages')}"></i>
+</pre>
+    </div>
+    <blockquote>
+      <p>El comando <code>git checkout -b</code> nos crea la rama y nos cambia a esa rama
+        para trabajar
+        en un solo comando. <i class="fa-solid fa-circle-exclamation"></i> Si queremos que nuestro sitio se despliegue
+        automáticamente debemos usar este nombre para la rama.</p>
+    </blockquote>
+    <ol start="4">
+      <li>Agregar el repositorio remoto que creamos en Github. <a href="#quick-start"><small>Ver paso 3 en la sesión
+            anterior</small></a>
+      </li>
+    </ol><br>
+    <div class="highlight">
+      <pre><span class="gu">git</span> remote add origin https://github.com/EniDev911/gh-pages.git
+</pre>
+    </div>
+    <p><strong>Explicación</strong>: </p>
+    <ul>
+      <li><strong>remote add</strong>: Es el comando para vincular un repositorio local a un repositorio remoto.
+      </li>
+      <li><strong>origin</strong>: Es el nombre que le damos a la conexión remota.</li><br>
+      <li><strong><code>https://github.com/user/repositorio.git</code></strong>: La URL del repositorio.</li>
+    </ul><br>
+    <blockquote>
+      <p>Podemos comprobar que esta añadido el repositorio remoto con el comando <code>git remote -v</code> para mostrar
+        los vínculos remotos.
+      <p align="center">
+        <img src="assets/git-remote-v.png" alt="git remote -v">
+      </p>
+      </p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="preparando-el-codigo"><a name="prepare"></a> Preparando el código <a class="headerlink"
+        href="#preparando-el-codigo"><i class="fa-solid fa-anchor"></i></a></h2>
+    <p>Tú puedes almacenar cualquier código que tu quieras en un repositorio de Github, pero para usar la característica
+      de <strong>github pages</strong>, tu código debe estar estructurado como un sitio web típico, por ejemplo que el
+      punto de entrada sea un archivo <strong><code>index.html <i class="fa-solid fa-file-code"></i>
+</code></strong> (página de aterrizaje). </p>
+    <div class="highlight">
+      <pre>gh-pages <span class="c1"># raiz del proyecto</span>
+  |-- assets <span class="c1"># sub carpeta de gh-pages</span>
+  | |-- css <span class="c1"># sub carpeta de assets</span>
+  | | `-- estilos.css
+  | `-- js <span class="c1"># sub carpeta de assets</span>
+  | `-- funciones.js
+  `-- index.html <span class="c1"># página de aterrizaje</span>
+</pre>
+    </div>
+    <blockquote>
+      <p>La mejor manera de subir código a Github es mediante la línea de comandos.</p>
+    </blockquote>
+    <p align="center">
+      <img src="assets/prepare-code.png" alt="prepare code">
+    </p>
+
+    <p><strong>Explicación</strong>: </p>
+    <p>&#x1f977; <strong>(1)</strong>: Creamos un archivo <code>index.html</code> y dentro solo tenemos un
+      <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>. El cual lo podemos leer por medio de la línea de comandos con el
+      comando <code>cat</code>.
+    </p>
+    <div class="highlight">
+      <pre>cat index.html
+</pre>
+    </div>
+
+    <blockquote>
+      <p><strong><code>cat</code></strong>: es una herramienta que se utiliza en sistemas
+        unix para concatenar archivos, de hecho viene por concatenar (con<strong>cat</strong>), pero también nos muestra
+        los contenido de archivos.</p>
+    </blockquote>
+    <p>&#x1f977; <strong>(2)</strong>: Preparamos nuestra página para la confirmacíón. </p>
+    <div class="highlight">
+      <pre>git add index.html
+</pre>
+    </div>
+
+    <p>&#x1f977; <strong>(3)</strong>: Confirmamos los cambios para poder publicar. </p>
+    <div class="highlight">
+      <pre>git commit -m &#39;create index&#39;
+</pre>
+    </div>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="publicando-la-pagina"><a name="publish"></a>Publicando la página<a class="headerlink"
+        href="#publicando-la-pagina" title="Permanent link"></a></h2>
+    <p>Usemos <code>git push</code> para enviar las confirmaciones realizadas en nuestro repositorio local a nuestro
+      repositorio remoto.</p>
+    <p align="center">
+      <img
+        src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/tools/github/papers/gh_pages/img/push-publish.png"
+        alt="push" width="800">
+    </p>
+
+    <p><strong>Explicación</strong>: </p>
+    <p><strong>(1)</strong>: </p>
+    <p>&#x1f977; Creamos un archivo <code>index.html</code> y dentro solo tenemos un
+      <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>. El cual lo podemos leer por medio de la línea de comandos con
+      <code>cat</code>.
+    </p>
+    <div class="highlight">
+      <pre>cat index.html
+</pre>
+    </div>
+
+    <blockquote>
+      <p><strong><code>cat</code></strong>: es una herramienta que se utiliza en sistemas unix para concatenar archivos,
+        de hecho viene por concatenar (con<strong>cat</strong>), pero también nos muestra los contenido de archivos.</p>
+    </blockquote>
+    <p><strong>(2)</strong>: </p>
+    <p>&#x1f977; Preparamos nuestra página para la confirmacíón. </p>
+    <div class="highlight">
+      <pre>git add index.html
+</pre>
+    </div>
+
+    <p><strong>(3)</strong>: </p>
+    <p>&#x1f977; Confirmamos los cambios para poder publicar. </p>
+    <div class="highlight">
+      <pre>git commit -m &#39;create index&#39;
+</pre>
+    </div>
+
+    <p>&#x1f977; <strong>(1)</strong>: El comando <code>git push</code> recibe dos argumentos: </p>
+    <ul>
+      <li>El nombre de la conexión en la mayoría de los casos es <strong>origin</strong>. </li>
+      <li>El nombre de la rama (<em>branch</em>) a la que queremos subir los cambios.</li>
+    </ul>
+    <blockquote>
+      <p>La bandera <code>-u</code> significa <em>upstream</em> y se refiere al repositorio remoto principal al que
+        haremos <code>pull</code> y <code>push</code>, esta opción se utiliza una sola vez, luego podemos seguir
+        trabajando solo utilizando <code>git push</code> ya que Git recordará el nombre de la conexión y la rama en la
+        que estamos trabajando.</p>
+    </blockquote>
+    <div class="highlight">
+      <pre>git push -u origin gh-pages
+</pre>
+    </div>
+
+    <blockquote>
+      <p><strong>Nota</strong>: Es importante que nos encontremos en la rama <strong>gh-pages</strong> ya que de esta
+        manera se configurará GitHub Pages automáticamente.</p>
+    </blockquote>
+    <p>&#x1f977; <strong>(2)</strong>: El mensaje que nos muestra la URL donde se subieron los cambios y la nueva rama
+      que se creó. </p>
+    <p align="center">
+      <img
+        src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/tools/github/papers/gh_pages/img/up-remote.png"
+        alt="up remote" width="800">
+    </p>
+
+    <p>&#x1f977; <strong>(1)</strong>: Este es un control <code>dropdown</code> que tiene una lista desplegable de las
+      ramas existentes: </p>
+    <blockquote>
+      <p><strong>Nota</strong>: Es nuestro caso como es el primer push solo tenemos la rama <strong>gh-pages</strong>
+      </p>
+    </blockquote>
+    <p>&#x1f977; <strong>(2)</strong>: Es el estado que describe el estado de despliegue general puede ser
+      <strong>pending</strong> o <strong>active</strong>. Al dar clic sobre <strong>(&#x1f680; github-pages)</strong>
+      veremos el historial de todos los despliegues.
+    </p>
+    <p align="center">
+      <img
+        src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/tools/github/papers/gh_pages/img/view-deployement.png"
+        alt="" width="800">
+    </p>
+
+    <p>&#x1f977; <strong>(1)</strong>: Nos indica la rama a la cual se está haciendo el despliegue.</p>
+    <p>&#x1f977; <strong>(2)</strong>: Este botón nos permite visitar la página ya desplegada.</p>
+    <p align="center">
+      <img
+        src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/tools/github/papers/gh_pages/img/gh-pages.png"
+        alt="" width="800">
+    </p>
+
+    <p>&#x1f977; <strong>(1)</strong>: Ya tenemos la página mostrando el encabezado que creamos en el archivo
+      <code>index.html</code>.
+    </p>
+    <p>&#x1f977; <strong>(2)</strong>: Este URL ya se puede compartir y el patrón se compone de: </p>
+    <div class="highlight">
+      <pre>https://&lt;username&gt;.github.io/&lt;repository-name&gt;
+</pre>
+    </div>
+
+    <ul>
+      <li><strong>username</strong>: el nombre de la cuenta de github.</li>
+      <li><strong>github.io</strong>: el servicio de hosting que nos da github.</li>
+      <li><strong>repository-name</strong>: es el nombre que tiene el repositorio.</li>
+    </ul>
+    <blockquote>
+      <p>No es necesario que tengamos que indicar el nombre del archivo <strong>index.html</strong>, ya que por defecto
+        se mostrará cualquier contenido que este dentro de un archivo llamado <strong>index.html</strong>.</p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <p align="center">
+      Mis redes son:<br>
+      <!-- facebook -->
+      <a href="https://www.facebook.com/profile.php?id=100009064421475"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
+          width="40"></a>
+      <!-- github -->
+      <a href="https://github.com/EniDev911"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/github_circled.ico"
+          width="40"></a>
+      <!-- twitter -->
+      <a href="https://twitter.com/MarcoContreraas"><img
+          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/twitter_circled.ico"
+          width="40"></a><br>
+      <!-- buymecoffe --><br>
+      <a href="https://www.buymeacoffee.com/9111592">
+        <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/support/buymeacoffee.png" height="80"></a>
+    </p>
+
+    </p>
+  </article>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <script src="../../../public/js/functions.js"></script>
+</body>
+
+</html>
