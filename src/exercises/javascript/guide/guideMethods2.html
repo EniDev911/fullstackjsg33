@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="new-user">
+    <button id="add-user">Agregar</button>
+    <button id="delete-user">Eliminar</button>
+
+    <!-- 2 -->
+    <h3>Usuarios:</h3>
+    <ul id="users"></ul>
+    <script>
+        const ulUsers = document.querySelector("#users")
+        const user = document.querySelector("#new-user");
+
+        const arrUsers = []
+
+        const addUser = arr => {
+            let template = ""
+            arr.forEach(ele => {
+                template += `<li>${ele}</li>`
+            })
+
+            ulUsers.innerHTML = template
+        }
+
+        document.querySelector("#add-user").addEventListener("click", () => {
+            arrUsers.push(user.value);
+            addUser(arrUsers);
+            user.value = ""
+        })
+
+        document.querySelector("#delete-user").addEventListener("click", () => {
+            arrUsers.pop(user.value);
+            addUser(arrUsers);
+            user.value = ""
+        })
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === 'Enter') {
+                arrUsers.push(user.value);
+                addUser(arrUsers);
+                user.value = ""
+            }
+        })
+    </script>
+</body>
+
+</html>

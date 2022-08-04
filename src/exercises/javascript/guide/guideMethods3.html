@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="text" id="collaborate">
+<button id="add">Agregar</button>
+
+<body>
+
+    <ul>
+
+    </ul>
+    <script>
+        const invitados = [
+            { id: 431, nombre: "Jhonny Depp" },
+            { id: 124, nombre: "Brat Pitt" },
+            { id: 541, nombre: "Leonardo Dicaprio" },
+            { id: 664, nombre: "Morgan Freeman" },
+        ]
+
+        const renderInvitados = () => {
+            let html = ""
+            invitados.forEach((ele) => {
+                html += `<li>${ele.nombre} <button onclick="borrar(${ele.id})">x</button></li>`
+            })
+
+            listaInvitado.innerHTML = html
+        }
+        const borrar = (id) => {
+            const index = invitados.findIndex(ele => ele.id == id)
+            invitados.splice(index, 1)
+            renderInvitados()
+        }
+
+
+        document.querySelector("#add").addEventListener("click", () => {
+            const collab = document.querySelector("#collaborate")
+            newCollaborate = { id: Date.now(), nombre: collab.value }
+            invitados.push(newCollaborate)
+            collab.value = "";
+
+            listaInvitado = document.querySelector("ul");
+            let html = "";
+
+            invitados.forEach((ele) => {
+                html += `<li>${ele.nombre} <button onclick="borrar(${ele.id})">x</button></li>`
+            })
+
+            listaInvitado.innerHTML = html;
+
+        })
+
+    </script>
+</body>
+
+</html>
