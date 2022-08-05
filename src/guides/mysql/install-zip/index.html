@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../../public/css/themes/github.css">
+  <link rel="stylesheet" href="../../../public/css/themes/derry.css">
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/utilities/format.css">
   <title>MySQL instalación zip</title>
@@ -36,12 +36,14 @@
       la descarga.</p>
     <p align="center">
       <img class="logo" src="assets/01.png" alt="mysql page download" width="900"><br>
-      <b>Se iniciará la descarga</b><br>
+      <small><b>Se iniciará la descarga.</b></small><br>
       <img class="logo" src="assets/02.png" alt="mysql picture" width="900"><br>
-      <b>Extraemos el contenido del archivo zip en el directorio deseado.</b><br>
+      <small><b>Extraemos el contenido del archivo zip en el directorio deseado.</b></small><br>
       <img class="logo" src="assets/03.png" alt="mysql picture" width="900">
       <br>
-      <b>(En este caso la ubicación es "C:\MySQL8")</b>
+      <small><b>En este caso la ubicación es en </b><span class="mark"><span
+            style="font-style: normal;">&#x1f4c1;</span>
+          "C:\MySQL8"</span></small><br>
     </p>
 
     <p><a href="#top"><img alt=""
@@ -60,10 +62,11 @@
       <li>
         <p>El directorio de instalación o de datos son diferentes de los usados por defecto, Por ejemplo: </p>
         <ul>
-          <li class="mark"><span style="font-style: normal;">&#x1f4c1;</span> C:\Program Files\MySQL\MySQL Server 8.x
-          </li>
           <li class="mark"><span style="font-style: normal;">&#x1f4c1;</span> C:\Program Files\MySQL\MySQL Server
-            8.x\data</li>
+            8.x<br>
+            <span style="font-style: normal;">&#x1f4c1;</span> C:\Program Files\MySQL\MySQL Server
+            8.x\data
+          </li>
         </ul>
       </li><br>
       <li>
@@ -102,11 +105,11 @@
 
     <p>A continuación un ejemplo de las opciones que tengo definidas en el archivo:</p>
     <div class="highlight">
-      <pre>[client]
+      <pre>[<span class="gu">client</span>]
 port=3306
 socket=/temp/mysql.shock
 
-[mysqld]
+[<span class="gu">mysqld</span>]
 basedir=C:/MySQL8
 datadir=C:/data
 port=3306
@@ -114,7 +117,7 @@ socket=/temp/mysql.shock
 key_buffer_size=16M
 max_allowed_packet=8M
 
-[mysqldump]
+[<span class="gu">mysqldump</span>]
 quick
 </pre>
     </div>
@@ -124,12 +127,11 @@ quick
     <p>Los nombres de las rutas de acceso de Windows se especifican en los archivos de opciones mediante barras
       diagonales (hacia adelante) en lugar de barras diagonales inversas. Si usa barras invertidas, duplíquelas Ej:</p>
     <div class="highlight">
-      <pre><span class="p">[</span><span class="n">mysqld</span><span class="p">]</span>
-<span class="n">basedir</span><span class="o">=</span><span class="n">C</span><span class="p">:</span><span class="err">\\</span><span class="n">MySQL8</span>
-<span class="n">datadir</span><span class="o">=</span><span class="n">C</span><span class="p">:</span><span class="err">\\</span><span class="n">data</span>
+      <pre>[<span class="gu">mysqld</span>]
+basedir=</span>C:\\MySQL8
+datadir=C:\\data
 </pre>
     </div>
-
     <blockquote>
       <p>nota: Si la carpeta que hemos definidos para los datos no existe, la creará por nosotros, pero si debe existir
         el destino de ruta que hemos indicado.</p>
@@ -138,8 +140,8 @@ quick
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="inicializar-el-servidor"><a name="init"></a>&#9875; INICIALIZAR EL SERVIDOR<a class="headerlink"
-        href="#inicializar-el-servidor" title="Permanent link"></a></h3>
+    <h3 id="inicializar-el-servidor"><a name="init"></a><a class="headerlink" href="#inicializar-el-servidor"
+        title="Permanent link"><i class="fa-solid fa-anchor"></i></a> INICIALIZAR EL SERVIDOR</h3>
     <p>Como hemos apreciado el paquete ZIP no incluye un directorio <strong>data</strong>. Para inicializar una
       instalación de MySQL, en caso de que no hayamos creando el archivo de opciones, se creara un directorio
       <strong>data</strong> dentro del directorio de instalación y dentro de ese directorio se crearan las bases de
@@ -167,18 +169,15 @@ quick
         la contraseña aleatoria.</li>
     </ul>
     <p align="center">
-      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/06.png"
-        width="800"><br>
+      <img src="assets/06.png" width="900"><br>
       <b>Esto puede tardar unos segundos o minutos</b><br>
-      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/07.png"
-        width="800"><br>
+      <img src="assets/07.png" width="900"><br>
       <b>Ahora corremos el servidor</b>
     </p>
 
     <p>Al permitir el acceso del firewall del sistema, nos debe mostrar el siguiente mensaje al ejecutarse.</p>
     <p align="center">
-      <img src="/C:/Users/enidev911/Desktop/repository/enidev911_guides/devs/database/mysql/install/zip/assets/08.png"
-        width="800">
+      <img class="logo" src="assets/08.png" width="900">
     </p>
 
     <p>La opción <code>--console</code> es para ver el <a href="https://es.wikipedia.org/wiki/Log">log</a> en la línea

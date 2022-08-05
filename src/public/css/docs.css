@@ -194,21 +194,17 @@ body .markdown-body {
   border: 0;
 }
 
-.markdown-body .codehilite,
-.markdown-body .highlight {
+.markdown-body .codehilite {
   margin-bottom: 16px;
 }
 
+
 .markdown-body .codehilite pre,
-.markdown-body .highlight pre,
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
-  border-radius: 3px;
-  border: 1px solid var(--light-gray-2);
 }
 
 .markdown-body .codehilite pre,

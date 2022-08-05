@@ -50,15 +50,11 @@ function copy_clipboard(text) {
 }
 
 btns_clone.forEach(btn => {
-  btn.classList.add("fa-regular");
-  btn.classList.remove("fa-solid");
-
+  btn.classList.replace("fa-solid", "fa-regular");
   btn.addEventListener("click", () => {
-    btn.classList.add("fa-solid");
-    btn.classList.remove("fa-regular");
+    btn.classList.replace("fa-regular", "fa-solid");
     setTimeout(() => {
-      btn.classList.add("fa-regular")
-      btn.classList.remove("fa-solid");
-    }, 3000)
+      btn.classList.replace("fa-solid", "fa-regular");
+    }, 1000)
   })
 })
