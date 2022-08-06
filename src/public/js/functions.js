@@ -42,7 +42,7 @@ btns_module.forEach(btn => {
   })
 })
 
-function copy_clipboard(text) {
+const copy_clipboard = (text)=> {
   if (typeof (text) != 'string') {
     throw TypeError("The argument must be a string")
   }
@@ -64,6 +64,8 @@ function copy_clipboard(text) {
     document.getSelection().addRange(selection);
   }
 }
+
+window.copy_clipboard = copy_clipboard;
 
 btns_clone.forEach(btn => {
   btn.classList.replace("fa-solid", "fa-regular");

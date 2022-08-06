@@ -64,28 +64,26 @@
       <li>Ahora estamos en la pantalla de <strong>configuración rápida</strong> de los comandos que nos muestra luego
         utilizaremos el 6. </li>
     </ol>
-    <p align="center">
-      <img src="assets/quick-start.png" width="900" alt="quick setup"><br>
-      <b>Captura:</b> Página de configuración rápida.
-    </p>
-
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
+    <figure align="center">
+      <img src="assets/quick-start.png" alt="quick setup" width="900"><br>
+      <figcaption><small><b>Captura.3</b> Página de configuración rápida.</small></figcaption>
+    </figure><br>
+    <a href="#top"><img alt=""
+        src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     <hr />
     <h3 id="crear-un-nuevo-repositorio-local"><a name="create-repository-local"></a> Crear un nuevo repositorio
-      local<a class="headerlink" href="#crear-un-nuevo-repositorio-local" title="Permanent link"><i
+      local <a class="headerlink" href="#crear-un-nuevo-repositorio-local" title="Permanent link"><i
           class="fa-solid fa-anchor"></i>
       </a></h3>
 
-    <p align="center">
+    <figure align="center">
       <img src="assets/local-repository-add-remote.png" alt="add remote"><br>
-      <b>Captura:</b> Crear un nuevo repositorio local con git.
-    </p>
+      <figcaption><small><b>Captura.4</b> Crear un nuevo repositorio local con git.</small></figcaption>
+    </figure>
     <ol start="1">
       <li>Crea una nueva carpeta en nuestro sistema de archivos y entra en ella.
       </li>
-    </ol><br>
+    </ol>
     <div class="highlight">
       <pre><span class="gu">mkdir</span> gh-pages <span class="go">&amp;&amp;</span> <span class="gu">cd</span>  gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('mkdir gh-pages && cd gh-pages')}"></i>
 </pre>
@@ -106,7 +104,7 @@
     <ol start="2">
       <li>Crea un repositorio de Git vacío.
       </li>
-    </ol><br>
+    </ol>
     <div class="highlight">
       <pre><span class="gu">git</span> init <i class="fa-solid fa-clone" onclick="{copy_clipboard('git init')}"></i>
 </pre>
@@ -114,13 +112,13 @@
     <ol start="3">
       <li>Crea una rama con el nombre de <strong>gh-pages</strong>.
       </li>
-    </ol><br>
+    </ol>
     <div class="highlight">
       <pre><span class="gu">git</span> checkout -b gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('git checkout -b gh-pages')}"></i>
 </pre>
-    </div>
+    </div><br>
     <blockquote>
-      <p>El comando <code>git checkout -b</code> nos crea la rama y nos cambia a esa rama
+      <p>El comando <code><b>git checkout -b</b></code> nos crea la rama y nos cambia a esa rama
         para trabajar
         en un solo comando. <i class="fa-solid fa-circle-exclamation"></i> Si queremos que nuestro sitio se despliegue
         automáticamente debemos usar este nombre para la rama.</p>
@@ -146,7 +144,7 @@
         mostrar
         los vínculos remotos.
       <p align="center">
-        <img src="assets/git-remote-v.png" alt="git remote -v">
+        <img src="assets/git-remote-v.png" alt="git remote -v" width="950">
       </p>
       </p>
     </blockquote>
@@ -162,24 +160,23 @@
       punto de entrada sea un archivo <strong><code>index.html <i class="fa-solid fa-file-code"></i>
 </code></strong> (página de aterrizaje). </p>
     <div class="highlight">
-      <pre>gh-pages <span class="c1"># raíz del proyecto</span>
-  |-- assets <span class="c1"># sub carpeta de gh-pages</span>
-  | |-- css <span class="c1"># sub carpeta de assets</span>
-  | | `-- estilos.css
-  | `-- js <span class="c1"># sub carpeta de assets</span>
-  | `-- funciones.js
-  `-- index.html <span class="c1"># página de aterrizaje</span>
+      <pre> 📂 gh-pages <span class="c1"># raíz del proyecto</span>
+  |-- 📂 assets <span class="c1"># sub carpeta de gh-pages</span>
+  | |-- 📂 css <span class="c1"># sub carpeta de assets</span>
+  | | `-- <i class="fa-solid fa-file-code"></i> estilos.css
+  | |-- 📂 js <span class="c1"># sub carpeta de assets</span>
+  |   `-- <i class="fa-solid fa-file-code"></i> funciones.js
+  `-- <i class="fa-solid fa-file-code"></i> index.html <span class="c1"># página de aterrizaje</span>
 </pre>
-    </div>
+    </div><br>
     <blockquote>
       <p>La mejor manera de subir código a Github es mediante la línea de comandos.</p>
     </blockquote>
     <hr>
-    <p align="center">
+    <figure align="center">
       <img src="assets/prepare-code.png" alt="prepare code"><br>
-      <b>Captura:</b> Preparar el código para publicar.
-    </p>
-
+      <figcaption><small><b>Captura.6</b> Preparar el código para publicar.</small></figcaption>
+    </figure>
     <p><strong>Explicación</strong>: </p>
     <ol start="1">
       <li>Leemos el contenido del archivo <b>index.html</b> y dentro solo tenemos un
@@ -191,7 +188,6 @@
       <pre><span class="gu">cat</span> index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard('cat index.html')}"></i>
 </pre>
     </div>
-
     <blockquote>
       <p><strong><code>cat</code></strong>: es una herramienta que se utiliza en sistemas
         unix para concatenar archivos, de hecho viene por concatenar (con<strong>cat</strong>), pero también nos
@@ -200,30 +196,29 @@
     </blockquote>
     <ol start="2">
       <li>Preparamos nuestra página para la confirmación.</li>
-    </ol><br>
+    </ol>
     <div class="highlight">
       <pre><span class="gu">git</span> add index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard('git add index.html')}"></i>
 </pre>
     </div>
     <ol start="3">
       <li>Confirmamos los cambios para poder publicar.</li>
-    </ol><br>
+    </ol>
     <div class="highlight">
       <pre><span class="gu">git</span> commit -m &#39;create index&#39; <i class="fa-solid fa-clone" onclick="{copy_clipboard(`git commit -m 'create index'`)}"></i>
 </pre>
     </div>
 
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
+    <a href="#top"><img alt=""
+        src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     <hr />
     <h3 id="publicando-la-pagina"><a name="publish"></a>Publicando la página <a class="headerlink"
         href="#publicando-la-pagina" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
 
-    <p align="center">
+    <figure align="center">
       <img src="assets/push-publish.png" alt="push"><br>
-      <b>Captura:</b> Publicar los cambios al repositorio remoto.
-    </p>
+      <figcaption><small><b>Captura.7</b> Publicar los cambios al repositorio remoto.</small></figcaption>
+    </figure>
     <p><strong>Explicación</strong>:</p>
     <ol start="1">
       <li>Usamos el comando <b>git push</b> para enviar los cambios realizadas en nuestro repositorio local a nuestro
@@ -250,10 +245,10 @@
         que se creó.</li>
     </ol>
     <hr>
-    <p align="center">
+    <figure align="center">
       <img src="assets/up-remote.png" alt="up remote" width="900"><br>
-      <b>Captura:</b> Página del repositorio remoto.
-    </p>
+      <figcaption><small><b>Captura.8</b> Página del repositorio remoto.</small></figcaption>
+    </figure>
     <ol start="1">
       <li>Este es un control <b>dropdown</b> que tiene una lista desplegable de las
         ramas existentes.<blockquote>
@@ -262,7 +257,7 @@
           </p>
         </blockquote>
       </li>
-    </ol><br>
+    </ol>
     <ol start="2">
       <li>Es el estado que describe en que acción se encuentra el despliegue general puede ser
         <strong>pending</strong> o <strong>active</strong>. Al dar clic sobre <kbd>&#x1f680; github-pages</kbd>
@@ -271,30 +266,28 @@
     </ol>
     </p>
     <hr>
-    <p align="center">
+    <figure align="center">
       <img src="assets/view-deployement.png" alt="view deploy" width="900"><br>
-      <b>Captura:</b> Página de historial de despliegue de la rama configurada.
-    </p>
+      <figcaption><small><b>Captura.9</b> Página de historial de despliegue de la rama configurada.</small></figcaption>
+    </figure>
     <ol start="1">
       <li>Nos indica la rama a la cual se está haciendo el despliegue.</li><br>
       <li>Este botón nos permite visitar la página ya desplegada.</li>
     </ol>
-    <p align="center">
+    <figure align="center">
       <img src="assets/gh-pages.png" alt="" width="900"><br>
-      <b>Captura:</b> Visitar la página en producción.
-    </p>
+      <figcaption><small><b>Captura:</b> Visitar la página en producción.</small></figcaption>
+    </figure>
     <ol start="1">
       <li>Ya tenemos la página mostrando el encabezado que creamos en el archivo
         <b>index.html</b>.
-      </li><br>
+      </li>
       <li>Esta URL ya se puede compartir y el patrón se compone de:
         <div class="highlight"><br>
           <pre>https://&lt;username&gt;.github.io/&lt;repository-name&gt;</pre>
         </div>
       </li>
     </ol>
-
-
     <ul>
       <li><strong>username</strong>: el nombre de la cuenta de github.</li>
       <li><strong>github.io</strong>: el servicio de hosting que nos da github.</li>
@@ -310,28 +303,14 @@
     </p>
     <hr />
     <p align="center">
-      <!-- facebook -->
-      <a href="https://www.facebook.com/profile.php?id=100009064421475"><img class="logo"
-          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
-          width="40"></a>
-      <!-- github -->
-      <a href="https://github.com/EniDev911"><img class="logo"
-          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/github_circled.ico"
-          width="40"></a>
-      <!-- twitter -->
-      <a href="https://twitter.com/MarcoContreraas"><img class="logo"
-          src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/twitter_circled.ico"
-          width="40"></a><br>
       <!-- buymecoffe --><br>
       <a href="https://www.buymeacoffee.com/9111592">
         <img class="logo" src="https://raw.githubusercontent.com/EniDev911/assets/main/png/support/buymeacoffee.png"
           height="80"></a>
     </p>
-
-    </p>
   </article>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
-  <script src="../../../public/js/functions.js"></script>
+  <script src="../../../public/js/functions.js" type="module"></script>
 </body>
 
 </html>
