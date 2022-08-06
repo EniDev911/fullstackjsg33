@@ -8,7 +8,7 @@ export const projects = [{
     background: "secondary",
     module: 1,
     active: true
-}, {
+},{
     title: "Desafío 2: Landing Page",
     image: "src/public/images/png/landing-courses.png",
     url_code: "https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/",
@@ -99,6 +99,33 @@ export const projects = [{
     image: "src/public/images/png/js-challenge-2.png",
     url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/conditions",
     url_demo: "src/chanllenges/module-3/conditions/",
+    color: "light",
+    background: "secondary",
+    module: 3,
+},
+{
+    title: "Desafío 3: Funciones",
+    image: "src/public/images/png/functions.png",
+    url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/functions",
+    url_demo: "src/chanllenges/module-3/functions/actividad_cuadrados",
+    color: "light",
+    background: "secondary",
+    module: 3,
+},
+{
+    title: "Desafío 4: Inmobiliaria",
+    image: "src/public/images/png/inmobiliaria.png",
+    url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/arrays-todolist",
+    url_demo: "src/chanllenges/module-3/arrays-objects/",
+    color: "light",
+    background: "secondary",
+    module: 3,
+},
+{
+    title: "Desafío 5: Todo List",
+    image: "src/public/images/png/todo-list-js.png",
+    url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/arrays-todolist",
+    url_demo: "src/chanllenges/module-3/arrays-todolist/",
     color: "light",
     background: "secondary",
     module: 3,
