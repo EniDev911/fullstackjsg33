@@ -1,6 +1,5 @@
-
-*.zip
-**/*.zip
+*.rar
+**/*.rar
 *.mp3
 *.mp4
 *.pdf
