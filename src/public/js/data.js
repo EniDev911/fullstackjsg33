@@ -98,7 +98,7 @@ export const projects = [{
     title: "Desafío 2: Condiciones en JS",
     image: "src/public/images/png/js-challenge-2.png",
     url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/conditions",
-    url_demo: "src/chanllenges/module-3/conditions/",
+    url_demo: "src/chanllenges/module-3/conditions/part-one-border-toggle.html",
     color: "light",
     background: "secondary",
     module: 3,
