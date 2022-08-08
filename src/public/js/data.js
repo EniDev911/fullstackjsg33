@@ -29,6 +29,7 @@ export const projects = [{
     module: 1
 },
 {
+    // BOOTSTRAP CUPPON
     title: "Desafío 4: Bootstrap Cuppons",
     image: "src/public/images/png/bootstrap_cuppons.png",
     url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-1/5-bootstrap/cuppons",
@@ -58,10 +59,11 @@ export const projects = [{
     module: 2
 },
 {
+    // GRID 
     title: "Desafío 2: Grid Ecommerce",
     image: "src/public/images/png/grid-ecommerce.png",
-    url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-2/1-flexbox/chat_networking",
-    url_demo: "src/chanllenges/module-2/1-flexbox/chat_networking/",
+    url_code: "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-2/2-grid/challenge_store",
+    url_demo: "src/chanllenges/module-2/2-grid/challenge_store",
     color: "info",
     background: "light",
     module: 2
