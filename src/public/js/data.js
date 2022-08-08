@@ -12,7 +12,7 @@ export const projects = [{
     title: "Desafío 2: Landing Page",
     image: "src/public/images/png/landing-courses.png",
     url_code: "https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/",
-    url_demo: "src/chanllenges/module-1/2-html/cv2/index.html",
+    url_demo: "src/chanllenges/module-1/3-css/landing-page",
     url_zip: "src/public/compressed/courses.zip",
     color: "primary",
     background: "dark",
