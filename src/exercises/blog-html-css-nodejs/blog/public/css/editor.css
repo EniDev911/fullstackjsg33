@@ -69,3 +69,33 @@ textarea::-webkit-scrollbar-thumb {
     padding-bottom: 100px;
     white-space: pre-wrap;
 }
+
+.blog-options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    margin: 0 10px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn.grey {
+    background: #a5a5a5;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 14px;
+}
