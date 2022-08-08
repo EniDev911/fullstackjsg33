@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module">
+    const API_URL = "https://jsonplaceholder.typicode.com";
+    const xhr = new XMLHttpRequest();
+    function onRequestHandler() {
+      if (this.readyState === 4 && this.status === 200) {
+        // 0 = UNSET, no se ha llamado al método open
+        // 1 = OPENED, se ha llamado al método open
+        // 2 = HEADERS_RECEIVED, se está llamando al método send()
+        // 3 = LOADING, está cargando, es decir, está recibiendo la respuesta.
+        // 4 = DONE, se ha completado la operación
+        // console.log(this.response); // la respuesta es en formato texto
+        const data = JSON.parse(this.response) // le damos formato para iterar
+        console.log(data)
+        const HTMLResponse = document.querySelector("#app");
+        const template = data.map(user => `<li>&#x1f977; ${user.name} &#x1f4e7;${user.email}</li>`)
+        HTMLResponse.innerHTML = `<ul>${template}</ul>`
+      }
+    }
+
+    xhr.addEventListener("load", onRequestHandler);
+    xhr.open("GET", `${API_URL}/users`);
+    xhr.send();
+  </script>
+</body>
+
+</html>

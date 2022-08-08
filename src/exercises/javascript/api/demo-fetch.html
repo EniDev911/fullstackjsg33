@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module">
+    const API_URL = "https://jsonplaceholder.typicode.com";
+    const HTMLResponse = document.getElementById("app");
+    const ul = document.createElement('ul');
+
+    fetch(`${API_URL}/users`)
+      .then(response => response.json())
+      .then(users => {
+        users.forEach(user => {
+          let elem = document.createElement("li");
+          elem.appendChild(document.createTextNode(` ${user.name} ${user.email}`));
+          ul.appendChild(elem);
+        })
+        HTMLResponse.appendChild(ul);
+        // const tpl = users.map(user => `<li>&#x1f977; ${user.name} &#x1f4e7;${user.email}</li>`);
+        // HTMLResponse.innerHTML = `<ul>${tpl}</ul>`;
+
+      });
+
+  </script>
+</body>
+
+</html>
