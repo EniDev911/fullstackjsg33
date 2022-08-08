@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../public/css/docs.css">
+    <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+    <script src="../../../public/js/lib/fontawesome.bundle.js"></script>
+    <title>use_guide</title>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <h2 align="center">
+            <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"
+                height="40"><br><br>
+            GUÍA BÁSICA DE USO
+        </h2>
+
+        <p><a name="top"></a></p>
+        <h3 id="contenido">Contenido <a class="headerlink" href="#contenido" title="Permanent link"><i
+                    class="fa-solid fa-anchor"></i>
+            </a></h3>
+        <ul>
+            <li>
+                <h4 id="editor">Editor &#x1f4cb;</h4>
+                <ul>
+                    <li><a href="#settings">Configuración</a></li>
+                    <li><a href="#settings.json">Configuración setting.json</a></li>
+                    <li><a href="#extends">Instalar extensiones</a></li>
+                </ul>
+            </li>
+            <li>
+                <h4 id="manipulando-archivos">Manipulando archivos &#x1f4c1;</h4>
+                <ul>
+                    <li><a href="#folders">Abrir una carpeta</a></li>
+                    <li><a href="#files">Crear un archivo</a></li>
+                    <li><a href="#save">Guardar un archivo</a></li>
+                    <li><a href="#intellisense">Comportamiento intellisense</a></li>
+                </ul>
+            </li>
+            <li>
+                <h4 id="atajos-de-teclado">Atajos de teclado &#x2328;</h4>
+                <ul>
+                    <li><a href="#basic">Funcionalidad básica</a></li>
+                    <li><a href="#cursor">Selección y cursores</a></li>
+                </ul>
+            </li>
+        </ul>
+        <hr />
+        <h3 id="abrir-carpetas-en-vs-code"><a name="folders"></a>Abrir carpetas en vs code <a class="headerlink"
+                href="#abrir-carpetas-en-vs-code" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <p>Tenemos diferentes formas de abrir una carpeta para trabajar en vs code. Veremos las más comunes para evitar
+            confusiones.</p>
+        <ol>
+            <li>
+                <p><strong>Arrastrando la carpeta del proyecto</strong>
+                    <img alt="open1" src="assets/img/file/open_folder1.png" />
+                </p>
+            </li>
+            <li>
+                <p><strong>Desde el menú de vs code</strong><br />
+                    <img alt="open2" src="assets/img/file/open_folder2.png" />
+                    <img alt="open2.1" src="assets/img/file/open_folder2.1.png" />
+                </p>
+            </li>
+        </ol>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="manipulando-archivos_1"><a name="files"></a>Manipulando archivos<a class="headerlink"
+                href="#manipulando-archivos_1" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <ul>
+            <li><strong>Crear un archivo</strong><br />
+                <img alt="create" src="assets/img/file/create.png" />
+                <a name="save"></a>
+            </li>
+            <li><strong>Guardar un archivo</strong><br />
+                <img alt="save1" src="assets/img/file/save1.png" />
+                <img alt="save1.1" src="assets/img/file/save1.1.png" />
+                <a name="intellisense"></a>
+            </li>
+            <li><strong>Comportamiento intellisense</strong><br />
+                Cuando editamos un archivo, vs code por defecto tiene muchas funciones de autocompletado, el
+                comportamiento &ldquo;intellisense&rdquo; del editor se muestra cada vez que tipeamos una letra se
+                muestra una ayuda, interpretando lo que podríamos querer hacer.
+                <img alt="intellisense" src="assets/img/file/intellisense.png" />
+            </li>
+        </ul>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="configuracion"><a name="settings"></a>Configuración <a class="headerlink" href="#configuracion"
+                title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <ul>
+            <li>Las configuraciones podemos encontrarlas desde la barra lateral:<br />
+                <img alt="settings1" src="assets/img/file/settings1.png" /><br />
+                Aquí simplemente podemos buscar en la caja de texto cualquier opción que desees modificar.<br />
+                <strong>Ejemplo</strong> para cambiar el tamaño de la fuente del editor:<br />
+                <img alt="fontsize" src="assets/img/file/fontsize.png" />
+            </li>
+        </ul>
+        <h3 id="archivo-de-configuracion"><a name="settings.json"></a>Archivo de configuración <a class="headerlink"
+                href="#archivo-de-configuracion" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <ul>
+            <li>Abrir desde la barra lateral, las configuraciones:<br />
+                <img alt="settings1" src="assets/img/file/settings1.png" /><br />
+                <img alt="settings.json" src="assets/img/file/open_settings_json.png" />
+                Dentro podemos modificar algunos parámetros directamente en el archivo JSON, su estructura es muy
+                simple, en la columna izquierda van las opciones y en la derecha se asigna el valor para esa
+                opción:<br />
+                <img alt="settings.json" src="assets/img/file/settings_json1.png" /><br />
+                A continuación vemos un poco las opciones de diferentes tipos que podemos cambiar:<br />
+                <br>
+            </li>
+        </ul>
+        <p><strong>Formato</strong>:<br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;editor.formatOnPaste&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea el código al pegarlo</span>
+<span class="gu">&quot;editor.formatOnSave&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea el código al guardar</span>
+<span class="gu">&quot;editor.formatOnType&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea una línea después de escribirla</span>
+</pre>
+        </div>
+        <strong>Fuentes</strong><br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;editor.fontSize&quot;</span><span class="s2">:</span> <span class="mi">18</span>, <span class="c1">// Tamaño de fuente de 18px</span>
+<span class="gu">&quot;editor.fontFamily&quot;</span><span class="s2">:</span> <span class="s2">&quot;&#39;Cascadia code&#39;, monospace&quot;</span>, <span class="c1">// Familia de la fuente</span>
+<span class="gu">&quot;editor.fontLigatures&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Activa las ligaduras para las fuentes que lo soportan</span>
+</pre>
+        </div>
+        </p>
+        <p><strong>Cursor</strong><br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;editor.cursorStyle&quot;</span><span class="s2">:</span> <span class="s2">&quot;line-thin&quot;</span>, <span class="c1">// Estilo del cursor: línea delgada</span>
+<span class="gu">&quot;editor.cursorBlinking&quot;</span><span class="s2">:</span> <span class="s2">&quot;blink&quot;</span>, <span class="c1">// Animación del cursor</span>
+<span class="gu">&quot;editor.hideCursorInOverviewRuler&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Oculta la marca del cursor en el editor</span>
+</pre>
+        </div>
+        <strong>Colores</strong><br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;workbench.colorCustomizations&quot;</span><span class="s2">:</span><span class="p">{</span> <span class="c1">// Remplaza los colores del editor</span>
+    <span class="gu">&quot;statusBar.background&quot;</span><span class="p">:</span> <span class="s2">&quot;#FFD166&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color de fondo de la barra de status</span>
+    <span class="gu">&quot;statusBar.foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;282B39&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color del primer plano de la barra de status</span>
+    <span class="gu">&quot;editor.foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffb191&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color de primer plano que no es afectado por la sintaxis</span>
+<span class="p">}</span>
+</pre>
+        </div>
+        <strong>Archivos</strong><br />
+        <div class="highlight">
+            <pre> <span class="gu">&quot;files.trimFinalNewlines&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Remueve las líneas extras al final del archivo</span>
+ <span class="gu">&quot;files.insertFinalNewline&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Inserta una línea al final del archivo</span>
+ <span class="gu">&quot;files.trimTrailingWhitespace&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Remueve los espacios extras al final de una línea</span>
+</pre>
+        </div>
+        <strong>Identación y espaciado</strong><br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;editor.detectIdentation&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Desactiva la documentación automática</span>
+<span class="gu">&quot;editor.renderIndentGuides&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Desactiva las líneas de indentación</span>
+<span class="gu">&quot;editor.folding&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Elimina el espaciado</span>
+<span class="gu">&quot;editor.glyphMatgin&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Elimina el margen izquierdo (Se usa principalmente para depurar)</span>
+</pre>
+        </div>
+        <strong>Terminal</strong><br />
+        <div class="highlight">
+            <pre><span class="gu">&quot;terminal.integrated.fontSize&quot;</span><span class="s2">:</span> <span class="mi">15</span>, <span class="c1">// Tamaño de fuente para la terminal integrada</span> 
+<span class="gu">&quot;terminal.integrated.fontFamily&quot;</span><span class="s2">:</span> <span class="s2">&quot;Consolas&quot;</span>, <span class="c1">// Familia de la fuente</span>
+</pre>
+        </div>
+        </p>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="instalar-extensiones"><a name="extends"></a>Instalar extensiones <a class="headerlink"
+                href="#instalar-extensiones" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <p>Para instalar extensiones, hacemos clic en el icono de extensiones de la barra de actividades. Se desplegará
+            la barra de actividades mostrando las extensiones recomendas y se encuentran ordenadas por popularidad.</p>
+        <p><img alt="extends" src="assets/img/extensions/panel.png" />
+        </p>
+        <p>Te dejo una lista de extensiones recomendadas para el desarrollo web: </p>
+        <ul>
+            <li>
+                <p><strong>Live Server</strong>: configura un servidor local para poder ver el desarrollo en vivo, fácil
+                    de usar y recarga la página automáticamente al guardar los cambios en el archivo. (La ilustración de
+                    ejemplo anterior lo muestra).</p>
+            </li>
+            <li>
+                <p><strong>Bracket Pair Colorizer 2</strong>: A pesar que su mantención está descontinuida es un plugin
+                    que yo recomiendo, ya que nos permitirá <strong>identificar paréntesis, corchetes o llaves
+                        coincidentes</strong>, también nos permite configurar los colores para cada pareja.<br />
+                    <img alt="color pair" src="assets/img/extensions/color_pair.png" />
+                </p>
+            </li>
+            <li>
+                <p><strong>Css Peek</strong>: Esta es una extensión que nos ayuda a <strong>identificar las clases IDs
+                        en nuestro documento HTML y nos ofrece un menú contextual en el que podemos ver un extracto de
+                        los estilos CSS</strong> de dichas clases e IDs. Además, si queremos, con tan solo un clic,
+                    localizará en nuestra hoja de estilos la clase o ID para poder modificarlo de manera rápida y
+                    sencilla.
+                    <img alt="css peek" src="assets/img/extensions/css_peek.png" />
+                </p>
+            </li>
+        </ul>
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <hr />
+        <h3 id="atajos-de-teclado_1">Atajos de teclado <a class="headerlink" href="#atajos-de-teclado_1"
+                title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <p><a name="basic"></a></p>
+        <table border="1">
+            <caption style="background: #ccc; border: 1px solid black;">
+                <h3>Funcionalidad básica</h3>
+            </caption>
+            <colgroup>
+                <col width="15%">
+                <col width="1000">
+            </colgroup>
+            <tr>
+                <th>Combinación</th>
+                <th align="left">Acción</th>
+            </tr>
+            <tr>
+                <!-- CTRL + SH + N -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td>
+                <td>Abre una nueva instancia de visual studio code.</td>
+            </tr>
+            <!-- CTRL + N  -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>N</kbd></td>
+                <td>Crea un nuevo archivo sin guardar.</td>
+            </tr>
+            <!-- CTRL + S -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>S</kbd></td>
+                <td>Guardar el archivo.</b></td>
+            </tr>
+            <!-- CTRL + SHIFT + S -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
+                <td>Realiza la acción <b>&#60;&#60;Guardar Como&#62;&#62;.</td>
+            </tr>
+            <!-- CTRL + O -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>O</kbd></td>
+                <td>Abrir un archivo del explorador de archivos.</td>
+            </tr>
+            <!-- CTRL + SH + W -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd></td>
+                <td>Cerrar la instancia actual de visual studio code.</td>
+            </tr>
+            <!-- CTRL + B -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>B</kbd></td>
+                <td>Activar/desactivar la visibilidad de la barra lateral.</td>
+            </tr>
+            <!-- CTRL + SHIFT + P o F1-->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+                <td>Abre la paleta de comandos. También puede usar <kbd>f1</kbd></b></td>
+            </tr>
+            <!-- CTRL + SHIFT + X -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd></td>
+                <td>Cambiar al panel de extensiones.</b></td>
+            </tr>
+            <!-- CTRL + SHIFT + E -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td>
+                <td>Cambiar al panel de explorador de archivos.</b></td>
+            </tr>
+            <!-- CTRL + SHIFT + D -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
+                <td>Cambiar al panel de debugging.</b></td>
+            </tr>
+            <!-- CTRL + SHIFT + G -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td>
+                <td>Cambiar al panel de control de código fuente.</b></td>
+            </tr>
+        </table>
+
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+            <a name="cursor"></a>
+        </p>
+        <table border="1" width="100%">
+            <caption style="border: 1px solid black; background: #ccc;">
+                <h3>Selección múltiple y cursores</h3>
+            </caption>
+            <colgroup>
+                <col width="20%">
+                <col width="80%">
+            </colgroup>
+            <tr>
+                <th>Combinación</th>
+                <th align="left">Acción</th>
+            </tr>
+            <!-- CTRL + A -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>A</kbd></td>
+                <td>Selecciona todo el texto.</td>
+            </tr>
+            <!-- CTRL + L -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>L</kbd></td>
+                <td>Selecciona la línea actual.</td>
+            </tr>
+            <!-- CTRL+ SHIFT + L -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td>
+                <td>Selecciona todas las instancias de la selección actual.</td>
+            </tr>
+            <!-- CTRL + F2 -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>F2</kbd></td>
+                <td>Selecciona todas las coincidencias de la palabra actual.</td>
+            </tr>
+            <!-- CTRL + D -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>D</kbd></td>
+                <td>Si vuelve a presionar la combinación se
+                    agrega a la selección la siguiente ocurrencia.</td>
+            </tr>
+            <!-- SHIFT + ALT + RIGHT -->
+            <tr>
+                <td><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>Right</kbd></td>
+                <td>Ampliar la selección</td>
+            </tr>
+            <!-- SHIFT + ALT + LEFT -->
+            <tr>
+                <td><kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>Left</kbd></td>
+                <td>Reducir la selección</td>
+            </tr>
+            <!-- ALT + CLICK -->
+            <tr>
+                <td><kbd>Alt</kbd>+<kbd>Clic</kbd></td>
+                <td>Insertar un cursor</td>
+            </tr>
+            <!-- CTRL + ALT + UP -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Up</kbd></td>
+                <td>Insertar cursor encima de la fila actual</td>
+            </tr>
+            <!-- CTRL + ALT + DOWN -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Down</kbd></td>
+                <td>Insertar cursor debajo de la fila actual</td>
+            </tr>
+            <!-- CTRL + U -->
+            <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>U</kbd></td>
+                <td>Deshacer el último cursor</td>
+            </tr>
+        </table>
+
+        <p><a href="#top"><img alt=""
+                    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+        </p>
+        <p align="center">
+            Si tienes alguna sugerencia escribeme:<br>
+            <a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"><i class="fa-solid fa-envelope"
+                    style="color: rgb(26, 26, 26); font-size: 50px;"></i></a>
+        </p>
+    </article>
+</body>
+
+</html>

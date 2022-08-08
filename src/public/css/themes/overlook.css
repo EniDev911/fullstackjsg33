@@ -102,7 +102,6 @@
 
   .highlight .gu {
     color: #ff0;
-    font-weight: bold
   }
 
   .highlight .gt {
@@ -135,7 +134,7 @@
   }
 
   .highlight .m {
-    color: #009999
+    color: #0db2b2
   }
 
   .highlight .s {
@@ -164,7 +163,7 @@
   }
 
   .highlight .ni {
-    color: purple
+    color: rgb(7, 220, 239)
   }
 
   .highlight .ne {
@@ -178,7 +177,7 @@
   }
 
   .highlight .nn {
-    color: #555555
+    color: #998f8f
   }
 
   .highlight .nt {

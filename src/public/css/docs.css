@@ -495,12 +495,25 @@ body .markdown-body {
 @media only screen and (min-width: 1200px) {
   body {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1500px;
   }
 
   .markdown-body {
     width: 75%;
     font-size: 17px;
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .markdown-body {
+    width: 75%;
+    font-size: 18px;
     margin: 30px auto;
   }
 }
