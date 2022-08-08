@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+    background: #262626;
+    color: aliceblue;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background: #fff;
+    z-index: 9;
+}
+
+.navbar .logo-brand {
+    width: 50px;
+    margin: auto 0;
+    cursor: pointer
+}
+
+.link-container {
+    display: flex;
+    list-style: none;
+}
+
+.link {
+    padding: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #262626;
+}
+
+.hero {
+    margin-top: 6px;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: url("https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+}
+
+.content {
+    text-align: center;
+
+}
+
+.heading {
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 80px;
+    line-height: 60px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.heading .small {
+    display: block;
+    font-size: 40px;
+}
+
+.heading .no-fill {
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
+
+.btn {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(19, 147, 68, 0.6);
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    transition: background-color .2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgba(55, 255, 155, .6);
+    cursor: pointer;
+}
+
+.blogs-section {
+    width: 100%;
+    padding: 50px 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+}
+
+.blog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-overview {
+    margin: 10px 0 20px;
+    line-height: 30px;
+}
+
+.btn.dark {
+    background-color: #1b1b1b;
+    color: #fff;
+}
