@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API - Conversor de monedas</title>
+</head>
+
+<body>
+  <input type="text">
+
+  <select name="" id="">
+    <option value="USD"></option>
+  </select>
+
+  <button>Buscar</button>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const API_URL = "https://mindicador.cl/api/"
+
+  const getDetails = async () => {
+    let types = ["uf", "ivp", "dolar", "euro", "ipc", "utm", "dolar_intercambio"]
+    let headersList = {
+      "Accept": "*/*",
+    }
+    try {
+      const res = await fetch(API_URL, {
+        method: "GET",
+        headers: headersList
+      });
+      if (res.status === 200) {
+        const data = await res.json();
+        console.log(data.uf);
+        if ('dolar'){
+          let result = 'input'.value / data.dolar
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  getDetails()
+
+  const loadSettinsForChart = async (type) => {
+
+  }
+
+  const renderChart = (data) => {
+
+    let chart = new Chart(charDOM, config);
+    chart.destroy();
+    chart.data.datasets[0].data[2] = 50
+  }
+
+
+
+  function prepararConfiguracionParaLaGrafica(monedas) {
+    // creamos la variables necesarias para el objeto de configuracion 
+    const tipoDeGrafica = "line";
+    const nombresDeLasMonedas = monedas.map((monedas) => monedas.Codigo);
+    const titulo = "Monedas";
+    const colorDeLinea = "red";
+    const valores = monedas.map((monedas) => {
+      const valor = monedas.Valor.replace(",", ".");
+      return Number(valor);
+    });
+
+    // Creamos el objeto de configuración usando las variables anteriores
+    const config = {
+      type: tipoDeGrafica,
+      data: {
+        labels: nombresDeLasMonedas,
+        datasets: [
+          {
+            label: titulo,
+            backgroundColor: colorDeLinea,
+            data: valores
+          }
+        ]
+      }
+    };
+    return config;
+  }
+
+  async function renderGrafica() {
+    const monedas = await getMonedas();
+    const config = prepararConfiguracionParaLaGrafica(monedas);
+    const chartDOM = document.getElementById("myChart");
+    new Chart(chartDOM, config);
+  }
+
+  renderGrafica();
+
+</script>
+
+</html>

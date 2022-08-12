@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express-fileupload": "^1.4.0",
-    "express.js": "^1.0.0"
+    "express.js": "^1.0.0",
+    "firebase": "^9.9.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
