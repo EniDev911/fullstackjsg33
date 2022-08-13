@@ -24,26 +24,30 @@
      background: #fff;
      font-size: 0.8rem;
      border-radius: 5px;
-     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+     box-shadow: 0 5px 10px rgba(223, 187, 187, 0.5);
      padding: 10px;
      overflow-y: auto;
+     border: 2px solid rgb(255, 226, 226);
    }
 
    .input-group {
-     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
      text-align: center;
+     position: relative;
    }
 
    .input-group i.fa-pen-to-square {
      position: absolute;
      margin-left: 10px;
-     top: 20px;
-     color: rgb(249, 198, 131);
+     top: 4vh;
+     color: rgb(247, 237, 225);
    }
 
    #input {
      height: 5vh;
-     width: 100%;
+     width: 90%;
      outline: none;
      border: none;
      border-radius: 3px;
@@ -56,16 +60,19 @@
 
    button {
      text-transform: uppercase;
+     height: 100%;
      background: rgb(114, 218, 150);
-     border: none;
      border-radius: 3px;
+     border: none;
      padding: 5px;
+     transition: transform .1s ease-in-out;
    }
 
    button:hover {
      cursor: pointer;
      background: rgb(29, 176, 81);
      color: #fff;
+     transform: scale(1.1);
    }
 
    #input::placeholder {
@@ -90,7 +97,7 @@
      height: 6vh;
      border-radius: 3px;
      margin: 1.5vh 0vw;
-     padding: 1.5vh 0 1.5vh 1.5vh;
+     padding: 1.5vh 7vw 1.5vh 1.5vh;
      list-style: none;
      font-style: italic;
    }
@@ -98,7 +105,7 @@
    ul .fa-check,
    .fa-trash {
      position: absolute;
-     margin: 0 1vh;
+     margin: 0 1vw;
      cursor: pointer;
    }
 
@@ -153,6 +160,19 @@
      color: #444;
    }
 
-   p a:hover {
-     color: #f53;
+   p>a i.fa-brands {
+     color: #444;
+     transition: transform .1s ease-in-out;
+   }
+
+   p>a i.fa-brands:hover {
+     transform: scale(1.1);
+   }
+
+   p>a i.fa-github:hover {
+     color: rgba(0, 0, 0, 0.5);
+   }
+
+   p>a i.fa-linkedin-in:hover {
+     color: #0a66c2;
    }

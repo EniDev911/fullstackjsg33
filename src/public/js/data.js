@@ -46,6 +46,7 @@ export const projects = [
     module: 1,
   },
   {
+    // Portfolio
     title: "Desafío Final: Portafolio",
     image: "src/public/images/png/portfolio-mobile.png",
     url_code: "https://github.com/EniDev911/EniDev911.github.io",
@@ -97,6 +98,7 @@ export const projects = [
     module: 2,
   },
   {
+    // JS GET TOTAL
     title: "Desafío 1: Calculando el total",
     image: "src/public/images/png/js-challenge-1.png",
     url_code:
@@ -108,6 +110,7 @@ export const projects = [
     active: true,
   },
   {
+    // JS CONDITIONS
     title: "Desafío 2: Condiciones en JS",
     image: "src/public/images/png/js-challenge-2.png",
     url_code:
@@ -118,6 +121,7 @@ export const projects = [
     module: 3,
   },
   {
+    // JS FUNCTIONS
     title: "Desafío 3: Funciones",
     image: "src/public/images/png/functions.png",
     url_code:
@@ -128,10 +132,11 @@ export const projects = [
     module: 3,
   },
   {
+    // Inmobiliaria
     title: "Desafío 4: Inmobiliaria",
     image: "src/public/images/png/inmobiliaria.png",
     url_code:
-      "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/arrays-todolist",
+      "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/arrays-objects/",
     url_demo: "src/chanllenges/module-3/arrays-objects/",
     color: "light",
     background: "secondary",
