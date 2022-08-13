@@ -69,7 +69,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 0.5px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid #012d41;
       overflow: hidden;
     }
 
@@ -81,17 +81,157 @@
       height: 100%;
     }
 
+    .contact_info {
+      padding-top: 40px;
+    }
+
+    .contact_info .title {
+      color: #f2f2f2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .contact_info ul {
+      position: relative;
+
+    }
+
+    .contact_info ul li {
+      position: relative;
+      margin: 10px 0;
+      list-style: none;
+
+    }
+
+    .contact_info ul li .icon {
+      display: inline-block;
+      width: 20px;
+      font-size: 18px;
+      color: #53b5e2;
+    }
+
+    .contact_info ul li span {
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .contact_info.education li {
+      margin-bottom: 15px;
+    }
+
+    .contact_info.education h5 {
+      color: #53b5e2;
+      font-weight: 500;
+    }
+
+    .contact_info.education h4:nth-child(2) {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .contact_info.education h4 {
+      color: #fff;
+      font-weight: 300;
+    }
+
+    /* // LANGUAGE SECTION  */
+    .contact_info.langs .percent {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: #012333;
+      display: block;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    .contact_info.langs .percent div {
+      background: #53b5e2;
+      border-radius: 2px 0 0 2px;
+      height: 100%;
+    }
+
     .container .right_side {
       position: relative;
       background: #fff;
       padding: 40px;
     }
+
+    .about {
+      margin-bottom: 50px;
+    }
+
+    .about:last-child {
+      margin-bottom: 0;
+    }
+
+    .title-about {
+      color: #003148;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #333;
+    }
+
+    .about .box {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 20px 0;
+    }
+
+    .about .box .year-company {
+      min-height: 150px;
+    }
+
+    .about .box .year-company h5 {
+      text-transform: uppercase;
+      color: #848c90;
+      font-weight: 600;
+    }
+
+    .about .box .text h4 {
+      text-transform: uppercase;
+      color: #2a7da2;
+      font-size: 16px;
+    }
+
+    .skills .box {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skills .box h4 {
+      text-transform: uppercase;
+      color: #848c99;
+      font-weight: 500;
+    }
+
+    .skills .box .percent {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background: #cff;
+      border-radius: 4px;
+    }
+
+    .skills .box .percent div {
+      background: #3eaadb;
+      height: 100%;
+      border-radius: 4px 0 0 4px;
+    }
   </style>
 </head>
 
 <body>
-  <i class="fa-solid fa-phone"></i>
-  <i class="fa-solid fa-square-phone"></i>
   <div class="container">
     <div class="left_side">
       <div class="profile_text">
@@ -101,6 +241,7 @@
         <h2>Marco Contreras<br><span>Web Developer</span></h2>
       </div>
       <div class="contact_info">
+        <!-- CONTACT SECTION -->
         <h3 class="title">Contacto</h3>
         <ul>
           <li>
@@ -112,10 +253,6 @@
             <span class="text">enidev911@gmai.com</span>
           </li>
           <li>
-            <span class="icon"></span>
-            <span class="text">www.enidev911.github.io</span>
-          </li>
-          <li>
             <span class="icon"><i class="fa-brands fa-twitter-square"></i></span>
             <span class="text">Twitter</span>
           </li>
@@ -125,10 +262,127 @@
           </li>
         </ul>
       </div>
+      <div class="contact_info education">
+        <!-- EDUCATION SECTION -->
+        <h3 class="title">Contacto</h3>
+        <ul>
+          <li>
+            <h5>2019 - 2020</h5>
+            <h4>Programming compute</h4>
+            <h4>AIEP IP</h4>
+          </li>
+          <li>
+            <h5>2019 - 2020</h5>
+            <h4>Programming compute</h4>
+            <h4>AIEP IP</h4>
+          </li>
+        </ul>
+      </div>
+      <div class="contact_info langs">
+        <!-- LANGUAGES SECTION -->
+        <h3 class="title">Contacto</h3>
+        <ul>
+          <li>
+            <span class="text">English</span>
+            <span class="percent">
+              <div style="width: 60%;"></div>
+            </span>
+          </li>
+          <li>
+            <span class="text">Spanish</span>
+            <span class="percent">
+              <div style="width: 80%;"></div>
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="right_side"></div>
+    <!-- END LEFT SIDE  -->
+    <div class="right_side">
+      <div class="about">
+        <h2 class="title-about">Profile</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam labore tenetur quae unde possimus porro
+          molestias architecto. Quisquam, pariatur ipsum incidunt.<br><br>eligendi totam, maxime asperiores minima neque
+          odit
+          molestias nihil.</p>
+      </div>
+      <div class="about">
+        <h2 class="title-about">Experience</h2>
+        <div class="box">
+          <div class="year-company">
+            <h5>2019 - Present</h5>
+            <h5>Company Name</h5>
+          </div>
+          <div class="text">
+            <h4>Jr Fullstack Java</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+              dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
+              amet.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="year-company">
+            <h5>2019 - Present</h5>
+            <h5>Company Name</h5>
+          </div>
+          <div class="text">
+            <h4>Jr Fullstack Java</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+              dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
+              amet.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="year-company">
+            <h5>2019 - Present</h5>
+            <h5>Company Name</h5>
+          </div>
+          <div class="text">
+            <h4>Jr Fullstack Java</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+              dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
+              amet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about skills">
+        <h2 class="title-about">Professional Skills</h2>
+        <div class="box">
+          <h4>Html</h4>
+          <div class="percent">
+            <div style="width:90%;"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Css</h4>
+          <div class="percent">
+            <div style="width:75%;"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Javascript</h4>
+          <div class="percent">
+            <div style="width:85%;"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Figma</h4>
+          <div class="percent">
+            <div style="width:75%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="about interest">
+        <h2 class="title-about">Interest</h2>
+        <ul>
+          <li>Gaming</li>
+          <li>Reading</li>
+          <li>Animes</li>
+          <li>Music</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <i class="fa-brands fa-linkedin"></i>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
 </body>
 
