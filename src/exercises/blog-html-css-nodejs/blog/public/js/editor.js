@@ -63,6 +63,7 @@ publishBtn.addEventListener("click", () => {
       .catch((err) => {
         console.error(err);
       });
+    // mapbox access
   }
 });
 

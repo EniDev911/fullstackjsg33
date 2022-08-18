@@ -44,8 +44,7 @@
 
         <hr />
         <p><strong>1. Crear nueva clave</strong></p>
-        <p><i class="fa-solid fa-terminal"></i>
-            Comience creando una nueva clave, usando su correo electrónico como
+        <p>Comience creando una nueva clave, usando su correo electrónico como
             etiqueta en la terminal
         </p>
         <div class="highlight">
@@ -63,7 +62,7 @@
                 llave.</li>
         </ul>
         <hr>
-        <p><i class="fa-solid fa-terminal"></i> Se le pedirá donde almacenar la nueva llave
+        <p>Se le pedirá donde almacenar la nueva llave
             generada (Si solo presiona
             <kbd>Enter</kbd> por lo general se almacena en el directorio del usuario en una subcarpeta oculta):
         </p>
@@ -72,14 +71,14 @@
 </pre>
         </div>
 
-        <p><i class="fa-solid fa-terminal"></i> Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se
+        <p>Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se
             creara en la ubicación por
             defecto. </p>
         <blockquote>
             <p>Podemos darle un nombre descriptivo como <strong>/c/Users/&lt;myUser>/.ssh/gh_rsa</strong> (gh:
                 github). <strong>(Esto es opcional)</strong> </p>
         </blockquote>
-        <p><i class="fa-solid fa-terminal"></i> Luego nos va pedir ingresar una frase de contraseña segura la cual
+        <p>Luego nos va pedir ingresar una frase de contraseña segura la cual
             creará
             una capa adicional de
             seguridad. Evitará que cualquier persona que obtenga acceso a su computadora use esa clave sin la frase de
@@ -94,7 +93,7 @@
         <div class="highlight">
             <pre>Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: Enter same passphrase again:</pre>
         </div>
-        <p><i class="fa-solid fa-terminal"></i> Luego nos va pedir confirmar</p>
+        <p>Luego nos va pedir confirmar</p>
         <div class="highlight">
             <pre>Enter same passphrase again:</pre>
         </div>
@@ -170,7 +169,7 @@
                     target="_blank">clip</a></strong> de Windows
             para copiar tu clave de una manera sencilla y rápida.
         </p>
-        <p><i class="fa-solid fa-terminal"></i> Copiar la clave pública al portapapeles &#x1f4cb;</p>
+        <p>Copiar la clave pública al portapapeles &#x1f4cb;</p>
         <div class="highlight">
             <pre><span class="gu">clip</span> &lt; ~/.ssh/id_rsa.pub<i class="fa-solid fa-clone" onclick="{copy_clipboard('clip < ~/.ssh/id_rsa.pub')}"></i></pre>
         </div>
@@ -238,10 +237,10 @@
             GitHub.
         </p>
 
-        <p align="center">
+        <figure align="center">
             <img src="assets/new-ssh-key-added.png" alt="add-key"><br>
-            <b>Captura:</b> aquí se almacenan las llaves creadas.
-        </p>
+            <figcaption><small><b>Captura:</b> aquí se almacenan las llaves creadas.</small></figcaption>
+        </figure>
 
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
@@ -250,36 +249,24 @@
         <h3 id="probar-la-conexion-ssh-a-github"><a name="test-connection"></a>Probar la conexión SSH a GitHub <a
                 href="#probar-la-conexion-ssh-a-github"><i class="fa-solid fa-anchor"></i>
             </a></h3>
-        <p><i class="fa-solid fa-terminal"></i> Ahora podemos probar nuestra conexión a través de SSH a GitHub. </p>
+        <p>Ahora podemos probar nuestra conexión a través de SSH a GitHub. </p>
         <div class="highlight">
             <pre><span class="gu">ssh</span> -T git@github.com <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh -T git@github.com')}"></i>
 </pre>
         </div>
 
-        <p align="center">
+        <figure align="center">
             <img src="assets/test-connection.png" alt="validate"><br>
-            <b>Captura:</b> Validar la conexión con github vía ssh.
-        </p>
+            <figcaption><small><b>Captura:</b> Validar la conexión con github vía ssh.</small></figcaption>
+        </figure>
 
-        <p><i class="fa-solid fa-terminal"></i> Si la última línea contiene su nombre de usuario en GitHub, ¡está
-            autenticado correctamente!.</p>
+        <p>Si la última línea contiene su nombre de usuario en GitHub, quiere decir que estamos autenticado
+            correctamente.</p>
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
         <p align="center">
-            <!-- facebook -->
-            <a href="https://www.facebook.com/profile.php?id=100009064421475"><img class="logo"
-                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/facebook_circled.ico"
-                    width="40"></a>
-            <!-- github -->
-            <a href="https://github.com/EniDev911"><img class="logo"
-                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/github_circled.ico"
-                    width="40"></a>
-            <!-- twitter -->
-            <a href="https://twitter.com/MarcoContreraas"><img class="logo"
-                    src="https://raw.githubusercontent.com/EniDev911/assets/main/ico/social-media/twitter_circled.ico"
-                    width="40"></a><br>
             <!-- buymecoffe --><br>
             <a href="https://www.buymeacoffee.com/9111592">
                 <img class="logo"
@@ -291,7 +278,7 @@
     <!-- fontAwesome CDN -->
     <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
     <!-- functions -->
-    <script src="../../public/js/functions.js"></script>
+    <script src="../../../public/js/functions.js" type="module"></script>
 
 </body>
 
