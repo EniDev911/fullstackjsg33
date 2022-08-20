@@ -125,7 +125,8 @@
   }
 
   .highlight .kr {
-    font-weight: bold
+    font-weight: bold;
+    color: #e896e6;
   }
 
   .highlight .kt {
@@ -225,7 +226,7 @@
   }
 
   .highlight .s2 {
-    color: #dd1144
+    color: #ffea00
   }
 
   .highlight .se {

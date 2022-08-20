@@ -122,4 +122,8 @@ setInterval(() => {
   getTime();
 }, 60000);
 
+window.addEventListener("load", () => {
+  getTime();
+});
+
 addProject();
