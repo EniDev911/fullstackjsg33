@@ -185,14 +185,14 @@
       de pasarle una posición que no existe, simplemente nos devolverá un <strong>string vacio</strong> <code>""</code>.
       El valor por defecto de <strong>pos</strong> es 0.</p>
     <div class="highlight">
-      <pre><span class="s1">&#39;marco&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// devuelve &quot;a&quot;</span>
+      <pre><span class="s2">&#39;marco&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// devuelve &quot;a&quot;</span>
 </pre>
     </div>
 
     <p>La otra forma (introducida en ECMAScript 5) es tratar a la cadena como un objeto similar a un arreglo, donde los
       caracteres individuales corresponden a un índice numérico: </p>
     <div class="highlight">
-      <pre><span class="s1">&#39;marco&#39;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// devuelve a</span>
+      <pre><span class="s2">&#39;marco&#39;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// devuelve a</span>
 </pre>
     </div>
 
@@ -663,23 +663,23 @@
 <span class="kr">const</span> <span class="nx">adjetivo</span> <span class="o">=</span> <span class="s2">&quot;concatenada&quot;</span><span class="p">;</span>
 <span class="s2">&quot;Una &quot;</span> <span class="o">+</span> <span class="nx">sujeto</span> <span class="o">+</span> <span class="s2">&quot; bien &quot;</span> <span class="o">+</span> <span class="nx">adjetivo</span><span class="p">;</span> <span class="c1">// &#39;Una frase bien concatenada&#39;</span>
 </pre>
-      </div>
-      A medida que añadimos más variable, el código se hace bastante menos claro y más complejo de leer, especialmente
-      si
-      tenemos que añadir arrays, introducir comillas simples que habríamos que escapar con <strong>'</strong> o combinar
-      comillas simples con dobles, etc&hellip;</p>
-      <p>Para evitarlo, se introducen los <strong>backsticks</strong> (<em>comillas hacia atrás</em>), que nos permiten
-        <strong>interpolar</strong> el valor de las variables sin tener que cerrar, concatenar y abrir la cadena de
-        texto
-        continuamente:<br />
-      <div class="highlight">
-        <pre><span class="kr">const</span> <span class="nx">sujeto</span> <span class="o">=</span> <span class="s2">&quot;frase&quot;</span><span class="p">;</span>
+    </div>
+    A medida que añadimos más variable, el código se hace bastante menos claro y más complejo de leer, especialmente
+    si
+    tenemos que añadir arrays, introducir comillas simples que habríamos que escapar con <strong>'</strong> o combinar
+    comillas simples con dobles, etc&hellip;</p>
+    <p>Para evitarlo, se introducen los <strong>backsticks</strong> (<em>comillas hacia atrás</em>), que nos permiten
+      <strong>interpolar</strong> el valor de las variables sin tener que cerrar, concatenar y abrir la cadena de
+      texto
+      continuamente:<br />
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">sujeto</span> <span class="o">=</span> <span class="s2">&quot;frase&quot;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">adjetivo</span> <span class="o">=</span> <span class="s2">&quot;concatenada&quot;</span><span class="p">;</span>
 <span class="s2">`Una</span> <span class="go">$</span><span class="p">{</span><span class="nx">sujeto</span><span class="p">}</span> <span class="s2">mejor</span> <span class="go">$</span><span class="p">{</span><span class="nx">concatenada</span><span class="p">}</span><span class="s2">`</span>
 </pre>
-      </div>
-      </p>
-      <p>Esto es una funcionalidad muy simple, pero que mejora sustancialmente la calidad de código generado.</p>
+    </div>
+    </p>
+    <p>Esto es una funcionalidad muy simple, pero que mejora sustancialmente la calidad de código generado.</p>
   </article>
 </body>
 
