@@ -102,4 +102,15 @@ h1 {
 
 .container-chart {
   width: 80%;
+  box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5),
+    0 3px 2px rgba(0, 0, 0, 0.5),
+    -3px 0 2px rgba(0, 0, 0, 0.5),
+    0 -3px 2px rgba(0, 0, 0, 0.5);
+  background-color: #393939;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.container-chart #chart {
+  color: #fff;
 }

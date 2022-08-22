@@ -27,8 +27,8 @@ const fillSelectBox = async () => {
   if (values) {
     let html = "";
     Array.from(Object.entries(values)).forEach((value) => {
-      if (value[1].codigo === undefined) {
-        console.log("Missing");
+      if (value[1].codigo === undefined || value[1].codigo === "tpm") {
+        console.log("ignore");
       } else {
         html += `<option value="${value[1].codigo}">${value[1].nombre}</option>`;
       }
@@ -51,6 +51,10 @@ const getConfigChart = (data) => {
           label: title,
           backgroundColor: lineColor,
           data: data.map((item) => item.valor),
+          borderColor: "rgba(255, 99, 132, 1)",
+          pointBackgroundColor: "rgba(105, 99, 132, 1)",
+          pointBorderColor: "rgba(255, 255, 255, 1)",
+          borderWidth: 3,
         },
       ],
     },
@@ -62,8 +66,6 @@ const renderChart = async (indicator) => {
   const data = await getValues(indicator);
   dataFilter = data.serie.filter((value, index) => index < 10);
   config = getConfigChart(dataFilter);
-
-  canvasChart.style.backgroundColor = "white";
 
   let chartStatus = Chart.getChart(canvasChart);
   if (chartStatus != undefined) {
