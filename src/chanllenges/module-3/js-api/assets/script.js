@@ -93,7 +93,7 @@ window.addEventListener("load", () => {
       ? inputBox.value != ""
         ? getResults(Number(inputBox.value), selectBox.value) &&
           renderChart(selectBox.value)
-        : alert("Mala la wea")
+        : alert("Debe ingresar un monto para buscar")
       : "";
   });
 });
