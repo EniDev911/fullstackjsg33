@@ -11,6 +11,7 @@ const selectBox = document.getElementById("select-box"),
  * @param {String} indicator Un tipo de indicador para obtener su data ('opcional')
  * @returns {Object} {} El resultado de la petición, de lo contrario un error de la excepción ocurrida.
  */
+
 const getValues = async (indicator = "") => {
   try {
     const options = { method: "GET" },
@@ -57,7 +58,11 @@ const getConfigChart = (data) => {
   return config;
 };
 
-const renderChart = (config) => {
+const renderChart = async (indicator) => {
+  const data = await getValues(indicator);
+  dataFilter = data.serie.filter((value, index) => index < 10);
+  config = getConfigChart(dataFilter);
+
   canvasChart.style.backgroundColor = "white";
 
   let chartStatus = Chart.getChart(canvasChart);
@@ -72,23 +77,19 @@ const getResults = async (_from, _to) => {
   const values = await getValues(),
     formatResult = (_from / values[`${_to}`].valor).toFixed(2);
   console.log(formatResult);
-  resultText.innerHTML = `Resultado: <span>${formatResult}</span>`;
+  resultText.innerHTML = `Resultado: <span>\$ ${formatResult}</span>`;
 };
 
 window.addEventListener("load", () => {
   fillSelectBox();
   submitBtn.addEventListener("click", () => {
     getResults(Number(inputBox.value), selectBox.value);
+    renderChart(selectBox.value);
   });
   document.addEventListener("keydown", (e) => {
     e.key === "Enter"
-      ? getResults(Number(inputBox.value), selectBox.value)
+      ? getResults(Number(inputBox.value), selectBox.value) &&
+        renderChart(selectBox.value)
       : false;
-  });
-  selectBox.addEventListener("change", async (e) => {
-    const data = await getValues(selectBox.value);
-    dataFilter = data.serie.filter((value, index) => index < 10);
-    config = getConfigChart(dataFilter);
-    renderChart(config);
   });
 });
