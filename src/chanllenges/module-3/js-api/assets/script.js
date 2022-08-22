@@ -45,7 +45,7 @@ const getConfigChart = (data) => {
   const config = {
     type: typeChart,
     data: {
-      labels: data.map((item) => item.fecha.substring(1, 10)),
+      labels: data.map((item) => item.fecha.substring(0, 10)),
       datasets: [
         {
           label: title,
