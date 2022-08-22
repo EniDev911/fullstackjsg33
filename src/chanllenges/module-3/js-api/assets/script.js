@@ -83,8 +83,10 @@ const getResults = async (_from, _to) => {
 window.addEventListener("load", () => {
   fillSelectBox();
   submitBtn.addEventListener("click", () => {
-    getResults(Number(inputBox.value), selectBox.value);
-    renderChart(selectBox.value);
+    inputBox.value != ""
+      ? getResults(Number(inputBox.value), selectBox.value) &&
+        renderChart(selectBox.value)
+      : alert("Debe ingresar un monto para buscar");
   });
   document.addEventListener("keydown", (e) => {
     e.key === "Enter"
