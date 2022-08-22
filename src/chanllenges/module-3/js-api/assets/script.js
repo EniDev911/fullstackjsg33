@@ -92,6 +92,6 @@ window.addEventListener("load", () => {
     e.key === "Enter" && inputBox.value != ""
       ? getResults(Number(inputBox.value), selectBox.value) &&
         renderChart(selectBox.value)
-      : false;
+      : alert("Debe ingresar un monto para buscar");
   });
 });
