@@ -90,8 +90,10 @@ window.addEventListener("load", () => {
   });
   document.addEventListener("keydown", (e) => {
     e.key === "Enter"
-      ? getResults(Number(inputBox.value), selectBox.value) &&
-        renderChart(selectBox.value)
-      : false;
+      ? inputBox.value != ""
+        ? getResults(Number(inputBox.value), selectBox.value) &&
+          renderChart(selectBox.value)
+        : alert("Mala la wea")
+      : "";
   });
 });
