@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
       : alert("Debe ingresar un monto para buscar");
   });
   document.addEventListener("keydown", (e) => {
-    e.key === "Enter"
+    e.key === "Enter" && inputBox.value != ""
       ? getResults(Number(inputBox.value), selectBox.value) &&
         renderChart(selectBox.value)
       : false;
