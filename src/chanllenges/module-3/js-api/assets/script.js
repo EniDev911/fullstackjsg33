@@ -48,7 +48,6 @@ const getConfigChart = (data) => {
     _labels = data.map((item) => item.fecha.substring(0, 10)),
     _data = data.map((item) => item.valor);
 
-  console.log(data);
   const config = {
     type: typeChart,
     data: {
@@ -98,10 +97,8 @@ const renderChart = async (indicator) => {
 };
 
 const getResults = async (_from, _to) => {
-  console.log(_from);
   const values = await getValues(),
     formatResult = (_from / values[`${_to}`].valor).toFixed(2);
-  console.log(formatResult);
   resultText.innerHTML = `Resultado: <span>\$ ${formatResult}</span>`;
 };
 
