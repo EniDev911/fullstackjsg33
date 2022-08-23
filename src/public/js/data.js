@@ -155,7 +155,7 @@ export const projects = [
   {
     // Desafío 6 api js
     title: "Desafío 6: APIS",
-    image: "src/public/images/png/api-js.png",
+    image: "src/public/images/png/api-js-mobile.png",
     url_code:
       "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-3/js-api",
     url_demo: "src/chanllenges/module-3/js-api",
