@@ -93,6 +93,7 @@ const renderChart = async (indicator) => {
   if (chartStatus != undefined) {
     chartStatus.destroy();
   }
+  canvasChart.parentNode.style.opacity = "1";
   let canvas = new Chart(canvasChart, config);
 };
 
@@ -116,7 +117,6 @@ window.addEventListener("load", () => {
   );
   fillSelectBox();
   submitBtn.addEventListener("click", () => {
-    canvasChart.parentNode.style.opacity = "1";
     inputBox.value != ""
       ? getResults(Number(inputBox.value), selectBox.value) &&
         renderChart(selectBox.value)
