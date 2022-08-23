@@ -28,6 +28,7 @@ body {
   text-align: center;
   color: #ccc;
   background: #393939;
+  width: 60%;
   padding: 20px;
   border-radius: 4px;
   box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5),
@@ -158,7 +159,7 @@ p>a i.fa-linkedin-in:hover {
   color: #0a66c2;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 780px) {
   body {
     max-width: 100%;
     /* background: #000; */
