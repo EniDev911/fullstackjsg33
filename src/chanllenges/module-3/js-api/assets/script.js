@@ -99,7 +99,11 @@ const renderChart = async (indicator) => {
 const getResults = async (_from, _to) => {
   const values = await getValues(),
     formatResult = (_from / values[`${_to}`].valor).toFixed(2);
-  resultText.innerHTML = `Resultado: <span>\$ ${formatResult}</span>`;
+  let symbol = "";
+  if (_to === "euro") {
+    symbol = "€";
+  }
+  resultText.innerHTML = `Resultado: <span>\$ ${formatResult} ${symbol}</span>`;
 };
 
 window.addEventListener("load", () => {
