@@ -103,7 +103,10 @@ const getResults = async (_from, _to) => {
   if (_to === "euro") {
     symbol = "€";
   }
-  resultText.innerHTML = `Resultado: <span>\$ ${formatResult} ${symbol}</span>`;
+  resultText.innerHTML = `Resultado: <span>\$ ${formatResult.replace(
+    ".",
+    ","
+  )} ${symbol}</span>`;
 };
 
 window.addEventListener("load", () => {
