@@ -57,7 +57,11 @@ h1 {
 .input-group input {
   font-size: 1.7rem;
   width: 80%;
-  padding: 0 4px;
+  padding: 4px;
+  color: #ccc;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: #494949;
 }
 
 .input-group input::-webkit-inner-spin-button {
@@ -73,6 +77,11 @@ h1 {
   font-size: 1.5rem;
   margin: 5px 0;
   width: 80%;
+  background: #494949;
+  border: 2px solid #ccc;
+  padding: 5px;
+  color: #ccc;
+  border-radius: 4px;
 
 }
 
@@ -176,12 +185,6 @@ p>a i.fa-linkedin-in:hover {
 
   .input-group input {
     font-size: 1.3rem;
-    width: 80%;
-    padding: 4px;
-    color: #ccc;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    background: #494949;
   }
 
   .select-group {
@@ -191,12 +194,7 @@ p>a i.fa-linkedin-in:hover {
 
   .select-group select {
     font-size: 1.3rem;
-    margin: 5px 0;
-    background: #494949;
-    border: 2px solid #ccc;
-    padding: 5px;
-    color: #ccc;
-    border-radius: 4px;
+
   }
 }
 
