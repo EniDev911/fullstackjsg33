@@ -100,9 +100,7 @@ const getResults = async (_from, _to) => {
   const values = await getValues(),
     formatResult = (_from / values[`${_to}`].valor).toFixed(2);
   let symbol = "";
-  if (_to === "euro") {
-    symbol = "€";
-  }
+  _to === "euro" ? (symbol = "€") : (symbol = "");
   resultText.innerHTML = `Resultado: <span>\$ ${formatResult.replace(
     ".",
     ","
