@@ -162,8 +162,8 @@ p>a i.fa-linkedin-in:hover {
 @media (max-width: 780px) {
   body {
     max-width: 100%;
-    /* background: #000; */
     width: 100%;
+    color: #ccc;
   }
 
   .container {
@@ -172,6 +172,31 @@ p>a i.fa-linkedin-in:hover {
 
   .container-chart {
     width: 90%;
+  }
+
+  .input-group input {
+    font-size: 1.3rem;
+    width: 80%;
+    padding: 4px;
+    color: #ccc;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: #494949;
+  }
+
+  .select-group {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  .select-group select {
+    font-size: 1.3rem;
+    margin: 5px 0;
+    background: #494949;
+    border: 2px solid #ccc;
+    padding: 5px;
+    color: #ccc;
+    border-radius: 4px;
   }
 }
 
