@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoList JS</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    :root {
+      --opacity-shadow: rgba(0, 0, 0, .3);
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+
+      min-height: 100vh;
+    }
+
+    .container {
+      /* border: 1px solid red; */
+      box-shadow: 2px 0 4px var(--opacity-shadow),
+        0 2px 4px var(--opacity-shadow),
+        -2px 0 4px var(--opacity-shadow),
+        0 -2px 4px var(--opacity-shadow);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .newtask-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .newtask-group input {
+      font-size: 1.3rem;
+      border: 0;
+      padding: 2px 5px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      margin-right: 5px;
+      width: 100%;
+    }
+
+    .newtask-group input:focus {
+      outline: 0;
+    }
+
+    .newtask-group .btn {
+      font-size: 1.3rem;
+      border: 0;
+      padding: 3px;
+      border-radius: 4px;
+      background: #0f0;
+      cursor: pointer;
+    }
+
+    .taskslist {
+      display: block;
+      margin: 10px 0;
+      list-style: none;
+    }
+
+    .taskslist li {
+      display: inline-flex;
+      justify-content: space-between;
+      background-color: #ff3;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin: 5px 0;
+      width: 100%;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+      font-style: italic;
+      background: linear-gradient(to left, #0f0, rgb(23, 177, 69))
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="newtask-group">
+      <input type="text" id="input-box" placeholder="Nueva tarea por hacer...">
+      <button type="button" class="btn" id="btn-add">Añadir</button>
+    </div>
+    <div class="tasks-details">
+      <p>Total: <span id="total-task">0</span></p>
+      <p>Realizadas: <span id="done-task">0</span></p>
+    </div>
+    <ul class="taskslist" id="tasks-list">
+      <li class="task">
+        <p>1001</p>
+        <p>Tarea demo 1</p>
+        <div class="actions">
+          <button>Actualizar <i class="fa-solid fa-circle-check"></i></button>
+          <button>ELiminar <i class="fa-solid fa-trash"></i></button>
+        </div>
+      </li>
+      <li class="task">
+        <p>1002</p>
+        <p>Tarea demo 1</p>
+        <div class="actions">
+          <button>Actualizar <i class="fa-solid fa-circle-check"></i></button>
+          <button>ELiminar <i class="fa-solid fa-trash"></i></button>
+        </div>
+      </li>
+  </div>
+
+  <script>
+    // SELECTORS
+    const inputTask = document.getElementById("input-box"),
+      tasksList = document.getElementById("tasks-list"),
+      tasksTotal = document.getElementById("total-task"),
+      tasksDone = document.getElementById("done-task")
+
+    const tasks = [
+      {
+        id: 1001,
+        name: "Demo tarea 1",
+        done: true
+      },
+      {
+        id: 1002,
+        name: "Demo tarea 2",
+        done: false
+      },
+      {
+        id: 1003,
+        name: "Demo tarea 3",
+        done: false
+      }];
+
+    // VALIDATE
+    function validateInput(text) {
+      if (text === "") {
+        alert("Debes ingresar un texto")
+      } else if (text.length < 5) {
+        alert("La tarea debe tener una longitud mínima de 5 caracteres");
+      }
+      return text != "" && text.length >= 5;
+    }
+
+    // RENDER
+    function renderTemplate() {
+      let html = "";
+      let total = 0,
+        done = 0;
+      tasks.forEach(task => {
+        if (task.done) {
+          done++;
+          var style = "line-through";
+        }
+        html += `
+        <li class="task ${style}">
+          <p>${task.id}</p>
+          <p>${task.name}</p>
+          <p>${task.done}</p>
+          <div class="actions">
+            <button onclick="{updateTask(${task.id})}">Actualizar <i class="fa-solid fa-circle-check"></i></button>
+            <button onclick="{deleteTask(${task.id})}">ELiminar <i class="fa-solid fa-trash"></i></button>
+            </div>
+            </li>
+            `
+        total++;
+      })
+      tasksTotal.innerHTML = total;
+      tasksDone.innerHTML = done;
+      tasksList.innerHTML = html;
+    }
+
+    // ADD
+    function addTask(taskName) {
+      const newTask = {
+        id: 1000 + (tasks.length) + 1,
+        name: taskName,
+        done: false
+      }
+      tasks.push(newTask);
+      renderTemplate();
+    }
+
+    // DELETE 
+    function deleteTask(id) {
+      const index = tasks.findIndex(task => task.id === id);
+      console.log(index)
+      tasks.splice(index, 1);
+      renderTemplate();
+    }
+
+    // UPDATE
+    function updateTask(id) {
+      const index = tasks.findIndex(task => task.id === id);
+      tasks[index].done
+        ? tasks[index].done = false
+        : tasks[index].done = true
+      renderTemplate();
+    }
+
+    document.getElementById("btn-add").addEventListener("click", () => {
+      if (validateInput(inputTask.value)) {
+        addTask(inputTask.value);
+      }
+    });
+    renderTemplate();
+  </script>
+</body>
+
+</html>

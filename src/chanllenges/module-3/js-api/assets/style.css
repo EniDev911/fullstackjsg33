@@ -16,6 +16,12 @@ body {
   align-items: center;
   background: #282828;
   padding: 30px 0;
+  transition: opacity .6s;
+  opacity: 0;
+}
+
+.loaded {
+  opacity: 1;
 }
 
 .container {
@@ -109,8 +115,6 @@ h1 {
   background-color: #393939;
   border-radius: 10px;
   color: #fff;
-}
-
-.container-chart #chart {
-  color: #fff;
+  opacity: 0;
+  transition: opacity .4s;
 }

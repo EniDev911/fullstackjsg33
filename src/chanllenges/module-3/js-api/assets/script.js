@@ -27,8 +27,12 @@ const fillSelectBox = async () => {
   if (values) {
     let html = "";
     Array.from(Object.entries(values)).forEach((value) => {
-      if (value[1].codigo === undefined || value[1].codigo === "tpm") {
-        console.log("ignore");
+      if (
+        value[1].codigo === undefined ||
+        value[1].codigo === "tpm" ||
+        value[1].codigo === "tasa_desempleo"
+      ) {
+        console.log(`indicador ${value[1].codigo} ignorado`);
       } else {
         html += `<option value="${value[1].codigo}">${value[1].nombre}</option>`;
       }
@@ -40,23 +44,41 @@ const fillSelectBox = async () => {
 const getConfigChart = (data) => {
   const typeChart = "line",
     title = "Historial 10 últimos cambios",
-    lineColor = "rgb(255,55,255)";
+    lineColor = "rgb(255,55,255)",
+    _labels = data.map((item) => item.fecha.substring(0, 10)),
+    _data = data.map((item) => item.valor);
 
+  console.log(data);
   const config = {
     type: typeChart,
     data: {
-      labels: data.map((item) => item.fecha.substring(0, 10)),
+      labels: _labels,
       datasets: [
         {
           label: title,
           backgroundColor: lineColor,
-          data: data.map((item) => item.valor),
+          data: _data,
           borderColor: "rgba(255, 99, 132, 1)",
           pointBackgroundColor: "rgba(105, 99, 132, 1)",
           pointBorderColor: "rgba(255, 255, 255, 1)",
+          color: "#fff",
           borderWidth: 3,
         },
       ],
+    },
+    options: {
+      scales: {
+        x: {
+          ticks: {
+            color: ["yellow"],
+          },
+        },
+        y: {
+          ticks: {
+            color: ["#ccc"],
+          },
+        },
+      },
     },
   };
   return config;
@@ -83,8 +105,18 @@ const getResults = async (_from, _to) => {
 };
 
 window.addEventListener("load", () => {
+  document.body.className = "loaded";
+  console.log(
+    "%c→ENIDEV911",
+    `font-size: 35px; 
+      background: #393939; 
+        color: #fff; padding: 10px; 
+        border-radius: 4px;
+        border-bottom: 1px solid #f6c;`
+  );
   fillSelectBox();
   submitBtn.addEventListener("click", () => {
+    canvasChart.parentNode.style.opacity = "1";
     inputBox.value != ""
       ? getResults(Number(inputBox.value), selectBox.value) &&
         renderChart(selectBox.value)
