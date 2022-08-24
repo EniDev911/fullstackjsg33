@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChartJS tutorial</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .chart {
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 20px;
+      background: #292929;
+    }
+
+    select {
+      font-size: 1.3rem;
+      top: 0;
+      right: 200px;
+      text-align: center;
+      position: absolute;
+    }
+
+    .cols-2 {
+      width: 100%;
+      display: flex;
+      position: relative;
+      justify-content: space-evenly;
+      padding: 20px;
+      align-items: center;
+      border-bottom: 1px solid #595959;
+    }
+
+    .cols-1 {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Montañas rusas dataviz</h1>
+    <p>Visualización de estadísticas globales</p>
+    <section class="cols-2">
+
+      <figure>
+        <h2>Comparativa de modelos</h2>
+        <canvas id="modelsChart" class="chart"></canvas>
+      </figure>
+
+      <figure>
+        <h2>Comparativa de características:
+          <select name="" id="featuresOptions">
+            <option value="height">Altura (m)</option>
+            <option value="length">Longitud (m)</option>
+            <option value="speed">Velocidad (km/h)</option>
+          </select>
+        </h2>
+        <canvas id="featuresChart" class="chart"></canvas>
+      </figure>
+    </section>
+    <section class="cols-1">
+      <figure>
+        <h2>Construcciones por año</h2>
+        <canvas id="yearsChart" class="chart"></canvas>
+      </figure>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+
+</html>

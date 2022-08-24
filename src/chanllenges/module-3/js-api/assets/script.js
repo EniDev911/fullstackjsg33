@@ -1,3 +1,4 @@
+import { getDataColors } from "./utilities/helpers.js";
 const API = "https://mindicador.cl/api/";
 // selectors
 const selectBox = document.getElementById("select-box"),
@@ -8,8 +9,8 @@ const selectBox = document.getElementById("select-box"),
 
 /**
  *
- * @param {String} indicator Un tipo de indicador para obtener su data ('opcional')
- * @returns {Object} {} El resultado de la petición, de lo contrario un error de la excepción ocurrida.
+ * @param {String} indicator A indicador type to get data ('optional')
+ * @returns {Object} {} Returns fetch results or error
  */
 
 const getValues = async (indicator = "") => {
@@ -41,27 +42,24 @@ const fillSelectBox = async () => {
   }
 };
 
-const getConfigChart = (data) => {
-  const typeChart = "line",
-    title = "Historial 10 últimos cambios",
-    lineColor = "rgb(255,55,255)",
-    _labels = data.map((item) => item.fecha.substring(0, 10)),
-    _data = data.map((item) => item.valor);
+const prepareConfigChart = (data) => {
+  const title = "Historial 10 últimos cambios";
 
   const config = {
-    type: typeChart,
+    type: "line",
     data: {
-      labels: _labels,
+      labels: data.map((ele) => ele.fecha.substring(0, 10)),
       datasets: [
         {
           label: title,
-          backgroundColor: lineColor,
-          data: _data,
-          borderColor: "rgba(255, 99, 132, 1)",
-          pointBackgroundColor: "rgba(105, 99, 132, 1)",
-          pointBorderColor: "rgba(255, 255, 255, 1)",
-          color: "#fff",
-          borderWidth: 3,
+          data: data.map((item) => item.valor),
+          backgroundColor: getDataColors(40)[6],
+          borderColor: getDataColors()[8],
+          pointBorderColor: getDataColors()[6],
+          fill: true,
+          borderWidth: 2,
+          pointBorderWidth: 5,
+          tension: 0.2,
         },
       ],
     },
@@ -69,12 +67,12 @@ const getConfigChart = (data) => {
       scales: {
         x: {
           ticks: {
-            color: ["yellow"],
+            color: getDataColors()[8],
           },
         },
         y: {
           ticks: {
-            color: ["#ccc"],
+            color: getDataColors()[2],
           },
         },
       },
@@ -84,16 +82,18 @@ const getConfigChart = (data) => {
 };
 
 const renderChart = async (indicator) => {
-  const data = await getValues(indicator);
-  dataFilter = data.serie.filter((value, index) => index < 10);
-  config = getConfigChart(dataFilter);
-
+  const data = await getValues(indicator),
+    dataFilter = data.serie.filter((value, index) => index < 10),
+    config = prepareConfigChart(dataFilter);
+  // Default All Chart colors
+  Chart.defaults.color = "#d6ff00";
   let chartStatus = Chart.getChart(canvasChart);
   if (chartStatus != undefined) {
     chartStatus.destroy();
   }
+
   canvasChart.parentNode.style.opacity = "1";
-  let canvas = new Chart(canvasChart, config);
+  new Chart("chart", config);
 };
 
 const getResults = async (_from, _to) => {
