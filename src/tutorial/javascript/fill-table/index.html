@@ -14,6 +14,10 @@
       padding: 0 !important;
       margin: 0 !important;
     }
+
+    .markdown-body {
+      font-family: sans-serif !important;
+    }
   </style>
 </head>
 
@@ -122,7 +126,7 @@
 
     <p>Lo que haremos será recorrer la colección de objetos usando el método <strong><code>.forEach()</code></strong> y
       por cada elemento: </p>
-    <ol>
+    <ul>
       <li>Crearemos un elemento <strong><code>&lt;tr&gt;</code></strong> que representará cada fila en la tabla.</li>
       <li>Al elemento <strong><code>&lt;tr&gt;</code></strong> creado le agregaremos un nuevo nodo hijo con el método
         <code>.appendChild()</code> con elementos <strong><code>&lt;td&gt;</code></strong>, cada elemento
@@ -134,7 +138,7 @@
       </li>
       <li>Finalmente el elemento <strong><code>&lt;tr&gt;</code></strong> lo agregamos al cuerpo de la tabla con el
         método <code>.appendChild()</code>.</li>
-    </ol>
+    </ul>
     <p>Debemos obtener una referencia al cuerpo de la tabla usando cualquiera de los métodos ya sea
       <strong><code>document.querySelector()</code></strong>, <strong><code>document.getElementById()</code></strong>,
       etc., una vez tengamos seleccionado el elemento, creamos la fila de la tabla, le agregamos datos y la adjuntamos
