@@ -50,7 +50,7 @@
       en
       javascript se utiliza para representar un conjunto de caracteres usado para representar el texto. En programación,
       cuando hablamos de una variable que posee información de texto, decimos que su tipo de dato es un
-      <strong>String</strong>. En Javascript, es muy sencillo crear una variable de texto, hay dos formas:
+      <code class="str">String</code>. En Javascript, es muy sencillo crear una variable de texto, hay dos formas:
     </p>
 
     <table>
@@ -72,8 +72,10 @@
       </tbody>
     </table>
 
-    <p>Los <strong><code>string</code></strong> son tipos de datos primitivos, y como tal, es más sencillo utilizar los
-      literales que la notación con <code>new</code>. Para englobar los textos, se pueden utilizar <strong>comillas
+    <p>Los <strong><code class="str">string</code></strong> son tipos de datos primitivos, y como tal, es más sencillo
+      utilizar los
+      literales que la notación con <code class="new">new</code>. Para englobar los textos, se pueden utilizar
+      <strong>comillas
         simples</strong> <code>'</code>, <strong>comillas dobles</strong> <code>"</code> o <strong>backstiks</strong>
       <code>`</code> (estos últimos tienen uso más extendido que veremos más adelante).
     </p>
@@ -93,9 +95,11 @@
 </pre>
     </div>
 
-    <p>A diferencia de otros lenguajes de programación, que separan el tipo de dato <code>string</code> del tipo de dato
-      <code>char</code> (un solo carácter), javascript los mantiene a ambos dentro del tipo de dato <code>string</code>,
-      aunque una variable sólo contenga un carácter, sigue siendo un <code>string</code>.
+    <p>A diferencia de otros lenguajes de programación, que separan el tipo de dato <code class="str">string</code> del
+      tipo de dato
+      <code>char</code> (un solo carácter), javascript los mantiene a ambos dentro del tipo de dato <code
+        class="str">string</code>,
+      aunque una variable sólo contenga un carácter, sigue siendo un <code class="str">string</code>.
     </p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
@@ -103,7 +107,8 @@
     <hr />
     <h3 id="propiedades"><a name="string-property"></a> PROPIEDADES<a class="headerlink" href="#propiedades"
         title="Permanent link">&#9875;</a></h3>
-    <p>Al crear una variable con contenido de texto, o sea un <code>string</code>, automáticamente, esa variable pasa a
+    <p>Al crear una variable con contenido de texto, o sea un <code class="str">string</code>, automáticamente, esa
+      variable pasa a
       tener a su disposición todas las propiedades y métodos disponibles para este tipo de dato, por lo que podemos
       utilizarlo en nuestro código como iremos viendo a continuación.</p>
     <table>
@@ -121,7 +126,8 @@
       </tbody>
     </table>
     <p>En el caso de los string, solo tenemos una propiedad, <strong><code>.length</code></strong>, que devuelve el
-      tamaño de la variable de texto. A continuación podemos observar que se han utilizado <code>string</code>
+      tamaño de la variable de texto. A continuación podemos observar que se han utilizado <code
+        class="str">string</code>
       directamente, sin necesidad de guardarlos en una variable antes: </p>
     <div class="highlight">
       <pre><span class="s2">&quot;Javascript&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 10</span>
@@ -132,7 +138,7 @@
 
     <p>Pero las características más interesantes de los string se encuentran en los métodos de dicho tipo. Se debe tener
       en cuenta que, en las variables de texto, los métodos se ejecutan sobre el propio texto del
-      <strong><code>string</code></strong>, devolviendo información modificada a partir de este.
+      <strong><code class="str">string</code></strong>, devolviendo información modificada a partir de este.
     </p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
@@ -181,7 +187,8 @@
       </tbody>
     </table>
     <p>El método <strong><code>.charAt(pos)</code></strong> nos permite comprobar que carácter se encuentra en la
-      posición <strong>pos</strong> del texto. Este método devolverá un <code>string</code> con dicho carácter. En caso
+      posición <strong>pos</strong> del texto. Este método devolverá un <code class="str">string</code> con dicho
+      carácter. En caso
       de pasarle una posición que no existe, simplemente nos devolverá un <strong>string vacio</strong> <code>""</code>.
       El valor por defecto de <strong>pos</strong> es 0.</p>
     <div class="highlight">
@@ -207,7 +214,7 @@
       el método anterior es preferible utilizar el operador <code>+</code>, ya que es
       mucho más rápido y legible. Debemos tener mucho cuidado con utilizar el operador <code>+</code>, ya que depende de
       los tipos de datos con los que se usen puede producir un efecto diferente. El operador <code>+</code> usado con
-      <code>string</code> realiza concatenaciones, mientras que usado con <a
+      <code class="str">string</code> realiza concatenaciones, mientras que usado con <a
         href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>number</code></a>
       realiza sumas.
     </p>
@@ -255,7 +262,7 @@
     <h3 id="metodos-para-busquedas"><a name="string-search-method"></a> MÉTODOS PARA BÚSQUEDAS<a class="headerlink"
         href="#metodos-para-busquedas" title="Permanent link">&#9875;</a></h3>
     <p>Los siguientes métodos se utilizan para realizar búsquedas o comprobaciones de subtextos en el texto de un
-      <code>string</code>.
+      <code class="str">string</code>.
     </p>
     <table>
       <thead>
@@ -295,10 +302,11 @@
     </table>
     <p>Por ejemplo, el método <code>startsWith(str, from)</code> devolverá <code>true</code> si la variable comienza por
       el texto proporcionado en <strong>str</strong>. Si además se indica el parámetro opcional <strong>from</strong>,
-      empezará en la posición <strong>from</strong> del <code>string</code>. De la misma forma, el método
-      <strong><code>endsWith()</code></strong> comprueba cuando un <code>string</code> acaba en <strong>str</strong>, y
+      empezará en la posición <strong>from</strong> del <code class="str">string</code>. De la misma forma, el método
+      <strong><code>endsWith()</code></strong> comprueba cuando un <code class="str">string</code> acaba en
+      <strong>str</strong>, y
       el método <strong><code>includes()</code></strong> comprueba si el subtexto dado está incluído en el
-      <code>string</code>.
+      <code class="str">string</code>.
     </p>
     <p>Algunos ejemplos:</p>
     <div class="highlight">
@@ -354,7 +362,8 @@
     <hr />
     <h3 id="metodos-para-transformar"><a name="string-transform-methods"></a> MÉTODOS PARA TRANSFORMAR<a
         class="headerlink" href="#metodos-para-transformar" title="Permanent link">&#9875;</a></h3>
-    <p>En javascript podemos utilizar algunos métodos para modificar un <code>string</code> realizando alguna operación
+    <p>En javascript podemos utilizar algunos métodos para modificar un <code class="str">string</code> realizando
+      alguna operación
       de transformación. En esta tabla tenemos dichos métodos: </p>
     <table>
       <thead>
@@ -429,9 +438,11 @@
         </tr>
       </tbody>
     </table>
-    <p>El método <code>.repeat(n)</code> devuevlve como <code>string</code> el texto repetido <strong>n</strong> veces.
+    <p>El método <code>.repeat(n)</code> devuevlve como <code class="str">string</code> el texto repetido
+      <strong>n</strong> veces.
       Por otro lado, los métodos <code>toLowerCase()</code> y <code>toUpperCase()</code> devuelven el texto convertido
-      todo a minúsculas o todo a mayúsculas respectivamente.</p>
+      todo a minúsculas o todo a mayúsculas respectivamente.
+    </p>
     <div class="highlight">
       <pre><span class="s2">&quot;Na&quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// &#39;NaNaNaNaNa&#39;</span>
 <span class="s2">&quot;EniDev911&quot;</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span> <span class="c1">// enidev911</span>
@@ -450,7 +461,7 @@
     <hr />
     <h3 id="remplazar-textos"><a name="string-replace"></a> REMPLAZAR TEXTOS<a class="headerlink"
         href="#remplazar-textos" title="Permanent link">&#9875;</a></h3>
-    <p>Uno de los métodos más interesantes de transformación de <code>string</code> es el
+    <p>Uno de los métodos más interesantes de transformación de <code class="str">string</code> es el
       <code>replace(str,newstr)</code>. Su funcionalidad más básica, como se ve en el primer ejemplo, se trata de
       devolver el texto en cuestión, remplazando el texto <strong>str</strong> por <strong>newstr</strong> (&lsquo;solo
       la primera aparición&rsquo;):
@@ -461,10 +472,14 @@
 <span class="s2">&quot;Dispara&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/a/g</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">);</span> <span class="c1">// &#39;Dispiri&#39; (remplaza todas las ocurrencias)</span>
 </pre>
     </div>
-
+    <iframe src="https://codesandbox.io/embed/gracious-wiles-vf2vr2?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="gracious-wiles-vf2vr2"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
     <p>Si lo que nos interesa es reemplazar todas las apariciones, tendremos que hacer uso de las <strong>expresiones
         regulares</strong>, que veremos en temas posteriores a este. A grandes rasgos, en el tercer ejemplo anterior, en
-      lugar de indicar el <code>string</code> <strong>&lsquo;a&rsquo;</strong> indicamos la expresión regular
+      lugar de indicar el <code class="str">string</code> <strong>&lsquo;a&rsquo;</strong> indicamos la expresión
+      regular
       <strong>/a/g</strong> que buscará todas las apariciones de <strong>a</strong> de forma global (todas las
       ocurrencias).
     </p>
@@ -481,8 +496,10 @@
       </p>
     </blockquote>
     <p>Además, el método <code>replace()</code> nps permite indicar, como segundo parámetro una
-      <strong><code>function</code></strong> en lugar de un <code>string</code>, permitiendo utilizar dicha función para
-      realizar un proceso más complejo al remplazar, en lugar de simplemente remplazar por un <code>string</code>. Sin
+      <strong><code>function</code></strong> en lugar de un <code class="str">string</code>, permitiendo utilizar dicha
+      función para
+      realizar un proceso más complejo al remplazar, en lugar de simplemente remplazar por un <code
+        class="str">string</code>. Sin
       embargo, para aprender a utilizar esta funcionalidad, antes tendremos que aprender sobre los
       <strong>callbacks</strong>, que veremos en temas posteriores.
     </p>
@@ -492,7 +509,8 @@
     <hr />
     <h3 id="extraer-subtextos"><a name="string-extract"></a> EXTRAER SUBTEXTOS<a class="headerlink"
         href="#extraer-subtextos" title="Permanent link">&#9875;</a></h3>
-    <p>Otras de las operaciones fundamentales de los <code>string</code>es la posibilidad de extraer pequeños
+    <p>Otras de las operaciones fundamentales de los <code class="str">string</code>es la posibilidad de extraer
+      pequeños
       fragmentosde texto de textos más grandes. Para ello tenemos dos aproximaciones para realizarlo: con el método
       <code>substr()</code> o con el método <code>substring()</code>.
     </p>
@@ -520,7 +538,8 @@
     <h3 id="crear-arrays-a-partir-de-textos"><a name="string-split"></a> CREAR ARRAYS A PARTIR DE TEXTOS<a
         class="headerlink" href="#crear-arrays-a-partir-de-textos" title="Permanent link">&#9875;</a></h3>
     <p>Otro método muy útil es <code>split(sep)</code>, un método que permite <strong>dividir</strong> un
-      <code>string</code> por el substring <strong>sep</strong> como separador, devolviendo un array con cada una de las
+      <code class="str">string</code> por el substring <strong>sep</strong> como separador, devolviendo un array con
+      cada una de las
       partes divididas. Es muy útil para <strong>crear arrays</strong>, o dividir en diferentes secciones textos que
       tienen <strong>separadores</strong> repetidos como podrían ser comas, puntos o pipes <code>|</code>.
     </p>
@@ -545,12 +564,13 @@
     <hr />
     <h3 id="rellenar-cadenas"><a name="fill-string"></a> RELLENAR CADENAS<a class="headerlink" href="#rellenar-cadenas"
         title="Permanent link">&#9875;</a></h3>
-    <p>Otra transformación interesante con los <code>string</code> es la resultante de utilizar métodos como
+    <p>Otra transformación interesante con los <code class="str">string</code> es la resultante de utilizar métodos como
       <strong><code>padStar(len,str)</code></strong> o <strong><code>padEnd(len,str)</code></strong>. Ambos métodos
-      tomandos dos parámetros: <strong>len</strong> la longitud deseada del <code>string</code> resultante y
+      tomandos dos parámetros: <strong>len</strong> la longitud deseada del <code class="str">string</code> resultante y
       <strong>str</strong> el carácter a utilizar como relleno.
     </p>
-    <p>El objetivo de ambas funciones es devolver un nuevo <code>string</code> con la información original existente,
+    <p>El objetivo de ambas funciones es devolver un nuevo <code class="str">string</code> con la información original
+      existente,
       pero ampliando su tamaño a <strong>len</strong> y rellenando el resto con <strong>str</strong>, al principio si se
       usa <code>padStart()</code> o al final si se usa <code>padEnd()</code>: </p>
     <div class="highlight">
@@ -601,7 +621,7 @@
     <p>El primero de ellos es un método estático, por lo que hay que escribir directamente
       <strong>String.fromCharCode()</strong> y no utilizarlo desde una variable. Para usar este método, le pasamos un
       <strong>num</strong> por parámetro, que indicará el número o código Unicode al que queremos hacer referencia, y el
-      método nos devolverá un <code>string</code> con el carácter Unicode en cuestión:
+      método nos devolverá un <code class="str">string</code> con el carácter Unicode en cuestión:
     </p>
     <div class="highlight">
       <pre><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">65</span><span class="p">);</span> <span class="c1">// &#39;A&#39; (65 es el código U+0041 en decimal)</span>
@@ -614,7 +634,8 @@
     <p>Por otro lado, el método <strong>charCodeAt()</strong> es la operación inversa a
       <strong>String.fromCharCode()</strong> con algún extra. A <strong>charCodeAt(pos)</strong> le pasamos una posición
       <strong>pos</strong> por parámetro. Esto buscará el carácter de la posición <strong>pos</strong> del
-      <code>string</code> y nos devolverá su código Unicode (por defecto, un decimal). Si queremos pasarlo a otra base
+      <code class="str">string</code> y nos devolverá su código Unicode (por defecto, un decimal). Si queremos pasarlo a
+      otra base
       numérica, podemos hacer uso del método <code>toString(base)</code> indicando <strong>16</strong> como
       <strong>base</strong>.
     </p>
@@ -653,7 +674,7 @@
     <h3 id="interpolacion-de-variables"><a name="string-backstips"></a> INTERPOLACIÓN DE VARIABLES<a class="headerlink"
         href="#interpolacion-de-variables" title="Permanent link">&#9875;</a></h3>
     <p>En <strong>ECMAScript ES2015</strong> se introducierón una interesante mejora en la manipulación general de
-      <code>string</code>, sobre todo respecto a la legibilidad de código.
+      <code class="str">string</code>, sobre todo respecto a la legibilidad de código.
     </p>
     <p>Hasta ahora, si queríamos concatenar el valor de algunas variables con textos predefinidos por nosotros, teníamos
       que hacer algo parecido a esto: </p>

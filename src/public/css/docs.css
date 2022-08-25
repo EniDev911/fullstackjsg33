@@ -32,12 +32,15 @@ body {
 
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
 body .markdown-body {
+  font-family: 'Open Sans', sans-serif;
   padding: 45px;
   border: 1px solid var(--light-gray);
   box-shadow: 2px 3px 9px var(--shadow);
   background: var(--background);
-  font-family: jetbrains-mono, monospace;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: var(--foreground);

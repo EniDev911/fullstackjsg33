@@ -1,4 +1,16 @@
   /* Overlook */
+  .markdown-body code.str {
+    background: #f7df1e;
+    padding: 0;
+    color: #404040;
+    text-transform: uppercase;
+  }
+
+  .markdown-body code.new {
+    background: transparent;
+    color: rgb(76, 67, 238);
+  }
+
   .markdown-body .codehilite pre,
   .markdown-body .highlight pre,
   .markdown-body pre {
@@ -11,7 +23,6 @@
     border-radius: 6px;
     box-shadow: 1px 1px 2px #000;
   }
-
 
   .highlight {
     background-color: #fff;
@@ -113,6 +124,7 @@
   }
 
   .highlight .kd {
+    color: rgb(250, 159, 243);
     font-weight: bold
   }
 
@@ -151,7 +163,7 @@
   }
 
   .highlight .nb {
-    color: #0086b3
+    color: #eecdf7
   }
 
   .highlight .nc {
@@ -187,6 +199,10 @@
 
   .highlight .nv {
     color: teal
+  }
+
+  .highlight .nx {
+    color: rgb(255, 235, 207)
   }
 
   .highlight .ow {
@@ -280,83 +296,4 @@
   .highlight .gc {
     color: #999;
     background-color: #EAF2F5;
-  }
-
-  /* SELECTION */
-  .markdown-body *::selection {
-    background-color: rgba(18, 16, 20, 0.89);
-    color: #fff;
-  }
-
-  .markdown-body .highlight::selection,
-  .markdown-body .highlight .hll::selection,
-  .markdown-body .highlight pre::selection,
-  .markdown-body .highlight .c::selection,
-  .markdown-body .highlight .err::selection,
-  .markdown-body .highlight .o::selection,
-  .markdown-body .highlight .cm::selection,
-  .markdown-body .highlight .cp::selection,
-  .markdown-body .highlight .c1::selection,
-  .markdown-body .highlight .cs::selection,
-  .markdown-body .highlight .gd::selection,
-  .markdown-body .highlight .ge::selection,
-  .markdown-body .highlight .gr::selection,
-  .markdown-body .highlight .gh::selection,
-  .markdown-body .highlight .gi::selection,
-  .markdown-body .highlight .go::selection,
-  .markdown-body .highlight .gp::selection,
-  .markdown-body .highlight .gs::selection,
-  .markdown-body .highlight .gu::selection,
-  .markdown-body .highlight .gt::selection,
-  .markdown-body .highlight .kc::selection,
-  .markdown-body .highlight .kd::selection,
-  .markdown-body .highlight .kn::selection,
-  .markdown-body .highlight .kp::selection,
-  .markdown-body .highlight .kr::selection,
-  .markdown-body .highlight .kt::selection,
-  .markdown-body .highlight .m::selection,
-  .markdown-body .highlight .s::selection,
-  .markdown-body .highlight .n::selection,
-  .markdown-body .highlight .na::selection,
-  .markdown-body .highlight .nb::selection,
-  .markdown-body .highlight .nc::selection,
-  .markdown-body .highlight .no::selection,
-  .markdown-body .highlight .ni::selection,
-  .markdown-body .highlight .ne::selection,
-  .markdown-body .highlight .nf::selection,
-  .markdown-body .highlight .nn::selection,
-  .markdown-body .highlight .nt::selection,
-  .markdown-body .highlight .nv::selection,
-  .markdown-body .highlight .ow::selection,
-  .markdown-body .highlight .w::selection,
-  .markdown-body .highlight .mf::selection,
-  .markdown-body .highlight .mh::selection,
-  .markdown-body .highlight .mi::selection,
-  .markdown-body .highlight .mo::selection,
-  .markdown-body .highlight .sb::selection,
-  .markdown-body .highlight .sc::selection,
-  .markdown-body .highlight .sd::selection,
-  .markdown-body .highlight .s2::selection,
-  .markdown-body .highlight .se::selection,
-  .markdown-body .highlight .sh::selection,
-  .markdown-body .highlight .si::selection,
-  .markdown-body .highlight .sx::selection,
-  .markdown-body .highlight .sr::selection,
-  .markdown-body .highlight .s1::selection,
-  .markdown-body .highlight .ss::selection,
-  .markdown-body .highlight .bp::selection,
-  .markdown-body .highlight .vc::selection,
-  .markdown-body .highlight .vg::selection,
-  .markdown-body .highlight .vi::selection,
-  .markdown-body .highlight .il::selection,
-  .markdown-body .highlight .gc::selection,
-  .markdown-body .codehilite pre::selection,
-  .markdown-body .highlight pre::selection,
-  .markdown-body pre::selection,
-  .markdown-body code::selection,
-  .markdown-body::selection,
-  body::selection {
-    background-color: rgba(176, 17, 255, 0.89);
-    color: #fff;
-    text-shadow: 1px 1px 2px #800590;
   }
