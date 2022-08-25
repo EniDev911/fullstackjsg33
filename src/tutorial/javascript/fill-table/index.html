@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  <title>TUTORIAL</title>
+  <style>
+    code {
+      background: #CCCCCC40 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1 align="left">
+      <img
+        src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+        height="50" align="left">
+      <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" height="55"
+        align="right">
+      <br><br>
+      <code>JS - HTML</code>
+    </h1>
+
+    <h2>
+      LLENAR UNA TABLA DE FORMA DINÁMICA
+    </h2>
+
+    <p>Para comenzar necesitamos apoyarnos de los siguientes funciones: </p>
+    <ul>
+      <li><strong><code>document.createElement()</code></strong> - Para crear un elemento, en este caso los elementos
+        <strong><code>&lt;tr&gt;</code></strong> y el <strong><code>&lt;td&gt;</code></strong>
+      </li>
+      <li><strong><code>document.querySelector()</code></strong> - Para obetener la referencia a los elementos del
+        <strong>DOM</strong>
+      </li>
+      <li><strong><code>elemento.appendChild()</code></strong> - Adjuntar un nodo hijo al final de la lista de otro
+        elemento.</li>
+    </ul>
+    <p>Vamos a crear una estructura básica para este proyecto, puedes usar el siguiente enfoque para organizar los
+      archivos y el código como tal:</p>
+    <div class="highlight">
+      <pre>📂 proyecto [carpeta raíz]
+ |-- 📑 index.html [página de inicio]
+ |-- 📑 script.js [para escribir el código]
+</pre>
+    </div>
+
+    <p>Lo que vamos a dibujar en la tabla es un <strong>arreglo de productos</strong>. Es decir, a partir del arreglo
+      vamos a dibujar una tabla HTML con javascript de manera dinámica.</p>
+    <hr>
+    <h3>PREPARANDO EL ESQUELETO</h3>
+    <p>Para comenzar a dibujar la tabla HTML con javascript hay que definir el encabezado de la tabla en la estructura
+      de la página, y con javacript solo vamos crear el cuerpo donde mostraremos los productos. </p>
+    <p>Por lo tanto, el archivo <code>index.html</code> quedaría de la siguiente manera: </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Index<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Tabla HTML dibujada con JS<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Producto<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Precio<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Cantidad<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>   
+        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tbody</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;table-body&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;script.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre>
+    </div>
+    Tenemos la tabla HTML con un encabezado, y dentro de la misma existe el elemento
+    <strong><code>&lt;tbody&gt;</code></strong> con el id <strong><code>table-body</code></strong>. </p>
+    <p>En ese elemento es en donde vamos adjuntar los elementos <strong><code>&lt;tr&gt;</code></strong> que a su vez
+      tendrán elementos <strong><code>&lt;td&gt;</code></strong>, todo desde javascript.</p>
+    <hr>
+    <h3 id="arreglo-de-objectos"><a name="the-array"></a> ARREGLO DE OBJECTOS<a class="headerlink"
+        href="#arreglo-de-objectos" title="Permanent link">&#9875;</a></h3>
+    <p>El arreglo que vamos a dibujar va ser una colección de objetos que definiremos en nuestro archivo
+      <strong><code>script.js</code></strong>:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">productos</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;🖱️ Mouse Logitech&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">200000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">100</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;🖥️ Monitor AOC&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">150000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">80</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;⌨️ Teclado E-BLUE&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">450000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">120</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;💻 Laptop HP x360&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">500000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}]</span>
+</pre>
+    </div>
+
+    <p>Lo que haremos será recorrer la colección de objetos usando el método <strong><code>.forEach()</code></strong> y
+      por cada elemento: </p>
+    <ol>
+      <li>Crearemos un elemento <strong><code>&lt;tr&gt;</code></strong> que representará cada fila en la tabla.</li>
+      <li>Al elemento <strong><code>&lt;tr&gt;</code></strong> creado le agregaremos un nuevo nodo hijo con el método
+        <code>.appendChild()</code> con elementos <strong><code>&lt;td&gt;</code></strong>, cada elemento
+        <strong><code>&lt;td&gt;</code></strong> corresponde respectivamente al <strong>nombre</strong>,
+        <strong>precio</strong> y <strong>cantidad</strong> de cada producto.
+      </li>
+      <li>Para establecer el texto de cada <strong><code>&lt;td&gt;</code></strong> establecemos su propiedad
+        <strong><code>textContent</code></strong> con el valor de cada propiedad de los productos.
+      </li>
+      <li>Finalmente el elemento <strong><code>&lt;tr&gt;</code></strong> lo agregamos al cuerpo de la tabla con el
+        método <code>.appendChild()</code>.</li>
+    </ol>
+    <p>Debemos obtener una referencia al cuerpo de la tabla usando cualquiera de los métodos ya sea
+      <strong><code>document.querySelector()</code></strong>, <strong><code>document.getElementById()</code></strong>,
+      etc., una vez tengamos seleccionado el elemento, creamos la fila de la tabla, le agregamos datos y la adjuntamos
+      al cuerpo.
+    </p>
+    <p>El script quedaría como se ve a continuación: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">productos</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;🖱️ Mouse Logitech&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">200000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">100</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;🖥️ Monitor AOC&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">150000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">80</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;⌨️ Teclado E-BLUE&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">450000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">120</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;💻 Laptop HP x360&quot;</span><span class="p">,</span>
+    <span class="nx">precio</span><span class="o">:</span> <span class="mi">500000</span><span class="p">,</span>
+    <span class="nx">cantidad</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}]</span>
+
+<span class="c1">// selector </span>
+<span class="kr">const</span> <span class="nx">bodyTable</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;body-table&quot;</span><span class="p">);</span>
+
+<span class="c1">// Recorremos los productos</span>
+<span class="nx">productos</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">producto</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Creamos una fila</span>
+    <span class="kr">const</span> <span class="nx">tr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">);</span>
+    <span class="c1">// Dentro creamos el campo para el nombre y su texto</span>
+    <span class="kd">let</span> <span class="nx">td</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
+    <span class="nx">td</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">producto</span><span class="p">.</span><span class="nx">nombre</span>
+    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">td</span><span class="p">);</span>
+    <span class="c1">// Creamos un campo para el precio y su texto</span>
+    <span class="nx">td</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
+    <span class="nx">td</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">producto</span><span class="p">.</span><span class="nx">precio</span>
+    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">td</span><span class="p">);</span>
+    <span class="c1">// Creamos un campo para la cantidad y su texto</span>
+    <span class="nx">td</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
+    <span class="nx">td</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">producto</span><span class="p">.</span><span class="nx">cantidad</span><span class="p">;</span>
+    <span class="nx">tr</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">td</span><span class="p">);</span>
+    <span class="nx">bodyTable</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tr</span><span class="p">);</span>
+<span class="p">})</span>
+</pre>
+    </div>
+    <a href="./result/index.html">Ver resultado</a>
+  </article>
+</body>
+
+</html>

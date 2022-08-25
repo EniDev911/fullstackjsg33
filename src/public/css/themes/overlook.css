@@ -139,7 +139,7 @@
   }
 
   .highlight .s {
-    color: #dd1144
+    color: #ffec41
   }
 
   .highlight .n {
@@ -147,7 +147,7 @@
   }
 
   .highlight .na {
-    color: teal
+    color: rgb(201, 176, 255)
   }
 
   .highlight .nb {
@@ -182,7 +182,7 @@
   }
 
   .highlight .nt {
-    color: navy
+    color: rgb(248, 255, 169)
   }
 
   .highlight .nv {

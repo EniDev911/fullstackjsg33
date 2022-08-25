@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    table {
+      margin: 50px auto;
+      /* border: 2px solid #494949; */
+      border-collapse: collapse;
+    }
+
+    table th {
+      font-size: 1.3rem;
+      padding: 5px;
+      border: 1px solid #444;
+    }
+
+    table td {
+      font-size: 1.3rem;
+      border: 1px solid #444;
+      text-align: left;
+      padding: 3px 9px 3px 3px;
+    }
+
+    table td:nth-child(1) {
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tabla HTML dibujada con JS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody id="body-table">
+
+    </tbody>
+  </table>
+</body>
+
+<script>
+  const productos = [{
+    id: 1,
+    nombre: "🖱️ Mouse Logitech",
+    precio: 200000,
+    cantidad: 100
+  },
+  {
+    id: 2,
+    nombre: "🖥️ Monitor AOC",
+    precio: 150000,
+    cantidad: 80
+  },
+  {
+    id: 3,
+    nombre: "⌨️ Teclado E-BLUE",
+    precio: 450000,
+    cantidad: 120
+  },
+  {
+    id: 4,
+    nombre: "💻 Laptop HP x360",
+    precio: 500000,
+    cantidad: 10
+  }]
+
+  // selector 
+  const bodyTable = document.getElementById("body-table");
+
+
+  // Recorremos los productos
+  productos.forEach(producto => {
+    // Creamos una fila
+    const tr = document.createElement("tr");
+    // Dentro creamos el campo para el nombre y su texto
+    let td = document.createElement("td");
+    td.textContent = producto.nombre
+    tr.appendChild(td);
+    // Creamos un campo para el precio y su texto
+    td = document.createElement("td");
+    td.textContent = producto.precio
+    tr.appendChild(td);
+    // Creamos un campo para la cantidad y su texto
+    td = document.createElement("td");
+    td.textContent = producto.cantidad;
+    tr.appendChild(td);
+    bodyTable.appendChild(tr);
+  })
+</script>
+
+</html>

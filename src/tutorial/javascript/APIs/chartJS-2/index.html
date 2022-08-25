@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CharJs</title>
+</head>
+
+<body>
+  <canvas id="myChart" width="600" height="600"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    let ctx = document.getElementById("myChart").getContext('2d');
+
+    backgroundColor = ["#ff000040",
+      "#0000ff40",
+      "#ffff0040",
+      "#00ff0040",
+      "#73007340",
+      "#e6950040"];
+    borderColor = ["#f00",
+      "#00f",
+      "#ff0",
+      "#0f0",
+      "#730073",
+      "#e69500"]
+    options = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+
+    // CHART
+    let myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# ',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: backgroundColor,
+          borderColor: borderColor,
+          borderWidth: 2,
+          responsive: true
+        }],
+        options: options
+      }
+    })
+  </script>
+</body>
+
+</html>
