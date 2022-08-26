@@ -500,11 +500,7 @@
       embargo, para aprender a utilizar esta funcionalidad, antes tendremos que aprender sobre los
       <strong>callbacks</strong>, que veremos en temas posteriores.
     </p>
-    <iframe
-      src="https://codesandbox.io/embed/gracious-wiles-vf2vr2?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
-      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="gracious-wiles-vf2vr2"
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -524,10 +520,12 @@
     <div class="highlight">
       <pre><span class="s2">&quot;submarino&quot;</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// &#39;marino&#39; (desde el 3 en adelante)</span>
 <span class="s2">&quot;submarino&quot;</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// &#39;m&#39; (desde el 3, hasta el 3+1)</span>
-<span class="s2">&quot;submarino&quot;</span><span class="nx">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// &#39;marino&#39; (desde el 3 en adelante)</span>
+<span class="s2">&quot;submarino&quot;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// &#39;marino&#39; (desde el 3 en adelante)</span>
 <span class="s2">&quot;submarino&quot;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span> <span class="c1">// &#39;mar&#39; (desde el 3 hasta el 6)</span>
 </pre>
     </div>
+    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/substrings?embed=true"></iframe>
 
     <p>Por otro lado el método <code>substring(ini,end)</code> extrae el fragmento de texto desde la posición
       <strong>ini</strong> hasta la posición <strong>end</strong>. De igual forma al anterior, si se omite el parámetro
@@ -543,7 +541,8 @@
       <code class="str">string</code> por el substring <strong>sep</strong> como separador, devolviendo un array con
       cada una de las
       partes divididas. Es muy útil para <strong>crear arrays</strong>, o dividir en diferentes secciones textos que
-      tienen <strong>separadores</strong> repetidos como podrían ser comas, puntos o pipes <code>|</code>.
+      tienen <strong>separadores</strong> repetidos como podrían ser comas, puntos o símbolos pipe ( <i>barra
+        vertical</i> ) <code>|</code>.
     </p>
     <div class="highlight">
       <pre><span class="s2">&quot;1.2.3.4.5&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;] (5 elementos)</span>
@@ -551,7 +550,8 @@
 <span class="s2">&quot;Código&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span> <span class="c1">// [&#39;C&#39;, &#39;ó&#39;, &#39;d&#39;, &#39;i&#39;, &#39;g&#39;, &#39;o&#39;] (6 elementos)</span>
 </pre>
     </div>
-
+    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/split-strings?embed=true"></iframe>
     <p>En el último ejemplo, el separador es una <strong>cadena vacía</strong>, es decir &lt;<ningún carácter>&gt;, lo
         que hace es hacer una división en su unidad mínima, carácter por carácter.</p>
     <blockquote>
