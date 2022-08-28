@@ -3,10 +3,12 @@ import { projects } from "./data.js";
 const module_1 = document.getElementById("module-1"),
   module_2 = document.getElementById("module-2"),
   module_3 = document.getElementById("module-3"),
+  module_4 = document.getElementById("module-4"),
   btns_clone = document.querySelectorAll(".fa-clone"),
   innerCarousel_1 = document.getElementById("inner-carousel-1"),
   innerCarousel_2 = document.getElementById("inner-carousel-2"),
   innerCarousel_3 = document.getElementById("inner-carousel-3"),
+  innerCarousel_4 = document.getElementById("inner-carousel-4"),
   btns_module = document.querySelectorAll(".module");
 
 let template;
@@ -18,17 +20,26 @@ let template;
 
 const module_change = function (module) {
   if (module === "m-1") {
-    module_1.classList.remove("collapse");
+    module_1.classList.remove("collapse"); // show
     module_2.classList.add("collapse");
     module_3.classList.add("collapse");
+    module_4.classList.add("collapse");
+
   } else if (module === "m-2") {
     module_1.classList.add("collapse");
+    module_2.classList.remove("collapse"); // show
     module_3.classList.add("collapse");
-    module_2.classList.remove("collapse");
+    module_4.classList.add("collapse");
   } else if (module == "m-3") {
     module_1.classList.add("collapse");
     module_2.classList.add("collapse");
-    module_3.classList.remove("collapse");
+    module_3.classList.remove("collapse"); // show
+    module_4.classList.add("collapse");
+  } else if (module === "m-4") {
+    module_1.classList.add("collapse");
+    module_2.classList.add("collapse");
+    module_3.classList.add("collapse");
+    module_4.classList.remove("collapse"); // show
   }
 };
 
@@ -107,6 +118,9 @@ const addProject = () => {
     } else if (project.module === 3) {
       fillTemplate(project);
       innerCarousel_3.innerHTML += template;
+    } else if (project.module === 4) {
+      fillTemplate(project);
+      innerCarousel_4.innerHTML += template;
     }
   });
 };

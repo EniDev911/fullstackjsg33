@@ -163,4 +163,17 @@ export const projects = [
     background: "secondary",
     module: 3,
   },
+  // MODULE 4 - REACT
+  {
+    // Desafío 1 galería de fotos react
+    title: "Desafío 1: Galería de imágenes",
+    image: "src/public/images/png/gallery-react.png",
+    url_code:
+      "https://github.com/EniDev911/galery-react-adl",
+    url_demo: "https://enidev911.github.io/galery-react-adl/",
+    color: "light",
+    background: "dark",
+    module: 4,
+    active: true
+  },
 ];
