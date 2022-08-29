@@ -53,14 +53,6 @@ export const prepareConfigChart = (chartId, data) => {
       hoverRadius: 12,
       responsive: true,
       animation: {
-        duration: 2000,
-        onProgress: function (context) {
-          if (context.initial) {
-            initProgress.value = context.currentStep / context.numSteps;
-          } else {
-            progress.value = context.currentStep / context.numSteps;
-          }
-        },
         onComplete: () => {
           delayed = true;
         },
