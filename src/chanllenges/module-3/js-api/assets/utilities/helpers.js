@@ -16,6 +16,14 @@ const getDataColors = (opacity) => {
 
 export const prepareConfigChart = (chartId, data) => {
   document.getElementById(chartId).parentNode.style.opacity = "1";
+  const ctx = document.getElementById(chartId).getContext("2d");
+  // gradient
+  let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+  gradient.addColorStop(0, "rgba(250, 220, 0, 1)");
+  gradient.addColorStop(1, "rgba(250, 130, 0, 0.3)");
+  // delayed -> animation
+  let delayed;
+
   const firstTenEntries = data.serie.filter((value, index) => index < 10),
     xLabels = firstTenEntries.map((ele) => ele.fecha.substring(0, 10)),
     yLabels = firstTenEntries.map((ele) => ele.valor);
@@ -29,17 +37,41 @@ export const prepareConfigChart = (chartId, data) => {
         {
           label: title,
           data: yLabels,
-          backgroundColor: getDataColors(40)[6],
+          backgroundColor: gradient,
           borderColor: getDataColors()[8],
           pointBorderColor: getDataColors()[6],
           fill: true,
           borderWidth: 2,
           pointBorderWidth: 5,
           tension: 0.2,
+
         },
       ],
     },
     options: {
+      radius: 3,
+      hoverRadius: 12,
+      responsive: true,
+      animation: {
+        duration: 2000,
+        onProgress: function (context) {
+          if (context.initial) {
+            initProgress.value = context.currentStep / context.numSteps;
+          } else {
+            progress.value = context.currentStep / context.numSteps;
+          }
+        },
+        onComplete: () => {
+          delayed = true;
+        },
+        delay: (context) => {
+          let delay = 0;
+          if (context.type === "data" && context.mode === "default" && !delayed) {
+            delay = context.dataIndex * 300 + context.datasetIndex * 100;
+          }
+          return delay;
+        }
+      },
       scales: {
         x: {
           ticks: {
@@ -49,6 +81,10 @@ export const prepareConfigChart = (chartId, data) => {
         y: {
           ticks: {
             color: getDataColors()[2],
+            callback: function (value) {
+              value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+              return "$" + value + " CLP"
+            }
           },
         },
       },

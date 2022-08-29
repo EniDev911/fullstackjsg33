@@ -12,6 +12,7 @@ const getValues = async (indicator = "") => {
   try {
     const options = { method: "GET" },
       res = await fetch(API.concat(indicator), options);
+    console.log(res);
     return res.ok ? await res.json() : alert("Recursos no disponible");
   } catch (err) {
     return err.message;
@@ -72,16 +73,18 @@ window.addEventListener("load", () => {
   );
   fillSelectBox();
   submitBtn.addEventListener("click", () => {
+
+
     validate(Number(inputBox.value))
       ? getResults(Number(inputBox.value), selectBox.value) &&
-        renderChart(selectBox.value)
+      renderChart(selectBox.value)
       : "";
   });
   document.addEventListener("keydown", (e) => {
     e.key === "Enter"
       ? inputBox.value != ""
         ? getResults(Number(inputBox.value), selectBox.value) &&
-          renderChart(selectBox.value)
+        renderChart(selectBox.value)
         : alert("Debe ingresar un monto para buscar")
       : "";
   });
