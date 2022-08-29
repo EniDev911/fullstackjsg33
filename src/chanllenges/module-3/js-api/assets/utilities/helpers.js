@@ -53,6 +53,7 @@ export const prepareConfigChart = (chartId, data) => {
       hoverRadius: 12,
       responsive: true,
       animation: {
+        duration: 2000,
         onComplete: () => {
           delayed = true;
         },
