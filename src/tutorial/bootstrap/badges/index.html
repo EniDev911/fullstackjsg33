@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BADGES - BS</title>
-  <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+  <div class="container min-vh-100">
     <div class="row">
       <div class="col col-md-6 col-xl-8 bg-dark rounded mt-5 shadow mx-auto py-3 text-center w-100">
         <h2 class="text-light text-center">EniDev <sup><span class="badge bg-success">911</span></h2>
-        <div class="text-light fs-3 bg-info d-inline rounded p-1">Notificaciones <sup><span class="badge bg-danger">5</span></sup></div>
+        <div class="text-light fs-3 bg-info d-inline rounded p-1">Notificaciones <sup><span
+              class="badge bg-danger">5</span></sup></div>
         <div class="text-light fs-3 bg-info d-inline rounded p-1">Notificaciones <sup><span
               class="badge bg-danger">5</span></sup></div>
       </div>
     </div>
+    <div class="row mt-5">
+      <div class="col col-md-6 col-xl-8 bg-dark mx-auto rounded p-4">
+        <button type="button" class="btn btn-primary position-relative me-4">
+          Imbox
+          <span class="position-absolute 
+                       top-0 start-100 
+                       text-light 
+                       translate-middle
+                       badge
+                       bg-danger
+                       rounded-pill">99+
+            <span class="visually-hidden">Mensajes no leidos</span>
+          </span>
+        </button>
+        <button type="button" class="btn btn-primary position-relative">
+          Imbox
+          <span class="position-absolute 
+                               top-0 start-100 
+                               text-light 
+                               translate-middle
+                               badge
+                               bg-danger
+                               rounded-pill">99+
+            <span class="visually-hidden">Mensajes no leidos</span>
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>
