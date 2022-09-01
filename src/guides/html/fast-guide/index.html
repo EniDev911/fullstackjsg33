@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  <title>Guía rápida HTML</title>
+  <style>
+    h3 {
+      background-color: #f3f3f3;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 6px;
+      border-bottom: 2px solid #f8bc1d;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h2 align=center>
+      <img height="60" src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png"
+        align="right">
+      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+        height="50"><br><br>
+      <span style="padding-left:15px;">GUÍA RÁPIDA</span>
+    </h2>
+
+    <p>Esta guía rápida está redactada con referencias y vista previa de los elementos de la sintaxis de HTML y una
+      línea de tiempo resumida en cuanto a la evolución de HTML. </p>
+    <p>A continuación sigue una lista índice de todas las características que se pueden encontrar en un documento HTML
+      (elementos, atributos, entidades, formato, extras, etc.). </p>
+    <p><a name="top"></a>
+    </p>
+    <ul>
+      <li>
+        <h4 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&#9875;</a></h4>
+        <ul>
+          <li><a href="#resumen">Evolución de HTML</a></li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="programas-recomendados">Programas recomendados &#x1f4bd;</h4>
+        <ul>
+          <li>
+            <p><strong>Editores Online</strong></p>
+            <ul>
+              <li><a href="https://vscode.dev/" target="_blank" rel="noreferrer">VS Code Online</a></li>
+              <li><a href="https://htmleditor.w3schools.in/" target="_blank" rel="noreferrer">w3schools Editor HTML
+                  Online</a></li>
+              <li><a href="https://codepen.io/" target="_blank" rel="noreferrer">Codepen</a></li>
+            </ul>
+          </li>
+          <li>
+            <p><a href="#editores">Editores recomendados</a> &#x1f4d1;</p>
+          </li>
+          <li><a href="#navegadores">Navegadores recomendados</a></li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="elementos">Etiquetas semánticas<a class="headerlink" href="#elementos"
+            title="Permanent link">&#9875;</a></h4>
+        <ul>
+          <li><a href="#cabeceras">Cabeceras</a></li>
+          <li><a href="#enlaces">Enlaces</a></li>
+          <li><a href="#parrafos">De textos</a></li>
+          <li><a href="#citas">Citas</a></li>
+          <li><a href="#listas">Listas</a></li>
+          <li><a href="#imagenes">Imágenes</a></li>
+          <li><a href="#tablas">Tablas</a></li>
+          <li><a href="#formularios">Formularios</a></li>
+          <li><a href="#multimedia_">Multimedia</a></li>
+          <li><a href="#lineas">Lineas separadoras</a></li>
+          <li><a href="#abreviaturas">Abreviaturas</a></li>
+          <li><a href="#emojis">Emojis</a></li>
+        </ul>
+      </li>
+      <li>
+        <h4 id="atributos">Atributos<a class="headerlink" href="#atributos" title="Permanent link">&#9875;</a></h4>
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" disabled checked /> <a href="#globals">Globales</a></li>
+          <li class="task-list-item"><input type="checkbox" disabled checked /> <a href="#especificos">Especificos</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p><br></p>
+    <hr />
+    <p><br></p>
+    <p><a name="resumen"></a>
+    <h2 align="center">
+      Historia de HTML - Resumen
+    </h2>
+    <br>
+    </p>
+    <div><img src="assets/t.berners-lee.png" width="370" height="270" align="left">
+      <h2 align="left">
+        Año 1989:
+      </h2>
+      <p>
+        Tim Berners-lee invento la World Wide Web
+        </h4>
+      <p>La web se desarrolló entre marzo y diciembre de 1989 por el inglés <strong>Tim Berners-Lee</strong> con ayuda
+        del
+        belga <strong>Robert Cailliau</strong> mientras trabajaban en el <a
+          href="https://es.wikipedia.org/wiki/Organizaci%C3%B3n_Europea_para_la_Investigaci%C3%B3n_Nuclear"
+          target="_blank">CERN</a> en <b>Ginebra</b>, <b>Suiza</b> y se publicó como una propuesta formal en el año
+        1991.
+        Desde entonces, <strong>Berners-Lee</strong> ha jugado un papel activo guiando el desarrollo de estándares Web
+        (como el lenguajes de marcado <a href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado"
+          target="_blank">HTML</a>)
+      </p>
+    </div><br>
+    <p><img src="assets/t.berners-lee2.png" width="370" height="280" align="left">
+    <h2 align="left">
+      Año 1991:
+    </h2>
+    <h4>
+      Tim Berners-lee invento HTML
+    </h4>
+    <p>El origen de HTML se remonta al año 1980, cuando <strong>Tim Berners-Lee</strong>, trabajador del <a
+        href="https://es.wikipedia.org/wiki/Organizaci%C3%B3n_Europea_para_la_Investigaci%C3%B3n_Nuclear"
+        target="_blank">CERN</a> (<i>Organización Europea para la investigación Nuclear</i>) propuso un nuevo
+      sistema de
+      <i>&ldquo;hipertexto&rdquo;</i> permitía que la información relacionada con los documentos eléctronicos que
+      estaban visualizando. El primer documento formal con la descripción de <a
+        href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado" target="_blank">HTML</a> se publicó en 1991 bajo el
+      nombre de <a href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html"><i>HTML
+          Tags</i></a> y todavía hoy puede ser consultado online a modo de reliquia informática.
+    </p><br></p>
+    <p><img src="assets/r.raggett.png" width="370" height="280" align="left">
+    <h2 align="left">
+      Año 1993:
+    </h2>
+    <h4>
+      Dave Raggett redacta HTML
+    </h4>
+    <p><strong>Dave Ragget</strong> es un especialista en informática inglés que ha desempeñado un papel importante
+      en
+      la implementación de la <a href="https://es.wikipedia.org/wiki/World_Wide_Web" target="_blank">World Wide
+        Web</a>
+      desde 1992. Ha sido miembro <a href="https://www.w3.org/" target="_blank">W3C</a> desde 1995. Despues de
+      conocer a
+      <strong>Tim Berners-Lee</strong> en 1992 ha sido paritcipe activo en el desarrollo de <a
+        href="https://es.wikipedia.org/wiki/World_Wide_Web" target="_blank">World Wide Web</a>. La primera propuesta
+      oficial para que <a href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado" target="_blank">HTML</a> fuera un
+      estándar se realizó en 1993 por parte del <a href="https://www.ietf.org/" target="_blank">IETF</a>. En esta
+      época
+      se definieron las etiquetas para imágenes, tablas y formularios.
+    </p><br></p>
+    <p><img src="assets/ietf.png" width="370" height="260" align="left">
+    <h2 align="left">
+      Año 1995:
+    </h2>
+    <h4>
+      HTML 2.0 definido por HTML Working Group del IETF (<i>Internet Engineering Task Force</i>)
+    </h4>
+    <p>El <strong>HTML Working Group</strong> fue un grupo de trabajo del <a href="https://www.ietf.org/"
+        target="_blank">IETF</a> que estuvo desde 1994 y 1996, y un grupo de trabajo del <a href="https://www.w3.org/"
+        target="_blank">W3C</a> desde 1995 a 2015. El <strong title="HTML Working Group">HTMLWG</strong> tenía
+      miembros
+      de una comunidad diversa, como proveedores de contenido, autores de contenido y cualquier persona interesada
+      en el
+      trabajo sobre HTML.</p><br></p>
+    <p><img src="assets/w3c_html3.2.png" width="370" height="260" align="left">
+    <h2 align="left">
+      Año 1997:
+    </h2>
+    <h4>Recomendaciones de W3C: HTML 3.2</h4>
+    <p>Aparecieron nuevas etiquetas, como:<br>
+      &#215;<code><b>&lt;center&gt;</b></code><br>
+      &#215;<code><b>&lt;font&gt;</b></code><br>
+      &#215;<code><b>&lt;script&gt;</b></code><br>
+      &#215;<code><b>&lt;style&gt;</b></code><br>
+      &#215;<code><b>&lt;div&gt;</b></code><br>
+    </p>
+    </p>
+    <p><br></p>
+    <p><img src="assets/w3c_html4.0.1.png" width="370" height="260" align="left">
+    <h2 align="left">
+      Año 1999:
+    </h2>
+    <h4>Recomendaciones de W3C: HTML 4.01</h4>
+    <p>Editada por <strong>Dave Ragget</strong> y otros miembros. Se considera obsoleta desde marzo de 2018. Después
+      de
+      años de lucha entre los fabricantes de la <a href="https://www.w3.org/" target="_blank">W3C</a> intentaba
+      poner un
+      poco de orden con las versiones de HTML 4 y <a href="https://www.w3.org/TR/REC-html40/" target="_blank">HTML
+        4.01</a> en los años 1998 y 1999.
+      En <a href="https://www.w3.org/TR/REC-html40/" target="_blank">HTML 4.01</a> la <a href="https://www.w3.org/"
+        target="_blank">W3C</a> empieza con la separación de la estructura del documento con la de la representación
+      visual. Así crea un lenguaje paralelo al <a href="https://www.w3.org/TR/REC-html40/" target="_blank">HTML
+        4.01</a>
+      llamado <a href="https://www.w3.org/wiki/Es/CSS" target="_blank">CSS</a></p><br></p>
+    <p><img src="assets/w3c_xhtml1.0.png" width="370" height="260" align="left">
+    <h2>
+      Año 2000:
+    </h2>
+    <h4>Recomendaciones de W3C: XHTML 1.0</h4>
+    <p>Debido a la falta de coherencia en la definición de los esquemas derivados del <a
+        href="https://es.wikipedia.org/wiki/SGML" target="_blank">SGML</a>, la W3C decide definir un nuevo
+      subesquema de
+      SGML denominado <a href="https://es.wikipedia.org/wiki/Extensible_Markup_Language" target="_blank">XML</a>.
+      Este
+      esquema sería un esquema bien definido y cerrado, lo cual podría proporcionar documentos coherentes y sin
+      posibilidad de dobles interpretaciones. <a href="https://www.w3.org/TR/xhtml1/" target="_blank">XHTML 1.0</a>
+      viene a ser lo mismo que HTML 4.01 pero con una definición basada sobre <a
+        href="https://es.wikipedia.org/wiki/Extensible_Markup_Language" target="_blank">XML</a> en vez de sobre
+      SGML.
+    </p><br></p>
+    <p><img src="assets/html5_borrador.png" width="370" height="310" align="left">
+    <h2>
+      Año 2008:
+    </h2>
+    <h4>Primer borrador público de HTML5 WHATWG</h4>
+    <p>Una vez publicado <a href="https://www.w3.org/TR/xhtml1/" target="_blank">XHTML 1.0</a> los esfuerzos de la
+      W3C
+      se dirigen a la creación de XHTML 2.0 como evolución del lenguaje.<br>Nuevamente la W3C se mete en un trabajo
+      teórico, lo que hace que algunos <i>&ldquo;desidentes&rdquo;</i> (oportunistas para otros), monten un grupo
+      paralelo conocido como <a href="https://whatwg.org/" target="_blank">WHATWG.</a> La actividad del WHATWG se
+      centra
+      en el estándar HTML5, cuyo primer borrador oficial se publicó el 22 de enero del 2008.</p><br></p>
+    <p><img src="assets/html5_check.png" width="370" height="280" align="left">
+    <h2>
+      Año 2012:
+    </h2>
+    <h4>Estándar de vida HTML5 WHATWG</h4>
+    <p>En enero de 2011, el <a href="https://whatwg.org/" target="_blank">WHATWG</a> cambió el nombre de su estándar
+      de
+      vida &ldquo;HTML5&rdquo; a &ldquo;HTML&rdquo;. No obstante, el W3C continúa con su proyecto de lanzar HTML5.
+      En
+      Julio del 2012, el WHATWG y W3C decidieron un grado de separación. W3C continuará el trabajo de especificación
+      HTML5, enfocándose en un único estándar definito y WHATWG continuará su trabajo con HTML5 como un
+      &ldquo;estándar
+      de vida&rdquo;.</p><br></p>
+    <p><img src="assets/html5.png" width="370" height="290" align="left">
+    <h2>2014:</h2>
+    <h4>Recomendaciones de W3C: HTML5</h4>
+    <p>En diciembre de 2012, el W3C designó HTML5 como recomendación candidata. En septiembre de 2014, W3C trasladó
+      HTML5 a recomendación propuesta. El criterio para avanzar a la recomendación del W3C es &ldquo;dos
+      implementaciones 100% completas y totalmente interoperables&rdquo;. En 28 de octubre de 2014, HTML5 se publicó
+      como una recomendación W3C estable, significa que el proceso de especificación está completo.</p><br></p>
+    <p><img src="assets/html5.1_.png" width="370" height="310" align="left">
+    <h2>
+      Año 2016:
+    </h2>
+    <h4>Recomendaciones candidata de W3C: HTML5.1</h4>
+    <p>Cosas nuevas que traen dentro de esta recomendación candidata:<br>
+      &#215;<code><b>&lt;picture&gt;:</b></code><br>
+      &#215;<code><b>&lt;dialog&gt;:</b></code><br>
+      &#215;<code><b>&lt;summary&gt;:</b></code> y <code><b>&lt;details&gt;:</b></code><br>
+      Entre otras que tienen una función sobre la semántica del documento.</p><br></p>
+    <p><img src="assets/html5.1_.png" width="370" height="290" align="left">
+    <h2>Año 2017</h2>
+    <h4>Recomendaciones W3C: HTML5.1 2da edición</h4>
+    <p>Esta edición llega con algunas revisiones sobre la anterior publicación.<br>Es posible leer el documento de <a
+        href="https://www.w3.org/TR/2017/REC-html51-20171003/">HTML 5.1 (segunda edición)</a> en el sitio web del W3C.
+      Con posterioridad, el 3 de Octubre de 2017 se convierte en estándar <a
+        href="https://www.w3.org/TR/html51/">https://www.w3.org/TR/html51/</a>.
+    </p><br>
+    </p>
+    <p><img src="assets/html5.2.png" width="370" height="260" align="left">
+    <h2>Año 2017</h2>
+    <h4>Recomendaciones W3C: HTML5.2</h4>
+    <p>En diciembre del año 2017 se define como estándar la <strong>versión 5.2 de HTML</strong> se volvió la
+      recomendación oficial de la W3C. Porsupuesto que se incorporarón nuevos aspectos, mejorando la seguridad en las
+      etiquetas de link como determinar si el contenido de la etiqueta va a ser cargado y usado. También se actualizarón
+      aspectos de accesibilidad de varios atributos como <a href="https://www.w3.org/TR/wai-aria-1.1/"
+        target="_blank">https://www.w3.org/TR/wai-aria-1.1/</a></p>
+    </p><br>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="editores-recomendados"><a name="editores"></a>Editores recomendados<a class="headerlink"
+        href="#editores-recomendados" title="Permanent link">&#9875;</a></h3>
+    <table style="color: #067CC8; text-align: center;">
+      <colgroup>
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 20%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Editor</th>
+          <th>Descarga</th>
+          <th>Linux</th>
+          <th>Windows</th>
+          <th>Mac</th>
+          <th>Licencia</th>
+          <th>Código fuente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Visual Studio -->
+        <tr>
+          <td>
+            <img src="assets/icon/vs_code.ico" width="32">
+          </td>
+          <td>
+            <a href="https://code.visualstudio.com/Download" target="_blank">Visual Studio Code</a>
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <a href="https://github.com/microsoft/vscode/blob/main/LICENSE.txt" target="_blank">MIT</a>
+          </td>
+          <td>
+            <a href="https://github.com/microsoft/vscode" target="_blank">microsoft/vscode</a>
+          </td>
+        </tr>
+        <!-- SublimeText -->
+        <tr>
+          <td>
+            <img src="assets/icon/sublime_text.ico" width="32">
+          </td>
+          <td>
+            <a href="https://www.sublimetext.com/download" target="_blank">SublimeText</a>
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <a href="https://www.sublimetext.com/eula" target="_blank">Protected</a>
+          </td>
+          <td>
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+        </tr>
+        <!-- Atom -->
+        <tr>
+          <td>
+            <img src="assets/icon/atom.ico" width="32">
+          </td>
+          <td>
+            <a href="https://atom.io/" target="_blank">Atom</a>
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <a href="https://github.com/microsoft/vscode/blob/main/LICENSE.txt" target="_blank">MIT</a>
+          </td>
+          <td>
+            <a href="https://github.com/atom/atom" target="_blank">atom/atom</a>
+          </td>
+        </tr>
+        <!-- Notepad++ -->
+        <tr>
+          <td>
+            <img src="assets/icon/notepad++.ico" width="32">
+          </td>
+          <td>
+            <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a>
+          </td>
+          <td>
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td>
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+          <td>
+            <a href="https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE"
+              target="_blank">GPLv3</a>
+          </td>
+          <td>
+            <a href="https://github.com/notepad-plus-plus/notepad-plus-plus"
+              target="_blank">notepad-plus-plus/notepad-plus-plus</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="navegadores-recomendados"><a name="navegadores"></a>Navegadores recomendados<a class="headerlink"
+        href="#navegadores-recomendados" title="Permanent link">&#9875;</a></h3>
+    <table style="color: #067CC8; text-align: center;">
+      <colgroup>
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 10%;">
+        <col span="1" style="width: 20%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Navegador</th>
+          <th>Descarga</th>
+          <th>Linux</th>
+          <th>Windows</th>
+          <th>Mac</th>
+          <th>Licencia</th>
+          <th>Código fuente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Chrome -->
+        <tr>
+          <td align="center">
+            <img src="assets/icon/chrome.ico" width="32">
+          </td>
+          <td>
+            <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://www.google.com/chrome/eula/" target="_blank">Protected</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+        </tr>
+        <!-- Edge -->
+        <tr>
+          <td align="center">
+            <img src="assets/icon/edge.ico" width="32">
+          </td>
+          <td>
+            <a href="https://www.microsoft.com/es-es/edge" target="_blank">Microsoft Edge</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://docs.microsoft.com/en-us/legal/microsoft-edge/microsoft-edge-devtools-license-terms"
+              target="_blank">Protected</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+        </tr>
+        <!-- firefox dev -->
+        <tr>
+          <td align="center">
+            <img src="assets/icon/firefoxdev.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://www.mozilla.org/es-CL/firefox/developer/" target="_blank">Firefox Developer</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">MPLv2.0</a>
+          </td>
+          <td align="center">
+            <a href="https://hg.mozilla.org/mozilla-central/" target="_blank">mozilla-central</a>
+          </td>
+        </tr>
+        <!-- Opera -->
+        <tr>
+          <td align="center">
+            <img src="assets/icon/opera.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://www.opera.com/es" target="_blank">Opera</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://www.opera.com/es/eula/computers" target="_blank">Freeware</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/close.ico" width="32">
+          </td>
+        </tr>
+        <!-- Brave -->
+        <tr>
+          <td align="center">
+            <img src="assets/icon/brave.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://brave.com/es/download/" target="_blank">Brave</a>
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <img src="assets/icon/done.ico" width="32">
+          </td>
+          <td align="center">
+            <a href="https://github.com/brave/brave-browser/blob/master/LICENSE" target="_blank">MPLv2.0</a>
+          </td>
+          <td align="center">
+            <a href="https://github.com/brave/brave-browser" target="_blank">brave/brave-browser</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="cabeceras"><a name='cabeceras'></a>Cabeceras <a class="headerlink" href="#cabeceras"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Los encabezamientos en HTML se crean colocando un número determinado junto con la etiqueta
+      <strong><code>&lt;h&gt;</code></strong> de apertura y cierre. Esto establece el nivel de encabezamiento
+      deseado
+      (HTML ofrece hasta seis niveles). Los encabezados posibles se pueden ver en la siguiente demostración.
+    </p>
+
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYdPjaz" data-preview="true"
+      data-editable="true" data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/LYdPjaz">
+          Encabezados</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <p>A estos elementos se le pueden incluir los <strong>atributos globales</strong></p>
+    <blockquote>
+      <p>El atributo <code>align</code> es obsoleto; no debe usarse</p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="enlaces"><a name="enlaces"></a>Enlaces <a class="headerlink" href="#enlaces"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Los enlaces nos sirven para poder direccionar a otras páginas de internet, archivos o ubicaciones dentro de
+      la
+      misma página, direcciones de correo, o cualquier otra URL.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>&lt;a&gt;</code>
+          </td>
+          <td>
+            Etiqueta para hacer rereferencia a otras páginas web o recursos como documentos o archivos.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Esta etiqueta debe tener, como mínimo, el atributo <strong><code>href</code></strong>, ya que es el atributo
+      con
+      el que se especifica la dirección URL al documento que se quiere enlazar. Aún así, la etiqueta
+      <code>&lt;a&gt;</code> también tiene varios atributos opcionales, veamos un resumen de todos ellos:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Atributo</th>
+          <th>Valor</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>href</code>
+          </td>
+          <td>
+            <u>URL</u>
+          </td>
+          <td>
+            Enlace al documento que se quiere cargar: <strong>Atributo obliatorio</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>download</code>
+          </td>
+          <td>
+            <i>"nombre.ext"</i>
+          </td>
+          <td>Descarga el enlace definido en el atributo <code>href</code> en lugar de abrirlo. Si se indica un
+            valor,
+            se renombra.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>target</code>
+          </td>
+          <td>
+            <b>"_blank"</b>
+          </td>
+          <td>
+            Abre el enlace en una nueva pestaña
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"_self"</b></td>
+          <td>Abre el enlace en la pestaña o <code>&lt;iframe&gt;</code> actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"_parent"</b></td>
+          <td>Abre el enlace en el documento padre.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"_top"</b></td>
+          <td>Abre el enlace en el documento raíz. (padre global)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><u>"nameIframe"</u></td>
+          <td>Abre el enlace en el <code>&lt;iframe&gt;</code> con el nombre epecificado.</td>
+        </tr>
+        <tr>
+          <td><code>rel</code></td>
+          <td><b>"alternate"</b></td>
+          <td>Indica que el enlace es una versión alternativa (idioma o formato diferente).</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"author"</b></td>
+          <td>Indica que el enlace es la web del autor de la página actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"bookmark"</b></td>
+          <td>El enlace es un <b>permanlink</b> a la sección de la página actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"help"</b></td>
+          <td>Indica que el enlace ofrece ayuda para la página actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"license"</b></td>
+          <td>Indica que la página actual está cubierta por la licencia referenciada.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"prev"</b></td>
+          <td>Indica que el enlace es la parte previa del documento actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"next"</b></td>
+          <td>Indica que el enlace es la parte siguiente del documento actual.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"nofollow"</b></td>
+          <td>Indica que el enlace no está supervisado por el autor del sitio web.</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>"noreferrer"</b></td>
+          <td>El navegador no envía la página de procedencia al visitar el enlace.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>El soporte del atributo <b>download</b> podría no funcionar en navegadores en versiones muy antiguas</p>
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNzeZvN" data-preview="true"
+      data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/WNzeZvN">
+          Enlaces</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <h4>Esquema de una URL</h4>
+    <p>Al indicarse una URL, tenemos formas de escribirlas. Conviene conocer bien la estructura de una URL, para
+      diferenciar cada una de sus partes. Este sería el esquema completo de un enlace:</p>
+    <p align="center">
+      <img src="assets/url_scheme.png" alt="">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="parrafos"><a name="parrafos"></a>Párrafos <a class="headerlink" href="#parrafos"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Para crear párrafos usa la etiqueta <code>&lt;p&gt;</code> se puede usar junto a la etiqueta
+      <code>&lt;br&gt;</code> para hacer saltos de líneas dentro del contenido.
+    </p>
+    <p>En el siguiente ejemplo, tenemos la etiqueta <code>&lt;p&gt;</code>, que se utiliza para la (
+      <em>agrupación</em>), mientras que la etiqueta <code>&lt;strong&gt;</code> es para darle un significado
+      diferente
+      a ese fragmento de texto:
+    </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, esto es un pequeño &lt;<span class="nt">strong</span>&gt;ejemplo&lt;/<span class="nt">strong</span>&gt;&lt;/<span class="nt">p</span>&gt;</pre>
+    </div>
+    <p>En primer lugar, existe una serie de etiquetas HTML simples para seleccionar un fragmento de texto y dotarlo
+      de
+      un significado especial. A continuación podemos observar algunas de ellas:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Obtienes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>&#60;b&#62;&#60;/b&#62;</code>
+          </td>
+          <td>
+            <b>Esto es negrita</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;strong&#62;&#60;/strong&#62;</>
+                  </td>
+                  <td>
+                    Fragmento de texto <strong>importante</strong> o palabra <strong>clave</strong> y capturado por los lectores de pantalla
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>&#60;i&#62;&#60;/i&#62;</code>
+          </td>
+          <td>
+            <i>Esto es cursiva</i>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;em&#62;&#60;/em&#62;</code>
+          </td>
+          <td>
+            Fragmento de texto <em>enfatizado</em> y capturado por los lectores de pantalla.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;mark&#62;&#60;/mark&#62;</code>
+          </td>
+          <td>
+            Fragmento de texto resaltado, simula estar<mark>destacado con marcador amarillo</mark>.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;del&#62;&#60;/del&#62;</code>
+          </td>
+          <td>
+            <del>Esto es tachado</del>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;sup&#62;superíndice&#60;/sup&#62;</code>
+          </td>
+          <td>Esto es <sup>superíndice</sup></td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;sub&#62;subíndice&#60;/sub&#62;</code>
+          </td>
+          <td>Esto es un <sub>subíndice</sub></td>
+        </tr>
+        <tr>
+          <td>
+            <code>&#60;cite&#62;&#60;/cite&#62;</code>
+          </td>
+          <td>Fragmento de texto con el título de un trabajo creativo: <cite>obras, libros</cite></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>La etiqueta <code>&lt;span&gt;</code> es una versión en línea de la etiqueta <code>&lt;div&gt;</code>, ya que
+      su
+      misión es agrupar contenido de texto, mientras que la misión de un <code>&lt;div&gt;</code> es agrupar otras
+      etiquetas HTML que a su vez pueden agrupar otras y otras etiquetas HTML.
+    </p>
+    <h4>Modificación de significado</h4>
+    <p>Con las siguientes etiquetas HTML también podemos modificar el significado de la información que contienen:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Atributos</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;small&gt;&lt;/small&gt;</code></td>
+          <td></td>
+          <td>Anotaciones menores <small>pequeñas puntualizaciones.</small></td>
+        </tr>
+        <tr>
+          <td><code>&lt;q&gt;&lt;/q&gt;</code></td>
+          <td><b>cite</b></td>
+          <td>Cita o frase extraída de otro contexto.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;dnf&gt;&lt;/dnf&gt;</code></td>
+          <td><b>title</b></td>
+          <td>Definición (término que posteriormente será definido).</td>
+        </tr>
+        <tr>
+          <td><code>&lt;abbr&gt;&lt;/abbr&gt;</code></td>
+          <td><b>title</b></td>
+          <td>Abreviatura o acrónimo.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Por su parte, la etiqueta <code>&lt;q&gt;</code> nos permite hacer referencia a una cita o frase extraída de
+      otro
+      contexto. En esta etiqueta disponemos de un atributo opcional <b>cite</b>, mediante el cuál podemos hacer
+      referencia a una URL.</p>
+    <p>También tenemos las etiquetas <code>&lt;dnf&gt;</code> y <code>&lt;abbr&gt;</code> que nos permiten indicar
+      <b>definiciones</b> y <b>abreviaturas</b>, y que ambas permiten el uso del atributo <b>title</b> para indicar
+      el
+      significado de dicho término o abreviatura. Un ejemplo de ambas etiquetas combinadas:
+    </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">p</span>&gt;El término &lt;<span class="nt">dnf</span>&gt;&lt;<span class="nt">abbr</span> title="Kilómetro"&gt;Km&lt;/<span class="nt">abbr</span>&gt;&lt;/<span class="nt">dnf</span>&gt; es una unidad de longitud.</pre>
+    </div>
+    <p>Los <b>saltos de línea</b> son etiquetas especiales de HTML para comenzar en una línea nueva. Al contrario
+      que
+      todas las etiquetas que hemos visto, las etoquetas <code>&lt;br&gt;</code> son etiquetas que no necesitan una
+      etiqueta de cierre, por lo que sólo se escribe la etiqueta de apertura.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;br&gt;</code></td>
+          <td>Salto de línea ( <i>nueva línea</i> ).</td>
+        </tr>
+        <tr>
+          <td><code>&lt;wbr&gt;</code></td>
+          <td>Oportunidad de salto de línea ( <i>división con guión</i> ).</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="lineas-separadoras"><a name="lineas"></a>Líneas separadoras</h3>
+    <p>Para crear líneas horizontales que se pueden utilizar para separar secciones de diferentes temas, o
+      representar
+      un cambio de tema entre párrafos de un documento HTML es sencillamente con la etiqueta <code>&lt;hr&gt;</code>
+      esta etiqueta al día de hoy tiene más un significado semántico que representativo, por lo que dibujar una
+      línea
+      horizontal se debería usar el CSS apropiado.</p>
+    <table border="1px">
+      <thead>
+        <tr>
+          <th style="width:30%;">Etiqueta</th>
+          <th style="width: 580px;">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>&#60;hr&#62;</code>
+          </td>
+          <td>
+            Etiqueta que representa un cambio de tema entre párrafos. Solo tiene una etiqueta <code>&#60;hr/&#62;</code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRxKMje" data-preview="true"
+      data-editable="true" data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/GRxKMje">
+          formato</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="citas"><a name="citas"></a>Citas <a class="headerlink" href="#citas" title="Permanent link">&#9875;</a>
+    </h3>
+    <p>Para crear bloques de cita, se emplea la etiqueta <code>&lt;blockquote&gt;</code>. En la siguiente tabla se
+      pueden ver las opciones para crearlos.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Tecleas</th>
+          <th>Obtienes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre
+              class="no_mrkdwn">Esto es una línea normal<br><br>&#60;blockquote&#62;Esto es parte de un bloque de cita.<br>Esto es parte del mismo bloque de cita.&#60;/blockquote&#62;</pre>
+          </td>
+          <td>
+            <p>Esto de una línea normal</p>
+            <blockquote>
+              <p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p>
+            </blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>Esto es una línea normal<br><br>&#60;blockquote&#62;<br>&nbsp;Esto es parte de un bloque de cita.<br>&nbsp;Esto es parte del mismo bloque de cita.<br>&nbsp;&nbsp;&#60;blockquote&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;Esto de otro bloque de cita anidado.<br>&nbsp;&nbsp;&nbsp;&nbsp;Esto es parte del bloque anidado.<br>&nbsp;&nbsp;&#60;/blockquote&#62;<br>&nbsp;Esto es parte del bloque de cita del primer nivel.<br>&#60;/blockquote&#62;
+                </pre>
+          </td>
+          <td>
+            <p>Esto es una línea normal</p>
+            <blockquote>
+              <p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p>
+              <blockquote>
+                <p>Esto es otro bloque de cita anidado. Esto es parte del bloque anidado.</p>
+              </blockquote>
+              <p>Esto de parte del bloque de cita de primer nivel.</p>
+            </blockquote>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="https://codepen.io/EniDev911/pen/oNqvogR"><img src="https://badges.aleen42.com/src/codepen.svg"
+          alt="codepen logo" height="27"></a>
+      <br>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="listas"><a name="listas"></a>Listas <a class="headerlink" href="#listas" title="Permanent link">&#9875;</a>
+    </h3>
+    <p>HTML permite crear dos tipos de listas, ordenadas con la etiqueta <code>&lt;ul&gt;</code> y desordenadas con
+      la
+      etiqueta <code>&lt;ol&gt;</code>, es decir numeradas o listas de puntos. Para cada item de la lista se define
+      con
+      la etiqueta <code>&lt;li&gt;</code>, los tipos y como se crean, nada mejor que verlo con ejemplos en la
+      siguiente
+      tabla.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Atributos</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;ul&gt;</code></td>
+          <td></td>
+          <td>Define una lista sin orden. Se trata de la etoqueta contenedora.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;ol&gt;</code></td>
+          <td><b>start</b>, <b>reversed</b>, <b>type</b></td>
+          <td>Define una lista numerada (con orden). Etiqueta contenedora.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;li&gt;</code></td>
+          <td><b>value</b></td>
+          <td>Define un ítem de la lista.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PoRYOzz" data-preview="true"
+      data-editable="true" data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/PoRYOzz">
+          listas</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="imagenes"><a name="imagenes"></a>Imágenes <a class="headerlink" href="#imagenes"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <code>&lt;img&gt;</code>, que es
+      una
+      etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen ( <em>los
+        atributos
+        src y alt son obligatorios</em> ): </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Atributo</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>src</code></td>
+          <td>Indica el nombre de la URL de la imagen a mostrar. (<strong>Obligatorio</strong>)</td>
+        </tr>
+        <tr>
+          <td><code>alt</code></td>
+          <td>Establece un texto alternativo que describa la imagen a mostrar. (<strong>Obligatorio</strong>)</td>
+        </tr>
+        <tr>
+          <td><code>width</code></td>
+          <td>Indica el ancho de la imagen en píxels (sin la unidad px).</td>
+        </tr>
+        <tr>
+          <td><code>height</code></td>
+          <td>Indica el alto de la imagen en píxels (sin la unidad px).</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="formatos-de-imagenes">Formatos de imágenes<a class="headerlink" href="#formatos-de-imagenes"
+        title="Permanent link">&#9875;</a></h4>
+
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjLPOWq" data-preview="true"
+      data-editable="true" data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/JjLPOWq">
+          imágenes</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="tablas"><a name="tablas"></a>Tablas <a class="headerlink" href="#tablas" title="Permanent link">&#9875;</a>
+    </h3>
+    <p>Las <b>tablas</b> están incluidas en HTML desde sus primeras versiones y son una forma común de mostrar datos
+      claramente. Además, si las construimos de forma semántica y correctamente, es muy sencillo darle estilos desde
+      <strong>CSS</strong> y cambiar su diseño con algunas propiedades, puesto que mediante las etiquetas que la
+      componen se puede hacer referencia a cada de la misma.
+    </p>
+    <p>Una tabla puede ser sencilla o compleja, dependiendo de nuestro objetivo y la cantidad de etiquetas o atributos a
+      utilizar. Así pues, veamos primero las <b>etiquetas básicas</b> para crear una tabla de la forma más sencilla
+      posible:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Etiqueta contenedora que tendrá en su interior toda la tabla.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;tr&gt;</code></td>
+          <td><b>Table Row</b>. Etiqueta contenedora de cada fila de la tabla.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;td&gt;</code></td>
+          <td><b>Table Data</b>. Etiqueta contenedora de cada una de las celdas de la tabla.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;th&gt;</code></td>
+          <td><b>Table Header</b>. Etiqueta contenedora de cada una de las celdas de cabecera de la tabla.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Crear tablas con HTML es algo más largo en cuanto al uso de etiquetas pero sumamente sencillo, simplemente
+      debemos indicar dentro de la etiqueta <code>&lt;table&gt;</code> cuales son los elementos de la cabecera
+      usando
+      las etiqueta <code>&lt;thead&gt;</code>, y todo lo que es el contenido de las respectivas filas con la
+      etiqueta
+      <code>&lt;tbody&gt;</code> dentro <code>&lt;tbody&gt;</code> indicamos cada fila con la etiqueta
+      <code>&lt;tr&gt;</code> y separamos los campos con la etiqueta <code>&lt;td&gt;</code>. Ejemplo:
+    <p align="center">
+      <img src="assets/table/01.png" alt="tabla" width="650" height="500">
+    </p>
+    </p>
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBoWVmz" data-preview="true"
+      data-editable="true" data-user="EniDev911"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/qBoWVmz">
+          tablas</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="formularios"><a name="formularios"></a>Formularios <a class="headerlink" href="#formularios"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Uno de los aspectos más importante en un documento HTML es el uso de formularios, por lo que al día de hoy
+      HTML
+      con HTML5 a evolucionado bastante, por lo que han añadido etiquetas nuevas para crear nuevos controles en los
+      formularios y nuevos atributos para validar información de algún tipo en específico. Vamos ir viendo los
+      diferentes controles en la tabla a continuación. </p>
+    <h4>Contenedor de formulario</h4>
+    <p>Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora
+      <code>&lt;form&gt;</code>, que incluirá toda la información que se quiere recoger en ese formulario:
+    </p>
+
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form</span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
+    </div>
+    <p>De esta forma, se puede incluso crear varias etiquetas
+      <code>&lt;form&gt;</code> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno para
+      realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email.
+    </p>
+    <p>La etiqueta <code>&lt;form&gt;</code> dispone de varios <b>atributos</b> para utilizar:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Atributo</th>
+          <th>Valor</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>action</b></td>
+          <td><u>URL</u></td>
+          <td>Dirección URL del back-end donde se enviará la información del formulario.</td>
+        </tr>
+        <tr>
+          <td><b>method</b></td>
+          <td><strong>get</strong> | <strong>post</strong></td>
+          <td>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
+            información.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="https://codepen.io/EniDev911/pen/qBoWVmz"><img src="https://badges.aleen42.com/src/codepen.svg"
+          alt="codepen logo" height="27"></a>
+      <br>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="multimedia"><a name="multimedia_"></a>Multimedia<a class="headerlink" href="#multimedia"
+        title="Permanent link">&#9875;</a></h3>
+    <p>El elemento <code>&lt;source&gt;</code> especifica recursos de medios múltiples para los elementos
+      <code>&lt;picture&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>.
+    </p>
+    <p><b>Reproducir un video dentro de una página HTML:</b><br></p>
+    <table>
+      <colgroup>
+        <col span="1">
+        <col span="1">
+      </colgroup>
+      <thead>
+        <th>Tecleas</th>
+        <th>Obtienes</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre>&#60;video<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="introducción.mp4"<br>&nbsp;&nbsp;controls&#62;<br>&#60;/video&#62;</pre>
+            <pre>&#60;video controls<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;muted&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.mp4"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/mp4"&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.webm"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/webm"&#62;<br>&#60;/video&#62;</pre>
+          </td>
+          <td>
+            <img
+              src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/video_mp4.png"
+              height="410">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><b>Reproducir un video de YouTube dentro de una página HTML:</b><br></p>
+    <table>
+      <thead>
+        <th>Tecleas</th>
+        <th>Obtienes</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q"&#62;<br>&#60;/iframe&#62;</pre>
+            <pre>Reproducción automática y Silenciado<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;autoplay=1&mute=1"&#62;<br>&#60;/iframe&#62;  
+                </pre>
+            <pre>Lista de reproducción en bucle:<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"&#62;<br>&#60;/iframe&#62; 
+                </pre>
+          </td>
+          <td>
+            <img src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/youtube.png"
+              height="410">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <hr />
+    <h3 id="abreviaturas"><a name="abreviaturas"></a>Abreviaturas<a class="headerlink" href="#abreviaturas"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Para crear abreviaturas HTML lo único necesario es crear una lista de ellas (normalmente al final del texto)
+      y en
+      cualquier lugar del texto que aparezca la abreviatura se aplicará automáticamente. En la tabla vemos hacerlo.
+    </p>
+    <table border="1px">
+      <thead>
+        <tr>
+          <th style="width:50%;">Tecleas</th>
+          <th>Obtienes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <pre>La especificación<br>&#60;abbr title="Hyper Text Markup Language"&#62;HTML&#60;/abbr&#62;<br>es mantenida por el<br>&#60;abbr title="World Wide Web Consortium"&#62;W3C&#60;/abbr&#62;</pre>
+          </td>
+          <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub><img
+                src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/devs/assets/png/web/html/abbr/html.png"
+                width="140"
+                height="25"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub><img
+                src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/devs/assets/png/web/html/abbr/w3c.png"
+                width="140" height="25"></sub>
+            <p>La especificación <abbr title="Hyper Text Markup Language">HTML</abbr> es mantenida por el <abbr
+                title="World Wide Web Consortium">W3C</abbr>.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="emojis"><a name="emojis"></a>Emojis<a class="headerlink" href="#emojis" title="Permanent link">&#9875;</a>
+    </h3>
+    <p>En la siguiente tabla veremos los dibujos (emoji) incluidos en unicode, junto con sus respectivas entidades y
+      juego de caracteres, con el código unicode hexadecimal para representar los emojis dentro de un documento
+      HTML.
+      Ten en cuenta que las entidades pueden variar su visualización entre diferentes aplicaciones como los
+      navegadores.
+    </p>
+    <h4 id="listado"><a name="lista"></a>Listado:<a class="headerlink" href="#listado"
+        title="Permanent link">&#9875;</a></h4>
+    <ul>
+      <li><a href="#emoticon">Emoticones</a></li>
+      <li><a href="#manos">Manos</a></li>
+      <li><a href="#personas">Personas</a></li>
+      <li><a href="#flechas">Flechas</a></li>
+      <li><a href="#formas">Formas</a></li>
+      <li><a href="#simbolos">Símbolos</a></li>
+      <li><a href="#media">Multimedia</a></li>
+      <li><a href="#instruments">Instrumentos</a></li>
+      <li><a href="#comida">Comidas</a></li>
+      <li><a href="#animales">Animales</a></li>
+      <li><a href="#objetos">Objetos</a></li>
+    </ul>
+    <h4 id="emoticones"><a name="emoticon"></a>Emoticones<a class="headerlink" href="#emoticones"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f600; <code>&amp;#x1f600;</code></td>
+          <td align="left">&#x1f601; <code>&amp;#x1f601;</code></td>
+          <td align="left">&#x1f602; <code>&amp;#x1f602;</code></td>
+          <td align="left">&#x1f603; <code>&amp;#x1f603;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f604; <code>&amp;#x1f604;</code></td>
+          <td align="left">&#x1f605; <code>&amp;#x1f605;</code></td>
+          <td align="left">&#x1f606; <code>&amp;#x1f606;</code></td>
+          <td align="left">&#x1f607; <code>&amp;#x1f607;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f608; <code>&amp;#x1f608;</code></td>
+          <td align="left">&#x1f47f; <code>&amp;#x1f47f;</code></td>
+          <td align="left">&#x1f609; <code>&amp;#x1f609;</code></td>
+          <td align="left">&#x1f60b; <code>&amp;#x1f60b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f60c; <code>&amp;#x1f60c;</code></td>
+          <td align="left">&#x1f60d; <code>&amp;#x1f60d;</code></td>
+          <td align="left">&#x1f60e; <code>&amp;#x1f60e;</code></td>
+          <td align="left">&#x1f60f; <code>&amp;#x1f60f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f610; <code>&amp;#x1f610;</code></td>
+          <td align="left">&#x1f611; <code>&amp;#x1f611;</code></td>
+          <td align="left">&#x1f612; <code>&amp;#x1f612;</code></td>
+          <td align="left">&#x1f613; <code>&amp;#x1f613;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f614; <code>&amp;#x1f614;</code></td>
+          <td align="left">&#x1f615; <code>&amp;#x1f615;</code></td>
+          <td align="left">&#x1f616; <code>&amp;#x1f616;</code></td>
+          <td align="left">&#x1f617; <code>&amp;#x1f617;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f618; <code>&amp;#x1f618;</code></td>
+          <td align="left">&#x1f619; <code>&amp;#x1f619;</code></td>
+          <td align="left">&#x1f61a; <code>&amp;#x1f61a;</code></td>
+          <td align="left">&#x1f61b; <code>&amp;#x1f61b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f61c; <code>&amp;#x1f61c;</code></td>
+          <td align="left">&#x1f61d; <code>&amp;#x1f61d;</code></td>
+          <td align="left">&#x1f61e; <code>&amp;#x1f61e;</code></td>
+          <td align="left">&#x1f61f; <code>&amp;#x1f61f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f620; <code>&amp;#x1f620;</code></td>
+          <td align="left">&#x1f621; <code>&amp;#x1f621;</code></td>
+          <td align="left">&#x1f622; <code>&amp;#x1f622;</code></td>
+          <td align="left">&#x1f623; <code>&amp;#x1f623;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f624; <code>&amp;#x1f624;</code></td>
+          <td align="left">&#x1f625; <code>&amp;#x1f625;</code></td>
+          <td align="left">&#x1f626; <code>&amp;#x1f626;</code></td>
+          <td align="left">&#x1f627; <code>&amp;#x1f627;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f628; <code>&amp;#x1f628;</code></td>
+          <td align="left">&#x1f629; <code>&amp;#x1f629;</code></td>
+          <td align="left">&#x1f62a; <code>&amp;#x1f62a;</code></td>
+          <td align="left">&#x1f62b; <code>&amp;#x1f62b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f62c; <code>&amp;#x1f62c;</code></td>
+          <td align="left">&#x1f62d; <code>&amp;#x1f62d;</code></td>
+          <td align="left">&#x1f62e; <code>&amp;#x1f62e;</code></td>
+          <td align="left">&#x1f62f; <code>&amp;#x1f62f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f630; <code>&amp;#x1f630;</code></td>
+          <td align="left">&#x1f631; <code>&amp;#x1f631;</code></td>
+          <td align="left">&#x1f632; <code>&amp;#x1f632;</code></td>
+          <td align="left">&#x1f633; <code>&amp;#x1f633;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f634; <code>&amp;#x1f634;</code></td>
+          <td align="left">&#x1f635; <code>&amp;#x1f635;</code></td>
+          <td align="left">&#x1f636; <code>&amp;#x1f636;</code></td>
+          <td align="left">&#x1f637; <code>&amp;#x1f637;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f638; <code>&amp;#x1f638;</code></td>
+          <td align="left">&#x1f639; <code>&amp;#x1f639;</code></td>
+          <td align="left">&#x1f63a; <code>&amp;#x1f63a;</code></td>
+          <td align="left">&#x1f63b; <code>&amp;#x1f63b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f63c; <code>&amp;#x1f63c;</code></td>
+          <td align="left">&#x1f63d; <code>&amp;#x1f63d;</code></td>
+          <td align="left">&#x1f63e; <code>&amp;#x1f63e;</code></td>
+          <td align="left">&#x1f63f; <code>&amp;#x1f63f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f640; <code>&amp;#x1f640;</code></td>
+          <td align="left">&#x1f641; <code>&amp;#x1f641;</code></td>
+          <td align="left">&#x1f642; <code>&amp;#x1f642;</code></td>
+          <td align="left">&#x1f643; <code>&amp;#x1f643;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f644; <code>&amp;#x1f644;</code></td>
+          <td align="left">&#x1f648; <code>&amp;#x1f648;</code></td>
+          <td align="left">&#x1f649; <code>&amp;#x1f649;</code></td>
+          <td align="left">&#x1f64a; <code>&amp;#x1f64a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f64c; <code>&amp;#x1f64c;</code></td>
+          <td align="left">&#x1f910; <code>&amp;#x1f910;</code></td>
+          <td align="left">&#x1f911; <code>&amp;#x1f911;</code></td>
+          <td align="left">&#x1f912; <code>&amp;#x1f912;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f913; <code>&amp;#x1f913;</code></td>
+          <td align="left">&#x1f914; <code>&amp;#x1f914;</code></td>
+          <td align="left">&#x1f915; <code>&amp;#x1f915;</code></td>
+          <td align="left">&#x1f916; <code>&amp;#x1f916;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f917; <code>&amp;#x1f917;</code></td>
+          <td align="left">&#x1f920; <code>&amp;#x1f920;</code></td>
+          <td align="left">&#x1f921; <code>&amp;#x1f921;</code></td>
+          <td align="left">&#x1f922; <code>&amp;#x1f922;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f923; <code>&amp;#x1f923;</code></td>
+          <td align="left">&#x1f924; <code>&amp;#x1f924;</code></td>
+          <td align="left">&#x1f925; <code>&amp;#x1f925;</code></td>
+          <td align="left">&#x1f927; <code>&amp;#x1f927;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f928; <code>&amp;#x1f928;</code></td>
+          <td align="left">&#x1f929; <code>&amp;#x1f929;</code></td>
+          <td align="left">&#x1f92a; <code>&amp;#x1f92a;</code></td>
+          <td align="left">&#x1f92b; <code>&amp;#x1f92b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f92c; <code>&amp;#x1f92c;</code></td>
+          <td align="left">&#x1f92d; <code>&amp;#x1f92d;</code></td>
+          <td align="left">&#x1f92e; <code>&amp;#x1f92e;</code></td>
+          <td align="left">&#x1f92f; <code>&amp;#x1f92f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f970; <code>&amp;#x1f970;</code></td>
+          <td align="left">&#x1f971; <code>&amp;#x1f971;</code></td>
+          <td align="left">&#x1f972; <code>&amp;#x1f972;</code></td>
+          <td align="left">&#x1f973; <code>&amp;#x1f973;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f974; <code>&amp;#x1f974;</code></td>
+          <td align="left">&#x1f975; <code>&amp;#x1f975;</code></td>
+          <td align="left">&#x1f976; <code>&amp;#x1f976;</code></td>
+          <td align="left">&#x1f978; <code>&amp;#x1f978;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f97a; <code>&amp;#x1f97a;</code></td>
+          <td align="left">&#x1f9d0; <code>&amp;#x1f9d0;</code></td>
+          <td align="left">&#x1f47d; <code>&amp;#x1f47d;</code></td>
+          <td align="left">&#x1f480; <code>&amp;#x1f480;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f47e; <code>&amp;#x1f47e;</code></td>
+          <td align="left">&#x1f479; <code>&amp;#x1f479;</code></td>
+          <td align="left">&#x1f47a; <code>&amp;#x1f47a;</code></td>
+          <td align="left">&#x1f47b; <code>&amp;#x1f47b;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="manos"><a name="manos"></a>Manos<a class="headerlink" href="#manos" title="Permanent link">&#9875;</a>
+    </h4>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1F44B; <code>&amp;#x1F44B;</code></td>
+          <td align="left">&#x1F91A; <code>&amp;#x1F91A;</code></td>
+          <td align="left">&#x1F590; <code>&amp;#x1F590;</code></td>
+          <td align="left">&#x270B; <code>&amp;#x270B;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1F596; <code>&amp;#x1F596;</code></td>
+          <td align="left">&#x1F44C; <code>&amp;#x1F44C;</code></td>
+          <td align="left">&#x1F595; <code>&amp;#x1F595;</code></td>
+          <td align="left">&#x1F447; <code>&amp;#x1F447;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#129309; <code>&amp;#129309</code></td>
+          <td align="left"></td>
+          <td align="left"></td>
+          <td align="left"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="personas"><a name="personas"></a>Personas<a class="headerlink" href="#personas"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <tbody>
+        <tr>
+          <td>&#x1f977; <code>&amp;#x1f977;</code></td>
+          <td>&#x1f9d5;<code>&amp;#x1f9d5;</code></td>
+          <td>&#x1f9d6; <code>&amp;#x1f9d6;</code></td>
+          <td>&#x1f9d7; <code>&amp;#x1f9d7;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f9d8; <code>&amp;#x1f9d8;</code></td>
+          <td>&#x1f9d9; <code>&amp;#x1f9d9;</code></td>
+          <td>&#x1f9da; <code>&amp;#x1f9da;</code></td>
+          <td>&#x1f9db; <code>&amp;#x1f9db;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f9dc; <code>&amp;#x1f9dc;</code></td>
+          <td>&#x1f9dd; <code>&amp;#x1f9dd;</code></td>
+          <td>&#x1f9de; <code>&amp;#x1f9de;</code></td>
+          <td>&#x1f9df; <code>&amp;#x1f9df;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f9e0; <code>&amp;#x1f9e0;</code></td>
+          <td>&#x1f46e; <code>&amp;#x1f46e;</code></td>
+          <td>&#x1f464; <code>&amp;#x1f464;</code></td>
+          <td>&#x1f465; <code>&amp;#x1f465;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f466; <code>&amp;#x1f466;</code></td>
+          <td>&#x1f467; <code>&amp;#x1f467;</code></td>
+          <td>&#x1f468; <code>&amp;#x1f468;</code></td>
+          <td>&#x1f469; <code>&amp;#x1f469;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f46a; <code>&amp;#x1f46a;</code></td>
+          <td>&#x1f46b; <code>&amp;#x1f46b;</code></td>
+          <td>&#x1f46c; <code>&amp;#x1f46c;</code></td>
+          <td>&#x1f46d; <code>&amp;#x1f46d;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f46f; <code>&amp;#x1f46f;</code></td>
+          <td>&#x1f470; <code>&amp;#x1f470;</code></td>
+          <td>&#x1f471; <code>&amp;#x1f471;</code></td>
+          <td>&#x1f472; <code>&amp;#x1f472;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f474; <code>&amp;#x1f474;</code></td>
+          <td>&#x1f475; <code>&amp;#x1f475;</code></td>
+          <td>&#x1f476; <code>&amp;#x1f476;</code></td>
+          <td>&#x1f477; <code>&amp;#x1f477;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f478; <code>&amp;#x1f478;</code></td>
+          <td>&#x1f47c; <code>&amp;#x1f47c;</code></td>
+          <td>&#x1f481; <code>&amp;#x1f481;</code></td>
+          <td>&#x1f482; <code>&amp;#x1f482;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f483; <code>&amp;#x1f483;</code></td>
+          <td>&#x1f486; <code>&amp;#x1f486;</code></td>
+          <td>&#x1f487; <code>&amp;#x1f487;</code></td>
+          <td>&#x1f48f; <code>&amp;#x1f48f;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f491; <code>&amp;#x1f491;</code></td>
+          <td>&#x1F9D1; <code>&amp;#x1F9D1;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="flechas"><a name="flechas"></a>Flechas<a class="headerlink" href="#flechas"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <thead>
+        <tr>
+          <th>&#x2194; <code>&amp;#x2194;</code></th>
+          <th>&#x2195; <code>&amp;#x2195;</code></th>
+          <th>&#x2196; <code>&amp;#x2196;</code></th>
+          <th>&#x2197; <code>&amp;#x2197;</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#x2198; <code>&amp;#x2198;</code></td>
+          <td>&#x2199; <code>&amp;#x2199;</code></td>
+          <td>&#x21a9; <code>&amp;#x21a9;</code></td>
+          <td>&#x21aa; <code>&amp;#x21aa;</code></td>
+        </tr>
+        <tr>
+          <td>&#x2b05; <code>&amp;#x2b05;</code></td>
+          <td>&#x2b06; <code>&amp;#x2b06;</code></td>
+          <td>&#x2b07; <code>&amp;#x2b07;</code></td>
+          <td>&#x27a1; <code>&amp;#x27a1;</code></td>
+        </tr>
+        <tr>
+          <td>&#x2934; <code>&amp;#x2934;</code></td>
+          <td>&#x2935; <code>&amp;#x2935;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="figuras-y-formas"><a name="formas"></a>Figuras y formas<a class="headerlink" href="#figuras-y-formas"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <tbody>
+        <tr>
+          <td>&#x1f7e0; <code>&amp;#x1f7e0;</code></td>
+          <td>&#x1f7e1; <code>&amp;#x1f7e1;</code></td>
+          <td>&#x1f7e2; <code>&amp;#x1f7e2;</code></td>
+          <td>&#x1f7e3; <code>&amp;#x1f7e3;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f7e4; <code>&amp;#x1f7e4;</code></td>
+          <td>&#x1f7e5; <code>&amp;#x1f7e5;</code></td>
+          <td>&#x1f7e6; <code>&amp;#x1f7e6;</code></td>
+          <td>&#x1f7e7; <code>&amp;#x1f7e7;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f7e8; <code>&amp;#x1f7e8;</code></td>
+          <td>&#x1f7e9; <code>&amp;#x1f7e9;</code></td>
+          <td>&#x1f7ea; <code>&amp;#x1f7ea;</code></td>
+          <td>&#x1f7eb; <code>&amp;#x1f7eb;</code></td>
+        </tr>
+        <tr>
+          <td>&#x2b1b; <code>&amp;#x2b1b;</code></td>
+          <td>&#x2b1c; <code>&amp;#x2b1c;</code></td>
+          <td>&#x2b55; <code>&amp;#x2b55;</code></td>
+          <td>&#x2b50; <code>&amp;#x2b50;</code></td>
+        </tr>
+        <tr>
+          <td>&#x3030; <code>&amp;#x3030;</code></td>
+          <td>&#x303d; <code>&amp;#x303d;</code></td>
+          <td>&#x1f300; <code>&amp;#x1f300;</code></td>
+          <td>&#x1f3f4; <code>&amp;#x1f3f4;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f573; <code>&amp;#x1f573;</code></td>
+          <td>&#x1f5a4; <code>&amp;#x1f5a4;</code></td>
+          <td>&#x1f90d;<code>&amp;#x1f90d;</code></td>
+          <td>&#x1f90e; <code>&amp;#x1f90e;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f6e1; <code>&amp;#x1f6e1;</code></td>
+          <td>&#x26aa; <code>&amp;#x26aa;</code></td>
+          <td>&#x26ab; <code>&amp;#x26ab;</code></td>
+          <td>&#x2763; <code>&amp;#x2763;</code></td>
+        </tr>
+        <tr>
+          <td>&#x2764; <code>&amp;#x2764;</code></td>
+          <td>&#x1f518; <code>&amp;#x1f518;</code></td>
+          <td>&#x1f532; <code>&amp;#x1f532;</code></td>
+          <td>&#x1f533; <code>&amp;#x1f533;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f534; <code>&amp;#x1f534;</code></td>
+          <td>&#x1f535; <code>&amp;#x1f535;</code></td>
+          <td>&#x1f536; <code>&amp;#x1f536;</code></td>
+          <td>&#x1f537; <code>&amp;#x1f537;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f538; <code>&amp;#x1f538;</code></td>
+          <td>&#x1f539; <code>&amp;#x1f539;</code></td>
+          <td>&#x1f53a; <code>&amp;#x1f53a;</code></td>
+          <td>&#x1f53b; <code>&amp;#x1f53b;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f53c; <code>&amp;#x1f53c;</code></td>
+          <td>&#x1f53d; <code>&amp;#x1f53d;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="simbolos"><a name="simbolos"></a>Símbolos<a class="headerlink" href="#simbolos"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#xa9; <code>&amp;#xa9;</code></td>
+          <td align="left">&#xae; <code>&amp;#xae;</code></td>
+          <td align="left">&#x24c2; <code>&amp;#x24c2;</code></td>
+          <td align="left">&#x2620; <code>&amp;#x2620;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2622; <code>&amp;#x2622;</code></td>
+          <td align="left">&#x2623; <code>&amp;#x2623;</code></td>
+          <td align="left">&#x2626; <code>&amp;#x2626;</code></td>
+          <td align="left">&#x262a; <code>&amp;#x262a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x262e; <code>&amp;#x262e;</code></td>
+          <td align="left">&#x262f; <code>&amp;#x262f;</code></td>
+          <td align="left">&#x2638; <code>&amp;#x2638;</code></td>
+          <td align="left">&#x2640; <code>&amp;#x2640;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2642; <code>&amp;#x2642;</code></td>
+          <td align="left">&#x2648; <code>&amp;#x2648;</code></td>
+          <td align="left">&#x2649; <code>&amp;#x2649;</code></td>
+          <td align="left">&#x264a; <code>&amp;#x264a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x264b; <code>&amp;#x264b;</code></td>
+          <td align="left">&#x264c; <code>&amp;#x264c;</code></td>
+          <td align="left">&#x264d; <code>&amp;#x264d;</code></td>
+          <td align="left">&#x264e; <code>&amp;#x264e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x264f; <code>&amp;#x264f;</code></td>
+          <td align="left">&#x2650; <code>&amp;#x2650;</code></td>
+          <td align="left">&#x2651; <code>&amp;#x2651;</code></td>
+          <td align="left">&#x2652; <code>&amp;#x2652;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2653; <code>&amp;#x2653;</code></td>
+          <td align="left">&#x265f; <code>&amp;#x265f;</code></td>
+          <td align="left">&#x2660; <code>&amp;#x2660;</code></td>
+          <td align="left">&#x2663; <code>&amp;#x2663;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2665; <code>&amp;#x2665;</code></td>
+          <td align="left">&#x2666; <code>&amp;#x2666;</code></td>
+          <td align="left">&#x2668; <code>&amp;#x2668;</code></td>
+          <td align="left">&#x267b; <code>&amp;#x267b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x267e; <code>&amp;#x267e;</code></td>
+          <td align="left">&#x267f; <code>&amp;#x267f;</code></td>
+          <td align="left">&#x2695; <code>&amp;#x2695;</code></td>
+          <td align="left">&#x269b; <code>&amp;#x269b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x26a0; <code>&amp;#x26a0;</code></td>
+          <td align="left">&#x26a1; <code>&amp;#x26a1;</code></td>
+          <td align="left">&#x26a7; <code>&amp;#x26a7;</code></td>
+          <td align="left">&#x26ce; <code>&amp;#x26ce;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2705; <code>&amp;#x2705;</code></td>
+          <td align="left">&#x2714; <code>&amp;#x2714;</code></td>
+          <td align="left">&#x2716; <code>&amp;#x2716;</code></td>
+          <td align="left">&#x271d; <code>&amp;#x271d;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2721; <code>&amp;#x2721;</code></td>
+          <td align="left">&#x2728; <code>&amp;#x2728;</code></td>
+          <td align="left">&#x2733; <code>&amp;#x2733;</code></td>
+          <td align="left">&#x2734; <code>&amp;#x2734;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2744; <code>&amp;#x2744;</code></td>
+          <td align="left">&#x2747; <code>&amp;#x2747;</code></td>
+          <td align="left">&#x274c; <code>&amp;#x274c;</code></td>
+          <td align="left">&#x274e; <code>&amp;#x274e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2753; <code>&amp;#x2753;</code></td>
+          <td align="left">&#x2754; <code>&amp;#x2754;</code></td>
+          <td align="left">&#x2755; <code>&amp;#x2755;</code></td>
+          <td align="left">&#x2757; <code>&amp;#x2757;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x2795; <code>&amp;#x2795;</code></td>
+          <td align="left">&#x2796; <code>&amp;#x2796;</code></td>
+          <td align="left">&#x2797; <code>&amp;#x2797;</code></td>
+          <td align="left">&#x3297; <code>&amp;#x3297;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x3299; <code>&amp;#x3299;</code></td>
+          <td align="left">&#x1f004; <code>&amp;#x1f004;</code></td>
+          <td align="left">&#x1f0cf; <code>&amp;#x1f0cf;</code></td>
+          <td align="left">&#x1f170; <code>&amp;#x1f170;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f171; <code>&amp;#x1f171;</code></td>
+          <td align="left">&#x1f17e; <code>&amp;#x1f17e;</code></td>
+          <td align="left">&#x1f17f; <code>&amp;#x1f17f;</code></td>
+          <td align="left">&#x1f18e; <code>&amp;#x1f18e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f191; <code>&amp;#x1f191;</code></td>
+          <td align="left">&#x1f192; <code>&amp;#x1f192;</code></td>
+          <td align="left">&#x1f193; <code>&amp;#x1f193;</code></td>
+          <td align="left">&#x1f194; <code>&amp;#x1f194;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f196; <code>&amp;#x1f196;</code></td>
+          <td align="left">&#x1f197; <code>&amp;#x1f197;</code></td>
+          <td align="left">&#x1f198; <code>&amp;#x1f198;</code></td>
+          <td align="left">&#x1f199; <code>&amp;#x1f199;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f19a; <code>&amp;#x1f19a;</code></td>
+          <td align="left">&#x1f201; <code>&amp;#x1f201;</code></td>
+          <td align="left">&#x1f202; <code>&amp;#x1f202;</code></td>
+          <td align="left">&#x1f21a; <code>&amp;#x1f21a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f22f; <code>&amp;#x1f22f;</code></td>
+          <td align="left">&#x1f232; <code>&amp;#x1f232;</code></td>
+          <td align="left">&#x1f233; <code>&amp;#x1f233;</code></td>
+          <td align="left">&#x1f234; <code>&amp;#x1f234;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f235; <code>&amp;#x1f235;</code></td>
+          <td align="left">&#x1f236; <code>&amp;#x1f236;</code></td>
+          <td align="left">&#x1f237; <code>&amp;#x1f237;</code></td>
+          <td align="left">&#x1f238; <code>&amp;#x1f238;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f239; <code>&amp;#x1f239;</code></td>
+          <td align="left">&#x1f23a; <code>&amp;#x1f23a;</code></td>
+          <td align="left">&#x1f250; <code>&amp;#x1f250;</code></td>
+          <td align="left">&#x1f251; <code>&amp;#x1f251;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f504; <code>&amp;#x1f504;</code></td>
+          <td align="left">&#x1f505; <code>&amp;#x1f505;</code></td>
+          <td align="left">&#x1f506; <code>&amp;#x1f506;</code></td>
+          <td align="left">&#x1f519; <code>&amp;#x1f519;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f51a; <code>&amp;#x1f51a;</code></td>
+          <td align="left">&#x1f51b; <code>&amp;#x1f51b;</code></td>
+          <td align="left">&#x1f51c; <code>&amp;#x1f51c;</code></td>
+          <td align="left">&#x1f51d; <code>&amp;#x1f51d;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f51e; <code>&amp;#x1f51e;</code></td>
+          <td align="left">&#x1f51f; <code>&amp;#x1f51f;</code></td>
+          <td align="left">&#x1f520; <code>&amp;#x1f520;</code></td>
+          <td align="left">&#x1f521; <code>&amp;#x1f521;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f522; <code>&amp;#x1f522;</code></td>
+          <td align="left">&#x1f523; <code>&amp;#x1f523;</code></td>
+          <td align="left">&#x1f524; <code>&amp;#x1f524;</code></td>
+          <td align="left">&#x1f52f; <code>&amp;#x1f52f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f530; <code>&amp;#x1f530;</code></td>
+          <td align="left">&#x1f549; <code>&amp;#x1f549;</code></td>
+          <td align="left">&#x1f54a; <code>&amp;#x1f54a;</code></td>
+          <td align="left">&#x1f54e; <code>&amp;#x1f54e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f578; <code>&amp;#x1f578;</code></td>
+          <td align="left">&#x1f6ab; <code>&amp;#x1f6ab;</code></td>
+          <td align="left">&#x1f6ad; <code>&amp;#x1f6ad;</code></td>
+          <td align="left">&#x1f6ae; <code>&amp;#x1f6ae;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f6af; <code>&amp;#x1f6af;</code></td>
+          <td align="left">&#x1f6b0; <code>&amp;#x1f6b0;</code></td>
+          <td align="left">&#x1f6b1; <code>&amp;#x1f6b1;</code></td>
+          <td align="left">&#x1f6b3; <code>&amp;#x1f6b3;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f6b7; <code>&amp;#x1f6b7;</code></td>
+          <td align="left">&#x1f6b8; <code>&amp;#x1f6b8;</code></td>
+          <td align="left">&#x1f6b9; <code>&amp;#x1f6b9;</code></td>
+          <td align="left">&#x1f6ba; <code>&amp;#x1f6ba;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f6bb; <code>&amp;#x1f6bb;</code></td>
+          <td align="left">&#x1f6bc; <code>&amp;#x1f6bc;</code></td>
+          <td align="left">&#x1f6be; <code>&amp;#x1f6be;</code></td>
+          <td align="left">&#x1f6c2; <code>&amp;#x1f6c2;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f6c3; <code>&amp;#x1f6c3;</code></td>
+          <td align="left">&#x1f6c4; <code>&amp;#x1f6c4;</code></td>
+          <td align="left">&#x1f6c5; <code>&amp;#x1f6c5;</code></td>
+          <td align="left">&#x1f6d0; <code>&amp;#x1f6d0;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f6d7; <code>&amp;#x1f6d7;</code></td>
+          <td align="left">&#1; <code>&amp;#1;</code></td>
+          <td align="left">&#2; <code>&amp;#2;</code></td>
+          <td align="left">&#3; <code>&amp;#3;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="multimedia_1"><a name="media"></a>Multimedia<a class="headerlink" href="#multimedia_1"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f507; <code>&amp;#x1f507;</code></td>
+          <td align="left">&#x1f508; <code>&amp;#x1f508;</code></td>
+          <td align="left">&#x1f509; <code>&amp;#x1f509;</code></td>
+          <td align="left">&#x1f50a; <code>&amp;#x1f50a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f514; <code>&amp;#x1f514;</code></td>
+          <td align="left">&#x1f515; <code>&amp;#x1f515;</code></td>
+          <td align="left">&#x23cf; <code>&amp;#x23cf;</code></td>
+          <td align="left">&#x23e9; <code>&amp;#x23e9;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x23ea; <code>&amp;#x23ea;</code></td>
+          <td align="left">&#x23eb; <code>&amp;#x23eb;</code></td>
+          <td align="left">&#x23ec; <code>&amp;#x23ec;</code></td>
+          <td align="left">&#x23ed; <code>&amp;#x23ed;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x23f8; <code>&amp;#x23f8;</code></td>
+          <td align="left">&#x23f9; <code>&amp;#x23f9;</code></td>
+          <td align="left">&#x23fa; <code>&amp;#x23fa;</code></td>
+          <td align="left">&#x23ee; <code>&amp;#x23ee;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x23ef; <code>&amp;#x23ef;</code></td>
+          <td align="left">&#x25b6; <code>&amp;#x25b6;</code></td>
+          <td align="left">&#x25c0; <code>&amp;#x25c0;</code></td>
+          <td align="left">&#x1f500; <code>&amp;#x1f500;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f501; <code>&amp;#x1f501;</code></td>
+          <td align="left">&#x1f502; <code>&amp;#x1f502;</code></td>
+          <td align="left">&#x1f503; <code>&amp;#x1f503;</code></td>
+          <td align="left">&#x1f399; <code>&amp;#x1f399;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f39a; <code>&amp;#x1f39a;</code></td>
+          <td align="left">&#x1f39b; <code>&amp;#x1f39b;</code></td>
+          <td align="left">&#x1f3a4; <code>&amp;#x1f3a4;</code></td>
+          <td align="left">&#x1f3a5; <code>&amp;#x1f3a5;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f3a6; <code>&amp;#x1f3a6;</code></td>
+          <td align="left">&#x1f3a7; <code>&amp;#x1f3a7;</code></td>
+          <td align="left">&#x1f3ae; <code>&amp;#x1f3ae;</code></td>
+          <td align="left">&#x1f3b5; <code>&amp;#x1f3b5;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f4e7; <code>&amp;#x1f4e7;</code></td>
+          <td align="left">&#x1f4e5; <code>&amp;#x1f4e5;</code></td>
+          <td align="left">&#x2712; <code>&amp;#x2712;</code></td>
+          <td align="left">&#x1f48c; <code>&amp;#x1f48c;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f3e0; <code>&amp;#x1f3e0;</code></td>
+          <td align="left">&#x260e; <code>&amp;#x260e;</code></td>
+          <td align="left">&#x1f517; <code>&amp;#x1f517;</code></td>
+          <td align="left">&#x1f5a5;&#xfe0f; <code>&amp;#x1f5a5;&amp;#xfe0f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f5d1;&#xfe0f; <code>&amp;#x1f5d1;&amp;#xfe0f;</code></td>
+          <td align="left">&#x2702;&#xfe0f; <code>&amp;#x2702;&amp;#xfe0f;</code></td>
+          <td align="left">&#x1f39a;&#xfe0f; <code>&amp;#x1f39a;&amp;#xfe0f;</code></td>
+          <td align="left"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="instrumentos"><a name="instruments"></a>Instrumentos &#x1f3b8;<a class="headerlink" href="#instrumentos"
+        title="Permanent link">&#9875;</a></h3>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f3b8; <code>&amp;#x1f3b8;</code></td>
+          <td align="left">&#x1f3b7; <code>&amp;#x1f3b7;</code></td>
+          <td align="left">&#x1f3b9; <code>&amp;#x1f3b9;</code></td>
+          <td align="left">&#x1f3ba; <code>&amp;#x1f3ba;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f3bb; <code>&amp;#x1f3bb;</code></td>
+          <td align="left">&#x1f3b5; <code>&amp;#x1f3b5;</code></td>
+          <td align="left">&#x1f3b6; <code>&amp;#x1f3b6;</code></td>
+          <td align="left">&#x1f3bc; <code>&amp;#x1f3bc;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f4ef; <code>&amp;#x1f4ef;</code></td>
+          <td align="left">&#x1f514; <code>&amp;#x1f514;</code></td>
+          <td align="left"></td>
+          <td align="left"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="comida-y-bebidas"><a name="comida"></a>Comida y bebidas &#x1f375;</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f32d; <code>&amp;#x1f32d;</code></td>
+          <td align="left">&#x1f32e; <code>&amp;#x1f32e;</code></td>
+          <td align="left">&#x1f32f; <code>&amp;#x1f32f;</code></td>
+          <td align="left">&#x1f34a; <code>&amp;#x1f34a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f34b; <code>&amp;#x1f34b;</code></td>
+          <td align="left">&#x1f34c; <code>&amp;#x1f34c;</code></td>
+          <td align="left">&#x1f34d; <code>&amp;#x1f34d;</code></td>
+          <td align="left">&#x1f34e; <code>&amp;#x1f34e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f34f; <code>&amp;#x1f34f;</code></td>
+          <td align="left">&#x1f350; <code>&amp;#x1f350;</code></td>
+          <td align="left">&#x1f351; <code>&amp;#x1f351;</code></td>
+          <td align="left">&#x1f352; <code>&amp;#x1f352;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f353; <code>&amp;#x1f353;</code></td>
+          <td align="left">&#x1f354; <code>&amp;#x1f354;</code></td>
+          <td align="left">&#x1f355; <code>&amp;#x1f355;</code></td>
+          <td align="left">&#x1f356; <code>&amp;#x1f356;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f357; <code>&amp;#x1f357;</code></td>
+          <td align="left">&#x1f358; <code>&amp;#x1f358;</code></td>
+          <td align="left">&#x1f359; <code>&amp;#x1f359;</code></td>
+          <td align="left">&#x1f35a; <code>&amp;#x1f35a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f35b; <code>&amp;#x1f35b;</code></td>
+          <td align="left">&#x1f35c; <code>&amp;#x1f35c;</code></td>
+          <td align="left">&#x1f35d; <code>&amp;#x1f35d;</code></td>
+          <td align="left">&#x1f35e; <code>&amp;#x1f35e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f35f; <code>&amp;#x1f35f;</code></td>
+          <td align="left">&#x1f360; <code>&amp;#x1f360;</code></td>
+          <td align="left">&#x1f361; <code>&amp;#x1f361;</code></td>
+          <td align="left">&#x1f362; <code>&amp;#x1f362;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f363; <code>&amp;#x1f363;</code></td>
+          <td align="left">&#x1f364; <code>&amp;#x1f364;</code></td>
+          <td align="left">&#x1f365; <code>&amp;#x1f365;</code></td>
+          <td align="left">&#x1f366; <code>&amp;#x1f366;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f367; <code>&amp;#x1f367;</code></td>
+          <td align="left">&#x1f368; <code>&amp;#x1f368;</code></td>
+          <td align="left">&#x1f369; <code>&amp;#x1f369;</code></td>
+          <td align="left">&#x1f36a; <code>&amp;#x1f36a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f36b; <code>&amp;#x1f36b;</code></td>
+          <td align="left">&#x1f36c; <code>&amp;#x1f36c;</code></td>
+          <td align="left">&#x1f36d; <code>&amp;#x1f36d;</code></td>
+          <td align="left">&#x1f36e; <code>&amp;#x1f36e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f36f; <code>&amp;#x1f36f;</code></td>
+          <td align="left">&#x1f370; <code>&amp;#x1f370;</code></td>
+          <td align="left">&#x1f371; <code>&amp;#x1f371;</code></td>
+          <td align="left">&#x1f372; <code>&amp;#x1f372;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f373; <code>&amp;#x1f373;</code></td>
+          <td align="left">&#x1f374; <code>&amp;#x1f374;</code></td>
+          <td align="left">&#x1f375; <code>&amp;#x1f375;</code></td>
+          <td align="left">&#x1f376; <code>&amp;#x1f376;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f377; <code>&amp;#x1f377;</code></td>
+          <td align="left">&#x1f378; <code>&amp;#x1f378;</code></td>
+          <td align="left">&#x1f379; <code>&amp;#x1f379;</code></td>
+          <td align="left">&#x1f37a; <code>&amp;#x1f37a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f37b; <code>&amp;#x1f37b;</code></td>
+          <td align="left">&#x1f37c; <code>&amp;#x1f37c;</code></td>
+          <td align="left">&#x1f37d; <code>&amp;#x1f37d;</code></td>
+          <td align="left">&#x1f37e; <code>&amp;#x1f37e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f37f; <code>&amp;#x1f37f;</code></td>
+          <td align="left">&#x1f382; <code>&amp;#x1f382;</code></td>
+          <td align="left">&#x1f951; <code>&amp;#x1f951;</code></td>
+          <td align="left">&#x1f952; <code>&amp;#x1f952;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f953; <code>&amp;#x1f953;</code></td>
+          <td align="left">&#x1f954; <code>&amp;#x1f954;</code></td>
+          <td align="left">&#x1f955; <code>&amp;#x1f955;</code></td>
+          <td align="left">&#x1f956; <code>&amp;#x1f956;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f957; <code>&amp;#x1f957;</code></td>
+          <td align="left">&#x1f958; <code>&amp;#x1f958;</code></td>
+          <td align="left">&#x1f959; <code>&amp;#x1f959;</code></td>
+          <td align="left">&#x1f95a; <code>&amp;#x1f95a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f95b; <code>&amp;#x1f95b;</code></td>
+          <td align="left">&#x1f95c; <code>&amp;#x1f95c;</code></td>
+          <td align="left">&#x1f95d; <code>&amp;#x1f95d;</code></td>
+          <td align="left">&#x1f95e; <code>&amp;#x1f95e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f95f; <code>&amp;#x1f95f;</code></td>
+          <td align="left">&#x1f960; <code>&amp;#x1f960;</code></td>
+          <td align="left">&#x1f961; <code>&amp;#x1f961;</code></td>
+          <td align="left">&#x1f962; <code>&amp;#x1f962;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f963; <code>&amp;#x1f963;</code></td>
+          <td align="left">&#x1f964; <code>&amp;#x1f964;</code></td>
+          <td align="left">&#x1f965; <code>&amp;#x1f965;</code></td>
+          <td align="left">&#x1f966; <code>&amp;#x1f966;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f967; <code>&amp;#x1f967;</code></td>
+          <td align="left">&#x1f968; <code>&amp;#x1f968;</code></td>
+          <td align="left">&#x1f969; <code>&amp;#x1f969;</code></td>
+          <td align="left">&#x1f96a; <code>&amp;#x1f96a;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f96b; <code>&amp;#x1f96b;</code></td>
+          <td align="left">&#x1f96c; <code>&amp;#x1f96c;</code></td>
+          <td align="left">&#x1f96d; <code>&amp;#x1f96d;</code></td>
+          <td align="left">&#x1f96f; <code>&amp;#x1f96f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1fad5; <code>&amp;#x1fad5;</code></td>
+          <td align="left">&#x1fad6; <code>&amp;#x1fad6;</code></td>
+          <td align="left">&#x1fad0; <code>&amp;#x1fad0;</code></td>
+          <td align="left">&#x1fad4; <code>&amp;#x1fad4;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f963; <code>&amp;#x1f963;</code></td>
+          <td align="left">&#x1f964; <code>&amp;#x1f964;</code></td>
+          <td align="left">&#x1f965; <code>&amp;#x1f965;</code></td>
+          <td align="left">&#x1f966; <code>&amp;#x1f966;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="animales"><a name="animales"></a>Animales &#x1f996</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f400; <code>&amp;#x1f400;</code></td>
+          <td align="left">&#x1f401; <code>&amp;#x1f401;</code></td>
+          <td align="left">&#x1f402; <code>&amp;#x1f402;</code></td>
+          <td align="left">&#x1f403; <code>&amp;#x1f403;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f404; <code>&amp;#x1f404;</code></td>
+          <td align="left">&#x1f405; <code>&amp;#x1f405;</code></td>
+          <td align="left">&#x1f406; <code>&amp;#x1f406;</code></td>
+          <td align="left">&#x1f407; <code>&amp;#x1f407;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f408; <code>&amp;#x1f408;</code></td>
+          <td align="left">&#x1f409; <code>&amp;#x1f409;</code></td>
+          <td align="left">&#x1f40a; <code>&amp;#x1f40a;</code></td>
+          <td align="left">&#x1f40b; <code>&amp;#x1f40b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f40c; <code>&amp;#x1f40c;</code></td>
+          <td align="left">&#x1f40d; <code>&amp;#x1f40d;</code></td>
+          <td align="left">&#x1f40e; <code>&amp;#x1f40e;</code></td>
+          <td align="left">&#x1f40f; <code>&amp;#x1f40f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f410; <code>&amp;#x1f410;</code></td>
+          <td align="left">&#x1f411; <code>&amp;#x1f411;</code></td>
+          <td align="left">&#x1f412; <code>&amp;#x1f412;</code></td>
+          <td align="left">&#x1f413; <code>&amp;#x1f413;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f414; <code>&amp;#x1f414;</code></td>
+          <td align="left">&#x1f415; <code>&amp;#x1f415;</code></td>
+          <td align="left">&#x1f416; <code>&amp;#x1f416;</code></td>
+          <td align="left">&#x1f417; <code>&amp;#x1f417;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f418; <code>&amp;#x1f418;</code></td>
+          <td align="left">&#x1f419; <code>&amp;#x1f419;</code></td>
+          <td align="left">&#x1f41a; <code>&amp;#x1f41a;</code></td>
+          <td align="left">&#x1f41b; <code>&amp;#x1f41b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f41c; <code>&amp;#x1f41c;</code></td>
+          <td align="left">&#x1f41d; <code>&amp;#x1f41d;</code></td>
+          <td align="left">&#x1f41e; <code>&amp;#x1f41e;</code></td>
+          <td align="left">&#x1f41f; <code>&amp;#x1f41f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f420; <code>&amp;#x1f420;</code></td>
+          <td align="left">&#x1f421; <code>&amp;#x1f421;</code></td>
+          <td align="left">&#x1f422; <code>&amp;#x1f422;</code></td>
+          <td align="left">&#x1f423; <code>&amp;#x1f423;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f424; <code>&amp;#x1f424;</code></td>
+          <td align="left">&#x1f425; <code>&amp;#x1f425;</code></td>
+          <td align="left">&#x1f426; <code>&amp;#x1f426;</code></td>
+          <td align="left">&#x1f427; <code>&amp;#x1f427;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f428; <code>&amp;#x1f428;</code></td>
+          <td align="left">&#x1f429; <code>&amp;#x1f429;</code></td>
+          <td align="left">&#x1f42a; <code>&amp;#x1f42a;</code></td>
+          <td align="left">&#x1f42b; <code>&amp;#x1f42b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f42c; <code>&amp;#x1f42c;</code></td>
+          <td align="left">&#x1f42d; <code>&amp;#x1f42d;</code></td>
+          <td align="left">&#x1f42e; <code>&amp;#x1f42e;</code></td>
+          <td align="left">&#x1f42f; <code>&amp;#x1f42f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f430; <code>&amp;#x1f430;</code></td>
+          <td align="left">&#x1f431; <code>&amp;#x1f431;</code></td>
+          <td align="left">&#x1f432; <code>&amp;#x1f432;</code></td>
+          <td align="left">&#x1f433; <code>&amp;#x1f433;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f434; <code>&amp;#x1f434;</code></td>
+          <td align="left">&#x1f435; <code>&amp;#x1f435;</code></td>
+          <td align="left">&#x1f436; <code>&amp;#x1f436;</code></td>
+          <td align="left">&#x1f437; <code>&amp;#x1f437;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f438; <code>&amp;#x1f438;</code></td>
+          <td align="left">&#x1f439; <code>&amp;#x1f439;</code></td>
+          <td align="left">&#x1f43a; <code>&amp;#x1f43a;</code></td>
+          <td align="left">&#x1f43b; <code>&amp;#x1f43b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f43c; <code>&amp;#x1f43c;</code></td>
+          <td align="left">&#x1f43d; <code>&amp;#x1f43d;</code></td>
+          <td align="left">&#x1f43e; <code>&amp;#x1f43e;</code></td>
+          <td align="left">&#x1f43f; <code>&amp;#x1f43f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f980; <code>&amp;#x1f980;</code></td>
+          <td align="left">&#x1f981; <code>&amp;#x1f981;</code></td>
+          <td align="left">&#x1f982; <code>&amp;#x1f982;</code></td>
+          <td align="left">&#x1f983; <code>&amp;#x1f983;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f984; <code>&amp;#x1f984;</code></td>
+          <td align="left">&#x1f985; <code>&amp;#x1f985;</code></td>
+          <td align="left">&#x1f986; <code>&amp;#x1f986;</code></td>
+          <td align="left">&#x1f987; <code>&amp;#x1f987;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f988; <code>&amp;#x1f988;</code></td>
+          <td align="left">&#x1f989; <code>&amp;#x1f989;</code></td>
+          <td align="left">&#x1f98a; <code>&amp;#x1f98a;</code></td>
+          <td align="left">&#x1f98b; <code>&amp;#x1f98b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f98c; <code>&amp;#x1f98c;</code></td>
+          <td align="left">&#x1f98d; <code>&amp;#x1f98d;</code></td>
+          <td align="left">&#x1f98e; <code>&amp;#x1f98e;</code></td>
+          <td align="left">&#x1f98f; <code>&amp;#x1f98f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f990; <code>&amp;#x1f990;</code></td>
+          <td align="left">&#x1f991; <code>&amp;#x1f991;</code></td>
+          <td align="left">&#x1f992; <code>&amp;#x1f992;</code></td>
+          <td align="left">&#x1f993; <code>&amp;#x1f993;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f994; <code>&amp;#x1f994;</code></td>
+          <td align="left">&#x1f995; <code>&amp;#x1f995;</code></td>
+          <td align="left">&#x1f996; <code>&amp;#x1f996;</code></td>
+          <td align="left">&#x1f997; <code>&amp;#x1f997;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f998; <code>&amp;#x1f998;</code></td>
+          <td align="left">&#x1f999; <code>&amp;#x1f999;</code></td>
+          <td align="left">&#x1f99a; <code>&amp;#x1f99a;</code></td>
+          <td align="left">&#x1f99b; <code>&amp;#x1f99b;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f99c; <code>&amp;#x1f99c;</code></td>
+          <td align="left">&#x1f99d; <code>&amp;#x1f99d;</code></td>
+          <td align="left">&#x1f99e; <code>&amp;#x1f99e;</code></td>
+          <td align="left">&#x1f99f; <code>&amp;#x1f99f;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f9a0; <code>&amp;#x1f9a0;</code></td>
+          <td align="left">&#x1f9a1; <code>&amp;#x1f9a1;</code></td>
+          <td align="left">&#x1f9a2; <code>&amp;#x1f9a2;</code></td>
+          <td align="left">&#x1f9a3; <code>&amp;#x1f9a3;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f9a4; <code>&amp;#x1f9a4;</code></td>
+          <td align="left">&#x1f9a5; <code>&amp;#x1f9a5;</code></td>
+          <td align="left">&#x1f9a6; <code>&amp;#x1f9a6;</code></td>
+          <td align="left">&#x1f9a7; <code>&amp;#x1f9a7;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f9a8; <code>&amp;#x1f9a8;</code></td>
+          <td align="left">&#x1f9a9; <code>&amp;#x1f9a9;</code></td>
+          <td align="left">&#x1f9ab; <code>&amp;#x1f9ab;</code></td>
+          <td align="left">&#x1f9ac; <code>&amp;#x1f9ac;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f9ad; <code>&amp;#x1f9ad;</code></td>
+          <td align="left">&#x1f9ae; <code>&amp;#x1f9ae;</code></td>
+          <td align="left">&#x1fab0; <code>&amp;#x1fab0;</code></td>
+          <td align="left">&#x1fab1; <code>&amp;#x1fab1;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1fab2; <code>&amp;#x1fab2;</code></td>
+          <td align="left">&#x1fab3; <code>&amp;#x1fab3;</code></td>
+          <td align="left"></td>
+          <td align="left"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="ropa-y-accesorios"><a name="ropa"></a>Ropa y accesorios<a class="headerlink" href="#ropa-y-accesorios"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">&#x1f453; <code>&amp;#x1f453;</code></th>
+          <th align="left">&#x1f454; <code>&amp;#x1f454;</code></th>
+          <th align="left">&#x1f455; <code>&amp;#x1f455;</code></th>
+          <th align="left">&#x1f456; <code>&amp;#x1f456;</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f963; <code>&amp;#x1f963;</code></td>
+          <td align="left">&#x1f964; <code>&amp;#x1f964;</code></td>
+          <td align="left">&#x1f965; <code>&amp;#x1f965;</code></td>
+          <td align="left">&#x1f966; <code>&amp;#x1f966;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f45b; <code>&amp;#x1f45b;</code></td>
+          <td align="left">&#x1f45c; <code>&amp;#x1f45c;</code></td>
+          <td align="left">&#x1f45d; <code>&amp;#x1f45d;</code></td>
+          <td align="left">&#x1f45e; <code>&amp;#x1f45e;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f45f; <code>&amp;#x1f45f;</code></td>
+          <td align="left">&#x1f460; <code>&amp;#x1f460;</code></td>
+          <td align="left">&#x1f461; <code>&amp;#x1f461;</code></td>
+          <td align="left">&#x1f462; <code>&amp;#x1f462;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f576; <code>&amp;#x1f576;</code></td>
+          <td align="left">&#x1f97b; <code>&amp;#x1f97b;</code></td>
+          <td align="left">&#x1f97c; <code>&amp;#x1f97c;</code></td>
+          <td align="left">&#x1f97d; <code>&amp;#x1f97d;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1fa70; <code>&amp;#x1fa70;</code></td>
+          <td align="left">&#x1fa71; <code>&amp;#x1fa71;</code></td>
+          <td align="left">&#x1fa72; <code>&amp;#x1fa72;</code></td>
+          <td align="left">&#x1fa73; <code>&amp;#x1fa73;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1fa74; <code>&amp;#x1fa74;</code></td>
+          <td align="left">&#x1fa86; <code>&amp;#x1fa86;</code></td>
+          <td align="left">&#x1f9e2; <code>&amp;#x1f9e2;</code></td>
+          <td align="left">&#x1f9e3; <code>&amp;#x1f9e3;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1f9e4; <code>&amp;#x1f9e4;</code></td>
+          <td align="left">&#x1f9e5; <code>&amp;#x1f9e5;</code></td>
+          <td align="left">&#x1f9e6; <code>&amp;#x1f9e6;</code></td>
+          <td align="left">&#x1f9ba; <code>&amp;#x1f9ba;</code></td>
+        </tr>
+        <tr>
+          <td align="left">&#x1F93F; <code>&amp;#x1F93F;</code></td>
+          <td align="left">&#x1f97e; <code>&amp;#x1f97e;</code></td>
+          <td align="left">&#x1f97f; <code>&amp;#x1f97f;</code></td>
+          <td align="left">&#x1F94B; <code>&amp;#x1F94B;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="#lista"><img alt=""
+          src="https://img.shields.io/badge/Volver%20al%20listado-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <h4 id="transportes-y-mapas"><a name="transporte"></a>Transportes y Mapas<a class="headerlink"
+        href="#transportes-y-mapas" title="Permanent link">&#9875;</a></h4>
+    <table>
+      <thead>
+        <tr>
+          <th>&#x1f680; <code>&amp;#x1f680;</code></th>
+          <th>&#x1f681; <code>&amp;#x1f681;</code></th>
+          <th>&#x1f682; <code>&amp;#x1f682;</code></th>
+          <th>&#x1f683; <code>&amp;#x1f683;</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#x1f684; <code>&amp;#x1f684;</code></td>
+          <td>&#x1f685; <code>&amp;#x1f685;</code></td>
+          <td>&#x1f686; <code>&amp;#x1f686;</code></td>
+          <td>&#x1f687; <code>&amp;#x1f687;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f688; <code>&amp;#x1f688;</code></td>
+          <td>&#x1f689; <code>&amp;#x1f689;</code></td>
+          <td>&#x1f68a; <code>&amp;#x1f68a;</code></td>
+          <td>&#x1f68b; <code>&amp;#x1f68b;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f68c; <code>&amp;#x1f68c;</code></td>
+          <td>&#x1f68d; <code>&amp;#x1f68d;</code></td>
+          <td>&#x1f68e; <code>&amp;#x1f68e;</code></td>
+          <td>&#x1f68f; <code>&amp;#x1f68f;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f690; <code>&amp;#x1f690;</code></td>
+          <td>&#x1f691; <code>&amp;#x1f691;</code></td>
+          <td>&#x1f692; <code>&amp;#x1f692;</code></td>
+          <td>&#x1f693; <code>&amp;#x1f693;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f694; <code>&amp;#x1f694;</code></td>
+          <td>&#x1f695; <code>&amp;#x1f695;</code></td>
+          <td>&#x1f696; <code>&amp;#x1f696;</code></td>
+          <td>&#x1f697; <code>&amp;#x1f697;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f698; <code>&amp;#x1f698;</code></td>
+          <td>&#x1f699; <code>&amp;#x1f699;</code></td>
+          <td>&#x1f69a; <code>&amp;#x1f69a;</code></td>
+          <td>&#x1f69b; <code>&amp;#x1f69b;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f69c; <code>&amp;#x1f69c;</code></td>
+          <td>&#x1f69d; <code>&amp;#x1f69d;</code></td>
+          <td>&#x1f69e; <code>&amp;#x1f69e;</code></td>
+          <td>&#x1f69f; <code>&amp;#x1f69f;</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="objetos"><a name="objetos"></a>Objetos<a class="headerlink" href="#objetos"
+        title="Permanent link">&#9875;</a></h4>
+    <table>
+      <thead>
+        <tr>
+          <th>&#x231a; <code>&amp;#x231a;</code></th>
+          <th>&#x231b; <code>&amp;#x231b;</code></th>
+          <th>&#x2328; <code>&amp;#x2328;</code></th>
+          <th>&#x23f0; <code>&amp;#x23f0;</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#x23f1; <code>&amp;#x23f1;</code></td>
+          <td>&#x23f2; <code>&amp;#x23f2;</code></td>
+          <td>&#x23f3; <code>&amp;#x23f3;</code></td>
+          <td>&#x2602; <code>&amp;#x2602;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4bb; <code>&amp;#x1f4bb;</code></td>
+          <td>&#x1f4ba; <code>&amp;#x1f4ba;</code></td>
+          <td>&#x1f4bd; <code>&amp;#x1f4bd;</code></td>
+          <td>&#x1f4be; <code>&amp;#x1f4be;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4bf; <code>&amp;#x1f4bf;</code></td>
+          <td>&#x1f4c0; <code>&amp;#x1f4c0;</code></td>
+          <td>&#x1f4c1; <code>&amp;#x1f4c1;</code></td>
+          <td>&#x1f4c2; <code>&amp;#x1f4c2;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4c3; <code>&amp;#x1f4c3;</code></td>
+          <td>&#x1f4c4; <code>&amp;#x1f4c4;</code></td>
+          <td>&#x1f4c5; <code>&amp;#x1f4c5;</code></td>
+          <td>&#x1f4c6; <code>&amp;#x1f4c6;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4c7; <code>&amp;#x1f4c7;</code></td>
+          <td>&#x1f4cb; <code>&amp;#x1f4cb;</code></td>
+          <td>&#x1f4d1; <code>&amp;#x1f4d1;</code></td>
+          <td>&#x1f4f1; <code>&amp;#x1f4f1;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4f2; <code>&amp;#x1f4f2;</code></td>
+          <td>&#x1f4f7; <code>&amp;#x1f4f7;</code></td>
+          <td>&#x1f4f8; <code>&amp;#x1f4f8;</code></td>
+          <td>&#x1f4f9; <code>&amp;#x1f4f9;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f4fa; <code>&amp;#x1f4fa;</code></td>
+          <td>&#x1f4fb; <code>&amp;#x1f4fb;</code></td>
+          <td>&#x1f4fc; <code>&amp;#x1f4fc;</code></td>
+          <td>&#x1f4fd; <code>&amp;#x1f4fd;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f5a5; <code>&amp;#x1f5a5;</code></td>
+          <td>&#x1f5a8; <code>&amp;#x1f5a8;</code></td>
+          <td>&#x1f5b1; <code>&amp;#x1f5b1;</code></td>
+          <td>&#x1f5b2; <code>&amp;#x1f5b2;</code></td>
+        </tr>
+        <tr>
+          <td>&#x260e; <code>&amp;#x260e;</code></td>
+          <td>&#x2614; <code>&amp;#x2614;</code></td>
+          <td>&#x2692; <code>&amp;#x2692;</code></td>
+          <td>&#x2693; <code>&amp;#x2693;</code></td>
+        </tr>
+        <tr>
+          <td>&#x2694; <code>&amp;#x2694;</code></td>
+          <td>&#x2696; <code>&amp;#x2696;</code></td>
+          <td>&#x2697; <code>&amp;#x2697;</code></td>
+          <td>&#x2699; <code>&amp;#x2699;</code></td>
+        </tr>
+        <tr>
+          <td>&#x26b0; <code>&amp;#x26b0;</code></td>
+          <td>&#x26b1; <code>&amp;#x26b1;</code></td>
+          <td>&#x26cf; <code>&amp;#x26cf;</code></td>
+          <td>&#x2702; <code>&amp;#x2702;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1fa92; <code>&amp;#x1fa92;</code></td>
+          <td>&#x1fa93; <code>&amp;#x1fa93;</code></td>
+          <td>&#x1fa9a; <code>&amp;#x1fa9a;</code></td>
+          <td>&#x1fa9b; <code>&amp;#x1fa9b;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1f302; <code>&amp;#x1f302;</code></td>
+          <td>&#x1f321; <code>&amp;#x1f321;</code></td>
+          <td>&#x1f381; <code>&amp;#x1f381;</code></td>
+          <td>&#x1faa0; <code>&amp;#x1faa0;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1faa5; <code>&amp;#x1faa5;</code></td>
+          <td>&#x1fa91; <code>&amp;#x1fa91;</code></td>
+          <td>&#x1f9fb; <code>&amp;#x1f9fb;</code></td>
+          <td>&#x1fa9f; <code>&amp;#x1fa9f;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1fa9e; <code>&amp;#x1fa9e;</code></td>
+          <td>&#x1faa0; <code>&amp;#x1faa0;</code></td>
+          <td>&#x1faa3; <code>&amp;#x1faa3;</code></td>
+          <td>&#x1faa4; <code>&amp;#x1faa4;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1faa5; <code>&amp;#x1faa5;</code></td>
+          <td>&#x1faa6; <code>&amp;#x1faa6;</code></td>
+          <td>&#x1faa7; <code>&amp;#x1faa7;</code></td>
+          <td>&#x1faa8; <code>&amp;#x1faa8;</code></td>
+        </tr>
+        <tr>
+          <td>&#x1F4CD; <code>&amp;#x1F4CD;</code></td>
+          <td>&#x1F4CE; <code>&amp;#x1F4CE;</code></td>
+          <td>&#x2699; <code>&amp;#x2699;</code></td>
+          <td>&#x1f3a8; <code>&amp;#x1f3a8;</code></td>
+        </tr>
+        <tr>
+          <td>&#9875; <code>&amp;#9875;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="extras"><a name="extras"></a>Extras<a class="headerlink" href="#extras" title="Permanent link">&#9875;</a>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th align="left">&#x1F9D1;&#x200D;&#x1F4BB; <code>&amp;#x1F9D1;&amp;#x200D;&amp;#x1F4BB;</code></th>
+          <th align="left">&#x1F5D2;&#xFE0F; <code>&amp;#x1F5D2;&amp;#xFE0F;</code></th>
+          <th align="left">&#x1f575;&#xfe0f; <code>&amp;#x1f575;&amp;#xfe0f;</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="left">&#x1f576;&#xfe0f; <code>&amp;#x1f576;&amp;#xfe0f;</code></td>
+          <td align="left">&#x2604;&#xfe0f; <code>&amp;#x2604;&amp;#xfe0f;</code></td>
+          <td align="left"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br></p>
+    <h3 id="atributos-globales"><a name="globals"></a>Atributos globales<a class="headerlink" href="#atributos-globales"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Los <strong>atributos globales</strong> son comunes para todo elemento HTML, que se puedan usar no quiere
+      decir
+      que tengan el mismo efecto. Los atributos globales se pueden especificar en todos los elementos HTML, incluso
+      aquellos no especificados en el estándar. Eso significa que cualquier elemento no estándar debe permitir estos
+      atributos, aunque el uso de esos elementos significa que el documento ya no es compatible con HTML5. Los
+      navegadores compatibles con HTML5 ocultan el contenido marcado como
+      <code>&lt;foo hidden&gt;...&lt;/foo&gt;</code>, aunque <code>&lt;foo&gt;</code> no sea un elemento HTML
+      válido.
+    </p>
+    <h4 id="lista-de-atributos-globales">Lista de atributos globales:<a class="headerlink"
+        href="#lista-de-atributos-globales" title="Permanent link">&#9875;</a></h4>
+    <ul>
+      <li>
+        <p><strong>accesskey</strong>:<br />
+          Proporciona una pista para generar un atajo de teclado para el elemento actual. Este atributo consta de
+          una
+          lista de caracteres separados por espacios. El navegador debe utilizar el primero que exista en la
+          distribución del teclado del ordenador. Ejemplo:<br />
+        <div class="highlight">
+          <pre><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://es.wikipedia.org/wiki/HTML5&quot;</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">&quot;h&quot;</span><span class="p">&gt;</span>HTML5<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre>
+        </div>
+        El navegador abrirá los hipervinculos al presionar:<br />
+        En chrome: <kbd>ALT</kbd> + <kbd>H</kbd><br />
+        En edge: <kbd>ALT</kbd> + <kbd>H</kbd><br />
+        En firefox: <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>C</kbd></p>
+      </li>
+      <li>
+        <p><strong>title</strong>:<br />
+          Contiene un texto que representa información de advertencia relacionada con el elemento al que pertenece.
+          Normalmente dicha información se muestra al posicionarse sobre el elemento. Ejemplo:<br />
+        <div class="highlight">
+          <pre><span class="p">&lt;</span><span class="nt">span</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;HyperText Markup Language&quot;</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre>
+        </div>
+        </p>
+      </li>
+      <li>
+        <p><strong>translate</strong>:<br />
+          Se usa para especificarle a las herramientas de traducción si deben traducir o no el contenido de ese
+          elemento. Ejemplo:<br />
+        <div class="highlight">
+          <pre><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>© 2022<span class="p">&lt;</span><span class="nt">span</span> <span class="na">translate</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;</span>Hello World<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</pre>
+        </div>
+        Se solicita que no se traduzca el texto Hello World.</p>
+      </li>
+      <li>
+        <p><strong>data-*</strong>:<br />
+          Cualquier atributo en cualquier elemento cuyo nombre comience con <code>data-</code> es un atributo de
+          datos.
+          Esta metadata que puede usar para almacenar información adicional que no tiene ninguna representación
+          visual,
+          pero que puede ser útil para manejarlo despues con javascript y css. Ejemplo:<br />
+        <div class="highlight">
+          <pre><span class="p">&lt;</span><span class="nt">article</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;autos-electrico&quot;</span>
+  <span class="na">data-columnas</span><span class="o">=</span><span class="s">&quot;3&quot;</span>
+  <span class="na">data-numero-indice</span><span class="o">=</span><span class="s">&quot;12314&quot;</span>
+  <span class="na">data-padre</span><span class="o">=</span><span class="s">&quot;autos&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</pre>
+        </div>
+        Acceso con JavaScript:<br />
+        <div class="highlight">
+          <pre><span class="kr">const</span> <span class="nx">articulo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#autos-electrico&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">articulo</span><span class="p">.</span><span class="nx">dataset</span><span class="p">;</span>
+<span class="nx">articulo</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-numero-indice&#39;</span><span class="p">,</span> <span class="s1">&#39;41321&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">articulo</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;data-numero-indice&#39;</span><span class="p">));</span> <span class="c1">//41321</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">articulo</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">columnas</span><span class="p">);</span> <span class="c1">// &quot;3&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">articulo</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">padre</span><span class="p">);</span> <span class="c1">// autos</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">numeroIndice</span><span class="o">=</span> <span class="s2">&quot;12314&quot;</span><span class="p">;</span>
+<span class="nx">prompt</span><span class="p">(</span><span class="nx">articulo</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">numeroIndice</span><span class="p">);</span> <span class="c1">// &quot;12314&quot;</span>
+</pre>
+        </div>
+        Acceso con CSS:<br />
+        <div class="highlight">
+          <pre><span class="nt">articulo</span><span class="o">:</span><span class="nd">:before</span><span class="p">{</span>
+    <span class="k">content</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">data</span><span class="o">-</span><span class="n">padre</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+        </div>
+        Usando los selectores de atributos para cambiar estilos según los datos:<br />
+        <div class="highlight">
+          <pre><span class="nt">article</span><span class="o">[</span><span class="nt">data-columnas</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">data-columnas</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+        </div>
+        </p>
+      </li>
+      <li>
+        <p><strong>contenteditable</strong><br />
+          Un atributo enumerado que indica si el usuario debe poder editar el elemento. Si es así, el navegador
+          modifica
+          su «widget» para permitir la edición. El atributo debe tomar uno de los siguientes valores: </p>
+        <ul>
+          <li><strong>true</strong> o la cadena vacía, la cual indica que el elemento debe ser editable.</li>
+          <li><strong>false</strong>, el cual indica que el elemento no debe ser editable.
+            Ejemplo:<br />
+            <div class="highlight">
+              <pre><span class="p">&lt;</span><span class="nt">p</span> <span class="na">contenteditable</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Este parráfo es editable, 
+al pasar el mouse por encima y dar clic se podrá cambiar este texto<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>hidden</strong>:<br />
+          Un atributo booleano indica que el elemento aún no es o ya no es relevante. Por ejemplo, se puede utilizar
+          para ocultar elementos de la página que no se pueden utilizar hasta que se haya completado el proceso de
+          inicio de sesión. El navegador no representará tales elementos. Este atributo no se debe utilizar para
+          ocultar
+          contenido que se podría mostrar legítamente. </p>
+      </li>
+    </ul>
+    <hr />
+    <h3 id="especificos"><a name="especificos"></a>Especificos<a class="headerlink" href="#especificos"
+        title="Permanent link">&#9875;</a></h3>
+    <ul>
+      <li><strong><code>&lt;video&gt;</code></strong>: <ul>
+          <li><strong>src</strong>: De la misma manera que para el elemento <code>&lt;img&gt;</code>, el atributo
+            <strong>src</strong> (source) contiene una ruta al video que deseas incrustar. Funciona de la misma
+            manera.
+          </li>
+          <li><strong>controls</strong>: Los usuarios deben ser capaces de controlar la reproducción de video y
+            audio
+            (esto es especialmente crítico en personas que padecen <a
+              href="https://en.wikipedia.org/wiki/Epilepsy#Epidemiology">epilepsia</a>). Se debe utilizar el
+            atributo
+            <strong>controls</strong> para incluir la interfaz de control del navegador, o construir la nuestra
+            utilizando la <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">JavaScript
+              API</a>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="event">Event<a class="headerlink" href="#event" title="Permanent link">&#9875;</a></h3>
+    <p>Los eventos DOM HTML permiten a JavaScript registrar diferentes controladores de eventos en elementos de un
+      documento HTML. </p>
+    <p>Los eventos se utilizan normalmente en combinación con funciones, y la función no se ejecutará antes de que
+      se
+      produzca el evento (como cuando un usuario hace clic en el botón). </p>
+    <table>
+      <thead>
+        <th>Evento</th>
+        <th>Descripción</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <td>abort</td>
+        <td>Este evento ocurre cuando se anula la carga de un medio</td>
+      </tbody>
+    </table>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+  </article>
+</body>
+
+</html>
