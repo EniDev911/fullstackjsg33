@@ -12,6 +12,7 @@
       background-color: #f3f3f3;
       display: inline-block;
       padding: 5px 15px;
+      position: relative;
       border-radius: 6px;
       border-bottom: 2px solid #f8bc1d;
     }
@@ -19,6 +20,38 @@
     .resume-box {
       display: flex;
       width: 100%;
+      height: 300px;
+    }
+
+    .resume-box img {
+      width: 300px;
+      margin-right: 10px;
+      /* height: 290px; */
+    }
+
+    .resume-text {
+      width: 60%;
+    }
+
+    @media (max-width: 730px) {
+      .resume-box {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .resume-box img {
+        width: 90%;
+        height: 320px;
+        margin: auto;
+        /* height: 290px; */
+      }
+
+      .resume-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid red;
+      }
     }
   </style>
 </head>
@@ -101,7 +134,7 @@
     <br>
     </p>
     <div class="resume-box">
-      <img src="assets/t.berners-lee.png" width="370" height="270">
+      <img src="assets/t.berners-lee.png">
       <div class="resume-text">
         <h2>
           Año 1989:
@@ -122,7 +155,7 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/t.berners-lee2.png" width="300" height="280">
+    <div class="resume-box"><img src="assets/t.berners-lee2.png">
       <div class="resume-text">
         <h2>
           Año 1991:
@@ -144,7 +177,7 @@
     </div>
     <hr>
     <div class="resume-box">
-      <img src="assets/r.raggett.png" width="370" height="280" align="left">
+      <img src="assets/r.raggett.png">
       <div class="resume-text">
         <h2>
           Año 1993:
@@ -173,7 +206,7 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/ietf.png" width="300" height="260">
+    <div class="resume-box"><img src="assets/ietf.png">
       <div class="resume-text">
         <h2>
           Año 1995:
@@ -192,7 +225,7 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/w3c_html3.2.png" width="300" height="260">
+    <div class="resume-box"><img src="assets/w3c_html3.2.png">
       <div class="resume-te">
         <h2>
           Año 1997:
@@ -208,7 +241,7 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/w3c_html4.0.1.png" width="300" height="260">
+    <div class="resume-box"><img src="assets/w3c_html4.0.1.png">
       <div class="resume-te">
         <h2 align="left">
           Año 1999:
@@ -227,7 +260,8 @@
           llamado <a href="https://www.w3.org/wiki/Es/CSS" target="_blank">CSS</a></p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/w3c_xhtml1.0.png" width="300" height="260">
+    <hr>
+    <div class="resume-box"><img src="assets/w3c_xhtml1.0.png">
       <div class="resume-text">
         <h2>
           Año 2000:
@@ -246,7 +280,8 @@
         </p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/html5_borrador.png" width="300" height="310">
+    <hr>
+    <div class="resume-box"><img src="assets/html5_borrador.png">
       <div class="resume-t">
         <h2>
           Año 2008:
@@ -261,8 +296,9 @@
           en el estándar HTML5, cuyo primer borrador oficial se publicó el 22 de enero del 2008.</p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/html5_check.png" width="300" height="280">
-      <div class="resume-te">
+    <hr>
+    <div class="resume-box"><img src="assets/html5_check.png">
+      <div class="resume-text">
         <h2>
           Año 2012:
         </h2>
@@ -277,7 +313,8 @@
           de vida&rdquo;.</p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/html5.png" width="300" height="290">
+    <hr>
+    <div class="resume-box"><img src="assets/html5.png">
       <div class="resume-text">
         <h2>2014:</h2>
         <h4>Recomendaciones de W3C: HTML5</h4>
@@ -287,7 +324,8 @@
           como una recomendación W3C estable, significa que el proceso de especificación está completo.</p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/html5.1_.png" width="300" height="310">
+    <hr>
+    <div class="resume-box"><img src="assets/html5.1_.png">
       <div class="resume-text">
         <h2>
           Año 2016:
@@ -300,7 +338,8 @@
           Entre otras que tienen una función sobre la semántica del documento.</p>
       </div>
     </div>
-    <div class="resume-box"><img src="assets/html5.1_.png" width="300" height="290">
+    <hr>
+    <div class="resume-box"><img src="assets/html5.1_.png">
       <div class="resume-text">
         <h2>Año 2017</h2>
         <h4>Recomendaciones W3C: HTML5.1 2da edición</h4>
@@ -312,16 +351,20 @@
         </p>
       </div>
     </div>
-    <p><img src="assets/html5.2.png" width="370" height="260" align="left">
-    <h2>Año 2017</h2>
-    <h4>Recomendaciones W3C: HTML5.2</h4>
-    <p>En diciembre del año 2017 se define como estándar la <strong>versión 5.2 de HTML</strong> se volvió la
-      recomendación oficial de la W3C. Porsupuesto que se incorporarón nuevos aspectos, mejorando la seguridad en las
-      etiquetas de link como determinar si el contenido de la etiqueta va a ser cargado y usado. También se
-      actualizarón
-      aspectos de accesibilidad de varios atributos como <a href="https://www.w3.org/TR/wai-aria-1.1/"
-        target="_blank">https://www.w3.org/TR/wai-aria-1.1/</a></p>
-    </p><br>
+    <hr>
+    <div class="resume-box"><img src="assets/html5.2.png">
+      <div class="resume-te">
+        <h2>Año 2017</h2>
+        <h4>Recomendaciones W3C: HTML5.2</h4>
+        <p>En diciembre del año 2017 se define como estándar la <strong>versión 5.2 de HTML</strong> se volvió la
+          recomendación oficial de la W3C. Porsupuesto que se incorporarón nuevos aspectos, mejorando la seguridad en
+          las
+          etiquetas de link como determinar si el contenido de la etiqueta va a ser cargado y usado. También se
+          actualizarón
+          aspectos de accesibilidad de varios atributos como <a href="https://www.w3.org/TR/wai-aria-1.1/"
+            target="_blank">https://www.w3.org/TR/wai-aria-1.1/</a></p>
+      </div>
+    </div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -609,7 +652,8 @@
     <hr />
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
-    <p>Como sabemos la estructua de un documento HTML debía contener siempre dos etiquetas HTML principales: la cabecera
+    <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
+      cabecera
       de la página <code>&lt;head&gt;</code> y el cuerpo de la página o <code>&lt;body&gt;</code>. El primero de ellos,
       del que hablaremos en este apartado, se encarga de contener <b>etiquetas de metadatos</b> ( <i>información sobre
         el documento</i> ) así como establecer <b>relaciones con otros documentos</b>. El segundo de ellos, se encarga
@@ -634,9 +678,40 @@
           <td><b>href</b>, <b>target</b></td>
           <td>URL base del documento ( <i>usado para gestionar rutas relativas</i> ).</td>
         </tr>
+        <tr>
+          <td><code>&lt;link&gt;</code></td>
+          <td><b>href</b>, <b>hreflang</b>, <b>rel</b>, <b>media</b>, <b>type</b></td>
+          <td>Establece una relación del documento actual con otro externo.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;meta&gt;</code></td>
+          <td><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b></td>
+          <td>Establece un metadato específico en el documento actual.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;style&gt;</code></td>
+          <td><b>media</b>, <b>type</b></td>
+          <td>Crea estilos CSS que afectarán únicamente al documento actual.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;script&gt;</code></td>
+          <td><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>, <b>defer</b></td>
+          <td>Indica un script a cargar o ejecutar en la página actual.</td>
+        </tr>
       </tbody>
     </table>
-
+    <p>Existen dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo,
+      actualmemte también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas
+      <code>&lt;style&gt;</code> y <code>&lt;script&gt;</code>.
+    </p>
+    <h3>Título y codificación</h3>
+    <p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las
+      siguientes dos etiquetas:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">head</span>&gt;
+    &lt;<span class="nt">title</span>&gt;Título del documento&lt;<span class="nt">/title</span>&gt;
+      </pre>
+    </div>
     <h3 id="cabeceras"><a name='cabeceras'></a>Cabeceras <a class="headerlink" href="#cabeceras"
         title="Permanent link">&#9875;</a></h3>
     <p>Los encabezamientos en HTML se crean colocando un número determinado junto con la etiqueta
