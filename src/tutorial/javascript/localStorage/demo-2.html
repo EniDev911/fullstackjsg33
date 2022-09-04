@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage demo</title>
+  <style>
+    body {
+      background: #394060;
+
+    }
+
+    .section {
+      width: 60%;
+      height: 70px;
+      border: 5px solid #ccc;
+      background-color: #353966;
+      color: #ccc;
+      margin: auto;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+
+</head>
+
+<body onload="load()">
+  <div class="section">
+    <input type="text" id="textField">
+    <input type="button" value="guardar" onclick="save()">
+    <input type="button" value="eliminar" onclick="remove()">
+  </div>
+
+  <script>
+    function load() {
+      let storeValue = window.localStorage.getItem('text');
+      if (storeValue) {
+        document.getElementById('textField').value = storeValue
+      }
+    }
+
+    function remove() {
+      document.getElementById('textField').value = ' '
+      window.localStorage.removeItem('text')
+    }
+    function save() {
+      const fieldValue = document.getElementById('textField').value
+      window.localStorage.setItem('text', fieldValue)
+    }
+  </script>
+</body>
+
+</html>
