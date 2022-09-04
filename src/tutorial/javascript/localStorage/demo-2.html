@@ -45,7 +45,12 @@
       window.localStorage.removeItem('text')
     }
     function save() {
-      const fieldValue = document.getElementById('textField').value
+      const fieldValue = document.getElementById('textField').value,
+        users = [],
+        newUser = {
+          id: Date.now(),
+
+        };
       window.localStorage.setItem('text', fieldValue)
     }
   </script>
