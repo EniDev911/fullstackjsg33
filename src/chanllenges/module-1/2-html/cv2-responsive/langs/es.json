@@ -1,0 +1,28 @@
+{
+  "profile": {
+    "rol" : "Desarrollador Fullstack",
+    "contact": "contacto",
+    "knowledge": "conocimiento",
+    "language" : "idiomas",
+    "spanish": "español",
+    "english": "inglés",    
+    "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
+  },
+
+  "about": {
+    "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
+  },
+  "education": {
+      "title": "educación",
+      "date": "2019 - 2021",
+      "first-career-title": "Programación computacional",
+      "entity": "AIEP IP",
+      "second-career-title": "Desarrollador fullstack Java"
+  },
+  "experience": {
+    "section-title": "experiencia",
+    "first-job-title": "Desarrollador FullStack Java Jr",
+    "first-job-date": "Abril 2020 - Diciembre 2020",
+    "first-job-description": "Lorem Ipsum"
+  }
+}

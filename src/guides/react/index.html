@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../public/css/docs.css">
+  <link rel="stylesheet" href="../../public/css/themes/overlook.css">
+  <title>React: Keys</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1 align="left">
+      <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"
+        height="50" align="left">
+      <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" height="55"
+        align="right"><br><br>
+      <code>TEMA: KEYS</code>
+    </h1>
+    <a name="top"></a>
+    <h2 id="contenido">CONTENIDO<a class="headerlink" href="#contenido" title="Permanent link">&#9875;</a></h2>
+    <ul>
+      <li><a href="#intro-listas">¿Qué son las listas?</a></li>
+      <li><a href="#mostrar-listas-react">Renderizar una lista</a></li>
+      <li><a href="#keys-intro">¿Para qué nos sirven las keys?</a></li>
+      <li><a href="#extraer-componentes-keys">Extraer componentes con keys</a></li>
+      <li><a href="#ejemplo-keys-api">Ejemplo consumiendo una API y usar keys dentro de una fila en una tabla</a></li>
+    </ul>
+    <hr />
+    <h3 id="que-son-las-listas-en-react"><a name="intro-listas"></a> ¿Qué son las listas en React?<a class="headerlink"
+        href="#que-son-las-listas-en-react" title="Permanent link">&#9875;</a></h3>
+    <p>Las listas hacen referencia a un arreglo de datos el cual puede ser: </p>
+    <ul>
+      <li>Un arreglo de objetos</li>
+      <li>Un arreglo de datos simples, como caracteres, números, etc.</li>
+    </ul>
+    <p>Y como toda lista o conjunto en programación. React nos permite recorrerlas con la intención de extraer los
+      elementos y mostrarlos en el <a href="https://es.wikipedia.org/wiki/Document_Object_Model">DOM</a>. </p>
+    <p>A modo de introducirnos en materia, observemos el siguiente código, donde usamos la función <code>map()</code>
+      para
+      transformar un array de números <code>numbers</code> y duplicar sus valores. Almacenamos el nuevo array devuelto
+      por <code>map()</code> a la constante <code>doubled</code> y lo mostramos por salida estándar de la consola: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">doubled</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">number</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubled</span><span class="p">);</span>
+</pre>
+    </div>
+
+    <p>Este código nos muestra por consola : <code>[2, 4, 6, 8, 10]</code>. </p>
+
+    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/arrays-map?embed=true"></iframe>
+
+    <p><br></p>
+    <p>En javascript hay diferentes funciones que nos permiten iterar sobre un arreglo, <code>forEach()</code>,
+      <code>map()</code>, <code>filter</code>, etc. Cada una con objetivos distintos algunas retornan un nuevo arreglo,
+      otras valores booleanos, etc. Si quieres ver más sobre arreglos puedes ver una <a target="_blank"
+        href="https://enidev911.github.io/fullstackjsg33/src/guides/javascript/data-types/arrays/">guía resumida sobre
+        arreglos en javascript</a>.
+    </p>
+    <ul>
+      <li>
+        <p><code>forEach()</code> recibe una función <strong>callback</strong> como argumento, esta función es invocada
+          una vez por cada elemento del arreglo. Sin embargo después de iterar por todo el arreglo, <b>forEach</b>
+          retorna
+          <code>undefined</code>.
+        </p>
+      </li>
+      <li>
+        <p><code>map()</code> por su parte también recibe una función <strong>callback</strong> como argumento, esta
+          función es invocada una vez sobre cada elemento del arreglo, cambiando cada uno de ellos. Y después de iterar
+          por todo el arreglo, retorna un nuevo arreglo, con los nuevos elementos</p>
+      </li>
+    </ul>
+    <p>Como <strong>forEach</strong> retorna indefinido, creo que es bastante obvio cual es el método que tendremos que
+      utilizar para crear nuestra listas en React.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="renderizar-una-lista-en-react"><a name="mostrar-listas-react"></a> Renderizar una lista en React<a
+        class="headerlink" href="#renderizar-una-lista-en-react" title="Permanent link">&#9875;</a></h3>
+    <p>Primero debemos crear un nuevo proyecto de React, en este caso voy a utilizar <a
+        href="https://vitejs.dev/"><code>vite</code></a>:</p>
+    <p>
+    <div class="highlight">
+      <pre>npm create vite
+</pre>
+    </div>
+    Luego introducimos el nombre para el proyecto y seleccionamos la opción de React: </p>
+    <p align="center">
+      <img src="assets/vite-step-2.png" />
+    </p>
+
+    <p>Luego seleccionamos javascript: </p>
+    <p align="center">
+      <img src="assets/vite-step-3.png" />
+    </p>
+
+    <p>Esto nos crea una estructura del proyecto y nos muestra los siguientes comandos para poder ejecutar y correr el
+      proyecto: </p>
+    <p align="center">
+      <img src="assets/vite-step-4.png" width="400" />
+    </p>
+
+    <ul>
+      <li><code>cd project-name</code> para movernos al proyecto creado.</li>
+      <li><code>npm install</code> para que se instalen todas las dependencias listadas en package.json.</li>
+      <li><code>npm run dev</code> para lanzar el servidor de desarrollo.</li>
+    </ul>
+    <br>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/create-vite.gif" />
+      </p>
+    </details>
+
+    <hr />
+    <p>Ahora obtendremos la siguiente estructura: </p>
+    <div class="highlight">
+      <pre>.
+|-- index.html
+|--📂node_modules
+|-- package-lock.json
+|-- package.json
+|-- vite.config.js
+|-- public
+|   `-- vite.svg
+|--📂src
+|   |-- App.css
+|   |-- App.jsx
+|   |--📂assets
+|   |   `-- react.svg
+|   |-- index.css
+|   `-- main.jsx
+</pre>
+    </div>
+
+    <p>Limpiaremos el proyecto remplazando el contenido del archivo <code>App.jsx</code> por el siguiente: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Monitor AOC&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Mouse HP&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Teclado E-Blue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Parlante Marshall&quot;</span>
+  <span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">listProducts</span> <span class="o">=</span> <span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span>
+    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">product</span><span class="p">}</span><span class="o">&lt;</span>/<span class="nx">li</span>&gt;
+  <span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">listProducts</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">ul</span>&gt;
+  <span class="p">)</span>
+
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/estructura.png" width="800" />
+    </p>
+
+    <p>Como podemos observar recorremos el array <code>products</code> y a continuación usando la función
+      <code>map</code> de los arreglos en javascript, devolvemos un elemento <code>&lt;li&gt;</code> por cada item y lo
+      almacenamos en una constante llamada <code>listProducts</code>. Finalmente, asignamos el nuevo array de elementos
+      resultante a un elemento <code>&lt;ul&gt;</code> por medio de la sintaxis JSX. Ahora podemos ver en el navegador
+      que se mostrará en forma de lista desordenada pero si abrimos la consola usando la combinación <kbd>Ctrl</kbd> +
+      <kbd>Shif</kbd> + <kbd>i</kbd> veremos la siguiente advertencia:
+    </p>
+    <p align="center">
+      <img src="assets/show-list.png" />
+    </p>
+
+    <p>React nos dice que una <code>key</code> debería ser proporcionada para cada item de la lista. Una
+      &ldquo;key&rdquo; es un atributo especial de tipo <code>string</code> que debemos incluir al crear listas de
+      elementos.</p>
+    <p>Vamos asignar una <code>key</code> a nuestra lista de productos dentro de <code>products.map()</code> y arreglar
+      el problema de la falta de <code>key</code>: </p>
+    <div class="highlight">
+      <pre> <span class="kr">const</span> <span class="nx">listProducts</span> <span class="o">=</span> <span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span> 
+   <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">}</span><span class="o">&gt;</span>
+     <span class="p">{</span><span class="nx">product</span><span class="p">}</span>
+   <span class="o">&lt;</span>/<span class="nx">li</span>&gt;
+ <span class="p">);</span>
+</pre>
+    </div>
+
+    <p>Si guardamos cambios y refrescamos la página al abrir la consola ya no debería mostrarse la advertencia: </p>
+    <p align="center">
+      <img src="assets/fix-key.png" />
+    </p>
+
+    <hr />
+    <h3 id="para-que-nos-sirven-las-keys"><a name="keys-intro"></a>¿Para qué nos sirven las Keys?<a class="headerlink"
+        href="#para-que-nos-sirven-las-keys" title="Permanent link">&#9875;</a></h3>
+    <p>Las <strong>keys</strong> ayudan a React a identificar que items han cambiado, son agregados, o son eliminados.
+      Las <strong>keys</strong> deben ser dadas a los elementos dentro del array para darle a los elementos una
+      identidad estable.</p>
+    <p>La mejor forma de elegir una <code>key</code> es usando un <code>string</code> que identifique únicamente a un
+      elemento de la lista entre sus hermanos. Lo habitual es usar los IDs u otro atributo que no se duplique de tus
+      datos como key: </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="c1">//Products.jsx</span>
+<span class="kr">const</span> <span class="nx">Products</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1001</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-1&quot;</span><span class="p">},</span> 
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1002</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-2&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1003</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-3&quot;</span><span class="p">}</span>
+  <span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">listProducts</span> <span class="o">=</span> <span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span> <span class="o">=&gt;</span> 
+    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">cod</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">li</span>&gt;
+  <span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">listProducts</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">ul</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Products</span>
+</pre>
+    </div>
+    <p align="center">
+      <img src="assets/keys-products.png" />
+    </p>
+    </p>
+    <p>Cuando no tengamos IDs estables para renderizar, en su lugar podemos utilizar el índice del item como una
+      <code>key</code> como último recurso:
+    </p>
+    <div class="highlight">
+      <pre><span class="c1">// Products.jsx</span>
+<span class="kr">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1001</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-1&quot;</span><span class="p">},</span> 
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1002</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-2&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">cod</span><span class="o">:</span> <span class="mi">1003</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Producto-3&quot;</span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">listProducts</span> <span class="o">=</span> <span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">product</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> 
+    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">li</span>&gt;
+<span class="p">);</span>
+</pre>
+    </div>
+
+    <blockquote>
+      <p>React en su documentación no nos recomienda usar los índices para keys si el orden de los item puede cambiar.
+        Esto puede impactar negativamente el rendimiento y puede causar problemas con el estado de los componentes.</p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="extraccion-de-componentes-con-keys"><a name="extraer-componentes-keys"></a> Extracción de componentes con
+      keys<a class="headerlink" href="#extraccion-de-componentes-con-keys" title="Permanent link">&#9875;</a></h3>
+    <p>Para entender lo que nos dice React en su documentación acerca de como usar las <code>keys</code> en componentes:
+    </p>
+    <p><strong>&ldquo;Las keys solo tienen sentido en el contexto del array que las envuelve.&rdquo;</strong> </p>
+    <p>Por ejemplo, si creamos un componente de función <code>ListItem</code>, deberías mantener la key en los elementos
+      <code>&lt;ListItem /&gt;</code> del array en lugar de usarlo en el elemento <code>&lt;li&gt;</code> del propio
+      <code>ListItem</code>.
+    </p>
+    <h4 id="ejemplo-de-uso-incorrecto"><a name="sample-incorrect"></a> Ejemplo de uso incorrecto:<a class="headerlink"
+        href="#ejemplo-de-uso-incorrecto" title="Permanent link">&#9875;</a></h4>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">ListItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="c1">// Aquí no debería ir la key</span>
+    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">value</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">/li</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">listNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span><span class="o">=&gt;</span>
+    <span class="c1">// Aquí debería ir la key</span>
+    <span class="o">&lt;</span><span class="nx">ListItem</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span> <span class="o">/&gt;</span>
+  <span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">listNumbers</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">ul</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</pre>
+    </div>
+    <p align="center">
+      <img src="assets/extraer-componente-keys.png" />
+    </p>
+    </p>
+    <p>Como podemos observar nos muestra la advertencia que hemos recibido en ejemplos anteriores, la razón es porque
+      justamente el contexto que los envuelve ahora ya no es un elemento <code>&lt;li&gt;</code> sino que ahora es un
+      componente funcional que se llama <strong><code>ListItem</code></strong>. En el siguiente ejemplo se muestra el
+      uso correcto.</p>
+    <h4 id="ejemplo-correcto-de-key"><a name="sample-correct"></a> Ejemplo de uso correcto<a class="headerlink"
+        href="#ejemplo-correcto-de-key" title="Permanent link">&#9875;</a></h4>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">ListItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="c1">// Aquí no hay necesidad de usar key</span>
+    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">value</span><span class="p">}</span><span class="o">&lt;</span>/<span class="nx">li</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+  <span class="kr">const</span> <span class="nx">listNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">number</span><span class="p">)</span><span class="o">=&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ListItem</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">number</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span> <span class="o">/&gt;</span>
+  <span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">listNumbers</span><span class="p">}</span>
+    <span class="o">&lt;</span>/<span class="nx">ul</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/extraer-componente-keys-fix.png" />
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="ejemplo-consumiendo-api"><a name="ejemplo-keys-api"></a> Ejemplo consumiendo API<a class="headerlink"
+        href="#ejemplo-consumiendo-api" title="Permanent link">&#9875;</a></h3>
+    <p>La finalidad de este ejemplo es usar <code>keys</code> dentro de una tabla concretamente en cada fila; quire
+      decir en elementos <code>&lt;tr&gt;</code>, la cual llenaremos consumiendo la API de <a
+        href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a>. </p>
+    <p>Primero creamos un nuevo proyecto, puedes seguir los mismos pasos que en la sección de <a
+        href="#mostrar-listas-react">Renderizar una vista</a>.</p>
+    <p>Abierto el proyecto creamos un nuevo componente llamado <code>Users.jsx</code></p>
+    <p align="center">
+      <img src="assets/components-folder.png" />
+    </p>
+
+    <p>Luego lo importamos en <code>App.jsx</code>: </p>
+    <div class="highlight">
+      <pre><span class="c1">// App.jsx</span>
+<span class="kr">import</span> <span class="nx">Users</span> <span class="nx">from</span> <span class="s1">&#39;./components/Users&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Users</span> <span class="o">/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</pre>
+    </div>
+
+    <p>Ahora podemos crear una función en el componente <strong>Users</strong> que obtenga los datos de usuarios desde
+      la API: </p>
+    <div class="highlight">
+      <pre><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://jsonplaceholder.typicode.com/users&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">))</span>
+</pre>
+    </div>
+
+    <p>Si vemos en consola veremos que se activa 2 veces el código de la <strong>Promise</strong> cumplida:</p>
+    <p align="center">
+      <img src="assets/fetch-api-print.png" />
+    </p>
+
+    <p>Esto se debe a que React está usando el modo estricto que precisamente silencia los registros de segunda llamada.
+      Sin embargo, puede causar un comportamiento no deseado en ciertos casos. </p>
+    <p>El registro <code>then</code> dentro de la devolución de llamada en la promesa funciona porque es un
+      comportamiento asíncrono fuera de los métodos de <strong>ciclo de vida de React</strong>. React no silencia esos
+      registros en modo estricto. Pero <code>console.log()</code> es una tarea síncrona que ocurre dentro la función
+      ejecutora o sea dentro de la <code>Promise</code> pero esta a su vez ocurre durante la ejecución del
+      <strong>cuerpo de la función</strong> del componente.
+    </p>
+    <p>Para quitarlo simplemente quitamos las etiquetas de <code>&lt;React.StrictMode&gt;</code> en el archivo
+      <code>index.jsx</code>. (No recomendaría esta solución), pero aunque en desarrollo veamos que se ejecuta dos
+      veces, la verdad es que en producción solo se ejecuta 1 vez. Esto se debe también a que
+      <strong>React.StricMode</strong> cuando estamos en desarrollo una de las cosas que hace es que se llame a la
+      función de renderizado dos veces. La idea de esto es ayudar a los desarrolladores a identificar efectos
+      secundarios.
+    </p>
+    <p>Continuando ya que tenemos los datos de los usuarios, ahora podemos definir un estado para contener estos datos y
+      finalmente mostrarlo dentro del cuerpo de la tabla: </p>
+    <div class="highlight">
+      <pre><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Users</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// hook</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">users</span><span class="p">,</span> <span class="nx">setUsers</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+  <span class="c1">// función que obtiene los datos de usuarios de la API</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#39;https://jsonplaceholder.typicode.com/users&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">setUsers</span><span class="p">(</span><span class="nx">json</span><span class="p">))</span> <span class="c1">// seteamos el estado</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">table</span> <span class="nx">border</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">thead</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">th</span><span class="o">&gt;</span><span class="nx">Name</span><span class="o">&lt;</span>/<span class="nx">th</span>&gt;
+          <span class="o">&lt;</span><span class="nx">th</span><span class="o">&gt;</span><span class="nx">Username</span><span class="o">&lt;</span>/<span class="nx">th</span>&gt;
+        <span class="o">&lt;</span>/<span class="nx">tr</span>&gt;
+      <span class="o">&lt;</span>/<span class="nx">thead</span>&gt;
+      <span class="o">&lt;</span><span class="nx">tbody</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span>
+            <span class="o">&lt;</span><span class="nx">tr</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span>/<span class="nx">td</span>&gt;
+              <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span><span class="o">&lt;</span>/<span class="nx">td</span>&gt;
+            <span class="o">&lt;</span>/<span class="nx">tr</span>&gt;
+          <span class="p">)}</span>
+      <span class="o">&lt;</span>/<span class="nx">tbody</span>&gt;
+    <span class="o">&lt;</span>/<span class="nx">table</span>&gt;
+  <span class="p">)</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Users</span>
+</pre>
+    </div>
+
+    <p>Resultado: </p>
+    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/keys-lists-react?embed=true"></iframe>
+
+    <p align="center">
+      <img src="assets/table-users-api.png" />
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+  </article>
+</body>
+
+</html>

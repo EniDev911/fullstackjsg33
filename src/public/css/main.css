@@ -23,31 +23,8 @@ body {
 	color: #fff;
 }
 
-.animate:hover {
-	animation-name: movecard;
-}
 
-.animate {
-	animation-duration: .9s;
-	animation-timing-function: ease;
-	animation-delay: 0s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-fill-mode: none;
-	animation-play-state: running;
-}
 
-@keyframes movecard {
-	0% {
-
-		transform: scale(1);
-	}
-
-	100% {
-		transform: scale(1.1);
-	}
-
-}
 
 .navbar {
 	background:

@@ -97,16 +97,20 @@ const fillTemplate = (obj) => {
       <div class="carousel-item${active}">
         <div class="options bg-${obj.background} bg-gradient rounded-top py-2 text-center">
           <h2 class="h5 text-${obj.color}">${obj.title}</h2>
-          <a href="${obj.url_demo}" target="_blank" class="btn btn-outline-${obj.color} me-1">Ver demo <i class="fa-solid fa-eye"></i></a>
-          <a href="${obj.url_code}" target="_blank" class="btn btn-outline-${obj.color} me-2">Ver código <i class="fa-solid fa-file-code"></i></a>`;
+          <div class="d-flex justify-content-center my-2">
+          <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-eye"></i></a>
+          <a title="Ver código" href="${obj.url_code}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-file-code"></i></a>`;
   if (typeof obj.url_zip != "undefined") {
-    template += `<a href="${obj.url_zip}" target="_blank" class="btn btn-outline-${obj.color} select-bg" download>Descargar <i class="fa-solid fa-download"></i></a>`;
+    template += `<a title="Descargar" href="${obj.url_zip}" target="_blank" class="btn btn-outline-${obj.color} select-bg" download><i class="fa-solid fa-download"></i></a>`;
   }
   template += `
+          </div>
         </div>
         <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100">
       </div>`;
 };
+
+
 const addProject = () => {
   projects.forEach((project) => {
     if (project.module === 1) {

@@ -8,8 +8,10 @@
     content="Curriculum Vitae, Curriculum, cv, FullStack JavaScript CV, Chilean Programmer Marco Antonio Contreras Herrera, JS Fullstack in Chile">
   <title>Curriculum - Marco Antonio Contreras</title>
   <title>Curriculum Vitae</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
-    @import url('https://fonts.googdleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+    /* @import url('https://fonts.googdleapis.com/css2?family=Raleway:wght@300;400;700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
     * {
       padding: 0;
@@ -18,8 +20,8 @@
     }
 
     body {
-      background: linear-gradient(to left, lightblue, lightyellow);
-      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(to left, #ccc, #898989);
+      font-family: 'Poppins', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -43,10 +45,33 @@
       color: inherit;
     }
 
+
     .container .left_side {
       position: relative;
       background: #003148;
       padding: 40px;
+    }
+
+    .flags {
+      width: 95px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+    }
+
+    .flag__item {
+      width: 70px;
+      border: 2px solid #fff;
+      margin-right: 12px;
+    }
+
+    .flag__img {
+      display: block;
+      cursor: pointer;
     }
 
     .profile_text {
@@ -77,8 +102,8 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border-bottom: 3px solid #53b5e2;
       overflow: hidden;
+      background: linear-gradient(to bottom, #000, #444);
     }
 
     .profile_text .profile_img img {
@@ -98,6 +123,9 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 20px;
+      border-bottom: 1px solid #53b5e2;
+      ;
+      display: inline-block;
     }
 
     .contact_info ul {
@@ -193,7 +221,7 @@
     }
 
     .about .box .year-company {
-      min-height: 150px;
+      min-width: 150px;
     }
 
     .about .box .year-company h5 {
@@ -237,26 +265,80 @@
       border-radius: 4px 0 0 4px;
     }
 
-    @media(hover: hover) {
-      .profile_img:hover {
-        border: none;
+    /* /Interest */
+    .interest ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .interest ul li {
+      list-style: none;
+      color: #333;
+      font-weight: 500;
+      margin: 10px 0;
+    }
+
+    .interest ul li .fa-solid {
+      color: #03a9f4;
+      font-size: 18px;
+      width: 25px;
+      text-align: center;
+    }
+
+    /* Media queries */
+    @media (max-width: 1000px) {
+      .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .interest ul {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    @media(max-width: 600px) {
+      .about .box {
+        flex-direction: column;
+      }
+
+      .about .box .year-company {
+        margin-bottom: 10px;
+      }
+
+      .interest ul {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .skills .box {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    @media(hover: hover) {}
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="left_side">
+      <div class="flags" id="flags">
+        <div class="flag__item" data-lang="es">
+          <img src="assets/es.svg" alt="flag spanish" class="flag__img">
+        </div>
+        <div class="flag__item" data-lang="en">
+          <img src="assets/um.svg" alt="flag english" class="flag__img">
+        </div>
+      </div>
       <div class="profile_text">
         <div class="profile_img">
           <img src="perfil2.png" alt="">
         </div>
-        <h2>Marco Contreras<br><span>Web Developer</span></h2>
+        <h2>Marco Contreras<br><span data-section="profile" data-value="rol">&#6590; Web Developer</span></h2>
       </div>
       <div class="contact_info">
         <!-- CONTACT SECTION -->
-        <h3 class="title">Contacto</h3>
+        <h3 class="title" data-section="profile" data-value="contact">contact info</h3>
         <ul>
           <li>
             <span class="icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
@@ -273,33 +355,39 @@
           </li>
           <li>
             <span class="icon"><a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
-                title="Go LinkedIn"><i class="fa-brands fa-linkedin"></i></a></span>
+                rel="noreferrer" title="Go LinkedIn"><i class="fa-brands fa-linkedin"></i></a></span>
             <span class="text">Linkedin</span>
           </li>
+          <li>
+            <span class="icon"><a href="https://github.com/enidev911" target="_blank" title="Go Github"><i
+                  class="fa-brands fa-square-github"></i></a></span>
+            <span class="text">Github</span>
+          </li>
+
         </ul>
       </div>
       <div class="contact_info education">
         <!-- EDUCATION SECTION -->
-        <h3 class="title">Contacto</h3>
+        <h3 class="title" data-section="education" data-value="title">Education</h3>
         <ul>
           <li>
-            <h5>2019 - 2020</h5>
-            <h4>Programming compute</h4>
+            <h5 data-section="education" data-value="date"></h5>
+            <h4 data-section="education" data-value="first-career-title">Computer Programming</h4>
             <h4>AIEP IP</h4>
           </li>
           <li>
-            <h5>2019 - 2020</h5>
-            <h4>Programming compute</h4>
+            <h5 data-section="education" data-value="date">2019 - 2020</h5>
+            <h4 data-section="education" data-value="second-career-title">Programming compute</h4>
             <h4>AIEP IP</h4>
           </li>
         </ul>
       </div>
       <div class="contact_info langs">
         <!-- LANGUAGES SECTION -->
-        <h3 class="title">Contacto</h3>
+        <h3 class="title" data-section="profile" data-value="language">Idiomas</h3>
         <ul>
           <li>
-            <span class="text">English</span>
+            <span class="text" data-section="profile" data-value="english">English</span>
             <span class="percent">
               <div style="width: 60%;"></div>
             </span>
@@ -317,11 +405,13 @@
     <div class="right_side">
       <div class="about">
         <h2 class="title-about">Profile</h2>
-        <p>Chilean programmer, computer programmer graduated from the AIEP institute.<br><br>Currently a fullstack
+        <p data-section="about" data-value="description">Chilean programmer, computer programmer graduated from the AIEP
+          institute.<br><br>Currently a fullstack
           developer freelance.</p>
       </div>
+      <!-- Experience -->
       <div class="about">
-        <h2 class="title-about">Experience</h2>
+        <h2 class="title-about" data-section="experience" , data-value="section-title">Experience</h2>
         <div class="box">
           <div class="year-company">
             <h5>2021 - Present</h5>
@@ -341,7 +431,8 @@
           </div>
           <div class="text">
             <h4>Jr Fullstack Java</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+            <p data-section="experience" data-value="second-job-description">Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
@@ -386,6 +477,7 @@
           </div>
         </div>
       </div>
+      <!-- Interest -->
       <div class="about interest">
         <h2 class="title-about">Interest</h2>
         <ul>
@@ -397,7 +489,10 @@
             <i class="fa-solid fa-glasses"></i>
             Reading
           </li>
-          <li>Animes</li>
+          <li>
+            <i class="fa-solid fa-atom"></i>
+            Cience
+          </li>
           <li>
             <i class="fa-solid fa-headphones-simple"></i>
             Music
@@ -407,6 +502,39 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <script>
+    flagsElement = document.getElementById("flags");
+    flagsElement.addEventListener("click", (e) => {
+      changeLang(e.target.parentElement.dataset.lang);
+    })
+    const textsToChange = document.querySelectorAll("[data-section]");
+
+    const changeLang = async language => {
+      const requestJSON = await fetch(`./langs/${language}.json`),
+        data = await requestJSON.json();
+      textsToChange.forEach(textToChange => {
+        const section = textToChange.dataset.section,
+          value = textToChange.dataset.value;
+        textToChange.innerHTML = data[section][value];
+      })
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.keyCode == 13) {
+        toggleFullScreen();
+      }
+    }, false);
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="xYEIlija8MopI7equjIN" name="Page-1">
+        <mxGraphModel dx="977" dy="633" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="" style="whiteSpace=wrap;html=1;fillColor=default;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry width="210" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="whiteSpace=wrap;html=1;fontFamily=Verdana;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+                    <mxGeometry x="210" width="620" height="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="PROJECTS" style="whiteSpace=wrap;html=1;fillColor=#808080;gradientColor=none;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="90" width="210" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="TUTORIALS" style="whiteSpace=wrap;html=1;fillColor=#808080;gradientColor=none;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="140" width="210" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="GUIDES 📋" style="whiteSpace=wrap;html=1;fillColor=#808080;gradientColor=none;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="190" width="210" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="BLOG 🌐" style="whiteSpace=wrap;html=1;fillColor=#808080;gradientColor=none;strokeColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="230" width="210" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="LOGO" style="whiteSpace=wrap;html=1;fillColor=#808080;gradientColor=none;strokeColor=none;align=left;" vertex="1" parent="1">
+                    <mxGeometry width="830" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
