@@ -176,4 +176,15 @@ export const projects = [
     module: 4,
     active: true
   },
+  {
+    // Desafío 3 galería de fotos react
+    title: "Desafío 3: Base de datos colaboradores",
+    image: "src/public/images/png/react-render-basecolaboradores.png",
+    url_code:
+      "https://github.com/EniDev911/render-filter-data-react",
+    url_demo: "https://enidev911.github.io/render-filter-data-react/",
+    color: "light",
+    background: "info",
+    module: 4
+  },
 ];
