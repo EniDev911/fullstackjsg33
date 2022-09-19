@@ -53,27 +53,27 @@
     <hr />
     <h2 id="configuracion-inicial"><a name="global-settings"></a> Configuración inicial<a class="headerlink"
         href="#configuracion-inicial" title="Permanent link">&#9875;</a></h2>
-    <p>Debería tener que hacer estas configuraciones solo una vez en cualquier computadora; se pegarán
-      entre actualizaciones. También se pueden cambiar en cualquier momento por medio de los comandos.</p>
     <p>Una herramienta inherente de Git llamada <strong>git config</strong> permite establecer y obtener variables de
       configuración que controlan aspectos del funcionamiento y la apariencia de Git. Estas variables se pueden
       almacenar en tres lugares diferentes: </p>
     <ol>
       <li>
-        <p><code>[path]/etc/gitconfig</code> (archivo): Contiene los valores aplicados a cada usuario en el sistema y
+        <p><strong><code>[path]/etc/gitconfig</code></strong> (⚙️): Contiene los valores aplicados a cada usuario
+          en el sistema y
           todos sus repositorios (si pasa la opción <code>--system</code> a <strong><code>git config</code></strong>,
           lee y escribe desde este archivo de configuración específicamente. Debido a que se trata de un archivo de
           configuración del sistema, se necesitaría información administrativa o privilegios de superusuario para
           relizar cambios.</p>
       </li>
       <li>
-        <p><code>~/.gitconfig</code> o <code>~/.config/git/config</code> (archivo): Contiene valores específicos
+        <p><strong><code>~/.gitconfig</code></strong> o <strong><code>~/.config/git/config</code></strong> (⚙️):
+          Contiene valores específicos
           personalmente para el usuario. Puedes hacer que Git lea y escriba en este archivo específicamente al pasar la
           opción <code>--global</code>, y esto afecta todos los repositorios con los que trabaja en el sistema del
           usuario.</p>
       </li>
       <li>
-        <p><strong>config en el directorio Git</strong> (es decir, <code>.git/config</code> de cualquier repositorio):
+        <p><strong><code>.git/config</code></strong> (⚙️):
           Específico para ese único repositorio. Puede obligar a Git a leer y escribir en este archivo con
           la opción <code>--local</code>, pero de hecho es la predeterminada. Como era de esperar, necesita estar
           ubicado
@@ -246,11 +246,11 @@ color.status
       <strong>color.status.untracked</strong> (cuando un archivo no es seguido por git):
     </p>
     <div class="highlight">
-      <pre>git config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span>
-git config --global color.status.untracked <span class="s2">&quot;black yellow dim&quot;</span>
-</pre>
+      <pre><span class="nt">git</span> config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global color.status.changed "white red bold"`)}'></i></pre>
     </div>
-
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;black yellow dim&quot;</span></pre>
+    </div>
     <p align="center">
       <img src="assets/color.status.png" alt="status color">
     </p>
@@ -287,6 +287,17 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
     <hr />
     <h3 id="configurar-alias-en-git"><a name="git-alias"></a> ALIAS<a class="headerlink" href="#configurar-alias-en-git"
         title="Permanent link">&#9875;</a></h3>
+    <p>La herramienta <strong>config</strong> nos permite establecer <strong>alias</strong> que nos sirven
+      principalmente
+      para ahorrarnos un poco la escritura de comandos más largos. Aquí te dejo algunos ejemplos:</p>
+    <p><strong><code>branch</code></strong></p>
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global alias.br branch <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.br branch')}"></i></pre>
+    </div>
+    <p><strong><code>checkout</code></strong></p>
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global alias.co checkout <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.co checkout')}"></i></pre>
+    </div>
     <p><strong><code>commit</code></strong></p>
     <div class="highlight">
       <pre><span class="nt">git</span> config --global alias.ci commit <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.ci commit')}"></i>
@@ -300,6 +311,16 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
     <div class="highlight">
       <pre><span class="nt">git</span> config --global alias.rt remote <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.rt remote')}"></i></pre>
     </div>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.alias.gif" alt="">
+      </p>
+    </details>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
     <h3 id="rama-por-defecto"><a name="default-branch"></a> Rama por defecto<a class="headerlink"
         href="#rama-por-defecto" title="Permanent link">&#9875;</a></h3>
     <p>Por defecto, Git creará una rama llamada <strong>master</strong> cuando crees un nuevo repositorio con
@@ -329,7 +350,9 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
         <img src="assets/git.init.gif" alt="init repository">
       </p>
     </details>
-
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
     <hr />
     <h3 id="contenido-de-la-carpeta-git"><a name="content-git"></a> Contenido de la carpeta .git<a class="headerlink"
         href="#contenido-de-la-carpeta-git" title="Permanent link">&#9875;</a></h3>
@@ -378,11 +401,12 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
     <h3 id="visualizacion-de-los-cambios-en-los-archivos"><a name="show-status"></a> Visualización de los cambios en los
       archivos<a class="headerlink" href="#visualizacion-de-los-cambios-en-los-archivos"
         title="Permanent link">&#9875;</a></h3>
+    <p><strong>STATUS</strong></p>
     <p>El comando <strong>status</strong> muestra las rutas que tienen diferencias entre el archivo de índice y la
       confirmación HEAD actual, las rutas que tienen diferencias entre el árbol de trabajo y el archivo de índice, y las
       rutas en el árbol de trabajo que no son rastreadas por Git (y no son ignoradas con archivos .gitinore). </p>
     <div class="highlight">
-      <pre>git status
+      <pre><span class="nt">git</span> status <i class="fa-solid fa-clone" onclick="{copy_clipboard('git status')}"></i>
 </pre>
     </div>
 
@@ -498,19 +522,29 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
 
     <h2 id="renombrar-archivos"><a name="rename-files"></a> Renombrar archivos<a class="headerlink"
         href="#renombrar-archivos" title="Permanent link">&#9875;</a></h2>
+    <p>Cuando renombramos un archivo en nuestra copia de trabajo directamente, Git considera esta operación como dos
+      operaciones, la primera es borrar los archivos con el nombre antiguo y el nuevo, y la segunda es añadir el archivo
+      recién nombrado al <strong>'stage area'</strong> o área de preparación.</p>
     <p><strong>Cambiar nombre a un archivo primera forma</strong><br />
     <div class="highlight">
-      <pre>mv archivo1.txt archivo.txt
-git status
-git add archivo1.txt archivo.txt
-git commit -m <span class="s1">&#39;renombrando archivo&#39;</span>
+      <pre><span class="nt">mv</span> archivo1.txt archivo.txt
+<span class="nt">git</span> status
+<span class="nt">git</span> add archivo1.txt archivo.txt
+<span class="nt">git</span> commit -m <span class="s2">&#39;renombrando archivo&#39;</span>
 </pre>
     </div>
-    </p>
-    <p><strong>Cambiar nombre a un archivo segunda forma</strong><br />
+    <blockquote>
+      <p>El inconveniente de la operación anterior es que rompe el historial de revisiones del archivo, y no podría
+        obtener el historial de revisiones de este archivo recién nombrado antes de este momento de renombramiento. No
+        es
+        deseable en el control de versiones.</p>
+      </p>
+    </blockquote>
+    <p><strong>Cambiar nombre a un archivo segunda forma</strong> (recomendado)<br />
+    <p>Git tiene un comando para renombrar archivos y resolver el problema anterior de enlazamiento roto.</p>
     <div class="highlight">
-      <pre>git mv archivo1.txt archivo.txt
-git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
+      <pre><span class="nt">git</span> mv archivo1.txt archivo.txt
+<span class="nt">git</span> commit -m <span class="s2">&#39;archivo renombrado&#39;</span>
 </pre>
     </div>
     <p>Ver los cambios realizados antes de añadir al stage area:<br />
@@ -524,6 +558,9 @@ git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
       <pre>git diff --staged
 </pre>
     </div>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
     <h3 id="configurar-repositorio-remoto"><a name="add-remote"></a> Configurar repositorio remoto<a class="headerlink"
@@ -545,8 +582,11 @@ git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
 
     <details>
       <summary>Clic ver demo</summary>
-      <p align="center">
-        <img src="assets/git.remote.add.gif" alt="remote add">
+      <p align="left">
+        En el ejemplo uso la herramienta de <a href="https://cli.github.com/" target="_blank" rel="noopener">gh cli</a>,
+        para crear un nuevo repositorio en github.
+        <br>
+        <img src="assets/git.remote.add.gif" alt="remote add" style="margin-top: 10px; margin-bottom: 10px">
       </p>
     </details>
 
@@ -559,11 +599,11 @@ git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
     <p>Si por error inicilizamos un repositorio local en un directorio que no era simplemente eliminamos la carpeta
       oculta <strong>.git</strong>, por medio del siguiente comando: </p>
     <div class="highlight">
-      <pre>rm -rf .git
+      <pre><span class="nt">rm</span> -rf .git
 </pre>
     </div>
 
-    <p>Este comando <strong><code>rm</code></strong> se utiliza para remover directorios con todo su contenido dentro,
+    <p>Este comando <strong>rm</strong> se utiliza para remover directorios con todo su contenido dentro,
       siempre y cuando se utilice el flag <code>-r</code> y podemos indicar que se lleve a cabo a la fuerza por medio
       del flag <code>-f</code> de esta manera no nos solicitará confirmaciones.</p>
     <details>
@@ -694,10 +734,10 @@ git merge nueva
     <p><strong>Borrar ramas</strong></p>
     <div class="highlight">
       <pre><span class="c1"># para borrar la branch local</span>
-git branch -d localBranchName
+<span class="nt">git</span> branch -d localBranchName
 
 <span class="c1"># para borrar la branch remota</span>
-git push origin --delete remoteBranchName
+<span class="nt">git</span> push origin --delete remoteBranchName
 </pre>
     </div>
   </article>
