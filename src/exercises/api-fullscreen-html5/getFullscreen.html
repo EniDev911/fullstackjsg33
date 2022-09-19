@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>get fullscreen</title>
+</head>
+
+<body>
+  <img onclick="toggleFullscreen(this)" src="https://educacion30.b-cdn.net/wp-content/uploads/2019/06/homer.gif" alt="">
+
+  <img onclick="toggleFullscreen(this)" src="https://robohash.org/robot" alt="">
+  <script>
+    function getFullscreenElement() {
+      return document.fullscreenElement
+        || document.webkitFullscreenElement // chrome safari
+        || document.mozFullscreenElement // firefox
+        || document.msFullscreenElement
+    }
+
+    function toggleFullscreen(ele) {
+      if (getFullscreenElement()) {
+        document.exitFullscreen();
+      } else {
+        // document.documentElement.requestFullscreen().catch(console.log);
+        ele.requestFullscreen().catch(console.log);
+      }
+    }
+    // document.addEventListener('dblclick', function () {
+    //   toggleFullscreen();
+    // })
+
+    document.addEventListener('fullscreenchange', function () {
+      console.log("full screen change")
+    })
+  </script>
+</body>
+
+</html>

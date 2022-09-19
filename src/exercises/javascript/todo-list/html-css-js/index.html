@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas</title>
+</head>
+
+<body>
+  <div class="list rounded">
+    <div class="date">
+      <div class="date-right">
+        <div class="date-day" id="d-day"></div>
+        <div>
+          <div class="date-month" id="d-month"></div>
+          <div class="date-year" id="d-year"></div>
+        </div>
+      </div>
+      <div class="date-text" id="d-text"></div>
+    </div>
+    <form id="form">
+      <input type="text" name="taskText" autocomplete="off" placeholder="Nueva Tarea" class="rounded" />
+      <button type="submit" class="btn-add">+</button>
+      <button type="button" class="btn-order rounded" onclick="renderSortedTasks()">Ordenar</button>
+    </form>
+    <div id="list-tasks">
+      <!-- Aquí se van a mostrar las tareas -->
+    </div>
+  </div>
+  <script>
+    // selectores
+    const dateDay = document.getElementById('d-day'),
+      dateMonth = document.getElementById('d-month'),
+      dateYear = document.getElementById('d-year'),
+      dateText = document.getElementById('d-text'),
+      form = document.getElementById('form'),
+      listContainer = document.getElementById('list-tasks');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      addNewTask(e);
+
+    })
+    // Formatear fecha
+    const setDate = () => {
+      const date = new Date();
+      dateDay.textContent = date.toLocaleString('es', { day: 'numeric' });
+      dateMonth.textContent = date.toLocaleString('es', { month: 'short' });
+      dateYear.textContent = date.toLocaleString('es', { year: 'numeric' });
+      dateText.textContent = date.toLocaleString('es', { weekday: 'long' });
+    }
+
+    // agregar nueva tarea
+    const addNewTask = (e) => {
+      // e.preventDefault();
+      const { value } = event.target.taskText;
+      // Si no hay valor en el input no realizará ninguna acción
+      if (!value) return alert("corta tu webeo");
+      // Si existe un valor creamos los elementos para añadirlo al dom
+      const task = document.createElement('div');
+      task.classList.add('task', 'rounded');
+      task.addEventListener('click', changeTaskState);
+      task.textContent = value;
+      // Con prepend obtenemos que se coloque al principio de la lista
+      listContainer.prepend(task);
+      event.target.reset();
+    }
+
+
+    const renderSortedTasks = () => {
+      console.log("rendering")
+    }
+    // cambiar el estado de una tarea
+
+    const changeTaskState = (event) => {
+      event.target.classList.toggle('done');
+    }
+
+    setDate();
+  </script>
+</body>
+
+</html>

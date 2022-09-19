@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/css/main.css">
+  <title>Javascript ejercicios</title>
+</head>
+
+<body>
+  <!-- Module-1 -->
+  <div id="module" class="container">
+    <section class="row my-4 d-block">
+      <div class="col-12 col-sm-10 col-md-4 col-lg-6 mx-auto my-5">
+        <!-- controls -->
+        <div class="card border border-primary border-1">
+          <button class="carousel-control-prev" type="button" data-bs-target="#rootCarousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <p class="bg-dark text-light text-center m-0 py-2 rounded fs-5">Ejercicios JS</p>
+          <button class="carousel-control-next" type="button" data-bs-target="#rootCarousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-12 col-sm-10 col-md-4 col-lg-6 mx-auto my-auto">
+        <div class="card border-0">
+          <!-- Carrousel -->
+          <div id="rootCarousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" id="inner-carousel-1">
+              <!-- Projects -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- <script src="../../public/js/lib/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="../../public/js/functions.js" type="module"></script> -->
+  <script src="../../public/js/lib/fontawesome.bundle.js"></script>
+  <script>
+    const module = document.getElementById("module");
+    const innerCarousel_1 = document.getElementById("inner-carousel-1");
+    // PROJECTS
+    const projects = [
+      {
+        title: "Todo-list",
+        image: "/src/public/images/png/todo-list-js.png",
+        url_code:
+          "https://github.com/EniDev911/fullstackjsg33/tree/main/src/chanllenges/module-1/2-html/cv2",
+        url_demo: "/src/chanllenges/module-1/2-html/cv2/index.html",
+        url_zip: "src/public/compressed/cv2.zip",
+        color: "light",
+        background: "secondary",
+        technology: [
+          {
+            icon: "fa-brands fa-html5",
+            color: "primary"
+          },
+          {
+            icon: "fa-brands fa-css3-alt",
+            color: "info"
+          }, {
+            icon: "fa-brands fa-square-js",
+            color: "warning"
+          }],
+        module: 1,
+        active: true,
+      }]
+
+    const fillTemplate = (obj) => {
+      template = "";
+      let active = "";
+      if (obj.active) {
+        active = " active";
+      }
+      template += `
+      <div class="carousel-item${active}">
+        <div class="options bg-${obj.background} bg-gradient rounded-top py-2 text-center">
+          <h2 class="h5 text-${obj.color}">${obj.title}</h2>
+          <div class="d-flex justify-content-center my-2">
+          <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-eye"></i></a>
+          <a title="Ver código" href="${obj.url_code}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-file-code"></i></a>`;
+      if (typeof obj.url_zip != "undefined") {
+        template += `<a title="Descargar" href="${obj.url_zip}" target="_blank" class="btn btn-outline-${obj.color} select-bg" download><i class="fa-solid fa-download"></i></a>`;
+      }
+      template += `
+          </div>
+        </div>
+        <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100">
+        <ul class="text-light bg-light list-inline d-flex justify-content-evenly m-0 rounded-bottom">`;
+      obj.technology.forEach(ele => {
+        template += `
+          <li class="p-1"><i class="display-3 ${ele.icon} text-${ele.color}"></i></li>`
+      })
+      template += `</ul></div>`
+    }
+
+    projects.forEach(project => {
+      fillTemplate(project);
+      innerCarousel_1.innerHTML += template
+    })
+  </script>
+</body>
+
+</html>

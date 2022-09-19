@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Formulario</title>
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100">
+  <form class="border border-1 border-info rounded p-3">
+    <div class="form-floating mb-3">
+      <input type="text" id="correo" class="form-control" placeholder="Correo electrónico"
+        value="enidev911@gmail.com" />
+      <label for="correo">Correo electrónico</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="clave" placeholder="Contraseña" />
+      <label for="clave">Contraseña</label>
+    </div>
+    <div class="form-floating mb-3">
+      <select id="select" class="form-select">
+        <option selected>Seleccione</option>
+        <option value="1">Supervisor</option>
+        <option value="2">Administrador</option>
+        <option value="3">Usuario</option>
+      </select>
+      <label for="select">Tipo de operador</label>
+    </div>
+    <button class="btn btn-info w-100 text-light">Ingresar</button>
+  </form>
+</body>
+
+</html>

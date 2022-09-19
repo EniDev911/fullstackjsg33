@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+
+  <title>GIT guía rápida</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1 align="center">
+      <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" height="50"
+        align="left">
+      <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" height="55"
+        align="right"><br><br>
+      GUÍA RÁPIDA
+    </h1>
+
+    <p><br></p>
+    <p><a name="top"></a></p>
+    <h2 id="contenido">CONTENIDO</h2>
+    <h3 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&#9875;</a>
+    </h3>
+    <ul>
+      <li><a href="#global-settings">Inicial</a></li>
+      <li><a href="#global-user-settings">Identidad</a></li>
+      <li><a href="#setting-editor">Editor</a></li>
+      <li><a href="#global-settings-color">Colores</a></li>
+      <li><a href="#git-alias">Alias</a></li>
+      <li><a href="#default-branch">Rama por defecto</a></li>
+    </ul>
+    <h3 id="operaciones">Operaciones<a class="headerlink" href="#operaciones" title="Permanent link">&#9875;</a></h3>
+    <ul>
+      <li><a href="#init-git">inicializar un proyecto</a></li>
+      <li><a href="#content-git">contenido de la carpet <strong>.git</strong></a></li>
+      <li><a href="#show-status">visualización de los cambios en GIT</a></li>
+      <li><a href="#add-stage-area">agregar archivos al <strong>stage area</strong> (preparación)</a></li>
+      <li><a href="#delete-files">eliminar archivo seguido por GIT</a></li>
+      <li><a href="#delete-stage-area">bajar y recuperar archivos del stage area</a></li>
+      <li><a href="#rename-files">renombrar archivo seguido por GIT</a></li>
+      <li><a href="#gitignore">ignorar archivos</a></li>
+      <li><a href="#add-remote">configurar un repositorio remoto</a></li>
+      <li><a href="#rm-git">eliminar el seguimiento de GIT</a></li>
+      <li><a href="#branch">ramas</a></li>
+    </ul>
+    <hr />
+    <h2 id="configuracion-inicial"><a name="global-settings"></a> Configuración inicial<a class="headerlink"
+        href="#configuracion-inicial" title="Permanent link">&#9875;</a></h2>
+    <p>Debería tener que hacer estas configuraciones solo una vez en cualquier computadora; se pegarán
+      entre actualizaciones. También se pueden cambiar en cualquier momento por medio de los comandos.</p>
+    <p>Una herramienta inherente de Git llamada <strong>git config</strong> permite establecer y obtener variables de
+      configuración que controlan aspectos del funcionamiento y la apariencia de Git. Estas variables se pueden
+      almacenar en tres lugares diferentes: </p>
+    <ol>
+      <li>
+        <p><code>[path]/etc/gitconfig</code> (archivo): Contiene los valores aplicados a cada usuario en el sistema y
+          todos sus repositorios (si pasa la opción <code>--system</code> a <strong><code>git config</code></strong>,
+          lee y escribe desde este archivo de configuración específicamente. Debido a que se trata de un archivo de
+          configuración del sistema, se necesitaría información administrativa o privilegios de superusuario para
+          relizar cambios.</p>
+      </li>
+      <li>
+        <p><code>~/.gitconfig</code> o <code>~/.config/git/config</code> (archivo): Contiene valores específicos
+          personalmente para el usuario. Puedes hacer que Git lea y escriba en este archivo específicamente al pasar la
+          opción <code>--global</code>, y esto afecta todos los repositorios con los que trabaja en el sistema del
+          usuario.</p>
+      </li>
+      <li>
+        <p><strong>config en el directorio Git</strong> (es decir, <code>.git/config</code> de cualquier repositorio):
+          Específico para ese único repositorio. Puede obligar a Git a leer y escribir en este archivo con
+          la opción <code>--local</code>, pero de hecho es la predeterminada. Como era de esperar, necesita estar
+          ubicado
+          en algún lugar de un repositorio de Git para que esta opción funcione correctamente.</p>
+      </li>
+    </ol>
+    <p>Cada nivel anula los valores del nivel anterior, por lo que los valores en <code>.git/config</code> superan a los
+      de
+      <code>[path]/etc/gitconfig</code>.
+    </p>
+    <p>Puede ver todas sus configuraciones y de dónde provienen indicando lo siguiente:</p>
+    <div class="highlight">
+      <pre>git config --list --show-origin
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/git.show.config.png" width="700" alt="git config show">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="configuracion-de-identidad"><a name="global-user-settings"></a> Configuración de identidad<a
+        class="headerlink" href="#configuracion-de-identidad" title="Permanent link">&#9875;</a></h3>
+    <p>Después de instalar Git, los usuarios deben establecer inmediatamente el nombre de usuario y la dirección de
+      correo eléctronico, que se usarán para cada confirmación de Git.</p>
+    <p><strong>Configurar el nombre de usuario git</strong> </p>
+    <div class="highlight">
+      <pre>git config --global user.name <span class="s2">&quot;fullname&quot;</span>
+</pre>
+    </div>
+
+    <p><strong>Configurar el email de usuario para git</strong><br />
+    <div class="highlight">
+      <pre>git config --global user.email username@mail.com
+</pre>
+    </div>
+    </p>
+    <h3 id="configurar-editor"><a name="setting-editor"></a> Configurar editor<a class="headerlink"
+        href="#configurar-editor" title="Permanent link">&#9875;</a></h3>
+    <p><strong>Configurar VS code como el editor por defecto para git</strong></p>
+    <div class="highlight">
+      <pre>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
+</pre>
+    </div>
+
+    <blockquote>
+      <p>La opción <code>--wait</code> es para que la terminal se quede esperando hasta que cerremos el editor de texto.
+      </p>
+    </blockquote>
+    <p><strong>Ver el archivo de configuración con el editor por defecto</strong><br />
+    <div class="highlight">
+      <pre>git config --global -e
+</pre>
+    </div>
+    <p align="center">
+      <img src="assets/git.core.editor.png" alt="git core editor">
+    </p>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="la-propiedad-autocrlf-para-git"><a name="setting-autocrlf"></a> La propiedad autocrlf para git<a
+        class="headerlink" href="#la-propiedad-autocrlf-para-git" title="Permanent link">&#9875;</a></h3>
+    <p>Si estás editando archivos en Windows o utilizando algún otro sistema, pero colaborando con más gente que usa
+      Windows. Es muy posible que alguna vez nos topemos con problemas de finales de línea. Esto se debe a que Windows
+      utiliza <strong>retorno de carro</strong> y <strong>salto de línea</strong> para marcar los finales de línea de
+      sus archivos. Mientras qie Mac y Linux utilizan solamente el carácter de <strong>salto de línea</strong>.</p>
+    <p>Git lo maneja convertiendo automáticamente los finales CRLF en LF al hacer confirmaciones de cambios (commit); y,
+      viceversa, al extraer código (checkout) a la carpeta de trabajo. Se puede activar esta funcionalidad con el
+      parámetro <code>core.autocrlf</code>. Si estás en una máquina con Windows, ajustalo a
+      <strong><code>true</code></strong>, para convertir finales LF en CRLF cuando se extrae código (checkout), lo
+      podemos indicar de la siguiente forma:
+    </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="c1"># Para windows</span>
+git --global core.autocrlf <span class="nb">true</span>
+</pre>
+    </div>
+    Si estás en una máquina con Linux o Mac, entonces no nos interesa convertir automáticamente los finales de línea al
+    extraer código, sino que interesa arreglar los posibles CRLF que pudieran aparecer accidentalmente. Le podemos
+    indicar a Git que convierta CRLF en LF al confirmar cambios (commit), pero no en sentido inverso, lo podemos indicar
+    de la siguiente forma: </p>
+    <div class="highlight">
+      <pre><span class="c1"># Para Linux o Mac</span>
+git --global core.autocrlf input
+</pre>
+    </div>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="colores"><a name="global-settings-color"></a> Colores<a class="headerlink" href="#colores"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Git puede marcar con colores los resultados que se muestran en la terminal, ayudándote así a leerlos más
+      fácilmente. Los siguientes parámetros se pueden modificar: </p>
+    <h4 id="colorui"><code>color.ui</code><a class="headerlink" href="#colorui" title="Permanent link">&#9875;</a></h4>
+    <p>Git coloreará automáticamente la mayor parte de los resultados que muestra. Podemos ajustar con precisión cada
+      una de las partes a colorear; <strong>pero si deseas activar de un golpe todos los colores por defecto, sólo
+        debemos cambiar a &ldquo;true&rdquo; el parámetro ui.color&rdquo;.</strong></p>
+    <p>Para desactivar totalmente los colores: </p>
+    <div class="highlight">
+      <pre>git config --global color.ui <span class="nb">false</span>
+</pre>
+    </div>
+
+    <p>El valor predeterminado es <strong><code>auto</code></strong>.</p>
+    <h4 id="color"><code>color.*</code><a class="headerlink" href="#color" title="Permanent link">&#9875;</a></h4>
+    <p>Cuando se requiere ajustar específicamente, comando a comando, donde colorear y cómo colorear, podemos emplear
+      los ajustes particulares de color. Cada uno de ellos se puede fijar en <code>true</code>, <code>false</code> o
+      <code>always</code>:
+    </p>
+    <div class="highlight">
+      <pre>color.branch
+color.diff
+color.interactive
+color.status
+</pre>
+    </div>
+
+    <p>Si no quieres usar el coloreado en el comando <strong>status</strong> por ejemplo, puedes indicar: </p>
+    <div class="highlight">
+      <pre>git config --global color.status <span class="nb">false</span>
+</pre>
+    </div>
+
+    <p>Además, cada uno de los comandos tiene parámetros adicionales para asignar colores a partes específicas, por si
+      quieres pecisar aún más.</p>
+    <p>Podemos ajustar a cualquiera de los siguientes colores: </p>
+    <ul>
+      <li><code>normal</code>, <code>black</code> (negro)</li>
+      <li><code>red</code> (rojo)</li>
+      <li><code>green</code> (verde)</li>
+      <li><code>yellow</code> (amarillo)</li>
+      <li><code>blue</code> (azul)</li>
+      <li><code>magenta</code> (magenta)</li>
+      <li><code>cyan</code> (cian)</li>
+      <li><code>white</code> (blanco)</li>
+    </ul>
+    <p>También se pueden aplicar atributos como:</p>
+    <ul>
+      <li><code>bold</code> (negrita)</li>
+      <li><code>dim</code> (tenue) </li>
+      <li><code>ul</code> (subrayado) </li>
+      <li><code>blink</code> (parpadeante) </li>
+      <li><code>reverse</code> (inverso)</li>
+    </ul>
+    <p>Por ejemplo, para mostrar la meta-información del comando <code>diff</code> con letra color cian y con caracteres
+      en negrita, podemos indicar: </p>
+    <div class="highlight">
+      <pre>git config --global color.diff.meta <span class="s2">&quot;cyan bold&quot;</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/color.diff.png" alt="diff color" width="700">
+    </p>
+
+    <p>Otro ejemplo para cambiar los colores del comando <code>status</code> para la salida de
+      <strong>color.status.changed</strong> (cuando cun archivo a cambiado de estado) y
+      <strong>color.status.untracked</strong> (cuando un archivo no es seguido por git):
+    </p>
+    <div class="highlight">
+      <pre>git config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span>
+git config --global color.status.untracked <span class="s2">&quot;black yellow dim&quot;</span>
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/color.status.png" alt="status color">
+    </p>
+
+    <p>Recordemos que cualquier mensaje de un comando de git se puede controlar mediante el archivo
+      <code>.gitconfig</code>. Podemos abrir el archivo con el comando <code>git config --global -e</code> y podemos
+      indicar colores usando el siguiente formato:
+    </p>
+    <div class="highlight">
+      <pre>[color <span class="nx">&quot;branch&quot;</span>]
+  current = black green dim
+  local = yellow
+  remote = magenta
+[color <span class="nx">&quot;diff&quot;</span>]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  commit = yellow bold
+[color <span class="nx">&quot;status&quot;</span>]
+  added = black green bold dim
+  changed = black red bold dim
+  untracked = black yellow bold
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/color.status.edit.png" alt="status color">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="configurar-alias-en-git"><a name="git-alias"></a> Configurar alias en git<a class="headerlink"
+        href="#configurar-alias-en-git" title="Permanent link">&#9875;</a></h2>
+    <p><strong>alias para configurar en git</strong>
+    <div class="highlight">
+      <pre>git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.a add
+git config --global alias.ps push
+git config --global alias.pl pull
+</pre>
+    </div>
+    </p>
+    <h3 id="rama-por-defecto"><a name="default-branch"></a> Rama por defecto<a class="headerlink"
+        href="#rama-por-defecto" title="Permanent link">&#9875;</a></h3>
+    <p>Por defecto, Git creará una rama llamada <strong>master</strong> cuando crees un nuevo repositorio con
+      <code>git init</code>.
+      Desde la versión 2.28 de Git en adelante, puede establecer un nombre diferente para la rama inicial.
+      Para configurar <strong>main</strong> como el nombre de rama predeterminado, podemos indicar lo siguiente:
+    </p>
+    <div class="highlight">
+      <pre>git config --global init.defaultBranch main
+</pre>
+    </div>
+
+    <hr />
+    <h3 id="incializar-un-proyecto-con-git"><a name="init-git"></a> Incializar un proyecto con git<a class="headerlink"
+        href="#incializar-un-proyecto-con-git" title="Permanent link">&#9875;</a></h3>
+    <p><strong>Inicializar un proyecto en local con git</strong>
+    <div class="highlight">
+      <pre>git init
+</pre>
+    </div>
+    Una vez inicializado el repositorio se crea una carpeta oculta llamada <strong>.git</strong> dentro del proyecto.
+    Resultará obvio, pero <strong>conviene decir que nunca se debe borrar esa carpeta</strong> (al menos que quieras que
+    tu proyecto no sea controlado por git).</p>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.init.gif" alt="init repository">
+      </p>
+    </details>
+
+    <hr />
+    <h3 id="contenido-de-la-carpeta-git"><a name="content-git"></a> Contenido de la carpeta .git<a class="headerlink"
+        href="#contenido-de-la-carpeta-git" title="Permanent link">&#9875;</a></h3>
+    <div class="highlight">
+      <pre>📂 .git
+├── 📂 branches
+├── ⚙️ config <span class="c1"># contiene las opciones de configuración de este repositorio</span>
+├── 📄 description 
+├── 📄 HEAD <span class="c1"># contiene la referencia del commit a partir del cual se trabaja</span>
+├── 📂 hooks <span class="c1"># contiene los script que se ejecutan en determinado momento</span>
+│   ├── 📄 applypatch-msg.sample
+│   ├── 📄 commit-msg.sample
+│   ├── 📄 fsmonitor-watchman.sample
+│   ├── 📄 post-update.sample
+│   ├── 📄 pre-applypatch.sample
+│   ├── 📄 pre-commit.sample
+│   ├── 📄 pre-merge-commit.sample
+│   ├── 📄 pre-push.sample
+│   ├── 📄 pre-rebase.sample
+│   ├── 📄 pre-receive.sample
+│   ├── 📄 prepare-commit-msg.sample
+│   ├── 📄 push-to-checkout.sample
+│   └── 📄 update.sample
+├── 📄 index <span class="c1"># el área &quot;staging&quot; tiene la información de los archivos que se incluirán en el &quot;commit&quot;</span>
+├── 📂 info <span class="c1"># relativamente sin importancia contiene el archivo exclude</span>
+│   └── 📄 exclude <span class="c1"># se puede usa para ignorar archivos en este proyecto (no está versionado como .gitignore)</span>
+├── 📂 logs <span class="c1"># contiene el historial de las distintas ramas (interactivo con el comando log, reflog)</span>
+│   ├── 📄 HEAD
+│   └── 📂 refs
+│       └── 📂 heads
+│           └── 📄 main
+├── 📂 objects <span class="c1"># el depósito interno de objetos, indexados por SHAs</span>
+│   ├── 📄 info
+│   └── 📄 pack
+└── 📂 refs <span class="c1"># La copia maestra de todos los refs que existen en el repositorio, ya sean stashes, tags, etc.</span>
+    ├── 📂 heads
+    │   └── 📄 main
+    └── 📂 tags
+</pre>
+    </div>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="visualizacion-de-los-cambios-en-los-archivos"><a name="show-status"></a> Visualización de los cambios en los
+      archivos<a class="headerlink" href="#visualizacion-de-los-cambios-en-los-archivos"
+        title="Permanent link">&#9875;</a></h3>
+    <p>El comando <strong>status</strong> muestra las rutas que tienen diferencias entre el archivo de índice y la
+      confirmación HEAD actual, las rutas que tienen diferencias entre el árbol de trabajo y el archivo de índice, y las
+      rutas en el árbol de trabajo que no son rastreadas por Git (y no son ignoradas con archivos .gitinore). </p>
+    <div class="highlight">
+      <pre>git status
+</pre>
+    </div>
+
+    <p align="center">
+      <img src="assets/git.status.png" alt="git status">
+    </p>
+
+    <p><strong>SHORT STATUS</strong></p>
+    <p>Si bien la salida de estado de git es bastante completa, también es bastante prolija. Git también tiene un
+      indicador corto de estado para que pueda ver sus cambios de una manera más compacta. Si ejecuta
+      <code>git status -s</code> o <code>git status --short</code> en resumen, obtiene una salida mucho más simplificada
+      del comando.
+    </p>
+    <p align="center">
+      <img onclick="alert('hello')" src="assets/git.short.status.png" alt="git short status" width="700">
+    </p>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="agregar-archivos-a-preparacion"><a name="add-stage-area"></a> Agregar archivos a preparación<a
+        class="headerlink" href="#agregar-archivos-a-preparacion" title="Permanent link">&#9875;</a></h2>
+    <p><strong>Agregar un archivo al stage area</strong>
+    <div class="highlight">
+      <pre>git add archivo.txt
+</pre>
+    </div>
+    </p>
+    <p><strong>Agregar más de un archivo al stage area</strong><br />
+    <div class="highlight">
+      <pre>git add archivo1.txt archivo2.txt
+</pre>
+    </div>
+    </p>
+    <p><strong>Agregar todos los archivos que terminan con la misma extensión</strong><br />
+    <div class="highlight">
+      <pre>git add *.txt
+</pre>
+    </div>
+    </p>
+    <p><strong>Agregar todos los archivos al stage area</strong>
+    <div class="highlight">
+      <pre>git add .
+</pre>
+    </div>
+    </p>
+    <p><strong>Agregar archivos de forma interactiva</strong>
+    <div class="highlight">
+      <pre>git add -i
+</pre>
+    </div>
+    </p>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.add.interactive.gif" alt="git add interactive">
+      </p>
+    </details>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="eliminar-archivos-seguidos-por-git"><a name="delete-files"></a> Eliminar archivos seguidos por git<a
+        class="headerlink" href="#eliminar-archivos-seguidos-por-git" title="Permanent link">&#9875;</a></h2>
+    <p><strong>Eliminar un archivo primera forma</strong>
+    <div class="highlight">
+      <pre>rm archivo.txt
+git add archivo.txt
+git commit -m &#39;archivo eliminado&#39;
+</pre>
+    </div>
+    </p>
+    <p><strong>Eliminar un archivo segunda forma</strong>
+    <div class="highlight">
+      <pre>git rm archivo.txt
+git commit -m <span class="s1">&#39;archivo eliminado&#39;</span>
+</pre>
+    </div>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.rm.gif" alt="">
+      </p>
+    </details>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h2 id="bajar-y-recuperar-archivos-del-stage-area"><a name="delete-stage-area"></a> Bajar y recuperar archivos del
+      stage area<a class="headerlink" href="#bajar-y-recuperar-archivos-del-stage-area"
+        title="Permanent link">&#9875;</a></h2>
+    <p><strong>Sacar un archivo del stage area</strong><br />
+    <div class="highlight">
+      <pre>git restore --staged archivo.txt
+</pre>
+    </div>
+    </p>
+    <p><strong>Recuperar un archivo, descartando los cambios</strong><br />
+    <div class="highlight">
+      <pre>git restore archivo.txt
+</pre>
+    </div>
+    </p>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.restore.staged.gif" alt="git restore staged">
+      </p>
+    </details>
+
+    <h2 id="renombrar-archivos"><a name="rename-files"></a> Renombrar archivos<a class="headerlink"
+        href="#renombrar-archivos" title="Permanent link">&#9875;</a></h2>
+    <p><strong>Cambiar nombre a un archivo primera forma</strong><br />
+    <div class="highlight">
+      <pre>mv archivo1.txt archivo.txt
+git status
+git add archivo1.txt archivo.txt
+git commit -m <span class="s1">&#39;renombrando archivo&#39;</span>
+</pre>
+    </div>
+    </p>
+    <p><strong>Cambiar nombre a un archivo segunda forma</strong><br />
+    <div class="highlight">
+      <pre>git mv archivo1.txt archivo.txt
+git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
+</pre>
+    </div>
+    </p>
+    <p>Ver el estado de los archivos de manera resumida:<br />
+    <div class="highlight">
+      <pre>git status -s
+</pre>
+    </div>
+    </p>
+    <p>Ver los cambios realizados antes de añadir al stage area:<br />
+    <div class="highlight">
+      <pre>git diff
+</pre>
+    </div>
+    </p>
+    <p>Ver los cambios realizados estando añadido el archivo al astage area:<br />
+    <div class="highlight">
+      <pre>git diff --staged
+</pre>
+    </div>
+    </p>
+    <hr />
+    <h3 id="configurar-repositorio-remoto"><a name="add-remote"></a> Configurar repositorio remoto<a class="headerlink"
+        href="#configurar-repositorio-remoto" title="Permanent link">&#9875;</a></h3>
+    <p>Si has iniciado un repositorio local con <code>git init</code>, entonces no tendrás ningún repositorio remoto al
+      cual enviar los cambios realizados. Un patrón común a la hora de iniciar un nuevo repositorio es ir a un servicio
+      como <strong>Github</strong> o <strong>Gitlab</strong> y tener creado un repositorio para obtener la URL.</p>
+    <p><strong>Agregar un remoto</strong>:</p>
+    <div class="highlight">
+      <pre>git remote add origin &lt;URL&gt;
+</pre>
+    </div>
+
+    <p><strong>Eliminar origen remoto</strong>:</p>
+    <div class="highlight">
+      <pre>git remote remove origin
+</pre>
+    </div>
+
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/git.remote.add.gif" alt="remote add">
+      </p>
+    </details>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="eliminar-el-seguimiento-de-git"><a name="rm-git"></a> Eliminar el seguimiento de GIT<a class="headerlink"
+        href="#eliminar-el-seguimiento-de-git" title="Permanent link">&#9875;</a></h3>
+    <p>Si por error inicilizamos un repositorio local en un directorio que no era simplemente eliminamos la carpeta
+      oculta <strong>.git</strong>, por medio del siguiente comando: </p>
+    <div class="highlight">
+      <pre>rm -rf .git
+</pre>
+    </div>
+
+    <p>Este comando <strong><code>rm</code></strong> se utiliza para remover directorios con todo su contenido dentro,
+      siempre y cuando se utilice el flag <code>-r</code> y podemos indicar que se lleve a cabo a la fuerza por medio
+      del flag <code>-f</code> de esta manera no nos solicitará confirmaciones.</p>
+    <details>
+      <summary>Clic ver demo</summary>
+      <p align="center">
+        <img src="assets/remove.git.gif" alt="">
+      </p>
+    </details>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="ignorar-archivos"><a name="gitignore"></a> Ignorar archivos<a class="headerlink" href="#ignorar-archivos"
+        title="Permanent link">&#9875;</a></h3>
+    <p>A menudo, tendrá una clase de archivos que no desea que Git agregue automáticamente. Por lo general, se trata de
+      archivos generados automáticamente, como archivos de registro o archivos producido un sistema de compilación. En
+      tales casos, puede crear un archivo con una lista de patrones para que coincida con ello y agregarlo a un archivo
+      <strong><code>.gitignore</code></strong>.
+    </p>
+    <p>El archivo <strong>.gitignore</strong>, es un archivo de texto que le dice a <strong>Git</strong> qué archivos o
+      carpetas ignorar en un proyecto. </p>
+    <p>Un archivo local <strong><code>.gitignore</code></strong> generalmente se coloca en el directorio raíz de un
+      proyecto. También puedes crear un archivo <code>.gitignore</code> global, y cualquier entrada en ese archivo se
+      ingorará en todos tus repositorios de Git. </p>
+    <p>Las entradas de este archivo también pueden seguir un patrón coincidente: </p>
+    <div class="highlight">
+      <pre># ignora todos los archivos con extensión .a 
+*.a
+
+# ignora todos los archivos dentro de la carpeta TODO en la raíz, pero no en los subdirectorio /TODO/TODO
+/TODO
+
+# ignora todos los archivos en cualquier directorio llamado build
+build/
+
+# ignora doc/notes.txt, pero no ignora doc/day6/notes.txt
+doc/*.txt
+
+# ignorar todos los archivos .pdf en el directorio doc/ y cualquiera de sus subdirectorios
+doc/**/*.pdf
+</pre>
+    </div>
+
+    <blockquote>
+      <p>En el siguiente <a href="https://github.com/github/gitignore">repositorio</a> podemos encontrar una colección
+        de plantillas para archivis <code>.gitignore</code></p>
+    </blockquote>
+    <p>Cada línea de un archivo <strong>.gitignore</strong> especifica un patrón. Al decidir si ignorar una ruta, Git
+      normalmente verifica los patrones de <strong>gitignore</strong> de múltiples fuentes, con el siguiente orden de
+      procedencia, de mayor a menor (dentro de un nivel de precedencia, el último patrón coincidente decide el
+      resultado).</p>
+    <h3 id="ramas"><a name="branch"></a> Ramas<a class="headerlink" href="#ramas" title="Permanent link">&#9875;</a>
+    </h3>
+    <p><strong>Crear una rama nueva</strong> </p>
+    <p>El procedimiento para crear una nueva rama es sencillo. Usando el comando branch, seguido del nombre de la rama.
+    </p>
+    <div class="highlight">
+      <pre>git branch nueva
+</pre>
+    </div>
+
+    <p>Este comando en sí no produce ninguna salida, pero podrías ver las &ldquo;branches&rdquo; de un proyecto con el
+      comando &ldquo;git branch&rdquo;,
+      u obtener una descripción más detallada de las ramas con:</p>
+    <div class="highlight">
+      <pre>git show-branch
+</pre>
+    </div>
+
+    <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados.</p>
+    <p><strong>Pasar de una rama a otra</strong> </p>
+    <p>Para moverse entre ramas usando el comando <code>checkout</code> seguido del nombre de la rama que queremos que
+      sea la activa. </p>
+    <div class="highlight">
+      <pre>git checkout nueva
+</pre>
+    </div>
+
+    <p>Esta sencilla instrucción tiene mucha potencia, porque nos cambiará automáticamente todos los archivos de nuestro
+      proyecto, los de todas las carpetas, para que tenga el contenido en el que se encuentra en la correspondiente
+      rama. </p>
+    <p>De momento en nuestro ejemplo las dos ramas tenían exactamente el mismo contenido, pero ahora podríamos empezar a
+      hacer cambios en el proyecto experimental y sus correspondientes commit y entonces los archivos tendrán códigos
+      diferentes, de modo que puedas ver que al pasar de una rama a otra hay cambios en los archivos. </p>
+    <p>El comando <code>checkout</code> tiene la posibilidad de permitirte crear una rama nueva y moverte a ella en un
+      único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el parámetro -b
+    </p>
+    <div class="highlight">
+      <pre>git checkout -b otrarama
+</pre>
+    </div>
+
+    <p>Como salida obtendrás el mensaje &ldquo;Switched to a otrarama&rdquo; y demás en las distintas ramas entonces
+      podrás observar que al moverte de una a otra con checkout el proyecto cambia automáticamente en tu editor,
+      mostrando el estado actual en cada una de las ramas donde te estás situando. </p>
+    <p>El proyecto puede tener varios estados en un momento dado y tú podrás moverte de uno a otro con total libertad y
+      sin tener que cambiar de carpeta ni nada parecido. </p>
+    <p><strong>Fusionar ramas</strong> </p>
+    <p>A medidas que crees ramas y cambies el estado de las carpetas o archivos tu proyecto empezará a divergir de una
+      rama a otra. Llegará
+      el momento en el que te interese fusionar ramas para poder incorporar el trabajo realizadoa la rama master. </p>
+    <p>El proceso de fusionado se conoce como &ldquo;merge&rdquo; y puede llegar a ser muy simple o más complejo si se
+      encuentran cambios que GIT no pueda procesar
+      de manera automática. Git para procesar el merge usa un antecesor común y comprueba los cambios que se han
+      introducido al proyecto desde entonces,
+      combinando el código de ambas ramas. </p>
+    <p>Para hacer un merge nos situamos en una rama, en este caso la &ldquo;master&rdquo;, y decimos con qué otra rama
+      se debe fusionar el códgigo.<br />
+      El siguiente comando, lanzado desde la rama &ldquo;master&rdquo;, permite fusionarla con la rama
+      &ldquo;nueva&rdquo;. </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="c1"># Situado en rama (master)</span>
+git merge nueva
+</pre>
+    </div>
+    Un merge necesita un mensaje, igual que ocurre con los commit, por lo que al realizar ese comando se abrirá
+    &ldquo;Vim&rdquo; (o cualquier otro editor de consola que tenga configurado)
+    para que introduzcas los comentarios que juzgues oportuno. Para evitar este paso podemos tomar un atajo con el flag
+    -m de la siguiente manera: </p>
+    <div class="highlight">
+      <pre>git merge nueva -m <span class="s2">&quot;Esto es un merge con mensaje&quot;</span>
+</pre>
+    </div>
+
+    <p><strong>Borrar ramas</strong></p>
+    <div class="highlight">
+      <pre><span class="c1"># para borrar la branch local</span>
+git branch -d localBranchName
+
+<span class="c1"># para borrar la branch remota</span>
+git push origin --delete remoteBranchName
+</pre>
+    </div>
+  </article>
+</body>
+
+</html>
