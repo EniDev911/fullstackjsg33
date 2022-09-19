@@ -102,18 +102,22 @@
         class="headerlink" href="#configuracion-de-identidad" title="Permanent link">&#9875;</a></h3>
     <p>Después de instalar Git, los usuarios deben establecer inmediatamente el nombre de usuario y la dirección de
       correo eléctronico, que se usarán para cada confirmación de Git.</p>
-    <p><strong>Configurar el nombre de usuario git</strong> </p>
+    <p><strong>Configurar el nombre de usuario</strong></p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global user.name <span class="s2">&quot;fullname&quot; <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global user.name fullname')}"></i></span>
+      <pre><span class="nt">git</span> config --global user.name <span class="s2">&quot;nombre de usuario&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global user.name "nombre de usuario"`)}'></i>
 </pre>
     </div>
 
-    <p><strong>Configurar el email de usuario para git</strong><br />
+    <p><strong>Configurar el email para el usuario</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global user.email username@mail.com <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global user.email username@mail.com')}"></i>
+      <pre><span class="nt">git</span> config --global user.email <span class="s2">&quot;usuario@correo.com&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global user.email "usuario@correo.com"`)}'></i>
 </pre>
     </div>
     </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
     <h3 id="configurar-editor"><a name="setting-editor"></a> Configurar editor<a class="headerlink"
         href="#configurar-editor" title="Permanent link">&#9875;</a></h3>
     <p><strong>Configurar VS code como el editor por defecto para git</strong></p>
@@ -181,7 +185,7 @@ git --global core.autocrlf input
         debemos cambiar a &ldquo;true&rdquo; el parámetro ui.color&rdquo;.</strong></p>
     <p>Para desactivar totalmente los colores: </p>
     <div class="highlight">
-      <pre>git config --global color.ui <span class="nb">false</span>
+      <pre><span class="nt">git</span> config --global color.ui <span class="nb">false</span>
 </pre>
     </div>
 
@@ -201,7 +205,7 @@ color.status
 
     <p>Si no quieres usar el coloreado en el comando <strong>status</strong> por ejemplo, puedes indicar: </p>
     <div class="highlight">
-      <pre>git config --global color.status <span class="nb">false</span>
+      <pre><span class="nt">git</span> config --global color.status <span class="nb">false</span>
 </pre>
     </div>
 
@@ -281,18 +285,21 @@ git config --global color.status.untracked <span class="s2">&quot;black yellow d
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h2 id="configurar-alias-en-git"><a name="git-alias"></a> Configurar alias en git<a class="headerlink"
-        href="#configurar-alias-en-git" title="Permanent link">&#9875;</a></h2>
-    <p><strong>alias para configurar en git</strong>
+    <h3 id="configurar-alias-en-git"><a name="git-alias"></a> ALIAS<a class="headerlink" href="#configurar-alias-en-git"
+        title="Permanent link">&#9875;</a></h3>
+    <p><strong><code>commit</code></strong></p>
     <div class="highlight">
-      <pre>git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.a add
-git config --global alias.ps push
-git config --global alias.pl pull
+      <pre><span class="nt">git</span> config --global alias.ci commit <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.ci commit')}"></i>
 </pre>
     </div>
-    </p>
+    <p><strong><code>status</code></strong></p>
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global alias.st status <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.st status')}"></i></pre>
+    </div>
+    <p><strong><code>remote</code></strong></p>
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global alias.rt remote <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global alias.rt remote')}"></i></pre>
+    </div>
     <h3 id="rama-por-defecto"><a name="default-branch"></a> Rama por defecto<a class="headerlink"
         href="#rama-por-defecto" title="Permanent link">&#9875;</a></h3>
     <p>Por defecto, Git creará una rama llamada <strong>master</strong> cuando crees un nuevo repositorio con
@@ -584,19 +591,20 @@ git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
       ingorará en todos tus repositorios de Git. </p>
     <p>Las entradas de este archivo también pueden seguir un patrón coincidente: </p>
     <div class="highlight">
-      <pre># ignora todos los archivos con extensión .a 
+      <pre><span class="c1"># ignora todos los archivos con extensión .a</span>
 *.a
 
-# ignora todos los archivos dentro de la carpeta TODO en la raíz, pero no en los subdirectorio /TODO/TODO
+<span class="c1"># ignora todos los archivos dentro de la carpeta TODO
+# pero no en los subdirectorio</span>
 /TODO
 
-# ignora todos los archivos en cualquier directorio llamado build
+<span class="c1"># ignora todos los archivos en cualquier directorio llamado build</span>
 build/
 
-# ignora doc/notes.txt, pero no ignora doc/day6/notes.txt
+<span class="c1"># ignora doc/notas.txt, pero no ignora doc/semana2/notas.txt</span>
 doc/*.txt
 
-# ignorar todos los archivos .pdf en el directorio doc/ y cualquiera de sus subdirectorios
+<span class="c1"># ignorar todos los archivos .pdf en el directorio doc/ y cualquiera de sus subdirectorios</span>
 doc/**/*.pdf
 </pre>
     </div>
@@ -615,7 +623,7 @@ doc/**/*.pdf
     <p>El procedimiento para crear una nueva rama es sencillo. Usando el comando branch, seguido del nombre de la rama.
     </p>
     <div class="highlight">
-      <pre>git branch nueva
+      <pre><span class="nt">git</span> branch nueva
 </pre>
     </div>
 
@@ -623,7 +631,7 @@ doc/**/*.pdf
       comando &ldquo;git branch&rdquo;,
       u obtener una descripción más detallada de las ramas con:</p>
     <div class="highlight">
-      <pre>git show-branch
+      <pre><span class="nt">git</span> show-branch
 </pre>
     </div>
 
@@ -646,7 +654,7 @@ doc/**/*.pdf
       único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el parámetro -b
     </p>
     <div class="highlight">
-      <pre>git checkout -b otrarama
+      <pre><span class="nt">git</span> checkout -b otrarama
 </pre>
     </div>
 

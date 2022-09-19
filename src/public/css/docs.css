@@ -208,7 +208,6 @@ body .markdown-body {
 .markdown-body samp {
   font-family: fira-code, monospace;
   font-size: 1em;
-  font-weight: bold;
 }
 
 .markdown-body code,
