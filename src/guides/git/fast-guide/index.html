@@ -36,17 +36,17 @@
     </ul>
     <h3 id="operaciones">Operaciones<a class="headerlink" href="#operaciones" title="Permanent link">&#9875;</a></h3>
     <ul>
-      <li><a href="#init-git">inicializar un proyecto</a></li>
-      <li><a href="#content-git">contenido de la carpet <strong>.git</strong></a></li>
-      <li><a href="#show-status">visualización de los cambios en GIT</a></li>
-      <li><a href="#add-stage-area">agregar archivos al <strong>stage area</strong> (preparación)</a></li>
-      <li><a href="#delete-files">eliminar archivo seguido por GIT</a></li>
-      <li><a href="#delete-stage-area">bajar y recuperar archivos del stage area</a></li>
-      <li><a href="#rename-files">renombrar archivo seguido por GIT</a></li>
-      <li><a href="#gitignore">ignorar archivos</a></li>
-      <li><a href="#add-remote">configurar un repositorio remoto</a></li>
-      <li><a href="#rm-git">eliminar el seguimiento de GIT</a></li>
-      <li><a href="#branch">ramas</a></li>
+      <li><a href="#init-git">Inicializar un proyecto</a></li>
+      <li><a href="#content-git">Contenido de la carpet <strong>.git</strong></a></li>
+      <li><a href="#show-status">Visualización de los cambios en GIT</a></li>
+      <li><a href="#add-stage-area">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
+      <li><a href="#delete-files">Eliminar archivo seguido por GIT</a></li>
+      <li><a href="#delete-stage-area">Bajar y recuperar archivos del stage area</a></li>
+      <li><a href="#rename-files">Renombrar archivo seguido por GIT</a></li>
+      <li><a href="#gitignore">Ignorar archivos</a></li>
+      <li><a href="#add-remote">Configurar un repositorio remoto</a></li>
+      <li><a href="#rm-git">Eliminar el seguimiento de GIT</a></li>
+      <li><a href="#branch">Ramas</a></li>
     </ul>
     <hr />
     <h2 id="configuracion-inicial"><a name="global-settings"></a> Configuración inicial<a class="headerlink"
@@ -102,13 +102,13 @@
       correo eléctronico, que se usarán para cada confirmación de Git.</p>
     <p><strong>Configurar el nombre de usuario git</strong> </p>
     <div class="highlight">
-      <pre>git config --global user.name <span class="s2">&quot;fullname&quot;</span>
+      <pre><span class="nt">git</span> config --global user.name <span class="s2">&quot;fullname&quot; <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global user.name fullname')}"></i></span>
 </pre>
     </div>
 
     <p><strong>Configurar el email de usuario para git</strong><br />
     <div class="highlight">
-      <pre>git config --global user.email username@mail.com
+      <pre><span class="nt">git</span> config --global user.email username@mail.com <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global user.email username@mail.com')}"></i>
 </pre>
     </div>
     </p>
@@ -116,7 +116,7 @@
         href="#configurar-editor" title="Permanent link">&#9875;</a></h3>
     <p><strong>Configurar VS code como el editor por defecto para git</strong></p>
     <div class="highlight">
-      <pre>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
+      <pre><span class="nt">git</span> config --global core.editor <span class="s2">&quot;code --wait&quot;</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global core.editor code --wait')}"></i>
 </pre>
     </div>
 
@@ -126,7 +126,7 @@
     </blockquote>
     <p><strong>Ver el archivo de configuración con el editor por defecto</strong><br />
     <div class="highlight">
-      <pre>git config --global -e
+      <pre><span class="nt">git</span> config --global -e
 </pre>
     </div>
     <p align="center">
@@ -173,7 +173,7 @@ git --global core.autocrlf input
         title="Permanent link">&#9875;</a></h3>
     <p>Git puede marcar con colores los resultados que se muestran en la terminal, ayudándote así a leerlos más
       fácilmente. Los siguientes parámetros se pueden modificar: </p>
-    <h4 id="colorui"><code>color.ui</code><a class="headerlink" href="#colorui" title="Permanent link">&#9875;</a></h4>
+    <h4 id="colorui"><code>color.ui</code></h4>
     <p>Git coloreará automáticamente la mayor parte de los resultados que muestra. Podemos ajustar con precisión cada
       una de las partes a colorear; <strong>pero si deseas activar de un golpe todos los colores por defecto, sólo
         debemos cambiar a &ldquo;true&rdquo; el parámetro ui.color&rdquo;.</strong></p>
@@ -184,7 +184,7 @@ git --global core.autocrlf input
     </div>
 
     <p>El valor predeterminado es <strong><code>auto</code></strong>.</p>
-    <h4 id="color"><code>color.*</code><a class="headerlink" href="#color" title="Permanent link">&#9875;</a></h4>
+    <h4 id="color"><code>color.*</code></h4>
     <p>Cuando se requiere ajustar específicamente, comando a comando, donde colorear y cómo colorear, podemos emplear
       los ajustes particulares de color. Cada uno de ellos se puede fijar en <code>true</code>, <code>false</code> o
       <code>always</code>:
@@ -227,12 +227,12 @@ color.status
     <p>Por ejemplo, para mostrar la meta-información del comando <code>diff</code> con letra color cian y con caracteres
       en negrita, podemos indicar: </p>
     <div class="highlight">
-      <pre>git config --global color.diff.meta <span class="s2">&quot;cyan bold&quot;</span>
+      <pre><span class="nt">git</span> config --global color.diff.meta <span class="s2">&quot;cyan bold&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global color.diff.meta "cyan bold"`)}'></i>
 </pre>
     </div>
 
     <p align="center">
-      <img src="assets/color.diff.png" alt="diff color" width="700">
+      <img src="assets/color.diff.png" alt="diff color">
     </p>
 
     <p>Otro ejemplo para cambiar los colores del comando <code>status</code> para la salida de
@@ -299,7 +299,7 @@ git config --global alias.pl pull
       Para configurar <strong>main</strong> como el nombre de rama predeterminado, podemos indicar lo siguiente:
     </p>
     <div class="highlight">
-      <pre>git config --global init.defaultBranch main
+      <pre><span class="nt">git</span> config --global init.defaultBranch main
 </pre>
     </div>
 
@@ -308,7 +308,7 @@ git config --global alias.pl pull
         href="#incializar-un-proyecto-con-git" title="Permanent link">&#9875;</a></h3>
     <p><strong>Inicializar un proyecto en local con git</strong>
     <div class="highlight">
-      <pre>git init
+      <pre><span class="nt">git</span> init <i class="fa-solid fa-clone" onclick="{copy_clipboard('git init')}"></i>
 </pre>
     </div>
     Una vez inicializado el repositorio se crea una carpeta oculta llamada <strong>.git</strong> dentro del proyecto.
@@ -399,31 +399,31 @@ git config --global alias.pl pull
         class="headerlink" href="#agregar-archivos-a-preparacion" title="Permanent link">&#9875;</a></h2>
     <p><strong>Agregar un archivo al stage area</strong>
     <div class="highlight">
-      <pre>git add archivo.txt
+      <pre><span class="nt">git</span> add archivo.txt
 </pre>
     </div>
     </p>
     <p><strong>Agregar más de un archivo al stage area</strong><br />
     <div class="highlight">
-      <pre>git add archivo1.txt archivo2.txt
+      <pre><span class="nt">git</span> add archivo1.txt archivo2.txt
 </pre>
     </div>
     </p>
     <p><strong>Agregar todos los archivos que terminan con la misma extensión</strong><br />
     <div class="highlight">
-      <pre>git add *.txt
+      <pre><span class="nt">git</span> add *.txt
 </pre>
     </div>
     </p>
     <p><strong>Agregar todos los archivos al stage area</strong>
     <div class="highlight">
-      <pre>git add .
+      <pre><span class="nt">git</span> add .
 </pre>
     </div>
     </p>
     <p><strong>Agregar archivos de forma interactiva</strong>
     <div class="highlight">
-      <pre>git add -i
+      <pre><span class="nt">git</span> add -i
 </pre>
     </div>
     </p>
@@ -450,8 +450,8 @@ git commit -m &#39;archivo eliminado&#39;
     </p>
     <p><strong>Eliminar un archivo segunda forma</strong>
     <div class="highlight">
-      <pre>git rm archivo.txt
-git commit -m <span class="s1">&#39;archivo eliminado&#39;</span>
+      <pre><span class="nt">git</span> rm archivo.txt
+<span class="nt">git</span> commit -m <span class="s2">&#39;archivo eliminado&#39;</span>
 </pre>
     </div>
     <details>
@@ -470,13 +470,13 @@ git commit -m <span class="s1">&#39;archivo eliminado&#39;</span>
         title="Permanent link">&#9875;</a></h2>
     <p><strong>Sacar un archivo del stage area</strong><br />
     <div class="highlight">
-      <pre>git restore --staged archivo.txt
+      <pre><span class="nt">git</span> restore --staged archivo.txt
 </pre>
     </div>
     </p>
     <p><strong>Recuperar un archivo, descartando los cambios</strong><br />
     <div class="highlight">
-      <pre>git restore archivo.txt
+      <pre><span class="nt">git</span> restore archivo.txt
 </pre>
     </div>
     </p>
@@ -504,13 +504,6 @@ git commit -m <span class="s1">&#39;renombrando archivo&#39;</span>
 git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
 </pre>
     </div>
-    </p>
-    <p>Ver el estado de los archivos de manera resumida:<br />
-    <div class="highlight">
-      <pre>git status -s
-</pre>
-    </div>
-    </p>
     <p>Ver los cambios realizados antes de añadir al stage area:<br />
     <div class="highlight">
       <pre>git diff
@@ -531,13 +524,13 @@ git commit -m <span class="s1">&#39;archivo renombrado&#39;</span>
       como <strong>Github</strong> o <strong>Gitlab</strong> y tener creado un repositorio para obtener la URL.</p>
     <p><strong>Agregar un remoto</strong>:</p>
     <div class="highlight">
-      <pre>git remote add origin &lt;URL&gt;
+      <pre><span class="nt">git</span> remote add origin &lt;URL&gt;
 </pre>
     </div>
 
     <p><strong>Eliminar origen remoto</strong>:</p>
     <div class="highlight">
-      <pre>git remote remove origin
+      <pre><span class="nt">git</span> remote remove origin
 </pre>
     </div>
 
@@ -698,6 +691,9 @@ git push origin --delete remoteBranchName
 </pre>
     </div>
   </article>
+  <script src="../../../public/js/lib/fontawesome.bundle.js"></script>
+  <script src="../../../public/js/functions.js" type="module"></script>
+
 </body>
 
 </html>
