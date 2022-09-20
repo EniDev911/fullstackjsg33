@@ -349,11 +349,26 @@ color.status
     <hr />
     <h3 id="incializar-un-proyecto-con-git"><a name="init-git"></a> Incializar un proyecto con git<a class="headerlink"
         href="#incializar-un-proyecto-con-git" title="Permanent link">&#9875;</a></h3>
-    <p><strong>Inicializar un proyecto en local con git</strong>
+    <p>Para iniciar un proyecto en Git, primera debemos situarnos en el directorio donde tendrás tu proyecto o podemos
+      crear en este caso una carpeta y entrar en ella y partir desde cero. Si estás Windows, Mac o Linux podemos crear
+      una
+      carpeta con el comando <strong>mkdir</strong> y luego entrar en ella con el comando <strong>cd</strong></p>
+    <p><strong>Crear una carpeta para contener el proyecto y accedemos a esa carpeta</strong>
+    <div class="highlight">
+      <pre><span class="nt">mkdir</span> git-tutorial && <span class="nt">cd</span> git-tutorial <i class="fa-solid fa-clone" onclick="{copy_clipboard('mkdir git-tutorial && cd git-tutorial')}"></i></pre>
+    </div>
+
+    <p><strong>Inicializar un repositorio en local con git en el directorio actual</strong>
     <div class="highlight">
       <pre><span class="nt">git</span> init <i class="fa-solid fa-clone" onclick="{copy_clipboard('git init')}"></i>
 </pre>
     </div>
+    <p><strong>Crear un nuevo repositorio en local con el nombre especificado</strong> (crea la carpeta y dentro el
+      repositorio local)
+    <div class="highlight">
+      <pre><span class="nt">git</span> init tutorial-git<i class="fa-solid fa-clone" onclick="{copy_clipboard('git init tutorial-git')}"></i></pre>
+    </div>
+
     Una vez inicializado el repositorio se crea una carpeta oculta llamada <strong>.git</strong> dentro del proyecto.
     Resultará obvio, pero <strong>conviene decir que nunca se debe borrar esa carpeta</strong> (al menos que quieras que
     tu proyecto no sea controlado por git).</p>
