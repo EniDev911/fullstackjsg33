@@ -59,17 +59,19 @@
       <li>
         <p><strong><code>[path]/etc/gitconfig</code></strong> (⚙️): Contiene los valores aplicados a cada usuario
           en el sistema y
-          todos sus repositorios (si pasa la opción <code>--system</code> a <strong><code>git config</code></strong>,
+          todos sus repositorios (si pasa la opción <code>--system</code> a <strong>git config</strong>,
           lee y escribe desde este archivo de configuración específicamente. Debido a que se trata de un archivo de
           configuración del sistema, se necesitaría información administrativa o privilegios de superusuario para
           relizar cambios.</p>
       </li>
       <li>
-        <p><strong><code>~/.gitconfig</code></strong> o <strong><code>~/.config/git/config</code></strong> (⚙️):
+        <p><strong><code>~/.gitconfig</code></strong> o
+          <strong><code>~/.config/git/config</code></strong> (⚙️):
           Contiene valores específicos
           personalmente para el usuario. Puedes hacer que Git lea y escriba en este archivo específicamente al pasar la
           opción <code>--global</code>, y esto afecta todos los repositorios con los que trabaja en el sistema del
-          usuario.</p>
+          usuario.
+        </p>
       </li>
       <li>
         <p><strong><code>.git/config</code></strong> (⚙️):
@@ -79,9 +81,10 @@
           en algún lugar de un repositorio de Git para que esta opción funcione correctamente.</p>
       </li>
     </ol>
-    <p>Cada nivel anula los valores del nivel anterior, por lo que los valores en <code>.git/config</code> superan a los
+    <p>Cada nivel anula los valores del nivel anterior, por lo que los valores en <strong>.git/config</strong> superan a
+      los
       de
-      <code>[path]/etc/gitconfig</code>.
+      <strong>[path]/etc/gitconfig</strong>.
     </p>
     <p>Puede ver todas sus configuraciones y de dónde provienen indicando lo siguiente:</p>
     <div class="highlight">
@@ -334,12 +337,12 @@ color.status
     <h3 id="rama-por-defecto"><a name="default-branch"></a> Rama por defecto<a class="headerlink"
         href="#rama-por-defecto" title="Permanent link">&#9875;</a></h3>
     <p>Por defecto, Git creará una rama llamada <strong>master</strong> cuando crees un nuevo repositorio con
-      <code>git init</code>.
+      <code><b>git</b> init</code>.
       Desde la versión 2.28 de Git en adelante, puede establecer un nombre diferente para la rama inicial.
       Para configurar <strong>main</strong> como el nombre de rama predeterminado, podemos indicar lo siguiente:
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global init.defaultBranch main
+      <pre><span class="nt">git</span> config --global init.defaultBranch main <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global init.defaultBranch main')}"></i>
 </pre>
     </div>
 
