@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-
+  <!-- bootstrap -->
   <title>GIT guía rápida</title>
 </head>
 
@@ -128,17 +127,16 @@
         href="#configurar-editor" title="Permanent link">&#9875;</a></h3>
     <p><strong>Configurar VS code como el editor por defecto para git</strong></p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global core.editor <span class="s2">&quot;code --wait&quot;</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global core.editor code --wait')}"></i>
+      <pre><span class="nt">git</span> config --global core.editor <span class="s2">&quot;code --wait&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global core.editor "code --wait"`)}'></i>
 </pre>
     </div>
-
     <blockquote>
       <p>La opción <code>--wait</code> es para que la terminal se quede esperando hasta que cerremos el editor de texto.
       </p>
     </blockquote>
     <p><strong>Ver el archivo de configuración con el editor por defecto</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global -e
+      <pre><span class="nt">git</span> config --global -e <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global -e`)}'></i>
 </pre>
     </div>
     <p align="center">
@@ -214,22 +212,21 @@ color.status
       <pre><span class="nt">git</span> config --global color.status <span class="nb">false</span>
 </pre>
     </div>
-
     <p>Además, cada uno de los comandos tiene parámetros adicionales para asignar colores a partes específicas, por si
-      quieres pecisar aún más.</p>
+      quieres precisar aún más.</p>
     <p>Podemos ajustar a cualquiera de los siguientes colores: </p>
-    <ul>
-      <li><code>normal</code>, <code>black</code> (negro)</li>
-      <li><code>red</code> (rojo)</li>
-      <li><code>green</code> (verde)</li>
-      <li><code>yellow</code> (amarillo)</li>
-      <li><code>blue</code> (azul)</li>
-      <li><code>magenta</code> (magenta)</li>
-      <li><code>cyan</code> (cian)</li>
-      <li><code>white</code> (blanco)</li>
+    <ul style="display: flex; list-style: none; padding:0; justify-content: space-evenly;">
+      <li><code>black</code> (⬛)</li>
+      <li><code>red</code> (🔴)</li>
+      <li><code>green</code> (🍏)</li>
+      <li><code>yellow</code> (💛)</li>
+      <li><code>blue</code> (🔷)</li>
+      <li><code>magenta</code> (💜)</li>
+      <li><code>cyan</code> (💧)</li>
+      <li><code>white</code> (⬜)</li><br>
     </ul>
     <p>También se pueden aplicar atributos como:</p>
-    <ul>
+    <ul style="display: flex; list-style: none; padding:0; justify-content: space-evenly;">
       <li><code>bold</code> (negrita)</li>
       <li><code>dim</code> (tenue) </li>
       <li><code>ul</code> (subrayado) </li>
@@ -247,22 +244,29 @@ color.status
       <img src="assets/color.diff.png" alt="diff color">
     </p>
 
-    <p>Otro ejemplo para cambiar los colores del comando <code>status</code> para la salida de
-      <strong>color.status.changed</strong> (cuando cun archivo a cambiado de estado) y
-      <strong>color.status.untracked</strong> (cuando un archivo no es seguido por git):
+    <p>Otro ejemplo para cambiar los colores del comando <strong>status</strong> para la salida de
+      <strong>color.status.changed</strong> (cuando un archivo a cambiado de estado),
+      <strong>color.status.untracked</strong> (cuando un archivo no es seguido por git) y
+      <strong>color.status.added</strong> (cuando un archivo es agregado al 'stage area'):
     </p>
     <div class="highlight">
       <pre><span class="nt">git</span> config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global color.status.changed "white red bold"`)}'></i></pre>
     </div>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;black yellow dim&quot;</span></pre>
+      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;white magenta bold&quot;</span> <i class="fa-solid fa-clone"
+        onclick='{copy_clipboard(`git config --global color.status.untracked "white magenta bold"`)}'></i></pre>
+    </div>
+    <div class="highlight">
+      <pre><span class="nt">git</span> config --global color.status.added <span class="s2">&quot;white green bold&quot;</span> <i class="fa-solid fa-clone"
+            onclick='{copy_clipboard(`git config --global color.status.added "white green bold"`)}'></i></pre>
     </div>
     <p align="center">
       <img src="assets/color.status.png" alt="status color">
     </p>
 
     <p>Recordemos que cualquier mensaje de un comando de git se puede controlar mediante el archivo
-      <code>.gitconfig</code>. Podemos abrir el archivo con el comando <code>git config --global -e</code> y podemos
+      <strong>.gitconfig</strong>. Podemos abrir el archivo con el comando <code><b>git</b> config --global -e</code> y
+      podemos
       indicar colores usando el siguiente formato:
     </p>
     <div class="highlight">
@@ -366,7 +370,7 @@ color.status
       <pre>📂 .git
 ├── 📂 branches
 ├── ⚙️ config <span class="c1"># contiene las opciones de configuración de este repositorio</span>
-├── 📄 description 
+├── 📄 description
 ├── 📄 HEAD <span class="c1"># contiene la referencia del commit a partir del cual se trabaja</span>
 ├── 📂 hooks <span class="c1"># contiene los script que se ejecutan en determinado momento</span>
 │   ├── 📄 applypatch-msg.sample
