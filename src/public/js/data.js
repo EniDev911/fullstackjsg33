@@ -187,4 +187,15 @@ export const projects = [
     background: "info",
     module: 4
   },
+  {
+    // Desafío 4 Prueba react
+    title: "Desafío 4: Final React 1",
+    image: "src/public/images/png/rick-and-morty.png",
+    url_code:
+      "https://github.com/EniDev911/rick-morty-react-adl",
+    url_demo: "https://enidev911.github.io/rick-morty-react-adl/",
+    color: "light",
+    background: "dark",
+    module: 4
+  },
 ];
