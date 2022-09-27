@@ -133,7 +133,7 @@
     }
 
     let offset = 1;
-    let limit = 8;
+    let limit = 905;
     function fetchPokemons(offset, limit) {
       spinner.style.display = "block";
       let arrPokemon = [];
@@ -163,7 +163,6 @@
         parent.removeChild(parent.firstChild);
       }
     }
-    // referencia función : https://www.youtube.com/watch?v=O_vox3ixuW8
     function createPokemon(pokemon) {
       const flipCard = document.createElement('div');
       flipCard.classList.add('flip-card');
