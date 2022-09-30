@@ -95,18 +95,26 @@ const fillTemplate = (obj) => {
   }
   template += `
       <div class="carousel-item${active}">
-        <div class="options bg-${obj.background} bg-gradient rounded-top py-2 text-center">
-          <h2 class="h5 text-${obj.color}">${obj.title}</h2>
-          <div class="d-flex justify-content-center my-2">
-          <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-eye"></i></a>
-          <a title="Ver código" href="${obj.url_code}" target="_blank" class="btn btn-outline-${obj.color} me-2"><i class="fa-solid fa-file-code"></i></a>`;
-  if (typeof obj.url_zip != "undefined") {
-    template += `<a title="Descargar" href="${obj.url_zip}" target="_blank" class="btn btn-outline-${obj.color} select-bg" download><i class="fa-solid fa-download"></i></a>`;
-  }
+      <div class="bg-${obj.background} bg-gradient d-flex flex-column rounded-top pt-1">
+      <h2 class="h4 p-3 m-0 text-center text-${obj.color}">${obj.title}</h2>
+      <ul class="nav nav-tabs nav-fill pb-0 justify-content-center">
+          <li class="nav-item">
+            <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="nav-link">
+            <i class="fs-3 text-${obj.color} fa-solid fa-eye"></i></a>
+          </li>
+           <li class="nav-item outline-light">
+           <a title="Ver código" href="${obj.url_code}" target="_blank" class="nav-link">
+            <i class="fs-3 text-${obj.color} fa-brands fa-github"></i>
+           </a>
+           </li>`;
+          if (typeof obj.url_zip != "undefined") {
+            template += `<li class="nav-item"><a title="Descargar" href="${obj.url_zip}" target="_blank" class="nav-link" download><i class="fs-3 text-${obj.color} fa-solid fa-download"></i></a></li>`;
+          } 
+  
   template += `
+          </ul>
           </div>
-        </div>
-        <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100">
+        <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100 rounded-bottom">
       </div>`;
 };
 

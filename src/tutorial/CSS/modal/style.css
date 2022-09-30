@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: #fff;
+}
+
+.btn-modal {
+    padding: 40px;
+    background: #fff;
+}
+.btn-modal label{
+    padding: 10px 15px;
+    background-color: #545454;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.btn-modal label:hover{
+    background: #343434;
+}
+/* ventana modal */
+#btn-modal {
+    display: none;
+}
+
+/* toggle modal */
+#btn-modal:checked ~ .container-modal{
+    display: flex;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    background: rgba(50, 10, 50, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.content-modal{
+    max-width: 400px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.content-modal h2{
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-modal .btn-close{
+    width:100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+
+}
+
+.content-modal .btn-close label {
+    padding: 7px 10px;
+    background: #5668a3;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.content-modal .btn-close label:hover{
+    background: #185e83;
+}

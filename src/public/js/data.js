@@ -18,7 +18,7 @@ export const projects = [
       "https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/",
     url_demo: "src/chanllenges/module-1/3-css/landing-page/courses/",
     url_zip: "src/public/compressed/courses.zip",
-    color: "primary",
+    color: "light",
     background: "dark",
     module: 1,
   },
