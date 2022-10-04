@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../../public/css/themes/overlook.css">
+  <title>PSQL: cliente de terminal</title>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h2 align="center">
+      <a href="../../index.html">
+        <img height="50" src="https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white" />
+      </a><br><br>
+      PSQL: CLIENTE DE LÍNEA DE COMANDOS
+    </h2>
+
+    <h2>
+      CONTENIDO
+      <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" alt="logo" height="45"
+        align="right">
+    </h2>
+
+    <ul>
+      <li><a href="#intro"><strong>Introducción</strong></a></li>
+      <li><a href="#connect"><strong>Conectarse al servidor</strong></a></li>
+      <li><a href="#optionscmd"><strong>Opciones de línea de comandos</strong></a></li>
+      <li><a href="#metacommand"><strong>Meta comandos</strong></a></li>
+    </ul>
+    <hr />
+    <h2 id="introduccion"><a name="intro"></a>INTRODUCCIÓN <a class="headerlink" href="#introduccion"
+        title="Permanent link">&#9875;</a></h2>
+    <p><strong>psql</strong> es una aplicación cliente que viene incluido en el paquete de instalación de PostgreSQL
+      regular y está basado en la terminal. Nos permite establecer una conexión a un servidor de PostgreSQL donde
+      debemos pasar los <strong>argumentos de conexión</strong> correctamente en la línea de comandos, establecida la
+      conexión se abre una sesión donde podemos interactuar con consultas <a
+        href="https://es.wikipedia.org/wiki/SQL"><strong>SQL</strong></a> y enviarlas a nuestro servidor de
+      PostgreSQL y visualizar los resultados. Además, <strong>psql</strong> proporciona una serie de <a
+        href="#metacommand"><strong>matacomandos</strong></a> y varias funciones similares a las de un
+      shell común y tradicional para facilitar la escritura de scripts y la automatización de una amplia variedad de
+      tareas.</p>
+    <hr />
+    <h2 id="conectarse-al-servidor"><a name="connect"></a>CONECTARSE AL SERVIDOR <a class="headerlink"
+        href="#conectarse-al-servidor" title="Permanent link">&#9875;</a></h2>
+    <p>Para conectarse al servidor, se necesita saber el <strong>nombre de la base de datos de destino</strong>,
+      <strong>el
+        nombre de host</strong>, <strong>puerto del servidor</strong>, etc., y con que <strong>nombre de
+        usuario</strong> desea conectarse. Se puede informar a <strong>psql</strong> sobre esos parámetros a través de
+      las <strong>opciones de la línea de comandos</strong>
+    </p>
+    <p>Ej: (<strong>host, usuario, puerto, etc</strong>).<br />
+    <div class="highlight">
+      <pre><span class="nt">psql.exe</span> -h localhost -U postgres -d dbname
+</pre>
+    </div>
+    </p>
+    <p>Si se encuentra un argumento que no pertenece a ninguna opción, se interpretará como el nombre de la base de
+      datos (o el nombre de usuario, si el nombre de la base de datos ya está dado). <strong>No todas estas opciones son
+        obligatorias; hay valores predeterminados</strong> útiles.</p>
+    <p>Si omite el nombre de host, psql se conectará a través de un socket de dominio Unix a un servidor en el host
+      local, o a través de TCP/IP a <strong><code>localhost</code></strong>. </p>
+    <p>El número de puerto predeterminado se determina en tiempo de compilación. Dado que el servidor de la base de
+      datos utiliza el mismo valor predeterminado <strong>5432</strong>, no tendrá que especificar el puerto en la
+      mayoría de los casos. </p>
+    <p>El nombre de usuario predeterminado es el nombre de usuario de su sistema operativo, al igual que el nombre de la
+      base de datos predeterminada. </p>
+    <p align="center">
+      <img src="assets/connect.png" alt="ejemplo de conexión">
+    </p>
+
+    <blockquote>
+      <p>NOTA: Tenga en cuenta que no puede simplemente conectarse a cualquier base de datos con cualquier nombre de
+        usuario. El usuario que desea conectarse debe tener los permisos previamente creados por el administrador del
+        sistema de base de datos. </p>
+    </blockquote>
+    <p>Cuando los valores predeterminado no son del todo correctos, puede ahorrarse algo de escritura configurando las
+      siguientes variables de entorno: </p>
+    <ul>
+      <li><strong>PGUSER</strong> </li>
+    </ul>
+    <p>
+    <div class="highlight">
+      <pre><span class="nt">setx</span> PGUSER postgres</pre>
+    </div>
+    <ul>
+      <li><strong>PGPASSWORD</strong> </li>
+    </ul>
+    <div class="highlight">
+      <pre><span class="nt">setx</span> PGPASSWORD postgre 
+</pre>
+    </div>
+    <p align="center">
+      <img src="assets/setx-variables.png" alt="establecer variables de entorno">
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="opciones-de-linea-de-comandos"><a name="optionscmd"></a>Opciones de línea de comandos<a class="headerlink"
+        href="#opciones-de-linea-de-comandos" title="Permanent link">&#9875;</a></h3>
+    <p>
+      Este herramiente de línea de comandos acepta las siguientes opciones al momento de invocarla:
+    </p>
+    <div class="highlight">
+      <pre>
+Empleo:
+psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
+        
+<span class="nt">Opciones generales:</span>
+  <span class="nx">-c, --command</span>=ORDEN 
+  <span class="c1">ejecutar sólo una orden (SQL o interna) y salir</span>
+  <span class="nx">-d, --dbname</span>=NOMBRE 
+  <span class="c1">nombre de base de datos a conectarse (por omisión: «postgres»)</span>
+  <span class="nx">-f, --file</span>=ARCHIVO 
+  <span class="c1">ejecutar órdenes desde archivo, luego salir</span>
+  <span class="nx">-l, --list</span> 
+  <span class="c1">listar bases de datos, luego salir</span>
+  <span class="nx">-v, --set</span>=, <span class="nx">--variable</span>=NOMBRE=VALOR 
+  <span class="c1">definir variable de psql NOMBRE a VALOR (p.ej. -v ON_ERROR_STOP=1)</span>
+  <span class="nx">-V, --version</span>
+  <span class="c1">mostrar información de versión, luego salir</span>
+  <span class="nx">-X, --no-psqlrc</span> 
+  <span class="c1">no leer archivo de configuración (~/.psqlrc)</span>
+  <span class="nx">-1</span> («uno»)<span class="nx">, --single-transaction</span> 
+  <span class="c1">ejecuta órdenes en una única transacción</span>
+  <span class="nx">-?, --help</span>[=opcs] 
+  <span class="c1">mostrar esta ayuda, luego salir</span>
+  <span class="nx">--help</span>=commands 
+  <span class="c1">listar órdenes backslash, luego salir</span>
+  <span class="nx">--help</span>=variables 
+  <span class="c1">listar variables especiales, luego salir</span>
+        
+<span class="nt">Opciones de entrada y salida:</span>
+  <span class="nx">-a, --echo-all</span> 
+  <span class="c1">mostrar las órdenes del script</span>
+  <span class="nx">-b, --echo-errors</span> 
+  <span class="c1">mostrar órdenes fallidas</span>
+  <span class="nx">-e, --echo-queries</span> 
+  <span class="c1">mostrar órdenes enviadas al servidor</span>
+  <span class="nx">-E, --echo-hidden</span> 
+  <span class="c1">mostrar consultas generadas por órdenes internas</span>
+  <span class="nx">-L, --log-file</span>=ARCHIVO 
+  <span class="c1">envía el registro de la sesión a un archivo</span>
+  <span class="nx">-n, --no-readline</span> 
+  <span class="c1">deshabilitar edición de línea de órdenes (readline)</span>
+  <span class="nx">-o, --output</span>=ARCHIVO 
+  <span class="c1">enviar resultados de consultas a archivo (u |orden)</span>
+  <span class="nx">-q, --quiet</span> 
+  <span class="c1">modo silencioso (sin mensajes, sólo resultados)</span>
+  <span class="nx">-s, --single-step</span> 
+  <span class="c1">modo paso a paso (confirmar cada consulta)</span>
+  <span class="nx">-S, --single-line</span> 
+  <span class="c1">modo de líneas (fin de línea termina la orden SQL)</span>
+        
+<span class="nt">Opciones de formato de salida:</span>
+  <span class="nx">-A, --no-align</span> 
+  <span class="c1">modo de salida desalineado</span>
+  <span class="nx">--csv</span> 
+  <span class="c1">modo de salida de tabla CSV (valores separados por comas)</span>
+  <span class="nx">-F, --field-separator</span>=CADENA 
+  <span class="c1">separador de campos para salida desalineada (por omisión: «|»)</span>
+  <span class="nx">-H, --html</span> 
+  <span class="c1">modo de salida en tablas HTML</span>
+  <span class="nx">-P, --pset</span>=VAR[=ARG] 
+  <span class="c1">definir opción de impresión VAR en ARG (ver orden \pset)</span>
+  <span class="nx">-R, --record-separator</span>=CADENA 
+  <span class="c1">separador de registros para salida desalineada (por omisión: salto de línea)</span>
+  <span class="nx">-t, --tuples-only</span> 
+  <span class="c1">sólo muestra registros</span>
+  <span class="nx">-T, --table-attr</span>=TEXTO
+  <span class="c1">definir atributos de marcas de tabla HTML (ancho, borde)</span>
+  <span class="nx">-x, --expanded</span> 
+  <span class="c1">activar modo expandido de salida de tablas</span>
+  <span class="nx">-z, --field-separator-zero</span> 
+  <span class="c1">definir separador de campos para salida desalineada al byte cero</span>
+  <span class="nx">-0, --record-separator-zero</span> 
+  <span class="c1">definir separador de filas para salida desalineada al byte cero</span>
+        
+<span class="nt">Opciones de conexión:</span>
+  <span class="nx">-h, --host</span>=NOMBRE 
+  <span class="c1">nombre del anfitrión o directorio de socket (por omisión: «socket local»)</span>
+  <span class="nx">-p, --port</span>=PUERTO 
+  <span class="c1">puerto del servidor (por omisión: «5432»)</span>
+  <span class="nx">-U, --username</span>=NOMBRE 
+  <span class="c1">nombre de usuario (por omisión: «postgres»)</span>
+  <span class="nx">-w, --no-password</span> 
+  <span class="c1">nunca pedir contraseña</span>
+  <span class="nx">-W, --password</span> 
+  <span class="c1">forzar petición de contraseña (debería ser automático)</span>
+      </pre>
+    </div>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h3 id="meta-commands"><a name="metacommand"></a>Meta-commands<a class="headerlink" href="#meta-commands"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Cualquier cosa que ingrese en psql que comience con una barra invertida <strong><code>\</code></strong> sin
+      comillas es un metacomando de <strong>psql</strong> que es procesado por psql mismo. Estos comandos hacen que
+      <strong>psql</strong> sea más útil para la administración o la creación de scripts. Podemos ver algunos en la
+      siguiente tabla:
+    </p><br>
+    <a name="tabla-meta-comandos"></a>
+    <table width="100%">
+      <colgroup>
+        <col width="20%">
+        <col width="80%">
+      </colgroup>
+      <tr>
+        <th>Comando</th>
+        <th align="left">Descripción</th>
+      </tr>
+      <tr>
+        <td><a href="#aligned"><b><code>\a</code></b></a></td>
+        <td>Activa | Desactiva el formato alineado de la tabla.</td>
+      </tr>
+      <tr>
+      <tr>
+        <td><a href="#c-title"><b><code>\C [title]</code></b></a></td>
+        <td>Establece | Anula el título de las tablas que se imprimen en los resultados de una consulta.</td>
+      </tr>
+      <tr>
+      <tr>
+      <tr>
+        <td><a href="#cd-directory"><b><code>\cd [directory]</code></b></a></td>
+        <td>Cambia el directorio de trabajo actual a <strong>directory</strong>. Sin argumentos, cambia el directorio de
+          inicio del
+          usuario actual.</td>
+      </tr>
+      <tr>
+      <tr>
+        <td><a href="#conninfo"><b><code>\conninfo</code></b></a></td>
+        <td>Muestra información sobre la conexión de base de datos actual.</td>
+      </tr>
+      <tr>
+      <tr>
+        <td><a href="#copyright"><b><code>\copyright</code></b></a></td>
+        <td>Muestra información sobre la conexión de base de datos actual.</td>
+      </tr>
+      <tr>
+        <td><a href="#echo"><b><code>\echo [text]</code></b></a></td>
+        <td>Imprime los argumentos evaluados en la salida estándar, separados por espacios y seguidos de una nueva
+          línea. Si se utiliza el texto entre acentos graves se interpretará como un comando <code>`comando`</code>.
+        </td>
+      </tr>
+      <tr>
+        <td><a href="#timing"><b><code>\timing</code></b></a></td>
+        <td>Activa | Desactiva la visualización del tiempo en milisegundos que tarda cada instrucción SQL.</td>
+      </tr>
+      <tr>
+        <td><a href="#extends"><b><code>\x</code></b></a></td>
+        <td>Activa | Desactiva el formato de tabla expandido en el resultado de cada instrucción SQL.</td>
+      </tr>
+      <tr>
+        <td><a href="#help-mc"><b><code>\h - \help</code></b></a></td>
+        <td>Activa | Desactiva el formato de tabla expandido en el resultado de cada instrucción SQL.</td>
+      </tr>
+      <tr>
+        <td><a href="#html"><b><code>\H - \html</code></b></a></td>
+        <td>Activa | Desactiva el formato de salida de consulta HTML.</td>
+      </tr>
+      <tr>
+        <td><a href="#execute-command"><b><code>\! [comando]</code></b></a></td>
+        <td>Permite ejecutar comandos de la shell de Linux o de CMD de windows desde la propia consola de psql.</td>
+      </tr>
+      <tr>
+        <td><a href="#list-mc"><b><code>\l[+]<br>\list[+] [pattern]</code></b></a></td>
+        <td>Muestra un listado de las bases de datos que existen en la instancia del servidor PostgreSQL junto a sus
+          nombres, propietarios, propietarios, juego de caracteres y privilegios de acceso. Si se especifica un
+          "pattern", si se listan las bases de datos cuyo nombre coincidan con el patrón. Si se agrega el símbolo "+",
+          también se muestran los tamaños de las bases de datos, los tablespace y las descripciones</td>
+      </tr>
+      <tr>
+        <td><a href="#o-output"><b><code>\o <br>\out [filename]</code></b></a></td>
+        <td>Permite guardar el resultado de las futuras consultas en el archivo "filename". El resultado incluye todas
+          las tablas , respuestas de comandos y mensajes de tipo "notices" del servidor, pero no los mensajes de error.
+        </td>
+      </tr>
+    </table>
+
+    <h4 id="a"><a name="aligned">&#x1f977; </a><code>\a</code></h4>
+    <p align="center">
+      <img src="assets/aligned-l.png" alt="meta comando aligned"><br>
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="c-title">&#x1f977; </a><code>\C</code></h4>
+    <p align="center">
+      <img src="assets/c-title.png" alt="meta comando C [title]">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="cd-directory">&#x1f977; </a><code>\cd</code></h4>
+    <p align="center">
+      <img src="assets/cd-directory.png" alt="meta comando cd [directory]">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4 id="connifo"><a name="conninfo">&#x1f977; </a><code>\conninfo</code></h4>
+    <p align="center">
+      <img src="assets/conninfo.png" alt="meta comando conninfo">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="copyright">&#x1f977; </a><code>\copyright</code></h4>
+    <p align="center">
+      <img src="assets/copyright.png" alt="meta comando copyright">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h3 id="echo"><a name="echo">&#x1f977; </a><code>\echo</code></h3>
+    <p align="center">
+      <img src="assets/echo.png" alt="meta comando echo">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="timing">&#x1f977; </a><code>\timing</code></h4>
+    <p align="center">
+      <img src="assets/timing.png" alt="meta comando timing">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="extends">&#x1f977; </a><code>\x</code></h4>
+    <p align="center">
+      <img src="assets/extends-x.png" alt="meta comando x">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="help-mc">&#x1f977; </a><code>\help</code></h4>
+    <p align="center">
+      <img src="assets/help-mc.png" alt="meta comando help">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h4><a name="html">&#x1f977; </a><code>\H</code></h4>
+    <p align="center">
+      <img src="assets/html.png" alt="meta comando H">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr>
+    <h3><a name="execute-command">&#x1f977; </a><code>\!</code></h3>
+    <p align="center">
+      <img src="assets/execute-command.png" alt="meta comando execute-command">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+
+    <hr>
+    <h3><a name="list-mc">&#x1f977; </a><code>\list</code></h3>
+    <p align="center">
+      <img src="assets/list-mc.png" alt="meta comando list-mc">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+
+    <hr>
+    <h4><a name="o-output">&#x1f977; </a><code>\o</code></h4>
+    <p align="center">
+      <img src="assets/o-output.png" alt="meta comando o-output">
+    </p>
+    <p><a href="#tabla-meta-comandos"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+  </article>
+</body>
+
+</html>
