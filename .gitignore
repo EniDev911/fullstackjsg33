@@ -6,7 +6,6 @@
 *.xls
 Thumbs.db
 **/Thumbs.db
-
 node_modules
 **/node_modules
 .sass-cache
