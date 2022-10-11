@@ -6,11 +6,12 @@
     "language" : "idiomas",
     "spanish": "español",
     "english": "inglés",    
-    "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
+    "description": "2 años de experencia en desarrollo de aplicaciones web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
   },
 
   "about": {
-    "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
+    "title": "Acerca de mí",
+    "description": "Programador Chileno, títulado de la carrera de programación computacional, tengo 3 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de Javascript. Actualmente soy desarrollador freelancer y siempre estoy dispuesto para aprender y compartir el conocimiento, enfocado en llevar a cabo buenas practicas de desarrollo que respetan los estándares."
   },
   "education": {
       "title": "educación",

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
+</head>
+<body>
+    
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+  <!-- Toast -->
+  <div class="toast position-fixed top-0" id="main-toast" data-bs-autohide="false" style="z-index:9999999;">
+    <div class="toast-header">
+      <div class="bg-primary rounded-pill" style="height:17px; width:17px"></div>
+      <button data-bs-dismiss="toast" class="btn-close ms-auto"></button>
+    </div>
+    <div class="toast-body">
+      <ul class="nav nav-tabs rounded nav-fill">
+        <li class="nav-item">
+          <a href="" class="nav-link"><i class="fs-3 text-info fa-brands fa-linkedin"></i></a>
+        </li>
+        <li class="nav-item"><a href="https://github.com/enidev911" class="nav-link">
+          <i class="fs-3 text-dark fa-brands fa-github"></i>
+        </a></li>
+        <li class="nav-item">
+          <a href="https://www.facebook.com/profile.php?id=100009064421475" class="nav-link">
+            <i class="fs-3 text-info fa-brands fa-facebook"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<script src="../../../public/js/lib/bootstrap.bundle.min.js"></script>
+<script src="../../../public/js/lib/fontawesome.bundle.js"></script>
+
+<script>
+    let toast = new bootstrap.Toast(document.getElementById("main-toast"))
+    toast.show()
+    
+    toast = new bootstrap.Toast(document.getElementById("liveToast"))
+    toast.show()
+    </script>
+</body>
+</html>

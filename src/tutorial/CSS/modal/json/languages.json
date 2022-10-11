@@ -1,0 +1,23 @@
+{
+  "html": [
+    "og:property (open graph protocol)",
+    "html minificado",
+    "og:type",
+    "data-atributes",
+    "i"
+  ],
+  "css": [
+    {
+      "opacity": "0.4",
+      "width": "100%",
+      "max-width": "1200px",
+      "height": "100vh",
+      "min-height": "100%"
+    }
+  ],
+  "js": {
+    "array-method": ["filter", "map", "sort", "reduce"],
+    "ecma-script-6": ["arrow function", "ternary operator", "split operator"],
+    "regexp": ["regular expressions", "advance search"]
+  }
+}
