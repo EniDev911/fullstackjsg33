@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Repositorio del programa fullstack javascript g33 ADL.",
   "scripts": {
+    "start": "servor --reload --browse",
     "sass-build": "sass src/public/sass/custom_bootstrap.scss:src/public/css/bootstrap.min.css --style compressed",
     "sass-watch": "sass -w src/public/sass/custom_bootstrap.scss:src/public/css/bootstrap.min.css --style compressed"
   },
