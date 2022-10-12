@@ -198,4 +198,16 @@ export const projects = [
     background: "dark",
     module: 4
   },
+  {
+    // MODULE 5 - REACT 2
+    active: true,
+    title: "Desafío 1: Happy Cake",
+    image: "src/public/images/png/happy-cake.png",
+    url_code:
+      "https://github.com/EniDev911/react-router-spa-adl",
+    url_demo: "https://enidev911.github.io/react-router-spa-adl/",
+    color: "light",
+    background: "danger",
+    module: 5
+  }
 ];

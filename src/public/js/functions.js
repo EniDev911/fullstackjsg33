@@ -4,11 +4,13 @@ const module_1 = document.getElementById("module-1"),
   module_2 = document.getElementById("module-2"),
   module_3 = document.getElementById("module-3"),
   module_4 = document.getElementById("module-4"),
+  module_5 = document.getElementById("module-5"),
   btns_clone = document.querySelectorAll(".fa-clone"),
   innerCarousel_1 = document.getElementById("inner-carousel-1"),
   innerCarousel_2 = document.getElementById("inner-carousel-2"),
   innerCarousel_3 = document.getElementById("inner-carousel-3"),
   innerCarousel_4 = document.getElementById("inner-carousel-4"),
+  innerCarousel_5 = document.getElementById("inner-carousel-5"),
   btns_module = document.querySelectorAll(".module");
 
 let template;
@@ -24,22 +26,31 @@ const module_change = function (module) {
     module_2.classList.add("collapse");
     module_3.classList.add("collapse");
     module_4.classList.add("collapse");
-
+    module_5.classList.add("collapse");
   } else if (module === "m-2") {
     module_1.classList.add("collapse");
     module_2.classList.remove("collapse"); // show
     module_3.classList.add("collapse");
     module_4.classList.add("collapse");
+    module_5.classList.add("collapse");
   } else if (module == "m-3") {
     module_1.classList.add("collapse");
     module_2.classList.add("collapse");
     module_3.classList.remove("collapse"); // show
     module_4.classList.add("collapse");
+    module_5.classList.add("collapse");
   } else if (module === "m-4") {
     module_1.classList.add("collapse");
     module_2.classList.add("collapse");
     module_3.classList.add("collapse");
     module_4.classList.remove("collapse"); // show
+    module_5.classList.add("collapse");
+  } else if (module === "m-5") {
+    module_1.classList.add("collapse");
+    module_2.classList.add("collapse");
+    module_3.classList.add("collapse");
+    module_4.classList.add("collapse");
+    module_5.classList.remove("collapse"); // show
   }
 };
 
@@ -107,10 +118,10 @@ const fillTemplate = (obj) => {
             <i class="fs-3 text-${obj.color} fa-brands fa-github"></i>
            </a>
            </li>`;
-          if (typeof obj.url_zip != "undefined") {
-            template += `<li class="nav-item"><a title="Descargar" href="${obj.url_zip}" target="_blank" class="nav-link" download><i class="fs-3 text-${obj.color} fa-solid fa-download"></i></a></li>`;
-          } 
-  
+  if (typeof obj.url_zip != "undefined") {
+    template += `<li class="nav-item"><a title="Descargar" href="${obj.url_zip}" target="_blank" class="nav-link" download><i class="fs-3 text-${obj.color} fa-solid fa-download"></i></a></li>`;
+  }
+
   template += `
           </ul>
           </div>
@@ -133,6 +144,9 @@ const addProject = () => {
     } else if (project.module === 4) {
       fillTemplate(project);
       innerCarousel_4.innerHTML += template;
+    } else if (project.module === 5) {
+      fillTemplate(project);
+      innerCarousel_5.innerHTML += template;
     }
   });
 };
