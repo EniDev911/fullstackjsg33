@@ -1478,8 +1478,47 @@
           <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;</td>
           <td>Verdadero/Falso</td>
         </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="radio"</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">select</span>&gt;</td>
+          <td>Opción unica</td>
+        </tr>
+        <tr>
+          <td>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">select multiple</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;
+          </td>
+          <td>
+            Varias opciones
+          </td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="color"</span>&gt;</td>
+          <td>Selección de color</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="file"</span>&gt;</td>
+          <td>Selección de archivo</td>
+        </tr>
       </tbody>
     </table>
+
+    <p>En HTML5, de forma nativa, el navegador proporciona estos <b>campos de entrada</b> en los que el usuario puede
+      introducir información específica. Cada uno de ellos tiene sus propias particularidades y características, además
+      de que hay que tener cuidado con algunos controles de formulario, ya que pueden no estar soportados por completo
+      en todos los navegadores.</p>
+
+    <h4>Campos de entrada</h4>
+    <p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un
+      formulario es la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;. Su
+      funcionalidad más utilizada es la de servir como campo de texto:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;
+   &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;text&quot;</span> <span class="na">name</span>=<span class="s">&quot;nombre&quot;</span></span>/&gt;
+   &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;submit&quot;</span> <span
+      class="na">value</span>=<span class="s">&quot;Enviar&quot;</span></span>/&gt;
+&lt;/<span class="nt">form</span>&gt;</pre>
+    </div>
 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
