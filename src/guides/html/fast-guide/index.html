@@ -786,7 +786,7 @@
             <u>URL</u>
           </td>
           <td>
-            Enlace al documento que se quiere cargar: <strong>Atributo obliatorio</strong>.
+            Enlace al documento que se quiere cargar: <strong>Atributo obligatorio</strong>.
           </td>
         </tr>
         <tr>
@@ -895,6 +895,44 @@
       <img src="assets/url_scheme.png" alt="">
     </p>
 
+    <h4>Protocolo </h4>
+    <p>
+      Existen varios protocolos diferentes y es la parte inicial de la URL. Probablemente, el más utilizado sea <span
+        style="color: darkcyan; font-weight: bold;">http://</span>, aunque <span
+        style="color: darkcyan; font-weight: bold;">https://</span> también es frecuentemente muy utilizado, ya que se
+      utiliza para cifrar información y que la transmisión sea más segura. Algunos protocolos de ejemplo:</p>
+    <table>
+      <thead>
+        <th>Protocolo</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">http://</td>
+          <td>Protocolo de transferencia de hipertexto. Es el que se usa habitualmente para páginas webs.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">https://</td>
+          <td>Protocolo seguro de transferencia de hipertexto. Usado para cifrar información sensible.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">ftp://</td>
+          <td>Protocolo de transferencia de archivos. Similar a <span
+              style="color: darkcyan; font-weight: bold;">HTTP://</span>, pero orientado a enviar archivos.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">whatsapp://</td>
+          <td>Protocolo de WhatsApp. Se puede interactuar con WhatsApp si el usuario lo tiene instalado.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">//</td>
+          <td>Protocolo utilizado en la URL actual. Utiliza <span
+              style="color: darkcyan; font-weight: bold;">http:</span> o <span
+              style="color: darkcyan; font-weight: bold;">https</span> según la página original.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -1359,12 +1397,90 @@
           <td>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
             información.</td>
         </tr>
+        <tr>
+          <td><b>name</b></td>
+          <td>nombre</td>
+          <td>Nombre del formulario. Útil para procesar posteriormente.</td>
+        </tr>
+        <tr>
+          <td><b>target</b></td>
+          <td>destino</td>
+          <td>Nombre del lugar donde se abrirá el formulario. <span style="color: rgb(81, 81, 255)">\_blank</span> para
+            nueva pestaña.</td>
+        </tr>
+        <tr>
+          <td><b>enctype</b></td>
+          <td>tipo</td>
+          <td>Codificación para el envió del formulario. Importante para envió de archivos.</td>
+        </tr>
+        <tr>
+          <td><b>accept-charset</b></td>
+          <td>codificación</td>
+          <td>Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
+        </tr>
+        <tr>
+          <td><b>autocomplete</b></td>
+          <td><b>on</b> | off</td>
+          <td>Activa o desactiva el autocompletado para todos los campos del formulario.</td>
+        </tr>
+        <tr>
+          <td><b>novalidate</b></td>
+          <td>boolean</td>
+          <td>Con este atributo presente, el formulario obvia la validación HTML5.</td>
+        </tr>
       </tbody>
     </table>
-    <p><a href="https://codepen.io/EniDev911/pen/qBoWVmz"><img src="https://badges.aleen42.com/src/codepen.svg"
-          alt="codepen logo" height="27"></a>
-      <br>
+    <p>
+      Así un formulario base de ejemplo (<i>aún vacío, sin campos de entrada de datos, sólo con la etiqueta
+        contenedora</i>) podría ser el que vemos en el siguiente ejemplo:
     </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
+    </div>
+    <p>Aquí se definen 3 atributos base en &lt;<span style="color:rgb(174, 174, 5); font-weight:bold">form</span>&gt;:
+    </p>
+    <ul>
+      <li>En <span style="color:rgb(174, 174, 5); font-weight:bold">action</span> se indica la dirección donde se
+        enviarán los datos cuando el usuario haga clic en el botón enviar. En caso de omitirse esta información, se
+        enviarían los datos a la propia página actual, volviéndola a cargar.</li>
+      <li>
+        En <span style="color:rgb(174, 174, 5); font-weight:bold">method</span> se define el tipo de método HTTP a
+        utilizar. Utilizaremos el método <span style="color:rgb(31, 116, 220); font-weight:bold">GET</span> cuando nos
+        interese que los datos se envíen en la propia URL. En caso contrario, <span
+          style="color:rgb(31, 116, 220); font-weight:bold">POST</span>.
+      </li>
+      <li>
+        En <span style="color:rgb(174, 174, 5); font-weight:bold">name</span> el nombre del formulario para cuando
+        necesitemos hacer referencia a él (<i>generalmente desde javascript o desde backend</i>).
+      </li>
+    </ul>
+    <h4>Tipos de datos</h4>
+    <p>Para que un usuario pueda introducir información en un formulario, requiere que se le indiquen una serie de
+      campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber
+      a priori que <b>tipo de dato</b> le vamos a pedir a un usuario (<i>texto, numérico, fecha, etc...</i>), y así
+      saber que tipo de campo de entrada de datos es más conveniente colocar.</p>
+    <table>
+      <thead>
+        <th>Etiquetas</th>
+        <th>Información a obtener</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">textarea</span>&gt;</td>
+          <td>Nombres, direcciones físicas, descripciones</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="number"</span>&gt;</td>
+          <td>Edades, precios, cantidades</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;</td>
+          <td>Verdadero/Falso</td>
+        </tr>
+      </tbody>
+    </table>
+
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -2958,7 +3074,7 @@ al pasar el mouse por encima y dar clic se podrá cambiar este texto<span class=
     <hr>
     <h3><a name="atributos-generales"></a>Atributos comunes en HTML</h3>
     <p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta</p>
-  </article>  
+  </article>
 </body>
 
 </html>
