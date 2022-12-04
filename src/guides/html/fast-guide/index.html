@@ -1630,11 +1630,10 @@
           class="na">autoplay muted loop</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
     </div>
     <p>Obtendriamos los siguientes resultados:</p>
-    <div style="display:flex; width:100%; justify-content:center">
-      <video src="./assets/Estrella_De_La_Muerte.mp4" style="width:100%; height: 250px;" type="video/mp4"
+    <div style="display:flex; width:100%;">
+      <video src="./assets/Estrella_De_La_Muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
         poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" controls></video>
-      <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:100%; height: 250px;" autoplay muted
-        loop></video>
+      <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:50%" autoplay muted loop></video>
     </div>
     <p>En este caso cargamos un video, pero no se mostrará porque se ha indicado que se utilice una imagen de
       presentación que se mostrará hasta que el usuario pulse el botón de reproducir de los controles. En el segundo
@@ -1752,17 +1751,17 @@
 &lt;<span class="nt">iframe 
   <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
   <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
-  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span>
-  <span class="na">playlist</span>=<span class="s">&quot;LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span>&gt;
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span>&gt;
 &lt;/<span class="nt">iframe</span>&gt;</pre>
     </div>
 
-    <div style="display: flex;">
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk">
+    <div style="display: flex; width: 100%; justify-content: space-between;">
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk" style="width:33%;">
       </iframe>
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1">
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1" style="width:33%;">
       </iframe>
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk" playlist="LG3T2rzlR9Q,SLBKRZszn4k&loop=1">
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"
+        style="width:33%;">
       </iframe>
     </div>
     <p><a href="#top"><img alt=""
