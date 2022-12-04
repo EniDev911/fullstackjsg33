@@ -1613,51 +1613,33 @@
         </tr>
       </tbody>
     </table>
-    <p><b>Reproducir un video dentro de una página HTML:</b><br></p>
+    <p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span class="na">width</span>=<span class="s">&quot;640&quot;</span> <span class="na">height</span>=<span class="s">&quot;460&quot;</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
+    </div>
+    <p>Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x460, pero se verá como una imagen,
+      ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo
+      indicando los atributos <b>controls</b> y <b>autoplay</b>.</p>
 
-    <table>
-      <colgroup>
-        <col span="1">
-        <col span="1">
-      </colgroup>
-      <thead>
-        <th>Tecleas</th>
-        <th>Obtienes</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre
-              style="background: transparent;">&#60;video<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="introducción.mp4"<br>&nbsp;&nbsp;controls&#62;<br>&#60;/video&#62;</pre>
-            <pre
-              style="background: transparent;">&#60;video controls<br>&nbsp;&nbsp;width="
-              500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;muted&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.mp4"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/mp4"&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.webm"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/webm"&#62;<br>&#60;/video&#62;</pre>
-          </td>
-          <td>
-            <img src="assets/html5.1_.png" height="410">
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Otro ejemplos básicos para colocar videos en nuestra página:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.webm&quot;</span> <span class="na">poster</span>=<span class="s">&quot;presentacion.jpg&quot;</span> <span class="na">controls</span></span>&gt;&lt;/<span class="nt">video</span>&gt;
+&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span
+          class="na">autoplay muted loop</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
+    </div>
+
 
     <p><b>Reproducir un video de YouTube dentro de una página HTML:</b><br></p>
     <table>
-      <thead>
-        <th>Tecleas</th>
-        <th>Obtienes</th>
-      </thead>
       <tbody>
         <tr>
           <td>
-            <pre>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q"&#62;<br>&#60;/iframe&#62;</pre>
-            <pre>Reproducción automática y Silenciado<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;autoplay=1&mute=1"&#62;<br>&#60;/iframe&#62;  
+            <pre
+              style="background-color:transparent">&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q"&#62;<br>&#60;/iframe&#62;</pre>
+            <pre style="background-color: transparent;">Reproducción automática y Silenciado<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;autoplay=1&mute=1"&#62;<br>&#60;/iframe&#62;  
                 </pre>
-            <pre>Lista de reproducción en bucle:<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"&#62;<br>&#60;/iframe&#62; 
+            <pre style="background-color: transparent;">Lista de reproducción en bucle:<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"&#62;<br>&#60;/iframe&#62; 
                 </pre>
-          </td>
-          <td>
-            <img src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/youtube.png"
-              height="410">
           </td>
         </tr>
       </tbody>
