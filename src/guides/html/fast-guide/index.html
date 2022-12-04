@@ -1629,7 +1629,66 @@
 &lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span
           class="na">autoplay muted loop</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
     </div>
-
+    <p>En este caso cargamos un video, pero no se mostrará porque se ha indicado que se utilice una imagen de
+      presentación que se mostrará hasta que el usuario pulse el botón de reproducir de los controles. En el segundo
+      ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle,
+      iniciándose una y otra vez.</p>
+    <blockquote>
+      <p>Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a
+          href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank">cambio de
+          políticas</a> con el
+        atributo de reproducción automática <span style="color:rgb(9, 110, 192); font-weight:bold">autoplay</span>, por
+        lo que no funcionará salvo que el usuario haya interactuado antes en la página.</p>
+    </blockquote>
+    <h4>Formatos de video</h4>
+    <p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y
+      los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video
+      tiene dos partes principales: el <b>formato contenedor</b>, que es el formato del video en sí, mientras que en su
+      interior puede tener múltiples componentes codificados con diferentes <b>codecs</b>.</p>
+    <p>
+      <img src="./assets/formato-contenedor-video.png" alt="formato contenedor video">
+    </p>
+    <p>De hecho, un video básico suele tener, como mínimo, un componente de video y otro de audio, pero puede tener
+      muchos más (<i>subtítulos, imágenes, etc...</i>). Estos detalles son muy importantes, ya que dependiendo del
+      formato y/o codec de un video, puede que sea factible utilizarlo para la web o no, así que hay que conocer un poco
+      sobre estos conceptos.</p>
+    <p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados:</p>
+    <table>
+      <thead>
+        <th>Formato</th>
+        <th>Codec utilizado</th>
+        <th>Características</th>
+        <th>¿Recomendado?</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">MP4</span></td>
+          <td>
+            <a href="https://www.videolan.org/developers/x264.html" target="_blank">
+              <span style="color:rgb(58, 74, 248);">x264</span>
+            </a>,
+            <a href="https://www.divx.com/en/software/technologies/h264/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">DivX H264</span>
+            </a>
+          </td>
+          <td>Alta calidad. Codec x264 libre.</td>
+          <td>Sí, <a href="https://caniuse.com/mpeg4" target="_blank">buen soporte</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">WebM</span></td>
+          <td>
+            <a href="https://www.3cx.es/voip-sip/vp8/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">VP8</span>
+            </a>,
+            <a href="https://es.wikipedia.org/wiki/VP9" target="">
+              <span style="color:rgb(58, 74, 248);">VP9</span>
+            </a>
+          </td>
+          <td>Alternativa libre a MP4 de Google.</td>
+          <td>Sí, <a href="https://caniuse.com/webm" target="_blank">soporte medio</a></td>
+        </tr>
+      </tbody>
+    </table>
 
     <p><b>Reproducir un video de YouTube dentro de una página HTML:</b><br></p>
     <table>
