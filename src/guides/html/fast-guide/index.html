@@ -1629,13 +1629,13 @@
 &lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span
           class="na">autoplay muted loop</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
     </div>
-    <p>
-      <video src="assets/Estrella_De_La_Muerte.mp4" style="width:100%; height: 600px; margin:0" type="video/mp4"
+    <p>Obtendriamos los siguientes resultados:</p>
+    <div style="display:flex; width:100%; justify-content:center">
+      <video src="./assets/Estrella_De_La_Muerte.mp4" style="width:100%; height: 250px;" type="video/mp4"
         poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" controls></video>
-      Ejemplo 2
-      <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:100%; height: 600px; margin:0" autoplay
-        muted loop></video>
-    </p>
+      <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:100%; height: 250px;" autoplay muted
+        loop></video>
+    </div>
     <p>En este caso cargamos un video, pero no se mostrará porque se ha indicado que se utilice una imagen de
       presentación que se mostrará hasta que el usuario pulse el botón de reproducir de los controles. En el segundo
       ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle,
@@ -1705,6 +1705,15 @@
           </td>
           <td>Compite con HEVC/H.265.</td>
           <td>No, <a href="https://caniuse.com/av1" target="_blank">soporte bajo</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">HEVC</span></td>
+          <td><a href="http://x265.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">x265</span>
+            </a>, <a href="https://www.divx.com/en/software/technologies/hevc/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">DivX HEVC</span></td>
+          <td>Futura evolución de MP4.</td>
+          <td>No, <a href="https://caniuse.com/hevc" target="_blank">poco soporte</a></td>
         </tr>
       </tbody>
     </table>
