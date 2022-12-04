@@ -1699,9 +1699,9 @@
           <td>Basado en <a href="https://encode.su/threads/2462-Google-VP10-video-codec" target="_blank">
               <span style="color:rgb(58, 74, 248);">VP10</span>
             </a>, <a href="https://xiph.org/daala/" target="_blank">
-              <span style="color:rgb(58, 74, 248);">Daala</span> y <a
-                href="https://en.wikipedia.org/wiki/Thor_(video_codec)" target="_blank">
-                <span style="color:rgb(58, 74, 248);">Thor</span></a>
+              <span style="color:rgb(58, 74, 248);">Daala</span></a> y <a
+              href="https://en.wikipedia.org/wiki/Thor_(video_codec)" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Thor</span></a>
           </td>
           <td>Compite con HEVC/H.265.</td>
           <td>No, <a href="https://caniuse.com/av1" target="_blank">soporte bajo</a></td>
@@ -1711,29 +1711,60 @@
           <td><a href="http://x265.org/" target="_blank">
               <span style="color:rgb(58, 74, 248);">x265</span>
             </a>, <a href="https://www.divx.com/en/software/technologies/hevc/" target="_blank">
-              <span style="color:rgb(58, 74, 248);">DivX HEVC</span></td>
+              <span style="color:rgb(58, 74, 248);">DivX HEVC</span></a></td>
           <td>Futura evolución de MP4.</td>
           <td>No, <a href="https://caniuse.com/hevc" target="_blank">poco soporte</a></td>
         </tr>
-      </tbody>
-    </table>
-
-    <p><b>Reproducir un video de YouTube dentro de una página HTML:</b><br></p>
-    <table>
-      <tbody>
         <tr>
-          <td>
-            <pre
-              style="background-color:transparent">&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q"&#62;<br>&#60;/iframe&#62;</pre>
-            <pre style="background-color: transparent;">Reproducción automática y Silenciado<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;autoplay=1&mute=1"&#62;<br>&#60;/iframe&#62;  
-                </pre>
-            <pre style="background-color: transparent;">Lista de reproducción en bucle:<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"&#62;<br>&#60;/iframe&#62; 
-                </pre>
-          </td>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">OGV</span></td>
+          <td><a href="https://www.theora.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Theora</span>
+            </a></td>
+          <td>Alternativa libre a MP4.</td>
+          <td>No, <a href="https://caniuse.com/ogv" target="_blank">Con precaución</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">MKV</span></td>
+          <td><a href="https://www.matroska.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Matroska</span>
+            </a></td>
+          <td>Buena compresión. Potente.</td>
+          <td>No, alto consumo CPU</td>
         </tr>
       </tbody>
     </table>
 
+    <p>Reproducir un video de YouTube dentro de una página HTML:<br></p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;-- Reproducción de un video de Youtube --&gt;</span>
+&lt;<span class="nt">iframe
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span>
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;-- Reproducción automática y Silenciado --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;-- Lista de reproducción en bucle --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span>
+  <span class="na">playlist</span>=<span class="s">&quot;LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;</pre>
+    </div>
+
+    <div style="display: flex;">
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk">
+      </iframe>
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1">
+      </iframe>
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk" playlist="LG3T2rzlR9Q,SLBKRZszn4k&loop=1">
+      </iframe>
+    </div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
