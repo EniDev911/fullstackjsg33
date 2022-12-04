@@ -656,7 +656,7 @@
       la base del <strong>lenguaje HTML</strong>.</p>
     <p>Existen muchos etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha
       información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:</p>
-    <div class="highlight">
+    <div class="highlight" style="font-size:22px;">
       <pre>&lt;<span class="nt">etiqueta</span>&gt;contenido&lt;/<span class="nt">etiqueta</span>&gt;</pre>
     </div>
     <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<i>en el ejemplo anterior, es
@@ -670,6 +670,18 @@
       individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
       apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la
         presentación del contenido</strong>.</p>
+    <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de HTML4 y anteriores. Dicha etiqueta se utilizaba
+      para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
+    <div class="highlight" style="font-size: 20px;">
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+    </div>
+    <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
+      algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido de información semántica en
+      HTML5. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para HTML5 es la siguiente:</p>
+    <div class="highlight" style="font-size: 20px;">
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+    </div>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
@@ -1676,32 +1688,32 @@
           <td>Establece un nombre para un grupo de contenidos multimedia.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autoplay</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">autoplay</span></td>
           <td><b>boolean</b></td>
           <td>Comienza a reproducir el video automáticamente.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">loop</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">loop</span></td>
           <td><b>boolean</b></td>
           <td>Vuelve a iniciar el video cuando finaliza su reproducción (<i>bucle</i>).</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">muted</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">muted</span></td>
           <td><b>boolean</b></td>
           <td>Establece el video sin sonido (<i>silenciado</i>).</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">controls</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">controls</span></td>
           <td><b>boolean</b></td>
           <td>Muestra los controles de reproducción. Por defecto no se muestran.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">width</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">width</span></td>
           <td>tamaño</td>
           <td>Indica el tamaño de ancho del video.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">height</span></td>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">height</span></td>
           <td>tamaño</td>
           <td>Indica el tamaño del alto del video.</td>
         </tr>
