@@ -1732,7 +1732,48 @@
         </tr>
       </tbody>
     </table>
-
+    <h4>Video (modo avanzado)</h4>
+    <p>Sin embargo, aún con lo que hemos visto todavía falta ver todas las posibilidades multimedia que tenemos con
+      HTML5. La etiqueta &lt;<span style="color:rgb(58, 74, 248); font-weight:bold">video</span>&gt; también puede
+      actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades
+      adicionales.</p>
+    <table>
+      <thead>
+        <th>Etiqueta</th>
+        <th>Atributos</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">source</span>&gt;</td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td>Establece un archivo de video o lo añade como alternativa.</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">track</span>&gt;</td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">srclang</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">label</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">kind</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">default</span></td>
+          <td>Establece un archivo de subtítulos o lo añade como alternativa.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Videos alternativos</h4>
+    <p>Si utilizamos la etiqueta &lt;<span style="color:rgb(58, 74, 248); font-weight:bold">video</span>&gt; como
+      etiqueta contenedora, podemos incluir etiquetas &lt;<span
+        style="color:rgb(58, 74, 248); font-weight:bold">source</span>&gt; en su interior para proporcionar formatos
+      alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;-- Ejemplo 1 --&gt;</span>
+&lt;<span class="nt">video <span class="na">width</span>=<span class="s">&quot;600&quot;</span> <span class="na">height</span>=<span class="s">&quot;400&quot;</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/mp4&quot; /</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.webm&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/webm&quot; /</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.ogv&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/ogg&quot; /</span></span>&gt;
+  Su navegador no soporta contenido multimedia.
+&lt;/<span class="nt">video</span>&gt;</div>
     <p>Reproducir un video de YouTube dentro de una página HTML:<br></p>
     <div class="highlight">
       <pre><span class="c1">&lt;-- Reproducción de un video de Youtube --&gt;</span>
