@@ -649,6 +649,27 @@
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
+    <h3>Introducción</h3>
+    <h4>¿Qué es una etiqueta HTML?</h4>
+    <p>En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código
+      fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son
+      la base del <strong>lenguaje HTML</strong>.</p>
+    <p>Existen muchos etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha
+      información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">etiqueta</span>&gt;contenido&lt;/<span class="nt">etiqueta</span>&gt;</pre>
+    </div>
+    <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<i>en el ejemplo anterior, es
+        incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</i>). Em su lugar, existen una serie de etiquetas
+      concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
+      la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
+    <h4>¿Qué es la semántica</h4>
+    <p>Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea
+      semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
+      presentación, que se gestiona desde CSS. En el documento HTML debe aparecer información correctamente
+      individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
+      apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la
+        presentación del contenido</strong>.</p>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
@@ -755,8 +776,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>
-            <code>&lt;a&gt;</code>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">a</span>&gt;
           </td>
           <td>
             Etiqueta para hacer rereferencia a otras páginas web o recursos como documentos o archivos.
@@ -764,7 +784,8 @@
         </tr>
       </tbody>
     </table>
-    <p>Esta etiqueta debe tener, como mínimo, el atributo <strong><code>href</code></strong>, ya que es el atributo
+    <p>Esta etiqueta debe tener, como mínimo, el atributo <span
+        style="color:rgb(197, 182, 52); font-weight:bold">href</span>, ya que es el atributo
       con
       el que se especifica la dirección URL al documento que se quiere enlazar. Aún así, la etiqueta
       <code>&lt;a&gt;</code> también tiene varios atributos opcionales, veamos un resumen de todos ellos:
@@ -780,7 +801,7 @@
       <tbody>
         <tr>
           <td>
-            <code>href</code>
+            <span style="color:rgb(197, 182, 52); font-weight:bold">href</span>
           </td>
           <td>
             <u>URL</u>
@@ -791,18 +812,19 @@
         </tr>
         <tr>
           <td>
-            <code>download</code>
+            <span style="color:rgb(197, 182, 52); font-weight:bold">download</span>
           </td>
           <td>
             <i>"nombre.ext"</i>
           </td>
-          <td>Descarga el enlace definido en el atributo <code>href</code> en lugar de abrirlo. Si se indica un
+          <td>Descarga el enlace definido en el atributo <span
+              style="color:rgb(197, 182, 52); font-weight:bold">href</span> en lugar de abrirlo. Si se indica un
             valor,
             se renombra.</td>
         </tr>
         <tr>
           <td>
-            <code>target</code>
+            <span style="color:rgb(197, 182, 52); font-weight:bold">target</span>
           </td>
           <td>
             <b>"_blank"</b>
@@ -814,7 +836,8 @@
         <tr>
           <td></td>
           <td><b>"_self"</b></td>
-          <td>Abre el enlace en la pestaña o <code>&lt;iframe&gt;</code> actual.</td>
+          <td>Abre el enlace en la pestaña o &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">iframe</span>&gt; actual.</td>
         </tr>
         <tr>
           <td></td>
@@ -829,10 +852,11 @@
         <tr>
           <td></td>
           <td><u>"nameIframe"</u></td>
-          <td>Abre el enlace en el <code>&lt;iframe&gt;</code> con el nombre epecificado.</td>
+          <td>Abre el enlace en el &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">iframe</span>&gt; con el
+            nombre epecificado.</td>
         </tr>
         <tr>
-          <td><code>rel</code></td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">rel</span></td>
           <td><b>"alternate"</b></td>
           <td>Indica que el enlace es una versión alternativa (idioma o formato diferente).</td>
         </tr>
@@ -963,7 +987,8 @@
       <tbody>
         <tr>
           <td>
-            <code>&#60;b&#62;&#60;/b&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt;
           </td>
           <td>
             <b>Esto es negrita</b>
@@ -971,15 +996,18 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;strong&#62;&#60;/strong&#62;</>
-                  </td>
-                  <td>
-                    Fragmento de texto <strong>importante</strong> o palabra <strong>clave</strong> y capturado por los lectores de pantalla
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>&#60;i&#62;&#60;/i&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">strong</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">strong</span>&gt;
+          </td>
+          <td>
+            Fragmento de texto <strong>importante</strong> o palabra <strong>clave</strong> y capturado por los lectores
+            de pantalla
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">i</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">i</span>&gt;
           </td>
           <td>
             <i>Esto es cursiva</i>
@@ -987,7 +1015,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;em&#62;&#60;/em&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">em</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">em</span>&gt;
           </td>
           <td>
             Fragmento de texto <em>enfatizado</em> y capturado por los lectores de pantalla.
@@ -995,7 +1024,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;mark&#62;&#60;/mark&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">mark</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">mark</span>&gt;
           </td>
           <td>
             Fragmento de texto resaltado, simula estar<mark>destacado con marcador amarillo</mark>.
@@ -1003,7 +1033,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;del&#62;&#60;/del&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">del</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">del</span>&gt;
           </td>
           <td>
             <del>Esto es tachado</del>
@@ -1011,19 +1042,22 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;sup&#62;superíndice&#60;/sup&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">sup</span>&gt;superíndice&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">sup</span>&gt;
           </td>
           <td>Esto es <sup>superíndice</sup></td>
         </tr>
         <tr>
           <td>
-            <code>&#60;sub&#62;subíndice&#60;/sub&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">sub</span>&gt;subíndice&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">sub</span>&gt;
           </td>
           <td>Esto es un <sub>subíndice</sub></td>
         </tr>
         <tr>
           <td>
-            <code>&#60;cite&#62;&#60;/cite&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">cite</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">cite</span>&gt;
           </td>
           <td>Fragmento de texto con el título de un trabajo creativo: <cite>obras, libros</cite></td>
         </tr>
@@ -1526,6 +1560,66 @@
         style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;, dependiendo del valor indicado en el atributo
       <b>type</b> realizará una tarea u otra.
     </p>
+    <h4>La etiqueta "input"</h4>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; tiene una gran cantidad
+      de atributos (<i>algunos dependiendo del valor del type, que mostraremos más adelante</i>). Estos son los
+      atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la
+      etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;</p>
+    <table>
+      <thead>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td>tipo de campo</td>
+          <td>Indica el tipo de campo del que se trata.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">name</span></td>
+          <td>nombre del campo</td>
+          <td>Indica el nombre del campo para hacer referencia más tarde.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">value</span></td>
+          <td>valor por defecto</td>
+          <td>Indica el valor inicial que tendrá ese campo de datos.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">form</span></td>
+          <td>nombre del formulario</td>
+          <td>Asocia este campo de datos con un formulario específico.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">placeholder</span></td>
+          <td>sugerencia</td>
+          <td>Indica su sugerencia al usuario antes de escribir.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">size</span></td>
+          <td>número</td>
+          <td>Tamaño visual (<i>número de caracteres</i>) del campo de datos.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autocomplete</span></td>
+          <td><b>on</b> | off</td>
+          <td>Activa o desactiva el autocompletado para este campo.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autofocus</span></td>
+          <td>boolean</td>
+          <td>Establece el foco (<i>colocar el cursor</i>) en este campo al cargar la página.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>El atributo <span style="color:rgb(197, 182, 52); font-weight:bold">type</span> nos permitirá indicar que tipo de
+      campo de dato mostrará en el navegador (<i>text, number, date..., los veremos luego</i>). Mediante el atributo
+      <span style="color:rgb(197, 182, 52); font-weight:bold">name</span> le daremos un nombre al campo de texto, así
+      cuando enviemos la información, podremos manejarla desde javascript o desde el back-end haciendo referencia a
+      dicho nombre.
+    </p>
 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
@@ -1544,7 +1638,7 @@
     <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; especifica recursos de
       medios múltiples para las etiquetas &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">picture</span>&gt;,
       &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">audio</span>&gt;, &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">videp</span>&gt;.</p>
+        style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.</p>
     <blockquote>
       <span style="color:rgb(9, 110, 192); font-weight:bold">OJO</span> : Si lo que queremos es insertar videos desde
       <b>Youtube</b>, <b>Vimeo</b> u otro servicio alternativo, debemos utilizar <a
