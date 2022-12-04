@@ -1524,7 +1524,8 @@
       botón para enviar el formulario con la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input
         type="submit"</span>&gt;. Aunque vemos que se trata de la misma etiqueta &lt;<span
         style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;, dependiendo del valor indicado en el atributo
-      <b>type</b> realizará una tarea u otra.</p>
+      <b>type</b> realizará una tarea u otra.
+    </p>
 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
@@ -1532,10 +1533,88 @@
     <hr />
     <h3 id="multimedia"><a name="multimedia_"></a>Multimedia<a class="headerlink" href="#multimedia"
         title="Permanent link">&#9875;</a></h3>
-    <p>El elemento <code>&lt;source&gt;</code> especifica recursos de medios múltiples para los elementos
-      <code>&lt;picture&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>.
+    <p>En HTML5 se introduce la interesante posibilidad de <b>mostrar videos directamente</b> desde nuestro navegador.
+      De hecho, si arrastramos un video a la ventana del navegador o con el clic derecho seleccionamos la opción
+      <b>abrir con</b> y buscamos el navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en
+      nuestras páginas HTML tenemos que utilizar la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;, que junto a la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; podremos utilizar estas capacidades
+      multimedia de HTML5.
     </p>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; especifica recursos de
+      medios múltiples para las etiquetas &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">picture</span>&gt;,
+      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">audio</span>&gt;, &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">videp</span>&gt;.</p>
+    <blockquote>
+      <span style="color:rgb(9, 110, 192); font-weight:bold">OJO</span> : Si lo que queremos es insertar videos desde
+      <b>Youtube</b>, <b>Vimeo</b> u otro servicio alternativo, debemos utilizar <a
+        href="https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe" target="_blank">la etiqueta HTML iframe</a>
+      en lugar de la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.
+    </blockquote>
+    <h4>Video (modo básico)</h4>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt; tiene varios atributos a
+      nuestra disposición:</p>
+    <table>
+      <thead>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span></td>
+          <td>Dirección URL</td>
+          <td>Video a reproducir. Obligatorio si actua como etiqueta contenedora.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">poster</span></td>
+          <td>Dirección URL</td>
+          <td>Muestra una imagen a modo de presentación.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">preload</span></td>
+          <td><b>auto</b> | metadata | none</td>
+          <td>Indica como realizar la precarga del video.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">mediagroup</span></td>
+          <td>nombre</td>
+          <td>Establece un nombre para un grupo de contenidos multimedia.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autoplay</span></td>
+          <td><b>boolean</b></td>
+          <td>Comienza a reproducir el video automáticamente.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">loop</span></td>
+          <td><b>boolean</b></td>
+          <td>Vuelve a iniciar el video cuando finaliza su reproducción (<i>bucle</i>).</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">muted</span></td>
+          <td><b>boolean</b></td>
+          <td>Establece el video sin sonido (<i>silenciado</i>).</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">controls</span></td>
+          <td><b>boolean</b></td>
+          <td>Muestra los controles de reproducción. Por defecto no se muestran.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">width</span></td>
+          <td>tamaño</td>
+          <td>Indica el tamaño de ancho del video.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">height</span></td>
+          <td>tamaño</td>
+          <td>Indica el tamaño del alto del video.</td>
+        </tr>
+      </tbody>
+    </table>
     <p><b>Reproducir un video dentro de una página HTML:</b><br></p>
+
     <table>
       <colgroup>
         <col span="1">
@@ -1548,13 +1627,14 @@
       <tbody>
         <tr>
           <td>
-            <pre>&#60;video<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="introducción.mp4"<br>&nbsp;&nbsp;controls&#62;<br>&#60;/video&#62;</pre>
-            <pre>&#60;video controls<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;muted&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.mp4"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/mp4"&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.webm"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/webm"&#62;<br>&#60;/video&#62;</pre>
+            <pre
+              style="background: transparent;">&#60;video<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="introducción.mp4"<br>&nbsp;&nbsp;controls&#62;<br>&#60;/video&#62;</pre>
+            <pre
+              style="background: transparent;">&#60;video controls<br>&nbsp;&nbsp;width="
+              500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;muted&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.mp4"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/mp4"&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.webm"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/webm"&#62;<br>&#60;/video&#62;</pre>
           </td>
           <td>
-            <img
-              src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/video_mp4.png"
-              height="410">
+            <img src="assets/html5.1_.png" height="410">
           </td>
         </tr>
       </tbody>
