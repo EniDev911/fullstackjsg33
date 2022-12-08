@@ -7,7 +7,6 @@
 }
 
 :root {
-
   --box-border: #BEC1BB;
   --white: #fff;
   --main-bg: #E8EBE4;
@@ -23,7 +22,7 @@ html {
 body {
   font-family: 'Roboto', 'Open Sans Regular';
   background: var(--main-bg);
-  height: auto;
+  height: 100vh;
 }
 
 body.dark {

@@ -13,204 +13,238 @@
 
 <body>
   <article class="markdown-body">
-    <p><img alt="banner" src="assets/banner.png" />
-    </p>
-    <p><a href="../../index.html"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=files&amp;logoColor=%23FAC173" /></a>
-    </p>
+    <p><img alt="banner"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/banner.png" /></p>
     <p><a name="top"></a></p>
     <h2 id="contenido">CONTENIDO<a class="headerlink" href="#contenido" title="Permanent link">&#9875;</a></h2>
     <ol>
-      <li><a href="#install">Descargar el zip</a></li>
-      <li><a href="#extract-file">Extraer el contenido</a></li>
-      <li><a href="#create-folder-data">Crear carpeta para las configuraciones</a></li>
+      <li><a href="#descargar-zip">Descargar el zip</a></li>
+      <li><a href="#extraer-archivos">Extraer el contenido</a></li>
+      <li><a href="#crear-carpeta-data">Crear carpeta para las configuraciones</a></li>
       <li><a href="#initdb">Configuración inicial</a></li>
       <li><a href="#run-stop-server">Lanzar y detener el servidor</a></li>
       <li><a href="#set-as-service">Configurar PostgreSQL como un servicio</a></li>
+      <li><a href="#set-as-environ-var">Agregar al PATH</a></li>
       <li><a href="#connect">Conectarse al servidor de PostgreSQL</a> </li>
-      <li><a href="#operations">Operaciones básicas en PostgreSQL</a> </li>
+      <li><a href="#operaciones-psql">Operaciones básicas en psql</a> </li>
     </ol>
     <hr />
-    <h3 id="descargar-archivo-zip"><a name="install"></a>DESCARGAR ARCHIVO ZIP<a class="headerlink"
-        href="#descargar-archivo-zip" title="Permanent link">&#9875;</a></h3>
-    <p>Descarga los binarios desde la siguiente web &#x25b6; <a
+    <p><a name="descargar-zip"></a></p>
+    <h3 id="descargar-binarios">Descargar binarios<a class="headerlink" href="#descargar-binarios"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Lo podemos descargar desde la siguiente web &#x25b6; <a
         href="https://www.enterprisedb.com/download-postgresql-binaries">aquí</a>.<br />
-      Selecciona la versión y la arquitectura de tu equipo.</p>
-    <figure align="center">
-      <img src="assets/download_01.png" alt="download zip" width="800"><br>
-      <figcaption><small><b>Captura.1</b> Página de descarga.</small></figcaption>
-    </figure>
-
-    <a href="#top"><img alt=""
-        src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    <hr />
-    <h3 id="extraer-contenido"><a name="extract-file"></a>EXTRAER CONTENIDO<a class="headerlink"
-        href="#extraer-contenido" title="Permanent link">&#9875;</a></h3>
-    <p>Descomprimir los archivos, para este ejemplo será en la siguiente ubicación:<br>
-      <span class="mark"><i class="fa-solid fa-hard-drive" style="color:#e1e3e6"></i>
-        &ldquo;C:\postgresql-14&rdquo;</span>
-    </p>
-    <figure align="center">
-      <img src="assets/extract_zip_01.png"><br>
-      <figcaption><small><b>Captura.2</b> Descomprimir.</small></figcaption>
-    </figure>
-    <hr>
-    <p>Otra manera por medio de PowerShell sería escribiendo los siguientes comandos (De acuerdo al destino de donde se
-      descomprimirá, y donde estén los binarios descargados, remplace el valor de las variables): </p>
-    <div class="highlight">
-      <pre><span class="m">$destination</span> = <span class="gu">"c:\postgresql-14"</span><br><span class="m">$sourceZip</span> = <span class="gu">"C:\Users\enidev911\Downloads\postgresql-14.4-1-windows-x64-binaries.zip"</span><br><span class="ni">Add-Type</span> <span class="nn">-AssemblyName</span> system.io.compression.filesystem<br><span class="m">$fileZip</span> = [<span class="nn">System.IO.Compression.ZipFile</span>]::<span class="ni">OpenRead</span>(<span class="m">$sourceZip</span>)<br>[<span class="nn">System.IO.Compression.ZipFile</span>]::<span class="ni">ExtractToDirectory</span>(<span
-        class="m">$sourceZip</span>, <span class="m">$destination</span>)</pre>
-    </div>
-    <a href="#top"><img alt=""
-        src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    <hr />
-    <h3 id="crear-carpeta-data"><a name="create-folder-data"></a>CREAR CARPETA DATA<a class="headerlink"
-        href="#crear-carpeta-data" title="Permanent link">&#9875;</a></h3>
-    <p>Debemos crear una carpeta donde se almacenarán las configuraciones del servidor de PostgreSQL. También se
-      guardarán
-      los
-      datos, usuarios, etc. En mi caso la voy a crear en el mismo nivel en la siguiente ubicación:<br><span
-        class="mark"><i class="fa-solid fa-hard-drive" style="color:#e1e3e6"></i>
-        &ldquo;C:\postgresql_data&rdquo;</span></p>
-    <figure align="center">
-      <img src="assets/extract_zip_02.png" alt="crear carpeta data"><br>
-      <figcaption><small><b>Captura.3</b> Crear carpeta data</small></figcaption>
-    </figure>
-
-    <a href="#top"><img alt=""
-        src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-
-    <hr />
-    <h3 id="configuracion-inicial"><a name="initdb"></a> CONFIGURACIÓN INICIAL<a class="headerlink"
-        href="#configuracion-inicial" title="Permanent link">&#9875;</a></h3>
-    <p>Configuramos el <strong>usuario</strong>, la <strong>contraseña</strong>, <strong>encriptación</strong>, y la
-      <strong>codificación</strong> para la base de datos.
-    </p>
-    <p>Nos cambiamos al directorio de instalación y entramos a la carpeta bin: </p>
-    <div class="highlight">
-      <pre><span class="nt">cd</span> C:\pgsql_14\bin</pre>
-    </div>
-    </td>
-    </tr>
-    </table>
-
-    <p>Y ejecutamos el siguiente comando: </p>
-    <p>
-    <div class="highlight">
-      <pre><span class="nt">initdb.exe</span> -D C:\pgsql_data -U postgres -W -E UTF8 -A scram-sha-256
-</pre>
-    </div>
-    <strong>Parámetros</strong>:</p>
-    <ul>
-      <li><strong>-D</strong>: especifique el directorio de almacenamiento del clúster de bases de datos en mi caso
-        <strong>(C:\pgsql_data)</strong>.
-      </li>
-      <li><strong>-U postgres</strong>: crea al superusuario como <strong>postgres</strong>.</li>
-      <li><strong>-W</strong>: solicita la contraseña del superusuario.</li>
-      <li><strong>-E UTF8</strong>: crea la base de datos con codificación UTF-8.</li>
-      <li><strong>-A scram-sha-256</strong>: habilita la autenticación de contraseña. </li>
-    </ul>
-    <p align="center">
-      <img src="assets/init_db.png" alt="imagen init.db">
-    </p>
-
+      Selecciona alguna versión de acuerdo a la arquitectura y plataforma de tu computadora.</p>
+    <p><img alt="descargar zip"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/download.png" /></p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="iniciar-y-detener-servidor-de-postgresql"><a name="run-stop-server"></a> INICIAR Y DETENER SERVIDOR
-      DE POSTGRESQL<a class="headerlink" href="#iniciar-y-detener-servidor-de-postgresql"
+    <p><a name="extraer-archivos"></a> </p>
+    <h3 id="extraer-contenido">Extraer contenido<a class="headerlink" href="#extraer-contenido"
         title="Permanent link">&#9875;</a></h3>
-    <p>Para ver el estado del servidor y ver si se encuentra en ejecución o no:</p>
+    <p>Extraemos los archivos en la siguiente ubicación &#x1f4c2; ➡ <strong>C:\pgsql_14</strong> (puedes elegir otro
+      destino para descargar los archivos).</p>
+    <p><img alt="extraer zip"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/extract_zip_01.png" /></p>
+    <p>Otra forma es usar la herramienta <strong>tar.exe</strong> que se agrego a Windows 10 (1903) desde la compilación
+      17063 o posterior. </p>
+    <p>
     <div class="highlight">
-      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data -l logfile status
-<span class="c1"># Otra opción es</span>
-<span class="nt">pg_isready.exe</span>
+      <pre><span class="nt">tar</span> -xvf archivo-zip-postgresql.zip -C C:\
 </pre>
     </div>
-    <p>Para iniciar el servidor ejecute el comando:</p>
-    <div class="highlight">
-      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data -l logfile start
-</pre>
-    </div>
-
-    <p>Para detener el servidor::</p>
-    <div class="highlight">
-      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data stop
-</pre>
-    </div>
-    <p>Para reiniciar el servidor:</p>
-    <div class="highlight">
-      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data restart
-</pre>
-    </div>
+    <img alt="Extraer con tar"
+      src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/tar-xvf.png" /></p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <p><a name="crear-carpeta-data"></a> </p>
+    <h3 id="crear-carpeta-data">Crear carpeta data<a class="headerlink" href="#crear-carpeta-data"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Debemos crear una carpeta donde se almacenarán las configuraciones de nuestro servidor. También se guardarán los
+      datos, usuarios, bases de datos, etc. En mi caso la voy a crear en el mismo nivel en la siguiente ubicación
+      &#x1f4c2; ➡ <strong>C:\pgsql_data</strong></p>
+    <p><img alt="Crear carpeta data"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/crear-carpeta-data.png" />
+    </p>
     <blockquote>
-      <p>Nota: cualquier acción con el servidor <strong>es obligatorio indicar el directorio de datos</strong></p>
+      <p>Tradicionalmente, los archivos de configuración y de datos usados por un clúster de base de datos se almacenan
+        juntos dentro del directorio de datos del clúster (podemos utilizar el nombre de la variable de entorno
+        <strong>PGDATA</strong> para definir la ubicación del directorio de datos). La ubicación común en servidores en
+        Linux es <strong>/var/lib/pgsql/data</strong>, los archivos de configuración <code>postgresql.conf</code>,
+        <code>pg_hba.conf</code>, y <code>pg_ident.conf</code> del clúster se almacenan tradicionalmente en
+        <strong>PGDATA</strong>, aunque es posible colocarlos en otro lugar.
+      </p>
     </blockquote>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="registrar-como-servicio-en-windows"><a name="set-as-service"></a>REGISTRAR COMO SERVICIO EN
-      WINDOWS<a class="headerlink" href="#registrar-como-servicio-en-windows" title="Permanent link">&#9875;</a></h3>
-    <p>Para ejecutar este comando debe <strong>abrir un CMD como administrador</strong>:
+    <p><a name="configuracion-inicial"></a></p>
+    <h3 id="configuracion-inicial">Configuración inicial<a class="headerlink" href="#configuracion-inicial"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Para iniciar una nueva configuración en un cluster de PostgreSQL y crear el <strong>rol de superusuario</strong>,
+      <strong>contraseña</strong>, <strong>encriptación</strong>, y la <strong>codificación</strong> para las base de
+      datos, haremos uso de la herramienta <strong>initdb</strong>.
+    </p>
+    <p>Nos cambiamos al directorio de instalación y entramos a la carpeta <strong>bin</strong>: </p>
     <div class="highlight">
-      <pre><span class="nt">pg_ctl.exe</span> register -D C:\pgsql_data -N &quot;postgres14&quot;
+      <pre><span class="nt">cd</span> C:\pgsql_14\bin
 </pre>
     </div>
-    <p align="center">
-      <img src="assets/register_as_service_01.png" alt="register as service">
-    </p>
 
-    <p>Para ejecutar después el programa cliente psql desde cualquier ubicación establecemos esa variable de
-      entorno puede ser con <strong>CMD normal o como administrador</strong>:
+    <p>Y ejecutamos el siguiente comando:</p>
+    <p>
     <div class="highlight">
-      <pre><span class="nt">setx</span> PATH &quot;%path%;&quot;C:\pgsql_14\bin\</pre>
+      <pre><span class="nt">initdb.exe</span> -D C:\pgsql_data -U postgres -W -E UTF8 -A scram-sha-256
+</pre>
     </div>
-    <p align="center">
-      <img src="assets/set_environ_variable.png" alt="set variable" />
-    </p>
-
-    <p>Para eliminar el servicio abrimos una sesión <strong>CMD como administrador</strong> y ejecutamos el comando:
-    <div class="highlight">
-      <pre><span class="nt">sc</span> delete postgres14</pre>
-    </div>
+    <strong>Opciones</strong>:</p>
+    <ul>
+      <li><strong>-D</strong>: especifique el directorio de almacenamiento del clúster de bases de datos
+        <strong>(C:\pgsql_data)</strong>.
+      </li>
+      <li><strong>-U postgres</strong>: crea al superusuario como <strong>postgres</strong>.</li>
+      <li><strong>-W</strong>: Nos solicitará la contraseña para el superusuario.</li>
+      <li><strong>-E UTF8</strong>: crea la base de datos con codificación UTF-8.</li>
+      <li><strong>-A scram-sha-256</strong>: habilita la autenticación de contraseña. </li>
+    </ul>
+    <p><img alt="initdb"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/init_db.png" /></p>
+    <blockquote>
+      <p>Para ver más opciones de <strong>initdb</strong> en este <a
+          href="https://www.postgresql.org/docs/current/app-initdb.html">artículo de la documentación</a> </p>
+    </blockquote>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="conectarse-al-servidor-de-postgresql"><a name="connect"></a>CONECTARSE AL SERVIDOR DE POSTGRESQL<a
-        class="headerlink" href="#conectarse-al-servidor-de-postgresql" title="Permanent link">&#9875;</a></h3>
-    <p>Usando el cliente integrado <strong>psql.exe</strong> podremos conectarnos a nuestro servidor. Lo siguiente es
-      llamar
-      al
+    <p><a name="run-stop-server"></a></p>
+    <h3 id="iniciar-y-detener-el-servidor-de-postgresql">Iniciar y detener el servidor de PostgreSQL<a
+        class="headerlink" href="#iniciar-y-detener-el-servidor-de-postgresql" title="Permanent link">&#9875;</a></h3>
+    <p>Para ver el estado del servidor y ver si se encuentra en ejecución o no:</p>
+    <p>
+    <div class="highlight">
+      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data -l logfile status
+<span class="c1"># Otra opción es</span>
+pg_isready.exe
+</pre>
+    </div>
+    Para iniciar el servidor:</p>
+    <div class="highlight">
+      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data -l C:\pgsql_data\ start
+</pre>
+    </div>
+
+    <p>Para detener el servidor:</p>
+    <p>
+    <div class="highlight">
+      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data stop
+</pre>
+    </div>
+    Para reiniciar el servidor:</p>
+    <div class="highlight">
+      <pre><span class="nt">pg_ctl.exe</span> -D C:\pgsql_data restart
+</pre>
+    </div>
+
+    <blockquote>
+      <p>Nota: cualquier acción con el servidor <strong>es obligatorio indicar el directorio de datos</strong>, al menos
+        que se defina una variable de entorno <strong>PGDATA</strong> con el valor de la ubicación del cluster de datos.
+      </p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <p><a name="set-as-service"></a></p>
+    <h3 id="registrar-como-servicio-en-windows">Registrar como servicio en windows<a class="headerlink"
+        href="#registrar-como-servicio-en-windows" title="Permanent link">&#9875;</a></h3>
+    <p>Para ejecutar este comando debe abrir un CMD como <strong>administrador</strong>:
+    <div class="highlight">
+      <pre><span class="nt">pg_ctl.exe</span> register -D C:\pgsql_data -N &quot;postgres14&quot;
+</pre>
+    </div>
+    </p>
+    <p><img alt="registrar como servicio"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/register_as_service_01.png" />
+    </p>
+    <p>Para iniciar el servicio en un CMD como <strong>administrador</strong>:</p>
+    <div class="highlight">
+      <pre><span class="nt">sc</span> start &quot;postgres14&quot;
+</pre>
+    </div>
+
+    <p><img alt="Iniciar el servicio"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/start_service.png" /></p>
+    <p>Para eliminar el servicio primero debemos detener el servicio <strong>abrimos una sesión CMD como
+        administrador</strong> y ejecutamos el comando: </p>
+    <div class="highlight">
+      <pre><span class="nt">sc</span> stop postgres14
+</pre>
+    </div>
+
+    <p>Ahora ya podemos eliminar el servicio con el siguiente comando: </p>
+    <div class="highlight">
+      <pre><span class="nt">sc</span> delete postgres14
+# o también
+<span class="nt">pg_ctl.exe</span> unregister -N postgre14
+</pre>
+    </div>
+
+    <p><img alt="Eliminar el servicio"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/delete_service.png" /></p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="agregar-al-path"><a name="set-as-environ-var"></a> Agregar al Path<a class="headerlink"
+        href="#agregar-al-path" title="Permanent link">&#9875;</a></h3>
+    <p>Para ejecutar después el programa cliente psql desde cualquier ubicación, agregamos esa ubicación a la variable
+      de entorno <strong>PATH</strong>.</p>
+    <p><img alt="editar variable path"
+        src="https://raw.githubusercontent.com/EniDev911/assets/main/png/postgre/zip-install/path_set.png" /></p>
+    <p>También puede a través de un CMD normal (para que sea disponible para nivel de usuario) o como administrador
+      (para que sea disponible a nivel de sistema): </p>
+    <div class="highlight">
+      <pre><span class="nt">setx</span> PATH &quot;%path%;&quot;C:\pgsql_14\bin\
+</pre>
+    </div>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <p><a name="connect"></a></p>
+    <h3 id="conectarse-al-servidor">Conectarse al servidor<a class="headerlink" href="#conectarse-al-servidor"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Usando el cliente <strong>psql.exe</strong> para conectarnos a nuestro servidor. Lo siguiente es llamar al
       programa e iniciar sesión indicando el usuario y luego nos pedirá el password.<br />
     <div class="highlight">
       <pre><span class="nt">psql</span> -U postgres
 </pre>
     </div>
+    </p>
     <p>Cuando se le solicite la contraseña, ingrese la contraseña que configuró durante la instalación. El prompt nos
       indica que estamos conetado con éxito y listo para realizar sentencias SQL. </p>
-    <p align="center">
-      <img src="assets/connection_01.png" alt="set variable" />
-    </p>
-
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="operaciones-basica-en-postgresql"><a name="operations"></a>OPERACIONES BÁSICA EN POSTGRESQL<a
-        class="headerlink" href="#operaciones-basica-en-postgresql" title="Permanent link">&#9875;</a></h3>
+    <p><a name="operaciones-psql"></a></p>
+    <h3 id="operaciones-basicas-en-psql">Operaciones básicas en psql<a class="headerlink"
+        href="#operaciones-basicas-en-psql" title="Permanent link">&#9875;</a></h3>
     <ul>
       <li>Para listar los usuarios, use el comando <strong><code>\du</code></strong></li>
       <li>Para enumerar todas las bases de datos, use el comando <strong><code>\list</code></strong> o
         <strong><code>\l</code></strong>.
       </li>
       <li>Para salir solo escribimos <strong><code>exit</code></strong> o <strong><code>\q</code></strong>.</li>
-      <li>Para cambiar a una nueva base de datos, use el comando
-        <strong><code>\connect &lt;database&gt;</code></strong>
-        o <strong><code>\c &lt;database name&gt;</code></strong>.
-      </li>
+      <li>Para cambiar a una nueva base de datos, use el comando <strong><code>\connect &lt;database&gt;</code></strong>
+        o <strong><code>\c &lt;database name&gt;</code></strong>. </li>
       <li>Para mostrar tablas de una base de datos, use el comando <strong><code>\dt</code></strong> o
         <strong><code>\dt+</code></strong>.
       </li>

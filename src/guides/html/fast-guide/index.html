@@ -649,15 +649,53 @@
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
+    <h3>Introducción</h3>
+    <h4>¿Qué es una etiqueta HTML?</h4>
+    <p>En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código
+      fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son
+      la base del <strong>lenguaje HTML</strong>.</p>
+    <p>Existen muchos etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha
+      información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:</p>
+    <div class="highlight" style="font-size:22px;">
+      <pre>&lt;<span class="nt">etiqueta</span>&gt;contenido&lt;/<span class="nt">etiqueta</span>&gt;</pre>
+    </div>
+    <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<i>en el ejemplo anterior, es
+        incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</i>). En su lugar, existen una serie de etiquetas
+      concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
+      la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
+    <h4>¿Qué es la semántica</h4>
+    <p>Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea
+      semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
+      presentación, que se gestiona desde CSS. En el documento HTML debe aparecer información correctamente
+      individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
+      apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la
+        presentación del contenido</strong>.</p>
+    <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de HTML4 y anteriores. Dicha etiqueta se utilizaba
+      para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
+    <div class="highlight" style="font-size: 20px;">
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+    </div>
+    <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
+      algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido de información semántica en
+      HTML5. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para HTML5 es la siguiente:</p>
+    <div class="highlight" style="font-size: 20px;">
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+    </div>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
       cabecera
-      de la página <code>&lt;head&gt;</code> y el cuerpo de la página o <code>&lt;body&gt;</code>. El primero de ellos,
-      del que hablaremos en este apartado, se encarga de contener <b>etiquetas de metadatos</b> ( <i>información sobre
-        el documento</i> ) así como establecer <b>relaciones con otros documentos</b>. El segundo de ellos, se encarga
-      de la parte visual que se mostrará al usuario en su navegador.</p>
-    <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera del documento:</p>
+      de la página &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">head</span>&gt; y el cuerpo de la página o
+      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">body</span>&gt;. El primero de ellos,
+      del que hablaremos en este apartado, se encarga de contener <strong>etiquetas de metadatos</strong> (
+      <em>información sobre
+        el documento</em> ) así como establecer <strong>relaciones con otros documentos</strong>. El segundo de ellos,
+      se encarga
+      de la parte visual que se mostrará al usuario en su navegador.
+    </p>
+    <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera (&lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">head</span>&gt;) del documento:</p>
     <table>
       <thead>
         <tr>
@@ -668,32 +706,32 @@
       </thead>
       <tbody>
         <tr>
-          <td><code>&lt;title&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">title</span>&gt;</td>
           <td></td>
           <td>Título de la página (pestaña o título del navegador o en buscadores).</td>
         </tr>
         <tr>
-          <td><code>&lt;base&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">base</span>&gt;</td>
           <td><b>href</b>, <b>target</b></td>
           <td>URL base del documento ( <i>usado para gestionar rutas relativas</i> ).</td>
         </tr>
         <tr>
-          <td><code>&lt;link&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">link</span>&gt;</td>
           <td><b>href</b>, <b>hreflang</b>, <b>rel</b>, <b>media</b>, <b>type</b></td>
           <td>Establece una relación del documento actual con otro externo.</td>
         </tr>
         <tr>
-          <td><code>&lt;meta&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">meta</span>&gt;</td>
           <td><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b></td>
           <td>Establece un metadato específico en el documento actual.</td>
         </tr>
         <tr>
-          <td><code>&lt;style&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">style</span>&gt;</td>
           <td><b>media</b>, <b>type</b></td>
           <td>Crea estilos CSS que afectarán únicamente al documento actual.</td>
         </tr>
         <tr>
-          <td><code>&lt;script&gt;</code></td>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">script</span>&gt;</td>
           <td><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>, <b>defer</b></td>
           <td>Indica un script a cargar o ejecutar en la página actual.</td>
         </tr>
@@ -701,20 +739,24 @@
     </table>
     <p>Existen dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo,
       actualmemte también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas
-      <code>&lt;style&gt;</code> y <code>&lt;script&gt;</code>.
+      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">style</span>&gt; y &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">script</span>&gt;.
     </p>
-    <h3>Título y codificación</h3>
+    <h4>Título y codificación</h4>
     <p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las
       siguientes dos etiquetas:</p>
-    <div class="highlight">
+    <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">head</span>&gt;
-    &lt;<span class="nt">title</span>&gt;Título del documento&lt;/<span class="nt">title</span>&gt;
+  &lt;<span class="nt">title</span>&gt;Título del documento&lt;/<span class="nt">title</span>&gt;
+  &lt;<span class="nt">meta</span> <span class="na">charset</span>=<span class="s">&quot;utf-8&quot;</span>/&gt;
 &lt;<span class="nt">head</span>&gt;</pre>
     </div>
-    <p>En este ejemplo, la etiqueta <code>&lt;meta&gt;</code> indica que el navegador utilice la <b>codificación
+    <p>En este ejemplo, la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">meta</span>&gt; indica
+      que el navegador utilice la <b>codificación
         UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en
-      todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o caracteres como <b>ñ</b>,
-      <b>¿</b>, <b>¡</b> u otros.
+      todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o caracteres como
+      <mark>ñ</mark>,
+      <mark>¿</mark>, <mark>¡</mark> u otros.
     </p>
     <h3 id="cabeceras"><a name='cabeceras'></a>Cabeceras <a class="headerlink" href="#cabeceras"
         title="Permanent link">&#9875;</a></h3>
@@ -755,8 +797,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>
-            <code>&lt;a&gt;</code>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">a</span>&gt;
           </td>
           <td>
             Etiqueta para hacer rereferencia a otras páginas web o recursos como documentos o archivos.
@@ -764,7 +805,8 @@
         </tr>
       </tbody>
     </table>
-    <p>Esta etiqueta debe tener, como mínimo, el atributo <strong><code>href</code></strong>, ya que es el atributo
+    <p>Esta etiqueta debe tener, como mínimo, el atributo <span
+        style="color:rgb(150, 142, 53); font-weight:bold">href</span>, ya que es el atributo
       con
       el que se especifica la dirección URL al documento que se quiere enlazar. Aún así, la etiqueta
       <code>&lt;a&gt;</code> también tiene varios atributos opcionales, veamos un resumen de todos ellos:
@@ -780,29 +822,30 @@
       <tbody>
         <tr>
           <td>
-            <code>href</code>
+            <span style="color:rgb(150, 142, 53); font-weight:bold">href</span>
           </td>
           <td>
             <u>URL</u>
           </td>
           <td>
-            Enlace al documento que se quiere cargar: <strong>Atributo obliatorio</strong>.
+            Enlace al documento que se quiere cargar: <strong>Atributo obligatorio</strong>.
           </td>
         </tr>
         <tr>
           <td>
-            <code>download</code>
+            <span style="color:rgb(150, 142, 53); font-weight:bold">download</span>
           </td>
           <td>
             <i>"nombre.ext"</i>
           </td>
-          <td>Descarga el enlace definido en el atributo <code>href</code> en lugar de abrirlo. Si se indica un
+          <td>Descarga el enlace definido en el atributo <span
+              style="color:rgb(150, 142, 53); font-weight:bold">href</span> en lugar de abrirlo. Si se indica un
             valor,
             se renombra.</td>
         </tr>
         <tr>
           <td>
-            <code>target</code>
+            <span style="color:rgb(150, 142, 53); font-weight:bold">target</span>
           </td>
           <td>
             <b>"_blank"</b>
@@ -814,7 +857,8 @@
         <tr>
           <td></td>
           <td><b>"_self"</b></td>
-          <td>Abre el enlace en la pestaña o <code>&lt;iframe&gt;</code> actual.</td>
+          <td>Abre el enlace en la pestaña o &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">iframe</span>&gt; actual.</td>
         </tr>
         <tr>
           <td></td>
@@ -829,10 +873,11 @@
         <tr>
           <td></td>
           <td><u>"nameIframe"</u></td>
-          <td>Abre el enlace en el <code>&lt;iframe&gt;</code> con el nombre epecificado.</td>
+          <td>Abre el enlace en el &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">iframe</span>&gt; con el
+            nombre epecificado.</td>
         </tr>
         <tr>
-          <td><code>rel</code></td>
+          <td><span style="color:rgb(150, 142, 53); font-weight:bold">rel</span></td>
           <td><b>"alternate"</b></td>
           <td>Indica que el enlace es una versión alternativa (idioma o formato diferente).</td>
         </tr>
@@ -895,6 +940,44 @@
       <img src="assets/url_scheme.png" alt="">
     </p>
 
+    <h4>Protocolo </h4>
+    <p>
+      Existen varios protocolos diferentes y es la parte inicial de la URL. Probablemente, el más utilizado sea <span
+        style="color: darkcyan; font-weight: bold;">http://</span>, aunque <span
+        style="color: darkcyan; font-weight: bold;">https://</span> también es frecuentemente muy utilizado, ya que se
+      utiliza para cifrar información y que la transmisión sea más segura. Algunos protocolos de ejemplo:</p>
+    <table>
+      <thead>
+        <th>Protocolo</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">http://</td>
+          <td>Protocolo de transferencia de hipertexto. Es el que se usa habitualmente para páginas webs.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">https://</td>
+          <td>Protocolo seguro de transferencia de hipertexto. Usado para cifrar información sensible.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">ftp://</td>
+          <td>Protocolo de transferencia de archivos. Similar a <span
+              style="color: darkcyan; font-weight: bold;">HTTP://</span>, pero orientado a enviar archivos.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">whatsapp://</td>
+          <td>Protocolo de WhatsApp. Se puede interactuar con WhatsApp si el usuario lo tiene instalado.</td>
+        </tr>
+        <tr>
+          <td style="color: darkcyan; font-weight: bold;">//</td>
+          <td>Protocolo utilizado en la URL actual. Utiliza <span
+              style="color: darkcyan; font-weight: bold;">http:</span> o <span
+              style="color: darkcyan; font-weight: bold;">https</span> según la página original.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -925,7 +1008,8 @@
       <tbody>
         <tr>
           <td>
-            <code>&#60;b&#62;&#60;/b&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt;
           </td>
           <td>
             <b>Esto es negrita</b>
@@ -933,15 +1017,18 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;strong&#62;&#60;/strong&#62;</>
-                  </td>
-                  <td>
-                    Fragmento de texto <strong>importante</strong> o palabra <strong>clave</strong> y capturado por los lectores de pantalla
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <code>&#60;i&#62;&#60;/i&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">strong</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">strong</span>&gt;
+          </td>
+          <td>
+            Fragmento de texto <strong>importante</strong> o palabra <strong>clave</strong> y capturado por los lectores
+            de pantalla
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">i</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">i</span>&gt;
           </td>
           <td>
             <i>Esto es cursiva</i>
@@ -949,7 +1036,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;em&#62;&#60;/em&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">em</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">em</span>&gt;
           </td>
           <td>
             Fragmento de texto <em>enfatizado</em> y capturado por los lectores de pantalla.
@@ -957,7 +1045,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;mark&#62;&#60;/mark&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">mark</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">mark</span>&gt;
           </td>
           <td>
             Fragmento de texto resaltado, simula estar<mark>destacado con marcador amarillo</mark>.
@@ -965,7 +1054,8 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;del&#62;&#60;/del&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">del</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">del</span>&gt;
           </td>
           <td>
             <del>Esto es tachado</del>
@@ -973,19 +1063,22 @@
         </tr>
         <tr>
           <td>
-            <code>&#60;sup&#62;superíndice&#60;/sup&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">sup</span>&gt;superíndice&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">sup</span>&gt;
           </td>
           <td>Esto es <sup>superíndice</sup></td>
         </tr>
         <tr>
           <td>
-            <code>&#60;sub&#62;subíndice&#60;/sub&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">sub</span>&gt;subíndice&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">sub</span>&gt;
           </td>
           <td>Esto es un <sub>subíndice</sub></td>
         </tr>
         <tr>
           <td>
-            <code>&#60;cite&#62;&#60;/cite&#62;</code>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">cite</span>&gt;&lt;/<span
+              style="color:rgb(9, 110, 192); font-weight:bold">cite</span>&gt;
           </td>
           <td>Fragmento de texto con el título de un trabajo creativo: <cite>obras, libros</cite></td>
         </tr>
@@ -1044,7 +1137,7 @@
     </div>
     <p>Los <b>saltos de línea</b> son etiquetas especiales de HTML para comenzar en una línea nueva. Al contrario
       que
-      todas las etiquetas que hemos visto, las etoquetas <code>&lt;br&gt;</code> son etiquetas que no necesitan una
+      todas las etiquetas que hemos visto, las etiquetas <code>&lt;br&gt;</code> son etiquetas que no necesitan una
       etiqueta de cierre, por lo que sólo se escribe la etiqueta de apertura.</p>
     <table>
       <thead>
@@ -1180,7 +1273,7 @@
         <tr>
           <td><code>&lt;ul&gt;</code></td>
           <td></td>
-          <td>Define una lista sin orden. Se trata de la etoqueta contenedora.</td>
+          <td>Define una lista sin orden. Se trata de la etiqueta contenedora.</td>
         </tr>
         <tr>
           <td><code>&lt;ol&gt;</code></td>
@@ -1359,69 +1452,474 @@
           <td>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
             información.</td>
         </tr>
+        <tr>
+          <td><b>name</b></td>
+          <td>nombre</td>
+          <td>Nombre del formulario. Útil para procesar posteriormente.</td>
+        </tr>
+        <tr>
+          <td><b>target</b></td>
+          <td>destino</td>
+          <td>Nombre del lugar donde se abrirá el formulario. <span style="color: rgb(81, 81, 255)">\_blank</span> para
+            nueva pestaña.</td>
+        </tr>
+        <tr>
+          <td><b>enctype</b></td>
+          <td>tipo</td>
+          <td>Codificación para el envió del formulario. Importante para envió de archivos.</td>
+        </tr>
+        <tr>
+          <td><b>accept-charset</b></td>
+          <td>codificación</td>
+          <td>Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
+        </tr>
+        <tr>
+          <td><b>autocomplete</b></td>
+          <td><b>on</b> | off</td>
+          <td>Activa o desactiva el autocompletado para todos los campos del formulario.</td>
+        </tr>
+        <tr>
+          <td><b>novalidate</b></td>
+          <td>boolean</td>
+          <td>Con este atributo presente, el formulario obvia la validación HTML5.</td>
+        </tr>
       </tbody>
     </table>
-    <p><a href="https://codepen.io/EniDev911/pen/qBoWVmz"><img src="https://badges.aleen42.com/src/codepen.svg"
-          alt="codepen logo" height="27"></a>
-      <br>
+    <p>
+      Así un formulario base de ejemplo (<i>aún vacío, sin campos de entrada de datos, sólo con la etiqueta
+        contenedora</i>) podría ser el que vemos en el siguiente ejemplo:
     </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
+    </div>
+    <p>Aquí se definen 3 atributos base en &lt;<span style="color:rgb(174, 174, 5); font-weight:bold">form</span>&gt;:
+    </p>
+    <ul>
+      <li>En <span style="color:rgb(174, 174, 5); font-weight:bold">action</span> se indica la dirección donde se
+        enviarán los datos cuando el usuario haga clic en el botón enviar. En caso de omitirse esta información, se
+        enviarían los datos a la propia página actual, volviéndola a cargar.</li>
+      <li>
+        En <span style="color:rgb(174, 174, 5); font-weight:bold">method</span> se define el tipo de método HTTP a
+        utilizar. Utilizaremos el método <span style="color:rgb(31, 116, 220); font-weight:bold">GET</span> cuando nos
+        interese que los datos se envíen en la propia URL. En caso contrario, <span
+          style="color:rgb(31, 116, 220); font-weight:bold">POST</span>.
+      </li>
+      <li>
+        En <span style="color:rgb(174, 174, 5); font-weight:bold">name</span> el nombre del formulario para cuando
+        necesitemos hacer referencia a él (<i>generalmente desde javascript o desde backend</i>).
+      </li>
+    </ul>
+    <h4>Tipos de datos</h4>
+    <p>Para que un usuario pueda introducir información en un formulario, requiere que se le indiquen una serie de
+      campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber
+      a priori que <b>tipo de dato</b> le vamos a pedir a un usuario (<i>texto, numérico, fecha, etc...</i>), y así
+      saber que tipo de campo de entrada de datos es más conveniente colocar.</p>
+    <table>
+      <thead>
+        <th>Etiquetas</th>
+        <th>Información a obtener</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">textarea</span>&gt;</td>
+          <td>Nombres, direcciones físicas, descripciones</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="number"</span>&gt;</td>
+          <td>Edades, precios, cantidades</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;</td>
+          <td>Verdadero/Falso</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="radio"</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">select</span>&gt;</td>
+          <td>Opción unica</td>
+        </tr>
+        <tr>
+          <td>
+            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">select multiple</span>&gt; <br> &lt;<span
+              style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;
+          </td>
+          <td>
+            Varias opciones
+          </td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="color"</span>&gt;</td>
+          <td>Selección de color</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="file"</span>&gt;</td>
+          <td>Selección de archivo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>En HTML5, de forma nativa, el navegador proporciona estos <b>campos de entrada</b> en los que el usuario puede
+      introducir información específica. Cada uno de ellos tiene sus propias particularidades y características, además
+      de que hay que tener cuidado con algunos controles de formulario, ya que pueden no estar soportados por completo
+      en todos los navegadores.</p>
+
+    <h4>Campos de entrada</h4>
+    <p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un
+      formulario es la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;. Su
+      funcionalidad más utilizada es la de servir como campo de texto:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;
+   &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;text&quot;</span> <span class="na">name</span>=<span class="s">&quot;nombre&quot;</span></span>/&gt;
+   &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;submit&quot;</span> <span
+      class="na">value</span>=<span class="s">&quot;Enviar&quot;</span></span>/&gt;
+&lt;/<span class="nt">form</span>&gt;</pre>
+    </div>
+    <p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">input type="text"</span>&gt; y, posteriormente, se coloca un
+      botón para enviar el formulario con la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input
+        type="submit"</span>&gt;. Aunque vemos que se trata de la misma etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;, dependiendo del valor indicado en el atributo
+      <b>type</b> realizará una tarea u otra.
+    </p>
+    <h4>La etiqueta "input"</h4>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; tiene una gran cantidad
+      de atributos (<i>algunos dependiendo del valor del type, que mostraremos más adelante</i>). Estos son los
+      atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la
+      etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;</p>
+    <table>
+      <thead>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td>tipo de campo</td>
+          <td>Indica el tipo de campo del que se trata.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">name</span></td>
+          <td>nombre del campo</td>
+          <td>Indica el nombre del campo para hacer referencia más tarde.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">value</span></td>
+          <td>valor por defecto</td>
+          <td>Indica el valor inicial que tendrá ese campo de datos.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">form</span></td>
+          <td>nombre del formulario</td>
+          <td>Asocia este campo de datos con un formulario específico.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">placeholder</span></td>
+          <td>sugerencia</td>
+          <td>Indica su sugerencia al usuario antes de escribir.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">size</span></td>
+          <td>número</td>
+          <td>Tamaño visual (<i>número de caracteres</i>) del campo de datos.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autocomplete</span></td>
+          <td><b>on</b> | off</td>
+          <td>Activa o desactiva el autocompletado para este campo.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autofocus</span></td>
+          <td>boolean</td>
+          <td>Establece el foco (<i>colocar el cursor</i>) en este campo al cargar la página.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>El atributo <span style="color:rgb(197, 182, 52); font-weight:bold">type</span> nos permitirá indicar que tipo de
+      campo de dato mostrará en el navegador (<i>text, number, date..., los veremos luego</i>). Mediante el atributo
+      <span style="color:rgb(197, 182, 52); font-weight:bold">name</span> le daremos un nombre al campo de texto, así
+      cuando enviemos la información, podremos manejarla desde javascript o desde el back-end haciendo referencia a
+      dicho nombre.
+    </p>
+
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
     <h3 id="multimedia"><a name="multimedia_"></a>Multimedia<a class="headerlink" href="#multimedia"
         title="Permanent link">&#9875;</a></h3>
-    <p>El elemento <code>&lt;source&gt;</code> especifica recursos de medios múltiples para los elementos
-      <code>&lt;picture&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>.
+    <p>En HTML5 se introduce la interesante posibilidad de <b>mostrar videos directamente</b> desde nuestro navegador.
+      De hecho, si arrastramos un video a la ventana del navegador o con el clic derecho seleccionamos la opción
+      <b>abrir con</b> y buscamos el navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en
+      nuestras páginas HTML tenemos que utilizar la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;, que junto a la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; podremos utilizar estas capacidades
+      multimedia de HTML5.
     </p>
-    <p><b>Reproducir un video dentro de una página HTML:</b><br></p>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; especifica recursos de
+      medios múltiples para las etiquetas &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">picture</span>&gt;,
+      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">audio</span>&gt;, &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.</p>
+    <blockquote>
+      <span style="color:rgb(9, 110, 192); font-weight:bold">OJO</span> : Si lo que queremos es insertar videos desde
+      <b>Youtube</b>, <b>Vimeo</b> u otro servicio alternativo, debemos utilizar <a
+        href="https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe" target="_blank">la etiqueta HTML iframe</a>
+      en lugar de la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.
+    </blockquote>
+    <h4>Video (modo básico)</h4>
+    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt; tiene varios atributos a
+      nuestra disposición:</p>
     <table>
-      <colgroup>
-        <col span="1">
-        <col span="1">
-      </colgroup>
       <thead>
-        <th>Tecleas</th>
-        <th>Obtienes</th>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Descripción</th>
       </thead>
       <tbody>
         <tr>
-          <td>
-            <pre>&#60;video<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="introducción.mp4"<br>&nbsp;&nbsp;controls&#62;<br>&#60;/video&#62;</pre>
-            <pre>&#60;video controls<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;muted&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.mp4"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/mp4"&#62;<br>&nbsp;&nbsp;&#60;source src="introducción.webm"<br>&nbsp;&nbsp;&nbsp;&nbsp;type="video/webm"&#62;<br>&#60;/video&#62;</pre>
-          </td>
-          <td>
-            <img
-              src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/video_mp4.png"
-              height="410">
-          </td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span></td>
+          <td>Dirección URL</td>
+          <td>Video a reproducir. Obligatorio si actua como etiqueta contenedora.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">poster</span></td>
+          <td>Dirección URL</td>
+          <td>Muestra una imagen a modo de presentación.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">preload</span></td>
+          <td><b>auto</b> | metadata | none</td>
+          <td>Indica como realizar la precarga del video.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">mediagroup</span></td>
+          <td>nombre</td>
+          <td>Establece un nombre para un grupo de contenidos multimedia.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">autoplay</span></td>
+          <td><b>boolean</b></td>
+          <td>Comienza a reproducir el video automáticamente.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">loop</span></td>
+          <td><b>boolean</b></td>
+          <td>Vuelve a iniciar el video cuando finaliza su reproducción (<i>bucle</i>).</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">muted</span></td>
+          <td><b>boolean</b></td>
+          <td>Establece el video sin sonido (<i>silenciado</i>).</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">controls</span></td>
+          <td><b>boolean</b></td>
+          <td>Muestra los controles de reproducción. Por defecto no se muestran.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">width</span></td>
+          <td>tamaño</td>
+          <td>Indica el tamaño de ancho del video.</td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(167, 154, 45); font-weight:bold">height</span></td>
+          <td>tamaño</td>
+          <td>Indica el tamaño del alto del video.</td>
         </tr>
       </tbody>
     </table>
+    <p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span class="na">width</span>=<span class="s">&quot;640&quot;</span> <span class="na">height</span>=<span class="s">&quot;460&quot;</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
+    </div>
+    <p>Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x460, pero se verá como una imagen,
+      ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo
+      indicando los atributos <b>controls</b> y <b>autoplay</b>.</p>
 
-    <p><b>Reproducir un video de YouTube dentro de una página HTML:</b><br></p>
+    <p>Otro ejemplos básicos para colocar videos en nuestra página:</p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;-- Ejemplo 1 --&gt;</span>
+&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.webm&quot;</span> <span class="na">poster</span>=<span class="s">&quot;presentacion.jpg&quot;</span> <span class="na">controls</span></span>&gt;&lt;/<span class="nt">video</span>&gt;
+<span class="c1">&lt;-- Ejemplo 2 --&gt;</span>
+&lt;<span class="nt">video <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span
+          class="na">autoplay muted loop</span></span>&gt;&lt;/<span class="nt">video</span>&gt;</pre>
+    </div>
+    <p>Obtendriamos los siguientes resultados:</p>
+    <div style="display:flex; width:100%;">
+      <video src="./assets/Estrella_De_La_Muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
+        poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" controls></video>
+      <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:50%" autoplay muted loop></video>
+    </div>
+    <p>En este caso cargamos un video, pero no se mostrará porque se ha indicado que se utilice una imagen de
+      presentación que se mostrará hasta que el usuario pulse el botón de reproducir de los controles. En el segundo
+      ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle,
+      iniciándose una y otra vez.</p>
+    <blockquote>
+      <p>Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a
+          href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank">cambio de
+          políticas</a> con el
+        atributo de reproducción automática <span style="color:rgb(9, 110, 192); font-weight:bold">autoplay</span>, por
+        lo que no funcionará salvo que el usuario haya interactuado antes en la página.</p>
+    </blockquote>
+    <h4>Formatos de video</h4>
+    <p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y
+      los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video
+      tiene dos partes principales: el <b>formato contenedor</b>, que es el formato del video en sí, mientras que en su
+      interior puede tener múltiples componentes codificados con diferentes <b>codecs</b>.</p>
+    <p>
+      <img src="./assets/formato-contenedor-video.png" alt="formato contenedor video">
+    </p>
+    <p>De hecho, un video básico suele tener, como mínimo, un componente de video y otro de audio, pero puede tener
+      muchos más (<i>subtítulos, imágenes, etc...</i>). Estos detalles son muy importantes, ya que dependiendo del
+      formato y/o codec de un video, puede que sea factible utilizarlo para la web o no, así que hay que conocer un poco
+      sobre estos conceptos.</p>
+    <p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados:</p>
     <table>
       <thead>
-        <th>Tecleas</th>
-        <th>Obtienes</th>
+        <th>Formato</th>
+        <th>Codec utilizado</th>
+        <th>Características</th>
+        <th>¿Recomendado?</th>
       </thead>
       <tbody>
         <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">MP4</span></td>
           <td>
-            <pre>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q"&#62;<br>&#60;/iframe&#62;</pre>
-            <pre>Reproducción automática y Silenciado<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;autoplay=1&mute=1"&#62;<br>&#60;/iframe&#62;  
-                </pre>
-            <pre>Lista de reproducción en bucle:<br><br>&#60;iframe<br>&nbsp;&nbsp;width="500"<br>&nbsp;&nbsp;height="400"<br>&nbsp;&nbsp;src="https://www.youtube.com/embed/LG3T2rzlR9Q?<br>&nbsp;&nbsp;playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"&#62;<br>&#60;/iframe&#62; 
-                </pre>
+            <a href="https://www.videolan.org/developers/x264.html" target="_blank">
+              <span style="color:rgb(58, 74, 248);">x264</span>
+            </a>,
+            <a href="https://www.divx.com/en/software/technologies/h264/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">DivX H264</span>
+            </a>
           </td>
+          <td>Alta calidad. Codec x264 libre.</td>
+          <td>Sí, <a href="https://caniuse.com/mpeg4" target="_blank">buen soporte</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">WebM</span></td>
           <td>
-            <img src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/assets/png/web/html/video/youtube.png"
-              height="410">
+            <a href="https://www.3cx.es/voip-sip/vp8/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">VP8</span>
+            </a>,
+            <a href="https://es.wikipedia.org/wiki/VP9" target="">
+              <span style="color:rgb(58, 74, 248);">VP9</span>
+            </a>
           </td>
+          <td>Alternativa libre a MP4 de Google.</td>
+          <td>Sí, <a href="https://caniuse.com/webm" target="_blank">soporte medio</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">AV1</span></td>
+          <td>Basado en <a href="https://encode.su/threads/2462-Google-VP10-video-codec" target="_blank">
+              <span style="color:rgb(58, 74, 248);">VP10</span>
+            </a>, <a href="https://xiph.org/daala/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Daala</span></a> y <a
+              href="https://en.wikipedia.org/wiki/Thor_(video_codec)" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Thor</span></a>
+          </td>
+          <td>Compite con HEVC/H.265.</td>
+          <td>No, <a href="https://caniuse.com/av1" target="_blank">soporte bajo</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">HEVC</span></td>
+          <td><a href="http://x265.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">x265</span>
+            </a>, <a href="https://www.divx.com/en/software/technologies/hevc/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">DivX HEVC</span></a></td>
+          <td>Futura evolución de MP4.</td>
+          <td>No, <a href="https://caniuse.com/hevc" target="_blank">poco soporte</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">OGV</span></td>
+          <td><a href="https://www.theora.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Theora</span>
+            </a></td>
+          <td>Alternativa libre a MP4.</td>
+          <td>No, <a href="https://caniuse.com/ogv" target="_blank">Con precaución</a></td>
+        </tr>
+        <tr>
+          <td><span style="color:rgb(58, 74, 248); font-weight:bold">MKV</span></td>
+          <td><a href="https://www.matroska.org/" target="_blank">
+              <span style="color:rgb(58, 74, 248);">Matroska</span>
+            </a></td>
+          <td>Buena compresión. Potente.</td>
+          <td>No, alto consumo CPU</td>
         </tr>
       </tbody>
     </table>
+    <h4>Video (modo avanzado)</h4>
+    <p>Sin embargo, aún con lo que hemos visto todavía falta ver todas las posibilidades multimedia que tenemos con
+      HTML5. La etiqueta &lt;<span style="color:rgb(58, 74, 248); font-weight:bold">video</span>&gt; también puede
+      actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades
+      adicionales.</p>
+    <table>
+      <thead>
+        <th>Etiqueta</th>
+        <th>Atributos</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">source</span>&gt;</td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td>Establece un archivo de video o lo añade como alternativa.</td>
+        </tr>
+        <tr>
+          <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">track</span>&gt;</td>
+          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">srclang</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">label</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">kind</span>, <span
+              style="color:rgb(197, 182, 52); font-weight:bold">default</span></td>
+          <td>Establece un archivo de subtítulos o lo añade como alternativa.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Videos alternativos</h4>
+    <p>Si utilizamos la etiqueta &lt;<span style="color:rgb(58, 74, 248); font-weight:bold">video</span>&gt; como
+      etiqueta contenedora, podemos incluir etiquetas &lt;<span
+        style="color:rgb(58, 74, 248); font-weight:bold">source</span>&gt; en su interior para proporcionar formatos
+      alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;-- Ejemplo 1 --&gt;</span>
+&lt;<span class="nt">video <span class="na">width</span>=<span class="s">&quot;600&quot;</span> <span class="na">height</span>=<span class="s">&quot;400&quot;</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.mp4&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/mp4&quot; /</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.webm&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/webm&quot; /</span></span>&gt;
+  &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.ogv&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/ogg&quot; /</span></span>&gt;
+  Su navegador no soporta contenido multimedia.
+&lt;/<span class="nt">video</span>&gt;</div>
+    <p>Reproducir un video de YouTube dentro de una página HTML:<br></p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;-- Reproducción de un video de Youtube --&gt;</span>
+&lt;<span class="nt">iframe
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span>
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;-- Reproducción automática y Silenciado --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;-- Lista de reproducción en bucle --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;</pre>
+    </div>
 
+    <div style="display: flex; width: 100%; justify-content: space-between;">
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk" style="width:33%;">
+      </iframe>
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1" style="width:33%;">
+      </iframe>
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"
+        style="width:33%;">
+      </iframe>
+    </div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -2958,7 +3456,7 @@ al pasar el mouse por encima y dar clic se podrá cambiar este texto<span class=
     <hr>
     <h3><a name="atributos-generales"></a>Atributos comunes en HTML</h3>
     <p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta</p>
-  </article>  
+  </article>
 </body>
 
 </html>
