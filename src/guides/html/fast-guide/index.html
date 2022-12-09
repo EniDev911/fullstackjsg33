@@ -33,6 +33,16 @@
       width: 60%;
     }
 
+    h4 a.title-anchor {
+      color: #444;
+      text-decoration: none;
+      padding-bottom: 8px;
+    }
+    h4 a.title-anchor:hover {
+      text-decoration: none;
+      border-bottom: 2px solid #ccc;
+    }
+
     @media (max-width: 730px) {
       .resume-box {
         flex-direction: column;
@@ -100,6 +110,7 @@
         <h4 id="elementos">Etiquetas semánticas<a class="headerlink" href="#elementos"
             title="Permanent link">&#9875;</a></h4>
         <ul>
+          <li><a href="#que-es-html">¿Qué es HTML?</a></li>
           <li><a href="#cabeceras">Cabeceras</a></li>
           <li><a href="#enlaces">Enlaces</a></li>
           <li><a href="#parrafos">De textos</a></li>
@@ -650,7 +661,13 @@
     </p>
     <hr />
     <h3>Introducción</h3>
-    <h4>¿Qué es una etiqueta HTML?</h4>
+    <a name="que-es-html"></a>
+    <h4>¿Qué es HTML?</h4>
+    <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página web.</p>
+    <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cúal nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información literalmente, sino que interpreta y va dibujando los elementos de una página web.</p>
+    <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado <strong>HTML</strong>, que son las siglas de <strong>HyperTextMarkup Languaje</strong> (<em>Lenguaje de marcado de hypertexto</em>), o lo que es lo mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo tipo de información.</p>
+    <a name="que-es-una-etiqueta-html"></a>
+    <h4><a href="#que-es-una-etiqueta-html" class="title-anchor">¿Qué es una etiqueta HTML?</a> ⚓</h4>
     <p>En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código
       fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son
       la base del <strong>lenguaje HTML</strong>.</p>
@@ -663,7 +680,8 @@
         incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</i>). En su lugar, existen una serie de etiquetas
       concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
       la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
-    <h4>¿Qué es la semántica?</h4>
+      <a name="que-es-la-semantica"></a>
+    <h4><a href="#que-es-la-semantica" class="title-anchor">¿Qué es la semántica?</a> ⚓</h4>
     <p>Uno de los principales objetivos de <strong>HTML5</strong> es introducir información en un documento de forma que sea
       semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
       presentación, que se gestiona desde el <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><strong>lenguaje CSS</strong></a>. En el documento <strong>HTML5</strong> debe aparecer información correctamente
@@ -689,7 +707,8 @@
   <span class="kr">color</span>: black;
 }</pre>
     </div>
-<p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>)</p>
+<p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en HTML. Incluso podríamos establecer el mismo estilo en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
+<p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robot o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.</p>
     <hr>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		section {
+			text-align: center;
+		}
+
+		#maintable {
+			width: 80%;
+			text-align: center;
+			margin: auto;
+		}
+		.mitabla {
+			width: 100%;
+		}
+		.mitabla thead {
+			background: #f5c;
+		}
+		.mitabla thead th {
+			padding: 10px;
+		}
+		.mitabla tfoot {
+			background: #ccc;
+		}	
+	</style>
+	<h1>Generate PDF</h1>
+	<section>
+		<div id="maintable">
+		<h2>Mi Tabla</h2>
+		<table class="mitabla">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Mes</th>
+					<th>Gastos</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Enero</td>
+					<td>$150</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Febrero</td>
+					<td>$150</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Marzo</td>
+					<td>$150</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td>3</td>
+					<td>$450</td>
+				</tr>
+			</tfoot>
+		</table>
+		<img src="https://robohash.org/robot1" alt="robot">
+		</div>
+		<div>
+			<button id="pdfout">Crear PDF</button>
+		</div>
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js"></script>
+	<script>
+		const maintable = document.getElementById("maintable"),
+			  pdfout = document.getElementById("pdfout");
+
+		pdfout.onclick = function(){
+			const doc = new jsPDF('p', 'pt', 'letter');
+			const margin = 20;
+			const scale = (doc.internal.pageSize.width - margin * 2) / document.body.clientWidth;
+			const scale_mobile = (doc.internal.pageSize.width - margin * 2) / document.body.getBoundingClientRect();
+			// checking
+			if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+				// mobile
+				doc.html(maintable, {
+					x: margin,
+					y: margin,
+					html2canvas: {
+						scale: scale_mobile,
+					},
+					callback: function(doc){
+						doc.output
+						('dataurlnewwindow', {
+							filename: 'pdf.pdf'
+						});
+					}
+				})
+			}else {
+				// PC
+			// mobile
+				doc.html(maintable, {
+					x: margin,
+					y: margin,
+					html2canvas: {
+						scale: scale,
+					},
+					callback: function(doc){
+						doc.output
+						('dataurlnewwindow', {
+							filename: 'pdf.pdf'
+						});
+					}
+				})
+			}
+		}
+	</script>
+</body>
+</html>
