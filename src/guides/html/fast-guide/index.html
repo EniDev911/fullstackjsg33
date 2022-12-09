@@ -663,25 +663,34 @@
         incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</i>). En su lugar, existen una serie de etiquetas
       concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
       la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
-    <h4>¿Qué es la semántica</h4>
-    <p>Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea
+    <h4>¿Qué es la semántica?</h4>
+    <p>Uno de los principales objetivos de <strong>HTML5</strong> es introducir información en un documento de forma que sea
       semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
-      presentación, que se gestiona desde CSS. En el documento HTML debe aparecer información correctamente
+      presentación, que se gestiona desde el <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><strong>lenguaje CSS</strong></a>. En el documento <strong>HTML5</strong> debe aparecer información correctamente
       individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
-      apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la
+      apariencia, lo hagamos desde CSS. Esto es lo que com&uacute;nmente se conoce como <strong>separación de la
         presentación del contenido</strong>.</p>
     <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de HTML4 y anteriores. Dicha etiqueta se utilizaba
+        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de <strong>HTML4</strong> y anteriores. Dicha etiqueta se utilizaba
       para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
     </div>
     <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
-      algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido de información semántica en
-      HTML5. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para HTML5 es la siguiente:</p>
+      algo que no se debe hacer en <strong>HTML5</strong>. La misión de <strong>HTML5</strong> es mantener sólo contenido de información semántica. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para HTML5 es la siguiente:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
     </div>
+    <p>En este nuevo ejemplo, se remplaza la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; (<em>negrita, característica de presentación</em>) por &lt;<span style="color:rgb(9, 110, 192); font-weight:bold;">strong</span>&gt;, una etiqueta que indica información semántica (<em>importante, característica semántica</em>). De esta forma, en el documento de <strong>HTML5</strong> sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos dotar de presentación visual, lo haremos desde <strong>CSS</strong>:</p>
+
+    <div class="highlight" style="font-size:20px">
+      <pre><span class="nt">strong</span> {
+  <span class="kr">font-weight</span>: bold;
+  <span class="kr">color</span>: black;
+}</pre>
+    </div>
+<p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>)</p>
+    <hr>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
