@@ -111,7 +111,7 @@
             title="Permanent link">&#9875;</a></h4>
         <ul>
           <li><a href="#que-es-html">¿Qué es HTML?</a></li>
-          <li><a href="#cabeceras">Cabeceras</a></li>
+          <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a></li>
           <li><a href="#enlaces">Enlaces</a></li>
           <li><a href="#parrafos">De textos</a></li>
           <li><a href="#citas">Citas</a></li>
@@ -710,6 +710,21 @@
 <p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en HTML. Incluso podríamos establecer el mismo estilo en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
 <p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robot o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.</p>
     <hr>
+    <a name="estructura-etiqueta-html"></a>
+    <h4>Estructura de una etiqueta HTML </h4>
+    <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
+    <p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
+    <p align="center">
+      <img src="http://desarrolloweb.dlsi.ua.es/cursos/2011/html5-css3-es/images/html-sintaxis.png" alt="estructura de una etiqueta">
+    </p>
+    <h4>Etiqueta HTML</h4>
+    <p>La parte esencial de una etiqueta HTML es lo que se denomina <strong>etiqueta de apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los caracteres <mark>&lt;</mark> y <mark>&gt;</mark>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en minúsculas.</p>
+    <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existe una serie específica de etiquetas, cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
+    </div>
+ <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <mark>/</mark> inmediatamente después del <mark>&lt;</mark></p>
+ 
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la

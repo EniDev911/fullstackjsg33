@@ -5,6 +5,8 @@
   scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
 @font-face {
   font-family: jetbrains-mono;
   src: url(../fonts/JetBrainsMono-Regular.ttf);
@@ -129,6 +131,11 @@ body .markdown-body {
   margin-bottom: 16px;
 }
 
+.markdown-body p {
+  margin : 30px 0;
+  font-family: 'Oswald', sans-serif !important;
+
+}
 /* TABLES  */
 .markdown-body table {
   display: table;
