@@ -724,7 +724,20 @@
       <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
     </div>
  <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <mark>/</mark> inmediatamente después del <mark>&lt;</mark></p>
- 
+  <h4>Atributo</h4>
+  <p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter <mark>&gt;</mark> de la etiqueta de apertura:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
+  </div>
+  <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es <strong>contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre <strong>comillas dobles</strong>.</p>
+  <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
+  <ul>
+    <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
+    <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
+    <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+  </ul>
+  <h4>Contenido de la etiqueta</h4>
+  <p></p>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
