@@ -302,18 +302,18 @@
 
 @media (min-width: 768px){
   .markdown-body .highlight pre {
-    font-size: 17px;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 992px){
  .markdown-body .highlight pre {
-    font-size: 18px;
+    font-size: 16px;
   } 
 }
 
 @media (min-width: 1400px){
  .markdown-body .highlight pre {
-    font-size: 20px;
+    font-size: 18px;
   } 
 }
