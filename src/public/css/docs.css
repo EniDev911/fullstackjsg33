@@ -5,8 +5,6 @@
   scroll-behavior: smooth;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-
 @font-face {
   font-family: jetbrains-mono;
   src: url(../fonts/JetBrainsMono-Regular.ttf);
@@ -15,6 +13,11 @@
 @font-face {
   font-family: fira-code;
   src: url(../fonts/FiraCode.ttf);
+}
+
+@font-face {
+  font-family: encode-sans;
+  src: url(../fonts/EncodeSansSemiExpanded-Regular.ttf);
 }
 
 :root {
@@ -38,7 +41,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 body .markdown-body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: encode-sans, sans-serif;
   padding: 45px;
   border: 1px solid var(--light-gray);
   box-shadow: 2px 3px 9px var(--shadow);
@@ -132,9 +135,7 @@ body .markdown-body {
 }
 
 .markdown-body p {
-  margin : 30px 0;
-  font-family: 'Oswald', sans-serif !important;
-
+  margin : 20px 0;
 }
 /* TABLES  */
 .markdown-body table {
@@ -216,8 +217,7 @@ body .markdown-body {
 .markdown-body kbd,
 .markdown-body pre,
 .markdown-body samp {
-  font-family: fira-code, monospace;
-  font-size: 1em;
+  font-family: jetbrains-mono, monospace;
 }
 
 .markdown-body code,
