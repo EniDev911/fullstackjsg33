@@ -737,7 +737,30 @@
     <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
   </ul>
   <h4>Contenido de la etiqueta</h4>
-  <p>En el interior de la etiqueta HTML</p>
+  <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>) se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve como contiene un <strong>fragmento de texto</strong>:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span> <span class="na">class</span>=<span class="s">&quot;clase1&quot;</span> <span class="na">lang</span>=<span class="s">&quot;es&quot;</span>&gt;Contenido de texto&lt;/<span class="nt">strong</span>&gt;</pre>
+  </div>
+  <p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El orden de los atributos no importa. Más adelante veremos que tipos de atributos existen y para que sirven.</p>
+
+  <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más claro en los siguientes apartados sobre etiquetas. Un posible ejemplo sería el siguiente:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;página&quot;</span>&gt;
+  &lt;<span class="nt">strong</span>&gt;Contenido importante&lt;/<span class="nt">strong</span>&gt;
+&lt;/<span class="nt">div</span>&gt;</pre>
+  </div>
+  <p>Podemos observar en el ejemplo anterior que dentro de la etiqueta <span style="color: rgb(9, 110, 192); font-weight:bold">&lt;div&gt;</span> vemos que no sólo hay un fragmento de texto, sino que además incluye otra etiqueta, <span style="color: rgb(9, 110, 192); font-weight:bold">&lt;strong&gt;</span> en este caso. Esto ocurre en las etiquetas de agrupación, que iremos viendo pronto.</p>
+  <h4>Comentario HTML</h4>
+  <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo importante o simplemente introducir algún comentario que consideremos relevante:</p>
+  <div class="highlight">
+    <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span></pre>
+  </div>
+  <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto entre <span style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!-- --&gt;</span> para que sea ignorado.</p>
+  
+  <a name='atributos-comunes-html'></a>
+  <h3><a href="#atributos-comunes-html" title="Permanent link">Atributos comunes en HTML</a> &#9875;</h3>
+  <p>Como hemos visto, HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
+
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
