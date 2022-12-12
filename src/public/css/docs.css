@@ -5,6 +5,8 @@
   scroll-behavior: smooth;
 }
 
+/** === FONTS === **/
+/** FONT-CODE **/
 @font-face {
   font-family: jetbrains-mono;
   src: url(../fonts/JetBrainsMono-Regular.ttf);
@@ -15,18 +17,21 @@
   src: url(../fonts/FiraCode.ttf);
 }
 
+/**END FONT-CODE **/
 @font-face {
   font-family: encode-sans;
   src: url(../fonts/EncodeSansSemiExpanded-Regular.ttf);
 }
 
+/** === VARIABLES === **/
 :root {
   --light-gray: #f7f7f7;
   --light-gray-2: #cfcfb9;
   --dark-gray: #4f4f4f;
   --dark-gray-2: #777;
-  --background: #fff;
-  --foreground: #333333;
+  --background: #f1f1f2;
+  --foreground-paragraphs: #444;
+  --paragraphs-weight: normal;
   --shadow: rgba(0, 0, 0, 0.4);
 }
 
@@ -34,11 +39,9 @@
 body {
   width: 100%;
   margin: auto;
-
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 body .markdown-body {
   font-family: encode-sans, sans-serif;
@@ -48,7 +51,8 @@ body .markdown-body {
   background: var(--background);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: var(--foreground);
+  color: var(--foreground-paragraphs);
+  font-weight: var(--paragraphs-weight);
 }
 
 .markdown-body a {
@@ -110,6 +114,7 @@ body .markdown-body {
 
 .markdown-body h4 {
   font-size: 1.25em;
+  margin: 30px 0;
 }
 
 .markdown-body h5 {
@@ -135,8 +140,9 @@ body .markdown-body {
 }
 
 .markdown-body p {
-  margin : 20px 0;
+  margin: 20px 0;
 }
+
 /* TABLES  */
 .markdown-body table {
   display: table;
@@ -369,6 +375,15 @@ body .markdown-body {
 /* =====END===== */
 
 /* ===UTILITIES=== */
+.markdown-body h4 a {
+  color: #444;
+  text-decoration: none;
+}
+
+.markdown-body h4 a:hover {
+  text-decoration: none;
+}
+
 /* KBD */
 .markdown-body kbd {
   background-color: var(--light-gray);
@@ -388,16 +403,19 @@ body .markdown-body {
   display: inline-block;
   box-shadow: 1px 2px 2px var(--shadow);
 }
+
 /* ATRIBUTTES TABLE */
 .markdown-body table span.td-attribute {
   color: rgba(10, 90, 140, 1.0);
   font-weight: bold;
 }
+
 /* TAG HTML EN PARRAFOS */
 .markdown-body p span.tag {
   color: rgba(10, 90, 140, 1.0);
   font-weight: bold;
 }
+
 /* CITAS */
 .markdown-body blockquote.danger {
   background: #ff101059;
@@ -406,16 +424,28 @@ body .markdown-body {
   border-left: 8px solid #ff4040;
   position: relative;
 }
+
 .markdown-body blockquote.danger>p:before {
   content: url("data:image/svg+xml;utf8,<svg width=\"46\" height=\"46\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"%23db7373\" stroke-width=\"2\" fill=\"transparent\"><path d=\"M12,17 L12,19 M12,10 L12,16 M12,3 L2,22 L22,22 L12,3 Z\"/></svg>");
 }
 
 .markdown-body blockquote.danger>p:before {
-    display: inline-block;
-    position: absolute;
-    bottom: -10px;
-    right: -5px;
+  display: inline-block;
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
 }
+
+
+/* BEFORE */
+/* .markdown-body:before {
+  display: block;
+  content: ' ';
+  background-image: url('../images/anchor.svg');
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+} */
 
 /* PRINT STYLE */
 @media print {
@@ -612,5 +642,11 @@ body .markdown-body {
   /* Botones hover */
   .fa-clone:hover {
     cursor: pointer;
+  }
+
+  /* Heading Hovers*/
+  .markdown-body h4:hover {
+    text-decoration: underline solid #45494980;
+    text-underline-offset: 10px;
   }
 }

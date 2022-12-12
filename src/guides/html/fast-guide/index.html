@@ -6,146 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  <link rel="stylesheet" href="./assets/style.css">
+
   <title>Guía rápida HTML</title>
-  <style>
-    h3 {
-      background-color: #f3f3f3;
-      display: inline-block;
-      padding: 5px 15px;
-      position: relative;
-      border-radius: 6px;
-      border-bottom: 2px solid #f8bc1d;
-    }
-
-    .resume-box {
-      display: flex;
-      width: 100%;
-      height: 300px;
-    }
-
-    .resume-box img {
-      width: 300px;
-      margin-right: 10px;
-      /* height: 290px; */
-    }
-
-    .resume-text {
-      width: 60%;
-    }
-
-    h4 a.title-anchor {
-      color: #444;
-      text-decoration: none;
-      padding-bottom: 8px;
-    }
-    h4 a.title-anchor:hover {
-      text-decoration: none;
-      border-bottom: 2px solid #ccc;
-    }
-
-    @media (max-width: 730px) {
-      .resume-box {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .resume-box img {
-        width: 90%;
-        height: 320px;
-        margin: auto;
-        /* height: 290px; */
-      }
-
-      .resume-text {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <article class="markdown-body">
-    <h2 align=center>
-      <img height="60" src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png"
-        align="right">
-      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
-        height="50" align="left"><br><br>
-      GUÍA HTML<br><br>
-    </h2>
+    <h1>
+      GUÍA HTML
+    </h1>
 
-    <p>Esta guía rápida está redactada con referencias y vista previa de los elementos de la sintaxis de HTML y una
-      línea de tiempo resumida en cuanto a la evolución de HTML. </p>
-    <p>A continuación sigue una lista índice de todas las características que se pueden encontrar en un documento HTML
+    <p>A continuación sigue una lista con el índice de los contenidos relacionados que podemos encontrar en un documento
+      HTML
       (elementos, atributos, entidades, formato, extras, etc.). </p>
     <p><a name="top"></a>
     </p>
+    <h4>HTML</h4>
+    <ul>
+      <li><a href="#resumen">Evolución de HTML</a></li>
+    </ul>
+
+    <h4 id="programas-recomendados">Programas recomendados &#x1f4bd;</h4>
     <ul>
       <li>
-        <h4 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&#9875;</a></h4>
+        <p><strong>Editores Online</strong></p>
         <ul>
-          <li><a href="#resumen">Evolución de HTML</a></li>
+          <li><a href="https://vscode.dev/" target="_blank" rel="noreferrer">VS Code Online</a></li>
+          <li><a href="https://htmleditor.w3schools.in/" target="_blank" rel="noreferrer">w3schools Editor HTML
+              Online</a></li>
+          <li><a href="https://codepen.io/" target="_blank" rel="noreferrer">Codepen</a></li>
         </ul>
       </li>
       <li>
-        <h4 id="programas-recomendados">Programas recomendados &#x1f4bd;</h4>
-        <ul>
-          <li>
-            <p><strong>Editores Online</strong></p>
-            <ul>
-              <li><a href="https://vscode.dev/" target="_blank" rel="noreferrer">VS Code Online</a></li>
-              <li><a href="https://htmleditor.w3schools.in/" target="_blank" rel="noreferrer">w3schools Editor HTML
-                  Online</a></li>
-              <li><a href="https://codepen.io/" target="_blank" rel="noreferrer">Codepen</a></li>
-            </ul>
-          </li>
-          <li>
-            <p><a href="#editores">Editores recomendados</a> &#x1f4d1;</p>
-          </li>
-          <li><a href="#navegadores">Navegadores recomendados</a></li>
-        </ul>
+        <p><a href="#editores">Editores recomendados</a> &#x1f4d1;</p>
       </li>
-      <li>
-        <h4 id="contenido">CONTENIDO</h4>
-        <ul>
-          <li><a href="#que-es-html">¿Qué es HTML?</a></li>
-          <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a></li>
-          <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a></li>
-          <li><a href="#enlaces">Enlaces</a></li>
-          <li><a href="#parrafos">De textos</a></li>
-          <li><a href="#citas">Citas</a></li>
-          <li><a href="#listas">Listas</a></li>
-          <li><a href="#imagenes">Imágenes</a></li>
-          <li><a href="#tablas">Tablas</a></li>
-          <li><a href="#formularios">Formularios</a></li>
-          <li><a href="#multimedia_">Multimedia</a></li>
-          <li><a href="#lineas">Lineas separadoras</a></li>
-          <li><a href="#abreviaturas">Abreviaturas</a></li>
-          <li><a href="#emojis">Emojis</a></li>
-        </ul>
-      </li>
-      <li>
-        <h4 id="atributos">Atributos<a class="headerlink" href="#atributos" title="Permanent link">&#9875;</a></h4>
-        <ul class="task-list">
-          <li class="task-list-item"><input type="checkbox" disabled checked /> <a href="#globals">Globales</a></li>
-          <li class="task-list-item"><input type="checkbox" disabled checked /> <a href="#especificos">Especificos</a>
-          </li>
-        </ul>
-      </li>
+      <li><a href="#navegadores">Navegadores recomendados</a></li>
     </ul>
-    <p><br></p>
+    <h4 id="contenido">CONTENIDO</h4>
+    <ul>
+      <li><a href="#que-es-html">¿Qué es HTML?</a></li>
+      <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a></li>
+      <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a></li>
+      <li><a href="#enlaces">Enlaces</a></li>
+      <li><a href="#parrafos">De textos</a></li>
+      <li><a href="#citas">Citas</a></li>
+      <li><a href="#listas">Listas</a></li>
+      <li><a href="#imagenes">Imágenes</a></li>
+      <li><a href="#tablas">Tablas</a></li>
+      <li><a href="#formularios">Formularios</a></li>
+      <li><a href="#multimedia_">Multimedia</a></li>
+      <li><a href="#lineas">Lineas separadoras</a></li>
+      <li><a href="#abreviaturas">Abreviaturas</a></li>
+      <li><a href="#emojis">Emojis</a></li>
+    </ul>
     <hr />
     <p><br></p>
     <p><a name="resumen"></a>
-    <h2 align="center">
+    <h2 style="text-align:center">
       Historia de HTML - Resumen
     </h2>
-    <br>
     </p>
     <div class="resume-box">
-      <img src="assets/t.berners-lee.png">
-      <div class="resume-text">
+      <div class="resume-box-img">
+        <img src="assets/t.berners-lee.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 1989:
         </h2>
@@ -165,8 +91,11 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/t.berners-lee2.png">
-      <div class="resume-text">
+    <div class="resume-box">
+      <div class="resume-box-img">
+        <img src="assets/t.berners-lee2.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 1991:
         </h2>
@@ -187,8 +116,10 @@
     </div>
     <hr>
     <div class="resume-box">
-      <img src="assets/r.raggett.png">
-      <div class="resume-text">
+      <div class="resume-box-img">
+        <img src="assets/r.raggett.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 1993:
         </h2>
@@ -216,14 +147,19 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/ietf.png">
-      <div class="resume-text">
+    <div class="resume-box">
+      <div class="resume-box-img">
+        <img src="assets/ietf.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 1995:
         </h2>
-        <h4>
-          HTML 2.0 definido por HTML Working Group del IETF (<i>Internet Engineering Task Force</i>)
-        </h4>
+        <p>
+          <strong>
+            HTML 2.0 definido por HTML Working Group del IETF <br /> ( <em>Internet Engineering Task Force</em>
+            )</strong>
+        </p>
         <p>El <strong>HTML Working Group</strong> fue un grupo de trabajo del <a href="https://www.ietf.org/"
             target="_blank">IETF</a> que estuvo desde 1994 y 1996, y un grupo de trabajo del <a
             href="https://www.w3.org/" target="_blank">W3C</a> desde 1995 a 2015. El <strong
@@ -235,28 +171,34 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/w3c_html3.2.png">
-      <div class="resume-te">
+    <div class="resume-box">
+      <div class="resume-box-img">
+        <img src="assets/w3c_html3.2.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 1997:
         </h2>
-        <h4>Recomendaciones de W3C: HTML 3.2</h4>
-        <p>Aparecieron nuevas etiquetas, como:<br>
-          &#215;<code><b>&lt;center&gt;</b></code><br>
-          &#215;<code><b>&lt;font&gt;</b></code><br>
-          &#215;<code><b>&lt;script&gt;</b></code><br>
-          &#215;<code><b>&lt;style&gt;</b></code><br>
-          &#215;<code><b>&lt;div&gt;</b></code><br>
+        <p><strong>Recomendaciones de W3C: HTML 3.2</strong></p>
+        <p>Aparecieron nuevas etiquetas, como:</p>
+        <p><span class="tag">&lt;center&gt;<span><br>
+              <span class="tag">&lt;font&gt;</span><br>
+              <span class="tag">&lt;script&gt;</span><br>
+              <span class="tag">&lt;style&gt;</span><br>
+              <span class="tag">&lt;div&gt;</span><br>
         </p>
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/w3c_html4.0.1.png">
+    <div class="resume-box">
+      <div class="resume-box-img">
+        <img src="assets/w3c_html4.0.1.png">
+      </div>
       <div class="resume-te">
-        <h2 align="left">
+        <h2>
           Año 1999:
         </h2>
-        <h4>Recomendaciones de W3C: HTML 4.01</h4>
+        <p><strong>Recomendaciones de W3C: HTML 4.01</strong></p>
         <p>Editada por <strong>Dave Ragget</strong> y otros miembros. Se considera obsoleta desde marzo de 2018. Después
           de
           años de lucha entre los fabricantes de la <a href="https://www.w3.org/" target="_blank">W3C</a> intentaba
@@ -312,7 +254,7 @@
         <h2>
           Año 2012:
         </h2>
-        <h4>Estándar de vida HTML5 WHATWG</h4>
+        <p><strong>Estándar de vida HTML5 WHATWG</strong></p>
         <p>En enero de 2011, el <a href="https://whatwg.org/" target="_blank">WHATWG</a> cambió el nombre de su estándar
           de
           vida &ldquo;HTML5&rdquo; a &ldquo;HTML&rdquo;. No obstante, el W3C continúa con su proyecto de lanzar HTML5.
@@ -335,8 +277,11 @@
       </div>
     </div>
     <hr>
-    <div class="resume-box"><img src="assets/html5.1_.png">
-      <div class="resume-text">
+    <div class="resume-box">
+      <div class="resume-box-img">
+        <img src="assets/html5.1_.png">
+      </div>
+      <div class="resume-box-text">
         <h2>
           Año 2016:
         </h2>
@@ -660,15 +605,24 @@
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3>Introducción</h3>
     <a name="que-es-html"></a>
-    <h4>¿Qué es HTML?</h4>
-    <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página web.</p>
-    <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cúal nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información literalmente, sino que interpreta y va dibujando los elementos de una página web.</p>
-    <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado <strong>HTML</strong>, que son las siglas de <strong>HyperTextMarkup Languaje</strong> (<em>Lenguaje de marcado de hypertexto</em>), o lo que es lo mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo tipo de información.</p>
+    <h3>¿Qué es HTML?</h3>
+    <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro
+      navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página
+      web.</p>
+    <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cúal
+      nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información
+      literalmente, sino que interpreta y va dibujando los elementos de una página web.</p>
+    <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado
+      <strong><abbr title="HyperText Markup Language">HTML</abbr></strong>, que son las siglas de
+      <strong>HyperTextMarkup Language</strong> ( <em>Lenguaje de marcado de
+        hypertexto</em> ), o lo que es lo mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo
+      tipo de información.
+    </p>
     <a name="que-es-una-etiqueta-html"></a>
-    <h4><a href="#que-es-una-etiqueta-html" class="title-anchor">¿Qué es una etiqueta HTML?</a> ⚓</h4>
-    <p>En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código
+    <h4><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></h4>
+    <p>En el navegador <strong>Chrome</strong>, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para
+      ver el código
       fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son
       la base del <strong>lenguaje HTML</strong>.</p>
     <p>Existen muchos etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha
@@ -676,30 +630,42 @@
     <div class="highlight" style="font-size:22px;">
       <pre>&lt;<span class="nt">etiqueta</span>&gt;contenido&lt;/<span class="nt">etiqueta</span>&gt;</pre>
     </div>
-    <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<i>en el ejemplo anterior, es
-        incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</i>). En su lugar, existen una serie de etiquetas
+    <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta ( <em>en el ejemplo anterior, es
+        incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</em> ). En su lugar, existen una serie de etiquetas
       concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
       la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
-      <a name="que-es-la-semantica"></a>
-    <h4><a href="#que-es-la-semantica" class="title-anchor">¿Qué es la semántica?</a> ⚓</h4>
-    <p>Uno de los principales objetivos de <strong>HTML5</strong> es introducir información en un documento de forma que sea
+    <a name="que-es-la-semantica"></a>
+    <h4><a href="#que-es-la-semantica">¿Qué es la semántica?</a></h4>
+    <p>Uno de los principales objetivos de <strong>HTML5</strong> es introducir información en un documento de forma que
+      sea
       semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
-      presentación, que se gestiona desde el <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><strong>lenguaje CSS</strong></a>. En el documento <strong>HTML5</strong> debe aparecer información correctamente
+      presentación, que se gestiona desde el <a href="https://developer.mozilla.org/es/docs/Web/CSS"
+        target="_blank"><strong>lenguaje CSS</strong></a>. En el documento <strong>HTML5</strong> debe aparecer
+      información correctamente
       individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
       apariencia, lo hagamos desde CSS. Esto es lo que com&uacute;nmente se conoce como <strong>separación de la
         presentación del contenido</strong>.</p>
     <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de <strong>HTML4</strong> y anteriores. Dicha etiqueta se utilizaba
+        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de <strong>HTML4</strong> y anteriores. Dicha
+      etiqueta se utilizaba
       para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
     </div>
     <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
-      algo que no se debe hacer en <strong>HTML5</strong>. La misión de <strong>HTML5</strong> es mantener sólo contenido de información semántica. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para HTML5 es la siguiente:</p>
+      algo que no se debe hacer en <strong>HTML5</strong>. La misión de <strong>HTML5</strong> es mantener sólo
+      contenido de información semántica. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para
+      HTML5 es la siguiente:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
     </div>
-    <p>En este nuevo ejemplo, se remplaza la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; (<em>negrita, característica de presentación</em>) por &lt;<span style="color:rgb(9, 110, 192); font-weight:bold;">strong</span>&gt;, una etiqueta que indica información semántica (<em>importante, característica semántica</em>). De esta forma, en el documento de <strong>HTML5</strong> sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos dotar de presentación visual, lo haremos desde <strong>CSS</strong>:</p>
+    <p>En este nuevo ejemplo, se remplaza la etiqueta &lt;<span
+        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; (<em>negrita, característica de presentación</em>)
+      por &lt;<span style="color:rgb(9, 110, 192); font-weight:bold;">strong</span>&gt;, una etiqueta que indica
+      información semántica (<em>importante, característica semántica</em>). De esta forma, en el documento de
+      <strong>HTML5</strong> sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos
+      dotar de presentación visual, lo haremos desde <strong>CSS</strong>:
+    </p>
 
     <div class="highlight" style="font-size:20px">
       <pre><span class="nt">strong</span> {
@@ -707,209 +673,310 @@
   <span class="kr">color</span>: black;
 }</pre>
     </div>
-<p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en HTML. Incluso podríamos establecer el mismo estilo en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
-<p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robot o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.</p>
+    <p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente
+      de la información y contenido que existe en HTML. Incluso podríamos establecer el mismo estilo en el texto, para
+      que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá
+      siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
+    <p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para
+      usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una internet capaz de procesar
+      información de forma autónoma. Muestra de ello son, por ejemplo, los robot o crawlers de buscadores como
+      <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para
+      analizar la información de la misma, entenderla e indexarla en su buscador.
+    </p>
     <hr>
     <a name="estructura-etiqueta-html"></a>
-    <h4>Estructura de una etiqueta HTML </h4>
-    <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
+    <h3><a href="#estructura-etiqueta-html">Estructura de una etiqueta HTML </a></h3>
+    <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas
+      etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
     <p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
     <p align="center">
-      <img src="./assets/etiqueta-estructura.png" alt="estructura de una etiqueta" style="width: 100%; box-shadow: 2px 2px 6px #00000090;">
+      <img src="./assets/etiqueta-estructura.png" alt="estructura de una etiqueta"
+        style="width: 100%; box-shadow: 2px 2px 6px #00000090;">
     </p>
     <h4>Etiqueta HTML</h4>
-    <p>La parte esencial de una etiqueta HTML es lo que se denomina <strong>etiqueta de apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los caracteres <mark>&lt;</mark> y <mark>&gt;</mark>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en minúsculas.</p>
-    <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existe una serie específica de etiquetas, cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
+    <p>La parte esencial de una etiqueta HTML es lo que se denomina <strong>etiqueta de apertura</strong>. Se trata de
+      escribir el nombre de la etiqueta en cuestión, colocándola entre los caracteres <mark>&lt;</mark> y
+      <mark>&gt;</mark>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre
+      escribir las etiquetas siempre en minúsculas.
+    </p>
+    <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existe una serie específica de etiquetas,
+      cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span
+        style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
     </div>
- <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <mark>/</mark> inmediatamente después del <mark>&lt;</mark></p>
-  <h4>Atributo</h4>
-  <p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter <mark>&gt;</mark> de la etiqueta de apertura:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
-  </div>
-  <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es <strong>contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre <strong>comillas dobles</strong>.</p>
-  <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
-  <ul>
-    <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
-    <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
-    <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
-  </ul>
-  <h4>Contenido de la etiqueta</h4>
-  <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>) se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve como contiene un <strong>fragmento de texto</strong>:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span> <span class="na">class</span>=<span class="s">&quot;clase1&quot;</span> <span class="na">lang</span>=<span class="s">&quot;es&quot;</span>&gt;Contenido de texto&lt;/<span class="nt">strong</span>&gt;</pre>
-  </div>
-  <p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El orden de los atributos no importa. Más adelante veremos que tipos de atributos existen y para que sirven.</p>
+    <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
+        etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de
+      apertura, pero con la barra <mark>/</mark> inmediatamente después del <mark>&lt;</mark></p>
+    <h4>Atributo</h4>
+    <p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u
+        obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>)
+      y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después
+      del nombre de la etiqueta, separándola por espacio y antes del carácter <mark>&gt;</mark> de la etiqueta de
+      apertura:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
+    </div>
+    <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de
+      <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es
+      <strong>contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y
+      comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el
+      valor siempre entre <strong>comillas dobles</strong>.
+    </p>
+    <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
+    <ul>
+      <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de
+        valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
+      <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una
+        dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
+      <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero (<em>true</em>) o un
+        valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el
+          atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+    </ul>
+    <h4>Contenido de la etiqueta</h4>
+    <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>)
+      se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve
+      como contiene un <strong>fragmento de texto</strong>:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span> <span class="na">class</span>=<span class="s">&quot;clase1&quot;</span> <span class="na">lang</span>=<span class="s">&quot;es&quot;</span>&gt;Contenido de texto&lt;/<span class="nt">strong</span>&gt;</pre>
+    </div>
+    <p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero
+      nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El
+      orden de los atributos no importa. Más adelante veremos que tipos de atributos existen y para que sirven.</p>
 
-  <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más claro en los siguientes apartados sobre etiquetas. Un posible ejemplo sería el siguiente:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;página&quot;</span>&gt;
+    <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de
+        etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más claro en los siguientes
+      apartados sobre etiquetas. Un posible ejemplo sería el siguiente:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;página&quot;</span>&gt;
   &lt;<span class="nt">strong</span>&gt;Contenido importante&lt;/<span class="nt">strong</span>&gt;
 &lt;/<span class="nt">div</span>&gt;</pre>
-  </div>
-  <p>Podemos observar en el ejemplo anterior que dentro de la etiqueta <span style="color: rgb(9, 110, 192); font-weight:bold">&lt;div&gt;</span> vemos que no sólo hay un fragmento de texto, sino que además incluye otra etiqueta, <span style="color: rgb(9, 110, 192); font-weight:bold">&lt;strong&gt;</span> en este caso. Esto ocurre en las etiquetas de agrupación, que iremos viendo pronto.</p>
-  <h4>Comentario HTML</h4>
-  <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo importante o simplemente introducir algún comentario que consideremos relevante:</p>
-  <div class="highlight">
-    <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span></pre>
-  </div>
-  <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto entre <span style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!-- --&gt;</span> para que sea ignorado.</p>
-  
-  <a name='atributos-comunes-html'></a>
-  <h3><a href="#atributos-comunes-html" title="Permanent link">Atributos comunes en HTML</a> &#9875;</h3>
-  <p>Como hemos visto, HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
-  <p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en <strong>cualquier etiqueta HTML</strong>.</p>
-  <table>
-    <thead>
-      <th>Atributo</th>
-      <th>Valor</th>
-      <th>Descripción</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="td-attribute">id</span></td>
-        <td><em>nombre</em></td>
-        <td>Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">class</span></td>
-        <td><em>nombre</em></td>
-        <td>Establece una <strong>clase</strong> (género) a una etiqueta HTML (puede repetirse por página).</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">lang</span></td>
-        <td><em>idioma</em></td>
-        <td>Indica el idioma del contenido de la etiqueta HTML.</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">translate</span></td>
-        <td><strong>yes</strong> | no</td>
-        <td>Indica si el contenido de la etiqueta es traducible o no.</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">title</span></td>
-        <td><em>título</em></td>
-        <td>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el <strong><em>mouse</em></strong> por encima.</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">data-*</span></td>
-        <td><em>nombre</em></td>
-        <td>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span class="td-attribute">data-</span>.</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">accesskey</span></td>
-        <td><em>atajo</em></td>
-        <td>Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">dir</span></td>
-        <td><strong>ltr</strong> | rtl</td>
-        <td>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>)</td>
-      </tr>
-      <tr>
-        <td><span class="td-attribute">style</span></td>
-        <td><em>estilos</em></td>
-        <td>Aplica propiedades CSS directamente al elemento en cuestión.</td>
-      </tr>
-    </tbody>
-  </table>
-  <h4>Identificador de etiqueta (id)</h4>
-  <p>
-    En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión, guión bajo...</em>) o números: 
-  </p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+    </div>
+    <p>Podemos observar en el ejemplo anterior que dentro de la etiqueta <span
+        style="color: rgb(9, 110, 192); font-weight:bold">&lt;div&gt;</span> vemos que no sólo hay un fragmento de
+      texto, sino que además incluye otra etiqueta, <span
+        style="color: rgb(9, 110, 192); font-weight:bold">&lt;strong&gt;</span> en este caso. Esto ocurre en las
+      etiquetas de agrupación, que iremos viendo pronto.</p>
+    <h4>Comentario HTML</h4>
+    <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se
+      basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear
+      la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo
+      importante o simplemente introducir algún comentario que consideremos relevante:</p>
+    <div class="highlight">
+      <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span></pre>
+    </div>
+    <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto
+      entre <span
+        style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!--
+        --&gt;</span> para que sea ignorado.</p>
+
+    <a name='atributos-comunes-html'></a>
+    <h3><a href="#atributos-comunes-html" title="Permanent link">Atributos comunes en HTML</a> &#9875;</h3>
+    <p>Como hemos visto, HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y
+      contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son
+      palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
+    <p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en
+      <strong>cualquier etiqueta HTML</strong>.
+    </p>
+    <table>
+      <thead>
+        <th>Atributo</th>
+        <th>Valor</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-attribute">id</span></td>
+          <td><em>nombre</em></td>
+          <td>Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">class</span></td>
+          <td><em>nombre</em></td>
+          <td>Establece una <strong>clase</strong> (género) a una etiqueta HTML (puede repetirse por página).</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">lang</span></td>
+          <td><em>idioma</em></td>
+          <td>Indica el idioma del contenido de la etiqueta HTML.</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">translate</span></td>
+          <td><strong>yes</strong> | no</td>
+          <td>Indica si el contenido de la etiqueta es traducible o no.</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">title</span></td>
+          <td><em>título</em></td>
+          <td>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el
+            <strong><em>mouse</em></strong> por encima.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">data-*</span></td>
+          <td><em>nombre</em></td>
+          <td>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span
+              class="td-attribute">data-</span>.</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">accesskey</span></td>
+          <td><em>atajo</em></td>
+          <td>Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">dir</span></td>
+          <td><strong>ltr</strong> | rtl</td>
+          <td>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>)</td>
+        </tr>
+        <tr>
+          <td><span class="td-attribute">style</span></td>
+          <td><em>estilos</em></td>
+          <td>Aplica propiedades CSS directamente al elemento en cuestión.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Identificador de etiqueta (id)</h4>
+    <p>
+      En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos
+      el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no
+      debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión,
+        guión bajo...</em>) o números:
+    </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
 &lt;<span class="nt">div</span>&gt;</pre>
-  </div>
-  <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.</p>
-  <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían de id serían &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página completa</em>), &lt;&lt;<strong>comentarios</strong>&gt;&gt; (<em>para contener toda la zona de comentarios de la página</em>) o &lt;&lt;<strong>header</strong>&gt;&gt; (<em>para contener la parte con el logo y la cabecera de la página</em>). lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.</p>
-  <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
-  <hr>
-  <h4>Clases de etiquetas (class)</h4>
-  <p>Las clases funcionan de forma muy similar a los id, pero son mucho más flexibles. En primero lugar, no tienen la limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por página.</p>
-  <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos características comunes. Sigamos con el ejemplo anterior y añadiendole clases a las etiquetas:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+    </div>
+    <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no
+        se van a repetir en esa misma página</strong>.</p>
+    <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos
+      correctos de id serían de id serían &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página
+        completa</em>), &lt;&lt;<strong>comentarios</strong>&gt;&gt; (<em>para contener toda la zona de comentarios de
+        la página</em>) o &lt;&lt;<strong>header</strong>&gt;&gt; (<em>para contener la parte con el logo y la cabecera
+        de la página</em>). lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong>
+      en varias etiquetas HTML en una misma página.</p>
+    <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos
+      utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
+    <hr>
+    <h4>Clases de etiquetas (class)</h4>
+    <p>Las clases funcionan de forma muy similar a los id, pero son mucho más flexibles. En primero lugar, no tienen la
+      limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por
+      página.</p>
+    <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos
+      características comunes. Sigamos con el ejemplo anterior y añadiendole clases a las etiquetas:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
 &lt;<span class="nt">div</span>&gt;</pre>
-  </div>
-  <p>Como podemos ver, al tener la misma clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;, podemos realizar acciones para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo de eso donde se ve bien su utilidad, es respecto a utilizar <strong>ids y clases para dar estilos CSS</strong>, donde aplicaremos unos estilos concretos a todas las etiquetas HTML con clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;.</p>
-  <p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora de crear clases específicas:</p>
-<div class="highlight">
-    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+    </div>
+    <p>Como podemos ver, al tener la misma clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;, podemos realizar acciones
+      para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo de eso
+      donde se ve bien su utilidad, es respecto a utilizar <strong>ids y clases para dar estilos CSS</strong>, donde
+      aplicaremos unos estilos concretos a todas las etiquetas HTML con clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;.
+    </p>
+    <p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora
+      de crear clases específicas:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio primero&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio ultimo&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
 &lt;<span class="nt">div</span>&gt;</pre>
-  </div>
-  <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.</p>
-  <p>
-  <blockquote class="danger">
-    Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismo atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último atributo <strong>class</strong> con los de los primeros.<p></p>
-  </blockquote>
-  </p>
-  <h4>Idioma del contenido</h4>
-  <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">p</span>&gt;
+    </div>
+    <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y
+      <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y
+      <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos
+      que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.
+    </p>
+    <p>
+    <blockquote class="danger">
+      Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismo
+      atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma
+      etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último atributo <strong>class</strong>
+      con los de los primeros.<p></p>
+    </blockquote>
+    </p>
+    <h4>Idioma del contenido</h4>
+    <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de
+      dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código
+        ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo
+      <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:
+    </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">p</span>&gt;
   Hace algunos días fuí a ver la nueva película de &lt;<span class="nt">span</span> <span class="na">translate</span>=<span class="s">&quot;no&quot;</span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
 &lt;/<span class="nt">p</span>&gt;</pre>
-  </div>
-  <p>De esta forma, le indicamos al naevagador o a herramientas como <strong>Google translator</strong>, que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por defecto.</p>
-  <h4>Títulos o tooltips</h4>
-  <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">div</span>&gt;
+    </div>
+    <p>De esta forma, le indicamos al naevagador o a herramientas como <strong>Google translator</strong>, que esa frase
+      específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica
+      el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por
+      defecto.</p>
+    <h4>Títulos o tooltips</h4>
+    <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un
+      mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un
+      instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que
+      muestra el texto en cuestión:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span>&gt;
   &lt;<span class="nt">img</span> 
     <span class="na">src</span>=<span class="s">&quot;gandalf.jpg&quot;</span>
     <span class="na">alt</span>=<span class="s">&quot;Gandalf el gris, utilizando un portátil para consultar su correo.&quot;</span>
     <span class="na">title</span>=<span class="s">&quot;¡Este es Gandalf el gris!&quot;</span> /&gt;
 &lt;<span class="nt">div</span>&gt;</pre>
-  </div>
-  <p><strong>El resultado sería el siguiente:</strong></p>
-  <p align="center">
-   <img 
-    src="./assets/Gandalf.gif"
-    alt="Gandalf el gris"
-    title="¡Este es Gandalf el gris!"
-    style="border: 2px solid #000; border-radius: 0; " />
-  </p>
-  <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se pueda ver por alguna razón (<em>por ejemplo cuando no es accesible en un servidor web</em>), mientras que el atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.</p>
-  <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo, etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
-  <h4>Metadatos (datasets)</h4>
-  <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta <span class="tag">head</span> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.</p>
-  <p>De esta forma, podemos invetarnos cualquier atributo que contenga información, habitualmente orientada a utilizarse desde javascript:</p>
-  <div class="highlight">
-    <pre>&lt;<span class="nt">article</span>
+    </div>
+    <p><strong>El resultado sería el siguiente:</strong></p>
+    <p align="center">
+      <img src="./assets/Gandalf.gif" alt="Gandalf el gris" title="¡Este es Gandalf el gris!"
+        style="border: 2px solid #000; border-radius: 0; " />
+    </p>
+    <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las
+      imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no siempre es así.
+      El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se
+      pueda ver por alguna razón (<em>por ejemplo cuando no es accesible en un servidor web</em>), mientras que el
+      atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.
+    </p>
+    <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
+      etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
+    <h4>Metadatos (datasets)</h4>
+    <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta
+      <span class="tag">head</span> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia
+      etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.
+    </p>
+    <p>De esta forma, podemos invetarnos cualquier atributo que contenga información, habitualmente orientada a
+      utilizarse desde javascript:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">article</span>
   <span class="na">id</span>=<span class="s">&quot;auto&quot;</span>
   <span class="na">data-marca</span>=<span class="s">&quot;ford&quot;</span>
   <span class="na">data-modelo</span>=<span class="s">&quot;fiesta&quot;</span>
   <span class="na">data-color</span>=<span class="s">&quot;azul&quot;</span>
   <span class="na">data-asientos</span>=<span class="s">&quot;4&quot;</span>&gt;
 &lt;/<span class="nt">article</span>&gt;</pre>
-  </div>
-<p>
-En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span class="tag">&lt;article&gt;</span>, a la que podremos acceder a través de javascript mediante la propiedad <strong>.dataset</strong> :</p>  
-   <div class="highlight">
+    </div>
+    <p>
+      En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span class="tag">&lt;article&gt;</span>, a
+      la que podremos acceder a través de javascript mediante la propiedad <strong>.dataset</strong> :</p>
+    <div class="highlight">
       <pre><span class="kr">const</span> article = document.<span class="nt">getElementById</span>(<span class="s">&quot;auto&quot;</span>);
 
 article.<span class="nt">dataset</span>.<span class="nt">marca</span>; <span class="c1">// ford</span>
 article.<span class="nt">dataset</span>.<span class="nt">modelo</span>; <span class="c1">// fiesta</span>
 article.<span class="nt">dataset</span>.<span class="nt">color</span>; <span class="c1">// azul</span>
 article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span></pre>
-</div>
-<hr>
-<h4>Atajo de teclado (accesskey)</h4>
-<p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse <kbd>ALT</kbd> + <kbd>tecla</kbd>, se active ese elemento:</p>
-<div class="highlight">
-  <pre>&lt;<span class="nt">form</span>&gt;
+    </div>
+    <hr>
+    <h4>Atajo de teclado (accesskey)</h4>
+    <p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede
+      pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un
+      enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse
+      <kbd>ALT</kbd> + <kbd>tecla</kbd>, se active ese elemento:
+    </p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">form</span>&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
   &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;N&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+N)&quot;</span> /&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
@@ -919,50 +986,57 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Botón HTML --&gt;</span>
   &lt;<span class="nt">button</span> <span class="na">accesskey</span>=<span class="s">&quot;B&quot;</span>&gt;Botón (ALT+B)&lt;/<span class="nt">button</span>&gt;
 &lt;/<span class="nt">form</span>&gt;</pre>
-</div>
-<p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos <kbd>ALT</kbd>+<kbd>B</kbd> se pulsará el botón.</p>
-<p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre navegadores y sistemas. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo <strong>accesskey</strong>, tendríamos que pulsar las siguientes combinaciones de teclas:</p>
-<table>
-  <thead>
-    <th>Navegador</th>
-    <th>Plataforma Windows</th>
-    <th>Plataforma Linux</th>
-    <th>Plataforma Mac</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Chrome</strong></td>
-      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
-    </tr>
-    <tr>
-      <td><strong>Firefox</strong></td>
-      <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>CTRL</kbd>+<kbd>A</kbd></td>
-    </tr>
-    <tr>
-      <td><strong>IE/Edge</strong></td>
-      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-      <td>No aplicable</td>
-      <td>No aplicable</td>
-    </tr>
-    <tr>
-      <td><strong>Safari</strong></td>
-      <td>No aplicable</td>
-      <td>No aplicable</td>
-      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
-    </tr>
-    <tr>
-      <td><strong>Opera</strong></td>
-      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
-    </tr>
-  </tbody>
-</table>
-<p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
+    </div>
+    <p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si
+      pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos
+      <kbd>ALT</kbd>+<kbd>B</kbd> se pulsará el botón.
+    </p>
+    <p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre navegadores y
+      sistemas. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo
+      <strong>accesskey</strong>, tendríamos que pulsar las siguientes combinaciones de teclas:
+    </p>
+    <table>
+      <thead>
+        <th>Navegador</th>
+        <th>Plataforma Windows</th>
+        <th>Plataforma Linux</th>
+        <th>Plataforma Mac</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Chrome</strong></td>
+          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>Firefox</strong></td>
+          <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>CTRL</kbd>+<kbd>A</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>IE/Edge</strong></td>
+          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td>No aplicable</td>
+          <td>No aplicable</td>
+        </tr>
+        <tr>
+          <td><strong>Safari</strong></td>
+          <td>No aplicable</td>
+          <td>No aplicable</td>
+          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>Opera</strong></td>
+          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la
+      incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
 
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
