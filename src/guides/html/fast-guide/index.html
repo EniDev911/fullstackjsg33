@@ -829,6 +829,32 @@
   <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.</p>
   <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían de id serían &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página completa</em>), &lt;&lt;<strong>comentarios</strong>&gt;&gt; (<em>para contener toda la zona de comentarios de la página</em>) o &lt;&lt;<strong>header</strong>&gt;&gt; (<em>para contener la parte con el logo y la cabecera de la página</em>). lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.</p>
   <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
+  <hr>
+  <h4>Clases de etiquetas (class)</h4>
+  <p>Las clases funcionan de forma muy similar a los id, pero son mucho más flexibles. En primero lugar, no tienen la limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por página.</p>
+  <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos características comunes. Sigamos con el ejemplo anterior y añadiendole clases a las etiquetas:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+&lt;<span class="nt">div</span>&gt;</pre>
+  </div>
+  <p>Como podemos ver, al tener la misma clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;, podemos realizar acciones para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo de eso donde se ve bien su utilidad, es respecto a utilizar <strong>ids y clases para dar estilos CSS</strong>, donde aplicaremos unos estilos concretos a todas las etiquetas HTML con clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;.</p>
+  <p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora de crear clases específicas:</p>
+<div class="highlight">
+    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio primero&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio ultimo&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+&lt;<span class="nt">div</span>&gt;</pre>
+  </div>
+  <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.</p>
+  <p>
+  <blockquote class="danger">
+    Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismo atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último atributo <strong>class</strong> con los de los primeros.<p></p>
+  </blockquote>
+  </p>
 
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
