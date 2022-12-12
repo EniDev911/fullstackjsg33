@@ -41,6 +41,10 @@
             <li><a href="#basic">Funcionalidad básica</a></li>
             <li><a href="#cursor">Selección y cursores</a></li>
         </ul>
+        <h4>Terminal integrada</h4>
+        <ul>
+
+        </ul>
         <hr />
         <h3 id="abrir-carpetas-en-vs-code"><a name="folders"></a>Abrir carpetas en vs code <a class="headerlink"
                 href="#abrir-carpetas-en-vs-code" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
@@ -58,111 +62,162 @@
         <p>Se puede abrir un proyecto desde el menú de opciones superior, y se selecciona el el proyecto en cuestión:
         </p>
         <figure>
-            <img alt="open2" src="assets/img/file/open_folder2.png" /><br>
+            <img alt="open2" src="assets/img/file/open_folder2.png" style="margin-bottom: 20px" />
             <img alt="open2.1" src="assets/img/file/open_folder2.1.png" />
         </figure>
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
-        <h3 id="manipulando-archivos_1"><a name="files"></a>Manipulando archivos<a class="headerlink"
+        <h3 id="manipulando-archivos_1"><a name="files"></a>Manipulando archivos <a class="headerlink"
                 href="#manipulando-archivos_1" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
-        <ul>
-            <li><strong>Crear un archivo</strong><br />
-                <img alt="create" src="assets/img/file/create.png" />
-                <a name="save"></a>
-            </li>
-            <li><strong>Guardar un archivo</strong><br />
-                <img alt="save1" src="assets/img/file/save1.png" />
-                <img alt="save1.1" src="assets/img/file/save1.1.png" />
-                <a name="intellisense"></a>
-            </li>
-            <li><strong>Comportamiento intellisense</strong><br />
-                Cuando editamos un archivo, vs code por defecto tiene muchas funciones de autocompletado, el
-                comportamiento &ldquo;intellisense&rdquo; del editor se muestra cada vez que tipeamos una letra se
-                muestra una ayuda, interpretando lo que podríamos querer hacer.
-                <img alt="intellisense" src="assets/img/file/intellisense.png" />
-            </li>
-        </ul>
+        <p><strong>Crear un archivo</strong> </p>
+        <p>Desde el menú de opciones de <strong>VS Code</strong> seleccionamos <strong>&lt;&lt;File -&gt; New
+                File...&gt;&gt;</strong> o mediante el atajo de teclado <kbd>CTRL</kbd> + <kbd>N</kbd> :</p>
+        <img alt="create" src="assets/img/file/create.png" />
+        <a name="save"></a>
+        </li>
+        <p><strong>Guardar un archivo</strong></p>
+        <p>Para guardar los cambios tenemos la opción <strong>&lt;&lt;File -&gt; Save&gt;&gt;</strong> o el atajo
+            <kbd>Ctrl</kbd>+<kbd>S</kbd> :
+        </p>
+        <figure>
+            <img alt="save1" src="assets/img/file/save1.png" style="margin-bottom: 20px;" />
+            <img alt="save1.1" src="assets/img/file/save1.1.png" />
+        </figure>
+        <p><strong>Comportamiento intellisense</strong></p>
+        <p>
+            Cuando editamos un archivo, vs code por defecto tiene muchas funciones de autocompletado, el
+            comportamiento &ldquo;intellisense&rdquo; del editor se muestra cada vez que tipeamos una letra se
+            muestra una ayuda, interpretando lo que podríamos querer hacer.
+        </p>
+        <figure>
+            <img alt="intellisense" src="assets/img/file/intellisense.png" />
+        </figure>
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
         <h3 id="configuracion"><a name="settings"></a>Configuración <a class="headerlink" href="#configuracion"
                 title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
-        <ul>
-            <li>Las configuraciones podemos encontrarlas desde la barra lateral:<br />
-                <img alt="settings1" src="assets/img/file/settings1.png" /><br />
-                Aquí simplemente podemos buscar en la caja de texto cualquier opción que desees modificar.<br />
-                <strong>Ejemplo</strong> para cambiar el tamaño de la fuente del editor:<br />
-                <img alt="fontsize" src="assets/img/file/fontsize.png" />
-            </li>
-        </ul>
+
+        <p>Las configuraciones podemos encontrarlas desde la barra lateral:</p>
+        <img alt="settings1" src="assets/img/file/settings1.png" />
+        <p>
+            Aquí simplemente podemos buscar en la caja de texto cualquier opción que desees modificar.
+        </p>
+        <p><strong>Ejemplo</strong> para cambiar el tamaño de la fuente del editor:</p>
+        <img alt="fontsize" src="assets/img/file/fontsize.png" />
+        </li>
         <h3 id="archivo-de-configuracion"><a name="settings.json"></a>Archivo de configuración <a class="headerlink"
                 href="#archivo-de-configuracion" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+        <p>El editor de configuración es la interfaz de usuario que permite revisar y modificar los valores de
+            configuración que se almacenan en un archivo <strong>settings.json</strong>. Podemos revisar y editar este
+            archivo directamente abriéndolo en el editor con el comando</p>
+        <p>Abrir desde la barra lateral, las configuraciones:
+        <p>
+        <figure>
+            <img alt="settings1" src="assets/img/file/settings1.png" style="margin-bottom: 20px;" />
+            <img alt="settings.json" src="assets/img/file/open_settings_json.png" />
+        </figure>
+        <p>
+            Dentro podemos modificar algunos parámetros directamente en el archivo JSON, su estructura es muy
+            simple, en la columna izquierda van las opciones y en la derecha se asigna el valor para esa
+            opción:
+        </p>
+        <img alt="settings.json" src="assets/img/file/settings_json1.png" />
+        <h3>Ubicación de los archivos de configuración</h3>
+        <p>Dependiendo de la plataforma, el archivo de configuración de usuario de encuentra se puede encontrar en las
+            siguientes <strong>paths</strong> ( <em>rutas</em> ) :</p>
         <ul>
-            <li>Abrir desde la barra lateral, las configuraciones:<br />
-                <img alt="settings1" src="assets/img/file/settings1.png" /><br />
-                <img alt="settings.json" src="assets/img/file/open_settings_json.png" />
-                Dentro podemos modificar algunos parámetros directamente en el archivo JSON, su estructura es muy
-                simple, en la columna izquierda van las opciones y en la derecha se asigna el valor para esa
-                opción:<br />
-                <img alt="settings.json" src="assets/img/file/settings_json1.png" /><br />
-                A continuación vemos un poco las opciones de diferentes tipos que podemos cambiar:<br />
-                <br>
-            </li>
+            <li><strong>Windows</strong>: <code>%APPDATA%\Code\User\settings.json</code></li>
+            <li><strong>Mac OS</strong>: <code>$HOME/Library/Application\ Support/Code/User/settings.json</code></li>
+            <li><strong>Linux</strong>: <code>$HOME/.config/Code/User/settings.json</code></li>
         </ul>
-        <p><strong>Formato</strong>:<br />
+        <p>El archivo <strong>settings.json</strong> tiene <strong>intelliSense</strong> completo con terminaciones
+            inteligentes para configuraciones y valores y descripción flotante. Tambien se resaltan los errores debidos
+            a nombres de configuración o formato JSON incorrecto.</p>
+        <p>Si prefiere trabajar directamente siempre directamente sobre el archivo <strong>settings.json</strong>,
+            podemos establecer la siguiente modificación en el archivo de configuración:</p>
         <div class="highlight">
-            <pre><span class="gu">&quot;editor.formatOnPaste&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea el código al pegarlo</span>
-<span class="gu">&quot;editor.formatOnSave&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea el código al guardar</span>
-<span class="gu">&quot;editor.formatOnType&quot;</span><span class="s2">:</span> true, <span class="c1">// Formatea una línea después de escribirla</span>
+            <pre><span class="s">&quot;workbench.settings.editor&quot;</span>: <span class="s">&quot;json&quot;</span></pre>
+        </div>
+        <p>A continuación vemos un poco las opciones de diferentes tipos que podemos cambiar:</p>
+        <p><strong>Formato</strong>:</p>
+        <div class="highlight">
+            <pre><span class="c1">// Formatea el código al pegarlo</span>
+<span class="s">&quot;editor.formatOnPaste&quot;</span>: <span class="nx">true</span>, 
+<span class="c1">// Formatea el código al guardar</span>
+<span class="s">&quot;editor.formatOnSave&quot;</span>: <span class="nx">true</span>,
+<span class="c1">// Formatea una línea después de escribirla</span>
+<span class="s">&quot;editor.formatOnType&quot;</span>: <span class="nx">true</span>, 
 </pre>
         </div>
-        <strong>Fuentes</strong><br />
+        <p><strong>Fuentes:</strong></p>
         <div class="highlight">
-            <pre><span class="gu">&quot;editor.fontSize&quot;</span><span class="s2">:</span> <span class="mi">18</span>, <span class="c1">// Tamaño de fuente de 18px</span>
-<span class="gu">&quot;editor.fontFamily&quot;</span><span class="s2">:</span> <span class="s2">&quot;&#39;Cascadia code&#39;, monospace&quot;</span>, <span class="c1">// Familia de la fuente</span>
-<span class="gu">&quot;editor.fontLigatures&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Activa las ligaduras para las fuentes que lo soportan</span>
+            <pre><span class="c1">// Tamaño de fuente de 18px</span>
+<span class="s">&quot;editor.fontSize&quot;</span>: <span class="na">18</span>, 
+<span class="c1">// Familia de la fuente</span>
+<span class="s">&quot;editor.fontFamily&quot;</span>: <span class="s">&quot;&#39;Cascadia code&#39;, monospace&quot;</span>, 
+<span class="c1">// Activa las ligaduras para las fuentes que lo soportan</span>
+<span class="s">&quot;editor.fontLigatures&quot;</span>: <span class="nx">true</span>, 
 </pre>
         </div>
         </p>
-        <p><strong>Cursor</strong><br />
+        <p><strong>Cursor:</strong></p>
         <div class="highlight">
-            <pre><span class="gu">&quot;editor.cursorStyle&quot;</span><span class="s2">:</span> <span class="s2">&quot;line-thin&quot;</span>, <span class="c1">// Estilo del cursor: línea delgada</span>
-<span class="gu">&quot;editor.cursorBlinking&quot;</span><span class="s2">:</span> <span class="s2">&quot;blink&quot;</span>, <span class="c1">// Animación del cursor</span>
-<span class="gu">&quot;editor.hideCursorInOverviewRuler&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Oculta la marca del cursor en el editor</span>
+            <pre><span class="c1">// Estilo del cursor: línea delgada</span>
+<span class="s">&quot;editor.cursorStyle&quot;</span>: <span class="s">&quot;line-thin&quot;</span>, 
+<span class="c1">// Animación del cursor</span>
+<span class="s">&quot;editor.cursorBlinking&quot;</span>: <span class="s">&quot;blink&quot;</span>,
+<span class="c1">// Oculta la marca del cursor en el editor</span>
+<span class="s">&quot;editor.hideCursorInOverviewRuler&quot;</span>: <span class="nx">true</span>, 
 </pre>
         </div>
-        <strong>Colores</strong><br />
+        <p><strong>Colores:</strong></p>
         <div class="highlight">
-            <pre><span class="gu">&quot;workbench.colorCustomizations&quot;</span><span class="s2">:</span><span class="p">{</span> <span class="c1">// Remplaza los colores del editor</span>
-    <span class="gu">&quot;statusBar.background&quot;</span><span class="p">:</span> <span class="s2">&quot;#FFD166&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color de fondo de la barra de status</span>
-    <span class="gu">&quot;statusBar.foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;282B39&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color del primer plano de la barra de status</span>
-    <span class="gu">&quot;editor.foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffb191&quot;</span><span class="p">,</span> <span class="c1">// Cambia el color de primer plano que no es afectado por la sintaxis</span>
+            <pre><span class="c1">// Remplaza los colores del editor</span>
+<span class="s">&quot;workbench.colorCustomizations&quot;</span>: { 
+    <span class="c1">// Cambia el color de fondo de la barra de status</span>
+    <span class="s">&quot;statusBar.background&quot;</span>: <span class="s">&quot;#FFD166&quot;</span>,
+    <span class="c1">// Cambia el color del primer plano de la barra de status</span>
+    <span class="s">&quot;statusBar.foreground&quot;</span>: <span class="s">&quot;282B39&quot;</span>,
+    <span class="c1">// Cambia el color de primer plano que no es afectado por la sintaxis</span>
+    <span class="s">&quot;editor.foreground&quot;</span>: <span class="s">&quot;#ffb191&quot;</span>, 
+    <span class="c1">// Cambia el color del número de línea del editor</span>
+    <span class="s">&quot;editorLineNumber.foreground&quot;</span>: <span class="s">&quot;#00ff00&quot;</span>,
 <span class="p">}</span>
 </pre>
         </div>
-        <strong>Archivos</strong><br />
+
+        <p><strong>Archivos:</strong></p>
         <div class="highlight">
-            <pre> <span class="gu">&quot;files.trimFinalNewlines&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Remueve las líneas extras al final del archivo</span>
- <span class="gu">&quot;files.insertFinalNewline&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Inserta una línea al final del archivo</span>
- <span class="gu">&quot;files.trimTrailingWhitespace&quot;</span><span class="s2">:</span> <span class="kc">true</span>, <span class="c1">// Remueve los espacios extras al final de una línea</span>
+            <pre> <span class="c1">// Remueve las líneas extras al final del archivo</span>
+<span class="s">&quot;files.trimFinalNewlines&quot;</span>: <span class="nt">true</span>, 
+<span class="c1">// Inserta una línea al final del archivo</span>
+<span class="s">&quot;files.insertFinalNewline&quot;</span>: <span class="nt">true</span>, 
+<span class="c1">// Remueve los espacios extras al final de una línea</span>
+<span class="s">&quot;files.trimTrailingWhitespace&quot;</span>: <span class="nt">true</span>, 
 </pre>
         </div>
-        <strong>Identación y espaciado</strong><br />
+        <p><strong>Identación y espaciado:</strong></p>
         <div class="highlight">
-            <pre><span class="gu">&quot;editor.detectIdentation&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Desactiva la documentación automática</span>
-<span class="gu">&quot;editor.renderIndentGuides&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Desactiva las líneas de indentación</span>
-<span class="gu">&quot;editor.folding&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Elimina el espaciado</span>
-<span class="gu">&quot;editor.glyphMatgin&quot;</span><span class="s2">:</span> <span class="kc">false</span>, <span class="c1">// Elimina el margen izquierdo (Se usa principalmente para depurar)</span>
+            <pre><span class="c1">// Desactiva la identación automática</span>
+<span class="s">&quot;editor.detectIdentation&quot;</span>: <span class="nt">false</span>, 
+<span class="c1">// Desactiva las líneas de indentación</span>
+<span class="s">&quot;editor.renderIndentGuides&quot;</span>: <span class="nt">false</span>,
+<span class="c1">// Elimina el espaciado</span>
+<span class="s">&quot;editor.folding&quot;</span>: <span class="nt">false</span>, 
+<span class="c1">// Elimina el margen izquierdo (Se usa principalmente para depurar)</span>
+<span class="s">&quot;editor.glyphMatgin&quot;</span>: <span class="nt">false</span>, 
 </pre>
         </div>
-        <strong>Terminal</strong><br />
+        <p><strong>Terminal Integrada:</strong></p>
         <div class="highlight">
-            <pre><span class="gu">&quot;terminal.integrated.fontSize&quot;</span><span class="s2">:</span> <span class="mi">15</span>, <span class="c1">// Tamaño de fuente para la terminal integrada</span> 
-<span class="gu">&quot;terminal.integrated.fontFamily&quot;</span><span class="s2">:</span> <span class="s2">&quot;Consolas&quot;</span>, <span class="c1">// Familia de la fuente</span>
-</pre>
+            <pre><span class="c1">// Tamaño de fuente para la terminal integrada</span>
+<span class="s">&quot;terminal.integrated.fontSize&quot;</span>: <span class="na">15</span>,  
+<span class="c1">// Familia de la fuente</span>
+<span class="s">&quot;terminal.integrated.fontFamily&quot;</span>: <span class="s">&quot;Consolas&quot;</span>,</pre>
         </div>
         </p>
         <p><a href="#top"><img alt=""
@@ -206,14 +261,8 @@
         <h3 id="atajos-de-teclado_1">Atajos de teclado <a class="headerlink" href="#atajos-de-teclado_1"
                 title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
         <p><a name="basic"></a></p>
-        <table border="1">
-            <caption style="background: #ccc; border: 1px solid black;">
-                <h3>Funcionalidad básica</h3>
-            </caption>
-            <colgroup>
-                <col width="15%">
-                <col width="1000">
-            </colgroup>
+        <h3>Funcionalidad básica</h3>
+        <table>
             <tr>
                 <th>Combinación</th>
                 <th align="left">Acción</th>
@@ -285,14 +334,8 @@
                     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
             <a name="cursor"></a>
         </p>
-        <table border="1" width="100%">
-            <caption style="border: 1px solid black; background: #ccc;">
-                <h3>Selección múltiple y cursores</h3>
-            </caption>
-            <colgroup>
-                <col width="20%">
-                <col width="80%">
-            </colgroup>
+        <h3>Selección múltiple y cursores</h3>
+        <table>
             <tr>
                 <th>Combinación</th>
                 <th align="left">Acción</th>
@@ -357,11 +400,6 @@
 
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-        </p>
-        <p align="center">
-            Si tienes alguna sugerencia escribeme:<br>
-            <a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"><i class="fa-solid fa-envelope"
-                    style="color: rgb(26, 26, 26); font-size: 50px;"></i></a>
         </p>
     </article>
 </body>
