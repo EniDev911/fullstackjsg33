@@ -855,7 +855,34 @@
     Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismo atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último atributo <strong>class</strong> con los de los primeros.<p></p>
   </blockquote>
   </p>
-
+  <h4>Idioma del contenido</h4>
+  <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">p</span>&gt;
+  Hace algunos días fuí a ver la nueva película de &lt;<span class="nt">span</span> <span class="na">translate</span>=<span class="s">&quot;no&quot;</span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
+&lt;/<span class="nt">p</span>&gt;</pre>
+  </div>
+  <p>De esta forma, le indicamos al naevagador o a herramientas como <strong>Google translator</strong>, que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por defecto.</p>
+  <h4>Títulos o tooltips</h4>
+  <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">div</span>&gt;
+  &lt;<span class="nt">img</span> 
+    <span class="na">src</span>=<span class="s">&quot;gandalf.jpg&quot;</span>
+    <span class="na">alt</span>=<span class="s">&quot;Gandalf el gris, utilizando un portátil para consultar su correo.&quot;</span>
+    <span class="na">title</span>=<span class="s">&quot;¡Este es Gandalf el gris!&quot;</span> /&gt;
+&lt;<span class="nt">div</span>&gt;</pre>
+  </div>
+  <p><strong>El resultado sería el siguiente:</strong></p>
+  <p align="center">
+   <img 
+    src="./assets/Gandalf.gif"
+    alt="Gandalf el gris"
+    title="¡Este es Gandalf el gris!"
+    style="border: 2px solid #000; border-radius: 0; " />
+  </p>
+  <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se pueda ver por alguna razón (<em>por ejemplo cuando no es accesible en un servidor web</em>), mientras que el atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.</p>
+  <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo, etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la

@@ -393,9 +393,14 @@ body .markdown-body {
   color: rgba(10, 90, 140, 1.0);
   font-weight: bold;
 }
+/* TAG HTML EN PARRAFOS */
+.markdown-body p span.tag {
+  color: rgba(10, 90, 140, 1.0);
+  font-weight: bold;
+}
 /* CITAS */
 .markdown-body blockquote.danger {
-  background: #ff101069;
+  background: #ff101059;
   color: #222222;
   padding: 15px;
   border-left: 8px solid #ff4040;
