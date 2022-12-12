@@ -107,11 +107,11 @@
         </ul>
       </li>
       <li>
-        <h4 id="elementos">Etiquetas semánticas<a class="headerlink" href="#elementos"
-            title="Permanent link">&#9875;</a></h4>
+        <h4 id="contenido">CONTENIDO</h4>
         <ul>
           <li><a href="#que-es-html">¿Qué es HTML?</a></li>
           <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a></li>
+          <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a></li>
           <li><a href="#enlaces">Enlaces</a></li>
           <li><a href="#parrafos">De textos</a></li>
           <li><a href="#citas">Citas</a></li>
@@ -760,6 +760,75 @@
   <a name='atributos-comunes-html'></a>
   <h3><a href="#atributos-comunes-html" title="Permanent link">Atributos comunes en HTML</a> &#9875;</h3>
   <p>Como hemos visto, HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
+  <p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en <strong>cualquier etiqueta HTML</strong>.</p>
+  <table>
+    <thead>
+      <th>Atributo</th>
+      <th>Valor</th>
+      <th>Descripción</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="td-attribute">id</span></td>
+        <td><em>nombre</em></td>
+        <td>Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">class</span></td>
+        <td><em>nombre</em></td>
+        <td>Establece una <strong>clase</strong> (género) a una etiqueta HTML (puede repetirse por página).</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">lang</span></td>
+        <td><em>idioma</em></td>
+        <td>Indica el idioma del contenido de la etiqueta HTML.</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">translate</span></td>
+        <td><strong>yes</strong> | no</td>
+        <td>Indica si el contenido de la etiqueta es traducible o no.</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">title</span></td>
+        <td><em>título</em></td>
+        <td>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el <strong><em>mouse</em></strong> por encima.</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">data-*</span></td>
+        <td><em>nombre</em></td>
+        <td>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span class="td-attribute">data-</span>.</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">accesskey</span></td>
+        <td><em>atajo</em></td>
+        <td>Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">dir</span></td>
+        <td><strong>ltr</strong> | rtl</td>
+        <td>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>)</td>
+      </tr>
+      <tr>
+        <td><span class="td-attribute">style</span></td>
+        <td><em>estilos</em></td>
+        <td>Aplica propiedades CSS directamente al elemento en cuestión.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Identificador de etiqueta (id)</h4>
+  <p>
+    En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión, guión bajo...</em>) o números: 
+  </p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
+  &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
+  &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
+&lt;<span class="nt">div</span>&gt;</pre>
+  </div>
+  <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.</p>
+  <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían de id serían &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página completa</em>), &lt;&lt;<strong>comentarios</strong>&gt;&gt; (<em>para contener toda la zona de comentarios de la página</em>) o &lt;&lt;<strong>header</strong>&gt;&gt; (<em>para contener la parte con el logo y la cabecera de la página</em>). lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.</p>
+  <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
 
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>

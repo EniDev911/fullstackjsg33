@@ -367,6 +367,8 @@ body .markdown-body {
 }
 
 /* =====END===== */
+
+/* ===UTILITIES=== */
 /* KBD */
 .markdown-body kbd {
   background-color: var(--light-gray);
@@ -386,8 +388,11 @@ body .markdown-body {
   display: inline-block;
   box-shadow: 1px 2px 2px var(--shadow);
 }
-
-
+/* ATRIBUTTES TABLE */
+.markdown-body table span.td-attribute {
+  color: rgba(10, 90, 140, 1.0);
+  font-weight: bold;
+}
 
 /* PRINT STYLE */
 @media print {
@@ -482,6 +487,7 @@ body .markdown-body {
     page-break-after: avoid;
   }
 }
+
 
 /* ===END=== */
 
