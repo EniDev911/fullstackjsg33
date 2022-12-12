@@ -41,7 +41,10 @@
             <li><a href="#basic">Funcionalidad básica</a></li>
             <li><a href="#cursor">Selección y cursores</a></li>
         </ul>
-        <h4>Terminal integrada</h4>
+        <h4>Fragmentos (Snippets)</h4>
+        <ul>
+            <li><a href="#crear-snippets">Crear tus propios fragmentos (snippets)</a></li>
+        </ul>
         <ul>
 
         </ul>
@@ -127,17 +130,17 @@
         </p>
         <img alt="settings.json" src="assets/img/file/settings_json1.png" />
         <h3>Ubicación de los archivos de configuración</h3>
-        <p>Dependiendo de la plataforma, el archivo de configuración de usuario de encuentra se puede encontrar en las
+        <p>Dependiendo de la plataforma, el archivo de configuración de usuario de encuentra se puede encontrar en los
             siguientes <strong>paths</strong> ( <em>rutas</em> ) :</p>
         <ul>
-            <li><strong>Windows</strong>: <code>%APPDATA%\Code\User\settings.json</code></li>
-            <li><strong>Mac OS</strong>: <code>$HOME/Library/Application\ Support/Code/User/settings.json</code></li>
-            <li><strong>Linux</strong>: <code>$HOME/.config/Code/User/settings.json</code></li>
+            <li><strong>Windows</strong>: <code class="path">%APPDATA%\Code\User\settings.json</code></li>
+            <li><strong>Mac OS</strong>: <code class="path">$HOME/Library/Application\ Support/Code/User/settings.json</code></li>
+            <li><strong>Linux</strong>: <code class="path">$HOME/.config/Code/User/settings.json</code></li>
         </ul>
         <p>El archivo <strong>settings.json</strong> tiene <strong>intelliSense</strong> completo con terminaciones
             inteligentes para configuraciones y valores y descripción flotante. Tambien se resaltan los errores debidos
             a nombres de configuración o formato JSON incorrecto.</p>
-        <p>Si prefiere trabajar directamente siempre directamente sobre el archivo <strong>settings.json</strong>,
+        <p>Si prefiere trabajar directamente siempre sobre el archivo <strong>settings.json</strong>,
             podemos establecer la siguiente modificación en el archivo de configuración:</p>
         <div class="highlight">
             <pre><span class="s">&quot;workbench.settings.editor&quot;</span>: <span class="s">&quot;json&quot;</span></pre>
@@ -231,11 +234,15 @@
         <p><img alt="extends" src="assets/img/extensions/panel.png" />
         </p>
         <p>Te dejo una lista de extensiones recomendadas para el desarrollo web: </p>
+
         <ul>
             <li>
-                <p><strong>Live Server</strong>: configura un servidor local para poder ver el desarrollo en vivo, fácil
+                <p><strong><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a></strong>: configura un servidor local para poder ver el desarrollo en vivo, fácil
                     de usar y recarga la página automáticamente al guardar los cambios en el archivo. (La ilustración de
                     ejemplo anterior lo muestra).</p>
+            </li>
+            <li>
+                <p><strong><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion" target="_blank">IntelliSense for CSS class names in HTML</a></strong>: mapea y detecta la finalización de nombres de clases CSS dentro de una etiqueta HTML en su atributo <strong>class</strong> en función de las definiciones encontradas en su espacio de trabajo o archivos externos a los que se hace referencia a través la etiqueta <span class="tag">&lt;link&gt;</span></p>
             </li>
             <li>
                 <p><strong>Bracket Pair Colorizer 2</strong>: A pesar que su mantención está descontinuida es un plugin
@@ -401,6 +408,36 @@
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
+        <hr>
+        <h3>Snippets</h3>
+        <p>Los fragmentos de código ( <em>snippets</em> ) son plantillas que facilitan la introducción de patrones de código repetivivos, como <strong>bucles</strong>, o <strong>declaraciones condicionales</strong>, También se puede extender su uso para casos personalizados.</p>
+        <p>En <strong><abbr title="visual studio code">VS Code</abbr></strong>, los fragmentos aparence en una pequeña ventana emergente <strong>intelliSense</strong> podemos activar el comportamiento de <strong>intelliSense</strong> mediante la combinación ( <kbd>CTRL</kbd>+<kbd>SPACE</kbd> ) donde se mostrará junto con otras sugerencias o en la paleta de comandos ( <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> ) introduciendo ( <strong>Insert Snippet</strong>) y seleccionarlo. También hay soporte para completar con tabulación habilitando esto desde el archivo de configuración e introduciendo la siguiente entrada <strong>clave-valor</strong>:</p>
+        <div class="highlight">
+            <pre><span class="s">&quot;editor.tabCompletion&quot;</span>: <span class="s">&quot;on&quot;</span></pre>
+        </div>
+        <p>La sintaxis del fragmento sigue la <a href="https://macromates.com/manual/en/snippets" target="_blank">sintaxis de TextMate</a> con algunas excepciones como el uso de <strong>\u</strong> que no es compatible.</p>
+        <h3>Snippets incorporados</h3>
+        <p><strong><abbr title="visual studio code">VS Code</abbr></strong> tiene fragmentos para una serie de lenguajes como: <strong>javascript</strong>. <strong>typescript</strong>, <strong>Markdown</strong> y <strong>PHP</strong>.</p>
+        <p>Puede ver los fragmentos disponibles para un lenguaje ejecutando el comando que mencionamos anteriormente <strong>Insert Snippet</strong> en la paleta de comandos para obtener una lista de los fragmentos para el lenguaje del archivo actual. Sin embargo, tenga en cuenta que en esta lista también se incluye fragmentos que ha definido el usuario y cualquier fragmento proporcionado por las extensiones que ha instalado.</p>
+        <h4>Instalar fragmentos desde Marketplace</h4>
+        <p>Hay muchas <strong>extensiones</strong> en <strong><abbr title="visual studio code">VS Code</abbr> Marketplace</strong> que incluyen fragmentos. Puede buscar extensiones que contengan fragmentos en la vista de <strong>Extensiones</strong> (<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>X</kbd>) usando el filtro <code>@category:&quot;snippet&quot;</code></p>
+        <h4 id="crear-snippets">Crea tus propios fragmentos (snippets)</h4>
+        <p>Se puede definir fácilmente fragmentos sin ninguna extensión. Para crear o editar sus propios fragmentos, seleccione en el menú <strong>File -&gt; Preferences -&gt; Configure user snippets</strong> y, a continuación seleccione el lenguaje para que el identificador de lenguaje pueda detectarlo y recomendarlo al editar un archivo, o bien seleccione <strong>New Global Snippets File...</strong> para que este fragmento se encuentre disponible para todos los lenguajes.</p>
+        <p>Los archivos de fragmentos ( <em>snippets</em> ) están escritos en formato <strong><abbr title="JavaScript Object Notation">JSON</abbr></strong>, admite comentarios de estilo C y se pueden definir una cantidad ilimitada de fragmentos. Los fragmentos admiten la mayoría de la sintaxis de TextMate para un comportamiento dinámico, dan formato inteligente a los espacios en blanco según el contexto de inserción y permiten una fácil edición de varias líneas.</p>
+        <p>A continuación, veremos un ejemplo de un fragmento para un bucle <strong>for</strong> para <strong>javascript</strong>.</p>
+        <div class="highlight">
+            <pre><span class="c1">// in File 'Code/User/snippets/javascript.json'</span>
+{
+  <span class="s">&quot;For Loop&quot;</span>: {
+    <span class="s">&quot;prefix&quot;</span>: [<span class="s">&quot;for&quot;</span>, <span class="s">&quot;for-const&quot;</span>],
+    <span class="s">&quot;body&quot;</span>: [<span class="s">&quotfor (const ${2:element} of ${1:array}) {&quot;</span>, <span class="s">&quot;<span class="na">\t</span>$0&quot;</span>, <span class="s">&quot;}&quot;</span>],
+    <span class="s">&quot;description</span>: <span class="s">&quot;Un bucle for.&quot;</span> 
+  }
+}</pre></div>
+<p><strong>En el ejemplo anterior:</strong></p>
+<ul>
+    <li><strong>&quot;For Loop&quot;</strong> es el nombre del fragmento. Se muestra a través de <strong>intelliSense</strong> si <strong>&quot;description&quot;</strong> no se proporciona.</li>
+</ul>
     </article>
 </body>
 

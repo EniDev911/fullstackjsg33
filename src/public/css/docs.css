@@ -415,6 +415,11 @@ body .markdown-body {
   color: rgba(10, 90, 140, 1.0);
   font-weight: bold;
 }
+/* PATH EN TAG CODE */ 
+.markdown-body code.path {
+  background: #333;
+  color: #f2f2f2;
+}
 
 /* CITAS */
 .markdown-body blockquote.danger {
