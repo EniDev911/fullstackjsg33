@@ -883,6 +883,87 @@
   </p>
   <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se pueda ver por alguna razón (<em>por ejemplo cuando no es accesible en un servidor web</em>), mientras que el atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.</p>
   <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo, etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
+  <h4>Metadatos (datasets)</h4>
+  <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta <span class="tag">head</span> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.</p>
+  <p>De esta forma, podemos invetarnos cualquier atributo que contenga información, habitualmente orientada a utilizarse desde javascript:</p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">article</span>
+  <span class="na">id</span>=<span class="s">&quot;auto&quot;</span>
+  <span class="na">data-marca</span>=<span class="s">&quot;ford&quot;</span>
+  <span class="na">data-modelo</span>=<span class="s">&quot;fiesta&quot;</span>
+  <span class="na">data-color</span>=<span class="s">&quot;azul&quot;</span>
+  <span class="na">data-asientos</span>=<span class="s">&quot;4&quot;</span>&gt;
+&lt;/<span class="nt">article</span>&gt;</pre>
+  </div>
+<p>
+En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span class="tag">&lt;article&gt;</span>, a la que podremos acceder a través de javascript mediante la propiedad <strong>.dataset</strong> :</p>  
+   <div class="highlight">
+      <pre><span class="kr">const</span> article = document.<span class="nt">getElementById</span>(<span class="s">&quot;auto&quot;</span>);
+
+article.<span class="nt">dataset</span>.<span class="nt">marca</span>; <span class="c1">// ford</span>
+article.<span class="nt">dataset</span>.<span class="nt">modelo</span>; <span class="c1">// fiesta</span>
+article.<span class="nt">dataset</span>.<span class="nt">color</span>; <span class="c1">// azul</span>
+article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span></pre>
+</div>
+<hr>
+<h4>Atajo de teclado (accesskey)</h4>
+<p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse <kbd>ALT</kbd> + <kbd>tecla</kbd>, se active ese elemento:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">form</span>&gt;
+  <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
+  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;N&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+N)&quot;</span> /&gt;
+  <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
+  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;A&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+A)&quot;</span> /&gt;
+  <span class="c1" style="font-variant-ligatures:none">&lt;!-- Enlace HTML --&gt;</span>
+  &lt;<span class="nt">a</span> <span class="na">accesskey</span>=<span class="s">&quot;L&quot;</span> <span class="na">href</span>=<span class="s">&quot;#&quot;</span>&gt;Enlace (ALT+L)&lt;/<span class="nt">a</span>&gt;
+  <span class="c1" style="font-variant-ligatures:none">&lt;!-- Botón HTML --&gt;</span>
+  &lt;<span class="nt">button</span> <span class="na">accesskey</span>=<span class="s">&quot;B&quot;</span>&gt;Botón (ALT+B)&lt;/<span class="nt">button</span>&gt;
+&lt;/<span class="nt">form</span>&gt;</pre>
+</div>
+<p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos <kbd>ALT</kbd>+<kbd>B</kbd> se pulsará el botón.</p>
+<p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre navegadores y sistemas. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo <strong>accesskey</strong>, tendríamos que pulsar las siguientes combinaciones de teclas:</p>
+<table>
+  <thead>
+    <th>Navegador</th>
+    <th>Plataforma Windows</th>
+    <th>Plataforma Linux</th>
+    <th>Plataforma Mac</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Chrome</strong></td>
+      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+    </tr>
+    <tr>
+      <td><strong>Firefox</strong></td>
+      <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>CTRL</kbd>+<kbd>A</kbd></td>
+    </tr>
+    <tr>
+      <td><strong>IE/Edge</strong></td>
+      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+      <td>No aplicable</td>
+      <td>No aplicable</td>
+    </tr>
+    <tr>
+      <td><strong>Safari</strong></td>
+      <td>No aplicable</td>
+      <td>No aplicable</td>
+      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+    </tr>
+    <tr>
+      <td><strong>Opera</strong></td>
+      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
+      <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+    </tr>
+  </tbody>
+</table>
+<p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
+
     <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
         href="#cabeceras" title="Permanent link">&#9875;</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
@@ -1406,44 +1487,7 @@
     </h3>
     <p>Para crear bloques de cita, se emplea la etiqueta <code>&lt;blockquote&gt;</code>. En la siguiente tabla se
       pueden ver las opciones para crearlos.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Tecleas</th>
-          <th>Obtienes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre
-              class="no_mrkdwn">Esto es una línea normal<br><br>&#60;blockquote&#62;Esto es parte de un bloque de cita.<br>Esto es parte del mismo bloque de cita.&#60;/blockquote&#62;</pre>
-          </td>
-          <td>
-            <p>Esto de una línea normal</p>
-            <blockquote>
-              <p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p>
-            </blockquote>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <pre>Esto es una línea normal<br><br>&#60;blockquote&#62;<br>&nbsp;Esto es parte de un bloque de cita.<br>&nbsp;Esto es parte del mismo bloque de cita.<br>&nbsp;&nbsp;&#60;blockquote&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;Esto de otro bloque de cita anidado.<br>&nbsp;&nbsp;&nbsp;&nbsp;Esto es parte del bloque anidado.<br>&nbsp;&nbsp;&#60;/blockquote&#62;<br>&nbsp;Esto es parte del bloque de cita del primer nivel.<br>&#60;/blockquote&#62;
-                </pre>
-          </td>
-          <td>
-            <p>Esto es una línea normal</p>
-            <blockquote>
-              <p>Esto es parte de un bloque de cita. Esto es parte del mismo bloque de cita.</p>
-              <blockquote>
-                <p>Esto es otro bloque de cita anidado. Esto es parte del bloque anidado.</p>
-              </blockquote>
-              <p>Esto de parte del bloque de cita de primer nivel.</p>
-            </blockquote>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+
 
     <p><a href="https://codepen.io/EniDev911/pen/oNqvogR"><img src="https://badges.aleen42.com/src/codepen.svg"
           alt="codepen logo" height="27"></a>
