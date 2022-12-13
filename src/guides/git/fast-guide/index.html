@@ -769,10 +769,18 @@ git merge nueva
 <span class="nt">git</span> push origin --delete remoteBranchName
 </pre>
     </div>
+  <h3>Descargar un branch remoto</h3>
+  <p>Clonamos el proyecto</p>
+  <div class="highlight">
+    <pre><span class="nt">git</span> clone URL/repo.git NombreProyecto</pre>
+  </div>
+  <p>Creamos un nuevo branch localmente, basado en el branch remoto</p>
+  <div class="highlight">
+    <pre><span class="nt">git</span> checkout -b nombre_branch origin/nombre_branch</pre>
+  </div>
   </article>
   <script src="../../../public/js/lib/fontawesome.bundle.js"></script>
   <script src="../../../public/js/functions.js" type="module"></script>
-
 </body>
 
 </html>

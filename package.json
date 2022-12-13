@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/EniDev911/fullstackjsg33/issues"
   },
-  "homepage": "https://github.com/EniDev911/fullstackjsg33#readme"
+  "homepage": "https://github.com/EniDev911/fullstackjsg33#readme",
+  "dependencies": {
+    "servor": "^4.0.2"
+  }
 }
