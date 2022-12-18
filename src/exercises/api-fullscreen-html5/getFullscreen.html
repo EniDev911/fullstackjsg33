@@ -35,6 +35,14 @@
     document.addEventListener('fullscreenchange', function () {
       console.log("full screen change")
     })
+
+    const createImage = (pic) => {
+      const img = document.createElement('img');
+      return img.src = pic
+    }
+
+    console.log(createImage('01.jpg'))
+
   </script>
 </body>
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Swiper y React</title>
+	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+</head>
+<body>
+	<article class="markdown-body">
+	<h3>Cómo habilitar la reproducción automática para SwiperJS React</h3>
+	<p>Como siempre vamos a crear un proyecto de React e instalaremos el paquete de <strong>SwiperJS</strong></p>
+	<p><strong>Crear el proyecto con vite</strong></p>
+	<div class="highlight">
+		<pre><span class="nt">npm</span> create vite@latest swiperJS-autoplay -- --template react <i class="fa-solid fa-clone" onclick="{copy_clipboard('npm create vite@latest swiperJS-autoplay -- --template react')}"></i></pre>
+	</div>
+	<p>Luego vamos a modificar el componente <strong>App.jsx</strong> y podemos agregar el siguiente código para crear un carrusel:</p>
+	<div class="highlight">
+		<pre><span class="kr">import</span> <span class="s">{</span> Swiper, SwiperSlide <span class="s">}</span> <span class="kr">from</span> <span class="s">&quot;swiper/react&quot;</span>;
+<span class="kr">import</span> <span class="s">{</span> Navigation, Pagination, Autoplay <span class="s">}</span> <span class="kr">from</span> <span class="s">&quot;swiper&quot;</span>;
+<span class="kr">import</span> <span class="s">&quotswiper/css&quot</span>;
+<span class="kr">import</span> <span class="s">&quotswiper/css/navigation&quot</span>;
+<span class="kr">import</span> <span class="s">&quotswiper/css/pagination&quot</span>;
+<span class="kr">import</span> <span class="s">&quotswiper/css/scrollbar&quot</span>;
+<span class="kr">import</span> <span class="s">&quotswiper/css/autoplay&quot</span>;
+
+<span class="kr">function</span> rand(<span class="na">min</span>, <span class="na">max</span>) {
+    <span class="kr">return</span> Math.<span class="nt">floor</span>(Math.<span class="nt">random</span><span class="nx">()</span> <span class="na">*</span> (max <span class="na">-</span> min <span class="na">+</span> 1) <span class="na">+</span> 1);
+}
+
+<span class="kr">function</span> imgUrl() {
+    <span class="kr">const</span> id = <span class="nt">rand</span>(1, 200);
+    <span class="kr">return</span> <span class="nx">`<span class="s">https://picsum.photos/id/</span>${<span class="s">id</span>}<span class="s">/1920/1080</span>`</span>
+}
+
+<span class="kr">function</span> createSlide() {
+    <span class="kr">return</span> (
+      &lt;<span class="nt">SwiperSlide</span>&gt;
+        &lt;<span class="nt">img</span> <span class="na">src</span>={<span class="nt">imgUrl</span>()} <span class="na">className</span>=<span class="s">&quot;img&quot;</span>/&gt;
+      &lt;/<span class="nt">SwiperSlide</span>&gt;
+    )
+}
+
+<span class="kr">export default</span> () => {
+    <span class="kr">return</span> (
+      &lt;<span class="nt">Swiper</span>
+        <span class="na">modules</span>={<span class="nx">[<span class="s">Navigation</span>, <span class="s">Pagination</span>, <span class="s">Autoplay</span>]</span>}
+    )
+
+}
+
+	</pre>
+	</div>
+	<script src="../../../public/js/lib/fontawesome.bundle.js"></script>
+  	<script src="../../../public/js/functions.js" type="module"></script>
+</article>
+</body>
+</html>

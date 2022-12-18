@@ -10,12 +10,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
-  <title>Formulario</title>
+  <title>Navbar and nav</title>
 </head>
 
 <body class="min-vh-100">
   <!-- navigation -->
-  <nav class="navbar navbar-dark fixed-bottom navbar-expand-lg bg-dark border-bottom">
+  <!-- fixed-bottom : posiciona la barra de nevagación al final de la pantalla -->
+  <!-- sticky-top: posiciona la barra de navegación al inicio y se desplaza con el scroll -->
+  <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark border-bottom border-info">
     <div class="container-fluid">
       <!-- logo del producto -->
       <a href="#" class="navbar-brand">Mi logo</a>
@@ -48,6 +50,7 @@
           </div>
         </div>
       </div>
+      <!-- second card -->
       <div class="col-10 col-md-6 col-lg-4">
         <div class="card">
           <div class="card-header">
@@ -64,6 +67,7 @@
           </div>
         </div>
       </div>
+      <!-- thrid card -->
       <div class="col-10 col-md-6 col-lg-4">
         <div class="card">
           <div class="card-header">
@@ -77,6 +81,7 @@
           </div>
         </div>
       </div>
+      <!-- four card -->
       <div class="col-10 col-md-6 col-lg-4">
         <div class="card">
           <div class="card-header">
@@ -90,8 +95,23 @@
           </div>
         </div>
       </div>
+      <!-- five card -->
+      <div class="col-10 col-md-6 col-lg-4">
+        <div class="card">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active">active</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="{toggleActive(this)}">link</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
+
+  <script>
+    function toggleActive(element) {
+       element.classList.toggle("active");
+    }
+  </script>
 </body>
 
 </html>

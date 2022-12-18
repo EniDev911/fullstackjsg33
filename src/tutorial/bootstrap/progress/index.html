@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>progress BS-5</title>
+	  <!-- CSS BS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+  <style>
+	.progress-bar {
+	  -webkit-transition: initial !important;
+	  -o-transition: initial !important;
+	  transition: initial !important;
+	}
+
+	.progress-bar.active, .progress.active .progress-bar {
+	  -webkit-animation: initial !important;
+	  -o-animation: initial !important;
+	  animation: initial !important;
+	}
+  </style>
+</head>
+<body class="min-vh-100">
+	<div class="container p-5">
+		<div class="row">
+		<!-- progress 1  -->
+			<div class="col">
+				<h3>Progress bar 1</h3>
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"></div>
+				</div>
+			</div>
+		<!-- progress 2 -->
+			<div class="col">
+				<h3>Progress bar 2</h3>
+				<div class="progress">
+					<div id="progress-bar2" class="progress-bar" style="width: 25%" onclick="{addProgressPercentaje(this, 10)}"></div>
+				</div>
+				<button onclick="{
+					addProgressPercentaje(document.getElementById('progress-bar2'), 10)
+				}" class="btn btn-primary btn-md mt-2">Aumentar</button>
+			</div>
+			<!-- progress 3 -->
+			<div class="col">
+				<h3>Progress bar 3</h3>
+				<div class="progress">
+					<div id="progress-bar3" class="progress-bar"></div>
+				</div>
+				<button class="btn btn-primary mt-2" onclick="{
+					fillProgress(document.getElementById('progress-bar3'), this)
+				}">Cargar</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function addProgressPercentaje(element, percentaje){
+			const currentPercentaje = element.style.width;
+			const formatCurrentPercentaje = Number(currentPercentaje.substr(0, currentPercentaje.length -1))
+			if (formatCurrentPercentaje >= 100){
+				return element.style.width = "0%";			
+			}
+			const result = Number(formatCurrentPercentaje) + percentaje;
+			element.style.width = `${result}%`			
+		}
+
+		function fillProgress(element, btn){
+			btn.hidden = true;
+			let aux = 0,
+			interval;
+			interval = setInterval(() => {
+				element.style.width = `${aux}%`
+				element.innerHTML = `${aux}%`;
+				console.log(aux);
+				aux++;
+				if (aux === 101){
+					setTimeout(()=> {
+						alert("Carga completada");
+						btn.hidden = false;
+					}, 100)
+					clearInterval(interval)
+				}
+			}, 40)
+		}
+	</script>
+</body>
+</html>
