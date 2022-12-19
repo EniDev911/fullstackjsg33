@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Web-Components</title>
 	<link rel="stylesheet" href="../../../public/css/docs.css">
+	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
 </head>
 <body>
 	<article class="markdown-body">
@@ -23,6 +24,13 @@
 		<h3>Custom Elements</h3>
 		<p>Los <strong>custom elements</strong> ( <em>elementos personalizados</em> ) son una de las características principales que forman los <strong>WebComponents</strong>. Con ellos, se nos permite crear nuestras <strong>etiquetas HTML</strong>, pudiendo dotarlas de su propia funcionalidad, marcado HTML o estilo CSS.</p>
 		<p>La forma rápida de diferenciar estas <strong>etiquetas personalizadas</strong> de las etiquetas nativas de HTML5 es observando que los <strong>custom elements</strong> deben llevar al menos un <strong>guión</strong> en su nombre</p>
+		<div class="highlight">
+			<pre><span class="c1">&lt;!-- Etiqueta &lt;div&gt; estándar de HTML5 --&gt:</span>
+&lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;emoji&quot;</span>&gt;:D&lt;/<span class="nt">div</span>&gt;
+
+<span class="c1">&lt;!-- Custom Element &lt;app-emoji&gt; --&gt;</span>
+&lt;<span class="nt">app-emoji</span> <span class="na">name</span>=<span class="s">&quot;happy&quot;</span>&gt;&lt;/<span class="nt">app-emoji</span>&gt;</pre>
+		</div>
 	</article>
 	
 </body>
