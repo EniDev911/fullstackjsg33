@@ -20,7 +20,7 @@
     font-size: 15px;
     background-color: rgb(40, 45, 71);
     line-height: 1.45;
-    border-radius: 6px;
+    border: 2px solid  #000;
     box-shadow: 1px 1px 2px #000;
   }
 

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 5 CDN CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>EMAILJS</title>
+  </head>
+  <body>
+
+  	<form action="" class="w-50 mx-auto border border-dark p-3 my-5" id="form">
+  		<div class="mb-3">
+  			<label for="name">Su nombre</label>
+  			<input type="text" class="form-control" name="name" id="name">
+  			<div class="form-text">No compartiremos sus datos</div>
+  		</div>
+  		<div class="mb-3">
+  			<label for="email">Email</label>
+  			<input type="text" class="form-control" name="email" id="email">
+  		</div>
+  		<div class="mb-3">
+  			<label for="message">Su mensaje</label>
+  			<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+  		</div>
+  		<button id="button" type="submit" class="btn btn-success">Enviar</button>
+  	</form>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('oNB52ay0Cq4msrRQL')
+</script>
+	 <!-- Bootstrap 5 CDN JS -->
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+	 <script>
+	 	const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+   console.log(event.target.id)
+   // btn.value = 'Sending...';
+
+   // const serviceID = 'default_service';
+   // const templateID = 'template_q7k96j9';
+
+   // emailjs.sendForm(serviceID, templateID, this)
+   //  .then(() => {
+   //    btn.value = 'Send Email';
+   //    alert('Sent!');
+   //  }, (err) => {
+   //    btn.value = 'Send Email';
+   //    alert(JSON.stringify(err));
+   //  });
+});
+	 </script>
+  </body>
+</html>

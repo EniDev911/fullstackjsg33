@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Escribir y leer JSON</title>
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  	<style>
+  		.highlight pre {
+    		background-color: #121212 !important;
+  		}
+  		ul {
+		  list-style-type: square;
+		}
+		li + li {
+ 		  margin-top: 10px;
+		}
+  	</style>
+</head>
+<body>
+	<article class="markdown-body">
+		<h3>Leer y escribir JSON</h3>
+		<p>Para leer los datos de un archivo <strong>JSON</strong> debemos hacer uso del módulo <strong>fs</strong>. En este módulo tenemos dos funciones disponibles para leer archivos del sistema <strong>readFile</strong> y <strong>readFileSync</strong>.</p>
+		<p>La función <strong>readFileSync</strong> lee los datos de un archivo de forma síncrona. <strong>Esta función bloquea la ejecución del resto del código hasta que se leen todos los datos de un archivo</strong>, es particularmente útil cuando la aplicación tiene que cargar ajustes de configuración antes de poder realizar cualquier otra tarea.</p>
+		<p><strong>Ejemplo:</strong></p>
+		<div class="highlight">
+			<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+
+<span class="na">const</span> rawdata = fs.<span class="nt">readFileSync</span>(<span class="s">&quot;instrumentos.json&quot;</span>);
+<span class="na">const</span> instrumentos = <span class="nt">JSON</span>.<span class="nt">parse</span>(rawdata);
+<span class="na">console</span>.<span class="nt">log</span>(instrumentos);</pre>
+		</div>
+<p>Si imprimes el objeto <strong>rawdata</strong> podrás observar datos sin procesar ( <em>buffer</em> ).</p>
+<div class="highlight">
+	<pre><span class="na">const</span> rawdata = fs.<span class="nt">readFileSync</span>(<span class="s">&quot;instrumentos.json&quot;</span>);
+<span class="na">console</span>.<span class="nt">log</span>(rawdata);
+<span class="c1">// &lt;Buffer 5b 0a 20 20 7b ... 22 69 ... 71 more bytes&gt;</span></pre>
+</div>
+<p>Sin embargo queremos leer el archivo en su formato <strong>JSON</strong>, no los datos hexadecimales sin procesar, es aquí donde <strong>JSON.parse()</strong> entra en juego. Esta función maneja el análisis de los datos sin procesar, los convierte en texto <strong>ASCII</strong> y analiza datos <strong>JSON</strong> reales en un objeto javascript.</p>
+      <p>Bueno y la otra forma de leer un archivo <strong>JSON</strong> con <strong>Node</strong> es usando la función mencionada anteriormente <strong>readFile</strong> que lee los datos del archivo, comienza e inmediatamente el flujo de control sigue y cambia a la siguiente línea por eso es <strong>asíncrono</strong>. Una vez se han cargado los datos del archivo, esta <strong>función callback</strong> retoma el control del flujo del programa. De esta manera, no se está bloqueando la ejecución del código mientras se espera que el sistema operativo se comunique con los datos.</p>
+      <p>En el siguiente ejemplo, la función toma dos argumentos, el primero es la ruta del archivo que se leerá y segundo <strong>la función callback</strong> que se llamará cuando el archivo se lea por completo.</p>
+    <div class="highlight">
+    	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+fs.<span class="nt">readFile</span>(<span class="s">&quot;instrumentos.json&quot;</span>, (<span class="nx">err</span>, <span class="nx">data</span>) => {
+  <span class="na">if</span>(<span class="nx">err</span>) <span class="na">throw</span> err;
+  <span class="na">const</span> instrumentos = <span class="nt">JSON</span>.<span class="nt">parse</span>(<span class="nx">data</span>);
+  <span class="na">console</span>.<span class="span nt">log</span>(instrumentos);
+})
+<span class="na">console</span>.<span class="span nt">log</span>(<span class="s">&quot;Esto se ejecutará antes que se termine de leer el archivo&quot;</span>);</pre>
+    </div>
+<p>
+	<ul>
+		<li>(<strong>err</strong>, <strong>data</strong>) : Esta es la función con código asincrónico es un <strong>callback</strong> que se ejecuta una vez que el archivo se lee por completo.</li>
+		<li><strong>err</strong> : Dado que no podemos usar <strong>try/catch</strong> fácilmente con código asincrónico, la función nos da el objeto <strong>err</strong> si algo sale mal o <strong>null</strong> si no hubo errores.</li>
+	</ul>
+</p>
+<iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/leer-json?embed=true"></iframe>
+     	<hr>
+	<h3>Escribir en un archivo JSON</h3>
+<p>Escribir en un <strong>JSON</strong> es similar a <strong>readFile</strong> y <strong>readFileSync</strong>, sabemos que debemos usar el módulo <strong>fs</strong>, pero para escribir archivos se utilizaran las funciones <strong>writeFile</strong> y <strong>writeFileSync</strong> como sugieren los nombres, el método <strong>writeFile</strong> escribe datos en un archivo de forma asincrónica mientras <strong>writeFileSync</strong> lo hace de manera síncrona.</p>
+
+<h4>Usando fs.writeFileSync</h4>
+<p>Comenzaremos con un ejemplo, donde escribiremos en un archivo <strong>JSON</strong> un objeto de javascript válido (En el ejemplo, tener en cuenta que si el archivo aún no existe, se crea un nuevo archivo para usted).</p>
+
+<div class="highlight">
+	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>)</pre>
+</div>
+	</article>
+</body>
+</html>
