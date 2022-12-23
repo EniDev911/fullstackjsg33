@@ -43,6 +43,7 @@
       <p>En el siguiente ejemplo, la función toma dos argumentos, el primero es la ruta del archivo que se leerá y segundo <strong>la función callback</strong> que se llamará cuando el archivo se lea por completo.</p>
     <div class="highlight">
     	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+
 fs.<span class="nt">readFile</span>(<span class="s">&quot;instrumentos.json&quot;</span>, (<span class="nx">err</span>, <span class="nx">data</span>) => {
   <span class="na">if</span>(<span class="nx">err</span>) <span class="na">throw</span> err;
   <span class="na">const</span> instrumentos = <span class="nt">JSON</span>.<span class="nt">parse</span>(<span class="nx">data</span>);
@@ -66,8 +67,36 @@ fs.<span class="nt">readFile</span>(<span class="s">&quot;instrumentos.json&quot
 <p>Comenzaremos con un ejemplo, donde escribiremos en un archivo <strong>JSON</strong> un objeto de javascript válido (En el ejemplo, tener en cuenta que si el archivo aún no existe, se crea un nuevo archivo para usted).</p>
 
 <div class="highlight">
-	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>)</pre>
-</div>
-	</article>
+	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+
+<span class="na">const</span> nuevoInstrumento = {
+  <span class="nx">id</span>:<span class="na">4</span>,
+  <span class="nx">name</span>:<span class="s">&quot;arpa&quot</span>
+}
+<span class="na">const</span> data = <span class="nt">JSON</span>.<span class="nt">stringify</span>(nuevoInstrumento);
+
+fs.<span class="nt">writeFileSync</span>(<span class="s">&quot;instrumentos.json&quot;</span>, data);
+</pre></div>
+<p>Tenga en cuenta que aquí tenemos que utilizar la función <strong>JSON.stringify()</strong> antes de guardar los datos. Al igual que necesitabamos analizar los datos en formato <strong>JSON</strong> cuando leemos el archivo <strong>JSON</strong>, necesitamos &lt;&lt;secuenciar&gt;&gt; los datos antes de almacenarlos en formato de cadena en el archivo.</p>
+<p>El problema que tenemos en el ejemplo anterior, es que sobreescribiremos el archivo <strong>instrumentos.json</strong> que tenemos y por ende se pierde el resto de la información. Asi que podemos solucionar esto en el siguiente ejemplo:</p>
+<div class="highlight">
+	<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+
+<span class="na">const</span> nuevoInstrumento = {
+  <span class="nx">id</span>:<span class="na">4</span>,
+  <span class="nx">name</span>:<span class="s">&quot;arpa&quot</span>
+}
+<span class="c1">// primero leemos el archivo</span>
+<span class="na">const</span> rawdata = fs.<span class="nt">readFileSync</span>(<span class="s">&quot;instrumentos.json&quot;</span>);
+<span class="c1">// convertimos los datos sin procesar a javascript válido</span>
+<span class="na">const</span> instrumentos = <span class="nt">JSON</span>.<span class="nt">parse</span>(rawdata);
+<span class="c1">// ahora que es un arreglo de javascript válido, podemos incluir el nuevo instrumento</span>
+<span class="c1">// por medio del método push de los arreglos de javascript</span>
+instrumentos.<span class="nt">push</span>(nuevoInstrumento);
+<span class="c1">// ahora podemos escribir en el archivo secuenciando el arreglo con el nuevo dato incluido</span>
+fs.<span class="nt">writeFileSync</span>(<span class="s">&quot;instrumentos.json&quot;</span>, <span class="nt">JSON</span>.<span class="nt">stringify</span>(instrumentos));
+</pre></div>
+
+</article>
 </body>
 </html>
