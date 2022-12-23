@@ -59,10 +59,17 @@ fs.<span class="nt">readFile</span>(<span class="s">&quot;instrumentos.json&quot
 </p>
 <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
       src="https://replit.com/@marcocontreraas/leer-json?embed=true"></iframe>
+ <h4>Leer un archivo usando require</h4>
+<p>Otro enfoque es usar <strong>require</strong> para leer y analizar archivos <strong>JSON</strong>. Este es el mismo método que usa <strong>Node</strong> para cargar módulos, pero también se puede utilizar para cargar archivos <strong>JSON</strong></p>
+<p><strong>Ejemplo:</strong></p>
+<div class="highlight">
+	<pre><span class="na">const</span> instrumentosJSON = <span class="na">require</span>(<span class="s">&quot;./instrumentos.json&quot;</span>);
+
+<span class="na">console</span>.<span class="nt">log</span>(instrumentosJSON);</pre>
+</div>
      	<hr>
 	<h3>Escribir en un archivo JSON</h3>
 <p>Escribir en un <strong>JSON</strong> es similar a <strong>readFile</strong> y <strong>readFileSync</strong>, sabemos que debemos usar el módulo <strong>fs</strong>, pero para escribir archivos se utilizaran las funciones <strong>writeFile</strong> y <strong>writeFileSync</strong> como sugieren los nombres, el método <strong>writeFile</strong> escribe datos en un archivo de forma asincrónica mientras <strong>writeFileSync</strong> lo hace de manera síncrona.</p>
-
 <h4>Usando fs.writeFileSync</h4>
 <p>Comenzaremos con un ejemplo, donde escribiremos en un archivo <strong>JSON</strong> un objeto de javascript válido (En el ejemplo, tener en cuenta que si el archivo aún no existe, se crea un nuevo archivo para usted).</p>
 
