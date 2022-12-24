@@ -4,15 +4,17 @@
 
 :root {
   --content-bg: #f5576c;
+/*  dark pallete*/
+  --primary-color: #19191a;
+  --secondary-color: #101010;
+  --thrid-color: #020202;
 }
 
-html {
-}
 
 body {
   max-width: 100%;
   font-family: 'Raleway', sans-serif;
-  background-color: #fcfa;
+  background-color: var(--primary-color);
 
 }
 
@@ -22,7 +24,7 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background-image: linear-gradient(-45deg, rgba(18, 3, 31, 0.8) 0%, rgba(2, 33, 74, 0.4) 100%), url("../imgs/header.jpg");
+  background-image: linear-gradient(-45deg, rgba(18, 3, 31, 0.8) 0%, rgba(2, 13, 14, 0.7) 100%), url("../imgs/header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -37,7 +39,7 @@ body {
   font-family: 'Fira Code', monospace;
   font-weight: 500;
   text-decoration: overline;
-  font-size: 3.2em;
+  font-size: 2.2em;
   margin: 10% 0;
   color: cornsilk;
 }
@@ -74,60 +76,54 @@ body {
 }
 
 /* Courses products */
-.course {
+
+.course-box {
   display: block;
   position: relative;
-  height: 380px;
   width: 90%;
-  margin: auto;
-  border-radius: 6px;
-  padding: 10px;
-  box-shadow: 5px 5px 10px #8888885c;
-  background: linear-gradient(90deg, rgba(133, 119, 143, 1) 0%, rgba(175, 208, 210, 0.7091211484593838) 50%, rgba(180, 176, 203, 0.5466561624649859) 100%);
-  transition: transform .3s ease-in;
+  margin: 15px auto;
+  background: linear-gradient(#444, #00000090);
+  color: #f2f2f2;
+  transition: box-shadow .2s ease;
   text-align: center;
-  margin-bottom: 2%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
 }
 
-.course:hover {
-  transform: scale(1.009);
-  box-shadow: 3px 3px 5px #8888888e;
-}
 
 .course-img {
-  display: inline-block;
-  width: 47%;
-  height: 100%;
-}
-
-.course img {
+  display: block;
   width: 100%;
-  height: 100%;
+/*  height: 70%;*/
+  height: 360px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container-text {
-  float: right;
   position: relative;
   text-align: center;
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  padding: 10px;
 }
 
 .container-text h2 {
-  margin-bottom: 3%;
-  font-size: 2.1em;
+  margin: 5px 0;
+  font-size: 1.6em;
 }
 
 .container-text p {
   text-align: justify;
-  font-size: 1.4em;
+  font-size: 1.2em;
+  margin: 10px 0;
 }
 
 .container ul.price {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: block;
+  position: relative;
+  width: 100%;
 }
 
 .container-text li {
@@ -147,39 +143,60 @@ body {
   font-size: 1.6em;
 }
 
-.container-text li a img {
-  width: 2.3em;
+.container-text li a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #090;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.7em;
+  border-radius: 50%;
 }
 
 
 /* Galery  */
 .galery {
-  max-width: 95%;
-  margin: auto;
+  max-width: 100%;
   text-align: center;
 }
 
-.galery-img {
-  display: inline-block;
-  width: 30%;
-  margin: 1%;
-  height: 340px;
-  border: 1px solid var(--content-bg);
-  border-radius: 7px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+.galery-title {
+  background-color: var(--secondary-color);
+  border-top: 3px solid var(--thrid-color);
+  border-bottom: 3px solid var(--thrid-color);
+  color: #f3f3f3;
+  font-size: 2.2em;
+  padding: 10px;
 }
 
+.galery-img {
+  max-width: 100%;
+  margin: 15px auto;
+}
 
-.galery-img img {
+.galery-box-img {
+  display: block;
+  width: 90%;
+  margin: 2% auto;
+  height: 340px;
+  border: 5px solid var(--secondary-color);
+  transition: box-shadow .2s ease-in-out;
+}
+
+.galery-box-img:hover {
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+}
+.galery-box-img img {
   width: 100%;
   height: 100%;
   border-radius: inherit;
 }
 
+
 /* Footer */
 footer {
 
-  background-color: var(--content-bg);
+  background-color: var(--primary-color);
   color: #fff;
   text-align: center;
   width: 100%;
@@ -227,4 +244,43 @@ textarea.input {
 .btn:hover {
   transform: scale(1.01);
   background-color: #501;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .galery-box-img {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .galery-img {
+    max-width: 95%;
+  }
+  .galery-box-img {
+    width: 30%;
+  }
+  .course-box {
+    border-radius: 5px;
+  }
+  .course-img {
+    width: 50%;
+  }
+
+  .container-text {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@media(hover: hover) {
+
+  .course-box:hover {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+  }
 }
