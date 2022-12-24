@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <button type="button" id="btn" onclick="{toggleCss()}">REMOVER CSS</button>
+  <button type="button" id="btn" onclick="{toggleCss()}">REMOVER CENTRAR</button>
   <!-- header cv -->
   <header>
     <h1 onclick="{window.print();}">Curriculum Vitae</h1><br>
@@ -120,12 +120,12 @@
     const toggleCss = () => {
       if (document.head.contains(css)) {
         parent.removeChild(css);
-        document.getElementById("btn").innerHTML = "AÑADIR CSS"
+        document.getElementById("btn").innerHTML = "CENTRAR"
         document.body.style.fontFamily = "monospace";
         document.body.style.fontSize = "18px";
       } else {
         parent.appendChild(css);
-        document.getElementById("btn").innerHTML = "REMOVER CSS"
+        document.getElementById("btn").innerHTML = "REMOVER"
       }
     }
   </script>

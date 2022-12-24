@@ -105,28 +105,29 @@ const fillTemplate = (obj) => {
     active = " active";
   }
   template += `
-      <div class="carousel-item${active}">
-      <div class="bg-${obj.background} bg-gradient d-flex flex-column rounded-top pt-1">
-      <h2 class="h4 p-3 m-0 text-center text-${obj.color}">${obj.title}</h2>
-      <ul class="nav nav-tabs nav-fill pb-0 justify-content-center">
-          <li class="nav-item">
-            <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="nav-link">
-            <i class="fs-3 text-${obj.color} fa-solid fa-eye"></i></a>
-          </li>
-           <li class="nav-item outline-light">
-           <a title="Ver código" href="${obj.url_code}" target="_blank" class="nav-link">
-            <i class="fs-3 text-${obj.color} fa-brands fa-github"></i>
-           </a>
+    <div class="carousel-item${active} border border-primary">
+      <div class="bg-${obj.background} bg-gradient d-flex flex-column pt-1">
+        <h2 class="h4 p-3 m-0 text-center text-${obj.color}">${obj.title}</h2>
+          <ul class="nav nav-tabs nav-fill pb-0 justify-content-center">
+            <li class="nav-item">
+              <a title="Ver demo" href="${obj.url_demo}" target="_blank" class="nav-link rounded-0">
+                <i class="fs-3 text-${obj.color} fa-solid fa-eye"></i>
+              </a>
+            </li>
+            <li class="nav-item outline-light">
+              <a title="Ver código" href="${obj.url_code}" target="_blank" class="nav-link rounded-0">
+                <i class="fs-3 text-${obj.color} fa-brands fa-github"></i>
+              </a>
            </li>`;
   if (typeof obj.url_zip != "undefined") {
-    template += `<li class="nav-item"><a title="Descargar" href="${obj.url_zip}" target="_blank" class="nav-link" download><i class="fs-3 text-${obj.color} fa-solid fa-download"></i></a></li>`;
+    template += `<li class="nav-item"><a title="Descargar" href="${obj.url_zip}" target="_blank" class="nav-link rounded-0" download><i class="fs-3 text-${obj.color} fa-solid fa-download"></i></a></li>`;
   }
 
   template += `
-          </ul>
-          </div>
-        <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100 rounded-bottom">
-      </div>`;
+        </ul>
+      </div>
+      <img src="${obj.image}" alt="${obj.title}" title="${obj.title}" class="d-block w-100">
+    </div>`;
 };
 
 

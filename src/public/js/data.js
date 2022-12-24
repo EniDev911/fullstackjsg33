@@ -16,7 +16,7 @@ export const projects = [
     image: "src/public/images/png/landing-courses.png",
     url_code:
       "https://github.com/EniDev911/fullstackjsg33/blob/main/src/chanllenges/module-1/3-css/landing-page/courses/",
-    url_demo: "src/chanllenges/module-1/3-css/landing-page/courses/",
+    url_demo: "src/chanllenges/module-1/3-css/landing-page/courses/index.html",
     url_zip: "src/public/compressed/courses.zip",
     color: "light",
     background: "dark",
