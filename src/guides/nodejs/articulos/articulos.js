@@ -2,5 +2,9 @@ export const articulos = [
 	{
 		titulo: "Escribir y leer archivos JSON",
 		path: "escribir-leer-archivos-json/index.html"
+	},
+	{
+		titulo: "NodeJS FileSystem",
+		path: "nodejs-filesystem/index.html"
 	}
 ]
