@@ -27,7 +27,34 @@
 		<div class="highlight">
 			<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;node:fs/promises&quot</span>);</pre>
 		</div>
-		<p></p>
+		<p><strong>Ecma Script Module ( <em>ESM</em> )</strong></p>
+		<div class="highlight">
+			<pre><span class="na">import</span> * <span class="na">as</span> fs = <span class="na">from</span>(<span class="s">&quot;node:fs/promises&quot</span>);</pre>
+		</div>
+		<hr>
+		<h4>Uso del método writeFile</h4>
+		<div class="highlight">
+			<pre><span class="c1">// createFile.js</span>
+<span class="na">const</span> { <span class="nx">createFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
+
+<span class="na">async function</span> writeToFile(<span class="nx">filename</span>, <span class="nx">data</span>){
+  <span class="na">try</span> {
+    <span class="na">await</span> writeFile(<span class="nx">filename</span>, <span class="nx">data</span>);
+    <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#96;Se escribieron los datos en : <span class="nx">${filename}</span> correctamente&#96;</span>);
+  } <span class="na">catch</span>(error){
+    <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
+  }
+}
+</pre>
+		</div>
+<hr>
+<h4>Uso del método appenFile</h4>
+<div class="highlight">
+	<pre><span class="c1">// appenFile.js</span>
+<span class="na">const</span> { <span class="nx">appendFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
+
+</pre>
+</div>
 	</article>
 
 </body>

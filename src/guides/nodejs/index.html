@@ -18,17 +18,25 @@
 </head>
 
 <body class="text-light d-flex justify-content-center align-items-center min-vh-100">
-  <article class="bg-secondary p-4 rounded border border-2 border-light">
+  <section class="bg-secondary p-4 rounded border border-2 border-light">
     <h1 id="contenido">GUÍAS Y PAPERS <img align="absmiddle" alt=":octocat:" class="gemoji"
         src="https://img.shields.io/badge/--%236DA55F?logo=node.js&logoColor=white" title="nodejs"
         style="background: transparent; box-shadow: none;" width="70" /></h1>
     <details style="background: transparent; color: #6DA55F; padding: 5px 0; border-radius: 0;">
       <summary>PAPERS</summary>
-      <ul style="list-style: none;">
-        <li><a href="escribir-leer-archivos-json/index.html">Escribir y leer archivos JSON</a>
-        </li>
+      <ul id="lista-articulos" style="list-style: none;"></ul>
     </details>
-  </article>
+  </section>
+
+  <script type="module">
+    import { articulos } from './articulos/articulos.js'
+
+    const listaArticulos = document.getElementById("lista-articulos")
+
+    articulos.forEach(articulo => {
+      listaArticulos.innerHTML += `<li><a href=${articulo.path}>${articulo.titulo}</a></li>`
+    })
+  </script>
 </body>
 
 </html>
