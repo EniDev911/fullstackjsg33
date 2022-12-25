@@ -61,7 +61,7 @@
     <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
   }
 }
-</pre>
+<i class="fa-solid fa-clone" style="top:5px; font-size: 22px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
 </div>
 <hr>
 <h4>Uso del método open</h4>
@@ -73,14 +73,33 @@
   <span class="na">try</span> {
     <span class="na">const</span> file = <span class="na">await</span> open(<span class="nx">filename</span>, <span class="s">&quot;w&quot;</span>);
     file.<span class="nt">write</span>(<span class="nx">data</span>);
-    <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#96;Se escribieron los datos en : <span class="nx">${filename}</span> correctamente&#96;</span>)
+    <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#96;Se escribieron los datos en : <span class="nx">${filename}</span> correctamente&#96;</span>);
   } <span class="na">catch</span>(error){
     <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
   }
 }
-</pre>
+<i class="fa-solid fa-clone" style="top:5px; font-size: 22px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+<hr>
+<h3>Trabajando con directorio</h3>
+<h4>Creando directorios</h4>
+<p>Para ello utilizamos el método <strong>mkdir</strong> para crear un directorio, tenemos que pasar el nombre del directorio como argumento:</p>
+<div class="highlight">
+	<pre><span class="c1">// fs.mkdir</span>
+<span class="na">const</span> { <span class="nx">mkdir</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
+
+<span class="na">async function</span> createDirectory(<span class="nx">pathname</span>){
+  <span class="na">try</span> {
+    <span class="na">await</span> mkdir(<span class="nx">pathname</span>);
+    <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#96;Se creó el directorio en : <span class="nx">${filename}</span> correctamente&#96;</span>);
+  } <span class="na">catch</span>(error){
+    <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
+  }
+}</pre>
 </div>
 	</article>
 
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <script src="../../../public/js/functions.js" type="module"></script>
 </body>
 </html>
