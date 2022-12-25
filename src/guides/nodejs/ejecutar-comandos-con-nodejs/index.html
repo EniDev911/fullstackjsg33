@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejecutar comandos con Nodejs</title>
+	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+</head>
+<body>
+	<article class="markdown-body">
+	<p>Con <strong>Nodejs</strong>, podemos ejecutar comandos de <strong>shell</strong> y procesar sus entradas y salidas usando Javascript. Por lo tanto, podemos escribir la mayoría de estas operaciones complejas en Javascript en lugar del lenguaje de secuencias de comandos de shell o también conocidos como <strong>archivos por lotes</strong>, lo que podría hacer que el programa sea más fácil de mantener.</p>
+	<h4>El módulo child_process</h4>
+	<p>Node.js ejecuta su ciclo de eventos principal en un solo hilo. Sin embargo, eso no significa que todo su procesamiento se realice en ese hilo. Las tareas asincrónicas en Nodejs se ejecutan en otros subprocesos internos. Cuando están completos, el código en la devolución de llamada ( <em>callback</em> ), o error, se devuelve al subproceso único principal.</p>
+	<p>El módulo <strong>child_process</strong> crea nuevos procesos secundarios de nuestro proceso principal de <strong>Nodejs</strong>. Podemos ejecutar comandos de shell con estos procesos secundarios.</p>
+	<p>EL uso de procesos externos puede mejorar el rendimiento de la aplicación si se usa correctamente. Por ejemplo, si una función de una aplicación de <strong>Nodejs</strong> hace un intensivo uso de la CPU, dado que Nodejs tiene un único subproceso, bloquearía la ejecución de otras tareas mientras se ejecuta.</p>
+	</article>
+</body>
+</html>

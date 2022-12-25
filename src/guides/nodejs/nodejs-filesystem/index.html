@@ -24,6 +24,7 @@
 		<h3 align="center">Nodejs FileSystem</h3>
 		<ul>
 			<li><a href="#trabajar-con-directorios">Trabajar con directorios</a></li>
+			<li><a href="#leer-archivos-grandes">Leer archivos grandes</a></li>
 		</ul>
 
 		<p>El módulo <strong>node:fs</strong> nos permite interactuar con el sistema de archivos.</p>
@@ -38,8 +39,8 @@
 		<hr>
 		<h4>Uso del método writeFile</h4>
 		<div class="highlight">
-			<pre><span class="c1">// createFile.js</span>
-<span class="na">const</span> { <span class="nx">createFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
+			<pre><span class="c1">// fs.writeFile</span>
+<span class="na">const</span> { <span class="nx">writeFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
 
 <span class="na">async function</span> writeToFile(<span class="nx">filename</span>, <span class="nx">data</span>){
   <span class="na">try</span> {
@@ -49,8 +50,8 @@
     <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
   }
 }
-</pre>
-		</div>
+<i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
 <hr>
 <h4>Uso del método appenFile</h4>
 <div class="highlight">
@@ -111,13 +112,32 @@
     <span class="c1">// si existe</span>
     <span class="na">return</span> statSync(<span class="nx">path</span>).<span class="nt">isFile</span>();
   } <span class="na">catch</span>(error){
-    <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error: <span class="nx">${error.message}</span>&#96;</span>)
+    <span class="na">if</span>(error.code === <span class="s">&quot;ENOENT&quot;</span>){
+      <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#96;No existe el archivo : <span class="nx">${path}</span>&#96;</span>);
+    }  	
+    <span class="na">return</span> <span class="gu">false</span>;
+  }
+}
+<i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+<h4>Saber si existe un directorio</h4>
+<div class="highlight">
+	<pre><span class="na">const</span> { <span class="nx">statSync</span> } = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+
+<span class="na">function</span> directoryExists(<span class="nx">path</span>) {
+  <span class="na">try</span> {
+    <span class="c1">// si existe</span>
+    <span class="na">return</span> statSync(<span class="nx">path</span>).<span class="nt">isDirectory</span>();
+  } <span class="na">catch</span>(error){
+    <span class="na">if</span>(error.code === <span class="s">&quot;ENOENT&quot;</span>){
+      <span class="na">return</span> <span class="gu">false</span>;
+    }  	
+    <span class="na">console</span>.<span class="nt">error</span>(<span class="s">&#96;Error : <span class="nx">${error.message}</span>&#96;</span>);
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
 </div>
 	</article>
-
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <script src="../../../public/js/functions.js" type="module"></script>
 </body>
