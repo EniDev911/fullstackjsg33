@@ -14,6 +14,31 @@
 	<p>Node.js ejecuta su ciclo de eventos principal en un solo hilo. Sin embargo, eso no significa que todo su procesamiento se realice en ese hilo. Las tareas asincrónicas en Nodejs se ejecutan en otros subprocesos internos. Cuando están completos, el código en la devolución de llamada ( <em>callback</em> ), o error, se devuelve al subproceso único principal.</p>
 	<p>El módulo <strong>child_process</strong> crea nuevos procesos secundarios de nuestro proceso principal de <strong>Nodejs</strong>. Podemos ejecutar comandos de shell con estos procesos secundarios.</p>
 	<p>EL uso de procesos externos puede mejorar el rendimiento de la aplicación si se usa correctamente. Por ejemplo, si una función de una aplicación de <strong>Nodejs</strong> hace un intensivo uso de la CPU, dado que Nodejs tiene un único subproceso, bloquearía la ejecución de otras tareas mientras se ejecuta.</p>
+	<p>Sin embargo, podemos delegar ese código intensivo a un recurso a un proceso hijo, digamos un programa de <strong>C++</strong> muy eficiente. Nuestro código <strong>Node.js</strong> luego ejecutará ese programa <strong>C++</strong> en un nuevo proceso, sin bloquear otras actividades, y cuando complete el proceso, obtendrá su salida.</p>
+	<p>Dos funciones que usaremos para ejecutar comandos de shell son <strong>exec</strong> y <strong>spawn</strong>.</p>
+	<h4>La función exec</h4>
+	<p>La función <strong>exec()</strong> crea un nuevo shell y ejecuta un comando dado. El resultado de la ejecución se almacena en un búfer, lo que significa que se mantiene en la memoria y está disponible para su uso en una devolución de llamada ( <em>callback</em> ).</p>
+	<p>En el siguiente ejemplo usamos la función <strong>exec()</strong> para enumerar todas las carpetas y archivos en nuestro directorio actual, para ello nos apoyaremos de la función <strong>type</strong> del módulo <strong>os</strong> para saber en que plataforma <strong>S.O</strong> se está ejecutando el script, y saber si debemos ejecutar un comando <strong>ls</strong> (linux) o <strong>dir</strong> (windows):</p>
+
+	<div class="highlight">
+		<pre><span class="na">const</span> os = <span class="na">require</span>(<span class="s">&quot;node:os&quot;</span>);
+<span class="na">const</span> { <span class="nx">exec</span> } = <span class="na">require</span>(<span class="s">&quot;node:child_process&quot;</span>);
+
+
+<span class="na">if</span>(os.<span class="nt">type</span>() === <span class="s">&quot;Linux&quot;</span>){
+  <span class="nx">exec</span>(<span class="s">&quot;ls -la&quot;</span>, <span class="nx">error</span>, (<span class="nx">stdout</span>, <span class="nx">stderr</span>) => {
+    <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&#x60;stdout: <span class="nx">${stdout}</span></span>)
+  })
+}
+</pre>
+	</div>
+<p>Cuando llamamos a la función <strong>exec()</strong> le pasamos dos argumentos: 
+<ul>
+	<li>Una cadena con el comando de shell que queremos ejecutar.</li>
+	<li>Una función de devolución de llamada con tres parámetros: <strong>error</strong>, <strong>stdout</strong>, <strong>stderr</strong>.</li>
+</ul>
+</p>
+<p>El comando de shell que se esta ejecutando</p>
 	</article>
 </body>
 </html>

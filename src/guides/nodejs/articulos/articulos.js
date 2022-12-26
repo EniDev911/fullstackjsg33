@@ -6,5 +6,9 @@ export const articulos = [
 	{
 		titulo: "NodeJS FileSystem",
 		path: "nodejs-filesystem/index.html"
+	},
+	{
+		titulo: "Ejecutar comandos de shell con NodeJS",
+		path: "ejecutar-comandos-con-nodejs/index.html"
 	}
 ]
