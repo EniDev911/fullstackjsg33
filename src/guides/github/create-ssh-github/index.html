@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../public/css/docs.css">
     <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-    <title>git-bash</title>
+    <title>github configurar ssh</title>
 </head>
 
 <body>
@@ -29,9 +29,9 @@
             &#x1F4CD; <a href="#add-ssh-github">Registrar la llave pública a tu cuenta de GitHub</a><br />
             &#x1F4CD; <a href="#test-connection">Probar conexión</a></p>
         <hr />
-        <h3 id="generar-par-de-clave-publica-y-privada"><a name="ssh-keygen"></a>Generar par de clave pública y
+        <h4 id="generar-par-de-clave-publica-y-privada"><a name="ssh-keygen"></a>Generar par de clave pública y
             privada <a href="#generar-par-de-clave-publica-y-privada"><i class="fa-solid fa-anchor"></i></a></i>
-        </h3>
+        </h4>
         <p>Para generar los pares de claves haremos uso de la herramienta <strong>ssh-keygen</strong>. Este
             programa está disponible por medio de la línea de comandos para Linux, MacOSX y en <a
                 href="https://gitforwindows.org/"><strong>Git Bash</strong></a> en Windows.</p>
@@ -50,8 +50,7 @@
             etiqueta en la terminal
         </p>
         <div class="highlight">
-            <pre>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;user@email.com&quot; <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh-keygen -t rsa -b 4096 -C user@email.com', '.message')}"></i></span> <span id="message-"></span>
-</pre>
+            <pre>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;user@email.com&quot;</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="font-size: 25px;"></i></pre>
         </div>
         <p><strong>Explicación</strong>: </p>
         <ul>
