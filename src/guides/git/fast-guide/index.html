@@ -17,7 +17,7 @@
         <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"
           height="50" align="left">
       </a>
-      <a href="/index.html">
+      <a href="../../../../index.html">
         <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" height="55"
         align="right" style="display: block; position: fixed; top:10px; right: 20px;">
       </a>
@@ -45,8 +45,8 @@
       <li><a href="#add-stage-area">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
       <li><a href="#delete-files">Eliminar archivo seguido por GIT</a></li>
       <li><a href="#delete-stage-area">Bajar y recuperar archivos del stage area</a></li>
-      <li><a href="#rename-files">Renombrar archivo seguido por GIT</a></li>
-      <li><a href="#gitignore">Ignorar archivos</a></li>
+      <li><a href="#renombrar-archivos">Renombrar archivo seguido por GIT</a></li>
+      <li><a href="#ignorar-archivos">Ignorar archivos</a></li>
       <li><a href="#add-remote">Configurar un repositorio remoto</a></li>
       <li><a href="#rm-git">Eliminar el seguimiento de GIT</a></li>
       <li><a href="#branch">Ramas</a></li>
@@ -249,12 +249,10 @@ color.status
       <pre><span class="nt">git</span> config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global color.status.changed "white red bold"`)}'></i></pre>
     </div>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;white magenta bold&quot;</span> <i class="fa-solid fa-clone"
-        onclick='{copy_clipboard(`git config --global color.status.untracked "white magenta bold"`)}'></i></pre>
+      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;white magenta bold&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global color.status.added <span class="s2">&quot;white green bold&quot;</span> <i class="fa-solid fa-clone"
-            onclick='{copy_clipboard(`git config --global color.status.added "white green bold"`)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status.added <span class="s2">&quot;white green bold&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <p align="center">
       <img src="assets/color.status.png" alt="status color">
@@ -335,8 +333,7 @@ color.status
       Para configurar <strong>main</strong> como el nombre de rama predeterminado, podemos indicar lo siguiente:
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global init.defaultBranch main <i class="fa-solid fa-clone" onclick="{copy_clipboard('git config --global init.defaultBranch main')}"></i>
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global init.defaultBranch main <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <hr />
@@ -448,12 +445,13 @@ color.status
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h2 id="agregar-archivos-a-preparacion"><a name="add-stage-area"></a> Agregar archivos a preparación<a
-        class="headerlink" href="#agregar-archivos-a-preparacion" title="Permanent link">&#9875;</a></h2>
+    <h3 id="agregar-archivos-a-preparacion"><a name="add-stage-area"></a> Agregar archivos a preparación<a
+        class="headerlink" href="#agregar-archivos-a-preparacion" title="Permanent link">&#9875;</a></h3>
+<p>El <strong>staging</strong> o área de preparación es un lugar donde se guardan temporalmente los cambios, para luego en caso de ser <strong>confirmados</strong> serán llevados definitivamente al repositorio. Sabemos que el repositorio es el lugar donde se guardan todos los registros de los cambios realizados a los archivos.</p>
+<p>El área del <strong>staging</strong> se puede considerar como el limbo donde los archivos están esperando por ser enviados al repositorio o ser regresado a la carpeta del proyecto.</p>
     <p><strong>Agregar un archivo al stage area</strong>
     <div class="highlight">
-      <pre><span class="nt">git</span> add archivo.txt
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> archivo.txt<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <p><strong>Agregar más de un archivo al stage area</strong><br />
@@ -464,20 +462,17 @@ color.status
     </p>
     <p><strong>Agregar todos los archivos que terminan con la misma extensión</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> add *.txt
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> *.txt<i class="fa-solid fa-clone"></i></pre>
     </div>
     </p>
     <p><strong>Agregar todos los archivos al stage area</strong>
     <div class="highlight">
-      <pre><span class="nt">git</span> add .
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> .<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <p><strong>Agregar archivos de forma interactiva</strong>
     <div class="highlight">
-      <pre><span class="nt">git</span> add -i
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> -i<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <details>
@@ -523,14 +518,12 @@ color.status
         title="Permanent link">&#9875;</a></h2>
     <p><strong>Sacar un archivo del stage area</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> restore --staged archivo.txt
-</pre>
+      <pre><span class="nt">git</span> <span>rm</span> --cached archivo.txt <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <p><strong>Recuperar un archivo, descartando los cambios</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> restore archivo.txt
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">restore</span> archivo.txt<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <details>
@@ -539,9 +532,8 @@ color.status
         <img src="assets/git.restore.staged.gif" alt="git restore staged">
       </p>
     </details>
-
-    <h2 id="renombrar-archivos"><a name="rename-files"></a> Renombrar archivos<a class="headerlink"
-        href="#renombrar-archivos" title="Permanent link">&#9875;</a></h2>
+    <hr>
+    <h3 id="renombrar-archivos"><a name="rename-files"></a> Renombrar archivos</h3>
     <p>Cuando renombramos un archivo en nuestra copia de trabajo directamente, Git considera esta operación como dos
       operaciones, la primera es borrar los archivos con el nombre antiguo y el nuevo, y la segunda es añadir el archivo
       recién nombrado al <strong>'stage area'</strong> o área de preparación.</p>
@@ -567,18 +559,14 @@ color.status
 <span class="nt">git</span> commit -m <span class="s2">&#39;archivo renombrado&#39;</span>
 </pre>
     </div>
-    <p>Ver los cambios realizados antes de añadir al stage area:<br />
+    <p><strong>Ver los cambios realizados antes de añadir al stage area:</strong></p>
     <div class="highlight">
-      <pre>git diff
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">diff</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    </p>
-    <p>Ver los cambios realizados estando añadido el archivo al astage area:<br />
+    <p><strong>Ver los cambios realizados estando añadido el archivo al astage area:</strong></p>
     <div class="highlight">
-      <pre>git diff --staged
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">diff</span> --staged <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    </p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -619,8 +607,7 @@ color.status
     <p>Si por error inicilizamos un repositorio local en un directorio que no era simplemente eliminamos la carpeta
       oculta <strong>.git</strong>, por medio del siguiente comando: </p>
     <div class="highlight">
-      <pre><span class="nt">rm</span> -rf .git
-</pre>
+      <pre><span class="gu">rm</span> -rf .git<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Este comando <strong>rm</strong> se utiliza para remover directorios con todo su contenido dentro,
@@ -637,8 +624,7 @@ color.status
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="ignorar-archivos"><a name="gitignore"></a> Ignorar archivos<a class="headerlink" href="#ignorar-archivos"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="ignorar-archivos"><a name="gitignore"></a>Ignorar archivos</h3>
     <p>A menudo, tendrá una clase de archivos que no desea que Git agregue automáticamente. Por lo general, se trata de
       archivos generados automáticamente, como archivos de registro o archivos producido un sistema de compilación. En
       tales casos, puede crear un archivo con una lista de patrones para que coincida con ello y agregarlo a un archivo
@@ -691,8 +677,7 @@ doc/**/*.pdf
       comando &ldquo;git branch&rdquo;,
       u obtener una descripción más detallada de las ramas con:</p>
     <div class="highlight">
-      <pre><span class="nt">git</span> show-branch <i class="fa-solid fa-clone" onclick="{copy_clipboard('git show-branch')}"></i>
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">show-branch</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados.</p>
@@ -714,8 +699,7 @@ doc/**/*.pdf
       único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el parámetro -b
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> checkout -b otrarama
-</pre>
+      <pre><span class="nt">git</span> checkout -b otrarama<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Como salida obtendrás el mensaje &ldquo;Switched to a otrarama&rdquo; y demás en las distintas ramas entonces
@@ -751,19 +735,19 @@ git merge nueva
 </pre>
     </div>
 
-    <p><strong>Borrar ramas</strong></p>
+<h4>Borrar ramas</h4>
+    <p><strong>Borrar rama local</strong></p>
     <div class="highlight">
-      <pre><span class="c1"># para borrar la branch local</span>
-<span class="nt">git</span> branch -d localBranchName
-
-<span class="c1"># para borrar la branch remota</span>
-<span class="nt">git</span> push origin --delete remoteBranchName
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">branch</span> -d localBranchName <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+  </div>
+<p><strong>Borrar branch remota</strong></p>
+<div class="highlight">
+<pre><span class="gu">git</span> <span class="nt">push</span> origin --delete remoteBranchName<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
   <h3>Descargar un branch remoto</h3>
-  <p>Clonamos el proyecto</p>
+  <p><strong>Clonamos el proyecto</strong></p>
   <div class="highlight">
-    <pre><span class="nt">git</span> clone URL/repo.git NombreProyecto</pre>
+    <pre><span class="gu">git</span> <span class="nt">clone</span> URL/repo.git NombreProyecto<i class="fa-solid fa-clone"></i></pre>
   </div>
   <p><strong>Creamos un nuevo branch localmente, basado en el branch remoto</strong></p>
   <div class="highlight">

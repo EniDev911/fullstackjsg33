@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../../public/css/docs.css">
+ 	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+	<title>100-ejercicios-js</title>
+</head>
+<body>
+	<article class="markdown-body">
+		<h1 align="center">100 ejercicios con javascript</h1>
+	<p><a name="top"></a></p>
+    <ul>
+      <li><a href="#copiar-al-portapapeles">Copiar al clipboard</a></li>
+     </ul>
+
+     <h4 id="copiar-al-portapapeles">Copiar al portapapeles</h4>
+     <div class="highlight">
+     <pre>
+<span class="na">const</span> copy_clipboard = (<span class="nx">text</span>) => {
+  <span class="na">if</span> (<span class="na">typeof</span> text != <span class="s">&quot;string&quot;</span>) {
+    <span class="na">throw</span> <span class="nt">TypeError</span>(<span class="s">&quot;El argumento debe ser un string&quot;</span>);
+  }
+  <span class="na">const</span> areaText = document.<span class="nt">createElement</span>(<span class="s">&quot;textarea&quot;</span>);
+  areaText.value = text;
+  areaText.<span class="nt">setAttribute</span>(<span class="s">&quot;readonly&quot;</span>, <span class="s">&quot;&quot;</span>);
+  areaText.<span class="nx">style</span>.<span class="nx">position</span> = <span class="s">&quot;absolute&quot;</span>;
+  areaText.style.left = "-9999px";
+  document.body.<span class="nt">appendChild</span>(areaText);
+  <span class="na">const</span> selection =
+    document.<span class="nt">getSelection</span>().<span class="nx">rangeCount</span> > 0
+      ? document.<span class="nt">getSelection()</span>.getRangeAt(0)
+      : false;
+
+  areaText.<span class="nt">select()</span>;
+
+  document.<span class="nt">execCommand</span>(<span class="s">&quot;copy&quot;</span>);
+  document.body.removeChild(areaText);
+
+  <span class="na">if</span> (selection) {
+    document.<span class="nt">getSelection</span>().<span class="nt">removeAllRanges</span>();
+    document.getSelection().addRange(selection);
+  }
+};<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre></div>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <script src="../../../public/js/functions.js" type="module"></script>
+	</article>
+</body>
+</html>
