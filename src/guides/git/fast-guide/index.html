@@ -30,7 +30,7 @@
       <li><a href="#git-alias">Alias</a></li>
       <li><a href="#default-branch">Rama por defecto</a></li>
     </ul>
-    <h3 id="operaciones">Operaciones<a class="headerlink" href="#operaciones" title="Permanent link">&#9875;</a></h3>
+    <h3>Operaciones</h3>
     <ul>
       <li><a href="#init-git">Inicializar un proyecto</a></li>
       <li><a href="#content-git">Contenido de la carpet <strong>.git</strong></a></li>
@@ -171,11 +171,10 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173"/></a>
     </p>
     <hr />
-    <h3 id="colores">Colores<a class="headerlink" href="#colores"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="colores">Colores<a href="#colores"></a></h3>
     <p>Git puede marcar con colores los resultados que se muestran en la terminal, ayudándote así a leerlos más
       fácilmente. Los siguientes parámetros se pueden modificar: </p>
-    <h4 id="colorui">color.ui</h4>
+    <h4 id="color-ui"><a href="#color-ui">color.ui</a></h4>
     <p>Git coloreará automáticamente la mayor parte de los resultados que muestra. Podemos ajustar con precisión cada
       una de las partes a colorear; <strong>pero si deseas activar de un golpe todos los colores por defecto, sólo
         debemos cambiar a &ldquo;true&rdquo; el parámetro ui.color&rdquo;.</strong></p>
@@ -659,43 +658,44 @@ doc/**/*.pdf
       normalmente verifica los patrones de <strong>gitignore</strong> de múltiples fuentes, con el siguiente orden de
       procedencia, de mayor a menor (dentro de un nivel de precedencia, el último patrón coincidente decide el
       resultado).</p>
-    <h3 id="ramas"><a name="branch"></a> Ramas<a class="headerlink" href="#ramas" title="Permanent link">&#9875;</a>
-    </h3>
-    <p><strong>Crear una rama nueva</strong> </p>
-    <p>El procedimiento para crear una nueva rama es sencillo. Usando el comando branch, seguido del nombre de la rama.
+    <h3 id="ramas"><a name="branch"></a>Ramas</h3>
+    <h4 id="crea-una-nueva-rama"><a href="#crea-una-nueva-rama">Crear una rama nueva</strong></a></h4>
+    <p>El procedimiento para crear una nueva rama es sencillo. Usando el <strong>comando branch</strong>, seguido del nombre de la rama.
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> branch nueva 
+      <pre><span class="gu">git</span> <span class="nt">branch</span> nueva<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i> 
 </pre>
     </div>
-
+    <blockquote class="info">
     <p>Este comando en sí no produce ninguna salida, pero podrías ver las &ldquo;branches&rdquo; de un proyecto con el
-      comando &ldquo;git branch&rdquo;,
-      u obtener una descripción más detallada de las ramas con:</p>
+      comando &ldquo;<strong>git branch</strong>&rdquo;</p></blockquote>
+<h4 id="mostrar-ramas-y-sus-commits"><a href="#mostrar-ramas-y-sus-commits">Mostrar ramas y sus commits</a></h4>
+<p>Para obtener una descripción más detallada de las ramas usamos el comando <strong>git show-branch</strong></p>
     <div class="highlight">
       <pre><span class="gu">git</span> <span class="nt">show-branch</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados.</p>
-    <p><strong>Pasar de una rama a otra</strong> </p>
-    <p>Para moverse entre ramas usando el comando <code>checkout</code> seguido del nombre de la rama que queremos que
-      sea la activa. </p>
+  <div class="highlight">
+    <pre>
+<span class="gu">*</span>  [gh-pages~19] modificado index.html
+<span class="gu">*</span>  [gh-pages~20] actualizada la función
+<span class="gu">*</span><span class="c1">+</span> [main] deploy</pre></div>
+    <h4 id="cambiar-de-una-rama-a-otra"><a href="#cambiar-de-una-rama-a-otra">Pasar de una rama a otra</a></h4>
+    <p>Para moverse entre las diferentes ramas tenemos el comando <strong>checkout</strong> que le debemos indicar el nombre de la rama que queremos que sea la activa. </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> checkout nueva
+      <pre><span class="gu">git</span> <span class="nt">checkout</span> nueva <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
 
-    <p>Esta sencilla instrucción tiene mucha potencia, porque nos cambiará automáticamente todos los archivos de nuestro
-      proyecto, los de todas las carpetas, para que tenga el contenido en el que se encuentra en la correspondiente
-      rama. </p>
-    <p>De momento en nuestro ejemplo las dos ramas tenían exactamente el mismo contenido, pero ahora podríamos empezar a
-      hacer cambios en el proyecto experimental y sus correspondientes commit y entonces los archivos tendrán códigos
-      diferentes, de modo que puedas ver que al pasar de una rama a otra hay cambios en los archivos. </p>
-    <p>El comando <code>checkout</code> tiene la posibilidad de permitirte crear una rama nueva y moverte a ella en un
-      único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el parámetro -b
+    <blockquote class="info"><p>Esta sencilla instrucción tiene mucha potencia, porque nos cambiará automáticamente todos los archivos de nuestro
+      proyecto, los de todas las carpetas, para que tenga el contenido actual de la rama correspondiente. <strong>(Es divertido a la vez, ver como se mueven los archivos como por arte de magia)</strong></p></blockquote>
+     <h4 id="crear-rama-con-comando-checkout"><a href="#crear-rama-con-comando-checkout">Crear nuevas ramas y moverse en un solo comando</a></h4>
+    <p>El comando <strong>checkout</strong> tiene la posibilidad de crear una rama nueva y moverte a ella en un
+      único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el <strong>flag -b</strong>.
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> checkout -b otrarama<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">checkout</span> -b otrarama<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Como salida obtendrás el mensaje &ldquo;Switched to a otrarama&rdquo; y demás en las distintas ramas entonces
