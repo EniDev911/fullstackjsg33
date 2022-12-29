@@ -35,7 +35,7 @@
       <li><a href="#init-git">Inicializar un proyecto</a></li>
       <li><a href="#content-git">Contenido de la carpet <strong>.git</strong></a></li>
       <li><a href="#show-status">Visualización de los cambios en GIT</a></li>
-      <li><a href="#add-stage-area">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
+      <li><a href="#agregar-archivos-a-preparacion">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
       <li><a href="#delete-files">Eliminar archivo seguido por GIT</a></li>
       <li><a href="#delete-stage-area">Bajar y recuperar archivos del stage area</a></li>
       <li><a href="#renombrar-archivos">Renombrar archivo seguido por GIT</a></li>
@@ -436,8 +436,7 @@ color.status
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="agregar-archivos-a-preparacion"><a name="add-stage-area"></a> Agregar archivos a preparación<a
-        class="headerlink" href="#agregar-archivos-a-preparacion" title="Permanent link">&#9875;</a></h3>
+    <h3 id="agregar-archivos-a-preparacion">Agregar archivos a preparación</h3>
 <p>El <strong>staging</strong> o área de preparación es un lugar donde se guardan temporalmente los cambios, para luego en caso de ser <strong>confirmados</strong> serán llevados definitivamente al repositorio. Sabemos que el repositorio es el lugar donde se guardan todos los registros de los cambios realizados a los archivos.</p>
 <p>El área del <strong>staging</strong> se puede considerar como el limbo donde los archivos están esperando por ser enviados al repositorio o ser regresado a la carpeta del proyecto.</p>
 <figure>
@@ -620,17 +619,16 @@ color.status
     </p>
     <hr />
     <h3 id="ignorar-archivos"><a name="gitignore"></a>Ignorar archivos</h3>
-    <p>A menudo, tendrá una clase de archivos que no desea que Git agregue automáticamente. Por lo general, se trata de
-      archivos generados automáticamente, como archivos de registro o archivos producido un sistema de compilación. En
-      tales casos, puede crear un archivo con una lista de patrones para que coincida con ello y agregarlo a un archivo
-      <strong><code>.gitignore</code></strong>.
+    <p>A menudo, necesitaremos que cierta clase de archivos no sean monitoreados por <strong>Git</strong>. Por lo general, se trata de
+      archivos generados automáticamente, como archivos de registro o archivos producidos por un sistema de compilación. En
+      tales casos, <strong>Git</strong> nos permite crear un archivo <strong>.gitignore</strong> donde podemos definir una lista de patrones que nos sirvan para ignorar todo tipo de archivos o directorio que coincidan con ellos.
     </p>
+    <blockquote class="info">
     <p>El archivo <strong>.gitignore</strong>, es un archivo de texto que le dice a <strong>Git</strong> qué archivos o
-      carpetas ignorar en un proyecto. </p>
-    <p>Un archivo local <strong><code>.gitignore</code></strong> generalmente se coloca en el directorio raíz de un
-      proyecto. También puedes crear un archivo <code>.gitignore</code> global, y cualquier entrada en ese archivo se
+      carpetas ignorar en un proyecto. </p></blockquote>
+    <p>Un archivo <strong>.gitignore</strong> generalmente se coloca en el directorio raíz de un proyecto. También puedes crear un archivo <strong>.gitignore</strong> global, y cualquier entrada en ese archivo se
       ingorará en todos tus repositorios de Git. </p>
-    <p>Las entradas de este archivo también pueden seguir un patrón coincidente: </p>
+    <p>Cada entrada en este archivo es una <strong>regla</strong> o <strong>patrón</strong> para ignorar archivos o directorios, veamos algunos ejemplos:</p>
     <div class="highlight">
       <pre><span class="c1"># ignora todos los archivos con extensión .a</span>
 *.a
@@ -659,6 +657,7 @@ doc/**/*.pdf
       procedencia, de mayor a menor (dentro de un nivel de precedencia, el último patrón coincidente decide el
       resultado).</p>
     <h3 id="ramas"><a name="branch"></a>Ramas</h3>
+    <p>Las ramas son una división del estado del código, esto permite <strong>crear nuevos caminos a favor de la evolución del código y desarrollo del software</strong>. En la práctica ramificar nuestro proyecto es es algo común para poder trabajar sobre una funcionalidad en la que sabemos que nos va a ocupar varios días y posiblemente sea algo experimental, que no sabemos si cuya funcionalidad vamos a incorporar. Existen muchas razones en las que un proyecto tanto a nivel personal o de un equipo deben crear nuevas ramas en su evolución.</p>
     <h4 id="crea-una-nueva-rama"><a href="#crea-una-nueva-rama">Crear una rama nueva</strong></a></h4>
     <p>El procedimiento para crear una nueva rama es sencillo. Usando el <strong>comando branch</strong>, seguido del nombre de la rama.
     </p>
@@ -675,7 +674,7 @@ doc/**/*.pdf
       <pre><span class="gu">git</span> <span class="nt">show-branch</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
-    <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados.</p>
+    <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados:</p>
   <div class="highlight">
     <pre>
 <span class="gu">*</span>  [gh-pages~19] modificado index.html
@@ -697,50 +696,41 @@ doc/**/*.pdf
     <div class="highlight">
       <pre><span class="gu">git</span> <span class="nt">checkout</span> -b otrarama<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
-    <p>Como salida obtendrás el mensaje &ldquo;Switched to a otrarama&rdquo; y demás en las distintas ramas entonces
-      podrás observar que al moverte de una a otra con checkout el proyecto cambia automáticamente en tu editor,
-      mostrando el estado actual en cada una de las ramas donde te estás situando. </p>
-    <p>El proyecto puede tener varios estados en un momento dado y tú podrás moverte de uno a otro con total libertad y
-      sin tener que cambiar de carpeta ni nada parecido. </p>
-    <p><strong>Fusionar ramas</strong> </p>
-    <p>A medidas que crees ramas y cambies el estado de las carpetas o archivos tu proyecto empezará a divergir de una
-      rama a otra. Llegará
-      el momento en el que te interese fusionar ramas para poder incorporar el trabajo realizadoa la rama master. </p>
-    <p>El proceso de fusionado se conoce como &ldquo;merge&rdquo; y puede llegar a ser muy simple o más complejo si se
-      encuentran cambios que GIT no pueda procesar
-      de manera automática. Git para procesar el merge usa un antecesor común y comprueba los cambios que se han
+<blockquote class="info">
+    <p>Como salida veremos el mensaje &ldquo;<strong>Switched to a otrarama</strong>&rdquo;. El proyecto puede tener varios estados en un momento dado y tú podrás moverte de uno a otro con total libertad y
+      sin tener que cambiar de carpeta ni nada parecido.</p>
+</blockquote>
+    <h4 id="fusionar-ramas"><a href="#fusionar-ramas">Fusionar ramas</a></h4>
+    <p>A medidas que creamos ramas y cambiamos el estado de los directorios o archivos del proyecto empezará a divergir de una
+      rama a otra. Llegará el momento en el que tengamos que fusionar ramas para poder incorporar el trabajo realizado a la <strong>rama master</strong>.</p>
+    <p>El proceso de fusionado se conoce como &ldquo;<strong>merge</strong>&rdquo; y puede llegar a ser muy simple o más complejo si se
+      encuentran cambios que <strong>GIT</strong> no pueda procesar
+      de manera automática. <strong>Git</strong> para procesar el merge usa un antecesor común y comprueba los cambios que se han
       introducido al proyecto desde entonces,
       combinando el código de ambas ramas. </p>
-    <p>Para hacer un merge nos situamos en una rama, en este caso la &ldquo;master&rdquo;, y decimos con qué otra rama
-      se debe fusionar el códgigo.<br />
-      El siguiente comando, lanzado desde la rama &ldquo;master&rdquo;, permite fusionarla con la rama
-      &ldquo;nueva&rdquo;. </p>
+    <p>Para hacer un merge nos situamos en una rama, en este caso la &ldquo;<strong>master</strong>&rdquo;, y decimos con qué otra rama
+      se debe fusionar el código.</p>
+      <p>El siguiente comando, lanzado desde la rama &ldquo;<strong>master</strong>&rdquo;, permite fusionarla con la rama
+      &ldquo;<strong>nueva</strong>&rdquo;. </p>
     <p>
     <div class="highlight">
-      <pre><span class="c1"># Situado en rama (master)</span>
-git merge nueva
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">merge</span> nueva<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    Un merge necesita un mensaje, igual que ocurre con los commit, por lo que al realizar ese comando se abrirá
-    &ldquo;Vim&rdquo; (o cualquier otro editor de consola que tenga configurado)
-    para que introduzcas los comentarios que juzgues oportuno. Para evitar este paso podemos tomar un atajo con el flag
-    -m de la siguiente manera: </p>
+    Un merge necesita un mensaje, igual que ocurre con los commit, por lo que al realizar ese comando se abrirá el editor configurado por defecto, en la mayoría de los casos es &ldquo;<strong>Vim</strong>&rdquo;, para que introduzcas los comentarios que estimes oportuno. Para evitar este paso podemos tomar un atajo con el <strong>flag -m </strong> de la siguiente manera: </p>
     <div class="highlight">
-      <pre>git merge nueva -m <span class="s2">&quot;Esto es un merge con mensaje&quot;</span>
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">merge</span> nueva -m <span class="s2">&quot;Esto es un merge con mensaje&quot;</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
-<h4>Borrar ramas</h4>
-    <p><strong>Borrar rama local</strong></p>
+<h3>Borrar ramas</h3>
+    <h4 id="borrar-ramas"><a href="#borrar-ramas">Borrar rama local</a></h4>
     <div class="highlight">
       <pre><span class="gu">git</span> <span class="nt">branch</span> -d localBranchName <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
   </div>
-<p><strong>Borrar branch remota</strong></p>
+<h4 id="borrar-rama-remota"><a href="#borrar-rama-remota">Borrar rama remota</a></h4>
 <div class="highlight">
 <pre><span class="gu">git</span> <span class="nt">push</span> origin --delete remoteBranchName<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-  <h3>Descargar un branch remoto</h3>
+    <hr>
+  <h3>Descargar una rama desde el repositorio remoto</h3>
   <p><strong>Clonamos el proyecto</strong></p>
   <div class="highlight">
     <pre><span class="gu">git</span> <span class="nt">clone</span> URL/repo.git NombreProyecto<i class="fa-solid fa-clone"></i></pre>
