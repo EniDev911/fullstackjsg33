@@ -13,6 +13,7 @@
 	<p><a name="top"></a></p>
     <ul>
       <li><a href="#copiar-al-portapapeles">Copiar al clipboard</a></li>
+      <li><a href="#saber-si-existe-una-propiedad">Saber si un objeto tiene una propiedad o no</a></li>
      </ul>
 
      <h4 id="copiar-al-portapapeles">Copiar al portapapeles</h4>
@@ -36,15 +37,49 @@
   areaText.<span class="nt">select()</span>;
 
   document.<span class="nt">execCommand</span>(<span class="s">&quot;copy&quot;</span>);
-  document.body.removeChild(areaText);
+  document.<span class="nx">body</span>.<span class="nt">removeChild</span>(areaText);
 
   <span class="na">if</span> (selection) {
     document.<span class="nt">getSelection</span>().<span class="nt">removeAllRanges</span>();
-    document.getSelection().addRange(selection);
+    document.<span class="nt">getSelection</span>().<span class="nt">addRange</span>(selection);
   }
 };<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre></div>
+<h4 id="saber-si-existe-una-propiedad">Saber si una propieda existe en un objeto</h4>
+  <p>Para saber si un objeto tiene una propiedad utilizamos el método <strong>.hasOwnProperty</strong>, el cual recibe como parámetro el nombre de la propiedad sobre la cuál queremos conocer su existencia.</p>
+<div class="highlight">
+  <pre><span class="na">class</span> Rectangulo {
+  <span class="na">constructor</span>(<span class="nx">alto</span>, <span class="nx">ancho</span>) {
+    <span class="na">this</span>.alto = <span class="nx">alto</span>;
+    <span class="na">this</span>.ancho = <span class="nx">ancho</span>;
+  }
+  <span class="c1">// Getter</span>
+  <span class="na">get</span> area() {
+    <span class="na">return this</span>.calcularArea();
+  }
+  <span class="c1">// Método</span>
+  calcularArea() {
+    <span class="na">return this</span>.alto * <span class="na">this</span>.ancho;
+  }
+}
+
+<span class="na">const</span> cuadrado = <span class="na">new</span> Rectangulo(<span class="nb">10</span>, <span class="nb">10</span>);
+
+<span class="na">if</span>(cuadrado.<span class="nt">hasOwnProperty</span>(<span class="s">&quot;ancho&quot;</span>)) {
+  <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&quot;Si existe&quot;</span>)
+}
+<span class="na">else</span> {
+  <span class="na">console</span>.<span class="nt">log</span>(<span class="s">&quot;No existe la propiedad&quot;</span>);
+}
+<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
+</div>
+<p>Buscar un texto de una expresión regular</p>
+<div class="highlight">
+  <pre><span class="na">const</span> texto = <span class="s">&quot;Javascript es un lenguaje muy sencillo&quot;</span>
+<span class="na">console</span>.<span class="nt">log</span>()
+</pre>
+</div>
+	</article>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <script src="../../../public/js/functions.js" type="module"></script>
-	</article>
 </body>
 </html>

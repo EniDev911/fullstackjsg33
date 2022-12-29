@@ -29,7 +29,7 @@
                 <p class="card-text">GIT es una herramienta indispensable para todo proyecto, el código fuente es un
                   activo valioso cuyo valor debemos saber administrar y proteger.</p>
                 <ul class="d-flex list-inline p-0 justify-content-start m-0">
-                  <li><a href="git/index.html" class="btn btn-outline-info">comenzar</a></li>
+                  <li><a href="git/index.html" class="btn btn-outline-primary rounded-0">comenzar</a></li>
                 </ul>
               </div>
             </div>
@@ -73,7 +73,7 @@
                   el sistema de control de versiones GIT.
                 </p>
                 <ul class="d-flex list-inline p-0 justify-content-start g-2 m-0">
-                  <li><a href="github/index.html" class="btn btn-outline-info me-2">Comenzar</a></li>
+                  <li><a href="github/index.html" class="btn btn-outline-dark me-2 rounded-0">Comenzar</a></li>
                 </ul>
               </div>
             </div>
@@ -194,6 +194,33 @@
   <!-- URL SVG: -->
   <!-- https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/git-scm.svg -->
   <!-- script -->
+  <script type="module">
+    import { articulos } from './data/data.js'
+
+    const listaArticulos = document.getElementById("lista-articulos")
+
+    articulos.forEach(articulo => {
+      listaArticulos.innerHTML += `<div class="col-10 mx-auto">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-12 col-md-4 col-lg-2">
+              <img src=${i.image}
+                alt="git picture" class="img-fluid rounded-start w-100 bg-light p-2 h-100">
+            </div>
+            <div class="col-12 col-md-8 col-lg-10">
+              <div class="card-body">
+                <h3 class="card-title">${i.title}</h3>
+                <p class="card-text">${i.descripcion}</p>
+                <ul class="d-flex list-inline p-0 justify-content-start m-0">
+                  <li><a href=${i.href} class="btn btn-outline-info">comenzar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+    }) 
+  </script>
 </body>
 
 </html>

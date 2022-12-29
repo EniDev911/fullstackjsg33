@@ -7,14 +7,6 @@
   <title>index</title>
   <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/css/main.css">
-  <style>
-    details {
-      background: #f7df1e;
-      color: #494949;
-      border-radius: 4px;
-      margin: 10px 0;
-    }
-  </style>
 </head>
 
 <body class="text-light d-flex justify-content-center align-items-center min-vh-100">
@@ -24,11 +16,7 @@
         style="background: transparent; box-shadow: none;" width="70" /></h1>
     <details>
       <summary>TIPOS DE DATOS</summary>
-      <ul>
-        <li>
-          <b>" " =></b> <a href="data-types/strings/">String</a>
-        </li>
-        <li><b>[ ] =></b> <a href="data-types/arrays/" rel="author">Array</a></li>
+      <ul id="lista-articulos">
       </ul>
     </details>
 
@@ -39,7 +27,27 @@
             dinamicamente</a></li>
       </ul>
     </details>
+
+    <template id="template-li">
+      <li><a href=${articulo.path}>${articulo.titulo}</a></li>
+    </template>
+    
   </article>
+  <script type="module">
+    import { articulos } from './articulos/articulos.js'
+    const listaArticulos = document.getElementById("lista-articulos"),
+        template = document.getElementById("template-li").content,
+        fragment = new DocumentFragment();
+
+    articulos.forEach(articulo => {
+      const anchor = template.querySelector("li a");
+      anchor.setAttribute("href", articulo.path);
+      anchor.textContent = articulo.titulo;
+      const clone = template.cloneNode(true);
+      fragment.appendChild(clone);
+    })
+    listaArticulos.appendChild(fragment)
+  </script>
 </body>
 
 </html>

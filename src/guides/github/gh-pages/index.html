@@ -22,14 +22,15 @@
 
     <h2 id="contenido">CONTENIDO</h2>
     <ul>
-      <li><a href="#basic-setting">Requerimientos</a></li>
+      <li><a href="#requerimientos">Requerimientos</a></li>
       <li><a href="#create-repository">Crear un nuevo repositorio en Github</a></li>
       <li><a href="#create-repository-local">Crear un nuevo repositorio local</a></li>
-      <li><a href="#prepare">Preparando el código</a></li>
+      <li><a href="#preparando-el-codigo">Preparando el código</a></li>
       <li><a href="#publish">Publicando la página</a></li>
     </ul>
-    <h3 id="configuracion-basica"><a name="basic-setting"></a>Requerimientos previos <a class="headerlink"
-        href="#configuracion-basica" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
+    <hr>
+    <h3 id="requerimientos">Requerimientos previos <a class="headerlink"
+        href="#requerimientos" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
     <ul>
       <li>Instalar <a href="http://git-scm.com/downloads">Git</a></li>
       <li>Registrar una cuenta en <a href="https://github.com">GitHub</a> <img align="absmiddle" alt=":octocat:"
@@ -55,7 +56,7 @@
       <li>En esta pantalla, completamos los campos <strong>Repository Name</strong>, el campo
         <strong>Description</strong> es opcional y dejamos el repositorio como <strong>Public</strong> (las páginas de
         Github no serán habilitadas para su visualización en repositorios privados). A continuación,
-        hacemos clic en el botón verde <strong>Create repository</strong> en la parte inferior de la pantalla.
+        hacemos clic en el botón verde <kbd style="background: #2da44e; color: white;"><strong>Create repository</strong></kbd> en la parte inferior de la pantalla.
       </li>
     </ol>
     <br>
@@ -64,8 +65,8 @@
       <figcaption><small><b>Captura.2</b> Llenar campos.</small></figcaption>
     </figure><br>
     <ol start="3"> <a name="quick-start"></a>
-      <li>Ahora estamos en la pantalla de <strong>configuración rápida</strong> de los comandos que nos muestra luego
-        utilizaremos el 6. </li>
+      <li>Ahora estamos en la pantalla de <strong>configuración rápida</strong> donde nos muestran los comandos de <strong>git</strong>, pero sigamos adelante, luego solo
+        utilizaremos el de la línea 6. </li>
     </ol>
     <figure align="center">
       <img src="assets/quick-start.png" alt="quick setup" width="900"><br>
@@ -78,18 +79,17 @@
       local <a class="headerlink" href="#crear-un-nuevo-repositorio-local" title="Permanent link"><i
           class="fa-solid fa-anchor"></i>
       </a></h3>
-
+    <p>En la siguiente ilustración, vemos el proceso final para la creación de un repositorio <strong>local</strong> que posteriormente vincularemos a nuestro repositorio <strong>remoto</strong> que hemos creado anteriormente.</p>
     <figure align="center">
       <img src="assets/local-repository-add-remote.png" alt="add remote"><br>
-      <figcaption><small><b>Captura.4</b> Crear un nuevo repositorio local con git.</small></figcaption>
+      <figcaption><small><b>Captura.4</b> Crear un nuevo repositorio local con git y vinculación a repositorio remoto.</small></figcaption>
     </figure>
     <ol start="1">
       <li>Crea una nueva carpeta en nuestro sistema de archivos y entra en ella.
       </li>
     </ol>
     <div class="highlight">
-      <pre><span class="gu">mkdir</span> gh-pages <span class="go">&amp;&amp;</span> <span class="gu">cd</span>  gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('mkdir gh-pages && cd gh-pages')}"></i>
-</pre>
+      <pre><span class="gu">mkdir</span> gh-pages <span class="nt">&amp;&amp;</span> <span class="gu">cd</span>  gh-pages<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p><strong>Explicación</strong>: </p>
     <ul>
@@ -100,8 +100,8 @@
       <li><strong><a href="https://en.wikipedia.org/wiki/Cd_(command)" target="_blank">cd</a></strong>: comando para
         cambiar de carpeta (change directory).</li>
     </ul>
-    <blockquote>
-      <p>el &lsquo;<code>&amp;&amp;</code>&lsquo; es para garantizar que se ejecute el comando solo si se cumple el
+    <blockquote class="info">
+      <p>el <code class="path">&amp;&amp;</code> es para garantizar que se ejecute el comando solo si se cumple el
         primero.</p>
     </blockquote>
     <ol start="2">
@@ -109,20 +109,21 @@
       </li>
     </ol>
     <div class="highlight">
-      <pre><span class="gu">git</span> init<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">init</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <ol start="3">
       <li>Crea una rama con el nombre de <strong>gh-pages</strong>.
       </li>
     </ol>
     <div class="highlight">
-      <pre><span class="gu">git</span> checkout -b gh-pages<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-    </div><br>
-    <blockquote>
-      <p>El comando <code><b>git checkout -b</b></code> nos crea la rama y nos cambia a esa rama
+      <pre><span class="gu">git</span> <span class="nt">checkout</span> -b gh-pages<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+    </div>
+    <blockquote class="info">
+      <p>El comando <strong>git checkout -b</strong> nos crea la rama y nos cambia a esa rama
         para trabajar
-        en un solo comando. <i class="fa-solid fa-circle-exclamation"></i> Si queremos que nuestro sitio se despliegue
-        automáticamente debemos usar este nombre para la rama.</p>
+        en un solo comando.</p>
+        <p>
+        <i class="fa-solid fa-circle-exclamation"></i> <strong>Para que nuestro sitio se despliegue automáticamente debemos usar este nombre para la rama</strong>.</p>
     </blockquote>
     <ol start="4">
       <li>Agregar el repositorio remoto que creamos en Github. <a href="#quick-start"><small>Ver paso 3 en la sesión
@@ -130,22 +131,22 @@
       </li>
     </ol><br>
     <div class="highlight">
-      <pre><span class="gu">git</span> remote add origin https://github.com/EniDev911/gh-pages.git
+      <pre><span class="gu">git</span> <span class="nt">remote add</span> origin https://github.com/tu-usuario/repositorio.git <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
     <p><strong>Explicación</strong>: </p>
     <ul>
       <li><strong>remote add</strong>: Es el comando para vincular un repositorio local a un repositorio remoto.
       </li>
-      <li><strong>origin</strong>: Es el nombre que le damos a la conexión remota.</li><br>
-      <li><strong><code>https://github.com/user/repositorio.git</code></strong>: La URL del repositorio.</li>
-    </ul><br>
-    <blockquote>
-      <p>Podemos comprobar que esta añadido el repositorio remoto con el comando <code>git remote -v</code> para
+      <li><strong>origin</strong>: Es el nombre que le damos a la conexión remota.</li>
+      <li><strong>https://github.com/tu-usuario/repositorio.git</strong>: La URL del repositorio.</li>
+    </ul>
+    <blockquote class="info">
+      <p>Podemos comprobar que esta añadido el repositorio remoto con el comando <strong>git remote -v</strong> para
         mostrar
         los vínculos remotos.
       <p align="center">
-        <img src="assets/git-remote-v.png" alt="git remote -v">
+        <img src="assets/git-remote-v.png" alt="git remote -v" style="border-radius: 0;">
       </p>
       </p>
     </blockquote>
@@ -153,13 +154,10 @@
           src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="preparando-el-codigo"><a name="prepare"></a> Preparando el código <a class="headerlink"
+    <h3 id="preparando-el-codigo">Preparando el código <a class="headerlink"
         href="#preparando-el-codigo"><i class="fa-solid fa-anchor"></i></a></h3>
-    <p>Tú puedes almacenar cualquier código que tu quieras en un repositorio de Github, pero para usar la
-      característica
-      de <strong>github pages</strong>, tu código debe estar estructurado como un sitio web típico, por ejemplo que el
-      punto de entrada sea un archivo <strong><code>index.html <i class="fa-solid fa-file-code"></i>
-</code></strong> (página de aterrizaje). </p>
+    <p>Tú puedes subir cualquier cosa en un repositorio de <strong>Github</strong>, archivos de texto, imagenes, videos, etc., pero para visualizar las páginas web en <strong>github pages</strong>, tu proyecto debe estar estructurado como un sitio web típico, por ejemplo que el punto de entrada sea un archivo <strong>index.html</strong> (página de aterrizaje). </p>
+    <p>En un simple ejemplo para un sitio web la estructura y distribución de archivos se vería de la siguinte manera:</p>
     <div class="highlight">
       <pre> 📂 gh-pages <span class="c1"># raíz del proyecto</span>
   |-- 📂 assets <span class="c1"># sub carpeta de gh-pages</span>
@@ -167,47 +165,42 @@
   | | `-- <i class="fa-solid fa-file-code"></i> estilos.css
   | |-- 📂 js <span class="c1"># sub carpeta de assets</span>
   |   `-- <i class="fa-solid fa-file-code"></i> funciones.js
+  |-- 📂 pages <span class="c1"># sub carpeta de gh-pages</span>
+  |   `-- <i class="fa-solid fa-file-code"></i> pagina1.html
+  |   `-- <i class="fa-solid fa-file-code"></i> pagina2.html
   `-- <i class="fa-solid fa-file-code"></i> index.html <span class="c1"># página de aterrizaje</span>
 </pre>
-    </div><br>
-    <blockquote>
+    </div>
+    <blockquote class="info">
       <p>La mejor manera de subir código a Github es mediante la línea de comandos.</p>
     </blockquote>
-    <hr>
+    <p>En la siguiente ilustración tenemos realizados los pasos básicos para preparar nuestros archivos para subirlos a Github.</p>
     <figure align="center">
       <img src="assets/prepare-code.png" alt="prepare code"><br>
       <figcaption><small><b>Captura.6</b> Preparar el código para publicar.</small></figcaption>
     </figure>
     <p><strong>Explicación</strong>: </p>
-    <ol start="1">
-      <li>Leemos el contenido del archivo <b>index.html</b> y dentro solo tenemos un
-        <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>.
-      </li>
-    </ol>
+      <p><strong>1.</strong> Leemos el contenido del archivo <b>index.html</b> y dentro solo tenemos un <span class="tag">&lt;h1&gt;Hello World&lt;/h1&gt;</span>.
+      </p>
     </p>
     <div class="highlight">
-      <pre><span class="gu">cat</span> index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard('cat index.html')}"></i>
+      <pre><span class="gu">cat</span> index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-    <blockquote>
-      <p><strong><code>cat</code></strong>: es una herramienta que se utiliza en sistemas
+    <blockquote class="info">
+      <p><strong>cat</strong>: es una herramienta que se utiliza en sistemas
         unix para concatenar archivos, de hecho viene por concatenar (con<strong>cat</strong>), pero también nos
         permite
         ver el contenido de archivos.</p>
     </blockquote>
-    <ol start="2">
-      <li>Preparamos nuestra página para la confirmación.</li>
-    </ol>
+      <p><strong>2.</strong> Preparamos nuestra página para la confirmación.</p>
     <div class="highlight">
-      <pre><span class="gu">git</span> add index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard('git add index.html')}"></i>
+      <pre><span class="gu">git</span> <span class="nt">add</span> index.html <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-    <ol start="3">
-      <li>Confirmamos los cambios para poder publicar.</li>
-    </ol>
+      <p><strong>3.</strong> Confirmamos los cambios para poder publicar.</p>
     <div class="highlight">
-      <pre><span class="gu">git</span> commit -m &#39;create index&#39; <i class="fa-solid fa-clone" onclick="{copy_clipboard(`git commit -m 'create index'`)}"></i>
-</pre>
+      <pre><span class="gu">git</span> commit -m <span class="nx">&#39;create index&#39;</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <a href="#top"><img alt=""
@@ -217,7 +210,7 @@
         href="#publicando-la-pagina" title="Permanent link"><i class="fa-solid fa-anchor"></i></a></h3>
 
     <figure align="center">
-      <img src="assets/push-publish.png" alt="push"><br>
+      <img src="assets/push-publish.png" alt="push">
       <figcaption><small><b>Captura.7</b> Publicar los cambios al repositorio remoto.</small></figcaption>
     </figure>
     <p><strong>Explicación</strong>:</p>
@@ -235,11 +228,11 @@
       </li>
     </ol>
     <div class="highlight">
-      <pre><span class="gu">git</span> push -u origin gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard('git push -u origin gh-pages')}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">push</span> -u origin gh-pages <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    <blockquote>
-      <p><strong>Nota</strong>: Es importante que nos encontremos en la rama <strong>gh-pages</strong> ya que de esta
-        manera se configurará GitHub Pages automáticamente.</p>
+    <blockquote class="danger">
+      <p><strong>Ojo</strong>: Es importante que nos encontremos en la rama <strong>gh-pages</strong> ya que de esta
+        manera se configurará <strong>GitHub Pages</strong> automáticamente.</p>
     </blockquote>
     <ol start="2">
       <li>El mensaje que nos muestra la URL donde se subieron los cambios y la nueva rama
@@ -284,8 +277,8 @@
         <b>index.html</b>.
       </li>
       <li>Esta URL ya se puede compartir y el patrón se compone de:
-        <div class="highlight"><br>
-          <pre>https://&lt;username&gt;.github.io/&lt;repository-name&gt;</pre>
+        <div class="highlight">
+          <pre>https://<span style="text-decoration: underline; text-underline-offset: 6px">&lt;username&gt;</span>.github.io/<span style="text-decoration: underline; text-underline-offset: 6px">&lt;repository-name&gt;</span></pre>
         </div>
       </li>
     </ol>
@@ -293,8 +286,8 @@
       <li><strong>username</strong>: el nombre de la cuenta de github.</li>
       <li><strong>github.io</strong>: el servicio de hosting que nos da github.</li>
       <li><strong>repository-name</strong>: es el nombre que tiene el repositorio.</li>
-    </ul><br>
-    <blockquote>
+    </ul>
+    <blockquote class="info">
       <p>No es necesario que tengamos que indicar el nombre del archivo <strong>index.html</strong>, ya que por
         defecto
         se mostrará como página de aterrizaje.</p>

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../../public/css/themes/overlook.css">
+  <title>JS: Arrays</title>
+  <style>
+    table code {
+      background-color: #f7df1e !important;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1 style="margin-bottom: 60px;">
+      <a href="../../index.html">
+        <img
+          src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+          height="50" align="left">
+      </a>
+      <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" height="55" align="right">
+    </h1>
+    <span id="top"></span>
+    <ul>
+      <li><a href="#que-es-un-array">¿Qué es un Array?</a></li>
+      <li><a href="#acceso-a-elementos-del-array">Acceder a elementos de un Array</a></li>
+      <li><a href="#add-delete-elements">Añadir o eliminar elementos de un Array</a></li>
+      <li><a href="#alternative-create-array">Alternativa para crear Array</a>
+        <ul>
+          <li><a href="#convert-to-array">Convirtiendo a Array</a></li>
+          <li><a href="#concat-array">Concatenando Array</a></li>
+          <li><a href="#split-join-array">Separar y unir strings</a></li>
+        </ul>
+      </li>
+      <li><a href="#arrays-functions">¿Qué son los arrays functions?</a>
+        <ul>
+          <li><a href="#loop-foreach">Por cada elemento <code>.forEach()</code></a></li>
+          <li><a href="#every">Comprobaciones <code>.every()</code></a></li>
+          <li><a href="#some">Comprobaciones <code>.some()</code></a></li>
+          <li><a href="#map">Transformaciones <code>.map()</code></a></li>
+          <li><a href="#filter">Filtros <code>.filter()</code></a></li>
+          <li><a href="#flat">Aplanar <code>.flat()</code> y <code>.flatMap()</code></a></li>
+          <li><a href="#find">Buscar <code>.find()</code> y <code>findIndex()</code></a></li>
+          <li><a href="#findlast">Buscar <code>.findLast()</code> y <code>findLastIndex()</code></a></li>
+          <li><a href="#reduce">Acumulador <code>.reduce()</code> y <code>.reduceRIght()</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#destructuring">Desestructuración de Array</a>
+        <ul>
+          <li><a href="#switch-variable">Intercambiar variables</a></li>
+          <li><a href="#spread">Extender <code>spread</code></a></li>
+          <li><a href="#rest">Agrupar <code>rest</code></a> </li>
+          <li><a href="#restructuring">Restructuración de Array</a></li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h4 id="que-es-un-array">¿QUÉ ES UN ARRAY?</h4>
+    <p>Un <strong>Array</strong> es una colección o agrupación de elementos en una misma variable similares a una lista cuyo
+      prototipo <strong>proporciona métodos para efectuar operaciones de recorrido y de mutación</strong>. Cada elemento es ubicado por
+      la posición que ocupa dentro de un <strong>Array</strong>. También en ocasiones a los <strong>Array</strong> se les suele
+      llamar <strong>vectores</strong>. En javascript, se pueden definir de varias formas:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Constructor</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>new Array(size)</code></td>
+          <td>Crea un array de <strong>size</strong> elementos sin definir, es decir, con valor <span class="undefined">undefined</span>.
+          </td>
+        </tr>
+        <tr>
+          <td><code>new Array(e1, e2, ...)</code></td>
+          <td>Crea un array con los elementos indicados.</td>
+        </tr>
+        <tr>
+          <td><code>[e1, e2...]</code></td>
+          <td>Simplemente, los elementos dentro de corchetes.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Por ejemplo, podríamos tener un <code>array</code> que en su primera posición se encuentre el <code>string</code>
+      <strong><code>'a'</code></strong>, en la segunda el <code>string</code> <strong><code>'b'</code></strong> y en la
+      tercera el <code>string</code> <strong><code>'c'</code></strong>. En javascript, esto se crearía de esta forma:
+    </p>
+    <div class="highlight">
+      <pre><span class="c1">// Forma tradicional </span>
+<span class="kr">const</span> letras <span class="p">=</span> <span class="nb">new</span> <span class="nt">Array</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">);</span> <span class="c1">// Array con 3 elementos</span>
+<span class="kr">const</span> arr <span class="o">=</span> <span class="nb">new</span> <span class="nt">Array</span><span class="p">(</span><span class="na">3</span><span class="p">);</span> <span class="c1">// Array con 3 elementos vacíos (undifined)</span>
+
+<span class="c1">// Mediante literales </span>
+<span class="kr">const</span> letras2 <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span> <span class="c1">// Array con 3 elementos</span>
+<span class="kr">const</span> arr2 <span class="o">=</span> <span class="p">[];</span> <span class="c1">// Array vacío (0 elementos)</span>
+<span class="kr">const</span> mixto <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="na">4</span><span class="p">,</span> <span class="gu">true</span><span class="p">];</span> <span class="c1">// Array mixto (String, Number, Boolean)</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+    </div>
+    <p>Al contrario que muchos lenguajes de programación, javascript permite crear <strong>Array</strong> de <strong>tipo
+        mixto</strong>, no siendo obligatorio que todos los elementos sean del mismo tipo de dato.</p>
+    <iframe frameborder="0" width="100%" height="400px"
+      src="https://replit.com/@marcocontreraas/arrays-intro?embed=true"></iframe>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="acceso-a-elementos-del-array"><a name="access-element-array"></a> ACCESO A ELEMENTOS DEL ARRAY<a
+        class="headerlink" href="#acceso-a-elementos-del-array" title="Permanent link">&#9875;</a></h3>
+    <p>Al igual como tenemos en los <code>string</code>, saber el número de elementos que tiene un array es muy
+      sencillo. Sólo hay que acceder a la propiedad <code>.length</code>, que nos devolverá el número de elementos
+      existentes en un array y para acceder a los elementos tenemos: </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Forma</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.length</code></td>
+          <td>Propiedad que devuelve el número de elementos del array.</td>
+        </tr>
+        <tr>
+          <td><code>[pos]</code></td>
+          <td>Operador que devuelve (o modifica) el elemento número <strong>pos</strong> del array.</td>
+        </tr>
+        <tr>
+          <td><code>.at(pos)</code></td>
+          <td>Método que devuelve el elemento en la posición <strong>pos</strong>. Números negativos orden inverso.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Por otro lado, si lo que queremos es acceder a un elemento específico del <code>array</code>, nos basta con
+      utilizar el operador <code>[]</code>, al igual como lo podríamos hacer con los <code>string</code> para acceder a
+      un carácter concreto. En este caso, accedemos a la posición del elemento que queremos recuperar sobre el
+      <code>array</code>:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3</span>
+<span class="nx">letras</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// &#39;a&#39;</span>
+<span class="nx">letras</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// &#39;c&#39;</span>
+<span class="nx">letras</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="c1">// undefined </span>
+</pre>
+    </div>
+
+    <p>Siempre hay que recordar que las posiciones empiezan a contar desde <strong>0</strong> y que si intentamos
+      acceder a una posición que no existe, nos devolverá un <code>undefined</code>.</p>
+    <p>El operador <code>[]</code> no sólo nos permite obtener o acceder a un elemento del <code>array</code>, sino que
+      también nos permite modificar un elemento específico del <code>array</code>, si utilizamos el operador de
+      asignación <code>=</code>: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span><span class="p">;</span> <span class="c1">// Devuelve &#39;Z&#39; y modifica letras a [&quot;a&quot;, &quot;X&quot;, &quot;c&quot;]</span>
+<span class="nx">letras</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span><span class="p">;</span> <span class="c1">// Devuelve &#39;D&#39; y modifica letras a [&quot;a&quot;, &quot;X&quot;, &quot;c&quot;, &quot;D&quot;]</span>
+<span class="nx">letras</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Z&quot;</span><span class="p">;</span> <span class="c1">// Devuelve &#39;A&#39; y modifica letras a [&quot;a&quot;, &quot;X&quot;, &quot;c&quot;, &quot;D&quot;, undefined, &quot;Z&quot;]</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+    </div>
+
+    <p>Además del clásico operador <code>[]</code>, también podemos utilizar el método <code>.at()</code>, añadido en <a
+        href="https://262.ecma-international.org/#sec-array.prototype.at"><strong>javascript ES2022</strong></a>. Con
+      él, se puede hacer exactamente los mismo que con <code>[pos]</code>, sólo que además permite valores negativos,
+      mediante los cuales se puede obtener elementos en orden inverso, es decir, empezando a contar desde el último
+      elemento:</p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// &#39;a&#39;</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// &#39;b&#39;</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// undefined</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// &#39;c&#39;</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// &#39;b&#39;</span>
+</pre>
+    </div>
+    Esta característica hace que acceder al último elemento (o cercanos) sea bastante práctico, ya que hacer la misma
+    operación <code>[]</code> era algo menos directo que en algunos casos se podría volver confuso o poco intuitivo:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span>
+<span class="kr">const</span> <span class="nx">ultimoItem</span> <span class="o">=</span> <span class="nx">letras</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">letras</span><span class="p">[</span><span class="nx">ultimoItem</span><span class="p">];</span> <span class="c1">// &#39;c&#39;</span>
+</pre>
+    </div>
+    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+      src="https://replit.com/@marcocontreraas/arrays-get-set-length?embed=true"></iframe>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="anadir-o-eleminar-elementos"><a name="add-delete-elements"></a> AÑADIR O ELIMINAR ELEMENTOS<a
+        class="headerlink" href="#anadir-o-eleminar-elementos" title="Permanent link">&#9875;</a></h3>
+    <p>Existen varias formas de añadir elementos a un array ya existente. Ten en cuenta que en todos estos casos estamos
+      <strong>mutando</strong> (variando los elementos del array ya existente). Veamos los <strong>métodos</strong> que
+      podemos usar para ello:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.push(e1,e2,e3...)</code></td>
+          <td>Añade uno o varios elementos al final del array. Devuelve el tamaño del array.</td>
+        </tr>
+        <tr>
+          <td><code>.pop()</code></td>
+          <td>Elimina el último elemento del array. Devuelve dicho elemento.</td>
+        </tr>
+        <tr>
+          <td><code>.unshif(e1, e2, e3...)</code></td>
+          <td>Añade uno o varios elementos al inicio del array. Devuelve el tamaño del array.</td>
+        </tr>
+        <tr>
+          <td><code>.shif()</code></td>
+          <td>Elimina el primer elemento del array. Devuelve dicho elemento.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>En los arrays, javascript proporciona métodos tanto para insertar o elementos <strong>por el final</strong> del
+      array, como <strong>por el principio</strong>:</p>
+    <ul>
+      <li>Los métodos <code>.push()</code> y <code>.pop()</code> <strong>insertan/eliminan al final del array</strong>.
+      </li>
+      <li>Los métodos <code>.unshift()</code> y <code>.shift()</code> <strong>insertan/eliminan al inicio del
+          array</strong>.</li>
+    </ul>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="alternativa-para-crear-arrays"><a name="alternative-create-array"></a> ALTERNATIVA PARA CREAR ARRAYS<a
+        class="headerlink" href="#alternativa-para-crear-arrays" title="Permanent link">&#9875;</a></h3>
+    <p>Aunque hemos visto las formas principales de crear un <code>array</code> en javascript, existen otras que
+      permiten generar un <code>array</code> partiendo de otras estructuras de datos.</p>
+    <p>Algunos de estos casos son los siguientes: </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Array.from(obj)</code></td>
+          <td>Intenta convertir el <strong>obj</strong> en un array.</td>
+        </tr>
+        <tr>
+          <td><code>Array.from(obj, fmap)</code></td>
+          <td>Identico, pero ejecuta la función <strong>fmap</strong> por cada elemento equivalente a
+            <code>.map()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>.concat(e1, e2, e3...)</code></td>
+          <td>Devuelve los elementos pasados por parámetro concatenados al final del array.</td>
+        </tr>
+        <tr>
+          <td><code>.join(sep)</code></td>
+          <td>Une los elementos del array mediante separadores <strong>sep</strong> en un <code>string</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Vamos a analizar cada uno de estos métodos y poner algunos ejemplos.</p>
+    <hr />
+    <h3 id="convertir-a-array"><a name="convert-to-array"></a> CONVERTIR A ARRAY<a class="headerlink"
+        href="#convertir-a-array" title="Permanent link">&#9875;</a></h3>
+    <p>El método estático <strong><code>Array.from()</code></strong>, aunque ahora quizás no le encontremos mucha
+      utilidad, nos resultará muy interesante. Este método se suele utilizar para convertir variables
+      &lt;&lt;<strong>parecidas</strong>>> a los <strong>arrays</strong> (pero que no son arrays) en un
+      <code>array</code>. Este es el caso de variables como <code>string</code> o <code>nodelist</code>:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">cadenaTexto</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span><span class="p">;</span>
+<span class="nx">cadenaTexto</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  <span class="c1">// &quot;String&quot;</span>
+
+<span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">cadenaTexto</span><span class="p">);</span> <span class="c1">// [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</span>
+<span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">texto</span><span class="p">];</span> <span class="c1">// equivalente al anterior [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;]</span>
+
+<span class="kr">const</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+<span class="nx">divs</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// &quot;NodeList&quot;</span>
+
+<span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">divs</span><span class="p">);</span> <span class="c1">// [div, div, div]</span>
+<span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">divs</span><span class="p">];</span> <span class="c1">// equivalente al anterior [div, div, div]</span>
+</pre>
+    </div>
+
+    <p>Como se puede ver, es algo muy similar a lo que hacemos con la <a href="#"><strong>desestructuración de
+          arrays</strong></a> ( <em>que veremos más adelante en esta guía</em> ). Pero no todos los elementos se pueden
+      convertir a arrays. Por ejemplo, si intentamos convertir un <strong><code>undefined</code></strong> o un
+      <strong><code>null</code></strong>, nos dará un error similar a <strong>UncaughtTypeError:null is not
+        iterable</strong>.
+    </p>
+    <p>De forma opcional, <strong><code>Array.from(obj)</code></strong> puede recibir un parámetro adicional; una
+      función que actuará de forma idéntica a una <strong>función <code>map()</code></strong>. Veamos el funcionamiento:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">texto</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">texto</span><span class="p">,</span> <span class="p">(</span><span class="nx">numero</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">numero</span><span class="p">));</span> <span class="c1">// [1, 2, 3, 4, 5]</span>
+<span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">texto</span><span class="p">,</span> <span class="nb">Number</span><span class="p">);</span>  <span class="c1">// Equivalente al anterior</span>
+
+<span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">texto</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">// Equivalente a los anteriores</span>
+</pre>
+    </div>
+
+    <p>Observa que en este caso, la función pasada por segundo parámetro del <strong>Array.from()</strong> se ejecutará
+      por cada uno de los elementos de <strong>text</strong>, y en este caso concretamente, la función <strong>(number)
+        =&gt; Number(number)</strong> fuerza a convertir cada elemento en un número. La diferencia respecto al ejemplo
+      anterior, es que en este caso obtienes un array de números, mientras que el anterior obtenías un array de textos.
+    </p>
+    <blockquote>
+      <p>Si lo que buscas es convertir un objeto <code>object</code> de javascript en un <code>array</code>,
+        probablemente te interese el tema de <a
+          href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Iterators_and_Generators">iteradores de
+          objetos</a> donde se puede ver métodos como <strong><code>Object.keys()</code></strong>,
+        <strong><code>Object.values()</code></strong> u <strong><code>Object.entries()</code></strong>
+      </p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="concatenar-arrays"><a name="concat-array"></a> CONCATENAR ARRAYS<a class="headerlink"
+        href="#concatenar-arrays" title="Permanent link">&#9875;</a></h3>
+    <p>Al igual que en los <code>string</code>, en los <code>array</code> tenemos el método
+      <strong><code>concat()</code></strong>, que nos permite unir los elementos pasados por parámetro en un array a la
+      estructura que estamos manejando. Se podría pensar que los métodos <code>.push()</code> y <code>.concat()</code>
+      funcionan de la misma forma, pero no es exactamente así. Veamos el siguiente ejemplo:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="nx">elements</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span> <span class="c1">// Devuelve 6. Ahora elements = [1, 2, 3, 4, 5, 6]</span>
+<span class="nx">elements</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]);</span> <span class="c1">// Devuelve 7. Ahora elements = [1, 2, 3, 4, 5, 6, [7, 8, 9]]</span>
+</pre>
+    </div>
+
+    <p>Ahora veamos el mismo ejemplo realizado con el método <code>.concat()</code>:</p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">firstPart</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> 
+<span class="kr">const</span> <span class="nx">secondPart</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+
+<span class="nx">firstPart</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">firstPart</span><span class="p">);</span> <span class="c1">// Devuelve [1, 2, 3, 1, 2, 3]</span>
+<span class="nx">firstPart</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">secondPart</span><span class="p">);</span> <span class="c1">// Devuelve [1, 2, 3, 4, 5, 6]</span>
+
+<span class="c1">// Se pueden pasar elementos sueltos</span>
+<span class="nx">firstPart</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span> <span class="c1">// Devuelve [1, 2, 3, 4, 5, 6]</span>
+
+<span class="c1">// Se pueden concatenar múltiples arrays e incluso mezclarlos con elementos sueltos</span>
+<span class="nx">firstPart</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">firstPart</span><span class="p">,</span> <span class="nx">secondPart</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="c1">// Devuelve [1, 2, 3, 1, 2, 3, 4, 5, 6, 7]</span>
+</pre>
+    </div>
+    Observa un detalle muy importante: El método <code>concat()</code>, a diferencia de <code>push()</code>, no modifica
+    el array sobre el cuál trabajamos y al que le añadimos los elementos, sino que simplemente lo devuelve. Al margen de
+    esto, observa que en el caso de pasar un array por parámetro, <code>push()</code> lo inserta como un array,
+    mientras <strong><code>concat()</code></strong> inserta cada uno de sus elementos.</p>
+    <blockquote>
+      <p>También hay que tener cuidado al utilizar el operador <code>+</code> con arrays. A diferencia de lo que quizás
+        puede parecer intuitivo, utilizando este operador no se añaden los elementos al array, sino que se convierten
+        los arrays en string y luego se concatenan.</p>
+    </blockquote>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="separar-y-unir-strings"><a name="split-join-array"></a> SEPARAR Y UNIR STRINGS<a class="headerlink"
+        href="#separar-y-unir-strings" title="Permanent link">&#9875;</a></h3>
+    <p>Además, también tenemos otro método con el que es posible crear un <code>array</code>. Se trata del método
+      <code>.split()</code> que vimos en el <a
+        href="https://enidev911.github.io/fullstackjsg33/src/guides/javascript/data-types/strings/#string-split"><strong>tema
+          de los <code>string</code></strong></a>. En este caso, el método <code>.join()</code> es su contrapartida. Con
+      <code>.join()</code> podemos crear un <code>string</code> con todos los elementos del array, separándolo por el
+      texto que le pasemos por parámetro:
+    </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">];</span>
+
+<span class="c1">// Une elementos del array por el separador indicado</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">);</span> <span class="c1">// Devuelve &#39;a-&gt;b-&gt;c&#39;</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// Devuelve &#39;a.b.c&#39;</span>
+
+<span class="c1">// Separa elementos del string por el separador indicado</span>
+<span class="s2">&quot;a.b.c&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">);</span> <span class="c1">// Devuelve [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+<span class="s2">&quot;5-4-3-2-1&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">);</span> <span class="c1">// Devuelve [&#39;5&#39;, &#39;4&#39;, &#39;3&#39;, &#39;2&#39;, &#39;1&#39;]</span>
+</pre>
+    </div>
+    Ten en cuenta que, como se puede ver en los ejemplos, <strong><code>.join()</code></strong> siempre devolverá los
+    elementos como <code>string</code>, mientras que <code>.split()</code> devolverá un <code>array</code>.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="que-son-los-arrays-functions"><a name="arrays-functions"></a> ¿Qué son los Arrays functions?<a
+        class="headerlink" href="#que-son-los-arrays-functions" title="Permanent link">&#9875;</a></h3>
+    <p>Básicamente, son métodos que tienen cualquier variable que sean de tipo <code>array</code>, y que permite
+      realizar una operación con todos los elementos de dicho array ( <em>o parte de ellos</em> ) para conseguir un
+      objetivo concreto, dependiendo del método. En general, a dichos métodos se les pasa por parámetro una
+      <strong>función callback</strong> y unos parámetros opcionales.
+    </p>
+    <p>Estas son las <strong>Array functions</strong> que podemos encontrarnos en javascript: </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.forEach(ƒ)</code></td>
+          <td>Ejecuta la función definida en <strong>ƒ</strong> por cada uno de los elementos del array.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Comprobaciones</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.every(ƒ)</code></td>
+          <td>Comprueba si <strong>todos</strong> los elementos del array cumplen la condición de <strong>ƒ</strong>.
+          </td>
+        </tr>
+        <tr>
+          <td><code>.some(ƒ)</code></td>
+          <td>Comprueba si <strong>al menos</strong> un elementos del array cumple la condición de <strong>ƒ</strong>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Transformaciones y filtros</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Método</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.map(ƒ)</code></td>
+          <td>Construye un array con lo que devuelve <strong>ƒ</strong> por cada elemento del array.</td>
+        </tr>
+        <tr>
+          <td><code>.filter(ƒ)</code></td>
+          <td>Filtra un array y se queda sólo con los elementos que cumplen la condición de <strong>ƒ</strong>.</td>
+        </tr>
+        <tr>
+          <td><code>.flat(level)</code></td>
+          <td>Aplana el array al nivel <strong>level</strong> indicado.</td>
+        </tr>
+        <tr>
+          <td><code>.flatMap(ƒ)</code></td>
+          <td>Aplana cada elemento del array, tranformándolo según <strong>ƒ</strong>. Equivalente a
+            <code>.map().flat(1)</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="por-cada-uno-foreach"><a name="loop-foreach"></a> Por cada uno (forEach)<a class="headerlink"
+        href="#por-cada-uno-foreach" title="Permanent link">&#9875;</a></h3>
+    <p>Como se puede ver, el método <code>.forEach()</code> no devuelve nada y espera que se le pase por parámetro una
+      <code>function</code> que se ejecutará por cada elemento del array. Esa <code>function</code>, puede ser pasada en
+      cuaquiera de los formato vistos: como función tradicional o como función flecha:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">];</span>
+
+<span class="c1">// Con funciones por expresión</span>
+<span class="kr">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Un elemento.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+
+<span class="c1">// Con funciones anónimas</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;un elemento.&quot;</span><span class="p">);</span>
+<span class="p">})</span>
+
+<span class="c1">// Con funciones flecha</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;un elemento.&quot;</span><span class="p">))</span>
+</pre>
+    </div>
+
+    <p>Sin embargo, este ejemplo no tiene demasiada utilidad. A la función <strong>callback</strong> se le pueden pasar
+      varios parámetros opcionales:</p>
+    <ul>
+      <li>Si se pasa un <strong>primer parámetro</strong>, este será el elemento del array.</li>
+      <li>Si se le pasa un <strong>segundo parámetro</strong>, este será la posición en el array.</li>
+      <li>Si se le pasa un <strong>tercer parámetro</strong>, este será el array en cuestión.</li>
+    </ul>
+    <p>Veamos un ejemplo:</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">));</span> <span class="c1">// Devuelve &#39;a&#39; / &#39;b&#39; / &#39;c&#39; / &#39;d&#39;</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">));</span> <span class="c1">// Devuelve // &#39;a&#39; 0 / &#39;b&#39; 1 / &#39;c&#39; 2 / &#39;d&#39; 3</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">// Devuelve &#39;a&#39; / &#39;a&#39; / &#39;a&#39; / &#39;a&#39;</span>
+</pre>
+    </div>
+
+    <p>En este ejemplo, he nombrado <strong>element</strong> al parámetro que hará referencia al elemento,
+      <strong>index</strong> al parámetro que hará referencia al índice (posición del array) y <strong>array</strong> al
+      parámetro que hará referencia al propio array en cuestión. En algunos ejemplos los abreviaré como <strong>(e, i,
+        a)</strong> por su inicial. Aún así, puede ponerle a estos parámetros el nombre que estime conveniente.
+    </p>
+    <p>Por ejemplo, una buena estrategia sería utilizar <strong>letras</strong> (<em>plural</em>) para el array y
+      <strong>letra</strong> (<em>singular</em>) en lugar de <strong>element</strong> para el elemento que se va
+      recorriendo. Como se puede ver, realmente <code>forEach()</code> es otra forma e hacer un bucle (<em>sobre un
+        array</em>), sin tener que recurrir a bucles tradicionales como <strong>for</strong> o <strong>while</strong>.
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="comprobaciones-every"><a name="every"></a> COMPROBACIONES - EVERY<a class="headerlink"
+        href="#comprobaciones-every" title="Permanent link">&#9875;</a></h3>
+    <p>El método <strong>every()</strong> permite comprobar si <strong>todos y cada uno</strong> de los elementos de un
+      array cumplen la condición que se especifique en la <code>function</code> <strong>callback</strong>:</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">letra</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">letra</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
+</pre>
+    </div>
+
+    <p>En este caso, la magia está en el <strong>callback</strong>. La condición es que la longitud de cada elemento
+      <code>string</code> del array sea <strong>1</strong>. Si dicha función devuelve <strong>true</strong>, significa
+      que cumple la condición, si devuelve <strong>false</strong>, no la cumple. Por lo tanto, si todos los elementos
+      del array devuelven <strong>true</strong>, entonces <strong>every()</strong> devolverá <strong>true</strong>.
+    </p>
+    <p>Si expandimos el ejemplo anterior a un código más detallado, tendríamos el siguiente ejemplo equivalente, que
+      quizás sea más compresible para entenderlo:</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">];</span>
+
+<span class="c1">// Esta función se ejecuta por cada elemento del array</span>
+<span class="kr">const</span> <span class="nx">condicion</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">letra</span><span class="p">){</span>
+    <span class="c1">// Si el tamaño del elemento (string) es igual a 1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">letra</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Si todos los elementos devuelven true, devuelve true</span>
+<span class="nx">letras</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">condicion</span><span class="p">);</span> <span class="c1">// true</span>
+</pre>
+    </div>
+
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="comprobaciones-al-menos-uno-some"><a name="some"></a> COMPROBACIONES - AL MENOS UNO (SOME)<a
+        class="headerlink" href="#comprobaciones-al-menos-uno-some" title="Permanent link">&#9875;</a></h3>
+    <p>De la misma forma que el método anterior sirve para comprobar si todos los elementos del array cumplen una
+      determinada condición, con <code>some()</code> podemos comprobar si <strong>al menos uno</strong> de los elementos
+      del array, cumplen dicha condición definida por el <strong>callback</strong>.</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">letras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;bb&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">];</span>
+
+<span class="nx">letras</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">element</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
+</pre>
+    </div>
+
+    <p>Observa que en este ejemplo, el método <code>some()</code> devuelve <strong>true</strong> porque existe al menos
+      un elemento del array con una longitud de <strong>2</strong> caracteres.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="transformar-map"><a name="map"></a>TRANSFORMAR - (MAP)<a class="headerlink" href="#transformar-map"
+        title="Permanent link">&#9875;</a></h3>
+    <p>El método <code>.map()</code> es un método muy útil para trabajar con arrays, puesto que su objetivo es devolver
+      un nuevo <code>array</code> donde cada uno de sus elementos será lo que devuelva la función
+      <strong>callback</strong> por cada uno de los elementos del array original:
+    </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;Heriberto&quot;</span><span class="p">,</span> <span class="s2">&quot;Juan&quot;</span><span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">longitudNombres</span> <span class="o">=</span> <span class="nx">nombres</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="nx">longitudNombres</span><span class="p">;</span> <span class="c1">// Devuelve [3, 5, 5, 9, 4]</span>
+</pre>
+    </div>
+    Observa que el array devuelto por <code>map()</code> es <strong>longitudNombres</strong>, y cada uno de los
+    elementos que lo componen, es el número devuelto por el <strong>callback</strong> (<code>nombre.length</code>), que
+    no es otra cosa que el tamaño de cada <code>string</code>.</p>
+    <p>Este método nos permite hacer multitud de operaciones, ya que donde devolvemos
+      <strong><code>nombre.length</code></strong> podriamos devolver el propio <code>string</code> modificado o
+      cualquier otra cosa.
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="filtrar-filter"><a name="filter"></a>FILTRAR (FILTER)<a class="headerlink" href="#filtrar-filter"
+        title="Permanent link">&#9875;</a></h3>
+    <p>El método <code>filter()</code> nos permite filtrar los elementos de un array y
+      devolver un nuevo array con sólo los elementos que queramos. Para ello, utilizaremos la función
+      <strong>callback</strong> para establecer una condición que devuelve sólo los elementos que nos interese; es decir
+      que cumplierón con la condición o sea que la expresión devolvió <strong><code>true</code></strong> :
+    </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;Heriberto&quot;</span><span class="p">,</span> <span class="s2">&quot;Juan&quot;</span><span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">nombresFiltrado</span> <span class="o">=</span> <span class="nx">nombres</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">));</span>
+
+<span class="nx">nombresFiltrado</span><span class="p">;</span> <span class="c1">// Devuelve [&#39;Pablo&#39;, &#39;Pedro&#39;]</span>
+</pre>
+    </div>
+    En este ejemplo, filtramos sólo los elementos en los que su primera letra sea <strong>P</strong>. Por lo tanto, la
+    variable <strong>nombresFiltrado</strong> será un <code>array</code> con sólo esos elementos.</p>
+    <p>Ten en cuenta que si ningún elemento cumple la condición, <strong><code>filter()</code></strong> devuelve un
+      <code>array</code> vacío.
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="aplanar-flat-y-flatmap"><a name="flat"></a>APLANAR (FLAT Y FLATMAP)<a class="headerlink"
+        href="#aplanar-flat-y-flatmap" title="Permanent link">&#9875;</a></h3>
+    <p>Un método que puede resultar interesante es <code>.flat(level)</code> introducido en <a
+        href="https://262.ecma-international.org/#sec-array.prototype.flat"><strong>javascript ES2019</strong></a>. Se
+      trata de un método que revisa todos los elementos del array en busca de arrays anidadas, y los
+      <strong>aplana</strong> hasta el nivel indicado por parámetro (<strong>level</strong>).
+    </p>
+    <p>Por lo tanto, considera el siguiente array: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="mi">35</span><span class="p">,</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">55</span><span class="p">],</span> <span class="mi">60</span><span class="p">]];</span>
+
+<span class="nx">valores</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// [ 10, 15, 20, [ 25, 30 ], 35, [ 40, 45, [ 50, 55 ], 60 ] ]</span>
+<span class="nx">valores</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// [ 10, 15, 20, 25, 30, 35, 40, 45, [ 50, 55 ], 60 ]</span>
+<span class="nx">valores</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// [ 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60 ]</span>
+<span class="nx">valores</span><span class="p">.</span><span class="nx">flat</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span> <span class="c1">// Identico al anterior, pero si hubieran más niveles los aplanaría todos </span>
+</pre>
+    </div>
+
+    <p>Observa que el array <strong>valores</strong> tiene 6 elementos, donde el cuarto elemento y el sexto elemento son
+      arrays anidados. En el array del cuarto elemento hay dos números, pero en el array del sexto elemento hay a su vez
+      un array con cuatro elementos donde su tercer elemento es nuevamente otro array. Estaríamos hablando de que el
+      array <strong>valores</strong> tiene arrays hasta un <strong>nivel 3</strong>.</p>
+    <p>Con <code>.flat()</code> podemos indicar hasta que nivel queremos &lt;&lt;aplanarlos>>.</p>
+    <p>Sin embargo, este método <code>.flat()</code> no pertenece a los métodos que estamos repasando. Sin embargo, es
+      la base del método <code>.flatMap(ƒ)</code>, que si tiene la misma filosofía que el resto de métodos. Funciona de
+      forma muy parecida al método <code>.map(ƒ)</code>, aplanando un nivel y transformando cada elemento del array,
+      según la función pasada por parámetro. Es decir, el método <code>.flatMap(ƒ)</code> es el equivalente a realizar
+      la operación <code>.map(ƒ).flat(1)</code>:</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="mi">35</span><span class="p">,</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">55</span><span class="p">],</span> <span class="mi">60</span><span class="p">]];</span>
+
+<span class="nx">valores</span><span class="p">.</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">element</span> <span class="o">=&gt;</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="o">?</span> <span class="nx">element</span><span class="p">.</span><span class="nx">length</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// [1, 1, 1, 2, 1, 4]</span>
+</pre>
+    </div>
+
+    <p>El ejemplo anterior, realiza una <code>.flatMap()</code> por la estructura <strong>values</strong>. En el primer
+      lugar, recorre cada uno de los elementos mediante un <strong><code>map()</code></strong> para transformarlos: </p>
+    <ul>
+      <li>Sin son un array, devuelve su cantidad de elementos su <strong>length</strong></li>
+      <li>Sino es un array, devuelve <strong>1</strong></li>
+    </ul>
+    <p>Finalmente, si el array resultante tuviera algún array entre sus elementos ( <em>que en este caso es
+        imposible</em> ), le aplicaría un <strong><code>flat(1)</code></strong>.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="busquedas-find-y-findindex"><a name="find"></a>BÚSQUEDAS (FIND Y FINDINDEX)<a class="headerlink"
+        href="#busquedas-find-y-findindex" title="Permanent link">&#9875;</a></h3>
+    <p>Dentro de las <strong>Arrayfunctions</strong>, existen dos métodos interesantes: <code>find()</code> y
+      <code>findIndex()</code> ( <strong><em>ES2015</em></strong> ). Ambos se utilizan para buscar elementos de un array
+      mediante una condición, la diferencia es que el primero devuelve el elemento mientras que el segundo devuelve su
+      posición en el array original. Veamos como funcionan:
+    </p>
+    <p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;Pamela&quot;</span><span class="p">,</span> <span class="s2">&quot;Heriberto&quot;</span><span class="p">];</span>
+
+<span class="nx">nombres</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// &#39;Pablo&#39;</span>
+<span class="nx">nombres</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 1</span>
+</pre>
+    </div>
+    La condición que hemos utilizado en este ejemplo es buscar el elemento que tiene <strong>5</strong> caracteres de
+    longitud. Al buscarlo en el array original, el primero que encontramos es <strong>Pablo</strong>, puesto que
+    <strong>find()</strong> devolverá <code>undefined</code>, mientras que <strong>findIndex()</strong>, que debe
+    devolver un <code>number</code>, devolverá <strong>-1</strong>.</p>
+    <h3 id="busquedas-findlast-findlastindex"><a name="findlast"></a>BÚSQUEDAS (FINDLAST / FINDLASTINDEX)<a
+        class="headerlink" href="#busquedas-findlast-findlastindex" title="Permanent link">&#9875;</a></h3>
+    <p>De la misma forma, tenemos <code>findLastIndex()</code> y <code>findLast()</code>, que son las funciones
+      equivalentes a <code>findIndex()</code> y <code>find()</code>, pero buscando elementos desde derecha a izquierda,
+      en lugar de izquierda a derecha:<br />
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Pablo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;Pamela&quot;</span><span class="p">,</span> <span class="s2">&quot;Heriberto&quot;</span><span class="p">];</span>
+
+<span class="nx">nombres</span><span class="p">.</span><span class="nx">findLast</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// &#39;Pedro&#39;</span>
+<span class="nx">nombres</span><span class="p">.</span><span class="nx">findLastIndex</span><span class="p">((</span><span class="nx">nombre</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// 3</span>
+</pre>
+    </div>
+    </p>
+    <p>En este caso, en lugar de encontrarnos a <strong>Pablo</strong> ( <em>posición 1</em> ), el primer elemento que
+      tiene 5 carácteres, como va buscando de derecha a izquierda, el primero que encuentra es <strong>Pedro</strong> (
+      <em>posición 2</em> ).
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="acumuladores-reduce-y-reduceright"><a name="reduce"></a>ACUMULADORES (REDUCE Y REDUCERIGHT)<a
+        class="headerlink" href="#acumuladores-reduce-y-reduceright" title="Permanent link">&#9875;</a></h3>
+    <p>Por último, nos encontrarnos con una pareja de métodos denominados <strong><code>reduce()</code></strong> y
+      <strong><code>reduceRight()</code></strong>. Ambos métodos se encargan de recorrer todos los elementos del array,
+      e ir acumulando sus valores ( <em>o alguna operación diferente</em> ) y sumarlo todo, para devolver su resultado
+      final.
+    </p>
+    <p>En este par de métodos, encontraremos una primera diferencia en su función <strong>callback</strong>, puesto que
+      en el lugar de tener los clásicos parámetros opcionales <strong>(element, index, array)</strong> que hemos
+      utilizado hasta ahora, tiene <strong>(first, second, iteration, array)</strong>, que funciona de forma muy
+      similar, pero adaptando a este tipo de métodos acumuladores.</p>
+    <p>En la primera iteración, <strong>first</strong> contiene el valor del primer elemento del array y
+      <strong>second</strong> del segundo. En siguientes iteraciones, <strong>first</strong> es el acumulador que
+      contiene lo que devolvio el <strong>callback</strong> en la iteración anterior, mientras que
+      <strong>second</strong> es el siguiente elemento del array, y así sucesivamente. Veamos un ejemplo para
+      entenderlo:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">];</span>
+
+<span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">F</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">first</span><span class="p">}</span> <span class="nx">S</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">second</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">first</span> <span class="o">+</span> <span class="nx">second</span><span class="p">;</span>
+<span class="p">})</span>
+
+<span class="c1">// F=95  S=5    (1ª iteración: elemento 1: 95 + elemento 2: 5) = 100</span>
+<span class="c1">// F=100 S=25   (2ª iteración: 100 + elemento 3: 25) = 125</span>
+<span class="c1">// F=125 S=10   (3ª iteración: 125 + elemento 4: 10) = 135</span>
+<span class="c1">// F=135 S=25   (4ª iteración: 135 + elemento 5: 25) = 160</span>
+
+<span class="c1">// Finalmente, devuelve 160</span>
+</pre>
+    </div>
+
+    <p>Gracias a esto, podemos utilizar el método <strong><code>reduce()</code></strong> como acumulador de elementos de
+      izquierda a derecha y <strong><code>reduceRight()</code></strong> como acumulador de elementos de derecha a
+      izquierda. Veamos un ejemplo de cada uno, realizando una resta en lugar de una suma: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">];</span>
+<span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">first</span> <span class="o">-</span> <span class="nx">second</span><span class="p">);</span> <span class="c1">// 95 - 5 - 25 - 10 - 25. Devuelve 30</span>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">((</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">first</span> <span class="o">-</span> <span class="nx">second</span><span class="p">);</span> <span class="c1">// 25 - 10 - 25 - 5 - 95. Devuelve -110</span>
+</pre>
+    </div>
+
+    <p>Es posible indicar un segundo parámetro opcional en el <code>.reduce()</code>. Este parámetro es el
+      <strong>parámetro inicial</strong>; es decir el valor inicial que quieres tomar en el <strong>reduce</strong>, lo
+      que puede facilitar bastante la implementación. Observa que en el primer ejemplo anterior, se realizan 4
+      iteraciones. Sin embargo, al indicar este valor inicial de <strong>cero</strong> se realizan 5 iteraciones:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">];</span>
+<span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span> <span class="nx">nextElement</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">F</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">accumulator</span><span class="p">}</span> <span class="nx">S</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">nextElement</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">accumulator</span> <span class="o">+</span> <span class="nx">nextElement</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>      
+
+<span class="c1">// F=0   S=95   (iteración inicial): 0 + elemento 1: 95) = 95</span>
+<span class="c1">// F=95  S=5    (1ª iteración: elemento 1: 95 + elemento 2: 5) = 100</span>
+<span class="c1">// F=100 S=25   (2ª iteración: 100 + elemento 3: 25) = 125</span>
+<span class="c1">// F=125 S=10   (3ª iteración: 125 + elemento 4: 10) = 135</span>
+<span class="c1">// F=135 S=25   (4ª iteración: 135 + elemento 5: 25) = 160</span>
+
+<span class="c1">// Finalmente, devuelve 160</span>
+</pre>
+    </div>
+
+    <p>Como se puede observar, hay una iteración 0 extra que es la que toma el valor inicial indicado, junto al primer
+      elemento del array. Luego, sigue iterando con el resto de elementos.</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    <hr />
+    <h3 id="desestructuracion-de-arrays"><a name="destructuring"></a>DESESTRUCTURACIÓN DE ARRAYS<a class="headerlink"
+        href="#desestructuracion-de-arrays" title="Permanent link">&#9875;</a></h3>
+    <p>En javascript existe un concepto denominado <strong>desestructuración</strong>. Si no estás familiarizado con
+      estas palabras, puede ser un tanto complejo de entender, pero como su propio nombre indica, se trata de
+      desestructurar, es decir, <strong>separar una estructura</strong>, que en javascript se puede desestructurar un
+      <code>Array</code> asi como un objeto <code>Object</code>.
+    </p>
+    <blockquote>
+      <p>Puede ver más acerca de desestructuración en el siguiente artículo de <a
+          href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">mozilla.org</a>
+      </p>
+    </blockquote>
+    <p>Empecemos por las más sencillas, que son las operaciones de <strong>desestructuración de arrays</strong>. En los
+      siguientes ejemplos vamos a separar elementos de un array y sacarlos a variables individuales. </p>
+    <p>Observa los siguientes ejemplos: </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">elementos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">primero</span><span class="p">,</span> <span class="nx">segundo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">elementos</span><span class="p">;</span> <span class="c1">// primero = 5, segundo = 2</span>
+
+<span class="kr">const</span> <span class="nx">elementos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">primero</span><span class="p">,</span> <span class="nx">segundo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">elementos</span><span class="p">;</span> <span class="c1">// primero = 5, segundo = 4, </span>
+
+<span class="kr">const</span> <span class="nx">elementos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">primero</span><span class="p">,</span> <span class="p">,</span> <span class="nx">tercero</span><span class="p">]</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">;</span> <span class="c1">// primero = 5, tercero = 3, rest = discard</span>
+
+<span class="kr">const</span> <span class="nx">elementos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">primero</span><span class="p">,</span> <span class="nx">segundo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">;</span>  <span class="c1">// primero = 4, segundo = undefined</span>
+</pre>
+    </div>
+
+    <p>En el primer caso, bastante obvio, extraemos el primer y segundo valor del array <strong>elementos</strong> en
+      una variable denominada <strong>primero</strong> y otra llamada <strong>segundo</strong>.</p>
+    <p>En el segundo caso, hacemos lo mismo en las variables <strong>primero</strong> o <strong>segundo</strong>, pero
+      como el array tiene más elementos y solo hemos indicado dos variables ( <em>primero</em> y <em>segundo</em> ), el
+      resto son descartadas.</p>
+    <p>En el tercer caso pasa muy parecido, excepto que en el segundo parámetro de la parte izquierda, no colocamos
+      ningún elemento, ese dato se descartará.</p>
+    <p>En el cuarto caso, nos pasa al contrario, y hay menos elementos que variables, por lo que <strong>first</strong>
+      toma el primer ( <em>y único</em> ) elemento y el elemento <strong>segundo</strong> se queda sin ningún valor (
+      <em>se obiene el valor <code>undefined</code></em> ).
+    </p>
+    <h3 id="intercambio-de-variables"><a name="switch-variable"></a>INTERCAMBIO DE VARIABLES<a class="headerlink"
+        href="#intercambio-de-variables" title="Permanent link">&#9875;</a></h3>
+    <p>Veamos otro ejemplo donde utilizamos la desestructuración. En este caso, haremos intercambio de variables, donde
+      el valor inicial de una variable denominada <strong>a</strong> debe estar en la variable denominada
+      <strong>b</strong> y viceversa. Si quiesieramos realizar este ejemplo sin desestructuración, debemos apoyarnos
+      declarando una <strong>variable auxiliar</strong> denominase <strong>aux</strong> para guardar uno de los valores
+      de forma temporal, mientras hacemos el cambio de variables:
+    </p>
+    <div class="highlight">
+      <pre><span class="c1">// Sin desestructuración</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">aux</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">// 10</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span> <span class="c1">// 5</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nx">aux</span><span class="p">;</span> <span class="c1">// 10</span>
+</pre>
+    </div>
+
+    <p>Sin embargo, si utilizamos la desestructuración, este ejemplo es mucho más sencillo: </p>
+    <div class="highlight">
+      <pre><span class="c1">// Con desestructuración</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">];</span>
+</pre>
+    </div>
+
+    <p>Utilizamos la misma estrategia anterior, sólo que en este caso los arrays sólo se están utilizando para hacer la
+      operación de una sola vez, lo único que ahora termina existiendo las variables <strong>a</strong> y
+      <strong>b</strong> intercambiadas.
+    </p>
+    <h3 id="spread-extender"><a name="spread"></a>SPREAD / EXTENDER (&hellip;)<a class="headerlink"
+        href="#spread-extender" title="Permanent link">&#9875;</a></h3>
+    <p>Para explicar el <strong>spread</strong> vamos a crear una función muy sencilla para ilustrar el ejemplo. Dicha
+      función se llamará <strong>debug()</strong> y recibirá un parámetro <strong>param</strong>, el cuál se imprimirá
+      por consola mediante un <strong>console.log()</strong>:</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">param</span><span class="p">);</span>
+</pre>
+    </div>
+
+    <p>Como ves, es muy sencillo. Sin embargo, vamos hacer un pequeño cambio, primero en el <strong>param</strong> que
+      pasamos por parámetro a la función, y luego en otro ejemplo, en el <strong>param</strong> que utilizamos en el
+      <strong>console.log()</strong>, en el cuerpo de la función.
+    </p>
+    <p>En primer lugar, colocaremos los <code>...</code> en el <strong>param</strong> del
+      <strong>console.log()</strong>:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">param</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">debug</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+<span class="c1">// 1 2 3 4 5</span>
+</pre>
+    </div>
+
+    <p>Analicemos lo que ha ocurrido. Le hemos pasado un <code>array</code> con 5 elementos a la función
+      <strong><code>debug()</code></strong> la cuál <strong>ha desestructurado</strong> el <code>array</code> y lo ha
+      <strong>expandido</strong> en elementos individuales ( <em>observa como lo devuelve</em> ).
+    </p>
+    <h3 id="rest-agrupar"><a name="rest"></a>REST / AGRUPAR (&hellip;)<a class="headerlink" href="#rest-agrupar"
+        title="Permanent link">&#9875;</a></h3>
+    <p>Sin embargo, veamos en el siguiente ejemplo, como colocamos los <code>...</code> en los parámetros de la función.
+      Luego, al llamar a la función <strong><code>debug()</code></strong> le pasamos los 5 datos individuales.</p>
+    <div class="highlight">
+      <pre><span class="nx">cont</span> <span class="nx">debug</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">param</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">param</span><span class="p">);</span>
+<span class="nx">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="c1">// [1, 2, 3, 4, 5]</span>
+</pre>
+    </div>
+
+    <p>En este caso, el <code>...param</code> está <strong>agrupando</strong> esas 5 variables en un array.</p>
+    <p>Si aún no lo vemos claro, repasemos uno de los primeros ejemplos de esta guía. Ahora vamos a hacer una pequeña
+      modificación para utilizar los <code>...</code> en <strong>modo rest</strong> ( <em>agrupación de varios elementos
+        individuales, en un array</em> ):</p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span><span class="p">]</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">;</span> <span class="c1">// first = 5, rest = [4, 3, 2]</span>
+</pre>
+    </div>
+
+    <p>Observa que el primer elemento del array se guarda en la variable <strong>first</strong>, sin embargo, el resto
+      de valores, se almacena en la variable <strong>rest</strong> y se agrupa en un <code>array</code>, de modo que
+      <strong>rest</strong> contiene el <code>array</code> <code>[4, 3, 2]</code>
+    </p>
+    <h3 id="restructuracion-de-arrays"><a name="restructuring"></a>RESTRUCTURACIÓN DE ARRAYS<a class="headerlink"
+        href="#restructuracion-de-arrays" title="Permanent link">&#9875;</a></h3>
+    <p>Aprovechando estas características que hemos visto de desestructuración, también podríamos aprovecharlas para
+      <strong>restructurar</strong> un <code>array</code> y <strong>recrear arrays</strong>. Veámoslo con un ejemplo.
+    </p>
+    <p>Tenemos un <code>array</code> de 2 elementos <code>[3, 4]</code> y queremos aprovecharlo para crear un nuevo
+      array del <strong>1</strong> al <strong>5</strong>. Vamos a hacer uso de la desestructuración para reaprovecharlo:
+    </p>
+    <div class="highlight">
+      <pre><span class="kr">const</span> <span class="nx">parte</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="c1">// Usando desestructuración + spread</span>
+<span class="kr">const</span> <span class="nx">complete</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">...</span><span class="nx">parte</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">// [1, 2, 3, 4, 5]</span>
+<span class="c1">// Sin usar desestructuración</span>
+<span class="kr">const</span> <span class="nx">complete</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">parte</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">// [1, 2, [3, 4], 5]</span>
+</pre>
+    </div>
+
+    <p>En este caso, tendríamos que <strong>complete</strong> es el nuevo array <code>[1, 2, 3, 4, 5]</code> que
+      buscábamos si usamos la desestructuración, pero ten en cuenta que si no utilizaramos el <code>...</code> previo al
+      <strong>pair</strong>, conseguiríamos algo muy diferente: <code>[1, 2, [3, 4], 5]</code>.
+    </p>
+  </article>
+  <!-- fontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <!-- functions -->
+  <script src="../../../../public/js/functions.js" type="module"></script>
+</body>
+
+</html>

@@ -20,8 +20,7 @@
     <p>A continuación sigue una lista con el índice de los contenidos relacionados que podemos encontrar en un documento
       HTML
       (elementos, atributos, entidades, formato, extras, etc.). </p>
-    <p><a name="top"></a>
-    </p>
+    <span id="top"></span>
     <h4>HTML</h4>
     <ul>
       <li><a href="#resumen">Evolución de HTML</a></li>
@@ -172,9 +171,7 @@
     </div>
     <hr>
     <div class="resume-box">
-      <div class="resume-box-img">
         <img src="assets/w3c_html3.2.png">
-      </div>
       <div class="resume-box-text">
         <h2>
           Año 1997:
@@ -191,9 +188,7 @@
     </div>
     <hr>
     <div class="resume-box">
-      <div class="resume-box-img">
         <img src="assets/w3c_html4.0.1.png">
-      </div>
       <div class="resume-te">
         <h2>
           Año 1999:
@@ -648,7 +643,7 @@
       etiqueta se utilizaba
       para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
     <div class="highlight" style="font-size: 20px;">
-      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
       algo que no se debe hacer en <strong>HTML5</strong>. La misión de <strong>HTML5</strong> es mantener sólo
@@ -701,7 +696,7 @@
       cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span
         style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
     <div class="highlight">
-      <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
+      <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
         etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de
@@ -924,7 +919,7 @@
     <span class="na">src</span>=<span class="s">&quot;gandalf.jpg&quot;</span>
     <span class="na">alt</span>=<span class="s">&quot;Gandalf el gris, utilizando un portátil para consultar su correo.&quot;</span>
     <span class="na">title</span>=<span class="s">&quot;¡Este es Gandalf el gris!&quot;</span> /&gt;
-&lt;<span class="nt">div</span>&gt;</pre>
+&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
     </div>
     <p><strong>El resultado sería el siguiente:</strong></p>
     <p align="center">
@@ -3774,6 +3769,10 @@ al pasar el mouse por encima y dar clic se podrá cambiar este texto<span class=
     <h3><a name="atributos-generales"></a>Atributos comunes en HTML</h3>
     <p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta</p>
   </article>
+  <!-- fontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+  <!-- functions -->
+  <script src="../../../public/js/functions.js" type="module"></script>
 </body>
 
 </html>
