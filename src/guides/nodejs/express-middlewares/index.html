@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  	<title>Middlewares en express</title>
+</head>
+<body>
+	<article class="markdown-body">
+		<h1 align="center">Middlewares en express</h1>
+	<p>Las funciones <strong>middlewares</strong> son funciones que tienen acceso al <strong>objeto request</strong> ( <em>req</em> ), al <strong>objeto de respuesta</strong> ( <em>req</em> ), al <strong>objeto respuesta</strong> ( <em>res</em> ) y a la siguiente función de middleware en el ciclo de solicitud/respuestas de la aplicación. La siguiente función de middleware se usa normalmente con una variable denominada <strong>next</strong>.</p>
+<p>Las funciones de middleware puedes realizar las siguientes tareas
+	<ul>
+		<li>Ejecutar cualquier código.</li>
+		<li>Realizar cambios en una solicitud y los objetos de respuesta.</li>
+		<li>Finalizar el ciclo de solicitud/respuesta.</li>
+		<li>Invocar la siguiente función de middleware en la pila.</li>
+	</ul></p>
+	<p>Si la función de middleware actual no finaliza el ciclo de solicitud/respuesta, dse debe llamar a <strong>next()</strong> para pasar el control a la siguiente función de middleware. De lo contrario, la solicitud quedará colgada.</p>
+
+	<h4 id="middleware-a-nivel-de-aplicacion">Middleware a nivel de aplicación</h4>
+<p>Es básicamente una instancia del <strong>objeto de aplicación</strong> utilizando las funciones <strong>app.use()</strong> y <strong>app.METHOD()</strong>, donde <strong>METHOD</strong> es el método HTTP de la solicitud que maneja la función de middleware (por ejemplo: GET, PUT, o POST) en minúsculas.</p>
+<p>En el siguiente ejemplo, tenemos una función middleware sin ninguna vía de acceso <strong>endpoint</strong> declarado. Por lo tanto la función se ejecuta cada vez que la aplicación recibe una solicitud:</p>
+	<div class="highlight">
+		<pre><span class="na">const</span> app = <span class="nt">expres</span>();
+
+app.<span class="nt">use</span>((<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="na">const</span> date = <span class="na">new</span> Date();
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Hora:&quot;</span>, date.<span class="nt">toLocaleTimeString</span>(<span class="s">&quot;es-cl&quot;</span>));
+  <span class="nx">next</span>();
+}) </pre>
+	</div>
+	<p>En el siguiente ejemplo, se muestra una función de middleware que está montada en la vía de acceso <strong>/user/:id</strong></p>
+	<div class="highlight">
+		<pre>
+app.<span class="nt">use</span>(<span class="s">&quot;/user/:id/&quot;</span>, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Tipo de solicitud:&quot;</span>, req.<span class="nx">method</span>);
+  <span class="nx">next</span>();
+})</pre>
+	</div>
+</article>
+</body>
+</html>

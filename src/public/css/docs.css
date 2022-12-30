@@ -404,6 +404,24 @@ body .markdown-body {
   border: 2px solid #000;
   box-shadow: 1px 2px 3px #000;
 }
+
+.markdown-body .tooltip-box {
+  position: absolute;
+  background: #000;
+  line-height: 20px;
+  z-index: 500;
+  text-align: center;
+  color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  bottom: 25px;
+}
+.markdown-body .tooltip-box::after {
+  content:  "";
+  display: block;
+
+}
+
 /* KBD */
 .markdown-body kbd {
   background-color: var(--light-gray);
@@ -469,8 +487,12 @@ body .markdown-body {
 }
 
 /* ICONS */
-.markdown-body .fa-clone {
-  font-size: 23px;
+
+i.fa-solid {
+    display: none;
+}
+i.fa-regular {
+  display: none;
 }
 
 /* BEFORE */
@@ -598,6 +620,7 @@ body .markdown-body {
     font-size: 14px;
     width: 100%;
   }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -609,6 +632,16 @@ body .markdown-body {
   .markdown-body {
     width: 100%;
     font-size: 16px;
+  }
+
+  i.fa-clone {
+   font-size: 23px;
+  }
+  i.fa-solid {
+    display: inline;
+  }
+  i.fa-regular {
+    display: inline;
   }
 }
 

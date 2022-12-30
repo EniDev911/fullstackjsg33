@@ -10,5 +10,9 @@ export const articulos = [
 	{
 		titulo: "Ejecutar comandos de shell con NodeJS",
 		path: "ejecutar-comandos-con-nodejs/index.html"
+	},
+	{
+		titulo: "Middlewares en express",
+		path: "express-middlewares/index.html"
 	}
 ]

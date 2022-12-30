@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-  <link rel="stylesheet" href="./assets/style.css">
 
   <title>Guía rápida HTML</title>
 </head>
@@ -612,6 +611,10 @@
         hypertexto</em> ), o lo que es lo mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo
       tipo de información.
     </p>
+    <figure>
+      <img src="./assets/html-browser-web.png" alt="como funciona html" style="background: transparent; box-shadow:none;">
+    </figure>
+
     <a name="que-es-una-etiqueta-html"></a>
     <h4><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></h4>
     <p>En el navegador <strong>Chrome</strong>, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para
@@ -934,12 +937,12 @@
     </p>
     <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
       etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
-    <h4>Metadatos (datasets)</h4>
-    <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta
-      <span class="tag">head</span> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia
-      etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.
+    <h4 id="metadatos-datasets"><a href="#metadatos-datasets">Metadatos (datasets)</a></h4>
+    <p>En HTML, veremos que la mayoría de los metadatos ( <em>información adicional</em> ) se incluyen en la etiqueta
+      <span class="tag">head</span> del documento <strong>HTML</strong>. Sin embargo, también se puede incluir metadatos en la propia
+      etiqueta a través de un atributo con prefijo <strong>data-</strong>.
     </p>
-    <p>De esta forma, podemos invetarnos cualquier atributo que contenga información, habitualmente orientada a
+    <p>De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente orientada a
       utilizarse desde javascript:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">article</span>
@@ -948,7 +951,7 @@
   <span class="na">data-modelo</span>=<span class="s">&quot;fiesta&quot;</span>
   <span class="na">data-color</span>=<span class="s">&quot;azul&quot;</span>
   <span class="na">data-asientos</span>=<span class="s">&quot;4&quot;</span>&gt;
-&lt;/<span class="nt">article</span>&gt;</pre>
+&lt;/<span class="nt">article</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
     </div>
     <p>
       En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span class="tag">&lt;article&gt;</span>, a
@@ -1031,13 +1034,11 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la
       incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
 
-    <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación <a class="headerlink"
-        href="#cabeceras" title="Permanent link">&#9875;</a></h3>
+    <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación</h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
       cabecera
-      de la página &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">head</span>&gt; y el cuerpo de la página o
-      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">body</span>&gt;. El primero de ellos,
-      del que hablaremos en este apartado, se encarga de contener <strong>etiquetas de metadatos</strong> (
+      de la página &lt;<span class="tag">head</span>&gt; y el cuerpo de la página o
+      &lt;<span class="tag">body</span>&gt;. El primero de ellos, se encarga de contener <strong>etiquetas de metadatos</strong> (
       <em>información sobre
         el documento</em> ) así como establecer <strong>relaciones con otros documentos</strong>. El segundo de ellos,
       se encarga
@@ -1092,7 +1093,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         style="color:rgb(9, 110, 192); font-weight:bold">script</span>&gt;.
     </p>
     <h4>Título y codificación</h4>
-    <p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las
+    <p>En el interior de la etiqueta <span class="tag">&lt;head&gt;</span> es aconsejable, como mínimo, indicar siempre las
       siguientes dos etiquetas:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">head</span>&gt;
@@ -1104,13 +1105,11 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       que el navegador utilice la <b>codificación
         UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en
       todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o caracteres como
-      <mark>ñ</mark>,
-      <mark>¿</mark>, <mark>¡</mark> u otros.
+      (<mark>ñ, ¿, ¡</mark>) u otros.
     </p>
-    <h3 id="cabeceras"><a name='cabeceras'></a>Cabeceras <a class="headerlink" href="#cabeceras"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="cabeceras"><a name='cabeceras'></a>Encabezados </h3>
     <p>Los encabezamientos en HTML se crean colocando un número determinado junto con la etiqueta
-      <strong><code>&lt;h&gt;</code></strong> de apertura y cierre. Esto establece el nivel de encabezamiento
+      <span class="tag">&lt;h&gt;</span> de apertura y cierre. Esto establece el nivel de encabezamiento
       deseado
       (HTML ofrece hasta seis niveles). Los encabezados posibles se pueden ver en la siguiente demostración.
     </p>
@@ -1958,18 +1957,15 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="multimedia"><a name="multimedia_"></a>Multimedia<a class="headerlink" href="#multimedia"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="multimedia"><a name="multimedia_"></a>Multimedia</h3>
     <p>En HTML5 se introduce la interesante posibilidad de <b>mostrar videos directamente</b> desde nuestro navegador.
       De hecho, si arrastramos un video a la ventana del navegador o con el clic derecho seleccionamos la opción
       <b>abrir con</b> y buscamos el navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en
-      nuestras páginas HTML tenemos que utilizar la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;, que junto a la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; podremos utilizar estas capacidades
+      nuestras páginas HTML tenemos que utilizar la etiqueta <span class="tag">&lt;video&gt;</span>, que junto a la etiqueta <span class="tag">&lt;source&gt;</span> podremos utilizar estas capacidades
       multimedia de HTML5.
     </p>
     <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">source</span>&gt; especifica recursos de
-      medios múltiples para las etiquetas &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">picture</span>&gt;,
+      medios múltiples para las etiquetas <span class="tag">&lt;picture&gt;</span>,
       &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">audio</span>&gt;, &lt;<span
         style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.</p>
     <blockquote>
