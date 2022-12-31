@@ -21,37 +21,14 @@ let template;
  */
 
 const module_change = function (module) {
-  if (module === "m-1") {
-    module_1.classList.remove("collapse"); // show
-    module_2.classList.add("collapse");
-    module_3.classList.add("collapse");
-    module_4.classList.add("collapse");
-    module_5.classList.add("collapse");
-  } else if (module === "m-2") {
-    module_1.classList.add("collapse");
-    module_2.classList.remove("collapse"); // show
-    module_3.classList.add("collapse");
-    module_4.classList.add("collapse");
-    module_5.classList.add("collapse");
-  } else if (module == "m-3") {
-    module_1.classList.add("collapse");
-    module_2.classList.add("collapse");
-    module_3.classList.remove("collapse"); // show
-    module_4.classList.add("collapse");
-    module_5.classList.add("collapse");
-  } else if (module === "m-4") {
-    module_1.classList.add("collapse");
-    module_2.classList.add("collapse");
-    module_3.classList.add("collapse");
-    module_4.classList.remove("collapse"); // show
-    module_5.classList.add("collapse");
-  } else if (module === "m-5") {
-    module_1.classList.add("collapse");
-    module_2.classList.add("collapse");
-    module_3.classList.add("collapse");
-    module_4.classList.add("collapse");
-    module_5.classList.remove("collapse"); // show
-  }
+    for (let i of [module_1, module_2, module_3, module_4, module_5]) {
+      if (module === i.dataset.name){
+        i.classList.remove("collapse"); // show
+        console.log(i.classList);
+      }else {
+         i.classList.add("collapse");
+      }
+    }
 };
 
 btns_module.forEach((btn) => {
@@ -168,3 +145,5 @@ window.addEventListener("load", () => {
 });
 
 addProject();
+
+// TEMPLATES

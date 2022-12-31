@@ -25,7 +25,7 @@
 <p>Es básicamente una instancia del <strong>objeto de aplicación</strong> utilizando las funciones <strong>app.use()</strong> y <strong>app.METHOD()</strong>, donde <strong>METHOD</strong> es el método HTTP de la solicitud que maneja la función de middleware (por ejemplo: GET, PUT, o POST) en minúsculas.</p>
 <p>En el siguiente ejemplo, tenemos una función middleware sin ninguna vía de acceso <strong>endpoint</strong> declarado. Por lo tanto la función se ejecuta cada vez que la aplicación recibe una solicitud:</p>
 	<div class="highlight">
-		<pre><span class="na">const</span> app = <span class="nt">expres</span>();
+		<pre><span class="na">const</span> app = <span class="nt">express</span>();
 
 app.<span class="nt">use</span>((<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
   <span class="na">const</span> date = <span class="na">new</span> Date();
@@ -37,10 +37,49 @@ app.<span class="nt">use</span>((<span class="nx">req</span>, <span class="nx">r
 	<div class="highlight">
 		<pre>
 app.<span class="nt">use</span>(<span class="s">&quot;/user/:id/&quot;</span>, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
-  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Tipo de solicitud:&quot;</span>, req.<span class="nx">method</span>);
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Tipo de solicitud:&quot;</span>, <span class="nx">req</span>.method);
   <span class="nx">next</span>();
 })</pre>
 	</div>
+
+<h4 id="middleware-a-nivel-de-enrutador">Middleware a nivel de enrutador</h4>
+<p>El middleware a nivel de enrutador o direccionador funciona de la misma manera que el middleware de nivel de aplicación, <strong>excepto que está enlazado a una instancia de express.Router()</strong>.</p>
+
+<div class="highlight">
+	<pre><span class="na">const</span> router = express.<span class="nt">Router</span>();</pre>
+</div>
+<p>Veamos un ejemplo completo, para replicar el sistema de middleware a nivel de aplicación en los ejemplos anteriores, pero ahora utilizando el middleware de enrutador:</p>
+<div class="highlight">
+	<pre><span class="na">const</span> app = <span class="nt">express</span>();
+<span style="background: #00000060; display: block;"><span class="na">const</span> router = <span class="nt">express</span>.<span class="nt">Router</span>();</span>
+<span class="c1">// middleware sin vía de acceso.</span>
+<span class="c1">// este código será ejecutado para cada solicitud del enrutador</span>
+router.<span class="nt">use</span>((<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="nx">next</span>();
+});
+
+<span class="c1">// middleware en la sub-pila</span>
+<span class="c1">// muestra la información del tipo de petición</span>
+router.<span class="nt">use</span>(<span class="s">&quot;/user/:id&quot;</span>, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;URL de solicitud:&quot;</span>, <span class="nx">req</span>.originalUrl);
+  <span class="nx">next</span>();
+}, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Tipo de solicitud:&quot;</span>, <span class="nx">req</span>.method);
+  <span class="nx">next</span>();
+});
+
+<span class="c1">// un middleware que obtiene que maneja la petición</span>
+<span class="c1">// a la vía de acceso /user/:id</span>
+router.<span class="nt">get</span>(<span class="s">&quot;/user/:id&quot;</span>)
+
+<span class="c1">// un manejador para la vía de acceso /user/:id</span>
+router.<span class="nt">get</span>(<span class="s">&quot;/user/:id&quot;</span>, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) => {
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="nx">req</span>.params.id);
+  <span class="nx">res</span>.<span class="nt">render</span>(<span class="s">&quot;special&quot;</span>);
+  
+})
+</pre>
+</div>
 </article>
 </body>
 </html>
