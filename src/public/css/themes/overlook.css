@@ -68,6 +68,7 @@
     font-style: italic;
     font-weight: 300;
     background: transparent;
+    font-variant-ligatures:none;
   }
 
   .highlight .cs {

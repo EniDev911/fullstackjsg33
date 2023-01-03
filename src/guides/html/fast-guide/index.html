@@ -64,7 +64,7 @@
       <li><a href="#citas">Citas</a></li>
       <li><a href="#listas">Listas</a></li>
       <li><a href="#imagenes">Imágenes</a></li>
-      <li><a href="#tablas">Tablas</a></li>
+      <li><a href="#tablas-html">Tablas</a></li>
       <li><a href="#formularios">Formularios</a></li>
       <li><a href="#multimedia_">Multimedia</a></li>
       <li><a href="#lineas">Lineas separadoras</a></li>
@@ -891,6 +891,7 @@
       con los de los primeros.<p></p>
     </blockquote>
     </p>
+    <hr>
     <h4 id="idioma-etiqueta"><a href="#idioma-etiqueta">Idioma del contenido</a></h4>
     <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de
       dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código
@@ -907,6 +908,7 @@
       específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica
       el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por
       defecto.</p>
+    <hr>
     <h4 id="titulos-tooltip"><a href="#titulos-tooltip">Títulos o tooltips</a></h4>
     <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un
       mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un
@@ -933,6 +935,7 @@
     </p>
     <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
       etiquetas <span class="tag">&lt;a&gt;</span> ( <em>enlaces</em> ) u otras.</p>
+    <hr>
     <h4 id="metadatos-datasets"><a href="#metadatos-datasets">Metadatos (datasets)</a></h4>
     <p>En HTML, veremos que la mayoría de los metadatos ( <em>información adicional</em> ) se incluyen en la etiqueta
       <span class="tag">head</span> del documento <strong>HTML</strong>. Sin embargo, también se puede incluir metadatos en la propia
@@ -961,7 +964,7 @@ article.<span class="nt">dataset</span>.<span class="nt">color</span>; <span cla
 article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span></pre>
     </div>
     <hr>
-    <h4>Atajo de teclado (accesskey)</h4>
+    <h4 id="accesskey"><a href="#accesskey">Atajo de teclado (accesskey)</a></h4>
     <p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede
       pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un
       enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse
@@ -969,7 +972,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </p>
     <div class="highlight">
       <pre>&lt;<span class="nt">form</span>&gt;
-  <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
+  <span class="c1">&lt;!-- Campo de texto --&gt;</span>
   &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;N&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+N)&quot;</span> /&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
   &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;A&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+A)&quot;</span> /&gt;
@@ -977,7 +980,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
   &lt;<span class="nt">a</span> <span class="na">accesskey</span>=<span class="s">&quot;L&quot;</span> <span class="na">href</span>=<span class="s">&quot;#&quot;</span>&gt;Enlace (ALT+L)&lt;/<span class="nt">a</span>&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Botón HTML --&gt;</span>
   &lt;<span class="nt">button</span> <span class="na">accesskey</span>=<span class="s">&quot;B&quot;</span>&gt;Botón (ALT+B)&lt;/<span class="nt">button</span>&gt;
-&lt;/<span class="nt">form</span>&gt;</pre>
+&lt;/<span class="nt">form</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
     </div>
     <p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si
       pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos
@@ -987,7 +990,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       sistemas. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo
       <strong>accesskey</strong>, tendríamos que pulsar las siguientes combinaciones de teclas:
     </p>
-    <table>
+    <table class="table">
       <thead>
         <th>Navegador</th>
         <th>Plataforma Windows</th>
@@ -996,34 +999,34 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td><strong>Chrome</strong></td>
-          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td data-label="navegador"><strong>Chrome</strong></td>
+          <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span></td>
         </tr>
         <tr>
-          <td><strong>Firefox</strong></td>
-          <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>CTRL</kbd>+<kbd>A</kbd></td>
+          <td data-label="navegador"><strong>Firefox</strong></td>
+          <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>A</kbd></span></td>
         </tr>
         <tr>
-          <td><strong>IE/Edge</strong></td>
-          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-          <td>No aplicable</td>
-          <td>No aplicable</td>
+          <td data-label="navegador"><strong>IE/Edge</strong></td>
+          <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="platadorma linux">No aplicable</td>
+          <td data-label="plataforma mac">No aplicable</td>
         </tr>
         <tr>
-          <td><strong>Safari</strong></td>
-          <td>No aplicable</td>
-          <td>No aplicable</td>
-          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td data-label="navegador"><strong>Safari</strong></td>
+          <td data-label="plataforma windows">No aplicable</td>
+          <td data-label="plataforma linux">No aplicable</td>
+          <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span></td>
         </tr>
         <tr>
-          <td><strong>Opera</strong></td>
-          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>ALT</kbd>+<kbd>A</kbd></td>
-          <td><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>A</kbd></td>
+          <td data-label="navegador"><strong>Opera</strong></td>
+          <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+          <td data-label="platadorma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span></td>
         </tr>
       </tbody>
     </table>
@@ -1126,12 +1129,13 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     </section>
+    <!-- ENLACES  -->
     <section class="markdown-body">
     <h3 id="enlaces"><a href="#enlaces">Enlaces</a></h3>
-    <p>Los enlaces nos sirven para poder direccionar a otras páginas de internet, archivos o ubicaciones dentro de
+    <p>Una de las etiquetas más importantes de HTML que nos permiten crear hipervínculos es la etiqueta <span class="tag">&lt;a&gt;</span>. Los enlaces nos sirven para poder direccionar a otras páginas de internet, archivos o ubicaciones dentro de
       la
-      misma página, direcciones de correo, o cualquier otra URL.</p>
-    <table>
+      misma página, direcciones de correo, o cualquier otra URL que haga referencia un recurso alojado en internet.</p>
+    <table class="table">
       <thead>
         <tr>
           <th>Etiqueta</th>
@@ -1140,21 +1144,20 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">a</span>&gt;
+          <td data-label="etiqueta"><span class="td-tag">&lt;a&gt;</span>
           </td>
-          <td>
+          <td data-label="descripción">
             Etiqueta para hacer rereferencia a otras páginas web o recursos como documentos o archivos.
           </td>
         </tr>
       </tbody>
     </table>
-    <p>Esta etiqueta debe tener, como mínimo, el atributo <span
-        style="color:rgb(150, 142, 53); font-weight:bold">href</span>, ya que es el atributo
+    <p>Esta etiqueta debe tener, como mínimo, el atributo <strong>href</strong>, ya que es el atributo
       con
       el que se especifica la dirección URL al documento que se quiere enlazar. Aún así, la etiqueta
       <code>&lt;a&gt;</code> también tiene varios atributos opcionales, veamos un resumen de todos ellos:
     </p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Atributo</th>
@@ -1164,24 +1167,25 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td>
-            <span style="color:rgb(150, 142, 53); font-weight:bold">href</span>
+          <td data-label="atributo">
+            <span class="td-attribute">href</span>
           </td>
-          <td>
+          <td data-label="valor">
             <u>URL</u>
           </td>
-          <td>
-            Enlace al documento que se quiere cargar: <strong>Atributo obligatorio</strong>.
+          <td data-label="descripción">
+            <span>
+            Enlace al documento que se quiere cargar: <strong>Atributo obligatorio</strong>.</span>
           </td>
         </tr>
         <tr>
-          <td>
-            <span style="color:rgb(150, 142, 53); font-weight:bold">download</span>
+          <td data-label="atributo">
+            <span class="td-attribute">download</span>
           </td>
-          <td>
+          <td data-label="valor">
             <i>"nombre.ext"</i>
           </td>
-          <td>Descarga el enlace definido en el atributo <span
+          <td data-label="descripción">Descarga el enlace definido en el atributo <span
               style="color:rgb(150, 142, 53); font-weight:bold">href</span> en lugar de abrirlo. Si se indica un
             valor,
             se renombra.</td>
@@ -1282,8 +1286,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p align="center">
       <img src="assets/url_scheme.png" alt="">
     </p>
-
-    <h4>Protocolo </h4>
+    <h4>Protocolo</h4>
     <p>
       Existen varios protocolos diferentes y es la parte inicial de la URL. Probablemente, el más utilizado sea <span
         style="color: darkcyan; font-weight: bold;">http://</span>, aunque <span
@@ -1677,9 +1680,8 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
-    <h3 id="tablas"><a name="tablas"></a>Tablas <a class="headerlink" href="#tablas" title="Permanent link">&#9875;</a>
-    </h3>
+    <section class="markdown-body">
+    <h3 id="tablas-html"><a id="#tablas-html">Tablas</a></h3>
     <p>Las <b>tablas</b> están incluidas en HTML desde sus primeras versiones y son una forma común de mostrar datos
       claramente. Además, si las construimos de forma semántica y correctamente, es muy sencillo darle estilos desde
       <strong>CSS</strong> y cambiar su diseño con algunas propiedades, puesto que mediante las etiquetas que la
@@ -1737,7 +1739,8 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
+    </section>
+    <section class="markdown-body">
     <h3 id="formularios"><a href="#formularios">Formularios</a></h3>
     <p>Uno de los aspectos más importante en un documento HTML es el uso de formularios, por lo que al día de hoy
       HTML
@@ -2001,7 +2004,9 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
+    </section>
+    <!-- MULTIMEDIA -->
+    <section class="markdown-body">
     <h3 id="multimedia"><a name="multimedia_"></a>Multimedia</h3>
     <p>En HTML5 se introduce la interesante posibilidad de <b>mostrar videos directamente</b> desde nuestro navegador.
       De hecho, si arrastramos un video a la ventana del navegador o con el clic derecho seleccionamos la opción
@@ -2276,44 +2281,9 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
-    <hr />
-    <h3 id="abreviaturas"><a name="abreviaturas"></a>Abreviaturas<a class="headerlink" href="#abreviaturas"
-        title="Permanent link">&#9875;</a></h3>
-    <p>Para crear abreviaturas HTML lo único necesario es crear una lista de ellas (normalmente al final del texto)
-      y en
-      cualquier lugar del texto que aparezca la abreviatura se aplicará automáticamente. En la tabla vemos hacerlo.
-    </p>
-    <table border="1px">
-      <thead>
-        <tr>
-          <th style="width:50%;">Tecleas</th>
-          <th>Obtienes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <pre>La especificación<br>&#60;abbr title="Hyper Text Markup Language"&#62;HTML&#60;/abbr&#62;<br>es mantenida por el<br>&#60;abbr title="World Wide Web Consortium"&#62;W3C&#60;/abbr&#62;</pre>
-          </td>
-          <td>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub><img
-                src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/devs/assets/png/web/html/abbr/html.png"
-                width="140"
-                height="25"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sub><img
-                src="/C:/Users/Marco/Desktop/Repository/guides/enidev911_guides/devs/assets/png/web/html/abbr/w3c.png"
-                width="140" height="25"></sub>
-            <p>La especificación <abbr title="Hyper Text Markup Language">HTML</abbr> es mantenida por el <abbr
-                title="World Wide Web Consortium">W3C</abbr>.</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr />
+    </section>
+    <!-- EMOJIS -->
+    <section class="markdown-body">
     <h3 id="emojis"><a name="emojis"></a>Emojis<a class="headerlink" href="#emojis" title="Permanent link">&#9875;</a>
     </h3>
     <p>En la siguiente tabla veremos los dibujos (emoji) incluidos en unicode, junto con sus respectivas entidades y
@@ -3639,7 +3609,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         </tr>
       </tbody>
     </table>
-    <p><br></p>
+    </section>
     <h3 id="atributos-globales"><a name="globals"></a>Atributos globales<a class="headerlink" href="#atributos-globales"
         title="Permanent link">&#9875;</a></h3>
     <p>Los <strong>atributos globales</strong> son comunes para todo elemento HTML, que se puedan usar no quiere

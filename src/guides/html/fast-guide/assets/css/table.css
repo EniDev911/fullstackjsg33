@@ -30,8 +30,6 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
-		text-align:  right;
-		line-height: 40px;
 		font-size: 16px;
 		width: 100%;
 	}
@@ -51,5 +49,6 @@
 		text-align: left;
 		text-transform: uppercase;
 		flex-basis: 50%;
+		margin-right: 10px;
 	}
 }
