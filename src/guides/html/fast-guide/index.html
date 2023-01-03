@@ -80,7 +80,7 @@
     </p>
     <div class="resume-box">
       <div class="resume-box-img">
-        <img src="assets/t.berners-lee.png">
+        <img src="assets/t.berners-lee.png" id="t-bers1">
       </div>
       <div class="resume-box-text">
         <h2>
@@ -1328,27 +1328,62 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     </section>
-    <h3 id="etiquetas-html-secciones">Etiquetas HTML se sección</h3>
-
-    <h4>Etiquetas semánticas</h4>
+    <!-- ETIQUETAS DE SECCION -->
+    <section class="markdown-body">
+    <h3 id="etiquetas-html-secciones">Etiquetas HTML de sección</h3>
+    <p>Antes de la llegada de HTML5, al momento de crear la estructura de una página, normalmente se utilizaban las etiquetas <span class="tag">&lt;div&gt;</span> para <strong>agrupar secciones</strong> de la página. Luego se le iban añadiendo atributis como <strong>id</strong> o <strong>clases</strong> dependiendo de la organización de los grupos y su representación dentro de la página. Una estructura como la que menciono podría ser la siguiente:</p>
+    <div class="highlight">
+      <pre>&lt;<span class="nt">div</span>&gt;
+  &lt;<span class="nt">h1</span>&gt;Título del artículo&lt;/<span class="nt">h1</span>&gt;
+  &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;intro&quot;</span>&gt;Breve introducción.&lt;/<span class="nt">p</span>&gt;
+  &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;contenido&quot;</span>&gt;Aquí va todo el contenido del artículo.&lt;/<span class="nt">p</span>&gt;
+  &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;pie&quot;</span>&gt;Escrito por John Doe.&lt;/<span class="nt">p</span>&gt;
+&lt;/<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+    </div>
+    <p>Vemos que en la estructura tenemos una agrupación que contiene todos los elementos de un artículo, donde el primer elemento es un encabezado <span class="tag">&lt;h1&gt;</span>, luego un párrafo. En <strong>HTML5</strong> se introducen una serie de etiquetas de agrupación que funcionan exactamente igual que una etiqueta <span class="tag">&lt;div&gt;</span>, pero que además tiene un significado semántico porque indican el contenido que agruparán.</p>
+<p>Recreemos el ejemplo anterior, utilizando etiquetas semánticas:</p>
+  <div class="highlight">
+      <pre>&lt;<span class="nt">article</span>&gt;
+  &lt;<span class="nt">header</span>&gt;
+    &lt;<span class="nt">h1</span>&gt;Título del artículo&lt;/<span class="nt">h1</span>&gt;
+    &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;intro&quot;</span>&gt;Breve introducción.&lt;/<span class="nt">p</span>&gt;
+  &lt;/<span class="nt">header</span>&gt;
+  &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;contenido&quot;</span>&gt;Aquí va todo el contenido del artículo.&lt;/<span class="nt">p</span>&gt;
+  &lt;<span class="nt">footer</span>&gt;
+    &lt;<span class="nt">p</span> <span class="na">class</span>=<span class="s">&quot;pie&quot;</span>&gt;Escrito por John Doe.&lt;/<span class="nt">p</span>&gt;
+  &lt;/<span class="nt">header</span>&gt;
+&lt;/<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+    </div>
+    <p>De esta forma, el documento HTML podrá ser conocido por los navegadores, robot buscadores o aplicación y cualquier sistema informático que sea capaz de leer el documento HTML e identificar dicha sección.</p>
+    <hr>
+    <h4 id="etiquetas-de-seccion-semanticas"><a href="#etiquetas-de-seccion-semanticas">Etiquetas semánticas</a></h4>
     <p>Veamos las <strong>etiquetas semánticas</strong> que se introducen en <strong>HTML5</strong> ( <em>los encabezados ya existían</em> )</p>
-<table>
+<table class="table">
   <thead>
     <th>Etiqueta</th>
     <th>Descripción</th>
   </thead>
   <tbody>
     <tr>
-      <td><span class="td-tag">&lt;article&gt;</span></td>
-      <td>Artículo. Parte principal de un escrito ( <strong>posts</strong>, <strong>mensajes en foros</strong>, <strong>comentario</strong>... )</td>
+      <td data-label="etiqueta"><span class="td-tag">&lt;article&gt;</span></td>
+      <td data-label="descripción">Artículo. Parte principal de un escrito ( <strong>posts</strong>, <strong>mensajes en foros</strong>, <strong>comentario</strong>... )</td>
     </tr>
     <tr>
-      <td><span class="td-tag">&lt;nav&gt;</span></td>
+      <td data-label="etiqueta"><span class="td-tag">&lt;nav&gt;</span></td>
+      <td data-label="descripción"><span>Apartado de navegación ( <strong>enlaces de secciones</strong>, <strong>categorías</strong>, etc... )</span></td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="td-tag">&lt;header&gt;</span></td>
+      <td data-label="descripción"><span>Cabecera visual de la página ( <strong>logotipo</strong>, <strong>título</strong>, etc... ). No confundir con <span class="td-tag">&lt;head&gt;</span>.</span></td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="td-tag">&lt;h1&gt;</span></td>
+      <td data-label="descripción">Encabezado de nivel 1. Equivalente al título del documento.</td>
     </tr>
   </tbody>
 </table>
+  </section>
 
-    <hr>
     <h3 id="parrafos"><a name="parrafos"></a>Párrafos <a class="headerlink" href="#parrafos"
         title="Permanent link">&#9875;</a></h3>
     <p>Para crear párrafos usa la etiqueta <code>&lt;p&gt;</code> se puede usar junto a la etiqueta
@@ -2018,8 +2053,8 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       medios múltiples para las etiquetas <span class="tag">&lt;picture&gt;</span>,
       &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">audio</span>&gt;, &lt;<span
         style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.</p>
-    <blockquote>
-      <span style="color:rgb(9, 110, 192); font-weight:bold">OJO</span> : Si lo que queremos es insertar videos desde
+    <blockquote class="info">
+      <strong>OJO</strong> : Si lo que queremos es insertar videos desde
       <b>Youtube</b>, <b>Vimeo</b> u otro servicio alternativo, debemos utilizar <a
         href="https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe" target="_blank">la etiqueta HTML iframe</a>
       en lugar de la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">video</span>&gt;.
@@ -2104,7 +2139,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </div>
     <p>Obtendriamos los siguientes resultados:</p>
     <div style="display:flex; width:100%;">
-      <video src="./assets/estrella_de_la_muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
+      <video src="assets/estrella_de_la_muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
         poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" controls></video>
       <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:50%" autoplay muted loop></video>
     </div>
@@ -2112,14 +2147,15 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       presentación que se mostrará hasta que el usuario pulse el botón de reproducir de los controles. En el segundo
       ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle,
       iniciándose una y otra vez.</p>
-    <blockquote>
+    <blockquote class="danger">
       <p>Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a
-          href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank">cambio de
+          href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes" target="_blank" style="color: #fff">cambio de
           políticas</a> con el
-        atributo de reproducción automática <span style="color:rgb(9, 110, 192); font-weight:bold">autoplay</span>, por
+        atributo de reproducción automática <strong>autoplay</strong>, por
         lo que no funcionará salvo que el usuario haya interactuado antes en la página.</p>
     </blockquote>
-    <h4>Formatos de video</h4>
+    <hr>
+    <h4 id="formato-videos"><a href="#formato-videos">Formatos de video</a></h4>
     <p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y
       los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video
       tiene dos partes principales: el <b>formato contenedor</b>, que es el formato del video en sí, mientras que en su
@@ -2132,7 +2168,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       formato y/o codec de un video, puede que sea factible utilizarlo para la web o no, así que hay que conocer un poco
       sobre estos conceptos.</p>
     <p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados:</p>
-    <table>
+    <table class="table">
       <thead>
         <th>Formato</th>
         <th>Codec utilizado</th>
@@ -2141,45 +2177,50 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td><span style="color:rgb(58, 74, 248); font-weight:bold">MP4</span></td>
-          <td>
+          <td data-label="formato"><span class="td-attribute">MP4</span></td>
+          <td data-label="codec utilizado">
+            <span>
             <a href="https://www.videolan.org/developers/x264.html" target="_blank">
               <span style="color:rgb(58, 74, 248);">x264</span>
             </a>,
             <a href="https://www.divx.com/en/software/technologies/h264/" target="_blank">
               <span style="color:rgb(58, 74, 248);">DivX H264</span>
             </a>
+            </span>
           </td>
-          <td>Alta calidad. Codec x264 libre.</td>
-          <td>Sí, <a href="https://caniuse.com/mpeg4" target="_blank">buen soporte</a></td>
+          <td data-label="características">Alta calidad. Codec x264 libre.</td>
+          <td data-label="¿recomendado?"><span>Sí, <a href="https://caniuse.com/mpeg4" target="_blank">buen soporte</a></span></td>
         </tr>
         <tr>
-          <td><span style="color:rgb(58, 74, 248); font-weight:bold">WebM</span></td>
-          <td>
+          <td data-label="formato"><span class="td-attribute">WebM</span></td>
+          <td data-label="codec utilizado">
+            <span>            
             <a href="https://www.3cx.es/voip-sip/vp8/" target="_blank">
               <span style="color:rgb(58, 74, 248);">VP8</span>
             </a>,
             <a href="https://es.wikipedia.org/wiki/VP9" target="">
               <span style="color:rgb(58, 74, 248);">VP9</span>
             </a>
+            </span>
           </td>
-          <td>Alternativa libre a MP4 de Google.</td>
-          <td>Sí, <a href="https://caniuse.com/webm" target="_blank">soporte medio</a></td>
+          <td data-label="características">Alternativa libre a MP4 de Google.</td>
+          <td data-label="¿recomendado?"><span>Sí, <a href="https://caniuse.com/webm" target="_blank">soporte medio</a></span></td>
         </tr>
         <tr>
-          <td><span style="color:rgb(58, 74, 248); font-weight:bold">AV1</span></td>
-          <td>Basado en <a href="https://encode.su/threads/2462-Google-VP10-video-codec" target="_blank">
+          <td data-label="formato"><span class="td-attribute">AV1</span></td>
+          <td data-label="codec utilizado"><span>Basado en <a href="https://encode.su/threads/2462-Google-VP10-video-codec" target="_blank">
               <span style="color:rgb(58, 74, 248);">VP10</span>
             </a>, <a href="https://xiph.org/daala/" target="_blank">
               <span style="color:rgb(58, 74, 248);">Daala</span></a> y <a
               href="https://en.wikipedia.org/wiki/Thor_(video_codec)" target="_blank">
               <span style="color:rgb(58, 74, 248);">Thor</span></a>
+              </span>
           </td>
-          <td>Compite con HEVC/H.265.</td>
-          <td>No, <a href="https://caniuse.com/av1" target="_blank">soporte bajo</a></td>
+          <td data-label="características">Compite con HEVC/H.265.</td>
+          <td data-label="¿recomendado?"><span>No, <a href="https://caniuse.com/av1" target="_blank">soporte bajo</a></span></td>
         </tr>
         <tr>
-          <td><span style="color:rgb(58, 74, 248); font-weight:bold">HEVC</span></td>
+          <td data-label="formato"><span class="td-attribute">HEVC</span></td>
           <td><a href="http://x265.org/" target="_blank">
               <span style="color:rgb(58, 74, 248);">x265</span>
             </a>, <a href="https://www.divx.com/en/software/technologies/hevc/" target="_blank">
