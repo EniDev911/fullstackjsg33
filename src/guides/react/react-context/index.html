@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>React Router 6</title>
+	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+</head>
+<body>
+	<article class="markdown-body">
+		<h1>React Context</h1>
+		<p>Context provee una forma de pasar datos a través del árbol de componentes sin tener que pasar <em>props</em>  manualmente en cada nivel.</p>
+	<p>En una aplicación típica de React, <strong>los datos se pasan de arriba hacia abajo</strong> ( de padre a hijo ) a través de props, pero esta forma puede resultar incómoda para ciertos tipos de props (por ejemplo, lozalización, el tema de la interfaz) que son necesarias para muchos componentes dentro de una aplicación. <strong>Context</strong> proporciona una forma de compartir valores como estos entre componentes sin tener que pasar explícitamente un prop a través de cada nivel del árbol.</p>
+
+	<h4>Cuándo usar Context</h4>
+	<p><strong>Context</strong> está diseñado para compatir datos que pueden considerar &quot;<strong>globales</strong>&quot; para un árbol de componentes en React, como el usuario autenticado actual, el tema o el idioma preferido. Por ejemplo, en el código a continuación, pasamos manualmente un prop de tema para darle estilo al componente:</p>
+
+	<div class="highlight">
+		<pre><span class="na">function</span> App() {
+  <span class="na">const</span> [theme, setTheme] = <span class="nt">useState</span>(<span class="s">&quot;light&quot;</span>);
+
+  <span class="c1">// ....</span> 
+  <span class="na">return</span>(
+    &lt;<span class="nb">ThemeContext.Provider</span> <span class="nx">value</span>={theme}&gt;
+      &lt;<span class="nb">Page</span> /&gt;
+    &lt;/<span class="nb">ThemeContext.Provider</span>&gt;
+  );
+}</pre>
+	</div>
+
+<h5>Props</h5>
+<p><ul><li><strong>value</strong>: El valor que deseamos pasar a todos los componentes que leen el contexto dentro de este proveedor, sin importar cuán profundo sea el componente (hijo, nieto, bisnieto). El valor de contexto puede ser cualquier tipo. Un componente que invoca a <strong>useContext(ThemeContext)</strong> dentro del proveedor recibe el valor de (<strong>value</strong>) del proveedor de contexto correspondiente más interno que se encuentra arriba.</li></ul>
+</p>
+<div class="highlight">
+<pre><span class="na">const</span> Button = () => {
+  <span class="na">const</span> theme = <span class="nt">useContext</span>(ThemeContext);
+  <span class="na">return</span> &lt;<span class="nb">button</span> <span class="nx">className</span>={theme} /&gt;;
+}</pre>
+</div>
+	</article>
+</body>
+</html>

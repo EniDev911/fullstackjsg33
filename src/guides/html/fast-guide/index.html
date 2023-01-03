@@ -6,13 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-
-  <title>Guía rápida HTML</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/table.css">
+  <title>Guía HTML</title>
 </head>
 
 <body>
-  <article class="markdown-body">
-    <h1>
+  <article>
+    <section class="markdown-body">
+    <h1 align="center">
       GUÍA HTML
     </h1>
 
@@ -37,14 +39,25 @@
         </ul>
       </li>
       <li>
-        <p><a href="#editores">Editores recomendados</a> &#x1f4d1;</p>
+        <p><a href="#editores-recomendados">Editores recomendados</a> 👈</p>
       </li>
-      <li><a href="#navegadores">Navegadores recomendados</a></li>
+      <li><a href="#navegadores-recomendados">Navegadores recomendados</a></li>
     </ul>
     <h4 id="contenido">CONTENIDO</h4>
     <ul>
-      <li><a href="#que-es-html">¿Qué es HTML?</a></li>
-      <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a></li>
+      <li><a href="#que-es-html">¿Qué es HTML?</a>
+        <ul>
+          <li><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></li>
+          <li><a href="#que-es-la-semantica">¿Qué es la semántica?</a></li>
+        </ul>
+      </li>
+      <li><a href="#estructura-etiqueta-html">Etructura de etiqueta de HTML</a>
+        <ul>
+          <li><a href="#etiqueta-html">Etiqueta HTML</a></li>
+          <li><a href="#atributo">Atributo</a></li>
+          <li><a href="#comentario-html">Comentario HTML</a></li>
+        </ul>
+      </li>
       <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a></li>
       <li><a href="#enlaces">Enlaces</a></li>
       <li><a href="#parrafos">De textos</a></li>
@@ -58,8 +71,8 @@
       <li><a href="#abreviaturas">Abreviaturas</a></li>
       <li><a href="#emojis">Emojis</a></li>
     </ul>
-    <hr />
-    <p><br></p>
+  </section>
+  <section class="markdown-body">
     <p><a name="resumen"></a>
     <h2 style="text-align:center">
       Historia de HTML - Resumen
@@ -315,19 +328,10 @@
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
-    <h3 id="editores-recomendados"><a name="editores"></a>Editores recomendados<a class="headerlink"
-        href="#editores-recomendados" title="Permanent link">&#9875;</a></h3>
-    <table style="color: #067CC8; text-align: center;">
-      <colgroup>
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 20%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 20%;">
-      </colgroup>
+    </section>
+    <section class="markdown-body">
+    <h3 id="editores-recomendados"><a href="#editores-recomendados">Editores recomendados</a></h3>
+    <table class="table">
       <thead>
         <tr>
           <th>Editor</th>
@@ -342,98 +346,98 @@
       <tbody>
         <!-- Visual Studio -->
         <tr>
-          <td>
-            <img src="assets/icon/vs_code.ico" width="32">
+          <td data-label="editor">
+            <img src="assets/icon/vs_code.ico">
           </td>
-          <td>
-            <a href="https://code.visualstudio.com/Download" target="_blank">Visual Studio Code</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://code.visualstudio.com/Download', '_blank')}">
+            Visual Studio Code
           </td>
-          <td>
+          <td data-label="linux">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="windows">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="mac">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="licencia">
             <a href="https://github.com/microsoft/vscode/blob/main/LICENSE.txt" target="_blank">MIT</a>
           </td>
-          <td>
+          <td data-label="código fuente">
             <a href="https://github.com/microsoft/vscode" target="_blank">microsoft/vscode</a>
           </td>
         </tr>
         <!-- SublimeText -->
         <tr>
-          <td>
-            <img src="assets/icon/sublime_text.ico" width="32">
+          <td data-label="editor">
+            <img src="assets/icon/sublime_text.ico">
           </td>
-          <td>
-            <a href="https://www.sublimetext.com/download" target="_blank">SublimeText</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://www.sublimetext.com/download', '_blank')}">
+           SublimeText
           </td>
-          <td>
+          <td data-label="linux">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="windows">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="mac">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="licencia">
             <a href="https://www.sublimetext.com/eula" target="_blank">Protected</a>
           </td>
-          <td>
+          <td data-label="código fuente">
             <img src="assets/icon/close.ico" width="32">
           </td>
         </tr>
         <!-- Atom -->
         <tr>
-          <td>
-            <img src="assets/icon/atom.ico" width="32">
+          <td data-label="editor">
+            <img src="assets/icon/atom.ico">
           </td>
-          <td>
-            <a href="https://atom.io/" target="_blank">Atom</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://atom.io/', '_blank')}">
+            Atom
           </td>
-          <td>
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="linux">
+            <img src="assets/icon/done.ico">
           </td>
-          <td>
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="windows">
+            <img src="assets/icon/done.ico">
           </td>
-          <td>
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="mac">
+            <img src="assets/icon/done.ico">
           </td>
-          <td>
+          <td data-label="licencia">
             <a href="https://github.com/microsoft/vscode/blob/main/LICENSE.txt" target="_blank">MIT</a>
           </td>
-          <td>
+          <td data-label="código fuente">
             <a href="https://github.com/atom/atom" target="_blank">atom/atom</a>
           </td>
         </tr>
         <!-- Notepad++ -->
         <tr>
-          <td>
+          <td data-label="editor">
             <img src="assets/icon/notepad++.ico" width="32">
           </td>
-          <td>
-            <a href="https://notepad-plus-plus.org/downloads/" target="_blank">Notepad++</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://notepad-plus-plus.org/downloads/', '_blank')}">
+            Notepad++
           </td>
-          <td>
+          <td data-label="linux">
             <img src="assets/icon/close.ico" width="32">
           </td>
-          <td>
+          <td data-label="windows">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td>
+          <td data-label="mac">
             <img src="assets/icon/close.ico" width="32">
           </td>
-          <td>
+          <td data-label="licencia">
             <a href="https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE"
               target="_blank">GPLv3</a>
           </td>
-          <td>
+          <td data-label="código fuente">
             <a href="https://github.com/notepad-plus-plus/notepad-plus-plus"
               target="_blank">notepad-plus-plus/notepad-plus-plus</a>
           </td>
@@ -441,22 +445,8 @@
       </tbody>
     </table>
 
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr />
-    <h3 id="navegadores-recomendados"><a name="navegadores"></a>Navegadores recomendados<a class="headerlink"
-        href="#navegadores-recomendados" title="Permanent link">&#9875;</a></h3>
-    <table style="color: #067CC8; text-align: center;">
-      <colgroup>
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 20%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 10%;">
-        <col span="1" style="width: 20%;">
-      </colgroup>
+    <h3 id="navegadores-recomendados"><a href="#navegadores-recomendados">Navegadores recomendados</a></h3>
+    <table class="table">
       <thead>
         <tr>
           <th>Navegador</th>
@@ -471,136 +461,136 @@
       <tbody>
         <!-- Chrome -->
         <tr>
-          <td align="center">
-            <img src="assets/icon/chrome.ico" width="32">
+          <td data-label="navegador">
+            <img src="assets/icon/chrome.ico">
           </td>
-          <td>
-            <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://www.google.com/chrome/', '_blank')}">
+          Google Chrome
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="linux">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="windows">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="mac">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
+          <td data-label="licencia">
             <a href="https://www.google.com/chrome/eula/" target="_blank">Protected</a>
           </td>
-          <td align="center">
-            <img src="assets/icon/close.ico" width="32">
+          <td data-label="código fuente">
+            <img src="assets/icon/close.ico">
           </td>
         </tr>
         <!-- Edge -->
         <tr>
-          <td align="center">
-            <img src="assets/icon/edge.ico" width="32">
+          <td data-label="navegador">
+            <img src="assets/icon/edge.ico">
           </td>
-          <td>
-            <a href="https://www.microsoft.com/es-es/edge" target="_blank">Microsoft Edge</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://www.microsoft.com/es-es/edge', '_blank')}">
+          Microsoft Edge
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="linux">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="windows">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="mac">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
+          <td data-label="licencia">
             <a href="https://docs.microsoft.com/en-us/legal/microsoft-edge/microsoft-edge-devtools-license-terms"
               target="_blank">Protected</a>
           </td>
-          <td align="center">
-            <img src="assets/icon/close.ico" width="32">
+          <td data-label="código fuente">
+            <img src="assets/icon/close.ico">
           </td>
         </tr>
         <!-- firefox dev -->
         <tr>
-          <td align="center">
+          <td data-label="navegador">
             <img src="assets/icon/firefoxdev.ico" width="32">
           </td>
-          <td align="center">
-            <a href="https://www.mozilla.org/es-CL/firefox/developer/" target="_blank">Firefox Developer</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://www.mozilla.org/es-CL/firefox/developer/', '_blank')}">
+          Firefox Developer
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="linux">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="windows">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="mac">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
+          <td data-label="licencia">
             <a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank">MPLv2.0</a>
           </td>
-          <td align="center">
+          <td data-label="código fuente">
             <a href="https://hg.mozilla.org/mozilla-central/" target="_blank">mozilla-central</a>
           </td>
         </tr>
         <!-- Opera -->
         <tr>
-          <td align="center">
-            <img src="assets/icon/opera.ico" width="32">
+          <td data-label="navegador">
+            <img src="assets/icon/opera.ico">
           </td>
-          <td align="center">
-            <a href="https://www.opera.com/es" target="_blank">Opera</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://www.opera.com/es', '_blank')}">
+          Opera
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="linux">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="windows">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
-            <img src="assets/icon/done.ico" width="32">
+          <td data-label="mac">
+            <img src="assets/icon/done.ico">
           </td>
-          <td align="center">
+          <td data-label="licencia">
             <a href="https://www.opera.com/es/eula/computers" target="_blank">Freeware</a>
           </td>
-          <td align="center">
-            <img src="assets/icon/close.ico" width="32">
+          <td data-label="código fuente">
+            <img src="assets/icon/close.ico">
           </td>
         </tr>
         <!-- Brave -->
         <tr>
-          <td align="center">
-            <img src="assets/icon/brave.ico" width="32">
+          <td data-label="navegador">
+            <img src="assets/icon/brave.ico">
           </td>
-          <td align="center">
-            <a href="https://brave.com/es/download/" target="_blank">Brave</a>
+          <td data-label="descarga" class="link" onclick="{window.open('https://brave.com/es/download/', '_blank')}">
+            Brave
           </td>
-          <td align="center">
+          <td data-label="linux">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td align="center">
+          <td data-label="windows">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td align="center">
+          <td data-label="mac">
             <img src="assets/icon/done.ico" width="32">
           </td>
-          <td align="center">
+          <td data-label="licencia">
             <a href="https://github.com/brave/brave-browser/blob/master/LICENSE" target="_blank">MPLv2.0</a>
           </td>
-          <td align="center">
+          <td data-label="código fuente">
             <a href="https://github.com/brave/brave-browser" target="_blank">brave/brave-browser</a>
           </td>
         </tr>
       </tbody>
     </table>
-
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
-    <a name="que-es-html"></a>
-    <h3>¿Qué es HTML?</h3>
+    </section>
+
+    <section class="markdown-body">
+    <h3 id="que-es-html"><a href="#que-es-html">¿Qué es HTML?</a></h3>
     <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro
-      navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página
+      navegador web está pidiendo un documento de texto al sistema ( <em>máquina</em> ) donde está almacenada esa página
       web.</p>
     <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cúal
       nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información
@@ -613,6 +603,7 @@
     </p>
     <figure>
       <img src="./assets/html-browser-web.png" alt="como funciona html" style="background: transparent; box-shadow:none;">
+      <figcaption>EL navegador procesa un documento html y lo interpreta</figcaption>
     </figure>
 
     <a name="que-es-una-etiqueta-html"></a>
@@ -630,8 +621,8 @@
         incorrecto utilizar la etiqueta &lt;&lt;etiqueta&gt;&gt;</em> ). En su lugar, existen una serie de etiquetas
       concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera
       la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
-    <a name="que-es-la-semantica"></a>
-    <h4><a href="#que-es-la-semantica">¿Qué es la semántica?</a></h4>
+      <!-- QUÉ ES LA SEMÁNTICA -->
+    <h4 id="que-es-la-semantica"><a href="#que-es-la-semantica">¿Qué es la semántica?</a></h4>
     <p>Uno de los principales objetivos de <strong>HTML5</strong> es introducir información en un documento de forma que
       sea
       semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse para el apartado de
@@ -641,61 +632,61 @@
       individualizada, de modo que leer una página HTML comprendamos su significado, y si queremos cambiar la
       apariencia, lo hagamos desde CSS. Esto es lo que com&uacute;nmente se conoce como <strong>separación de la
         presentación del contenido</strong>.</p>
-    <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; de <strong>HTML4</strong> y anteriores. Dicha
+    <p>Un ejemplo donde se ve claramente esto es con la etiqueta &lt;<span class="tag">b</span>&gt; de <strong>HTML4</strong> y anteriores. Dicha
       etiqueta se utilizaba
-      para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
+      para poner en <strong>negrita</strong> ( <em>bold</em> ) un texto específico:</p>
     <div class="highlight" style="font-size: 20px;">
       <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">b</span>&gt;palabra&lt;/<span class="nt">b</span>&gt;.&lt;/<span class="nt">p</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML,
+    <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> ( <em>visual</em> ) en el <strong>HTML</strong>,
       algo que no se debe hacer en <strong>HTML5</strong>. La misión de <strong>HTML5</strong> es mantener sólo
       contenido de información semántica. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para
-      HTML5 es la siguiente:</p>
+      <strong>HTML5</strong> es la siguiente:</p>
     <div class="highlight" style="font-size: 20px;">
-      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt;</pre>
+      <pre>&lt;<span class="nt">p</span>&gt;Hola, quiero resaltar esta &lt;<span class="nt">strong</span>&gt;palabra&lt;/<span class="nt">strong</span>&gt;.&lt;/<span class="nt">p</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    <p>En este nuevo ejemplo, se remplaza la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">b</span>&gt; (<em>negrita, característica de presentación</em>)
-      por &lt;<span style="color:rgb(9, 110, 192); font-weight:bold;">strong</span>&gt;, una etiqueta que indica
-      información semántica (<em>importante, característica semántica</em>). De esta forma, en el documento de
+    <p>En este nuevo ejemplo, se remplaza la etiqueta &lt;<span class="tag">b</span>&gt; ( <em>negrita, característica de presentación</em> )
+      por &lt;<span class="tag">strong</span>&gt;, una etiqueta que indica
+      información semántica ( <em>importante, característica semántica</em> ). De esta forma, en el documento de
       <strong>HTML5</strong> sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos
       dotar de presentación visual, lo haremos desde <strong>CSS</strong>:
     </p>
-
-    <div class="highlight" style="font-size:20px">
+    <div class="highlight">
       <pre><span class="nt">strong</span> {
   <span class="kr">font-weight</span>: bold;
   <span class="kr">color</span>: black;
-}</pre>
+}<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
     </div>
-    <p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente
-      de la información y contenido que existe en HTML. Incluso podríamos establecer el mismo estilo en el texto, para
-      que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá
+    <p>De esta forma podríamos cambiar el estilo ( <em>negrita, colores, tipo de letra, etc...</em> ) independientemente
+      de la información y contenido que existe en <strong>HTML</strong>. Incluso podríamos establecer el mismo estilo en el texto, para
+      que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página <strong>HTML</strong>, el navegador sabrá
       siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
-    <p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para
+    <p>El objetivo de crear documentos <strong>HTML</strong> semánticos es que, aunque estamos acostumbrados a crear páginas para
       usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una internet capaz de procesar
       información de forma autónoma. Muestra de ello son, por ejemplo, los robot o crawlers de buscadores como
-      <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para
+      <strong>Googlebot</strong> ( <em>el robot de búsqueda de Google</em> ) que es capaz de acceder a páginas web para
       analizar la información de la misma, entenderla e indexarla en su buscador.
     </p>
-    <hr>
-    <a name="estructura-etiqueta-html"></a>
-    <h3><a href="#estructura-etiqueta-html">Estructura de una etiqueta HTML </a></h3>
+  <p><a href="#top"><img alt="boton-top"
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+  </section>
+  <section class="markdown-body">
+    <h3 id="estructura-etiqueta-html"><a href="#estructura-etiqueta-html">Estructura de una etiqueta HTML </a></h3>
     <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas
       etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
     <p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
     <p align="center">
       <img src="./assets/etiqueta-estructura.png" alt="estructura de una etiqueta"
-        style="width: 100%; box-shadow: 2px 2px 6px #00000090;">
+        style="border-radius: 0; border: 2px solid #000; box-shadow: 2px 2px 3px #00000090;">
     </p>
-    <h4>Etiqueta HTML</h4>
-    <p>La parte esencial de una etiqueta HTML es lo que se denomina <strong>etiqueta de apertura</strong>. Se trata de
-      escribir el nombre de la etiqueta en cuestión, colocándola entre los caracteres <mark>&lt;</mark> y
-      <mark>&gt;</mark>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre
+    <h4 id="etiqueta-html"><a href="#etiqueta-html">Etiqueta HTML</a></h4>
+    <p>La parte esencial de una etiqueta <strong>HTML</strong> es lo que se denomina <strong>etiqueta de apertura</strong>. Se trata de
+      escribir el nombre de la etiqueta en cuestión, colocándola entre los caracteres <code class="path">&lt;</code> ...
+      <code class="path">&gt;</code>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre
       escribir las etiquetas siempre en minúsculas.
     </p>
-    <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existe una serie específica de etiquetas,
+    <p>En <strong>HTML5</strong> no se puede colocar cualquier palabra como etiqueta, sino que existe una serie específica de etiquetas,
       cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span
         style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
     <div class="highlight">
@@ -703,15 +694,15 @@
     </div>
     <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
         etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de
-      apertura, pero con la barra <mark>/</mark> inmediatamente después del <mark>&lt;</mark></p>
-    <h4>Atributo</h4>
+      apertura, pero con la barra diagonal inmediatamente después del símbolo menor que <code class="path">&lt;/...&gt;</code>.</p>
+    <h4 id="atributo"><a href="#atributo">Atributo</a></h4>
     <p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u
         obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>)
       y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después
-      del nombre de la etiqueta, separándola por espacio y antes del carácter <mark>&gt;</mark> de la etiqueta de
+      del nombre de la etiqueta, separándola por espacio y antes del carácter <code class="path">&gt;</code> de la etiqueta de
       apertura:</p>
     <div class="highlight">
-      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;</pre>
+      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de
       <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es
@@ -729,7 +720,7 @@
         valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el
           atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
     </ul>
-    <h4>Contenido de la etiqueta</h4>
+    <h4 id="contenido-de-la-etiqueta"><a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a></h4>
     <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>)
       se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve
       como contiene un <strong>fragmento de texto</strong>:</p>
@@ -753,28 +744,32 @@
       texto, sino que además incluye otra etiqueta, <span
         style="color: rgb(9, 110, 192); font-weight:bold">&lt;strong&gt;</span> en este caso. Esto ocurre en las
       etiquetas de agrupación, que iremos viendo pronto.</p>
-    <h4>Comentario HTML</h4>
+    <h4 id="comentario-html"><a href="#comentario-html">Comentario HTML</a></h4>
     <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se
       basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear
       la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo
       importante o simplemente introducir algún comentario que consideremos relevante:</p>
     <div class="highlight">
-      <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span></pre>
+      <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto
       entre <span
         style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!--
         --&gt;</span> para que sea ignorado.</p>
-
-    <a name='atributos-comunes-html'></a>
-    <h3><a href="#atributos-comunes-html" title="Permanent link">Atributos comunes en HTML</a> &#9875;</h3>
+  <p><a href="#top"><img alt="boton-top"
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+</section>
+<!-- ATRIBUTOS COMUNES -->
+<section class="markdown-body">
+    <h3 id="atributos-comunes-html"><a href="#atributos-comunes-html">Atributos comunes en HTML</a></h3>
     <p>Como hemos visto, HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y
       contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son
       palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
-    <p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en
+    <p>A continuación, vemos una lista de <strong>atributos comunes</strong> que pueden ser utilizados en
       <strong>cualquier etiqueta HTML</strong>.
     </p>
-    <table>
+    <table class="table">
       <thead>
         <th>Atributo</th>
         <th>Valor</th>
@@ -782,58 +777,58 @@
       </thead>
       <tbody>
         <tr>
-          <td><span class="td-attribute">id</span></td>
-          <td><em>nombre</em></td>
-          <td>Establece un <strong>identificador</strong> a la etiqueta HTML (sólo una por página con ese nombre).</td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#identificador-etiqueta'}"><span class="td-attribute">id</span></td>
+          <td data-label="valor"><em>nombre</em></td>
+          <td data-label="descripción">Establece un identificador a la etiqueta HTML (sólo una por página con ese nombre).</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">class</span></td>
-          <td><em>nombre</em></td>
-          <td>Establece una <strong>clase</strong> (género) a una etiqueta HTML (puede repetirse por página).</td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#clases-etiqueta'}"><span class="td-attribute">class</span></td>
+          <td data-label="valor"><em>nombre</em></td>
+          <td data-label="descripción">Establece una clase (género) a una etiqueta HTML (puede repetirse por página).</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">lang</span></td>
-          <td><em>idioma</em></td>
-          <td>Indica el idioma del contenido de la etiqueta HTML.</td>
+          <td data-label="atributo"><span class="td-attribute">lang</span></td>
+          <td data-label="valor"><em>idioma</em></td>
+          <td data-label="descripción">Indica el idioma del contenido de la etiqueta HTML.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">translate</span></td>
-          <td><strong>yes</strong> | no</td>
-          <td>Indica si el contenido de la etiqueta es traducible o no.</td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#idioma-etiqueta'}"><span class="td-attribute">translate</span></td>
+          <td data-label="valor"><span><strong>yes</strong> | no</span></td>
+          <td data-label="descripción">Indica si el contenido de la etiqueta es traducible o no.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">title</span></td>
-          <td><em>título</em></td>
-          <td>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el
-            <strong><em>mouse</em></strong> por encima.
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#titulos-tooltip'}"><span class="td-attribute">title</span></td>
+          <td data-label="valor"><em>título</em></td>
+          <td data-label="descripción"><span>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el
+            <strong><em>mouse</em></strong> por encima.</span>
           </td>
         </tr>
         <tr>
-          <td><span class="td-attribute">data-*</span></td>
-          <td><em>nombre</em></td>
-          <td>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span
-              class="td-attribute">data-</span>.</td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#metadatos-datasets'}"><span class="td-attribute">data-*</span></td>
+          <td data-label="valor"><em>nombre</em></td>
+          <td data-label="descripción"><span>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span
+              class="td-attribute">data-</span>.</span></td>
         </tr>
         <tr>
-          <td><span class="td-attribute">accesskey</span></td>
-          <td><em>atajo</em></td>
-          <td>Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
+          <td data-label="atributo"><span class="td-attribute">accesskey</span></td>
+          <td data-label="valor"><em>atajo</em></td>
+          <td data-label="descripción">Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">dir</span></td>
-          <td><strong>ltr</strong> | rtl</td>
-          <td>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>)</td>
+          <td data-label="atributo"><span class="td-attribute">dir</span></td>
+          <td data-label="valor"><span><strong>ltr</strong> | rtl</span></td>
+          <td data-label="descripción"><span>Establece la direccionalidad del texto (<em>left to right</em> o <em>right to left</em>)</span></td>
         </tr>
         <tr>
-          <td><span class="td-attribute">style</span></td>
-          <td><em>estilos</em></td>
-          <td>Aplica propiedades CSS directamente al elemento en cuestión.</td>
+          <td data-label="atributo"><span class="td-attribute">style</span></td>
+          <td data-label="valor"><em>estilos</em></td>
+          <td data-label="descripción">Aplica propiedades CSS directamente al elemento en cuestión.</td>
         </tr>
       </tbody>
     </table>
-    <h4>Identificador de etiqueta (id)</h4>
+    <h4 id="identificador-etiqueta"><a href="#identificador-etiqueta">Identificador de etiqueta (id)</a></h4>
     <p>
-      En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos
+      En <strong>HTML</strong>, podemos darle un identificador a una etiqueta <strong>HTML</strong> y de esta forma darle un nombre. Simplemente, añadimos
       el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no
       debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión,
         guión bajo...</em>) o números:
@@ -843,7 +838,7 @@
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt;</pre>
+&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
     </div>
     <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no
         se van a repetir en esa misma página</strong>.</p>
@@ -856,8 +851,8 @@
     <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos
       utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
     <hr>
-    <h4>Clases de etiquetas (class)</h4>
-    <p>Las clases funcionan de forma muy similar a los id, pero son mucho más flexibles. En primero lugar, no tienen la
+    <h4 id="clases-etiqueta"><a href="#clases-etiqueta">Clases de etiquetas (class)</a></h4>
+    <p>Las clases funcionan de forma muy similar a los <strong>id</strong>, pero son mucho más flexibles. En primero lugar, no tienen la
       limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por
       página.</p>
     <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos
@@ -867,7 +862,7 @@
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt;</pre>
+&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
     </div>
     <p>Como podemos ver, al tener la misma clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;, podemos realizar acciones
       para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo de eso
@@ -881,7 +876,7 @@
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio primero&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio ultimo&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt;</pre>
+&lt;<span class="nt">div</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
     </div>
     <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y
       <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y
@@ -896,7 +891,7 @@
       con los de los primeros.<p></p>
     </blockquote>
     </p>
-    <h4>Idioma del contenido</h4>
+    <h4 id="idioma-etiqueta"><a href="#idioma-etiqueta">Idioma del contenido</a></h4>
     <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de
       dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código
         ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo
@@ -904,14 +899,15 @@
     </p>
     <div class="highlight">
       <pre>&lt;<span class="nt">p</span>&gt;
-  Hace algunos días fuí a ver la nueva película de &lt;<span class="nt">span</span> <span class="na">translate</span>=<span class="s">&quot;no&quot;</span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
-&lt;/<span class="nt">p</span>&gt;</pre>
+  Hace algunos días fuí a ver la nueva película de 
+  &lt;<span class="nt">span</span> <span class="na">translate</span>=<span class="s">&quot;no&quot;</span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
+&lt;/<span class="nt">p</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
     </div>
     <p>De esta forma, le indicamos al naevagador o a herramientas como <strong>Google translator</strong>, que esa frase
       específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica
       el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por
       defecto.</p>
-    <h4>Títulos o tooltips</h4>
+    <h4 id="titulos-tooltip"><a href="#titulos-tooltip">Títulos o tooltips</a></h4>
     <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un
       mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un
       instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que
@@ -936,7 +932,7 @@
       atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.
     </p>
     <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
-      etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
+      etiquetas <span class="tag">&lt;a&gt;</span> ( <em>enlaces</em> ) u otras.</p>
     <h4 id="metadatos-datasets"><a href="#metadatos-datasets">Metadatos (datasets)</a></h4>
     <p>En HTML, veremos que la mayoría de los metadatos ( <em>información adicional</em> ) se incluyen en la etiqueta
       <span class="tag">head</span> del documento <strong>HTML</strong>. Sin embargo, también se puede incluir metadatos en la propia
@@ -1122,7 +1118,6 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         on <a href="https://codepen.io">CodePen</a>.</span>
     </p>
     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
     <p>A estos elementos se le pueden incluir los <strong>atributos globales</strong></p>
     <blockquote>
       <p>El atributo <code>align</code> es obsoleto; no debe usarse</p>
@@ -1130,9 +1125,9 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
-    <h3 id="enlaces"><a name="enlaces"></a>Enlaces <a class="headerlink" href="#enlaces"
-        title="Permanent link">&#9875;</a></h3>
+    </section>
+    <section class="markdown-body">
+    <h3 id="enlaces"><a href="#enlaces">Enlaces</a></h3>
     <p>Los enlaces nos sirven para poder direccionar a otras páginas de internet, archivos o ubicaciones dentro de
       la
       misma página, direcciones de correo, o cualquier otra URL.</p>
@@ -1329,7 +1324,28 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
+    </section>
+    <h3 id="etiquetas-html-secciones">Etiquetas HTML se sección</h3>
+
+    <h4>Etiquetas semánticas</h4>
+    <p>Veamos las <strong>etiquetas semánticas</strong> que se introducen en <strong>HTML5</strong> ( <em>los encabezados ya existían</em> )</p>
+<table>
+  <thead>
+    <th>Etiqueta</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="td-tag">&lt;article&gt;</span></td>
+      <td>Artículo. Parte principal de un escrito ( <strong>posts</strong>, <strong>mensajes en foros</strong>, <strong>comentario</strong>... )</td>
+    </tr>
+    <tr>
+      <td><span class="td-tag">&lt;nav&gt;</span></td>
+    </tr>
+  </tbody>
+</table>
+
+    <hr>
     <h3 id="parrafos"><a name="parrafos"></a>Párrafos <a class="headerlink" href="#parrafos"
         title="Permanent link">&#9875;</a></h3>
     <p>Para crear párrafos usa la etiqueta <code>&lt;p&gt;</code> se puede usar junto a la etiqueta
@@ -1707,7 +1723,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       <code>&lt;tbody&gt;</code> dentro <code>&lt;tbody&gt;</code> indicamos cada fila con la etiqueta
       <code>&lt;tr&gt;</code> y separamos los campos con la etiqueta <code>&lt;td&gt;</code>. Ejemplo:
     <p align="center">
-      <img src="assets/table/01.png" alt="tabla" width="650" height="500">
+      <img src="assets/table/01.png" alt="tabla">
     </p>
     </p>
     <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBoWVmz" data-preview="true"
@@ -1722,8 +1738,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="formularios"><a name="formularios"></a>Formularios <a class="headerlink" href="#formularios"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="formularios"><a href="#formularios">Formularios</a></h3>
     <p>Uno de los aspectos más importante en un documento HTML es el uso de formularios, por lo que al día de hoy
       HTML
       con HTML5 a evolucionado bastante, por lo que han añadido etiquetas nuevas para crear nuevos controles en los
@@ -1731,18 +1746,36 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       diferentes controles en la tabla a continuación. </p>
     <h4>Contenedor de formulario</h4>
     <p>Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora
-      <code>&lt;form&gt;</code>, que incluirá toda la información que se quiere recoger en ese formulario:
+      <span class="tag">&lt;form&gt;</span>, que incluirá toda la información que se quiere recoger en ese formulario:
     </p>
 
     <div class="highlight">
-      <pre>&lt;<span class="nt">form</span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
+      <pre>&lt;<span class="nt">form</span>&gt;
+<span class="c1">&lt;!-- Campos a a utilizar, por ejemplo: --&gt;</span>
+<span class="c1">&lt;!-- * Campos de texto --&gt;</span>
+<span class="c1">&lt;!-- * Campos de selección o selección múltiple --&gt;</span>
+<span class="c1">&lt;!-- * Casillas de verificación --&gt;</span>
+&lt;/<span class="nt">form</span>&gt;</pre>
     </div>
+    <p><strong>Ejemplo:</strong></p>
+    <p>
+      <form action="#">
+        <input type="text" style="font-size:22px;margin-bottom: 7px;"><br>
+        <select name="" id="" style="font-size:22px">
+          <option value="html">html</option>
+          <option value="css">css</option>
+          <option value="javascript">javascript</option>
+        </select><br>
+
+        <input type="checkbox" name="" id="">
+      </form>
+    </p>
     <p>De esta forma, se puede incluso crear varias etiquetas
-      <code>&lt;form&gt;</code> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno
+      <span class="tag">&lt;form&gt;</span> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno
       para
       realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email.
     </p>
-    <p>La etiqueta <code>&lt;form&gt;</code> dispone de varios <b>atributos</b> para utilizar:</p>
+    <p>La etiqueta <span class="tag">&lt;form&gt;</span> dispone de varios <b>atributos</b> para utilizar:</p>
     <table>
       <thead>
         <tr>
@@ -1753,44 +1786,44 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td><b>action</b></td>
+          <td><span class="td-attribute">action</span></td>
           <td><u>URL</u></td>
           <td>Dirección URL del back-end donde se enviará la información del formulario.</td>
         </tr>
         <tr>
-          <td><b>method</b></td>
+          <td><span class="td-attribute">method</span></td>
           <td><strong>get</strong> | <strong>post</strong></td>
           <td>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
             información.</td>
         </tr>
         <tr>
-          <td><b>name</b></td>
+          <td><span class="td-attribute">name</span></td>
           <td>nombre</td>
           <td>Nombre del formulario. Útil para procesar posteriormente.</td>
         </tr>
         <tr>
-          <td><b>target</b></td>
+          <td><span class="td-attribute">target</span></td>
           <td>destino</td>
           <td>Nombre del lugar donde se abrirá el formulario. <span style="color: rgb(81, 81, 255)">\_blank</span> para
             nueva pestaña.</td>
         </tr>
         <tr>
-          <td><b>enctype</b></td>
+          <td><span class="td-attribute">enctype</span></td>
           <td>tipo</td>
           <td>Codificación para el envió del formulario. Importante para envió de archivos.</td>
         </tr>
         <tr>
-          <td><b>accept-charset</b></td>
+          <td><span class="td-attribute">accept-charset</span></td>
           <td>codificación</td>
           <td>Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
         </tr>
         <tr>
-          <td><b>autocomplete</b></td>
+          <td><span class="td-attribute">autocomplete</span></td>
           <td><b>on</b> | off</td>
           <td>Activa o desactiva el autocompletado para todos los campos del formulario.</td>
         </tr>
         <tr>
-          <td><b>novalidate</b></td>
+          <td><span class="td-attribute">novalidate</span></td>
           <td>boolean</td>
           <td>Con este atributo presente, el formulario obvia la validación HTML5.</td>
         </tr>
@@ -1803,20 +1836,19 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <div class="highlight">
       <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
     </div>
-    <p>Aquí se definen 3 atributos base en &lt;<span style="color:rgb(174, 174, 5); font-weight:bold">form</span>&gt;:
+    <p>Aquí se definen 3 atributos base en <span class="tag">&lt;form&gt;:
     </p>
     <ul>
-      <li>En <span style="color:rgb(174, 174, 5); font-weight:bold">action</span> se indica la dirección donde se
+      <li>En <strong>action</strong> se indica la dirección donde se
         enviarán los datos cuando el usuario haga clic en el botón enviar. En caso de omitirse esta información, se
         enviarían los datos a la propia página actual, volviéndola a cargar.</li>
       <li>
-        En <span style="color:rgb(174, 174, 5); font-weight:bold">method</span> se define el tipo de método HTTP a
+        En <strong>method</strong> se define el tipo de método HTTP a
         utilizar. Utilizaremos el método <span style="color:rgb(31, 116, 220); font-weight:bold">GET</span> cuando nos
-        interese que los datos se envíen en la propia URL. En caso contrario, <span
-          style="color:rgb(31, 116, 220); font-weight:bold">POST</span>.
+        interese que los datos se envíen en la propia URL. En caso contrario, <strong>POST</strong>.
       </li>
       <li>
-        En <span style="color:rgb(174, 174, 5); font-weight:bold">name</span> el nombre del formulario para cuando
+        En <strong>name</strong> el nombre del formulario para cuando
         necesitemos hacer referencia a él (<i>generalmente desde javascript o desde backend</i>).
       </li>
     </ul>
@@ -1892,7 +1924,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;, dependiendo del valor indicado en el atributo
       <b>type</b> realizará una tarea u otra.
     </p>
-    <h4>La etiqueta "input"</h4>
+    <h4 id="etiqueta-input">La etiqueta "input"</h4>
     <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; tiene una gran cantidad
       de atributos (<i>algunos dependiendo del valor del type, que mostraremos más adelante</i>). Estos son los
       atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la
@@ -1948,11 +1980,24 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </table>
     <p>El atributo <span style="color:rgb(197, 182, 52); font-weight:bold">type</span> nos permitirá indicar que tipo de
       campo de dato mostrará en el navegador (<i>text, number, date..., los veremos luego</i>). Mediante el atributo
-      <span style="color:rgb(197, 182, 52); font-weight:bold">name</span> le daremos un nombre al campo de texto, así
+      <strong>name</strong> le daremos un nombre al campo de texto, así
       cuando enviemos la información, podremos manejarla desde javascript o desde el back-end haciendo referencia a
       dicho nombre.
     </p>
-
+    <p>La etiqueta <strong>HTML</strong> <span class="tag">&lt;input&gt;</span> puede tomar diferentes valores en su atrobuto <strong>type</strong> para permitir al usuario introducir información, además de otra etiqueta denominada <span class="tag">&lt;textarea&gt;</span> para introducir cantidades más grande de texto.</p>
+<table>
+  <thead>
+    <th>Tipo de información</th>
+    <th>Etiqueta</th>
+    <th>Ejemplo</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Texto alfanumérico libre corto</td>
+      <td><span class="td-tag">&lt;input type=&quot;text&quot;&gt;</span></td>
+    </tr>
+  </tbody>
+</table>  
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -2005,7 +2050,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           <td>Establece un nombre para un grupo de contenidos multimedia.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(167, 154, 45); font-weight:bold">autoplay</span></td>
+          <td><span class="td-attribute">autoplay</span></td>
           <td><b>boolean</b></td>
           <td>Comienza a reproducir el video automáticamente.</td>
         </tr>
@@ -2054,7 +2099,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </div>
     <p>Obtendriamos los siguientes resultados:</p>
     <div style="display:flex; width:100%;">
-      <video src="./assets/Estrella_De_La_Muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
+      <video src="./assets/estrella_de_la_muerte.mp4" style="width:50%; margin-right:5px" type="video/mp4"
         poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" controls></video>
       <video src="https://enidev911.github.io/assets/media/two.mp4" style="width:50%" autoplay muted loop></video>
     </div>
@@ -3762,8 +3807,6 @@ al pasar el mouse por encima y dar clic se podrá cambiar este texto<span class=
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr>
-    <h3><a name="atributos-generales"></a>Atributos comunes en HTML</h3>
-    <p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta</p>
   </article>
   <!-- fontAwesome CDN -->
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>

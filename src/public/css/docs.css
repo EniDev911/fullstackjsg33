@@ -53,6 +53,8 @@ body .markdown-body {
   -webkit-text-size-adjust: 100%;
   color: var(--foreground-paragraphs);
   font-weight: var(--paragraphs-weight);
+  line-height: 23px;
+
 }
 
 .markdown-body a {
@@ -601,6 +603,9 @@ i.fa-regular {
     display: none;
   }
   a[href*="../"]{
+    display: none;
+  }
+  .markdown-body iframe[src*="replit"] {
     display: none;
   }
 }

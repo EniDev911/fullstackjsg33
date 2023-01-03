@@ -1,0 +1,55 @@
+.table td img {
+	height: 36px;
+	width: 36px;
+	vertical-align: middle;
+}
+.table th {
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.table {
+		border: none;
+		box-shadow: none !important;
+	}
+	.table thead {
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td {
+		display: block;
+		width:  100%;
+	}
+
+	.table tr {
+		border: 2px solid #777;
+		margin-bottom: 15px;
+	}
+
+	.table td {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		text-align:  right;
+		line-height: 40px;
+		font-size: 16px;
+		width: 100%;
+	}
+	.table td img {
+		height: 32px;
+		width: 32px;
+		vertical-align: middle;
+	}
+	.table td:nth-child(even) {
+		background: #ddd;
+	}
+
+	.table td::before {
+		content: attr(data-label);
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		text-transform: uppercase;
+		flex-basis: 50%;
+	}
+}
