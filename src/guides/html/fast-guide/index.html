@@ -961,7 +961,7 @@
 article.<span class="nt">dataset</span>.<span class="nt">marca</span>; <span class="c1">// ford</span>
 article.<span class="nt">dataset</span>.<span class="nt">modelo</span>; <span class="c1">// fiesta</span>
 article.<span class="nt">dataset</span>.<span class="nt">color</span>; <span class="c1">// azul</span>
-article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span></pre>
+article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
     </div>
     <hr>
     <h4 id="accesskey"><a href="#accesskey">Atajo de teclado (accesskey)</a></h4>
@@ -1032,8 +1032,12 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </table>
     <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la
       incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
-
-    <h3 id="cabeceras"><a name='etiquetas-relacion'></a>Etiquetas HTML de relación</h3>
+    <p><a href="#top"><img alt="boton-top"
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+</section>
+<section class="markdown-body">
+    <h3 id="etiquetas-relacion"><a href='#etiquetas-relacion'>Etiquetas HTML de relación</a></h3>
     <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
       cabecera
       de la página &lt;<span class="tag">head</span>&gt; y el cuerpo de la página o
@@ -1043,9 +1047,8 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       se encarga
       de la parte visual que se mostrará al usuario en su navegador.
     </p>
-    <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera (&lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">head</span>&gt;) del documento:</p>
-    <table>
+    <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera (<span class="tag">&lt;head&gt;</span>) del documento:</p>
+    <table class="table">
       <thead>
         <tr>
           <th>Etiqueta</th>
@@ -1055,79 +1058,86 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">title</span>&gt;</td>
-          <td></td>
-          <td>Título de la página (pestaña o título del navegador o en buscadores).</td>
+          <td data-label="etiqueta"><span class="td-tag">&lt;title&gt;</span></td>
+          <td data-label="atributos"></td>
+          <td data-label="descripción">Título de la página (pestaña o título del navegador o en buscadores).</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">base</span>&gt;</td>
-          <td><b>href</b>, <b>target</b></td>
-          <td>URL base del documento ( <i>usado para gestionar rutas relativas</i> ).</td>
+          <td data-label="etiqueta"><span class="td-tag">&lt;base&gt;</span></td>
+          <td data-label="atributos"><span><b>href</b>, <b>target</b></span></td>
+          <td data-label="descripción">URL base del documento ( <i>usado para gestionar rutas relativas</i> ).</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">link</span>&gt;</td>
-          <td><b>href</b>, <b>hreflang</b>, <b>rel</b>, <b>media</b>, <b>type</b></td>
-          <td>Establece una relación del documento actual con otro externo.</td>
+          <td data-label="etiqueta"><span class="td-tag">&lt;link&gt;</span></td>
+          <td data-label="atributos"><span><span class="td-attribute">href</span>, <span class="td-attribute">hreflang</span>, <b>rel</b>, <span class="td-attribute">media</span>, <b>type</b></span></td>
+          <td data-label="descripción">Establece una relación del documento actual con otro externo.</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">meta</span>&gt;</td>
-          <td><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b></td>
-          <td>Establece un metadato específico en el documento actual.</td>
+          <td data-label="etiqueta"><span class="td-tag">&lt;meta&gt;</span></td>
+          <td data-label="atributos"><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b></td>
+          <td data-label="descripción">Establece un metadato específico en el documento actual.</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">style</span>&gt;</td>
+          <td><span class="td-tag">&lt;style&gt;</span></td>
           <td><b>media</b>, <b>type</b></td>
           <td>Crea estilos CSS que afectarán únicamente al documento actual.</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">script</span>&gt;</td>
-          <td><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>, <b>defer</b></td>
-          <td>Indica un script a cargar o ejecutar en la página actual.</td>
+          <td data-label="etiqueta"><span class="td-tag">&lt;script&gt;</span></td>
+          <td data-label="atributos"><span><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>, <b>defer</b></span></td>
+          <td data-label="descripción">Indica un script a cargar o ejecutar en la página actual.</td>
         </tr>
       </tbody>
     </table>
     <p>Existen dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo,
       actualmemte también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas
-      &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">style</span>&gt; y &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">script</span>&gt;.
+      <span class="html-tag">style</span> y <span class="html-tag">script</span>.
     </p>
-    <h4>Título y codificación</h4>
-    <p>En el interior de la etiqueta <span class="tag">&lt;head&gt;</span> es aconsejable, como mínimo, indicar siempre las
+    <h4 id="titulo-y-codificacion"><a href="#titulo-y-codificacion">Título y codificación</a></h4>
+    <p>En el interior de la etiqueta <span class="html-tag">head</span> es aconsejable, como mínimo, indicar siempre las
       siguientes dos etiquetas:</p>
-    <div class="highlight" style="font-size: 20px;">
+    <div class="highlight">
       <pre>&lt;<span class="nt">head</span>&gt;
   &lt;<span class="nt">title</span>&gt;Título del documento&lt;/<span class="nt">title</span>&gt;
   &lt;<span class="nt">meta</span> <span class="na">charset</span>=<span class="s">&quot;utf-8&quot;</span>/&gt;
-&lt;<span class="nt">head</span>&gt;</pre>
+&lt;<span class="n2MGNWrfkTk">head</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
     </div>
-    <p>En este ejemplo, la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">meta</span>&gt; indica
+    <p>En este ejemplo, la etiqueta <span class="html-tag">meta</span> indica
       que el navegador utilice la <b>codificación
         UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en
       todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o caracteres como
-      (<mark>ñ, ¿, ¡</mark>) u otros.
+      <code class="path">ñ, ¿, ¡</code> u otros.
     </p>
-    <h3 id="cabeceras"><a name='cabeceras'></a>Encabezados </h3>
-    <p>Los encabezamientos en HTML se crean colocando un número determinado junto con la etiqueta
-      <span class="tag">&lt;h&gt;</span> de apertura y cierre. Esto establece el nivel de encabezamiento
-      deseado
-      (HTML ofrece hasta seis niveles). Los encabezados posibles se pueden ver en la siguiente demostración.
-    </p>
+    <p>Para evitar ese tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
+    <ol>
+      <li>Utilizar siempre la etiqueta <span class="html-tag">meta charset="utf-8"</span> en la cabecera del documento.</li>
+      <li>Guardar el archivo HTML con codificación <strong>UTF-8</strong> en las opciones del editor a utilizar.</li>
+      <li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web.</li>
+    </ol>
+    <hr>
+    <h4 id="otros-documentos"><a href="#otros-documentos">Otros documentos</a></h4>
+    <p>Como vimos en la tabla anterior, la etiqueta <span class="html-tag">link</span> permite establecer relaciones con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que un documento HTML está relacionado con otro documento ( <em>independientemente del formato que sea</em> ) y así relacionarse entre ellos.</p>
+    <p>Veamos algunos ejemplos de relaciones que se pueden establecer.</p>
 
-    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYdPjaz" data-preview="true"
-      data-editable="true" data-user="EniDev911"
-      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/LYdPjaz">
-          Encabezados</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-    <p>A estos elementos se le pueden incluir los <strong>atributos globales</strong></p>
-    <blockquote>
-      <p>El atributo <code>align</code> es obsoleto; no debe usarse</p>
-    </blockquote>
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
+    <h4 id="versiones-alternativas"><a href='#versiones-alternativas'>Versiones alternativas</a></h4>
+    <p>Con el valor <strong>alternate</strong> en el atributo <strong>rel</strong> de la etiqueta <span class="html-tag">link</span> podemos indicar que el documento actual tiene versiones alternativas en otros formatos o idiomas. El siguiente ejemplo indica que el documento HTML que estamos leyendo tiene una versión en PDF, y además, una versión HTML en inglés:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">link</span> <span class="na">rel</span>=<span class="s">&quot;alternate&quot;</span> <span class="na">href</span>=<span class="s">&quot;document.pdf&quot;</span> <span class="na">type</span>=<span class="s">&quot;application/pdf&quot;</span> /&gt;
+  &lt;<span class="nt">link</span> <span class="na">rel</span>=<span class="s">&quot;alternate&quot;</span> <span class="na">href</span>=<span class="s">&quot;document-en.html&quot;</span> <span class="na">hreflang</span>=<span class="s">&quot;en&quot;</span> /&gt;
+&lt;/<span class="nt">head</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+<h4 id="referencia-de-datos"><a href="#referencia-de-datos">Referencia de datos</a></h4>
+<p>El atributo <strong>rel</strong> también nos permite indicar el tipo de relación que tiene el documento referenciado. Por ejemplo, a continuación indicamos una referencia al autor del documento, a la zona de ayuda, la zona de búsqueda y la licencia que cubre el contenido de la página:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">link</span> <span class="na">rel</span>=<span class="s">&quot;author&quot;</span> <span class="na">href</span>=<span class="s">&quot;http://twitter.com/EniDev911&quot;</span> /&gt;
+
+
+&lt;/<span class="nt">head</span>&gt;</pre>
+</div>
+<p><a href="#top"><img alt=""
+    src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a></p>
     </section>
     <!-- ENLACES  -->
     <section class="markdown-body">
@@ -1191,31 +1201,30 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
             se renombra.</td>
         </tr>
         <tr>
-          <td>
-            <span style="color:rgb(150, 142, 53); font-weight:bold">target</span>
+          <td data-label="atributo">
+            <span class="td-attribute">target</span>
           </td>
-          <td>
-            <b>"_blank"</b>
+          <td data-label="valor">
+            <span><b>"_blank"</b></span>
           </td>
-          <td>
+          <td data-label="descripción">
             Abre el enlace en una nueva pestaña
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"_self"</b></td>
-          <td>Abre el enlace en la pestaña o &lt;<span
-              style="color:rgb(9, 110, 192); font-weight:bold">iframe</span>&gt; actual.</td>
+          <td data-label="atributo" data-label2="target"></td>
+          <td data-label="valor"><b>"_self"</b></td>
+          <td data-label="descripción"><span>Abre el enlace en la pestaña o <span class="html-tag">iframe</span> actual.</span></td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"_parent"</b></td>
-          <td>Abre el enlace en el documento padre.</td>
+          <td data-label="atributo" data-label2="target"></td>
+          <td data-label="valor"><b>"_parent"</b></td>
+          <td data-label="descripción">Abre el enlace en el documento padre.</td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"_top"</b></td>
-          <td>Abre el enlace en el documento raíz. (padre global)</td>
+          <td data-label="atributo" data-label2="target"></td>
+          <td data-label="valor"><b>"_top"</b></td>
+          <td data-label="descripción">Abre el enlace en el documento raíz. (padre global)</td>
         </tr>
         <tr>
           <td></td>
@@ -1383,7 +1392,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
   </tbody>
 </table>
   </section>
-
+  <section class="markdown-body">
     <h3 id="parrafos"><a name="parrafos"></a>Párrafos <a class="headerlink" href="#parrafos"
         title="Permanent link">&#9875;</a></h3>
     <p>Para crear párrafos usa la etiqueta <code>&lt;p&gt;</code> se puede usar junto a la etiqueta
@@ -1590,34 +1599,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
 
-    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRxKMje" data-preview="true"
-      data-editable="true" data-user="EniDev911"
-      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/GRxKMje">
-          formato</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr />
-    <h3 id="citas"><a name="citas"></a>Citas <a class="headerlink" href="#citas" title="Permanent link">&#9875;</a>
-    </h3>
-    <p>Para crear bloques de cita, se emplea la etiqueta <code>&lt;blockquote&gt;</code>. En la siguiente tabla se
-      pueden ver las opciones para crearlos.</p>
-
-
-    <p><a href="https://codepen.io/EniDev911/pen/oNqvogR"><img src="https://badges.aleen42.com/src/codepen.svg"
-          alt="codepen logo" height="27"></a>
-      <br>
-    </p>
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr />
-    <h3 id="listas"><a name="listas"></a>Listas <a class="headerlink" href="#listas" title="Permanent link">&#9875;</a>
+   <h3 id="listas"><a name="listas"></a>Listas <a class="headerlink" href="#listas" title="Permanent link">&#9875;</a>
     </h3>
     <p>HTML permite crear dos tipos de listas, ordenadas con la etiqueta <code>&lt;ul&gt;</code> y desordenadas con
       la
@@ -1715,6 +1697,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
+</section>
     <section class="markdown-body">
     <h3 id="tablas-html"><a id="#tablas-html">Tablas</a></h3>
     <p>Las <b>tablas</b> están incluidas en HTML desde sus primeras versiones y son una forma común de mostrar datos

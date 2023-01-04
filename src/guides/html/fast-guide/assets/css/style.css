@@ -54,6 +54,17 @@ figcaption {
   text-align: center;
 }
 
+.html-tag {
+  font-weight: bold;
+  color:  #306dcb;
+}
+.html-tag::before {
+  content: "\02C2";
+}
+.html-tag::after {
+  content: "\02C3";
+}
+
 /*HOVER*/
 td.link:hover {
   background: #00000040;
