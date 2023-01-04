@@ -1448,8 +1448,48 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           <td data-label="dominio"><strong>.org</strong></td>
           <td data-label="descripción">Originalmente para organizaciones, actualmente la tercera opción más utilizada.</td>
         </tr>
+        <tr>
+          <td data-label="dominio"><strong>.dev</strong></td>
+          <td data-label="dominio"><span>Sitios webs orientados al mundo del desarrollo o programación ( <em><u>developers</u></em> ).</span></td>
+        </tr>
       </tbody>
     </table>
+    <hr>
+    <h4 id="partes-de-url"><a href="partes-de-url">Partes de la URL</a></h4>
+    <p>
+      <ul>
+        <li><strong>Rutas:</strong> La parte de la ruta de una página web es equivalente a las carpetas o directorios donde almacenamos nuestros archivos. En el caso que una dirección termine en esta parte y no indique nada más, generalmete, el servidor que aloja la página web dirige al usuario a una página llamada <strong>index.html</strong> o <strong>index.htm</strong> por defecto. Esto es configurable en la parte del servidor, y depende totalmente de la configuración del servidor web utilizado.</li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li><strong>Página o documento:</strong> La última parte de la URL suele ser el documento HTML. En algunos casos, la extensión <strong>.html</strong> es abreviada como <strong>.htm</strong>. Dependiendo del servidor web y los componentes instalados, es posible que utilicen otro tipo de documentos con lenguajes de programación del lado del servidor, como podría ser por ejemplo <strong>principal.php</strong>. Si se trata de otro documento, como un archivo PDF o un video, el navegador intentará abrirlo directamente, y si no puede, lo descargará para que el usuario lo pueda abrir con alguna aplicación predeterminada del sistema.</li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li><strong>Query strings:</strong> Una parte no mencionada anteriormente son las cadenas de consulta del usuario, más frecuentemente utilizadas en lenguajes como <strong>javascript</strong> o lenguajes de programación del lado del servidor. Básicamente, son variables que contienen información y se envían en la URL, como por ejemplo, en la búsqueda de Google:</li>
+      </ul>
+    </p>
+    <p>
+      <table class="table">
+        <thead>
+          <th>URL</th>
+          <th>Variable</th>
+          <th>Contenido</th>
+          <th>Significado</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="URL"><span><span class="td-attribute">https://www.google.com/</span><mark>search?q=iguana</mark></span></td>
+            <td data-label="variable"><strong>q</strong></td>
+            <td data-label="contenido">iguana</td>
+            <td data-label="significado">Busca "iguana"</td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
@@ -1457,7 +1497,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <!-- ETIQUETAS DE SECCION -->
     <section class="markdown-body">
     <h3 id="etiquetas-html-secciones">Etiquetas HTML de sección</h3>
-    <p>Antes de la llegada de HTML5, al momento de crear la estructura de una página, normalmente se utilizaban las etiquetas <span class="tag">&lt;div&gt;</span> para <strong>agrupar secciones</strong> de la página. Luego se le iban añadiendo atributis como <strong>id</strong> o <strong>clases</strong> dependiendo de la organización de los grupos y su representación dentro de la página. Una estructura como la que menciono podría ser la siguiente:</p>
+    <p>Antes de la llegada de HTML5, al momento de crear la estructura de una página, normalmente se utilizaban las etiquetas <span class="tag">&lt;div&gt;</span> para <strong>agrupar secciones</strong> de la página. Luego se le iban añadiendo atributos como <strong>id</strong> o <strong>clases</strong> dependiendo de la organización de los grupos y su representación dentro de la página. Una estructura como la que menciono podría ser la siguiente:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span>&gt;
   &lt;<span class="nt">h1</span>&gt;Título del artículo&lt;/<span class="nt">h1</span>&gt;
