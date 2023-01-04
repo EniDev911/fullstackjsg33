@@ -69,16 +69,55 @@ figcaption {
   display: flex;
   gap:  17px;
 }
-/*HOVER*/
-td.link:hover {
-  background: #00000040;
-  cursor: pointer;
+
+.table-entities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 18px;
+  box-shadow: 1px 2px 3px #000;
 }
+
+.table-entities-lg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 18px;
+  box-shadow: 1px 2px 3px #000; 
+}
+
+.table-entities-lg .cell-entity {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #555;
+  padding: 10px 15px;
+  text-align: center;
+}
+.table-entities .cell-entity {
+  border: 2px solid #555;
+  padding: 10px 15px;
+  text-align: center;
+}
+/*HOVER*/
+@media(hover: hover){
+
+  td.link:hover {
+    background: #00000040;
+    cursor: pointer;
+  }
+  .cell-entity:hover {
+    background: #00000020;
+    cursor: pointer;
+  }
+}
+
   @media (max-width: 730px) {
+
     .resume-box {
       grid-template-columns: 1fr;
     }
     .container-fav {
       flex-direction: column;
+    }
+    .table-entities {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
