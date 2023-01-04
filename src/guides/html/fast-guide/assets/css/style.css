@@ -60,10 +60,10 @@ figcaption {
 }
 .html-tag::before {
   /*content: "\02C2";*/
-  content: "\276E";
+  content: "<";
 }
 .html-tag::after {
-  content: "\276F";
+  content: ">";
 }
 
 .container-fav {
