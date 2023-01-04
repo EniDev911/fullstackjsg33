@@ -65,6 +65,10 @@ figcaption {
   content: "\02C3";
 }
 
+.container-fav {
+  display: flex;
+  gap:  17px;
+}
 /*HOVER*/
 td.link:hover {
   background: #00000040;
@@ -73,5 +77,8 @@ td.link:hover {
   @media (max-width: 730px) {
     .resume-box {
       grid-template-columns: 1fr;
+    }
+    .container-fav {
+      flex-direction: column;
     }
   }
