@@ -120,4 +120,7 @@ figcaption {
     .table-entities {
       grid-template-columns: repeat(2, 1fr);
     }
+    .table-entities-lg {
+      grid-template-columns: 1fr;
+    }
   }
