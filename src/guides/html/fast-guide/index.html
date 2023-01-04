@@ -1343,42 +1343,34 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           <td data-label="descripción">Indica que el enlace ofrece ayuda para la página actual.</td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"license"</b></td>
-          <td>Indica que la página actual está cubierta por la licencia referenciada.</td>
+          <td data-label="atributo" data-label2="rel"></td>
+          <td data-label="valor"><b>"license"</b></td>
+          <td data-label="descripción">Indica que la página actual está cubierta por la licencia referenciada.</td>
         </tr>
         <tr>
-          <td></td>
+          <td data-label="atributo" data-label2="rel"></td>
           <td><b>"prev"</b></td>
           <td>Indica que el enlace es la parte previa del documento actual.</td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"next"</b></td>
-          <td>Indica que el enlace es la parte siguiente del documento actual.</td>
+          <td data-label="atributo" data-label2="rel"></td>
+          <td data-label="valor"><strong>"next"</strong></td>
+          <td data-label="descripción">Indica que el enlace es la parte siguiente del documento actual.</td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"nofollow"</b></td>
-          <td>Indica que el enlace no está supervisado por el autor del sitio web.</td>
+          <td data-label="atributo" data-label2="rel"></td>
+          <td data-label="valor"><b>"nofollow"</b></td>
+          <td data-label="descripción">Indica que el enlace no está supervisado por el autor del sitio web.</td>
         </tr>
         <tr>
-          <td></td>
-          <td><b>"noreferrer"</b></td>
-          <td>El navegador no envía la página de procedencia al visitar el enlace.</td>
+          <td data-label="atributo" data-label2="rel"></td>
+          <td data-label="valor"><strong>"noreferrer"</strong></td>
+          <td data-label="descripción">El navegador no envía la página de procedencia al visitar el enlace.</td>
         </tr>
       </tbody>
     </table>
     <p>El soporte del atributo <b>download</b> podría no funcionar en navegadores en versiones muy antiguas</p>
-    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNzeZvN" data-preview="true"
-      data-user="EniDev911"
-      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/WNzeZvN">
-          Enlaces</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
+    <hr>
     <h4>Esquema de una URL</h4>
     <p>Al indicarse una URL, tenemos formas de escribirlas. Conviene conocer bien la estructura de una URL, para
       diferenciar cada una de sus partes. Este sería el esquema completo de un enlace:</p>
@@ -1480,15 +1472,43 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         </thead>
         <tbody>
           <tr>
-            <td data-label="URL"><span><span class="td-attribute">https://www.google.com/</span><mark>search?q=iguana</mark></span></td>
+            <td data-label="url"><span><span class="td-attribute">https://www.google.com/</span><mark>search?q=iguana</mark></span></td>
             <td data-label="variable"><strong>q</strong></td>
             <td data-label="contenido">iguana</td>
             <td data-label="significado">Busca "iguana"</td>
           </tr>
+          <tr>
+            <td data-label="url"><span><span class="td-attribute">https://www.google.com/</span><mark>search?q=iguana&tbm=isch</mark></span></td>
+            <td data-label="variable"><span>[<strong>q</strong>, <strong>tbm</strong>]</span></td>
+            <td data-label="contenido"><span>[iguana, isch]</span></td>
+            <td data-label="significado">Busca "iguana" en Google imágenes</td>
+          </tr>
         </tbody>
       </table>
     </p>
-
+    <p>
+      <ul>
+        <li><strong>Ancla:</strong> Por último tenemos el ancla, que no es más que un fragmento de texto precedido por un carácter <code class="path">#</code>. Al encontrarse con esto, el navegador busca una etiqueta HTML que tenga un atributo <strong>id</strong> con ese texto, y posiciona al usuario en esa parte de la página. Se utiliza para acceder directamente o <strong>permalinks</strong> o secciones concretas de una página. Obviamente, esta parte es opcional.</li>
+      </ul>
+    </p>
+    <h4 id="estado-de-un-enlace"><a href="#estado-de-un-enlace">Estado de un enlace</a></h4>
+    <p>Por defecto, los enlaces tienen 3 estados diferentes:</p>
+    <p>
+      <ul>
+        <li><strong>Enlaces sin visitas:</strong> Un enlace que no ha sido visitado aún ( <em>pseudoclase:link</em> en CSS ) es representado por los navegadores como un enlace de color azul y subrayado. Se suele aconsejar no realizar cambios bruscos en los estilos de los enlaces, ya que los usuarios que no están acostumbrados al sitio web no reconocerán instantáneamente un enlace si no es de color azul <strong>y/o</strong> está subrayado.</li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li><strong>Enlaces visitados:</strong> Un enlace que ha sido visitado previamente ( <em>pseudoclase:visited</em> en CSS ) es representado por los navegadores como un enlace de color lila y subrayado.</li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li><strong>Enlaces activos:</strong> Un enlace está en estado activo ( <em>pseudoclase:active</em> en CSS ) cuando el usuario está pulsando sobre el enlace con el ratón y a la misma vez no ha dejado de pulsar en él. Se suele utilizar para destacar el clic visualmente.</li>
+      </ul>
+    </p>
+    
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
