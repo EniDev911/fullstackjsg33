@@ -59,10 +59,11 @@ figcaption {
   color:  #306dcb;
 }
 .html-tag::before {
-  content: "\02C2";
+  /*content: "\02C2";*/
+  content: "\276E";
 }
 .html-tag::after {
-  content: "\02C3";
+  content: "\276F";
 }
 
 .container-fav {
