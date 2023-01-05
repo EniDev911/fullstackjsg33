@@ -38,7 +38,7 @@
 
 body {
   width: 100%;
-  margin: auto;
+  margin: 0;
 }
 
 
@@ -618,11 +618,13 @@ i.fa-regular {
   body {
     width: 100%;
     margin: 0;
+    padding: 0;
   }
 
   .markdown-body {
     font-size: 14px;
     width: 100%;
+    margin: 0;
   }
 
 }
