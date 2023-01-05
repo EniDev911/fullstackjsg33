@@ -74,7 +74,6 @@ figcaption {
 .table-entities {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  font-size: 18px;
   box-shadow: 1px 2px 3px #000;
 }
 
@@ -82,21 +81,29 @@ figcaption {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   font-size: 18px;
-  box-shadow: 1px 2px 3px #000; 
+  grid-gap: 15px;
 }
 
 .table-entities-lg .cell-entity {
   display: flex;
   flex-direction: column;
   border: 2px solid #555;
-  padding: 10px 15px;
+  padding-top: 10px;
   text-align: center;
+  font-size: 40px;
+}
+
+.table-entities-lg .cell-entity code {
+  font-size: 18px;
+  margin-top: 15px;
+  border-radius: 0;
 }
 .table-entities .cell-entity {
   border: 2px solid #555;
   padding: 10px 15px;
   text-align: center;
 }
+
 /*HOVER*/
 @media(hover: hover){
 
@@ -105,8 +112,7 @@ figcaption {
     cursor: pointer;
   }
   .cell-entity:hover {
-    background: #00000020;
-    cursor: pointer;
+    /*cursor: pointer;*/
   }
 }
 
@@ -125,3 +131,9 @@ figcaption {
       grid-template-columns: 1fr;
     }
   }
+
+@media(min-width: 1400px) {
+  .table-entities-lg {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
