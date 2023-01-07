@@ -1521,9 +1521,28 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         <tr>
           <td data-label="tipo de ruta">Sin ruta</td>
           <td data-label="ejemplo"><strong>logo.png</strong></td>
-          <td data-label="¿Dónde se busca?"><span>En la misma carpeta del documento <strong>.html</strong> actual</span></td>
+          <td data-label="¿dónde se busca?"><span>En la misma carpeta del documento <strong>.html</strong> actual</span></td>
         </tr>
-
+      <tr>
+        <td data-label="tipo de ruta">Relativa ascendente</td>
+        <td data-label="ejemplo"><strong>img/logo.png</strong></td>
+        <td data-label="¿dónde se busca?"><span>En la carpeta <strong>img</strong> de la carpeta actual.</span></td>
+      </tr>
+      <tr>
+        <td data-label="tipo de ruta">Relativa descendente</td>
+        <td data-label="ejemplo"><strong>../logo.png</strong></td>
+        <td data-label="¿dónde se busca?">En la carpeta anterior a la actual.</td>
+      </tr>
+      <tr>
+        <td data-label="tipo de ruta">Relativa global</td>
+        <td data-label="ejemplo"><strong>/img/logo.png</strong></td>
+        <td data-label="¿dónde se busca?"><span>El primer <code class="path">/</code> simboliza el principio de la URL.</span></td>
+      </tr>
+      <tr>
+        <td data-label="tipo de ruta">Absoluta</td>
+        <td data-label="ejemplo"><strong>https://pagina.com/img/logo.png</strong></td>
+        <td data-label="¿dónde se busca?">Exactamente en la URL indicada.</td>
+      </tr>
       </tbody>
     </table>
     <p><a href="#top"><img alt=""
@@ -1533,7 +1552,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <!-- ETIQUETAS DE SECCION -->
     <section class="markdown-body">
     <h3 id="etiquetas-html-secciones">Etiquetas HTML de sección</h3>
-    <p>Antes de la llegada de HTML5, al momento de crear la estructura de una página, normalmente se utilizaban las etiquetas <span class="tag">&lt;div&gt;</span> para <strong>agrupar secciones</strong> de la página. Luego se le iban añadiendo atributos como <strong>id</strong> o <strong>clases</strong> dependiendo de la organización de los grupos y su representación dentro de la página. Una estructura como la que menciono podría ser la siguiente:</p>
+    <p>Antes de la llegada de HTML5, al momento de crear la estructura de una página, normalmente se utilizaban las etiquetas <span class="html-tag">div</span> para <strong>agrupar secciones</strong> de la página. Luego se le iban añadiendo atributos como <strong>id</strong> o <strong>clases</strong> dependiendo de la organización de los grupos y su representación dentro de la página. Una estructura como la que menciono podría ser la siguiente:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span>&gt;
   &lt;<span class="nt">h1</span>&gt;Título del artículo&lt;/<span class="nt">h1</span>&gt;
@@ -1582,9 +1601,112 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       <td data-label="etiqueta"><span class="html-tag">h1</span></td>
       <td data-label="descripción">Encabezado de nivel 1. Equivalente al título del documento.</td>
     </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">h2</span></td>
+      <td data-label="descripción">Encabezado de nivel 2. Equivalente al tema del documento.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">h3</span></td>
+      <td data-label="descripción">Encabezado de nivel 3. Equivalente a la sección de un tema.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">h4</span></td>
+      <td data-label="descripción">Encabezado de nivel 4. Equivalente a un apartado de una sección</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">h5</span></td>
+      <td data-label="descripción">Encabezado de nivel 5. Equivalente a un ejemplo del apartado.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">h6</span></td>
+      <td data-label="descripción">Encabezado de nivel 6. Equivalente a un subapartado del ejemplo.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">footer</span></td>
+      <td data-label="descripción"><span>Pie de página de una sección ( <em>o del documento completo</em> ).</span></td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">section</span></td>
+      <td data-label="descripción">Sección o grupo temático de contenido. No usar sólo para dar estilo.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">aside</span></td>
+      <td data-label="descripción">Agrupación de contenido no relacionado con el tema principal del documento.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">address</span></td>
+      <td data-label="descripción">Agrupación con la información de contacto del autor del artículo o documento.</td>
+    </tr>
   </tbody>
 </table>
+<p>
+  <blockquote class="info">
+    <p>Podemos utilizar las etiquetas <span class="html-tag">article</span> pueden contener otras etiquetas <span class="html-tag">article</span>, como por ejemplo comentarios dentro de un artículos:</p>
+  </blockquote>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">article</span> <span class="nb">class</span>=<span class="s">&quot;post&quot;</span>&gt;
+  &lt;<span class="nt">p</span>&gt;Esto sería el texto del artículo.&lt;/<span class="nt">p</span>&gt;
+  &lt;<span class="nt">article</span> <span class="nb">class</span>=<span class="s">&quot;comentario&quot;</span>&gt;
+    &lt;<span class="nt">p</span>&gt;Estos sería el texto del comentario&lt;/<span class="nt">p</span>&gt;
+  &lt;/<span class="nt">article</span>&gt;
+&lt;/<span class="nt">article</span>&gt;<i class="fa-solid  fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre></div>
+</p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
   </section>
+   <section class="markdown-body">
+    <h3 id="tablas-html"><a id="#tablas-html">Tablas</a></h3>
+    <p>Las <b>tablas</b> están incluidas en HTML desde sus primeras versiones y son una forma común de mostrar datos
+      claramente. Además, si las construimos de forma semántica y correctamente, es muy sencillo darle estilos desde
+      <strong>CSS</strong> y cambiar su diseño con algunas propiedades, puesto que mediante las etiquetas que la
+      componen se puede hacer referencia a cada parte de la misma.
+    </p>
+    <p>Una tabla puede ser sencilla o compleja, dependiendo de nuestro objetivo y la cantidad de etiquetas o atributos
+      a
+      utilizar. Así pues, veamos primero las <b>etiquetas básicas</b> para crear una tabla de la forma más sencilla
+      posible:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etiqueta</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">table</span></td>
+          <td data-label="descripción">Etiqueta contenedora que tendrá en su interior toda la tabla.</td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">tr</span></td>
+          <td data-label="descripción"><span><strong>Table Row</strong>. Etiqueta contenedora de cada fila de la tabla.</span></td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">td</span></td>
+          <td data-label="descripción"><span><strong>Table Data</strong>. Etiqueta contenedora de cada una de las celdas de la tabla.</span></td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">th</span></td>
+          <td data-label="descripción"><span><strong>Table Header</strong>. Etiqueta contenedora de cada una de las celdas de cabecera de la tabla.</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Crear tablas con HTML es algo más largo en cuanto al uso de etiquetas pero sumamente sencillo, simplemente
+      debemos indicar dentro de la etiqueta <span class="html-tag">table</span> cuales son los elementos de la cabecera
+      usando
+      las etiqueta <span class="html-tag">thead</span>, y todo lo que es el contenido de las respectivas filas con la
+      etiqueta
+      <span class="html-tag">tbody</span> dentro <span class="html-tag">tbody</span> indicamos cada fila con la etiqueta
+      <span class="html-tag">tr</span> y separamos los campos con la etiqueta <span class="html-tag">td</span>. Ejemplo:
+    <p align="center">
+      <img src="assets/table/01.png" alt="tabla">
+    </p>
+    </p>
+    <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </p>
+    </section>
   <section class="markdown-body">
     <h3 id="parrafos"><a name="parrafos"></a>Párrafos <a class="headerlink" href="#parrafos"
         title="Permanent link">&#9875;</a></h3>
@@ -1841,13 +1963,14 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
+    <!-- IMAGENES  -->
     <h3 id="imagenes"><a name="imagenes"></a>Imágenes <a class="headerlink" href="#imagenes"
         title="Permanent link">&#9875;</a></h3>
-    <p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <code>&lt;img&gt;</code>, que es
+    <p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <span class="html-tag">img</span>, que es
       una
       etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen ( <em>los
         atributos
-        src y alt son obligatorios</em> ): </p>
+        <strong>src</strong> y <strong>alt</strong> son obligatorios</em> ): </p>
     <table>
       <thead>
         <tr>
@@ -1857,100 +1980,123 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       </thead>
       <tbody>
         <tr>
-          <td><code>src</code></td>
-          <td>Indica el nombre de la URL de la imagen a mostrar. (<strong>Obligatorio</strong>)</td>
+          <td data-label="atributo"><span class="td-attribute">src</span></td>
+          <td data-label="descripción"><span>Indica el nombre de la URL de la imagen a mostrar. (<strong>Obligatorio</strong>)</span></td>
         </tr>
         <tr>
-          <td><code>alt</code></td>
-          <td>Establece un texto alternativo que describa la imagen a mostrar. (<strong>Obligatorio</strong>)</td>
+          <td data-label="atributo"><span class="td-attribute">alt</span></td>
+          <td data-label="descripción"><span>Establece un texto alternativo que describa la imagen a mostrar. (<strong>Obligatorio</strong>)</span></td>
         </tr>
         <tr>
-          <td><code>width</code></td>
-          <td>Indica el ancho de la imagen en píxels (sin la unidad px).</td>
+          <td data-label="atributo"><span class="td-attribute">width</span></td>
+          <td data-label="descripción">Indica el ancho de la imagen en píxels (sin la unidad px).</td>
         </tr>
         <tr>
-          <td><code>height</code></td>
-          <td>Indica el alto de la imagen en píxels (sin la unidad px).</td>
+          <td data-label="atributo"><span class="td-attribute">height</span></td>
+          <td data-label="descripción">Indica el alto de la imagen en píxels (sin la unidad px).</td>
         </tr>
       </tbody>
     </table>
-    <h4 id="formatos-de-imagenes">Formatos de imágenes<a class="headerlink" href="#formatos-de-imagenes"
-        title="Permanent link">&#9875;</a></h4>
+    <h4 id="formatos-de-imagenes"><a href="#formatos-de-imagenes">Formatos de imágenes</a></h4>
+  <p>En el ámbito informático existen múltiples formatos de imágenes, pero no todos son aptos para utilizar en el web. Vamos a ver algunos de los formatos y ver cuáles son los más apropiados:</p>
+<table>
+  <thead>
+    <th>Formato</th>
+    <th>Características</th>
+    <th>¿Recomendando?</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="formato"><strong>PNG</strong></td>
+      <td data-label="características">Soporta transparencia. Compresión sin pérdidas.</td>
+      <td data-label="¿recomendando?">Sí</td>
+    </tr>
+    <tr>
+      <td data-label="formato"><strong>JPG</strong></td>
+      <td data-label="características">Compresión con pérdidas. Ideal para imágenes con texturas</td>
+      <td data-label="¿recomendando?">Sí</td>
+    </tr>
+    <tr>
+      <td data-label="formato"><strong>SVG</strong></td>
+      <td data-label="características">Formato vectorial. Ideal para imágenes escalables.</td>
+      <td data-label="¿recomendando?">Sí</td>
+    </tr>
+    <tr>
+      <td data-label="formato"><strong>GIF</strong></td>
+      <td data-label="características">Formato para imágenes pequeñas y animadas.</td>
+      <td data-label="¿recomendando?">Intentar evitar</td>
+    </tr>
+    <tr>
+      <td data-label="formato"><strong>WEBP</strong></td>
+      <td data-label="características">Alternativa libre de Google al JPG. Soporta transparencias.</td>
+      <td data-label="¿recomendando?">Sí, con precaución</td>
+    </tr>    
+  </tbody>
+</table>
+<h4 id="nuevas-etiquetas-imagenes-html5"><a href="#nuevas-etiquetas-imagenes-html5">Nuevas etiquetas de imágenes</a></h4>
+<p><strong>HTML5.1</strong> incorpora un nuevo sistema para utilizar imágenes en nuestros documentos HTML de forma mucho más flexible que la tradicional etiqueta <span class="html-tag">img</span> que nos permiirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, podemos utilizar las siguientes etiquetas:</p>
+<table class="table">
+  <thead>
+    <th>Etiqueta</th>
+    <th>Atributos</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">picture</span></td>
+      <td data-label="atributos"></td>
+      <td data-label="descripción">Agrupa una serie de imágenes. Etiqueta contenedora.</td>
+    </tr>
+    <tr>
+      <td data-label="etiqueta"><span class="html-tag">source</span></td>
+      <td data-label="atributos"><span><strong>srcset</strong>, <strong>sizes</strong>, <strong>media</strong>, <strong>type</strong></span></td>
+      <td data-label="descripción">Mostrará la imagen que cumpla una serie de criterios opcionales.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">source</span>, que tiene una serie de atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:</p>
+<table>
+  <thead>
+    <th>Atributo</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="atributo"><strong>srcset</strong></td>
+      <td data-label="descripción"><span>Serie de imágenes ( <em>separadas por coma</em> ) que se utilizarán. <strong>Atributo obligatorio</strong>.</span></td>
+    </tr>
+    <tr>
+      <td data-label="atributo"><strong>sizes</strong></td>
+      <td data-label="descripción">Tamaño específico de la imagen que finalmente se mostrará.</td>
+    </tr>
+    <tr>
+      <td data-label="atributo"><strong>media</strong></td>
+      <td data-label="descripción">Condición que se debe cumplir para que muestre la imagen.</td>
+    </tr>
+    <tr>
+      <td data-label="atributo"><strong>type</strong></td>
+      <td data-label="descripción">Tipo de formato de imagen. Opcional.</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="imagenes-alternativas"><a href="#imagenes-alternativas">Imágenes alternativas</a></h4>
+<p>Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Podríamos hacer algo como lo siguiente:</p>
 
-    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjLPOWq" data-preview="true"
-      data-editable="true" data-user="EniDev911"
-      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/JjLPOWq">
-          imágenes</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-
+<div class="highlight">
+  <pre>&lt;<span class="nt">picture</span>&gt;
+  &lt;<span class="nt">source</span> <span class="nb">srcset</span>=<span class="s">&quot;logo.webp&quot;</span> /&gt;
+  &lt;<span class="nt">source</span> <span class="nb">srcset</span>=<span class="s">&quot;logo.jxr&quot;</span> /&gt;
+  <span class="c1">&lt;!-- Fallback --&gt;</span>
+  &lt;<span class="nt">img</span> <span class="nb">src</span>=<span class="s">&quot;logo.jpg&quot;</span> <span class="nb">alt</span>=<span class="s">&quot;Descripción de la imagen&quot;</span> /&gt;
+&lt;/<span class="nt">picture</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+<p>En este caso, indicamos que el navegador utilice la imagen con el formato <strong>WebP</strong>.</p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
 </section>
-    <section class="markdown-body">
-    <h3 id="tablas-html"><a id="#tablas-html">Tablas</a></h3>
-    <p>Las <b>tablas</b> están incluidas en HTML desde sus primeras versiones y son una forma común de mostrar datos
-      claramente. Además, si las construimos de forma semántica y correctamente, es muy sencillo darle estilos desde
-      <strong>CSS</strong> y cambiar su diseño con algunas propiedades, puesto que mediante las etiquetas que la
-      componen se puede hacer referencia a cada de la misma.
-    </p>
-    <p>Una tabla puede ser sencilla o compleja, dependiendo de nuestro objetivo y la cantidad de etiquetas o atributos
-      a
-      utilizar. Así pues, veamos primero las <b>etiquetas básicas</b> para crear una tabla de la forma más sencilla
-      posible:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Etiqueta</th>
-          <th>Descripción</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>&lt;table&gt;</code></td>
-          <td>Etiqueta contenedora que tendrá en su interior toda la tabla.</td>
-        </tr>
-        <tr>
-          <td><code>&lt;tr&gt;</code></td>
-          <td><b>Table Row</b>. Etiqueta contenedora de cada fila de la tabla.</td>
-        </tr>
-        <tr>
-          <td><code>&lt;td&gt;</code></td>
-          <td><b>Table Data</b>. Etiqueta contenedora de cada una de las celdas de la tabla.</td>
-        </tr>
-        <tr>
-          <td><code>&lt;th&gt;</code></td>
-          <td><b>Table Header</b>. Etiqueta contenedora de cada una de las celdas de cabecera de la tabla.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Crear tablas con HTML es algo más largo en cuanto al uso de etiquetas pero sumamente sencillo, simplemente
-      debemos indicar dentro de la etiqueta <code>&lt;table&gt;</code> cuales son los elementos de la cabecera
-      usando
-      las etiqueta <code>&lt;thead&gt;</code>, y todo lo que es el contenido de las respectivas filas con la
-      etiqueta
-      <code>&lt;tbody&gt;</code> dentro <code>&lt;tbody&gt;</code> indicamos cada fila con la etiqueta
-      <code>&lt;tr&gt;</code> y separamos los campos con la etiqueta <code>&lt;td&gt;</code>. Ejemplo:
-    <p align="center">
-      <img src="assets/table/01.png" alt="tabla">
-    </p>
-    </p>
-    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBoWVmz" data-preview="true"
-      data-editable="true" data-user="EniDev911"
-      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/EniDev911/pen/qBoWVmz">
-          tablas</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    </section>
+ 
     <section class="markdown-body">
     <h3 id="formularios"><a href="#formularios">Formularios</a></h3>
     <p>Uno de los aspectos más importante en un documento HTML es el uso de formularios, por lo que al día de hoy
