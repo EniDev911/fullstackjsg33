@@ -65,7 +65,6 @@
       <li><a href="#listas">Listas</a></li>
       <li><a href="#tablas-html">Tablas</a></li>
       <li><a href="#formularios">Formularios</a></li>
-      <li><a href="#multimedia_">Multimedia</a></li>
       <li><a href="#lineas">Lineas separadoras</a></li>
       <li><a href="#abreviaturas">Abreviaturas</a></li>
       <li><a href="#emojis">Emojis</a></li>
@@ -75,6 +74,7 @@
       <ul>
       <li><a href="#imagenes">Imágenes</a></li>
       <li><a href="#contenido-externo">Contenido externo</a></li>
+      <li><a href="#videos">Videos</a></li>
       </ul>
     </details>
   </section>
@@ -2139,7 +2139,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
         </tr>
       </tbody>
     </table>
-    <h4 id="iframes"><a href="iframes">Marcos en línea (iframes)</a></h4>
+    <h4 id="iframes"><a href="#iframes">Marcos en línea (iframes)</a></h4>
     <p>Antiguamente, en versiones anteriores de HTML, se utilizaban una etoquetas llamadas <span class="html-tag">frame</span>, mediante las cuales se permitía dividir la pantalla en varias secciones. Actualmente, ese modo de desarrollo ya no se utiliza ya que acarreaba múltiples problemas de accesibilidad, posicionamiento, etc.</p>
     <p>Sin embargo, de toda la familia de etiquetas de <strong>frames</strong>, han sobrevivido <span class="html-tag">iframe</span>, que siguen siendo útiles para incrustar contenido externo. Veamos un ejemplo extraído de servicios como <strong>YouTube</strong> o <strong>SoundCloud</strong>.</p>
     <!-- YOUTUBE -->
@@ -2399,48 +2399,48 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       </thead>
       <tbody>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td><span class="td-attribute">type</span></td>
           <td>tipo de campo</td>
           <td>Indica el tipo de campo del que se trata.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">name</span></td>
+          <td><span class="td-attribute">name</span></td>
           <td>nombre del campo</td>
           <td>Indica el nombre del campo para hacer referencia más tarde.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">value</span></td>
+          <td><span class="td-attribute">value</span></td>
           <td>valor por defecto</td>
           <td>Indica el valor inicial que tendrá ese campo de datos.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">form</span></td>
+          <td><span class="td-attribute">form</span></td>
           <td>nombre del formulario</td>
           <td>Asocia este campo de datos con un formulario específico.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">placeholder</span></td>
+          <td><span class="td-attribute">placeholder</span></td>
           <td>sugerencia</td>
           <td>Indica su sugerencia al usuario antes de escribir.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">size</span></td>
+          <td><span class="td-attribute">size</span></td>
           <td>número</td>
           <td>Tamaño visual (<i>número de caracteres</i>) del campo de datos.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autocomplete</span></td>
+          <td><span class="td-attribute">autocomplete</span></td>
           <td><b>on</b> | off</td>
           <td>Activa o desactiva el autocompletado para este campo.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">autofocus</span></td>
+          <td><span class="td-attribute">autofocus</span></td>
           <td>boolean</td>
           <td>Establece el foco (<i>colocar el cursor</i>) en este campo al cargar la página.</td>
         </tr>
       </tbody>
     </table>
-    <p>El atributo <span style="color:rgb(197, 182, 52); font-weight:bold">type</span> nos permitirá indicar que tipo de
+    <p>El atributo <span class="td-attribute">type</span> nos permitirá indicar que tipo de
       campo de dato mostrará en el navegador (<i>text, number, date..., los veremos luego</i>). Mediante el atributo
       <strong>name</strong> le daremos un nombre al campo de texto, así
       cuando enviemos la información, podremos manejarla desde javascript o desde el back-end haciendo referencia a
@@ -2485,14 +2485,20 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       <td data-label="ejemplo"><textarea rows="4" placeholder="Campo de texto más extenso. Para comentarios o descripciones."></textarea></td>
     </tr>
   </tbody>
-</table>  
+</table>
+<h4 id="texto-alfanumerico-corto"><a href="#texto-alfanumerico-corto">Texto alfanúmerico corto</a></h4>
+<p>En primer lugar, si lo que queremos es guardar información de texto libremente, la opción más habitual es optar por utilizar el campo de entrada de datos <span class="html-tag">input type="text"</span>. Este es el atributo que se utiliza en las etiquetas <span class="html-tag">input</span> por defecto si no indicamos ningún atributo <strong>type</strong>. Es un campo de texto ideal para fragmentos cortos de información: nombres, apellidos, etc...</p>
+
+<div class="highlight">
+  <pre>&lt;<span class="nt">form</span> <span class="nb">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="nb">method</span>=<span class="s">&quot;post&quot;</span> <span class="nb">action</span>=<span class="s"></span></pre>
+</div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     </section>
-    <!-- MULTIMEDIA -->
+    <!-- VIDEOS -->
     <section class="markdown-body">
-    <h3 id="multimedia"><a name="multimedia_"></a>Multimedia</h3>
+    <h3 id="videos"><a href="#videos">Multimedia</a></h3>
     <p>En HTML5 se introduce la interesante posibilidad de <b>mostrar videos directamente</b> desde nuestro navegador.
       De hecho, si arrastramos un video a la ventana del navegador o con el clic derecho seleccionamos la opción
       <b>abrir con</b> y buscamos el navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en
@@ -2520,22 +2526,22 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       </thead>
       <tbody>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span></td>
+          <td><span class="td-attribute">src</span></td>
           <td>Dirección URL</td>
           <td>Video a reproducir. Obligatorio si actua como etiqueta contenedora.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">poster</span></td>
+          <td><span class="td-attribute">poster</span></td>
           <td>Dirección URL</td>
           <td>Muestra una imagen a modo de presentación.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">preload</span></td>
+          <td><span class="td-attribute">preload</span></td>
           <td><b>auto</b> | metadata | none</td>
           <td>Indica como realizar la precarga del video.</td>
         </tr>
         <tr>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">mediagroup</span></td>
+          <td><span class="td-attribute">mediagroup</span></td>
           <td>nombre</td>
           <td>Establece un nombre para un grupo de contenidos multimedia.</td>
         </tr>
@@ -2710,17 +2716,17 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       <tbody>
         <tr>
           <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">source</span>&gt;</td>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
-              style="color:rgb(197, 182, 52); font-weight:bold">type</span></td>
+          <td><span class="td-attribute">src</span>, <span
+              class="td-attribute">type</span></td>
           <td>Establece un archivo de video o lo añade como alternativa.</td>
         </tr>
         <tr>
           <td>&lt;<span style="color:rgb(58, 74, 248); font-weight:bold">track</span>&gt;</td>
-          <td><span style="color:rgb(197, 182, 52); font-weight:bold">src</span>, <span
-              style="color:rgb(197, 182, 52); font-weight:bold">srclang</span>, <span
-              style="color:rgb(197, 182, 52); font-weight:bold">label</span>, <span
-              style="color:rgb(197, 182, 52); font-weight:bold">kind</span>, <span
-              style="color:rgb(197, 182, 52); font-weight:bold">default</span></td>
+          <td><span class="td-attribute">src</span>, <span
+              class="td-attribute">srclang</span>, <span
+              class="td-attribute">label</span>, <span
+              class="td-attribute">kind</span>, <span
+              class="td-attribute">default</span></td>
           <td>Establece un archivo de subtítulos o lo añade como alternativa.</td>
         </tr>
       </tbody>
