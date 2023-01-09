@@ -63,7 +63,6 @@
       <li><a href="#parrafos">De textos</a></li>
       <li><a href="#citas">Citas</a></li>
       <li><a href="#listas">Listas</a></li>
-      <li><a href="#imagenes">Imágenes</a></li>
       <li><a href="#tablas-html">Tablas</a></li>
       <li><a href="#formularios">Formularios</a></li>
       <li><a href="#multimedia_">Multimedia</a></li>
@@ -71,6 +70,13 @@
       <li><a href="#abreviaturas">Abreviaturas</a></li>
       <li><a href="#emojis">Emojis</a></li>
     </ul>
+    <details>
+      <summary>ETIQUETAS MULTIMEDIA</summary>
+      <ul>
+      <li><a href="#imagenes">Imágenes</a></li>
+      <li><a href="#contenido-externo">Contenido externo</a></li>
+      </ul>
+    </details>
   </section>
   <section class="markdown-body">
     <p><a name="resumen"></a>
@@ -1962,10 +1968,10 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
-    <hr />
+  </section>
+  <section class="markdown-body">
     <!-- IMAGENES  -->
-    <h3 id="imagenes"><a name="imagenes"></a>Imágenes <a class="headerlink" href="#imagenes"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="imagenes"><a name="imagenes"></a><a href="#imagenes">Imágenes</a></h3>
     <p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <span class="html-tag">img</span>, que es
       una
       etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen ( <em>los
@@ -2096,7 +2102,103 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
 </section>
- 
+ <!-- CONTENIDO EXTERNO -->
+ <section class="markdown-body">
+    <h3 id="contenido-externo"><a href="#contenido-externo">Contenido externo</a></h3>
+    <p>Cuando tenemos una página web y queremos colocar contenido en ella, lo conveniente es utilizar formatos libres para garantizar que sean accesibles desde cualquier tipo de dispositivos.</p>
+    <p>¿Pero que ocurre si lo que quiero colocar no son formatos de video, de audio o de imagen? Por ejemplo, servicios como Youtube, Vimeo, SoundCloud, Google Maps, SlideShare u otros similares. Se trata de servicios que ofrecen <strong>contenido externo para incrustar</strong> en nuestra página, pero no nos proporcionan directamente imágenes, video o audio en formatos que reconozca el navegador, sino que nos ofrecen un enlace o contenidos que requiren un plugin externo instalado en el navegador. En esas situaciones, lo más probable es que necesitemos una de las siguientes etiquetas.</p>
+    <h4 id="etiquetas-contenido-externo"><a href="#etiquetas-contenido-externo">Etiquetas de contenido externo</a></h4>
+    <p>Las siguientes etiquetas sirven para incrustar contenido externo:</p>
+
+    <table class="table">
+      <thead>
+        <th>Etiqueta</th>
+        <th>Atributos</th>
+        <th>Descripción</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">iframe</span></td>
+          <td data-label="atributos"><span><strong>src</strong>, <strong>srcdoc</strong>, <strong>name</strong>, <strong>width</strong>, <strong>height</strong></span></td>
+          <td data-label="descripción">Permite incrustar contenido externo en &lt;&lt;vivo&gt;&gt;.</td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">embed</span></td>
+          <td data-label="atributos"><span><strong>src</strong>, <strong>type</strong>, <strong>width</strong>, <strong>height</strong></span></td>
+          <td data-label="descripción">Permite incrustar contenido interactivo.</td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">object</span></td>
+          <td data-label="atributos"><span><strong>data</strong>, <strong>type</strong>, <strong>name</strong>, <strong>form</strong>, <strong>width</strong>, <strong>height</strong></span></td>
+          <td data-label="descripción">Permite incrustar contenido externo con fallbacks.</td>
+        </tr>
+        <tr>
+          <td data-label="etiqueta"><span class="html-tag">param</span></td>
+          <td data-label="atributos"><span><strong>name</strong>, <strong>value</strong></span></td>
+          <td data-label="descripción"><span>Define parámetros de un elemento <span class="html-tag">object</span>.</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 id="iframes"><a href="iframes">Marcos en línea (iframes)</a></h4>
+    <p>Antiguamente, en versiones anteriores de HTML, se utilizaban una etoquetas llamadas <span class="html-tag">frame</span>, mediante las cuales se permitía dividir la pantalla en varias secciones. Actualmente, ese modo de desarrollo ya no se utiliza ya que acarreaba múltiples problemas de accesibilidad, posicionamiento, etc.</p>
+    <p>Sin embargo, de toda la familia de etiquetas de <strong>frames</strong>, han sobrevivido <span class="html-tag">iframe</span>, que siguen siendo útiles para incrustar contenido externo. Veamos un ejemplo extraído de servicios como <strong>YouTube</strong> o <strong>SoundCloud</strong>.</p>
+    <!-- YOUTUBE -->
+      <p>Reproducir un video de YouTube dentro de una página HTML:<br></p>
+    <div class="highlight">
+      <pre><span class="c1">&lt;!-- Reproducción de un video de Youtube --&gt;</span>
+&lt;<span class="nt">iframe
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span>
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;!-- Reproducción automática y Silenciado --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk<span class="bg">?autoplay=1&mute=1&quot;</span></span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;
+<span class="c1">&lt;!-- Lista de reproducción en bucle --&gt;</span>
+&lt;<span class="nt">iframe 
+  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
+  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
+  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk<span class="bg">?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span></span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+    </div>
+    <p>Resultado de un ejemplo con reproducción automática y silenciado</p>
+    <div>
+      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1" width="100%" height="400" ></iframe>
+    </div>
+    <!-- SOUNDCLOUD -->
+  <p>Reproducir contenido de audio de SoundCloud dentro de una página HTML:<br></p>
+  <div class="highlight">
+    <pre>&lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;http://www.bing.com/&quot;</span> <span class="nb">target</span>=<span class="s">&quot;marco&quot;</span>&gt;Abrir buscador bing&lt;/<span class="nt">a</span>&gt;
+&lt;<span class="nt">iframe</span> 
+  <span class="nb">name</span>=<span class="s">&quot;marco&quot;</span>
+  <span class="nb">width</span>=<span class="s">&quot;100%&quot;</span>
+  <span class="nb">height</span>=<span class="s">&quot;450&quot;</span>
+  <span class="nb">src</span>=<span class="s">&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&visual=true&quot;</span>&gt;
+&lt;/<span class="nt">iframe</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+  </div>
+  <p>Resultado de un ejemplo de SoundCloud y un hipervínculo que se abre en el mismo <span class="html-tag">iframe</span>:</p>
+  <a href="http://www.bing.com/" target="marco">Abrir buscador Bing</a>
+<iframe name="marco" width="100%" height="450"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&visual=true">
+</iframe>
+<p>Esta etiqueta permite incrustar contenido externo anidado en nuestro propio documento. Es decir, podemos crear un recuadro que en su interior va a tener otra dirección URL de otra página web, documento o recurso que queramos cargar en él. Generalmente, es la etiqueta más utilizada para todo tipo de contenido externo.</p>
+<p>También podemos utilizar el atributo <strong>name</strong> para darle un nombre al marco y cargar direcciones URL diferentes a través de una etiqueta <span class="html-tag">a</span>, haciendo referencia al marco a través del atributo <strong>target</strong>. Por su parte, el atributo <strong>srcdoc</strong> nos permite indicar directamente el código fuente del <span class="html-tag">iframe</span> en su valor:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">iframe</span>
+  <span class="nb">src</span>=<span class="s">&quot;http://pagina.com/&quot;</span>
+  <span class="nb">srcdoc</span>=<span class="s">&quot;&lt;p&gt;¡Hola! ¡Soy el &lt;strong&gt;texto del iframe&lt;/strong&gt;!&lt;/p&gt;&quot;</span>&gt;
+&lt;/<span class="nt">iframe</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+<p>Como se puede ver, se puede indicar el atributo <strong>srcdoc</strong> y el atributo <strong>src</strong> a la misma vez, dando prioridad el atributo <strong>srcdoc</strong> y manteniendo el atributo <strong>src</strong> como fallback, para navegadores que no soportan <strong>srcdoc</strong>.</p>
+<h4 id="contenido-incrustado"><a href="#contenido-incrustado">Contenido incrustado</a></h4>
+<p>La etiqueta <span class="html-tag">embed</span> se ideó antiguamente como una etiqueta no estándar para incluir contenido que requería el uso de un <strong>plugin externo</strong> para funcionar, ya que se trataba de tecnologías propietarias y los navegadores no las soportan. La etiqueta fue retirada en HTML4, pero en HTML5 fue incluída de nuevo. Se puede utilizar, por ejemplo, para incrustar contenido flash en una página web:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">embed</span> <span class="nb">src</span>=<span class="s">&quot;game.swf&quot;</span> <span class="nb">width</span>=<span class="s">&quot;400&quot;</span> <span class="nb">height</span>=<span class="s">&quot;350&quot;</span> /&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+ </section>
     <section class="markdown-body">
     <h3 id="formularios"><a href="#formularios">Formularios</a></h3>
     <p>Uno de los aspectos más importante en un documento HTML es el uso de formularios, por lo que al día de hoy
@@ -2610,37 +2712,6 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
   &lt;<span class="nt">source <span class="na">src</span>=<span class="s">&quot;video.ogv&quot;</span> <span class="na">type</span>=<span class="s">&quot;video/ogg&quot; /</span></span>&gt;
   Su navegador no soporta contenido multimedia.
 &lt;/<span class="nt">video</span>&gt;</div>
-    <p>Reproducir un video de YouTube dentro de una página HTML:<br></p>
-    <div class="highlight">
-      <pre><span class="c1">&lt;-- Reproducción de un video de Youtube --&gt;</span>
-&lt;<span class="nt">iframe
-  <span class="na">width</span>=<span class="s">&quot;500&quot;</span>
-  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
-  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk&quot;</span></span>&gt;
-&lt;/<span class="nt">iframe</span>&gt;
-<span class="c1">&lt;-- Reproducción automática y Silenciado --&gt;</span>
-&lt;<span class="nt">iframe 
-  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
-  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
-  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1&quot;</span></span>&gt;
-&lt;/<span class="nt">iframe</span>&gt;
-<span class="c1">&lt;-- Lista de reproducción en bucle --&gt;</span>
-&lt;<span class="nt">iframe 
-  <span class="na">width</span>=<span class="s">&quot;500&quot;</span> 
-  <span class="na">height</span>=<span class="s">&quot;400&quot;</span>
-  <span class="na">src</span>=<span class="s">&quot;https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1&quot;</span></span>&gt;
-&lt;/<span class="nt">iframe</span>&gt;</pre>
-    </div>
-
-    <div style="display: flex; width: 100%; justify-content: space-between;">
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk" style="width:33%;">
-      </iframe>
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?autoplay=1&mute=1" style="width:33%;">
-      </iframe>
-      <iframe src="https://www.youtube.com/embed/n2MGNWrfkTk?playlist=LG3T2rzlR9Q,SLBKRZszn4k&loop=1"
-        style="width:33%;">
-      </iframe>
-    </div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
