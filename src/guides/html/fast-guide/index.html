@@ -2198,6 +2198,17 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
 <div class="highlight">
   <pre>&lt;<span class="nt">embed</span> <span class="nb">src</span>=<span class="s">&quot;game.swf&quot;</span> <span class="nb">width</span>=<span class="s">&quot;400&quot;</span> <span class="nb">height</span>=<span class="s">&quot;350&quot;</span> /&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
 </div>
+<p>Tradicionalmente, también se empezó a utilizar la etiqueta <span class="html-tag">object</span> para incrustar contenido flash, puediendo especificar parámetros en su interior. El siguiente fragmento de código es equivalente al anterior:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">object</span> <span class="nb">data</span>=<span class="s">&quot;game.swf&quot;</span>&gt;
+  &lt;<span class="nt">param</span> <span class="nb">name</span>=<span class="s">&quot;quality&quot;</span> <span class="nb">value</span>=<span class="s">&quot;high&quot;</span> /&gt;
+&lt;/<span class="nt">object</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+</div>
+<p>Así la etiqueta <span class="html-tag">object</span> se ofrecía como una alternativa más apropiada para cargar todo tipo de contenido. Y no sólo eso, sino que ofrece la posibilidad de especificar el <strong>tipo de formato</strong> del que se trata, así como añadir <strong>múltiples parámetros</strong> o la opción de añadir en su interior etiquetas HTML o texto que funcionen a modo de <strong>fallback</strong> ( <em>plan B</em> ), o lo que es lo mismo, en el caso de que el navegador no pueda cargar ese formato, cargará la imagen, video, texto o la etiqueta que se incluya en su interior. Algunos ejemplos:</p>
+<div class="highlight">
+  <pre>&lt;<span class="nt">object</span> <span class="nb">data</span>=<span class="s">&quot;clock.html&quot;</span>&gt;&lt;/<span class="nt">object</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+<p><a href="#top"><img alt="" src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a></p>
  </section>
     <section class="markdown-body">
     <h3 id="formularios"><a href="#formularios">Formularios</a></h3>
@@ -2219,18 +2230,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
 <span class="c1">&lt;!-- * Casillas de verificación --&gt;</span>
 &lt;/<span class="nt">form</span>&gt;</pre>
     </div>
-    <p><strong>Ejemplo:</strong></p>
-    <p>
-      <form action="#">
-        <input type="text" style="font-size:22px;margin-bottom: 7px;"><br>
-        <select name="" id="" style="font-size:22px">
-          <option value="html">html</option>
-          <option value="css">css</option>
-          <option value="javascript">javascript</option>
-        </select><br>
 
-        <input type="checkbox" name="" id="">
-      </form>
     </p>
     <p>De esta forma, se puede incluso crear varias etiquetas
       <span class="tag">&lt;form&gt;</span> por página, pudiendo así crear varios formularios diferentes, como por ejemplo, uno
@@ -2238,7 +2238,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email.
     </p>
     <p>La etiqueta <span class="tag">&lt;form&gt;</span> dispone de varios <b>atributos</b> para utilizar:</p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Atributo</th>
@@ -2248,31 +2248,31 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       </thead>
       <tbody>
         <tr>
-          <td><span class="td-attribute">action</span></td>
-          <td><u>URL</u></td>
-          <td>Dirección URL del back-end donde se enviará la información del formulario.</td>
+          <td data-label="atributo"><span class="td-attribute">action</span></td>
+          <td data-label="valor"><u>URL</u></td>
+          <td data-label="descripción">Dirección URL del back-end donde se enviará la información del formulario.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">method</span></td>
-          <td><strong>get</strong> | <strong>post</strong></td>
-          <td>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
-            información.</td>
+          <td data-label="atributo"><span class="td-attribute">method</span></td>
+          <td data-label="valor"><span><strong>get</strong> | <strong>post</strong></span></td>
+          <td data-label="descripción"><span>Método HTTP de envió. <b>GET</b> se realiza a través de URL, <b>POST</b> para envió extenso de
+            información.</span></td>
         </tr>
         <tr>
-          <td><span class="td-attribute">name</span></td>
-          <td>nombre</td>
-          <td>Nombre del formulario. Útil para procesar posteriormente.</td>
+          <td data-label="atributo"><span class="td-attribute">name</span></td>
+          <td data-label="valor">nombre</td>
+          <td data-label="descripción">Nombre del formulario. Útil para procesar posteriormente.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">target</span></td>
-          <td>destino</td>
-          <td>Nombre del lugar donde se abrirá el formulario. <span style="color: rgb(81, 81, 255)">\_blank</span> para
-            nueva pestaña.</td>
+          <td data-label="atributo"><span class="td-attribute">target</span></td>
+          <td data-label="valor">destino</td>
+          <td data-label="descripción"><span>Nombre del lugar donde se abrirá el formulario. <span style="color: rgb(81, 81, 255)">\_blank</span> para
+            nueva pestaña.</span></td>
         </tr>
         <tr>
-          <td><span class="td-attribute">enctype</span></td>
-          <td>tipo</td>
-          <td>Codificación para el envió del formulario. Importante para envió de archivos.</td>
+          <td data-label="atributo"><span class="td-attribute">enctype</span></td>
+          <td data-label="valor">tipo</td>
+          <td data-label="descripción">Codificación para el envió del formulario. Importante para envió de archivos.</td>
         </tr>
         <tr>
           <td><span class="td-attribute">accept-charset</span></td>
@@ -2447,7 +2447,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       dicho nombre.
     </p>
     <p>La etiqueta <strong>HTML</strong> <span class="tag">&lt;input&gt;</span> puede tomar diferentes valores en su atrobuto <strong>type</strong> para permitir al usuario introducir información, además de otra etiqueta denominada <span class="tag">&lt;textarea&gt;</span> para introducir cantidades más grande de texto.</p>
-<table>
+<table class="table">
   <thead>
     <th>Tipo de información</th>
     <th>Etiqueta</th>
@@ -2455,8 +2455,34 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
   </thead>
   <tbody>
     <tr>
-      <td>Texto alfanumérico libre corto</td>
-      <td><span class="td-tag">&lt;input type=&quot;text&quot;&gt;</span></td>
+      <td data-label="tipo de información">Texto alfanumérico libre corto</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;input type=&quot;text&quot;&gt;</span></td>
+      <td data-label="ejemplo"><input type="text" placeholder="nombre de usuario"></td>
+    </tr>
+    <tr>
+      <td data-label="tipo de información">Texto para búsquedas</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;input type="search"&gt;</span></td>
+      <td data-label="ejemplo"><input type="search" placeholder="buscar"></td>
+    </tr>
+    <tr>
+      <td data-label="tipo de información">Número de télefono o móvil</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;input text="tel"&gt;</span></td>
+      <td data-label="ejemplo"><input type="tel" placeholder="984687949"></td>
+    </tr>
+    <tr>
+      <td data-label="tipo de información">Dirección URL</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;input type="url"&gt;</span></td>
+      <td data-label="ejemplo"><input type="url" placeholder="https://developer.mozilla.org/es/docs/Web/HTML"></td>
+    </tr>
+    <tr>
+      <td data-label="tipo de información">Campo oculto (no mostrar al usuario)</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;input type="hidden"&gt;</span></td>
+      <td data-label="ejemplo"><input type="hidden"></td>
+    </tr>
+    <tr>
+      <td data-label="tipo de información">Texto alfanumérico libre (extenso)</td>
+      <td data-label="etiqueta utilizada"><span class="td-tag">&lt;textarea&gt;</span></td>
+      <td data-label="ejemplo"><textarea rows="4" placeholder="Campo de texto más extenso. Para comentarios o descripciones."></textarea></td>
     </tr>
   </tbody>
 </table>  
