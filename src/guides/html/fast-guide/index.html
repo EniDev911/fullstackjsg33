@@ -2281,14 +2281,14 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
           <td data-label="descripción">Fuerza a utilizar una codificación en los parámetros de texto del formulario.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">autocomplete</span></td>
-          <td><b>on</b> | off</td>
-          <td>Activa o desactiva el autocompletado para todos los campos del formulario.</td>
+          <td data-label="atributo"><span class="td-attribute">autocomplete</span></td>
+          <td data-label="valor"><span><b>on</b> | off</span></td>
+          <td data-label="descripción">Activa o desactiva el autocompletado para todos los campos del formulario.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">novalidate</span></td>
-          <td>boolean</td>
-          <td>Con este atributo presente, el formulario obvia la validación HTML5.</td>
+          <td data-label="atributo"><span class="td-attribute">novalidate</span></td>
+          <td data-label="valor">boolean</td>
+          <td data-label="descripción">Con este atributo presente, el formulario obvia la validación HTML5.</td>
         </tr>
       </tbody>
     </table>
@@ -2299,7 +2299,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
     <div class="highlight">
       <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;...&lt;/<span class="nt">form</span>&gt;</pre>
     </div>
-    <p>Aquí se definen 3 atributos base en <span class="tag">&lt;form&gt;:
+    <p>Aquí se definen 3 atributos base en <span class="html-tag">form</span>:
     </p>
     <ul>
       <li>En <strong>action</strong> se indica la dirección donde se
@@ -2307,7 +2307,7 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
         enviarían los datos a la propia página actual, volviéndola a cargar.</li>
       <li>
         En <strong>method</strong> se define el tipo de método HTTP a
-        utilizar. Utilizaremos el método <span style="color:rgb(31, 116, 220); font-weight:bold">GET</span> cuando nos
+        utilizar. Utilizaremos el método <strong>GET</strong> cuando nos
         interese que los datos se envíen en la propia URL. En caso contrario, <strong>POST</strong>.
       </li>
       <li>
@@ -2320,46 +2320,39 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber
       a priori que <b>tipo de dato</b> le vamos a pedir a un usuario (<i>texto, numérico, fecha, etc...</i>), y así
       saber que tipo de campo de entrada de datos es más conveniente colocar.</p>
-    <table>
+    <table class="table">
       <thead>
         <th>Etiquetas</th>
         <th>Información a obtener</th>
       </thead>
       <tbody>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; <br> &lt;<span
-              style="color:rgb(9, 110, 192); font-weight:bold">textarea</span>&gt;</td>
-          <td>Nombres, direcciones físicas, descripciones</td>
+          <td data-label="etiquetas"><span><span class="html-tag">input</span><br><span class="html-tag">textarea</span></span></td>
+          <td data-label="información">Nombres, direcciones físicas, descripciones</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="number"</span>&gt;</td>
-          <td>Edades, precios, cantidades</td>
+          <td data-label="etiqueta"><span class="html-tag">input type="number"</span></td>
+          <td data-label="información">Edades, precios, cantidades</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;</td>
-          <td>Verdadero/Falso</td>
+          <td data-label="etiqueta"><span class="html-tag">input type="checkbox"</span></td>
+          <td data-label="información">Verdadero/Falso</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="radio"</span>&gt; <br> &lt;<span
-              style="color:rgb(9, 110, 192); font-weight:bold">select</span>&gt;</td>
+          <td data-label="etiquetas"><span><span class="html-tag">input type="radio"</span><br><span class="html-tag">select</span></span></td>
           <td>Opción unica</td>
         </tr>
         <tr>
-          <td>
-            &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">select multiple</span>&gt; <br> &lt;<span
-              style="color:rgb(9, 110, 192); font-weight:bold">input type="checkbox"</span>&gt;
-          </td>
-          <td>
-            Varias opciones
-          </td>
+          <td data-label="etiquetas"><span><span class="html-tag">select multiple</span><br><span class="html-tag">input type="checkbox"</span></span></td>
+          <td data-label="información">Varias opciones</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="color"</span>&gt;</td>
-          <td>Selección de color</td>
+          <td data-label="etiqueta"><span class="html-tag">input type="color"</span></td>
+          <td data-label="información">Selección de color</td>
         </tr>
         <tr>
-          <td>&lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input type="file"</span>&gt;</td>
-          <td>Selección de archivo</td>
+          <td data-label="etiqueta"><span class="html-tag">input type="file"</span></td>
+          <td data-label="información">Selección de archivo</td>
         </tr>
       </tbody>
     </table>
@@ -2369,30 +2362,27 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       de que hay que tener cuidado con algunos controles de formulario, ya que pueden no estar soportados por completo
       en todos los navegadores.</p>
 
-    <h4>Campos de entrada</h4>
+    <h4 id="campos-de-entrada"><a href="#campos-de-entrada">Campos de entrada</a></h4>
     <p>Una de las etiquetas que más utilizaremos para obtener información a modo de campo de entrada de datos en un
-      formulario es la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;. Su
+      formulario es la etiqueta <span class="html-tag">input</span>. Su
       funcionalidad más utilizada es la de servir como campo de texto:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">form <span class="na">name</span>=<span class="s">&quot;formulario&quot;</span> <span class="na">method</span>=<span class="s">&quot;post&quot;</span> <span class="na">action</span>=<span class="s">&quot;/send.php&quot;</span></span>&gt;
    &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;text&quot;</span> <span class="na">name</span>=<span class="s">&quot;nombre&quot;</span></span>/&gt;
    &lt;<span class="nt">input <span class="na">type</span>=<span class="s">&quot;submit&quot;</span> <span
       class="na">value</span>=<span class="s">&quot;Enviar&quot;</span></span>/&gt;
-&lt;/<span class="nt">form</span>&gt;</pre>
-    </div>
-    <p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">input type="text"</span>&gt; y, posteriormente, se coloca un
-      botón para enviar el formulario con la etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input
-        type="submit"</span>&gt;. Aunque vemos que se trata de la misma etiqueta &lt;<span
-        style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;, dependiendo del valor indicado en el atributo
+&lt;/<span class="nt">form</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+  </div>
+    <p>En este ejemplo tenemos un pequeño formulario donde se le pide al usuario su nombre con la etiqueta <span class="html-tag">input type="text"</span> y, posteriormente, se coloca un
+      botón para enviar el formulario con la etiqueta <span class="html-tag">input type="submit"</span>. Aunque vemos que se trata de la misma etiqueta <span class="html-tag">input</span>, dependiendo del valor indicado en el atributo
       <b>type</b> realizará una tarea u otra.
     </p>
-    <h4 id="etiqueta-input">La etiqueta "input"</h4>
-    <p>La etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt; tiene una gran cantidad
+    <h4 id="etiqueta-input"><a href="#etiqueta-input">La etiqueta "input"</a></h4>
+    <p>La etiqueta <span class="html-tag">input</span> tiene una gran cantidad
       de atributos (<i>algunos dependiendo del valor del type, que mostraremos más adelante</i>). Estos son los
       atributos que podemos utilizar de forma general para prácticamente cualquier campo de entrada de datos con la
-      etiqueta &lt;<span style="color:rgb(9, 110, 192); font-weight:bold">input</span>&gt;</p>
-    <table>
+      etiqueta <span class="html-tag">input</span>.</p>
+    <table class="table">
       <thead>
         <th>Atributo</th>
         <th>Valor</th>
@@ -2400,13 +2390,13 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
       </thead>
       <tbody>
         <tr>
-          <td><span class="td-attribute">type</span></td>
-          <td>tipo de campo</td>
-          <td>Indica el tipo de campo del que se trata.</td>
+          <td data-label="atributo"><span class="td-attribute">type</span></td>
+          <td data-label="valor">tipo de campo</td>
+          <td data-label="descripción">Indica el tipo de campo del que se trata.</td>
         </tr>
         <tr>
-          <td><span class="td-attribute">name</span></td>
-          <td>nombre del campo</td>
+          <td data-label="atributo"><span class="td-attribute">name</span></td>
+          <td data-label="valor">nombre del campo</td>
           <td>Indica el nombre del campo para hacer referencia más tarde.</td>
         </tr>
         <tr>

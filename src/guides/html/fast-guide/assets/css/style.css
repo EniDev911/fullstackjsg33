@@ -54,18 +54,6 @@ figcaption {
   text-align: center;
 }
 
-.html-tag {
-  font-weight: bold;
-  color:  #306dcb;
-}
-.html-tag::before {
-  /*content: "\02C2";*/
-  content: "<";
-}
-.html-tag::after {
-  content: ">";
-}
-
 .container-fav {
   display: flex;
   gap:  17px;
