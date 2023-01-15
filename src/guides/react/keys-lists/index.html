@@ -168,7 +168,7 @@
       el problema de la falta de <strong>key</strong>: </p>
     <div class="highlight">
       <pre> <span class="kr">const</span> listProducts = products.<span class="nt">map</span>(<span class="nx">product</span> <span class="nt">=&gt;</span> 
-   &lt;<span class="nt">li</span> <span class="nb">key</span>={<span class="nx">product</span>}&gt;
+   &lt;<span class="nt">li</span> <span class="bg"><span class="nb">key</span>={<span class="nx">product</span>}</span>&gt;
      {<span class="nx">product</span>}
    &lt;/<span class="nt">li</span>&gt;
  );<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
@@ -400,14 +400,46 @@
     <p>Resultado: </p>
     <iframe frameborder="0" width="100%" height="400px"
       src="https://replit.com/@marcocontreraas/keys-lists-react?embed=true"></iframe>
-
     <p align="center">
       <img src="assets/table-users-api.png" />
     </p>
+  <hr>
+  <!-- EJEMPLO CON API DE POKEMON -->
+  <h4 id="ejemplo-consumiendo-api-pokemon"><a href="#ejemplo-consumiendo-api-pokemon">Ejemplo consumiento api pokemon</a></h4>
+<p>Para ello podemos usar el método <strong>Promise.all</strong> la cual nos devuelve una promesa que termina cuando todas las promesas pasadas como argumento al iterar sobre ellas han concluido con éxito.</p>
+<p>Ahora podemos crear un archivo <strong>api.js</strong> para crear las funciones que nos permitan obtener los resultados. Una primera función será <strong>fetchPokemones</strong> dónde le vamos a pasar como argumento el limite y desde que pokemón comenzar:</p>
 
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
+<div class="highlight">
+  <pre><span class="c1">// api.js</span>
+
+<span class="kr">const</span> fetchPokemones = <span class="nb">async</span> (<span class="nx">limit</span> = <span class="nt">10</span>, <span class="nx">offset</span> = <span class="nt">0</span>) <span class="nt">=&gt;</span> {
+  <span class="kr">try</span> {
+    <span class="na">const</span> apiURL = <span class="s">&grave;https://pokeapi.co/api/v2/pokemon?limit=</span>${<span class="nx">limit</span>}<span class="s">&offset=</span>${<span class="nx">offset</span>}<span class="s">&grave;</span>;
+    <span class="na">const</span> res = <span class="nb">await</span> <span class="nt">fetch</span>(apiURL);
+    <span class="na">const</span> { results } = <span class="nb">await</span> res.<span class="nt">json</span>();
+    <span class="kr">return</span> results;
+  } <span class="kr">catch</span> (e) {
+    <span class="nb">console</span>.<span class="nt">log</span>(e.<span class="nx">message</span>);
+  }
+}<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+
+<p>Y ahora </p>
+<div class="highlight">
+  <pre></pre>
+</div>
+
+<!-- CODE COMPONENT POKEMONES.JSX -->
+<div class="highlight">
+  <pre><span class="kr">import</span> { <span class="nx">useState</span>, <span class="nx">useEffect</span> } <span class="kr">from</span> <span class="s">&quot;react&quot;</span>
+
+<span class="kr">const</span> Pokemones = () <span class="nt">=&gt;</span> {
+  <span class="c1">// hooks</span>
+  <span class="kr">const</span> [pokemones, setPokemones] = <span class="nt">useState</span>([]);</pre>
+</div>
+<p><a href="#top"><img alt=""
+  src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+</p>
 </section>
   </article>
   <script src="../../../public/js/lib/fontawesome.bundle.js"></script>

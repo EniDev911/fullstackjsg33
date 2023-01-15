@@ -14,5 +14,9 @@ export const articulos = [
 	{
 		titulo: "Middlewares en express",
 		path: "express-middlewares/index.html"
+	},
+	{
+		titulo: "Formatear cadenas",
+		path: "util-format/index.html"	
 	}
 ]

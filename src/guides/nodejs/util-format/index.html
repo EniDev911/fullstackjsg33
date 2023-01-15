@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nodejs FileSystem</title>
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+
+</head>
+<body>
+	<article>
+		<section class="markdown-body">
+			<h1>Módulos de NodeJS - util</h1>
+			<h4 id="util.callbackfy"><a href="#util.callbackfy"><code class="path">util.callbackify(original)</code></a></h4>
+		<ul>
+			<li><strong>original</strong>: <span class="html-tag">Function</span> Una función <strong>async</strong></li>
+			<li><strong>Retorna</strong>: <span class="html-tag">Function</span> Una función de estilo de devolución de llamada ( <em>callback</em> )</li>
+		</ul>
+		<p>Toma una función declarada como función asíncrona <strong>async</strong> (o una función que devuelva una promesa <strong>Promise</strong>) y devuelve una función siguiendo el estilo de devolución de llamada de error primero, es decir, tomando el error como primer argumento y segundo el valor <code class="path">(err, value) => ...</code>.</p>
+		<p>El primer argumento será el motivo del rechazo o <strong>null</strong> si la promesa se resuelve correctamente, y el segundo argumento será el valor resuelto.</p>
+		<!-- EJEMPLO BÁSICO -->
+		<h4 id="ejemplo-callbackify"><a href="#ejemplo-callbackify">Ejemplo básico</a></h4>
+		<div class="highlight">
+<pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
+
+<span class="nb">async function</span> fn() {
+  <span class="kr">return</span> <span class="s">&quot;hello world&quot;</span>
+}
+
+<span class="na">const</span> callbackFunction = util.<span class="nt">callbackify</span>(fn);
+
+<span class="nt">callbackFunction</span>((<span class="nx">err</span>, <span class="nx">val</span>) <span class="nt">=&gt;</span> {
+  <span class="kr">if</span>(<span class="nx">err</span>) <span class="kr">throw</span> err;
+  <span class="nb">console</span>.<span class="nt">log</span>(<span class="nx">val</span>);
+})<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i>
+</pre>
+</div>
+<p>La devolución de llamada se ejecuta de forma asíncrona y tendrá un seguimiento de pila limitado. Si se produce la devolución de llamada, el proceso emite un evento <strong>uncaughtException</strong>, si no se maneja se termina el proceso.</p>
+	<h4 id="util.format"><a href="#util.format"><code class="path">util.format(format[,...])</code></a></h4>
+			<p>
+			El método <strong>util.format()</strong> devuelve un <strong>string</strong> formateado que usará el primer argumento como una cadena similar a la función <strong>printf</strong> en numerosos lenguajes de programación. Este formato puede contener cero o más especificadores de formato. Estos especificadores se pueden remplazar con el valor convertido del argumento correspondiente.</p>
+			<p>En la siguiente lista podemos ver algunos de los especificadores:</p>
+			<table class="table">
+				<thead>
+					<th>Especificador</th>
+					<th>Descripción</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td data-label="especificador"><strong>%s</strong></td>
+						<td data-label="descripción"><span>Convierte el valor en un <strong>String</strong>.</span></td>
+					</tr>
+					<tr>
+						<td data-label="especificador"><strong>%d</strong></td>
+						<td data-label="descripción"><span>En este caso se convertirá el valor en un decimal (<em><strong>number</strong></em>).</span></td>
+					</tr>
+					<tr>
+						<td data-label="especificador"><strong>%j</strong></td>
+						<td data-label="descripción"><span>Este valor es interpretado como un <strong>JSON</strong></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<blockquote class="info">
+		<p>Para formatear una cadena, usará el signo de porcentaje <code class="path">%</code>, seguido del especificador</p></blockquote>
+		<h4 id="ejemplo-format-s"><a href="#ejemplo-format-s">Ejemplo básico</a></h4>
+			<div class="highlight">
+<pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
+
+<span class="nb">console</span>.<span class="nt">log</span>(util.<span class="nt">format</span>(<span class="s">&quot;Se llamaba %s y era %s&quot;</span>, <span class="s">&quot;Marco&quot;</span>, <span class="s">&quot;programador&quot;</span>));
+<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre></div>
+<div class="highlight">
+<pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
+
+<span class="na">const</span> obtenerProbabilidad = (<span class="nx">porcentaje</span>) <span class="nt">=&gt;</span> {
+  <span class="kr">return</span> util.<span class="nt">format</span>(<span class="s">&quot;Probabilidad de %d%%&quot;</span>, porcentaje);
+}
+
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">10</span>));
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">10<span class="nb">+</span>10</span>));
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">30</span>));<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+<!-- EJEMPLO 2 CON JSON -->
+<div class="highlight">
+<pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
+
+<span class="na">const</span> formateadorJSON = (<span class="nx">datos</span>) <span class="nt">=&gt;</span> {
+  <span class="kr">return</span> util.<span class="nt">format</span>(<span class="s">&quot;%j&quot;</span>, datos);
+}
+
+<span class="na">const</span> personas = [
+  { <span class="nx">nombre</span>: <span class="s">&quot;pedro&quot;</span>, <span class="nx">edad</span>: <span class="gu">32</span> },
+  { <span class="nx">nombre</span>: <span class="s">&quot;juan&quot;</span>, <span class="nx">edad</span>: <span class="gu">22</span> },
+  { <span class="nx">nombre</span>: <span class="s">&quot;diego&quot;</span>, <span class="nx">edad</span>: <span class="gu">42</span> }
+]
+
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">formateadorJSON</span>(personas));<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+</div>
+
+<iframe frameborder="0" width="100%" height="400px" src="https://replit.com/@marcocontreraas/formatear-cadenas?embed=true"></iframe>
+
+</section>
+
+ <script src="../../../public/js/lib/fontawesome.bundle.js" crossorigin="anonymous"></script>
+  <script src="../../../public/js/functions.js" type="module"></script>
+	</article>
+</body>
+</html>
