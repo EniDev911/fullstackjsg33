@@ -231,6 +231,11 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
         <td data-label="comando"><strong>\a</strong></td>
         <td data-label="descripción"><span><strong>Activa | Desactiva</strong> el formato alineado de la tabla.</span></td>
       </tr>
+      <!-- CONNECT -->
+      <tr onclick="{mc_connect.showModal()}" class="link">
+        <td data-label="comando"><strong>\c [params]</strong></td>
+        <td data-label="descripción"><span>Establece una nueva conexión a un servidor de PostgreSQL.</span></td>
+      </tr>
       <tr onclick="{mc_Ctitle.showModal()}" class="link">
         <td data-label="comando"><strong>\C [title]</strong></td>
         <td data-label="descripción"><span><strong>Establece | Anula</strong> el título de las tablas que se imprimen en los resultados de una consulta.</span></td>
@@ -291,7 +296,12 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
       <!-- PSET -->
       <tr onclick="{mc_pset.showModal()}" class="link">
         <td data-label="comando"><strong>\pset<br>[option [value]]</strong></td>
-        <td data-label="descripción">Este comando establece opciones que afectan la salida de los resultados. [<strong>option</strong>] indica que opción se va a configurar y [<strong>value</strong>] varía según la opción seleccionada.</td>
+        <td data-label="descripción"><span>Este comando establece opciones que afectan la salida de los resultados. [<strong>option</strong>] indica que opción se va a configurar y [<strong>value</strong>] varía según la opción seleccionada.</span></td>
+      </tr>
+      <!-- SET -->
+      <tr onclick="{mc_set.showModal()}" class="link">
+        <td data-label="comando"><strong>\set<br>[name value[...]]</strong></td>
+        <td data-label="descripción"><span>Este comando establece variables en <strong>psql</strong> en función de un nombre <strong>name</strong> y el valor <strong>value</strong>. Si se usa el mismo nombre para establecer una variable se estaría sobrescribiendo la anterior, si desea borrar una variable se puede usar el comando <strong>\unset nombreVariable</strong></span></td>
       </tr>
       </tbody>
     </table>
@@ -301,9 +311,15 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
     </p>
     <button onclick="{mc_a.close()}">&times;</button>
     </dialog>
+    <dialog id="mc_connect">
+      <p align="center">
+        <img src="assets/mc_connect.png" alt="meta comando connect">
+      </p>
+    <button onclick="{mc_connect.close()}">&times;</button>
+    </dialog>
     <dialog id="mc_Ctitle">
     <p align="center">
-      <img src="assets/c-title.png" alt="meta comando C [title]">
+      <img src="assets/mc-title.png" alt="meta comando C [title]">
       <button onclick="{mc_Ctitle.close()}">&times;</button>
     </p>
     </dialog>
@@ -333,13 +349,13 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
     </dialog>
     <dialog id="mc_timing">
       <p align="center">
-        <img src="assets/timing.png" alt="meta comando timing">
+        <img src="assets/mc-timing.png" alt="meta comando timing">
       </p>
       <button onclick="{mc_timing.close()}">&times;</button>
     </dialog>
     <dialog id="mc_extends">
       <p align="center">
-        <img src="assets/extends-x.png" alt="meta comando x">
+        <img src="assets/mc-x.png" alt="meta comando x">
       </p>
       <button onclick="{mc_extends.close()}">&times;</button>
     </dialog>  
@@ -351,7 +367,7 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
     </dialog>
     <dialog id="mc_html">
       <p align="center">
-        <img src="assets/html.png" alt="meta comando H">
+        <img src="assets/mc-html.png" alt="meta comando H">
       </p>      
       <button onclick="{mc_html.close()}">&times;</button>
     </dialog>
@@ -393,7 +409,13 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
     </p>
     </details>       
     <button onclick="{mc_pset.close()}">&times;</button>
-  </dialog> 
+  </dialog>
+  <dialog id="mc_set">
+    <p align="center">
+      <img src="./assets/set-mc-1.png" alt="meta comando set">
+    </p>
+    <button onclick="{mc_set.close()}">&times;</button>
+  </dialog>
   <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
   </p>
