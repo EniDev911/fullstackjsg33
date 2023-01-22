@@ -288,6 +288,11 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
           las tablas , respuestas de comandos y mensajes de tipo "notices" del servidor, pero no los mensajes de error.</span>
         </td>
       </tr>
+      <!-- PSET -->
+      <tr onclick="{mc_pset.showModal()}" class="link">
+        <td data-label="comando"><strong>\pset<br>[option [value]]</strong></td>
+        <td data-label="descripción">Este comando establece opciones que afectan la salida de los resultados. [<strong>option</strong>] indica que opción se va a configurar y [<strong>value</strong>] varía según la opción seleccionada.</td>
+      </tr>
       </tbody>
     </table>
     <dialog id="mc_a">
@@ -368,6 +373,27 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
     </p>  
     <button onclick="{mc_output.close()}">&times;</button>
   </dialog>
+  <dialog id="mc_pset">
+    <details>
+    <summary><strong>pset border 1</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-border1.png" alt="meta comando pset">
+    </p>
+    </details>
+    <details>
+    <summary><strong>pset border 2</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-border2.png" alt="meta comando pset">
+    </p>
+    </details> 
+    <details>
+    <summary><strong>pset unicode personalizado</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-customized.png" alt="meta comando pset">
+    </p>
+    </details>       
+    <button onclick="{mc_pset.close()}">&times;</button>
+  </dialog> 
   <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
   </p>

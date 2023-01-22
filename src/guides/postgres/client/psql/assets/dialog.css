@@ -1,5 +1,7 @@
 dialog {
 	margin: auto;
+	width: 100%;
+	padding: 55px 15px 15px 15px;
 }
 
 dialog button {

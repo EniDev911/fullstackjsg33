@@ -35,14 +35,14 @@
       </picture>
     </p>
     <ul>
-      <li><a href="#cambiar-a-postgres">Cambiar a cuenta de postgres</a></li>
+      <li><a href="#cambiar-a-la-cuenta-de-postgres">Cambiar a cuenta de postgres</a></li>
       <li><a href="#crear-un-rol">Crear un rol</a></li>
       <li><a href="#crear-nueva-basedatos">Crear una nueva base de datos</a></li>
     </ul>
     <p>Instalar los paquetes de PostgreSQL desde los repositorios predeterminados de Ubuntu. Para ello es necesario
       actualizar el índice de paquete: </p>
     <div class="highlight">
-      <pre><span class="nt">sudo</span> apt update
+      <pre><span class="nt">sudo</span> apt update<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
 
@@ -62,9 +62,8 @@
     <p>En el proceso de instalación Postgres creó una cuenta de usuario llamada <strong>postgres, que se asocia con el
         rol predeterminado de Postgres</strong>. Para comenzar a usar Postgres, podemos iniciar sesión en esa cuenta.
       Existen varias maneras de usar esta cuenta para acceder a Postgres.</p>
-    <p><a name="cambiar-a-postgres"></a></p>
-    <h3 id="cambiar-a-la-cuenta-de-postgres">Cambiar a la cuenta de postgres<a class="headerlink"
-        href="#cambiar-a-la-cuenta-de-postgres" title="Permanent link">⚓</a></h3>
+    <hr>
+    <h3 id="cambiar-a-la-cuenta-de-postgres"><a href="#cambiar-a-la-cuenta-de-postgres">Cambiar a la cuenta de postgres</a></h3>
     <div class="highlight">
       <pre><span class="c1"># una forma</span>
 <span class="nt">sudo</span> -i -u postgres
@@ -102,11 +101,10 @@
       </p>
     </details>
     <hr />
-    <p><a name="crear-un-rol"></a></p>
-    <h3 id="crear-un-rol">Crear un rol<a class="headerlink" href="#crear-un-rol" title="Permanent link">⚓</a></h3>
+    <h3 id="crear-un-rol"><a href="#crear-un-rol">Crear un rol</a></h3>
     <p>En este momento, solo tenemos el rol de <strong>postgres</strong> configurado dentro de la base de datos. Podemos
       crear nuevos roles a partir desde la línea de comandos usando la herramienta
-      <strong><code>createrole</code></strong> y le indicamos la opción <code>--interactive</code> para que nos solicite
+      <strong>createrole</strong> y le indicamos la opción <code>--interactive</code> para que nos solicite
       el nombre del nuevo rol y también nos preguntará si debería tener <strong>permisos de superusuario</strong>.
     </p>
     <div class="highlight">
@@ -117,7 +115,7 @@
     <p>Si, como alternativa podemos usar <strong>sudo</strong> para cada comando sin dejar de usar nuestra cuenta
       normal: </p>
     <div class="highlight">
-      <pre><span class="nt">sudo</span> -u postgres createuser --interactive <i class="fa-solid fa-clone" onclick="{copy_clipboard('sudo -u postgres createuser --interactive')}"></i>
+      <pre><span class="nt">sudo</span> -u postgres createuser --interactive <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
 
@@ -129,8 +127,7 @@
 
     <hr />
     <p><a name="crear-nueva-basedatos"></a></p>
-    <h3 id="crear-nueva-base-de-datos">Crear nueva base de datos<a class="headerlink" href="#crear-nueva-base-de-datos"
-        title="Permanent link">⚓</a></h3>
+    <h3 id="crear-nueva-base-de-datos">Crear nueva base de datos</h3>
     <p>Otra susposición que el sistema de autenticación de <strong>Postgres realiza por defecto es que para cualquier
         rol creado
         para que pueda iniciar sesión deberá existir una base de datos con el mismo nombre del rol</strong>.</p>
@@ -139,7 +136,7 @@
       <strong>boba-fett</strong>. De lo contrario obtendremos un error por intentar acceder a una base de datos que no
       existe.
     </p>
-    <p>Podemos crear la base de datos apropiada usando la herramienta <strong><code>createdb</code></strong>.</p>
+    <p>Podemos crear la base de datos apropiada usando la herramienta <strong>createdb</strong>.</p>
     <div class="highlight">
       <pre><span class="nt">createdb</span> boba-feet
 </pre>
