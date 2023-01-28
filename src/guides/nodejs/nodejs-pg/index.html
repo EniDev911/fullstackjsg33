@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nodejs PG</title>
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+</head>
+<body>
+	<article class="markdown-body">
+		<h1 align="center">NODE POSTGRES</h1>
+		<h2>CONTENIDO</h2>
+		<ul>
+			<li><a href="#codigo-recomendado">Propuestas de código recomendadas</a></li>
+		</ul>
+		<h3 id="conexion"><a href="#conexion">Conectar con PotgreSQL</a></h3>
+
+		<p><strong>pg</strong> usa las mismas <strong>variables de entorno</strong> que <strong>libq</strong> y <strong>psql</strong> para conectarse a un servidor PostgreSQL. Tanto los clientes (<span>Client</span>) individuales como los grupos (<strong>Pool</strong>) utilizarán estas variables:</p>
+
+		<div class="highlight">
+<pre><span class="nb">const</span> { <span class="nx">Pool</span>, <span class="nx">Client</span> } = <span class="nt">require</span>(<span class="s">'pg'</span>);
+
+<span class="nb">const</span> pool = <span class="na">new</span> Pool();
+
+pool.<span class="nt">query</span>(<span class="s">'SELECT NOW()'</span>, (<span class="nx">err</span>, <span class="nx">res</span>) <span class="nt">=&gt;</span> {
+  <span class="na">console</span>.<span class="nt">log</span>(err, res);
+  pool.<span class="nt">end</span>();	
+})<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+		</div>
+	<h4 id="codigo-recomendado"><a href="#codigo-recomendado">Código recomendado</a></h4>
+<p>Cada vez que tengo un proyecto que tengo que usar bases de datos, es más cómodo crear un archivo y hacer que todas las interacciones con la base de datos pasen por este archivo. Esto sirve para algunos propósitos:</p>
+<p><ul>
+	<li>Permite un solo lugar para arrancar y configurar la base de datos.</li>
+	<li>Permite un solo lugar para colocar registros y diagnósticos de la base de datos.</li>
+</ul></p>
+
+<h4>Ejemplo 1</h4>
+<p>Por lo general comienzo mi archivo <code class="path">db/index.js</code> de la siguinte manera:</p>
+
+<div class="highlight">
+<pre><span class="nb">const</span> { <span class="nx">Pool</span> } = <span class="nt">require</span>(<span class="s">'pg'</span>);
+
+<span class="nb">const</span> pool = <span class="na">new</span> Pool();
+
+<span class="na">module</span>.<span class="nx">exports</span> = {
+  query: (<span class="nx">text</span>, <span class="nx">params</span>, <span class="nx">callback</span>) <span class="nt">=&gt;</span> {
+    <span class="na">return</span> pool.<span class="nt">query</span>(text, params, callback)
+  },
+}<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+</div>
+
+<p>Ahora podemos requerir en cualquier otro lugar de la aplicación este archivo en vez de requerir <strong>pg</strong> directamente. Aquí un ejemplo de uso en una ruta <code class="path">routes/user.js</code>:</p>
+<div class="highlight">
+<pre><span class="nb">const</span> db = <span class="nt">require</span>(<span class="s">'../db'</span>);
+
+app.<span class="nt">get</span>(<span class="s">'/:id'</span>, (<span class="nx">req</span>, <span class="nx">res</span>, <span class="nx">next</span>) <span class="nt">=&gt;</span> {
+  db.<span class="nt">query</span>(<span class="s">'SELECT * FROM users WHERE id = $1'</span>, [req.params.<span class="nx">id</span>], (err, result) <span class="nt">=&gt;</span> {
+    <span class="nb">if</span> (err) {
+      <span class="nb">return</span> <span class="nt">next</span>(err)
+    }
+    res.<span class="nt">send</span>(result.<span class="nx">rows</span>[0])
+  })
+})<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+</div>  
+
+<p>Ahora si quisieramos registrar cada una de las consultas que se ejecutan, cuánto tiempo tomó y la cantidad de filas que devuelve, es muy fácil agregando las siguiente líneas:</p>
+
+<div class="highlight">
+<pre><span class="nb">const</span> { <span class="nx">Pool</span> } = <span class="nt">require</span>(<span class="s">'pg'</span>);
+
+<span class="nb">const</span> pool = <span class="na">new</span> Pool();
+</pre>
+</div>
+
+</article>
+	<script src="../../../public/js/functions.js" type="module"></script>
+	<script src="../../../public/js/lib/fontawesome.bundle.js"></script>
+</body>
+</html>
