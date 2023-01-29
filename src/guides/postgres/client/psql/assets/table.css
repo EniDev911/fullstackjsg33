@@ -1,0 +1,77 @@
+.table th {
+	text-align: center;
+}
+
+thead {
+    background: linear-gradient(#445599 50%, #227f 0);
+    color: #fff;
+    border-radius: 0;
+ }
+
+@media(hover: hover){
+	.table td.link:hover {
+		background: #44444440;
+		cursor: pointer;
+	}
+	.table tr.link:hover {
+		background: #44444440;
+		cursor: pointer;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.table {
+		border: none;
+		box-shadow: none !important;
+	}
+	.table thead {
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td {
+		display: block;
+		width:  100%;
+	}
+
+	.table tr {
+		border: 2px solid #777;
+		margin-bottom: 15px;
+	}
+
+	.table td {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		position: relative;
+		width: 100%;
+	}
+	.table td img {
+		height: 32px;
+		width: 32px;
+		vertical-align: middle;
+	}
+	.table td:nth-child(even) {
+		background: #ddd;
+	}
+
+	.table td::before {
+		content: attr(data-label);
+		font-weight: bold;
+		text-align: left;
+		flex-basis: 50%;
+		margin-right: 10px;
+	}
+	.table td::before::first-letter {
+		text-transform: capitalize;
+	}
+
+	.table td::after  {
+		content:  attr(data-label2);
+		position: absolute;
+		right: 0;
+		font-weight: bold;
+		color: #00008b;
+		padding-right: 10px;
+	}
+}

@@ -18,5 +18,9 @@ export const articulos = [
 	{
 		titulo: "Formatear cadenas",
 		path: "util-format/index.html"	
+	},
+	{
+		titulo: "Nodejs pg",
+		path: "nodejs-pg/index.html"
 	}
 ]

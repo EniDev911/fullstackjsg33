@@ -209,5 +209,35 @@ export const projects = [
     color: "light",
     background: "danger",
     module: 5
-  }
+  },
+  {
+    title: "Desafío 2: Natural Pic",
+    image: "src/public/images/png/natural-pic.png",
+    url_code:
+      "https://github.com/EniDev911/pxl-react-context",
+    url_demo: "https://enidev911.github.io/pxl-react-context/",
+    color: "light",
+    background: "dark",
+    module: 5
+  },
+  {
+    title: "Desafío 3: React Router II - Pokemón",
+    image: "src/public/images/png/react-router2-pokemon.png",
+    url_code:
+      "https://github.com/EniDev911/react-poke-api-adl",
+    url_demo: "https://enidev911.github.io/react-poke-api-adl/",
+    color: "warning",
+    background: "dark",
+    module: 5
+  },
+  {
+    title: "Desafío 4 final: Mamma Mia!",
+    image: "src/public/images/png/mamma-mia.png",
+    url_code:
+      "https://github.com/EniDev911/ts-react-mamma-mia",
+    url_demo: "https://enidev911.github.io/ts-react-mamma-mia/",
+    color: "light",
+    background: "info",
+    module: 5
+  } 
 ];

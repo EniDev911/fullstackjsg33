@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../../public/css/themes/overlook.css">
+  <link rel="stylesheet" href="./assets/table.css">
+  <link rel="stylesheet" href="./assets/dialog.css">
   <title>PSQL: cliente de terminal</title>
 </head>
 
@@ -17,34 +19,31 @@
       </a><br><br>
       PSQL: CLIENTE DE LÍNEA DE COMANDOS
     </h2>
-
-    <h2>
+    <h3>
       CONTENIDO
       <img src="https://raw.githubusercontent.com/EniDev911/assets/main/png/logo/logo_sin_bg.png" alt="logo" height="45"
         align="right">
-    </h2>
+    </h3>
 
     <ul>
-      <li><a href="#intro"><strong>Introducción</strong></a></li>
-      <li><a href="#connect"><strong>Conectarse al servidor</strong></a></li>
-      <li><a href="#optionscmd"><strong>Opciones de línea de comandos</strong></a></li>
-      <li><a href="#metacommand"><strong>Meta comandos</strong></a></li>
+      <li><a href="#introduccion-psql"><strong>Introducción</strong></a></li>
+      <li><a href="#conectarse-al-servidor"><strong>Conectarse al servidor</strong></a></li>
+      <li><a href="#opciones-de-linea-de-comandos"><strong>Opciones de línea de comandos</strong></a></li>
+      <li><a href="#meta-comandos"><strong>Meta comandos</strong></a></li>
     </ul>
     <hr />
-    <h2 id="introduccion"><a name="intro"></a>INTRODUCCIÓN <a class="headerlink" href="#introduccion"
-        title="Permanent link">&#9875;</a></h2>
-    <p><strong>psql</strong> es una aplicación cliente que viene incluido en el paquete de instalación de PostgreSQL
+    <h3 id="introduccion-psql"><a href="#introduccion-psql">INTRODUCCIÓN</a></h3>
+    <p><strong>psql</strong> es una aplicación cliente que viene incluido en el paquete de instalación de <strong>PostgreSQL</strong>
       regular y está basado en la terminal. Nos permite establecer una conexión a un servidor de PostgreSQL donde
       debemos pasar los <strong>argumentos de conexión</strong> correctamente en la línea de comandos, establecida la
       conexión se abre una sesión donde podemos interactuar con consultas <a
         href="https://es.wikipedia.org/wiki/SQL"><strong>SQL</strong></a> y enviarlas a nuestro servidor de
       PostgreSQL y visualizar los resultados. Además, <strong>psql</strong> proporciona una serie de <a
-        href="#metacommand"><strong>matacomandos</strong></a> y varias funciones similares a las de un
+        href="#meta-comandos"><strong>matacomandos</strong></a> y varias funciones similares a las de un
       shell común y tradicional para facilitar la escritura de scripts y la automatización de una amplia variedad de
       tareas.</p>
     <hr />
-    <h2 id="conectarse-al-servidor"><a name="connect"></a>CONECTARSE AL SERVIDOR <a class="headerlink"
-        href="#conectarse-al-servidor" title="Permanent link">&#9875;</a></h2>
+    <h3 id="conectarse-al-servidor"><a href="#conectarse-al-servidor">CONECTARSE AL SERVIDOR</a></h3>
     <p>Para conectarse al servidor, se necesita saber el <strong>nombre de la base de datos de destino</strong>,
       <strong>el
         nombre de host</strong>, <strong>puerto del servidor</strong>, etc., y con que <strong>nombre de
@@ -52,16 +51,15 @@
       las <strong>opciones de la línea de comandos</strong>
     </p>
     <p>Ej: (<strong>host, usuario, puerto, etc</strong>).<br />
-    <div class="highlight">
-      <pre><span class="nt">psql.exe</span> -h localhost -U postgres -d dbname
-</pre>
+<div class="highlight">
+<pre><span class="nt">psql</span> -h localhost -U postgres -d dbname<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
     <p>Si se encuentra un argumento que no pertenece a ninguna opción, se interpretará como el nombre de la base de
       datos (o el nombre de usuario, si el nombre de la base de datos ya está dado). <strong>No todas estas opciones son
         obligatorias; hay valores predeterminados</strong> útiles.</p>
-    <p>Si omite el nombre de host, psql se conectará a través de un socket de dominio Unix a un servidor en el host
-      local, o a través de TCP/IP a <strong><code>localhost</code></strong>. </p>
+    <p>Si omite el nombre de host, psql se conectará a través de un <strong>socket de dominio Unix</strong> a un servidor en el host
+      local, o a través de <strong>TCP/IP</strong> a <strong>localhost</strong>. </p>
     <p>El número de puerto predeterminado se determina en tiempo de compilación. Dado que el servidor de la base de
       datos utiliza el mismo valor predeterminado <strong>5432</strong>, no tendrá que especificar el puerto en la
       mayoría de los casos. </p>
@@ -71,36 +69,56 @@
       <img src="assets/connect.png" alt="ejemplo de conexión">
     </p>
 
-    <blockquote>
-      <p>NOTA: Tenga en cuenta que no puede simplemente conectarse a cualquier base de datos con cualquier nombre de
+    <blockquote class="info">
+      <p><strong>NOTA</strong>: Tenga en cuenta que no puede simplemente conectarse a cualquier base de datos con cualquier nombre de
         usuario. El usuario que desea conectarse debe tener los permisos previamente creados por el administrador del
         sistema de base de datos. </p>
     </blockquote>
     <p>Cuando los valores predeterminado no son del todo correctos, puede ahorrarse algo de escritura configurando las
       siguientes variables de entorno: </p>
+      <h5>WINDOWS CMD</h5>
+      <details>        
     <ul>
       <li><strong>PGUSER</strong> </li>
     </ul>
     <p>
     <div class="highlight">
-      <pre><span class="nt">setx</span> PGUSER postgres</pre>
+      <pre><span class="nt">setx</span> PGUSER postgres <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <ul>
       <li><strong>PGPASSWORD</strong> </li>
     </ul>
     <div class="highlight">
-      <pre><span class="nt">setx</span> PGPASSWORD postgre 
-</pre>
+      <pre><span class="nt">setx</span> PGPASSWORD su_password<i class="fa-solid fa-clone" onclick="{this.parentNode.textContent}"></i></pre>
     </div>
     <p align="center">
       <img src="assets/setx-variables.png" alt="establecer variables de entorno">
     </p>
+  </details>
+  <!-- VARIABLE DE ENTORNOS - LINUX -->
+  <h5>LINUX BASH</h5>
+      <details>        
+    <ul>
+      <li><strong>PGUSER</strong> </li>
+    </ul>
+    <p>
+    <div class="highlight">
+      <pre><span class="nt">export</span> PGUSER postgres <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+    </div>
+    <ul>
+      <li><strong>PGPASSWORD</strong> </li>
+    </ul>
+    <div class="highlight">
+      <pre><span class="nt">export</span> PGPASSWORD su_password<i class="fa-solid fa-clone" onclick="{this.parentNode.textContent}"></i></pre>
+    </div>
+    </p>
+  </details>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
+
     <hr />
-    <h3 id="opciones-de-linea-de-comandos"><a name="optionscmd"></a>Opciones de línea de comandos<a class="headerlink"
-        href="#opciones-de-linea-de-comandos" title="Permanent link">&#9875;</a></h3>
+    <h3 id="opciones-de-linea-de-comandos"><a href="#opciones-de-linea-de-comandos">Opciones de línea de comandos</a></h3>
     <p>
       Este herramiente de línea de comandos acepta las siguientes opciones al momento de invocarla:
     </p>
@@ -110,85 +128,85 @@ Empleo:
 psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
         
 <span class="nt">Opciones generales:</span>
-  <span class="nx">-c, --command</span>=ORDEN 
+  <span class="bg"><span class="nx">-c, --command</span>=ORDEN</span> 
   <span class="c1">ejecutar sólo una orden (SQL o interna) y salir</span>
-  <span class="nx">-d, --dbname</span>=NOMBRE 
+  <span class="bg"><span class="nx">-d, --dbname</span>=NOMBRE</span> 
   <span class="c1">nombre de base de datos a conectarse (por omisión: «postgres»)</span>
-  <span class="nx">-f, --file</span>=ARCHIVO 
+  <span class="bg"><span class="nx">-f, --file</span>=ARCHIVO</span>
   <span class="c1">ejecutar órdenes desde archivo, luego salir</span>
-  <span class="nx">-l, --list</span> 
+  <span class="nx bg">-l, --list</span> 
   <span class="c1">listar bases de datos, luego salir</span>
-  <span class="nx">-v, --set</span>=, <span class="nx">--variable</span>=NOMBRE=VALOR 
+  <span class="bg"><span class="nx">-v, --set</span>=, <span class="nx">--variable</span>=NOMBRE=VALOR</span> 
   <span class="c1">definir variable de psql NOMBRE a VALOR (p.ej. -v ON_ERROR_STOP=1)</span>
-  <span class="nx">-V, --version</span>
+  <span class="nx bg">-V, --version</span>
   <span class="c1">mostrar información de versión, luego salir</span>
-  <span class="nx">-X, --no-psqlrc</span> 
+  <span class="nx bg">-X, --no-psqlrc</span> 
   <span class="c1">no leer archivo de configuración (~/.psqlrc)</span>
-  <span class="nx">-1</span> («uno»)<span class="nx">, --single-transaction</span> 
+  <span class="bg"><span class="nx">-1</span> («uno»)<span class="nx">, --single-transaction</span></span> 
   <span class="c1">ejecuta órdenes en una única transacción</span>
-  <span class="nx">-?, --help</span>[=opcs] 
+  <span class="bg"><span class="nx">-?, --help</span>[=opcs]</span>
   <span class="c1">mostrar esta ayuda, luego salir</span>
-  <span class="nx">--help</span>=commands 
+  <span class="bg"><span class="nx">--help</span>=commands</span> 
   <span class="c1">listar órdenes backslash, luego salir</span>
-  <span class="nx">--help</span>=variables 
+  <span class="bg"><span class="nx">--help</span>=variables</span> 
   <span class="c1">listar variables especiales, luego salir</span>
         
 <span class="nt">Opciones de entrada y salida:</span>
-  <span class="nx">-a, --echo-all</span> 
+  <span class="nx bg">-a, --echo-all</span> 
   <span class="c1">mostrar las órdenes del script</span>
-  <span class="nx">-b, --echo-errors</span> 
+  <span class="nx bg">-b, --echo-errors</span> 
   <span class="c1">mostrar órdenes fallidas</span>
-  <span class="nx">-e, --echo-queries</span> 
+  <span class="nx bg">-e, --echo-queries</span> 
   <span class="c1">mostrar órdenes enviadas al servidor</span>
-  <span class="nx">-E, --echo-hidden</span> 
+  <span class="nx bg">-E, --echo-hidden</span> 
   <span class="c1">mostrar consultas generadas por órdenes internas</span>
-  <span class="nx">-L, --log-file</span>=ARCHIVO 
+  <span class="bg"><span class="nx">-L, --log-file</span>=ARCHIVO</span>
   <span class="c1">envía el registro de la sesión a un archivo</span>
-  <span class="nx">-n, --no-readline</span> 
+  <span class="nx bg">-n, --no-readline</span> 
   <span class="c1">deshabilitar edición de línea de órdenes (readline)</span>
-  <span class="nx">-o, --output</span>=ARCHIVO 
+  <span class="bg"><span class="nx">-o, --output</span>=ARCHIVO</span> 
   <span class="c1">enviar resultados de consultas a archivo (u |orden)</span>
-  <span class="nx">-q, --quiet</span> 
+  <span class="nx bg">-q, --quiet</span> 
   <span class="c1">modo silencioso (sin mensajes, sólo resultados)</span>
-  <span class="nx">-s, --single-step</span> 
+  <span class="nx bg">-s, --single-step</span> 
   <span class="c1">modo paso a paso (confirmar cada consulta)</span>
-  <span class="nx">-S, --single-line</span> 
+  <span class="nx bg">-S, --single-line</span> 
   <span class="c1">modo de líneas (fin de línea termina la orden SQL)</span>
         
 <span class="nt">Opciones de formato de salida:</span>
-  <span class="nx">-A, --no-align</span> 
+  <span class="nx bg">-A, --no-align</span> 
   <span class="c1">modo de salida desalineado</span>
-  <span class="nx">--csv</span> 
+  <span class="nx bg">--csv</span> 
   <span class="c1">modo de salida de tabla CSV (valores separados por comas)</span>
-  <span class="nx">-F, --field-separator</span>=CADENA 
+  <span class="bg"><span class="nx">-F, --field-separator</span>=CADENA</span> 
   <span class="c1">separador de campos para salida desalineada (por omisión: «|»)</span>
-  <span class="nx">-H, --html</span> 
+  <span class="nx bg">-H, --html</span> 
   <span class="c1">modo de salida en tablas HTML</span>
-  <span class="nx">-P, --pset</span>=VAR[=ARG] 
+  <span class="bg"><span class="nx">-P, --pset</span>=VAR[=ARG]</span> 
   <span class="c1">definir opción de impresión VAR en ARG (ver orden \pset)</span>
-  <span class="nx">-R, --record-separator</span>=CADENA 
+  <span class="bg"><span class="nx">-R, --record-separator</span>=CADENA</span> 
   <span class="c1">separador de registros para salida desalineada (por omisión: salto de línea)</span>
-  <span class="nx">-t, --tuples-only</span> 
+  <span class="nx bg">-t, --tuples-only</span> 
   <span class="c1">sólo muestra registros</span>
-  <span class="nx">-T, --table-attr</span>=TEXTO
+  <span class="bg"><span class="nx">-T, --table-attr</span>=TEXTO</span>
   <span class="c1">definir atributos de marcas de tabla HTML (ancho, borde)</span>
-  <span class="nx">-x, --expanded</span> 
+  <span class="nx bg">-x, --expanded</span> 
   <span class="c1">activar modo expandido de salida de tablas</span>
-  <span class="nx">-z, --field-separator-zero</span> 
+  <span class="nx bg">-z, --field-separator-zero</span> 
   <span class="c1">definir separador de campos para salida desalineada al byte cero</span>
-  <span class="nx">-0, --record-separator-zero</span> 
+  <span class="nx bg">-0, --record-separator-zero</span> 
   <span class="c1">definir separador de filas para salida desalineada al byte cero</span>
         
 <span class="nt">Opciones de conexión:</span>
-  <span class="nx">-h, --host</span>=NOMBRE 
+  <span class="bg"><span class="nx">-h, --host</span>=NOMBRE</span> 
   <span class="c1">nombre del anfitrión o directorio de socket (por omisión: «socket local»)</span>
-  <span class="nx">-p, --port</span>=PUERTO 
+  <span class="bg"><span class="nx">-p, --port</span>=PUERTO</span> 
   <span class="c1">puerto del servidor (por omisión: «5432»)</span>
-  <span class="nx">-U, --username</span>=NOMBRE 
+  <span class="bg"><span class="nx">-U, --username</span>=NOMBRE</span> 
   <span class="c1">nombre de usuario (por omisión: «postgres»)</span>
-  <span class="nx">-w, --no-password</span> 
+  <span class="nx bg">-w, --no-password</span> 
   <span class="c1">nunca pedir contraseña</span>
-  <span class="nx">-W, --password</span> 
+  <span class="nx bg">-W, --password</span> 
   <span class="c1">forzar petición de contraseña (debería ser automático)</span>
       </pre>
     </div>
@@ -196,197 +214,214 @@ psql [OPCIONES]... [BASE-DE-DATOS [USUARIO]]
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr>
-    <h3 id="meta-commands"><a name="metacommand"></a>Meta-commands<a class="headerlink" href="#meta-commands"
-        title="Permanent link">&#9875;</a></h3>
-    <p>Cualquier cosa que ingrese en psql que comience con una barra invertida <strong><code>\</code></strong> sin
-      comillas es un metacomando de <strong>psql</strong> que es procesado por psql mismo. Estos comandos hacen que
+    <h3 id="meta-comandos"><a href="#meta-comandos">Meta-commands</a></h3>
+    <p>Cualquier cosa que ingrese en psql que comience con una barra invertida <code class="path">\</code> sin
+      comillas es un <strong>metacomando de psql</strong> que es procesado por psql mismo. Estos comandos hacen que
       <strong>psql</strong> sea más útil para la administración o la creación de scripts. Podemos ver algunos en la
       siguiente tabla:
     </p><br>
     <a name="tabla-meta-comandos"></a>
-    <table width="100%">
-      <colgroup>
-        <col width="20%">
-        <col width="80%">
-      </colgroup>
-      <tr>
+    <table class="table">
+      <thead>
         <th>Comando</th>
         <th align="left">Descripción</th>
+      </thead>
+      <tbody>
+      <tr onclick="{mc_a.showModal()}" class="link">
+        <td data-label="comando"><strong>\a</strong></td>
+        <td data-label="descripción"><span><strong>Activa | Desactiva</strong> el formato alineado de la tabla.</span></td>
       </tr>
-      <tr>
-        <td><a href="#aligned"><b><code>\a</code></b></a></td>
-        <td>Activa | Desactiva el formato alineado de la tabla.</td>
+      <!-- CONNECT -->
+      <tr onclick="{mc_connect.showModal()}" class="link">
+        <td data-label="comando"><strong>\c [params]</strong></td>
+        <td data-label="descripción"><span>Establece una nueva conexión a un servidor de PostgreSQL.</span></td>
       </tr>
-      <tr>
-      <tr>
-        <td><a href="#c-title"><b><code>\C [title]</code></b></a></td>
-        <td>Establece | Anula el título de las tablas que se imprimen en los resultados de una consulta.</td>
+      <tr onclick="{mc_Ctitle.showModal()}" class="link">
+        <td data-label="comando"><strong>\C [title]</strong></td>
+        <td data-label="descripción"><span><strong>Establece | Anula</strong> el título de las tablas que se imprimen en los resultados de una consulta.</span></td>
       </tr>
-      <tr>
-      <tr>
-      <tr>
-        <td><a href="#cd-directory"><b><code>\cd [directory]</code></b></a></td>
-        <td>Cambia el directorio de trabajo actual a <strong>directory</strong>. Sin argumentos, cambia el directorio de
+      <tr onclick="{mc_cd.showModal()}" class="link">
+        <td data-label="comando"><strong>\cd [directory]</strong></td>
+        <td data-label="descripción"><span>Cambia el directorio de trabajo actual a [<strong>directory</strong>]. Sin argumentos, cambia el directorio de
           inicio del
-          usuario actual.</td>
+          usuario actual.</span></td>
       </tr>
-      <tr>
-      <tr>
-        <td><a href="#conninfo"><b><code>\conninfo</code></b></a></td>
-        <td>Muestra información sobre la conexión de base de datos actual.</td>
+      <tr onclick="{mc_conninfo.showModal()}" class="link">
+        <td data-label="comando"><strong>\conninfo</strong></td>
+        <td data-label="descripción">Muestra información sobre la conexión de base de datos actual.</td>
       </tr>
-      <tr>
-      <tr>
-        <td><a href="#copyright"><b><code>\copyright</code></b></a></td>
-        <td>Muestra información sobre la conexión de base de datos actual.</td>
+      <tr onclick="{mc_copyright.showModal()}" class="link">
+        <td data-label="comando"><strong>\copyright</strong></td>
+        <td data-label="descripción">Muestra información sobre la licencia del producto.</td>
       </tr>
-      <tr>
-        <td><a href="#echo"><b><code>\echo [text]</code></b></a></td>
-        <td>Imprime los argumentos evaluados en la salida estándar, separados por espacios y seguidos de una nueva
-          línea. Si se utiliza el texto entre acentos graves se interpretará como un comando <code>`comando`</code>.
+      <tr onclick="{mc_echo.showModal()}" class="link">
+        <td data-label="comando"><strong>\echo [text]</strong></td>
+        <td data-label="descripción"><span>Imprime los argumentos evaluados en la salida estándar, separados por espacios y seguidos de una nueva
+          línea. Si se utiliza el texto entre acentos graves se interpretará como un <strong>comando de shell</strong>.</span>
         </td>
       </tr>
-      <tr>
-        <td><a href="#timing"><b><code>\timing</code></b></a></td>
-        <td>Activa | Desactiva la visualización del tiempo en milisegundos que tarda cada instrucción SQL.</td>
+      <tr onclick="{mc_timing.showModal()}" class="link">
+        <td data-label="comando"><strong>\timing</strong></td>
+        <td data-label="descripción"><span><strong>Activa | Desactiva</strong> la visualización del tiempo en milisegundos que tarda cada instrucción SQL.</span></td>
       </tr>
-      <tr>
-        <td><a href="#extends"><b><code>\x</code></b></a></td>
-        <td>Activa | Desactiva el formato de tabla expandido en el resultado de cada instrucción SQL.</td>
+      <tr onclick="{mc_extends.showModal()}" class="link">
+        <td data-label="comando"><strong>\x</strong></td>
+        <td data-label="descripción"><span><strong>Activa | Desactiva</strong> el formato de tabla expandido en el resultado de cada instrucción SQL.</span></td>
       </tr>
-      <tr>
-        <td><a href="#help-mc"><b><code>\h - \help</code></b></a></td>
-        <td>Activa | Desactiva el formato de tabla expandido en el resultado de cada instrucción SQL.</td>
+      <tr onclick="{mc_help.showModal()}" class="link">
+        <td data-label="comando"><strong>\h - \help [comando]</strong></td>
+        <td data-label="descripción"><span>Brinda ayuda de sintaxis en el <strong>comando SQL</strong> especificado.</span></td>
       </tr>
-      <tr>
-        <td><a href="#html"><b><code>\H - \html</code></b></a></td>
-        <td>Activa | Desactiva el formato de salida de consulta HTML.</td>
+      <tr onclick="{mc_html.showModal()}" class="link">
+        <td data-label="comando"><strong>\H - \html</strong></td>
+        <td data-label="descripción"><span><strong>Activa | Desactiva</strong> el formato de salida de consulta HTML.</span></td>
       </tr>
-      <tr>
-        <td><a href="#execute-command"><b><code>\! [comando]</code></b></a></td>
-        <td>Permite ejecutar comandos de la shell de Linux o de CMD de windows desde la propia consola de psql.</td>
+      <tr onclick="{mc_commands.showModal()}" class="link">
+        <td data-label="comando"><strong>\! [comando]</strong></td>
+        <td data-label="descripción"><span>Permite ejecutar [<strong>comando</strong>] de la shell de Linux o de CMD de windows desde la propia consola de psql.</span></td>
       </tr>
-      <tr>
-        <td><a href="#list-mc"><b><code>\l[+]<br>\list[+] [pattern]</code></b></a></td>
-        <td>Muestra un listado de las bases de datos que existen en la instancia del servidor PostgreSQL junto a sus
+      <tr onclick="{mc_list.showModal()}" class="link">
+        <td><strong>\l[+]<br>\list[+] [pattern]</strong></td>
+        <td><span>Muestra un listado de las bases de datos que existen en la instancia del servidor PostgreSQL junto a sus
           nombres, propietarios, propietarios, juego de caracteres y privilegios de acceso. Si se especifica un
-          "pattern", si se listan las bases de datos cuyo nombre coincidan con el patrón. Si se agrega el símbolo "+",
-          también se muestran los tamaños de las bases de datos, los tablespace y las descripciones</td>
+          [<strong>pattern</strong>], si se listan las bases de datos cuyo nombre coincidan con el patrón. Si se agrega el símbolo "+",
+          también se muestran los tamaños de las bases de datos, los tablespace y las descripciones</span></td>
       </tr>
-      <tr>
-        <td><a href="#o-output"><b><code>\o <br>\out [filename]</code></b></a></td>
-        <td>Permite guardar el resultado de las futuras consultas en el archivo "filename". El resultado incluye todas
-          las tablas , respuestas de comandos y mensajes de tipo "notices" del servidor, pero no los mensajes de error.
+      <tr onclick="{mc_output.showModal()}" class="link">
+        <td data-label="comando"><strong>\o <br>\out [filename]</strong></td>
+        <td data-label="descripción"><span>Permite guardar el resultado de las futuras consultas en el archivo [<strong>filename</strong>]. El resultado incluye todas
+          las tablas , respuestas de comandos y mensajes de tipo "notices" del servidor, pero no los mensajes de error.</span>
         </td>
       </tr>
+      <!-- PSET -->
+      <tr onclick="{mc_pset.showModal()}" class="link">
+        <td data-label="comando"><strong>\pset<br>[option [value]]</strong></td>
+        <td data-label="descripción"><span>Este comando establece opciones que afectan la salida de los resultados. [<strong>option</strong>] indica que opción se va a configurar y [<strong>value</strong>] varía según la opción seleccionada.</span></td>
+      </tr>
+      <!-- SET -->
+      <tr onclick="{mc_set.showModal()}" class="link">
+        <td data-label="comando"><strong>\set<br>[name value[...]]</strong></td>
+        <td data-label="descripción"><span>Este comando establece variables en <strong>psql</strong> en función de un nombre <strong>name</strong> y el valor <strong>value</strong>. Si se usa el mismo nombre para establecer una variable se estaría sobrescribiendo la anterior, si desea borrar una variable se puede usar el comando <strong>\unset nombreVariable</strong></span></td>
+      </tr>
+      </tbody>
     </table>
-
-    <h4 id="a"><a name="aligned">&#x1f977; </a><code>\a</code></h4>
+    <dialog id="mc_a">
     <p align="center">
       <img src="assets/aligned-l.png" alt="meta comando aligned"><br>
     </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="c-title">&#x1f977; </a><code>\C</code></h4>
+    <button onclick="{mc_a.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_connect">
+      <p align="center">
+        <img src="assets/mc_connect.png" alt="meta comando connect">
+      </p>
+    <button onclick="{mc_connect.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_Ctitle">
     <p align="center">
-      <img src="assets/c-title.png" alt="meta comando C [title]">
+      <img src="assets/mc-title.png" alt="meta comando C [title]">
+      <button onclick="{mc_Ctitle.close()}">&times;</button>
     </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="cd-directory">&#x1f977; </a><code>\cd</code></h4>
-    <p align="center">
-      <img src="assets/cd-directory.png" alt="meta comando cd [directory]">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4 id="connifo"><a name="conninfo">&#x1f977; </a><code>\conninfo</code></h4>
-    <p align="center">
-      <img src="assets/conninfo.png" alt="meta comando conninfo">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="copyright">&#x1f977; </a><code>\copyright</code></h4>
-    <p align="center">
-      <img src="assets/copyright.png" alt="meta comando copyright">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h3 id="echo"><a name="echo">&#x1f977; </a><code>\echo</code></h3>
-    <p align="center">
-      <img src="assets/echo.png" alt="meta comando echo">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="timing">&#x1f977; </a><code>\timing</code></h4>
-    <p align="center">
-      <img src="assets/timing.png" alt="meta comando timing">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="extends">&#x1f977; </a><code>\x</code></h4>
-    <p align="center">
-      <img src="assets/extends-x.png" alt="meta comando x">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="help-mc">&#x1f977; </a><code>\help</code></h4>
-    <p align="center">
-      <img src="assets/help-mc.png" alt="meta comando help">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h4><a name="html">&#x1f977; </a><code>\H</code></h4>
-    <p align="center">
-      <img src="assets/html.png" alt="meta comando H">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-    <hr>
-    <h3><a name="execute-command">&#x1f977; </a><code>\!</code></h3>
+    </dialog>
+    <dialog id="mc_cd">
+      <p align="center">
+        <img src="assets/cd-directory.png" alt="meta comando cd [directory]">
+      </p>
+      <button onclick="{mc_cd.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_conninfo">
+      <p align="center">
+        <img src="assets/conninfo.png" alt="meta comando conninfo">
+      </p>      
+      <button onclick="{mc_conninfo.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_copyright">
+      <p align="center">
+        <img src="assets/copyright.png" alt="meta comando copyright">
+      </p>     
+      <button onclick="{mc_copyright.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_echo">
+      <p align="center">
+        <img src="assets/echo.png" alt="meta comando echo">
+      </p>
+      <button onclick="{mc_echo.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_timing">
+      <p align="center">
+        <img src="assets/mc-timing.png" alt="meta comando timing">
+      </p>
+      <button onclick="{mc_timing.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_extends">
+      <p align="center">
+        <img src="assets/mc-x.png" alt="meta comando x">
+      </p>
+      <button onclick="{mc_extends.close()}">&times;</button>
+    </dialog>  
+    <dialog id="mc_help">
+      <p align="center">
+        <img src="assets/help-mc.png" alt="meta comando help">
+      </p>
+      <button onclick="{mc_help.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_html">
+      <p align="center">
+        <img src="assets/mc-html.png" alt="meta comando H">
+      </p>      
+      <button onclick="{mc_html.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_commands">
     <p align="center">
       <img src="assets/execute-command.png" alt="meta comando execute-command">
-    </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-
-    <hr>
-    <h3><a name="list-mc">&#x1f977; </a><code>\list</code></h3>
+    </p>      
+    <button onclick="{mc_commands.close()}">&times;</button>
+    </dialog>
+    <dialog id="mc_list">
     <p align="center">
       <img src="assets/list-mc.png" alt="meta comando list-mc">
     </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
-
-    <hr>
-    <h4><a name="o-output">&#x1f977; </a><code>\o</code></h4>
+    <button onclick="{mc_list.close()}">&times;</button>
+  </dialog>
+  <dialog id="mc_output">
     <p align="center">
       <img src="assets/o-output.png" alt="meta comando o-output">
+    </p>  
+    <button onclick="{mc_output.close()}">&times;</button>
+  </dialog>
+  <dialog id="mc_pset">
+    <details>
+    <summary><strong>pset border 1</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-border1.png" alt="meta comando pset">
     </p>
-    <p><a href="#tabla-meta-comandos"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+    </details>
+    <details>
+    <summary><strong>pset border 2</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-border2.png" alt="meta comando pset">
     </p>
+    </details> 
+    <details>
+    <summary><strong>pset unicode personalizado</strong></summary>
+    <p align="center">
+      <img src="assets/pset-mc-customized.png" alt="meta comando pset">
+    </p>
+    </details>       
+    <button onclick="{mc_pset.close()}">&times;</button>
+  </dialog>
+  <dialog id="mc_set">
+    <p align="center">
+      <img src="./assets/set-mc-1.png" alt="meta comando set">
+    </p>
+    <button onclick="{mc_set.close()}">&times;</button>
+  </dialog>
+  <p><a href="#top"><img alt=""
+          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%2399AAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+  </p>
   </article>
+  <script src="../../../../public/js/functions.js" type="module"></script>
+  <script src="../../../../public/js/lib/fontawesome.bundle.js"></script>
 </body>
 
 </html>
