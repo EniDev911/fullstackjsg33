@@ -25,7 +25,7 @@
         </p>
         <h2 id="contenido">Contenido<a href="#contenido"></a></h2>
         <p>&#x1F4CD; <a href="#ssh-keygen">Generar una nueva llave</a><br />
-            &#x1F4CD; <a href="#add-ssh-agent">Agregar la nueva llave al servicio de ssh-agent</a><br />
+            &#x1F4CD; <a href="#agregar-al-ssh-agent">Agregar la nueva llave al servicio de ssh-agent</a><br />
             &#x1F4CD; <a href="#add-ssh-github">Registrar la llave pública a tu cuenta de GitHub</a><br />
             &#x1F4CD; <a href="#test-connection">Probar conexión</a></p>
         <hr />
@@ -64,7 +64,7 @@
             <pre>Enter file in which to save the key (/c/Users/&lt;user&gt;/.ssh/id_rsa):
 </pre></div>
 <p>Seleccione una ubicación de archivo o solo presione <kbd>Enter</kbd> se creara en la ubicación por defecto. </p>
-<blockquote>
+<blockquote class="info">
 <p>Podemos darle un nombre descriptivo como <strong>/c/Users/&lt;myUser>/.ssh/gh_rsa</strong> (gh:
                 github). <strong>(Esto es opcional)</strong> </p>
         </blockquote>
@@ -74,11 +74,8 @@
             seguridad. Evitará que cualquier persona que obtenga acceso a su computadora use esa clave sin la frase de
             contraseña. Sin
             embargo, será necesario que proporcione la frase de contraseña cada vez que se utilice la llave. </p>
-        <blockquote>
-            <p>A modo personal prefiero no utilizar una frase de confirmación ya que una llave SHH la suelo configurar
-                en mi
-                equipo
-                personal y para efecto de productividad sin la frase ahorro segundos de vida.</p>
+        <blockquote class="info">
+            <p>A modo personal prefiero no utilizar una frase de confirmación ya que una llave SHH la suelo configurar en mi equipo personal y para efecto de productividad sin la frase ahorramos tiempo.</p>
         </blockquote>
         <div class="highlight">
             <pre>Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: Enter same passphrase again:</pre>
@@ -99,8 +96,7 @@
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
         <hr />
-        <h3 id="agregar-al-ssh-agent"><a name="add-ssh-agent"></a>Agregar llave al SSH-Agent <a
-                href="#agregar-al-ssh-agent"><i class="fa-solid fa-anchor"></i></a></h3>
+        <h3 id="agregar-al-ssh-agent"><a href="#agregar-al-ssh-agent">Agregar llave al SSH-Agent</a></h3>
         <p>El agente ssh (<a href="https://es.wikipedia.org/wiki/SSH-Agent">ssh-agent</a>) es un programa
             auxiliar que realiza un seguimiento de las claves de identidad del usuario y sus frases de contraseñas. El
             agente
@@ -114,39 +110,41 @@
             las claves SSH existente y <a href="#ssh-keygen"><strong>generado una nueva clave SSH</strong></a> y
             verificar que
             se esté ejecutando el servicio.</p>
-        <p><strong>1. Paso</strong> </p>
-        <p>Verificar que el ssh-agent se esté ejecutando. </p>
+        <p><strong>1.</strong> Verificar que el ssh-agent se esté ejecutando. </p>
 <div class="highlight">
 <pre><span class="gu">eval</span> $(ssh-agent -s)<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
         </div>
 
-        <p><code>eval</code>: Ejecuta un comando de shell y efectua una doble
+        <p><strong>eval</strong>: Ejecuta un comando de shell y efectua una doble
             evaluación en la línea de
             comandos.</p>
-        <p align="center">
-            <img src="assets/eval-ssh-agent.png" alt="ssh-agent"><br>
-            <b>Captura:</b> ejecutar comando eval (el <a href="https://es.wikipedia.org/wiki/Identificador_de_proceso"
-                target="_blank">pid</a> es diferente para cada computadora)
-        </p>
-        <p><strong>2. Paso</strong> </p>
-        <p><i class="fa-solid fa-terminal"></i> Agrega tu llave <strong>ssh privada</strong> al
+<figure align="center">
+<img src="assets/eval-ssh-agent.png" alt="ssh-agent">
+<figcaption><strong>Captura:</strong> ejecutar comando eval (el <a href="https://es.wikipedia.org/wiki/Identificador_de_proceso" target="_blank">pid</a> es diferente para cada computadora)
+</figcaption>
+</figure>
+        <p><strong>2.</strong> Agrega tu llave <strong>ssh privada</strong> al
             <strong>ssh-agent</strong>.
             Si creaste tu llave con un
             nombre distinto debes apuntar hacia donde se encuentre la llave que creaste. Si dejaste los valores
             predeterminado
-            basta con copiar el siguiente comando.
-        </p>
+            basta con copiar el siguiente comando.</p>
         <div class="highlight">
-            <pre><span class="gu">ssh-add</span> ~/.ssh/id_rsa <i class="fa-solid fa-clone" onclick="{copy_clipboard('ssh-add ~/.ssh/id_rsa')}"></i></pre>
+            <pre><span class="gu">ssh-add</span> ~/.ssh/id_rsa <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
         </div>
 
-        <p align="center">
+        <figure align="center">
+            <img src="assets/ssh-add-linux.png">
+            <figcaption><strong>Captura:</strong> añadir la llave ssh creada al ssh agent en Linux (con el nombre de <strong>gh_rsa</strong>).</figcaption>
+        </figure>
+        <figure align="center">
             <img src="assets/ssh-agent-add.png" alt="add ssh-agent" width="650"><br>
-            <b>Captura:</b> añadir la llave ssh creada al ssh agent.
-        </p>
-
-        <p><i class="fa-solid fa-terminal"></i> Ahora el par de claves ssh está listo para usarse. </p>
+            <b>Captura:</b> añadir la llave ssh creada al ssh agent en <strong>gitbash</strong> (con el nombre <strong>id_rsa</strong>).
+        </figure>
+        <blockquote class="info">
+        <p>Ahora tenemos el par de claves ssh listo para usarse.</p>
+        </blockquote>
         <p><a href="#top"><img alt=""
                     src="https://img.shields.io/badge/Volver%20al%20índice-%E2%86%A9-orange?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
         </p>
