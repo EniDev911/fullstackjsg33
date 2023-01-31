@@ -37,13 +37,13 @@
       <li><a href="#contenido-de-la-carpeta-git">Contenido de la carpet <strong>.git</strong></a></li>
       <li><a href="#visualizacion-de-los-cambios-en-los-archivos">Visualización de los cambios en GIT</a></li>
       <li><a href="#agregar-archivos-a-preparacion">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
-      <li><a href="#delete-files">Eliminar archivo seguido por GIT</a></li>
+      <li><a href="#eliminar-archivos-seguidos-por-git">Eliminar archivo seguido por GIT</a></li>
       <li><a href="#delete-stage-area">Bajar y recuperar archivos del stage area</a></li>
       <li><a href="#renombrar-archivos">Renombrar archivo seguido por GIT</a></li>
       <li><a href="#ignorar-archivos">Ignorar archivos</a></li>
       <li><a href="#add-remote">Configurar un repositorio remoto</a></li>
       <li><a href="#rm-git">Eliminar el seguimiento de GIT</a></li>
-      <li><a href="#branch">Ramas</a></li>
+      <li><a href="#ramas">Ramas</a></li>
     </ul>
     <hr />
     <h3 id="configuracion-inicial"><a href="#configuracion-inicial">Configuración inicial</a></h3>
@@ -442,16 +442,15 @@
       <pre><span class="gu">git</span> <span class="nt">add</span> *.txt<i class="btn clone"></i></pre>
     </div>
     </p>
-    <p><strong>Agregar todos los archivos al stage area</strong>
+    <p><strong>Agregar todos los archivos al stage area</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">add</span> .<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> .<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
-    <p><strong>Agregar archivos de forma interactiva</strong>
+    <p><strong>Agregar archivos de forma interactiva</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">add</span> -i<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> -i<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-    </p>
     <details>
       <summary>Clic ver demo</summary>
       <p align="center">
@@ -463,7 +462,7 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="eliminar-archivos-seguidos-por-git"><a name="delete-files"></a> Eliminar archivos seguidos por git</h3>
+    <h3 id="eliminar-archivos-seguidos-por-git"><a href="#eliminar-archivos-seguidos-por-git"> Eliminar archivos seguidos por git</a></h3>
     <p><strong>Eliminar un archivo primera forma</strong>
     <div class="highlight">
       <pre><span class="nt">rm</span> archivo.txt
@@ -600,7 +599,7 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="ignorar-archivos"><a name="gitignore"></a>Ignorar archivos</h3>
+    <h3 id="ignorar-archivos"><a name="#ignorar-archivos">Ignorar archivos</a></h3>
     <p>A menudo, necesitaremos que cierta clase de archivos no sean monitoreados por <strong>Git</strong>. Por lo general, se trata de
       archivos generados automáticamente, como archivos de registro o archivos producidos por un sistema de compilación. En
       tales casos, <strong>Git</strong> nos permite crear un archivo <strong>.gitignore</strong> donde podemos definir una lista de patrones que nos sirvan para ignorar todo tipo de archivos o directorio que coincidan con ellos.
@@ -626,25 +625,25 @@ build/
 doc/*.txt
 
 <span class="c1"># ignorar todos los archivos .pdf en el directorio doc/ y cualquiera de sus subdirectorios</span>
-doc/**/*.pdf
-</pre>
+doc/**/*.pdf <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
-    <blockquote>
+    <blockquote class="info">
       <p>En el siguiente <a href="https://github.com/github/gitignore">repositorio</a> podemos encontrar una colección
-        de plantillas para archivis <code>.gitignore</code></p>
+        de plantillas para archivos <strong>.gitignore</strong></p>
     </blockquote>
     <p>Cada línea de un archivo <strong>.gitignore</strong> especifica un patrón. Al decidir si ignorar una ruta, Git
       normalmente verifica los patrones de <strong>gitignore</strong> de múltiples fuentes, con el siguiente orden de
       procedencia, de mayor a menor (dentro de un nivel de precedencia, el último patrón coincidente decide el
       resultado).</p>
-    <h3 id="ramas"><a name="branch"></a>Ramas</h3>
+    <hr>
+    <h3 id="ramas"><a name="#ramas">Ramas</a></h3>
     <p>Las ramas son una división del estado del código, esto permite <strong>crear nuevos caminos a favor de la evolución del código y desarrollo del software</strong>. En la práctica ramificar nuestro proyecto es es algo común para poder trabajar sobre una funcionalidad en la que sabemos que nos va a ocupar varios días y posiblemente sea algo experimental, que no sabemos si cuya funcionalidad vamos a incorporar. Existen muchas razones en las que un proyecto tanto a nivel personal o de un equipo deben crear nuevas ramas en su evolución.</p>
     <h4 id="crea-una-nueva-rama"><a href="#crea-una-nueva-rama">Crear una rama nueva</strong></a></h4>
     <p>El procedimiento para crear una nueva rama es sencillo. Usando el <strong>comando branch</strong>, seguido del nombre de la rama.
     </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">branch</span> nueva<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i> 
+      <pre><span class="gu">git</span> <span class="nt">branch</span> nueva<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i> 
 </pre>
     </div>
     <blockquote class="info">
@@ -653,19 +652,19 @@ doc/**/*.pdf
 <h4 id="mostrar-ramas-y-sus-commits"><a href="#mostrar-ramas-y-sus-commits">Mostrar ramas y sus commits</a></h4>
 <p>Para obtener una descripción más detallada de las ramas usamos el comando <strong>git show-branch</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">show-branch</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">show-branch</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p>Esto nos muestra todas las ramas del proyecto con sus commits realizados:</p>
   <div class="highlight">
-    <pre>
+    <pre style="background: #222;">
 <span class="gu">*</span>  [gh-pages~19] modificado index.html
 <span class="gu">*</span>  [gh-pages~20] actualizada la función
 <span class="gu">*</span><span class="c1">+</span> [main] deploy</pre></div>
     <h4 id="cambiar-de-una-rama-a-otra"><a href="#cambiar-de-una-rama-a-otra">Pasar de una rama a otra</a></h4>
     <p>Para moverse entre las diferentes ramas tenemos el comando <strong>checkout</strong> que le debemos indicar el nombre de la rama que queremos que sea la activa. </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">checkout</span> nueva <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
+      <pre><span class="gu">git</span> <span class="nt">checkout</span> nueva <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
 
@@ -676,7 +675,7 @@ doc/**/*.pdf
       único paso. Para crear una nueva rama y situarte sobre ella tendrás que darle un nombre y usar el <strong>flag -b</strong>.
     </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">checkout</span> -b otrarama<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">checkout</span> -b otrarama<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 <blockquote class="info">
     <p>Como salida veremos el mensaje &ldquo;<strong>Switched to a otrarama</strong>&rdquo;. El proyecto puede tener varios estados en un momento dado y tú podrás moverte de uno a otro con total libertad y
