@@ -498,6 +498,23 @@ body .markdown-body {
   content: url("data:image/svg+xml;utf8,<svg width=\"46\" height=\"46\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"%23db7373\" stroke-width=\"2\" fill=\"transparent\"><path d=\"M12,17 L12,19 M12,10 L12,16 M12,3 L2,22 L22,22 L12,3 Z\"/></svg>");
 }
 
+i.btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 27px;
+  height: 27px;
+}
+
+i.clone:before  {
+  content: url('../images/button/clone-regular.svg');
+}
+
+i.cloned:before{
+  content: url('../images/button/clone-solid.svg');
+}
+
+
 .markdown-body blockquote.danger>p:before {
   display: inline-block;
   position: absolute;
@@ -725,7 +742,6 @@ i.fa-regular {
     outline: 0;
     text-decoration: underline;
   }
-
   /* KBD HOVER */
   .markdown-body kbd:hover {
     cursor: pointer;
@@ -746,4 +762,8 @@ i.fa-regular {
     text-decoration: underline solid #45494980;
     text-underline-offset: 10px;
   }
+  i.btn:hover {
+    cursor: pointer;
+  }
+
 }

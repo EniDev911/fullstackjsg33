@@ -6,29 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-  <title>GIT guía rápida</title>
+  <title>GIT guía de referencia rápida</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <article class="markdown-body">
     <h1 align="center">
-      GUÍA RÁPIDA
+      GUÍA DE REFERENCIA RÁPIDA
     </h1>
 
     <p align="center"><a href="../index.html">
-        <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"
+        <img src="../../../public/images/git-flat.svg"
           height="50">
       </a></p>
     <p><a name="top"></a></p>
     <h3 id="configuracion">Configuración</h3>
     <ul>
       <li><a href="#configuracion-inicial">Inicial</a></li>
-      <li><a href="#global-user-settings">Identidad</a></li>
-      <li><a href="#setting-editor">Editor</a></li>
+      <li><a href="#configuracion-de-identidad">Identidad</a></li>
+      <li><a href="#configurar-editor">Editor</a></li>
+      <li><a href="#la-propiedad-autocrlf-para-git">Propiedad autocrlf</a></li>
       <li><a href="#colores">Colores</a></li>
-      <li><a href="#git-alias">Alias</a></li>
-      <li><a href="#default-branch">Rama por defecto</a></li>
+      <li><a href="#configurar-alias-en-git">Alias</a></li>
+      <li><a href="#rama-por-defecto">Rama por defecto</a></li>
     </ul>
     <h3>Operaciones</h3>
     <ul>
@@ -45,8 +46,8 @@
       <li><a href="#branch">Ramas</a></li>
     </ul>
     <hr />
-    <h3 id="configuracion-inicial">Configuración inicial</h3>
-    <p>Para comenzar a personalizar aspectos básicos y avanzados de <strong>Git</strong> debemos saber del funcionamiento y como modificar su configuración predeterminada. Una herramienta inherente de <strong>Git</strong> llamada <strong>git config</strong> permite establecer y obtener variables de
+    <h3 id="configuracion-inicial"><a href="#configuracion-inicial">Configuración inicial</a></h3>
+    <p>Para comenzar a personalizar aspectos básicos y avanzados de <strong>Git</strong> debemos saber del funcionamiento y cómo modificar su configuración predeterminada. Una herramienta inherente de <strong>Git</strong> llamada <strong>git config</strong> permite establecer y obtener variables de
       configuración que controlan aspectos del funcionamiento y la apariencia de <strong>Git</strong>. Estas variables se pueden
       almacenar en tres lugares diferentes: </p>
     <ol>
@@ -56,21 +57,21 @@
           todos sus repositorios (si pasa la opción <strong>--system</strong> a <strong>git config</strong>,
           lee y escribe desde este archivo de configuración específicamente. Debido a que se trata de un archivo de
           configuración del sistema, se necesitaría información administrativa o privilegios de superusuario para
-          relizar cambios.</p>
+          realizar cambios.</p>
       </li>
       <li>
         <p><strong><code class="path">~/.gitconfig</code></strong> o
           <strong><code class="path">~/.config/git/config</code></strong> (⚙️):
           Contiene valores específicos
-          personalmente para el usuario. Puedes hacer que Git lea y escriba en este archivo específicamente al pasar la
-          opción <strong>--global</strong>, y esto afecta todos los repositorios con los que trabaja en el sistema del
+          personalmente para el usuario. Puedes hacer que <strong>Git</strong> lea y escriba en este archivo específicamente al pasar la
+          opción <strong>--global</strong> a <strong>git config</strong>, y esto afecta todos los repositorios con los que trabaja en el sistema del
           usuario.
         </p>
       </li>
       <li>
         <p><strong><code class="path">.git/config</code></strong> (⚙️):
-          Específico para ese único repositorio. Puede obligar a Git a leer y escribir en este archivo con
-          la opción <strong>--local</strong>, pero de hecho es la predeterminada. Como era de esperar, necesita estar
+          Específico para ese único repositorio. Puede obligar a <strong>Git</strong> a leer y escribir en este archivo pasando
+          la opción <strong>--local</strong> a <strong>git config</strong>, pero de hecho es la predeterminada. Como es de esperar, necesita estar
           ubicado
           en algún lugar de un repositorio de Git para que esta opción funcione correctamente.</p>
       </li>
@@ -82,30 +83,26 @@
     </p>
     <p>Puede ver todas sus configuraciones y de dónde provienen indicando el siguiente comando:</p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --list --show-origin<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --list --show-origin<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
     <p align="center">
       <img src="assets/git.show.config.png" alt="git config show" style="border-radius: 0; border: 2px solid #000; box-shadow: 1px 2px 3px #000;">
     </p>
-
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="configuracion-de-identidad"><a name="global-user-settings"></a> Configuración de identidad<a
-        class="headerlink" href="#configuracion-de-identidad" title="Permanent link">&#9875;</a></h3>
+    <h3 id="configuracion-de-identidad"><a href="#configuracion-de-identidad">Configuración de identidad</a></h3>
     <p>Después de instalar Git, los usuarios deben establecer inmediatamente el nombre de usuario y la dirección de
       correo eléctronico, que se usarán para cada confirmación de Git.</p>
     <p><strong>Configurar el nombre de usuario</strong></p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global user.name <span class="s2">&quot;nombre de usuario&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global user.name "nombre de usuario"`)}'></i>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global user.name <span class="s2">&quot;nombre de usuario&quot;</span> <i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i>
 </pre>
     </div>
-
     <p><strong>Configurar el email para el usuario</strong><br />
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global user.email <span class="s2">&quot;usuario@correo.com&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global user.email <span class="s2">&quot;usuario@correo.com&quot;</span><i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <details>
       <summary>Clic ver demo</summary>
@@ -118,20 +115,18 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173"/></a>
     </p>
     <hr>
-    <h3 id="configurar-editor"><a name="setting-editor"></a> Configurar editor<a class="headerlink"
-        href="#configurar-editor" title="Permanent link">&#9875;</a></h3>
-    <p><strong>Configurar VS code como el editor por defecto para git</strong></p>
+    <h3 id="configurar-editor"><a href="#configurar-editor">Configurar editor</a></h3>
+    <p>Configurar <strong>VS code</strong> como el editor por defecto para git</p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global core.editor <span class="s2">&quot;code --wait&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global core.editor "code --wait"`)}'></i>
-</pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global core.editor <span class="s2">&quot;code --wait&quot;</span><i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
-    <blockquote>
-      <p>La opción <code>--wait</code> es para que la terminal se quede esperando hasta que cerremos el editor de texto.
+    <blockquote class="info">
+      <p>La opción <strong>--wait</strong> es para que la terminal se quede esperando hasta que cerremos el editor de texto.
       </p>
     </blockquote>
-    <p><strong>Ver el archivo de configuración con el editor por defecto</strong><br />
+    <p>Ver el archivo de configuración con el editor por defecto</p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global -e <i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global -e <i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <p align="center">
       <img src="assets/git.core.editor.png" alt="git core editor">
@@ -141,8 +136,7 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173"/></a>
     </p>
     <hr />
-    <h3 id="la-propiedad-autocrlf-para-git"><a name="setting-autocrlf"></a> La propiedad autocrlf para git<a
-        class="headerlink" href="#la-propiedad-autocrlf-para-git" title="Permanent link">&#9875;</a></h3>
+    <h3 id="la-propiedad-autocrlf-para-git"><a href="#la-propiedad-autocrlf-para-git">La propiedad autocrlf para git</a></h3>
         <h4>Para Windows</h4>
     <p>Si estás editando archivos en Windows o utilizando algún otro sistema, pero colaborando con más gente que usa
       Windows. Es muy posible que alguna vez nos topemos con problemas de finales de línea. Esto se debe a que Windows
@@ -155,7 +149,7 @@
       podemos indicar de la siguiente forma ejecutando el comando:
     </p>
     <div class="highlight">
-<pre><span class="gu">git</span> <span class="nt">config</span> --global core.autocrlf <span class="nb">true</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+<pre><span class="gu">git</span> <span class="nt">config</span> --global core.autocrlf <span class="nb">true</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <h4>Para Mac o Linux</h4>
     <p>
@@ -164,14 +158,14 @@
     indicar a Git que convierta CRLF en LF al confirmar cambios ( <em>commit</em> ), pero no en sentido inverso, lo podemos indicar
     de la siguiente forma: </p>
     <div class="highlight">
-<pre><span class="gu">git</span> <span class="nt">config</span> --global core.autocrlf <span class="na">input</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+<pre><span class="gu">git</span> <span class="nt">config</span> --global core.autocrlf <span class="na">input</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173"/></a>
     </p>
     <hr />
-    <h3 id="colores">Colores<a href="#colores"></a></h3>
+    <h3 id="colores"><a href="#colores">Colores</a></h3>
     <p>Git puede marcar con colores los resultados que se muestran en la terminal, ayudándote así a leerlos más
       fácilmente. Los siguientes parámetros se pueden modificar: </p>
     <h4 id="color-ui"><a href="#color-ui">color.ui</a></h4>
@@ -180,26 +174,26 @@
         debemos cambiar a &ldquo;true&rdquo; el parámetro ui.color&rdquo;.</strong></p>
     <p>Para desactivar totalmente los colores: </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.ui <span class="nb">false</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.ui <span class="nb">false</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
-    <p>El valor predeterminado es <strong><code>auto</code></strong>.</p>
+    <blockquote class="info">
+      <p>El valor predeterminado es <strong>auto</strong>.</p>
+    </blockquote>
     <h4 id="color">color.*</h4>
     <p>Cuando se requiere ajustar específicamente, comando a comando, donde colorear y cómo colorear, podemos emplear
       los ajustes particulares de color. Cada uno de ellos se puede fijar en <strong>true</strong>, <strong>false</strong> o
       <strong>always</strong>:
-    </p>
-    <div class="highlight">
-      <pre>color.branch
-color.diff
-color.interactive
-color.status
-</pre>
-    </div>
+      <ul>
+        <li><strong>color.branch</strong></li>
+        <li><strong>color.diff</strong></li>
+        <li><strong>color.interactive</strong></li>
+        <li><strong>color.status</strong></li>
+      </ul>
+    </p>   
 
     <p>Si no quieres usar el coloreado en el comando <strong>status</strong> por ejemplo, puedes indicar: </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status <span class="nb">false</span><i class="fa-solid fa-clone"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status <span class="nb">false</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p>Además, cada uno de los comandos tiene parámetros adicionales para asignar colores a partes específicas, por si
       quieres precisar aún más.</p>
@@ -222,10 +216,10 @@ color.status
       <li><code>blink</code> (parpadeante) </li>
       <li><code>reverse</code> (inverso)</li>
     </ul>
-    <p>Por ejemplo, para mostrar la meta-información del comando <code>diff</code> con letra color cian y con caracteres
+    <p>Por ejemplo, para mostrar la meta-información del comando <strong>diff</strong> con letra color cian y con caracteres
       en negrita, podemos indicar: </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.diff.meta <span class="s2">&quot;cyan bold&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.diff.meta <span class="s2">&quot;cyan bold&quot;</span><i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
 
     <p align="center">
@@ -235,77 +229,73 @@ color.status
     <p>Otro ejemplo para cambiar los colores del comando <strong>status</strong> para la salida de
       <strong>color.status.changed</strong> (cuando un archivo a cambiado de estado),
       <strong>color.status.untracked</strong> (cuando un archivo no es seguido por git) y
-      <strong>color.status.added</strong> (cuando un archivo es agregado al 'stage area'):
+      <strong>color.status.added</strong> (cuando un archivo es agregado al <strong><em>'stage area'</em></strong> ):
     </p>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global color.status.changed <span class="s2">&quot;white red bold&quot;</span> <i class="fa-solid fa-clone" onclick='{copy_clipboard(`git config --global color.status.changed "white red bold"`)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status.changed <span class="s2">&quot;white red bold&quot;</span> <i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <div class="highlight">
-      <pre><span class="nt">git</span> config --global color.status.untracked <span class="s2">&quot;white magenta bold&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status.untracked <span class="s2">&quot;white magenta bold&quot;</span><i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status.added <span class="s2">&quot;white green bold&quot;</span><i class="fa-solid fa-clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global color.status.added <span class="s2">&quot;white green bold&quot;</span><i class="btn clone" onclick='{copy_clipboard(this.parentNode.textContent)}'></i></pre>
     </div>
     <p align="center">
       <img src="assets/color.status.png" alt="status color">
     </p>
 
     <p>Recordemos que cualquier mensaje de un comando de git se puede controlar mediante el archivo
-      <strong>.gitconfig</strong>. Podemos abrir el archivo con el comando <code><b>git</b> config --global -e</code> y
+      <strong>.gitconfig</strong>. Podemos abrir el archivo con el comando <code class="path"><b>git</b> config --global -e</code> y
       podemos
       indicar colores usando el siguiente formato:
     </p>
     <div class="highlight">
-      <pre>[color <span class="nx">&quot;branch&quot;</span>]
+      <pre><span class="gu">[</span>color <span class="nx">&quot;branch&quot;</span><span class="gu">]</span>
   current = black green dim
   local = yellow
   remote = magenta
-[color <span class="nx">&quot;diff&quot;</span>]
+<span class="gu">[</span>color <span class="nx">&quot;diff&quot;</span><span class="gu">]</span>
   meta = yellow bold
   frag = magenta bold
   old = red bold
   new = green bold
   commit = yellow bold
-[color <span class="nx">&quot;status&quot;</span>]
+<span class="gu">[</span>color <span class="nx">&quot;status&quot;</span><span class="gu">]</span>
   added = black green bold dim
   changed = black red bold dim
-  untracked = black yellow bold
-</pre>
+  untracked = black yellow bold <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
     <p align="center">
       <img src="assets/color.status.edit.png" alt="status color">
     </p>
-
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="configurar-alias-en-git"><a name="git-alias"></a> ALIAS<a class="headerlink" href="#configurar-alias-en-git"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="configurar-alias-en-git"><a href="#configurar-alias-en-git">ALIAS</a></h3>
     <p>La herramienta <strong>config</strong> también nos permite establecer <strong>alias</strong> que nos sirven
       principalmente
       para ahorrarnos un poco la escritura de comandos más largos. Aquí te dejo algunos ejemplos:</p>
     <p><strong>branch</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.br branch<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.br branch<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p><strong>checkout</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.co checkout<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.co checkout<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p><strong>commit</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.ci commit <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.ci commit <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
     <p><strong>status</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.st status<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.st status<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p><strong>remote</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.rt remote<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global alias.rt remote<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <details>
       <summary>Clic ver demo</summary>
@@ -317,27 +307,24 @@ color.status
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr>
-    <h3 id="rama-por-defecto"><a name="default-branch"></a> Rama por defecto<a class="headerlink"
-        href="#rama-por-defecto" title="Permanent link">&#9875;</a></h3>
+    <h3 id="rama-por-defecto"><a name="#rama-por-defecto">Rama por defecto</a></h3>
     <p>Por defecto, Git creará una rama llamada <strong>master</strong> cuando crees un nuevo repositorio con
-      <code><b>git</b> init</code>.
+      <code class="path"><b>git</b> init</code>.
       Desde la versión 2.28 de Git en adelante, puede establecer un nombre diferente para la rama inicial.
       Para configurar <strong>main</strong> como el nombre de rama predeterminado, podemos indicar lo siguiente:
     </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">config</span> --global init.defaultBranch main <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">config</span> --global init.defaultBranch main <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
-
     <hr />
-    <h3 id="incializar-un-proyecto-con-git"><a name="init-git"></a> Incializar un proyecto con git<a class="headerlink"
-        href="#incializar-un-proyecto-con-git" title="Permanent link">&#9875;</a></h3>
+    <h3 id="inicializar-un-proyecto-con-git"><a name="#inicializar-un-proyecto-con-git">Inicializar un proyecto con git</a></h3>
     <p>Para iniciar un proyecto en Git, primera debemos situarnos en el directorio donde tendrás tu proyecto o podemos
       crear en este caso una carpeta y entrar en ella y partir desde cero. Si estás Windows, Mac o Linux podemos crear
       una
       carpeta con el comando <strong>mkdir</strong> y luego entrar en ella con el comando <strong>cd</strong></p>
-    <p><strong>Crear una carpeta para contener el proyecto y accedemos a esa carpeta</strong>
+    <p>Crea una carpeta para contener el proyecto y accedemos a esa carpeta</p>
     <div class="highlight">
-      <pre><span class="gu">mkdir</span> git-tutorial <span class="na">&&</span> <span class="gu">cd</span> git-tutorial<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">mkdir</span> git-tutorial <span class="na">&&</span> <span class="gu">cd</span> git-tutorial<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p><strong>Inicializar un repositorio en local con git en el directorio actual</strong>

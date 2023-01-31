@@ -10,13 +10,95 @@
 </head>
 
 <body>
-    <article class="markdown-body">
-        <h1>pg_dump</h1>
-        <p><strong>pg_dump</strong>: extrae una base de datos PostgreSQL en un archivo de script u otro archivo de almacenamiento</p>
+  <article class="markdown-body">
+      <a href="../index.html">
+        <img height="50" src="../../../public/images/postgresql-flat.svg" />
+      </a>
+        <h2>pg_dump</h2>
+        <p><strong>pg_dump</strong>: extrae una base de datos PostgreSQL en un archivo de script u otro archivo de almacenamiento en formato comprimido</p>
         <h4>Descripción</h4>
         <p><strong>pg_dump</strong> es una utilidad para realizar copias de seguridad de una base de datos PostgreSQL. Realiza copias de seguridad coherentes ( incluso si la base de datos se utiliza al mismo tiempo ). <strong>pg_dump</strong> no bloquea el acceso de otros usuarios a la base de datos.</p>
-
+        <blockquote class="info">
+            <p><strong>pg_dump</strong> solo vuelca una sola base de datos. Para respaldar un clúster completo incluido objetos globales que son comunes a todas las bases de datos en un clúster (como roles y espacios de tablas), revisar la utilidad <strong>pg_dumpall</strong>.</p>
+        </blockquote>
+    <p>Los volcados son archivos de texto sin formato que contienen los comandos SQL necesarios para reconstruir la base de datos al estado en el que se encontraba en el momento que se guardó.</p>
+    <hr>
+    <h3>Opciones de línea de comandos</h3>
+    <p>Esta utilidad de línea de comandos acepta las siguientes opciones al momento de invocarla:</p>
+        <div class="highlight">
+      <pre>
+Empleo:
+pg_dump [BASE-DE-DATOS [USUARIO]] ... [OPCIONES]
+        
+<span class="nt">OPCIONES:</span>
+  <span class="nx bg">dbname</span>
+  <span class="c1">Especifica el nombre de la base de datos
+  Si no se especifica, se utiliza la variable de entorno PGDATABASE
+  Si no está definida se utiliza el nombre de usuario especificado para la conexión</span>
+  <span class="nx bg">-a, --data-only</span>
+  <span class="c1">Vuelca solo los datos, no el esquema, es decir no contempla los comandos (DML)</span>
+  <span class="bg"><span class="nx">-b, --blobs</span></span>
+  <span class="c1">Incluye objetos grandes. Esta opción por defecto</span>
+  <span class="nx bg">-c, --clean</span> 
+  <span class="c1">Con esta opción se agrega el comando <strong>DROP</strong> al comienzo del script antes de crear los objetos</span>
+  <span class="bg"><span class="nx">-B, --no-blobs</span></span>
+  <span class="c1">Excluir objetos grandes al volcar la base de datos</span>
+  <span class="nx bg">-C, --create</span> 
+  <span class="c1">Vuelca la salida con un comando para crear la base de datos y vuelve a conectarse a la base de datos creada</span>
+  <span class="bg"><span class="nx">-f</span> <strong>file</strong>,<span class="nx">--file</span>=<strong>file</strong></span> 
+  <span class="c1">Envía la salida al archivo especificado</span>
+  <span class="nx bg">--no-comments</span> 
+  <span class="c1">No volcar comentarios</span>
+  <span class="bg"><span class="nx">--inserts</span></span>
+  <span class="c1">Volcar datos con comandos <strong>INSERT</strong> (en vez de <strong>COPY</strong>). Esto hará que la restauración sea más lenta; es principalmente útil para realizar volcados que se pueden cargar en sistemas gestores que no sean PostgreSQL</span>
+  <span class="bg"><span class="nx">--if-exists</span></span> 
+  <span class="c1">Agrega comandos condicionales (es decir, añade la cláusula <strong>IF EXISTS</strong>). Esta opción sólo es válida cuando se especifica la opción --clean</span>
+  <span class="bg"><span class="nx">-s, --schema-only</span></span> 
+  <span class="c1">Vuelca solo las definiciones de objetos (esquema), no los datos</span>
+        
+        
+<span class="nt">Opciones de conexión:</span>
+  <span class="bg"><span class="nx">-d, --dbname</span>=NOMBRE</span> 
+  <span class="c1">nombre de la base de datos a la que se conectará</span>
+  <span class="bg"><span class="nx">-h, --host</span>=NOMBRE</span> 
+  <span class="c1">nombre del anfitrión o directorio de socket (por omisión: «socket local»)</span>
+  <span class="bg"><span class="nx">-p, --port</span>=PUERTO</span> 
+  <span class="c1">puerto del servidor (por omisión: «5432»)</span>
+  <span class="bg"><span class="nx">-U, --username</span>=NOMBRE</span> 
+  <span class="c1">nombre de usuario (por omisión: «postgres»)</span>
+  <span class="nx bg">-w, --no-password</span> 
+  <span class="c1">nunca pedir contraseña</span>
+  <span class="nx bg">-W, --password</span> 
+  <span class="c1">forzar petición de contraseña (debería ser automático)</span>
+      </pre>
+    </div>
+<hr>
+<h2>pg_restore</h2>
+<p><strong>pg_restore</strong> es una utilidad para restaurar una base de datos PostgreSQL desde un archivo creado por <strong>pg_dump</strong></p>
+<h4>Descripción</h4>
+<p><strong>pg_restore</strong> puede operar en dos modos. Si se especifica un nombre de base de datos, pg_restore se conecta a esa base de datos y restaura el contenido del archivo directamente en la base de datos. De lo contrario, se crea un script que contiene los comandos SQL necesarios para reconstruir la base de datos y se escribe en un archivo o salida estándar.</p>
+<hr>
+<h3>Ejemplos</h3>
+<p>Volcar solo los datos contenidos en las tablas de la base de datos empleando comandos <strong>INSERT</strong></p>
+<div class="highlight">
+    <pre><span class="gu">pg_dump</span> mydb -U postgres -a --insert <span class="nt">&gt;</span> datos.sql <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+<p>Cargar un script sql a una base de datos recien creada llamada <strong>nuevaDB</strong></p>
+<div class="highlight">
+    <pre><span class="gu">psql</span> -d nuevaDB -f db.sql <i class="btn clone" onclick="{this.parentNode.textContent}"></i></pre>
+</div>
+<p>Para volcar una base de datos en un archivo de almacenamiento</p>
+<div class="highlight">
+    <pre><span class="gu">pg_dump</span> -Fc mydb <span class="nt">&gt;</span> db.dump <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
+<p>Para volver a cargar un archivo comprimido en una base de datos (recién creada) denominada <strong>nuevaDB</strong></p>
+<div class="highlight">
+    <pre><span class="gu">pg_restore</span> -U postgres -d nuevaDB db.dump <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+</div>
     </article>
+<script src="../../../public/js/functions.js" type="module" defer></script>
+<script>
+</script>
 </body>
 
 </html>

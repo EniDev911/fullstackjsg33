@@ -1,11 +1,15 @@
 import { projects } from "./data.js";
 
+const { href } = window.location;
+const publicPATH = href + 'public/'
+
 const module_1 = document.getElementById("module-1"),
   module_2 = document.getElementById("module-2"),
   module_3 = document.getElementById("module-3"),
   module_4 = document.getElementById("module-4"),
   module_5 = document.getElementById("module-5"),
   btns_clone = document.querySelectorAll(".fa-clone"),
+  btns_copy = document.querySelectorAll("i.clone"),
   innerCarousel_1 = document.getElementById("inner-carousel-1"),
   innerCarousel_2 = document.getElementById("inner-carousel-2"),
   innerCarousel_3 = document.getElementById("inner-carousel-3"),
@@ -75,12 +79,22 @@ btns_clone.forEach((btn) => {
   });
 });
 
+btns_copy.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.replace("clone", "cloned");
+    setTimeout(() => {
+      btn.classList.replace("cloned", "clone");
+    }, 1000);
+  });
+});
+
 const fillTemplate = (obj) => {
   template = "";
   let active = "";
   if (obj.active) {
     active = " active";
   }
+
   template += `
     <div class="carousel-item${active} border border-primary">
       <div class="bg-${obj.background} bg-gradient d-flex flex-column pt-1">
@@ -136,14 +150,16 @@ const getTime = () => {
   document.querySelector("#clock").innerHTML = timeNow;
 };
 
-setInterval(() => {
-  getTime();
-}, 60000);
 
 window.addEventListener("load", () => {
-  getTime();
+  if (window.location.pathname === '/'){
+    getTime();
+    addProject();
+    setInterval(() => {
+      getTime();
+    }, 60000);
+
+  }else {
+    console.log(window.location.pathname);
+}
 });
-
-addProject();
-
-// TEMPLATES
