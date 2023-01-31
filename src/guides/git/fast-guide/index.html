@@ -33,9 +33,9 @@
     </ul>
     <h3>Operaciones</h3>
     <ul>
-      <li><a href="#init-git">Inicializar un proyecto</a></li>
-      <li><a href="#content-git">Contenido de la carpet <strong>.git</strong></a></li>
-      <li><a href="#show-status">Visualización de los cambios en GIT</a></li>
+      <li><a href="#inicializar-un-proyecto-con-git">Inicializar un proyecto</a></li>
+      <li><a href="#contenido-de-la-carpeta-git">Contenido de la carpet <strong>.git</strong></a></li>
+      <li><a href="#visualizacion-de-los-cambios-en-los-archivos">Visualización de los cambios en GIT</a></li>
       <li><a href="#agregar-archivos-a-preparacion">Agregar archivos al <strong>stage area</strong> (preparación)</a></li>
       <li><a href="#delete-files">Eliminar archivo seguido por GIT</a></li>
       <li><a href="#delete-stage-area">Bajar y recuperar archivos del stage area</a></li>
@@ -324,17 +324,17 @@
       carpeta con el comando <strong>mkdir</strong> y luego entrar en ella con el comando <strong>cd</strong></p>
     <p>Crea una carpeta para contener el proyecto y accedemos a esa carpeta</p>
     <div class="highlight">
-      <pre><span class="gu">mkdir</span> git-tutorial <span class="na">&&</span> <span class="gu">cd</span> git-tutorial<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">mkdir</span> git-tutorial <span class="nt">&&</span> <span class="gu">cd</span> git-tutorial<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     <p><strong>Inicializar un repositorio en local con git en el directorio actual</strong>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">init</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">init</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     <p><strong>Crear un nuevo repositorio en local con el nombre especificado</strong> (crea la carpeta y dentro el
       repositorio local)
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">init</span> tutorial-git<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">init</span> tutorial-git<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
 
     Una vez inicializado el repositorio se crea una carpeta oculta llamada <strong>.git</strong> dentro del proyecto.
@@ -350,15 +350,14 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" style="border: 2px solid #000; border-radius: 0;" /></a>
     </p>
     <hr />
-    <h3 id="contenido-de-la-carpeta-git"><a name="content-git"></a> Contenido de la carpeta .git<a class="headerlink"
-        href="#contenido-de-la-carpeta-git" title="Permanent link">&#9875;</a></h3>
+    <h3 id="contenido-de-la-carpeta-git"><a href="#contenido-de-la-carpeta-git">Contenido de la carpeta .git</a></h3>
     <div class="highlight">
-      <pre>📂 .git
+      <pre style="background: #222;">📂 .git
 ├── 📂 branches
-├── ⚙️ config <span class="c1"># contiene las opciones de configuración de este repositorio</span>
+├── ⚙️ config <span class="c1">=&gt; contiene las opciones de configuración de este repositorio</span>
 ├── 📄 description
-├── 📄 HEAD <span class="c1"># contiene la referencia del commit a partir del cual se trabaja</span>
-├── 📂 hooks <span class="c1"># contiene los script que se ejecutan en determinado momento</span>
+├── 📄 HEAD <span class="c1">=&gt; contiene la referencia del commit a partir del cual se trabaja</span>
+├── 📂 hooks <span class="c1">=&gt; contiene los script que se ejecutan en determinado momento</span>
 │   ├── 📄 applypatch-msg.sample
 │   ├── 📄 commit-msg.sample
 │   ├── 📄 fsmonitor-watchman.sample
@@ -372,18 +371,18 @@
 │   ├── 📄 prepare-commit-msg.sample
 │   ├── 📄 push-to-checkout.sample
 │   └── 📄 update.sample
-├── 📄 index <span class="c1"># el área &quot;staging&quot; tiene la información de los archivos que se incluirán en el &quot;commit&quot;</span>
-├── 📂 info <span class="c1"># relativamente sin importancia contiene el archivo exclude</span>
-│   └── 📄 exclude <span class="c1"># se puede usa para ignorar archivos en este proyecto (no está versionado como .gitignore)</span>
-├── 📂 logs <span class="c1"># contiene el historial de las distintas ramas (interactivo con el comando log, reflog)</span>
+├── 📄 index <span class="c1">=&gt; el área &quot;staging&quot; tiene la información de los archivos que se incluirán en el &quot;commit&quot;</span>
+├── 📂 info <span class="c1">=&gt; relativamente sin importancia contiene el archivo exclude</span>
+│   └── 📄 exclude <span class="c1">=&gt; se puede usa para ignorar archivos en este proyecto (no está versionado como .gitignore)</span>
+├── 📂 logs <span class="c1">=&gt; contiene el historial de las distintas ramas (interactivo con el comando log, reflog)</span>
 │   ├── 📄 HEAD
 │   └── 📂 refs
 │       └── 📂 heads
 │           └── 📄 main
-├── 📂 objects <span class="c1"># el depósito interno de objetos, indexados por SHAs</span>
+├── 📂 objects <span class="c1">=&gt; el depósito interno de objetos, indexados por SHAs</span>
 │   ├── 📄 info
 │   └── 📄 pack
-└── 📂 refs <span class="c1"># La copia maestra de todos los refs que existen en el repositorio, ya sean stashes, tags, etc.</span>
+└── 📂 refs <span class="c1">=&gt; La copia maestra de todos los refs que existen en el repositorio, ya sean stashes, tags, etc.</span>
     ├── 📂 heads
     │   └── 📄 main
     └── 📂 tags
@@ -394,20 +393,18 @@
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" style="border: 2px solid #000; border-radius: 0;"/></a>
     </p>
     <hr />
-    <h3 id="visualizacion-de-los-cambios-en-los-archivos"><a name="show-status"></a> Visualización de los cambios en los
-      archivos<a class="headerlink" href="#visualizacion-de-los-cambios-en-los-archivos"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="visualizacion-de-los-cambios-en-los-archivos"><a href="#visualizacion-de-los-cambios-en-los-archivos">Visualización de los cambios en los
+      archivos</a></h3>
     <h4>STATUS</h4>
     <p>El comando <strong>status</strong> muestra las rutas que tienen diferencias entre el archivo de índice y la
       confirmación HEAD actual, las rutas que tienen diferencias entre el árbol de trabajo y el archivo de índice, y las
       rutas en el árbol de trabajo que no son rastreadas por Git (y no son ignoradas con archivos .gitinore). </p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">status</span><i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
+      <pre><span class="gu">git</span> <span class="nt">status</span><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-
     <p align="center">
-      <img src="assets/git.status.png" alt="git status" style="border-radius: 0; border: 2px solid #000; box-shadow: 1px 2px 3px #000">
+      <img src="assets/git.status.png" alt="git status" class="border-normal">
     </p>
     <h4>SHORT STATUS</h4>
     <p>Si bien la salida de estado de git es bastante completa, también es bastante prolija. Git también tiene un
@@ -416,33 +413,33 @@
       del comando.
     </p>
     <p align="center">
-      <img onclick="alert('hello')" src="assets/git.short.status.png" alt="git short status" style="border-radius: 0;">
+      <img src="assets/git.short.status.png" alt="git short status" class="border-normal">
     </p>
 
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%23FDAD79?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="agregar-archivos-a-preparacion">Agregar archivos a preparación</h3>
+    <h3 id="agregar-archivos-a-preparacion"><a href="#agregar-archivos-a-preparacion">Agregar archivos a preparación</a></h3>
 <p>El <strong>staging</strong> o área de preparación es un lugar donde se guardan temporalmente los cambios, para luego en caso de ser <strong>confirmados</strong> serán llevados definitivamente al repositorio. Sabemos que el repositorio es el lugar donde se guardan todos los registros de los cambios realizados a los archivos.</p>
 <p>El área del <strong>staging</strong> se puede considerar como el limbo donde los archivos están esperando por ser enviados al repositorio o ser regresado a la carpeta del proyecto.</p>
 <figure>
   <img src="./assets/staging.png" style="border-radius: 0; background: transparent; box-shadow: none;" alt="" title="como funciona el staging">
   <figcaption align="center">Como funciona el staging</figcaption>
 </figure>
-    <p><strong>Agregar un archivo al stage area</strong>
+    <p><strong>Agregar un archivo al stage area</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">add</span> archivo.txt<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> archivo.txt<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
-    <p><strong>Agregar más de un archivo al stage area</strong><br />
+    <p><strong>Agregar más de un archivo al stage area</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">add</span> archivo1.txt archivo2.txt<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> archivo1.txt archivo2.txt<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
     </div>
     </p>
-    <p><strong>Agregar todos los archivos que terminan con la misma extensión</strong><br />
+    <p><strong>Agregar todos los archivos que terminan con la misma extensión</strong></p>
     <div class="highlight">
-      <pre><span class="gu">git</span> <span class="nt">add</span> *.txt<i class="fa-solid fa-clone"></i></pre>
+      <pre><span class="gu">git</span> <span class="nt">add</span> *.txt<i class="btn clone"></i></pre>
     </div>
     </p>
     <p><strong>Agregar todos los archivos al stage area</strong>

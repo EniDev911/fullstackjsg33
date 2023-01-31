@@ -152,7 +152,7 @@ const getTime = () => {
 
 
 window.addEventListener("load", () => {
-  if (window.location.pathname === '/'){
+  if (window.location.pathname === '/' || '/fullstackjsg33/'){
     getTime();
     addProject();
     setInterval(() => {

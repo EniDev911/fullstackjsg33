@@ -209,6 +209,13 @@ body .markdown-body {
   border-radius: 5px;
   max-width: 100%;
 }
+.markdown-body img.border-normal {
+  border-radius: 0; 
+  border: 2px solid #000; 
+  box-shadow: 1px 2px 3px #000;
+  overflow: hidden;
+  background: #333;
+}
 
 .markdown-body img.logo {
   box-shadow: none !important;
@@ -505,6 +512,8 @@ i.btn {
   width: 27px;
   height: 27px;
 }
+
+
 
 i.clone:before  {
   content: url('../images/button/clone-regular.svg');
