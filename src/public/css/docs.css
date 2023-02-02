@@ -513,8 +513,6 @@ i.btn {
   height: 27px;
 }
 
-
-
 i.clone:before  {
   content: url('../images/button/clone-regular.svg');
 }
@@ -522,7 +520,13 @@ i.clone:before  {
 i.cloned:before{
   content: url('../images/button/clone-solid.svg');
 }
+i.jsbin {
+  top: 60px;
+}
 
+i.jsbin:before  {
+  content: url('../images/jsbin.svg');
+}
 
 .markdown-body blockquote.danger>p:before {
   display: inline-block;

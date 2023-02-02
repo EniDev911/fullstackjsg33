@@ -6,14 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../../../public/css/docs.css">
   <link rel="stylesheet" href="../../../../public/css/themes/overlook.css">
-  <style>
-    table code {
-      background-color: #f7df1e !important;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/style.css">
   <title>Data type - String</title>
 </head>
-
 <body>
   <article class="markdown-body">
     <h1 align="left">
@@ -27,13 +22,13 @@
       <code>DATA TYPES: STRING</code>
     </h1>
 
-    <h2 id="contenido">CONTENIDO<a class="headerlink" href="#contenido" title="Permanent link">&#9875;</a></h2>
+    <h2 id="contenido">CONTENIDO</h2>
     <p><a name="top"></a></p>
     <ul>
-      <li><a href="#what-is">¿Qué es un String?</a></li>
-      <li><a href="#string-property">Propiedades</a></li>
-      <li><a href="#string-positional-method">Métodos de posiciones</a></li>
-      <li><a href="#string-search-method">Métodos para búsquedas</a></li>
+      <li><a href="#que-es-un-string">¿Qué es un String?</a></li>
+      <li><a href="#propiedades">Propiedades</a></li>
+      <li><a href="#metodos-de-posiciones">Métodos de posiciones</a></li>
+      <li><a href="#metodos-para-busquedas">Métodos para búsquedas</a></li>
       <li><a href="#string-transform-methods">Métodos para transformar</a></li>
       <li><a href="#string-replace">Remplazar texto</a></li>
       <li><a href="#string-extract">Extraer subtextos</a></li>
@@ -43,8 +38,7 @@
       <li><a href="#string-backstips">Interpolación de variables</a></li>
     </ul>
     <hr>
-    <h3 id="que-es-un-string"><a name="what-is"></a> ¿Qué es un String?<a class="headerlink" href="#que-es-un-string"
-        title="Permanent link">&#9875;</a></h3>
+    <h3 id="que-es-un-string"><a href="#que-es-un-string">¿Qué es un String?</a></h3>
     <p>En javascript y en cualquier otro lenguaje de programación, una de las tareas que más se suelen hacer es manejar
       cadenas de textos y realizar tareas con ellas. Por lo tanto, es importante ver en profundidad sus características
       así como sus atributos y funciones de este tipo de dato. </p>
@@ -52,10 +46,9 @@
       en
       javascript se utiliza para representar un conjunto de caracteres usado para representar el texto. En programación,
       cuando hablamos de una variable que posee información de texto, decimos que su tipo de dato es un
-      <code class="str">String</code>. En Javascript, es muy sencillo crear una variable de texto, hay dos formas:
+      <strong>String</strong>. En Javascript, es muy sencillo crear una variable con un valor de texto, hay dos formas:
     </p>
-
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Constructor</th>
@@ -64,56 +57,50 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong><code>new String(s)</code></strong></td>
-          <td>Crea un objeto de texto a partir del texto <strong>s</strong>.</td>
+          <td data-label="constructor"><strong><code>new String(s)</code></strong></td>
+          <td data-label="descripción"><span>Crea un objeto de texto a partir del texto <strong>s</strong>.</span></td>
         </tr>
         <tr>
           <td><strong><code>'s'</code></strong></td>
-          <td>Solo colocando el texto entre comillas (forma más común).</td>
+          <td>Solo colocando el texto entre comillas dobles o simples (forma más común).</td>
         </tr>
       </tbody>
     </table>
-
-    <p>Los <strong><code class="str">string</code></strong> son tipos de datos primitivos, y como tal, es más sencillo
+    <p>Los <strong>String</strong> son tipos de datos primitivos, y como tal, es más sencillo
       utilizar los
-      literales que la notación con <code class="new">new</code>. Para englobar los textos, se pueden utilizar
+      literales que la notación con el operador <strong>new</strong>. Para englobar los textos, se pueden utilizar
       <strong>comillas
-        simples</strong> <code>'</code>, <strong>comillas dobles</strong> <code>"</code> o <strong>backstiks</strong>
-      <code>`</code> (estos últimos tienen uso más extendido que veremos más adelante).
+        simples</strong> <code class="path">'</code>, <strong>comillas dobles</strong> <code class="path">"</code> o <strong>backstiks</strong>
+      <code class="path">`</code> (estos últimos tienen un uso más extendido que veremos más adelante).
     </p>
-    <blockquote>
+    <blockquote class="info">
       <p>Aunque es posible utilizar comillas simples o comillas dobles en los string, es recomendable decantarse por uno
         de los dos estilos y no mezclarlos. </p>
     </blockquote>
     <p>A continuación, un ejemplo de declaración de variables de texto en JavaScript: </p>
     <div class="highlight">
       <pre><span class="c1">// Literales</span>
-<span class="kr">const</span> <span class="nx">textoPrincipal</span> <span class="o">=</span> <span class="s2">&quot;¡Hola Javascript!&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">textoSecundario</span> <span class="o">=</span> <span class="s2">&quot;Otro mensaje de texto&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">textoPrincipal</span> = <span class="s2">&quot;¡Hola Javascript!&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">textoSecundario</span> = <span class="s2">&quot;Otro mensaje de texto&quot;</span><span class="p">;</span>
 
 <span class="c1">// Objeto</span>
-<span class="kr">const</span> <span class="nx">textoPrincipal</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s2">&quot;¡Hola Javascript!&quot;</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">textoSecundario</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s2">&quot;Otro mensaje de texto&quot;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">textoPrincipal</span> = <span class="nb">new</span> <span class="nt">String</span><span class="p">(</span><span class="s2">&quot;¡Hola Javascript!&quot;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">textoSecundario</span> = <span class="nb">new</span> <span class="nt">String</span><span class="p">(</span><span class="s2">&quot;Otro mensaje de texto&quot;</span><span class="p">);</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-
-    <p>A diferencia de otros lenguajes de programación, que separan el tipo de dato <code class="str">string</code> del
-      tipo de dato
-      <code>char</code> (un solo carácter), javascript los mantiene a ambos dentro del tipo de dato <code
-        class="str">string</code>,
-      aunque una variable sólo contenga un carácter, sigue siendo un <code class="str">string</code>.
+    <p>A diferencia de otros lenguajes de programación, que separan el tipo de dato <strong>string</strong> del tipo de dato <strong>char</strong> (un solo carácter), javascript los mantiene a ambos dentro del tipo de dato <strong>String</strong>,
+      aunque una variable sólo contenga un carácter, sigue siendo un <strong>String</strong>.
     </p>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="propiedades"><a name="string-property"></a> PROPIEDADES<a class="headerlink" href="#propiedades"
-        title="Permanent link">&#9875;</a></h3>
-    <p>Al crear una variable con contenido de texto, o sea un <code class="str">string</code>, automáticamente, esa
+    <h3 id="propiedades"><a href="#propiedades">PROPIEDADES</a></h3>
+    <p>Al crear una variable con contenido de texto, o sea un <strong>String</strong>, automáticamente, esa
       variable pasa a
       tener a su disposición todas las propiedades y métodos disponibles para este tipo de dato, por lo que podemos
-      utilizarlo en nuestro código como iremos viendo a continuación.</p>
-    <table>
+      utilizarlo en nuestro código como sea necesario e iremos viendo en los ejemplos de las diferentes secciones.</p>
+    <table class="table">
       <thead>
         <tr>
           <th>Propiedad</th>
@@ -122,39 +109,38 @@
       </thead>
       <tbody>
         <tr>
-          <td><code>.length</code></td>
-          <td>Devuelve un (<strong>number</strong>) que es el número de carácteres de la variable de tipo string.</td>
+          <td data-label="propiedad"><code>.length</code></td>
+          <td data-label="descripción"><span>Devuelve un (<strong>number</strong>) que es el número de carácteres de la variable de tipo string.</span></td>
         </tr>
       </tbody>
     </table>
-    <p>En el caso de los string, solo tenemos una propiedad, <strong><code>.length</code></strong>, que devuelve el
-      tamaño de la variable de texto. A continuación podemos observar que se han utilizado <code
-        class="str">string</code>
-      directamente, sin necesidad de guardarlos en una variable antes: </p>
+    <p>En el caso de los <strong>String</strong>, solo tenemos una propiedad, <strong>.length</strong>, que devuelve el
+      tamaño de la variable de texto. A continuación podemos observar que se han utilizado <strong>string</strong> directamente, sin necesidad de guardarlos en una variable antes: </p>
     <div class="highlight">
-      <pre><span class="s2">&quot;Javascript&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 10</span>
+      <pre><span class="s2">&quot;<Javasc></Javasc>ript&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 10</span>
 <span class="s2">&quot;Mi nombre es marco&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 18 (los espacios en blanco cuentan)</span>
-<span class="s2">&quot;&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 0</span>
+<span class="s2">&quot;&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 0</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-    <p>Veamos una pequeña prueba de ejemplo.</p>
-    <iframe frameborder="0" width="100%" height="400px" style="border-radius: 10px;"
+    <p>Veamos una pequeña prueba contando longitudes de palabras aleatorias.</p>
+    <iframe frameborder="0" width="100%" height="400px"
       src="https://replit.com/@marcocontreraas/length?embed=true"></iframe>
+    <blockquote class="info">
     <p>Pero las características más interesantes de los string se encuentran en los métodos de dicho tipo. Se debe tener
       en cuenta que, en las variables de texto, los métodos se ejecutan sobre el propio texto del
-      <strong><code class="str">string</code></strong>, devolviendo información modificada a partir de este.
+      <strong>String</strong>, devolviendo información modificada a partir de este.
     </p>
+    </blockquote>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="metodos-de-posiciones"><a name="string-positional-method"></a> MÉTODOS DE POSICIONES<a class="headerlink"
-        href="#metodos-de-posiciones" title="Permanent link">&#9875;</a></h3>
+    <h3 id="metodos-de-posiciones"><a href="#metodos-de-posiciones">MÉTODOS DE POSICIONES</a></h3>
     <p>En primer lugar existen varios métodos que permiten darnos información sobre la <strong>posición</strong> o
       <strong>ubicación</strong> que ocupa un determinado carácter o texto. Esta posición también suele denominarse
       <strong>índice</strong>. Veamos detalladamente dichos métodos:
     </p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Método</th>
@@ -164,18 +150,18 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong><code>.charAt(pos)</code></strong></td>
-          <td>Devuelve el carácter en la posición <strong>pos</strong> de la variable.</td>
+          <td data-label="método"><strong><code>.charAt(pos)</code></strong></td>
+          <td data-label="descripción">Devuelve el carácter en la posición <strong>pos</strong> de la variable.</td>
           <td><code>[]</code></td>
         </tr>
         <tr>
-          <td><strong><code>.concat(str1, str2...)</code></strong></td>
-          <td>Devuelve el texto de la variable unido a <strong>str1</strong>, a <strong>str2</strong>&hellip;</td>
+          <td data-label="método"><strong><code>.concat(str1, str2...)</code></strong></td>
+          <td data-label="descripción"><span>Devuelve el texto de la variable unido a <strong>str1</strong>, a <strong>str2</strong>&hellip;</span></td>
           <td><code>+</code></td>
         </tr>
         <tr>
-          <td><strong><code>.indexOf(str)</code></strong></td>
-          <td>Devuelve la primera posición del texto <strong>str</strong>.</td>
+          <td data-label="método"><strong><code>.indexOf(str)</code></strong></td>
+          <td data-label="descripción">Devuelve la primera posición del texto <strong>str</strong>.</td>
           <td></td>
         </tr>
         <tr>
@@ -190,85 +176,87 @@
         </tr>
       </tbody>
     </table>
-    <p>El método <strong><code>.charAt(pos)</code></strong> nos permite comprobar que carácter se encuentra en la
-      posición <strong>pos</strong> del texto. Este método devolverá un <code class="str">string</code> con dicho
+    <p>El método <strong>.charAt(pos)</strong> nos permite comprobar que carácter se encuentra en la
+      posición <strong>pos</strong> del texto. Este método devolverá un <strong>String</strong> con dicho
       carácter. En caso
-      de pasarle una posición que no existe, simplemente nos devolverá un <strong>string vacio</strong> <code>""</code>.
+      de pasarle una posición que no existe, simplemente nos devolverá un <strong>String vacio</strong> <code class="path">""</code>.
       El valor por defecto de <strong>pos</strong> es 0.</p>
     <div class="highlight">
-      <pre><span class="s2">&#39;marco&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// devuelve &quot;a&quot;</span>
+      <pre><span class="s2">&#39;mar&#39;</span>.<span class="nt">charAt</span><span class="p">(</span><span class="num">1</span><span class="p">)</span> <span class="c1">// devuelve &quot;a&quot;</span>
+<span class="s2">&#39;mar&#39;</span>.<span class="nt">charAt</span>(<span class="num">3) <span class="c1">// devuelve &quot;&quot;</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-
-    <p>La otra forma (introducida en ECMAScript 5) es tratar a la cadena como un objeto similar a un arreglo, donde los
+    <p>La otra forma (introducida en <a href="https://262.ecma-international.org/5.1/#sec-15.5.4.7" target="_blank">ECMAScript 5</a>) es tratar a la cadena como un objeto similar a un arreglo, donde los
       caracteres individuales corresponden a un índice numérico: </p>
     <div class="highlight">
-      <pre><span class="s2">&#39;marco&#39;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// devuelve a &quot;a&quot;</span>
+      <pre><span class="s2">&#39;mar&#39;</span>[<span class="num">1</span>] <span class="c1">// devuelve a &quot;a&quot;</span>
+<span class="s2">&#39;mar&#39;</span>[<span class="num">3</span>] <span class="c1">// devuelve undefined</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-
-    <p>No obstante, es preferible utilizar el operador <code>[]</code> para obtener el carácter que ocupa una posición,
+    <p>No obstante, es preferible utilizar el operador <code class="path">[]</code> para obtener el carácter que ocupa una posición,
       ya que es más corto y rápido de utilizar y mucho más claro. La diferencia respecto a
-      <strong><code>charAt()</code></strong> es que el operador <code>[]</code> devuelve <a
-        href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/undefined"><strong><code>undefined</code></strong></a>
+      <strong>charAt()</strong> es que el operador <code class="path">[]</code> devuelve <a
+        href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank"><strong>undefined</strong></a>
       si en esa posición no existe ningún carácter.
     </p>
-    <p>El método <strong><code>.concat(str1, str2...)</code></strong> permite concatenar (unir) los
+    <p>El método <strong>.concat(str1, str2...)</strong> permite concatenar (unir) los
       textos pasados por parámetros al de la propia variable. AL igual que
-      el método anterior es preferible utilizar el operador <code>+</code>, ya que es
-      mucho más rápido y legible. Debemos tener mucho cuidado con utilizar el operador <code>+</code>, ya que depende de
-      los tipos de datos con los que se usen puede producir un efecto diferente. El operador <code>+</code> usado con
-      <code class="str">string</code> realiza concatenaciones, mientras que usado con <a
-        href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>number</code></a>
+      el método anterior es preferible utilizar el operador <code class="path">+</code>, ya que es
+      mucho más rápido y legible. Debemos tener mucho cuidado con utilizar el operador <code class="path">+</code>, ya que depende de
+      los tipos de datos con los que se usen puede producir un efecto diferentes. El operador <code class="path">+</code> usado con
+      <strong>String</strong> realiza concatenaciones, mientras que usado con tipos <a
+        href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank"><strong>Number</strong></a>
       realiza sumas.
     </p>
     <p>
     <div class="highlight">
-      <pre><span class="s2">&quot;enidev&quot;</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// enidev911</span>
-<span class="s2">&quot;enidev&quot;</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="c1">//enidev911</span>
-<span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="c1">// 11</span>
+      <pre><span class="s2">&quot;enidev&quot;</span>.<span class="nt">concat</span>(<span class="num">9</span>,<span class="num">1</span>,<span class="num">1</span>) <span class="c1">// enidev911</span>
+<span class="s2">&quot;enidev&quot;</span><span class="nt">+</span><span class="num">9</span><span class="nt">+</span><span class="num">1</span><span class="nt">+</span><span class="num">1</span> <span class="c1">//enidev911</span>
+<span class="num">9</span><span class="nt">+</span><span class="num">1</span><span class="nt">+</span><span class="num">1</span> <span class="c1">// 11</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-    <details>
+    <details> 
       <summary>clic demo</summary>
       <p align="center">
         <img src="assets/concat.gif" />
       </p> <br />
     </details>
     </p>
-    <p>Por último, nos queda el método <strong><code>indexOf(str, from)</code></strong>, que es la función opuesta
-      <strong><code>charAt()</code></strong>. La función <strong><code>indexOf(str)</code></strong> buscará el subtexto
-      <strong>str</strong> en nuestra variable y nos devolverá un <code>number</code> con la <strong>posición</strong>
+    <p>Por último, nos queda el método <a href="https://262.ecma-international.org/5.1/#sec-15.5.4.7" target="_blank"><strong>indexOf(str, from)</strong></a>, que es la función opuesta a <strong>charAt()</strong>. La función <strong>indexOf(str)</strong> buscará el subtexto <strong>str</strong> en nuestra variable y nos devolverá un <strong>Number</strong> con la posición
       de la primera aparición de dicho subtexto. En caso de no encontrarlo, devolvera <strong>-1</strong>. El parámetro
       <strong>from</strong> es opcional, y es la posición en la que empezará a buscar, que por defecto (si no se
       suministra) es <strong>0</strong>.
     </p>
     <div class="highlight">
-      <pre><span class="s2">&quot;Javascript, es muy amigable&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span> <span class="c1">// 1</span>
-<span class="s2">&quot;Javascript, es muy amigable&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3</span>
-<span class="s2">&quot;Javascript, es muy amigable&quot;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 19</span>
+      <pre><span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">indexOf</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">indexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">2</span>); <span class="c1">// 3</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">indexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">4</span>); <span class="c1">// 19</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">indexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">24</span>); <span class="c1">// -1</span> <i class="btn jsbin" onclick="{window.open('https://jsbin.com/duqosud/edit?js,console', '_blank')}" title="Abrir en JsBin"></i><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="copiar"></i>
 </pre>
     </div>
-
     <details>
       <summary>clic demo</summary>
       <p align="center">
         <img src="assets/indexOf.gif" />
       </p>
     </details>
-
-    <p>El método <strong><code>lastIndexOf(str, from)</code></strong> funciona exactamente igual que el anterior, sólo
+    <p>El método <a href="https://262.ecma-international.org/5.1/#sec-15.5.4.8" target="_blank"><strong>lastIndexOf(str, from)</strong></a> funciona exactamente igual que el anterior, sólo
       que realiza la búsqueda de la <strong>última aparición</strong> en lugar de la primera aparición.</p>
+    <div class="highlight">
+      <pre><span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">lastIndexOf</span>(<span class="s2">&quot;a&quot;</span>); <span class="c1">// 23</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">lastIndexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">2</span>); <span class="c1">// 1</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">lastIndexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">4</span>); <span class="c1">// 3</span>
+<span class="s2">&quot;Javascript, es muy amigable&quot;</span>.<span class="nt">lastIndexOf</span>(<span class="s2">&quot;a&quot;</span>, <span class="num">24</span>); <span class="c1">// 23</span> <i class="btn jsbin" onclick="{window.open('https://jsbin.com/rawelat/edit?js,console', '_blank')}" title="Abrir en JsBin"></i><i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="copiar"></i>
+</pre>
+    </div>
     <p><a href="#top"><img alt=""
           src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
     </p>
     <hr />
-    <h3 id="metodos-para-busquedas"><a name="string-search-method"></a> MÉTODOS PARA BÚSQUEDAS<a class="headerlink"
-        href="#metodos-para-busquedas" title="Permanent link">&#9875;</a></h3>
-    <p>Los siguientes métodos se utilizan para realizar búsquedas o comprobaciones de subtextos en el texto de un
-      <code class="str">string</code>.
+    <h3 id="metodos-para-busquedas"><a href="#metodos-para-busquedas">MÉTODOS PARA BÚSQUEDAS</a></h3>
+    <p>Los siguientes métodos se utilizan para realizar búsquedas o comprobaciones de subtextos en el texto de un <strong>String</strong>.
     </p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
           <th>Método</th>
@@ -304,12 +292,12 @@
         </tr>
       </tbody>
     </table>
-    <p>Por ejemplo, el método <code>startsWith(str, from)</code> devolverá <code>true</code> si la variable comienza por
+    <p>Por ejemplo, el método <strong>startsWith(str, from)</strong> devolverá <strong>true</strong> si la variable comienza por
       el texto proporcionado en <strong>str</strong>. Si además se indica el parámetro opcional <strong>from</strong>,
-      empezará en la posición <strong>from</strong> del <code class="str">string</code>. De la misma forma, el método
-      <strong><code>endsWith()</code></strong> comprueba cuando un <code class="str">string</code> acaba en
+      empezará en la posición <strong>from</strong> del <strong>String</strong>. De la misma forma, el método
+      <strong>endsWith()</strong> comprueba cuando un <strong>String</strong> acaba en
       <strong>str</strong>, y
-      el método <strong><code>includes()</code></strong> comprueba si el subtexto dado está incluído en el
+      el método <strong>includes()</strong> comprueba si el subtexto dado está incluído en el
       <code class="str">string</code>.
     </p>
     <p>Algunos ejemplos:</p>
@@ -708,6 +696,7 @@
     </p>
     <p>Esto es una funcionalidad muy simple, pero que mejora sustancialmente la calidad de código generado.</p>
   </article>
+  <script src="../../../../public/js/functions.js" type="module"></script>
 </body>
 
 </html>
