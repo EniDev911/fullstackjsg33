@@ -10,5 +10,9 @@ export const articulos = [
 	{
 		titulo: "100 Ejercicios con javascript",
 		path: "100-ejercicios-js/index.html"
+	},
+	{
+		titulo: "Sweet Alert 2 - Tutorial con ejemplos",
+		path: "ventanas-modales-sweetalert/index.html"
 	}
 ]

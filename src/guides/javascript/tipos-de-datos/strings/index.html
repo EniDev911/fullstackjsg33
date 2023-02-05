@@ -298,37 +298,32 @@
       <strong>endsWith()</strong> comprueba cuando un <strong>String</strong> acaba en
       <strong>str</strong>, y
       el método <strong>includes()</strong> comprueba si el subtexto dado está incluído en el
-      <code class="str">string</code>.
+      <strong>String</strong>.
     </p>
     <p>Algunos ejemplos:</p>
     <div class="highlight">
-      <pre><span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">);</span> <span class="c1">// true (&#39;Enidev911&#39; comienza con E)</span>
-<span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// true (&#39;ev911&#39;, comienza con e)</span>
-<span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">);</span> <span class="c1">// false (&#39;enidev911&#39;, no termina con &#39;o&#39;)</span>
-<span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// true (&#39;Enide&#39;, termina con &#39;e&#39;)</span>
-<span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;ide&quot;</span><span class="p">);</span> <span class="c1">// true (&#39;Enidev911&#39;, incluye &#39;ide&#39;)</span>
-<span class="s2">&quot;Enidev911&quot;</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Eni&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// false (&#39;ev911&#39;, no incluye &#39;Eni&#39;)</span>
+      <pre><span class="s2">&quot;Javascript&quot;</span>.<span class="nt">startsWith</span>(<span class="s2">&quot;J&quot;</span>); <span class="c1">// true (&quot;Javascript&quot; comienza con &#39;J&#39;)</span>
+<span class="s2">&quot;Javascript&quot;</span>.<span class="nt">startsWith</span>(<span class="s2">&quot;v&quot;</span>, <span class="num">2</span>); <span class="c1">// true (&quot;vascript&quot;, comienza con &#39;v&#39;)</span>
+<span class="s2">&quot;Javascript&quot;</span>.<span class="nt">endsWith</span>(<span class="s2">&quot;t&quot;</span>); <span class="c1">// true (&quot;Javascript&quot;, termina con &#39;t&#39;)</span>
+<span class="s2">&quot;Javascript&quot;</span>.<span class="nt">endsWith</span>(<span class="s2">&quot;c&quot;</span>, <span class="num">6</span>); <span class="c1">// true (&quot;Javasc&quot;, termina con &#39;c&#39;)</span>
+<span class="s2">&quot;Javascript&quot;</span>.<span class="nt">includes</span>(<span class="s2">&quot;script&quot;</span>); <span class="c1">// true (&quot;Javascript&quot;, incluye &#39;script&#39;)</span>
+<span class="s2">&quot;Javascript&quot;</span>.<span class="nt">includes</span>(<span class="s2">&quot;Java&quot;</span>, <span class="num">4</span>); <span class="c1">// false (&quot;script&quot;, no incluye &#39;Java&#39;)</span> <i class="btn jsbin" onclick="{window.open('https://jsbin.com/gajukod/edit?js,console', '_blank')}" title="Abrir en JsBin"></i><i class="btn clone" title="Copiar" onclick="{copy_clipboard(this.parentNode.textContent)}"></i>
 </pre>
     </div>
-
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20a%20contenido%20principal-%E2%86%A9-%232BAAEC?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
     <hr />
-    <h2 id="busquedas-con-regexp">BÚSQUEDAS CON REGEXP<a class="headerlink" href="#busquedas-con-regexp"
-        title="Permanent link">&#9875;</a></h2>
-    <p>Por otro lado, los métodos <strong><code>search()</code></strong>, <strong><code>match()</code></strong> y
-      <strong><code>matchAll()</code></strong> realizan búsquedas más potente y flexibles utilizando
-      <strong>regexp</strong>. La diferencia de cada una es que, mientras el método <code>search()</code> devuelve la
-      posición de la primera ocurrencia detectada (o <strong>-1</strong> si no se encuentra), <code>match()</code>
-      devuelve un <code>array</code> con las coincidencias detectadas:
+    <h4 id="busquedas-con-regexp"><a href="#busquedas-con-regexp">BÚSQUEDAS CON REGEXP</a></h4>
+    <p>Por otro lado, los métodos <strong>search()</strong>, <strong>match()</strong> y
+      <strong>matchAll()</strong> realizan búsquedas más potente y flexibles utilizando
+      <strong>regexp</strong>. La diferencia de cada una es que, mientras el método <strong>search()</strong> devuelve la
+      posición de la primera ocurrencia detectada (o <strong>-1</strong> si no se encuentra), <strong>match()</strong>
+      devuelve un <strong>Array</strong> con las coincidencias detectadas:
     </p>
     <div class="highlight">
-      <pre><span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">&quot;El bueno, el malo y el feo.&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">regexp</span> <span class="o">=</span> <span class="sr">/.a.o/g</span><span class="p">;</span>
+      <pre><span class="kr">const</span> <span class="nx">text</span> = <span class="s2">&quot;El bueno, el malo y el feo.&quot;</span>;
+<span class="kr">const</span> <span class="nx">regexp</span> = <span class="na">/.a.o/g</span>;
 
-<span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">regexp</span><span class="p">);</span> <span class="c1">// 13, porque la primera coincidencia ocurre en la posición 13</span>
-<span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regexp</span><span class="p">);</span> <span class="c1">// [&#39;malo&#39;], un array con la coincidencia encontrada</span>
+<span class="nx">text</span>.<span class="nt">search</span>(<span class="nx">regexp</span>); <span class="c1">// 13, porque la primera coincidencia ocurre en la posición 13</span>
+<span class="nx">text</span>.<span class="nt">match</span>(<span class="nx">regexp</span>); <span class="c1">// [&#39;malo&#39;], un array con la coincidencia encontrada</span>
 </pre>
     </div>
 
