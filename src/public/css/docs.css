@@ -525,12 +525,18 @@ i.clone:before  {
 i.cloned:before{
   content: url('../images/button/clone-solid.svg');
 }
+
+i.codepen:before  {
+  content: url('../images/button/codepen.svg');
+}
+
 i.jsbin {
   top: 60px;
 }
 
 i.jsbin:before  {
   content: url('../images/jsbin.svg');
+  object-fit: contain;
 }
 
 .markdown-body blockquote.danger>p:before {

@@ -149,6 +149,29 @@ const getTime = () => {
   }).format(new Date());
   document.querySelector("#clock").innerHTML = timeNow;
 };
+// CODEPEN
+const createPen = (lang, content) => {
+  if (typeof content != "string") {
+    throw TypeError("El argumento debe ser un String");
+  }
+
+  const e = document.createElement("form");
+      e.action = "https://codepen.io/pen/define",
+      e.method = "POST",
+      e.target = "_blank",
+      e.style.position = "absolute",
+      e.style.left = "-9999px";
+  const o = document.createElement("input");
+      o.type = "hidden",
+      o.name = "data",
+      o.value = JSON.stringify({title: document.title, [lang]: content}),
+      e.insertAdjacentElement("afterbegin", o),
+      document.body.appendChild(e),
+      e.submit();
+      document.body.removeChild(e);
+} 
+
+window.createPen = createPen;
 
 
 window.addEventListener("load", () => {
