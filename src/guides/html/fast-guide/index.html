@@ -60,7 +60,15 @@
             <li><a href="#comentario-html">Comentario HTML</a></li>
           </ul>
         </li>
-        <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a></li>
+        <li><a href="#atributos-comunes-html">Atributos comunes en HTML</a>
+          <ul>
+            <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
+            <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
+            <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
+            <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a></li>
+            <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
+          </ul>
+        </li>
       </ul>
     </details>
     <details>
@@ -606,7 +614,7 @@
       </tbody>
     </table>
     <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
     </p>
     </section>
 
@@ -713,7 +721,7 @@
       cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <span
         style="color: rgb(9, 110, 192); font-weight:bold;">&lt;strong&gt;</span>:</p>
     <div class="highlight">
-      <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre>&lt;<span class="nt">strong</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" style="right: 60px;" title="Ver en codepen" onclick="{createPen('html', this.parentNode.textContent)}"></i></pre>
     </div>
     <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
         etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de
@@ -725,7 +733,7 @@
       del nombre de la etiqueta, separándola por espacio y antes del carácter <code class="path">&gt;</code> de la etiqueta de
       apertura:</p>
     <div class="highlight">
-      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span>&gt;contenido&lt;/<span class="nt">strong</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" title="Ver en codepen" style="right: 60px;"></i></pre>
     </div>
     <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de
       <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es
@@ -740,27 +748,25 @@
       <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una
         dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
       <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero (<em>true</em>) o un
-        valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el
-          atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+        valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
     </ul>
     <h4 id="contenido-de-la-etiqueta"><a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a></h4>
     <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>)
       se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve
       como contiene un <strong>fragmento de texto</strong>:</p>
     <div class="highlight">
-      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span> <span class="na">class</span>=<span class="s">&quot;clase1&quot;</span> <span class="na">lang</span>=<span class="s">&quot;es&quot;</span>&gt;Contenido de texto&lt;/<span class="nt">strong</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre>&lt;<span class="nt">strong</span> <span class="na">id</span>=<span class="s">&quot;dato&quot;</span> <span class="na">class</span>=<span class="s">&quot;clase1&quot;</span> <span class="na">lang</span>=<span class="s">&quot;es&quot;</span>&gt;Contenido de texto&lt;/<span class="nt">strong</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" title="Ver en codepen" style="right: 60px"></i></pre>
     </div>
-    <p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero
+    <p>Ten en cuenta que una etiqueta puede tener varios <strong>pares atributo-valor</strong>, como se ve en el ejemplo anterior, pero
       nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El
       orden de los atributos no importa. Más adelante veremos que tipos de atributos existen y para que sirven.</p>
-
     <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de
         etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más claro en los siguientes
       apartados sobre etiquetas. Un posible ejemplo sería el siguiente:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;grupo-principal&quot;</span>&gt;
   &lt;<span class="nt">strong</span>&gt;Contenido importante&lt;/<span class="nt">strong</span>&gt;
-&lt;/<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+&lt;/<span class="nt">div</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" title="Ver en codepen" style="right:60px" onclick="{createPen('html', this.parentNode.textContent)}"></i></pre>
     </div>
     <p>Podemos observar en el ejemplo anterior que dentro de la etiqueta <span class="html-tag">div</span> vemos que no sólo hay un fragmento de
       texto, sino que además incluye otra etiqueta, <span class="html-tag">strong</span> en este caso. Esto ocurre en las
@@ -771,14 +777,14 @@
       la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo
       importante o simplemente introducir algún comentario que consideremos relevante:</p>
     <div class="highlight">
-      <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+      <pre><span class="c1" style="font-variant-ligatures: none">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" style="right: 60px" onclick="{createPen('html',this.parentNode.textContent)}" title="Ver en codepen"></i></pre>
     </div>
     <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto
       entre <span
         style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!--
         --&gt;</span> para que sea ignorado.</p>
   <p><a href="#top"><img alt="boton-top"
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
     </p>
 </section>
 <!-- ATRIBUTOS COMUNES -->
@@ -798,7 +804,7 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="atributo" class="link" onclick="{window.location.href = '#identificador-etiqueta'}"><span class="td-attribute">id</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-id'}"><span class="td-attribute">id</span></td>
           <td data-label="valor"><em>nombre</em></td>
           <td data-label="descripción">Establece un identificador a la etiqueta HTML (sólo una por página con ese nombre).</td>
         </tr>
@@ -808,17 +814,17 @@
           <td data-label="descripción">Establece una clase (género) a una etiqueta HTML (puede repetirse por página).</td>
         </tr>
         <tr>
-          <td data-label="atributo"><span class="td-attribute">lang</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-lang'}"><span class="td-attribute">lang</span></td>
           <td data-label="valor"><em>idioma</em></td>
           <td data-label="descripción">Indica el idioma del contenido de la etiqueta HTML.</td>
         </tr>
         <tr>
-          <td data-label="atributo" class="link" onclick="{window.location.href = '#idioma-etiqueta'}"><span class="td-attribute">translate</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-translate'}"><span class="td-attribute">translate</span></td>
           <td data-label="valor"><span><strong>yes</strong> | no</span></td>
           <td data-label="descripción">Indica si el contenido de la etiqueta es traducible o no.</td>
         </tr>
         <tr>
-          <td data-label="atributo" class="link" onclick="{window.location.href = '#titulos-tooltip'}"><span class="td-attribute">title</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-title'}"><span class="td-attribute">title</span></td>
           <td data-label="valor"><em>título</em></td>
           <td data-label="descripción"><span>Mensaje mostrado en un <strong>tooltip</strong> (aviso emergente) al mover el
             <strong><em>mouse</em></strong> por encima.</span>
@@ -847,7 +853,7 @@
         </tr>
       </tbody>
     </table>
-    <h4 id="identificador-etiqueta"><a href="#identificador-etiqueta">Identificador de etiqueta (id)</a></h4>
+    <h4 id="atributo-id"><a href="#atributo-id">Atributo id (identificador)</a></h4>
     <p>
       En <strong>HTML</strong>, podemos darle un identificador a una etiqueta <strong>HTML</strong> y de esta forma darle un nombre. Simplemente, añadimos
       el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no
@@ -859,49 +865,51 @@
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
+&lt;<span class="nt">div</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i><i class="btn codepen" title="Ver en codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px"></i></pre>
     </div>
     <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no
         se van a repetir en esa misma página</strong>.</p>
-    <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos
-      correctos de id serían de id serían &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página
+    <p>Uno de los detalles importantes de los <strong>id</strong>, es que no pueden haber dos con el mismo nombre en una página. Ejemplos
+      correctos de <strong>id</strong> podrían ser &lt;&lt;<strong>pagina</strong>&gt;&gt; (<em>para contener toda la página
         completa</em>), &lt;&lt;<strong>comentarios</strong>&gt;&gt; (<em>para contener toda la zona de comentarios de
         la página</em>) o &lt;&lt;<strong>header</strong>&gt;&gt; (<em>para contener la parte con el logo y la cabecera
-        de la página</em>). lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong>
-      en varias etiquetas HTML en una misma página.</p>
+        de la página</em>). Lo que debe quedar claro de los <strong>ids</strong>, es que <strong>no se puede tener el mismo id</strong>
+      en más de una etiqueta <strong>HTML</strong> por página.</p>
+    <blockquote class="info">
     <p>Más adelante en el apartado de <a href="#enlaces">enlaces o hipervínculos</a>, veremos que también podemos
       utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
+    </blockquote>
     <hr>
-    <h4 id="clases-etiqueta"><a href="#clases-etiqueta">Clases de etiquetas (class)</a></h4>
+    <h4 id="atributo-class"><a href="#atributo-class">Atributo de class (clases)</a></h4>
     <p>Las clases funcionan de forma muy similar a los <strong>id</strong>, pero son mucho más flexibles. En primero lugar, no tienen la
-      limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por
+      limitación de los <strong>ids</strong>, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por
       página.</p>
     <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos
-      características comunes. Sigamos con el ejemplo anterior y añadiendole clases a las etiquetas:</p>
+      características comunes. Sigamos con el ejemplo anterior y añadiendole clases (<em>atributo class</em>) a las etiquetas:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+&lt;<span class="nt">div</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" title="Ver en codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px"></i></pre>
     </div>
     <p>Como podemos ver, al tener la misma clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;, podemos realizar acciones
       para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo de eso
-      donde se ve bien su utilidad, es respecto a utilizar <strong>ids y clases para dar estilos CSS</strong>, donde
-      aplicaremos unos estilos concretos a todas las etiquetas HTML con clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;.
+      donde se puede ver bien su utilidad, es respecto a utilizar <strong>ids y clases para dar estilos CSS</strong>, donde
+      aplicaremos unos estilos concretos a todas las etiquetas <strong>HTML</strong> que tengan la clase &lt;&lt;<strong>anuncio</strong>&gt;&gt;.
     </p>
-    <p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora
+    <p>Además, una etiqueta puede tener múltiples clases, no una sola. Esto nos da más flexibilidad a la hora
       de crear clases específicas:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;pagina&quot;</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio primero&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">id</span>=<span class="s">&quot;articulo&quot;</span>&gt;Aquí irá el contenido de texto del artículo&lt;/<span class="nt">div</span>&gt;
   &lt;<span class="nt">div</span> <span class="na">class</span>=<span class="s">&quot;anuncio ultimo&quot;</span>&gt;Aquí irá anuncio&lt;/<span class="nt">div</span>&gt;
-&lt;<span class="nt">div</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+&lt;<span class="nt">div</span>&gt; <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px"></i></pre>
     </div>
     <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y
       <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y
-      <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos
+      <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la <strong>clase anuncio</strong>, y atributos
       que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.
     </p>
     <p>
@@ -913,41 +921,54 @@
     </blockquote>
     </p>
     <hr>
-    <h4 id="idioma-etiqueta"><a href="#idioma-etiqueta">Idioma del contenido</a></h4>
+    <h4 id="atributo-lang"><a href="#atributo-lang">Atributo lang (idioma)</a></h4>
     <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de
       dicho atributo tendrá que ser el código <a href="https://es.wikipedia.org/wiki/ISO_639-1" target="_blank">código
-        ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo
-      <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:
-    </p>
+        ISO 639-1</a> del idioma al que queremos hacer referencia. Aunque en principio podemos hacer esto en cualquier etiqueta <strong>HTML</strong>, es obligatorio hacerlo en la etiqueta <span class="html-tag">html</span> ya que es la etiqueta que engloba todo el documento.</p> 
+    <p>De esta forma, estaremos estableciendo el <strong>idioma</strong> en el que se encuentra el documento:</p>
+    <div class="highlight">
+<pre>
+&lt;<span class="nt">html</span> <span class="bg"><span class="na">lang</span>=<span class="s">&quot;es&quot;</span></span>&gt;
+  &lt;<span class="nt">head</span>&gt;
+    <span class="c1">&lt;!-- ... --&gt;</span>
+  &lt;/<span class="nt">head</span>&gt;
+  &lt;<span class="nt">body</span>&gt;
+    <span class="c1">&lt;!-- ... --&gt;</span>
+  &lt;/<span class="nt">body</span>&gt;
+&lt;/<span class="nt">html</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right:60px"></i>
+</pre>
+    </div>
+<h4 id="atributo-translate"><a href="#atributo-translate">El atributo translate (traducción)</a></h4>
+<p>También podemos utilizar el atributo
+      <strong>translate</strong>, el cuál acepta los valores <strong>yes</strong> y <strong>no</strong> (<em><strong>yes</strong>, es su valor predeterminado</em>) en las etiquetas <strong>HTML</strong> para indicar si el contenido de un texto es o no &lt;&lt;<strong>traducible</strong></p>
+      <p>Si por ejemplo, tenemos un texto que no queremos que sea posible traducirlo, sino que queremos que conserve el texto original, podemos hacer lo siguiente:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">p</span>&gt;
   Hace algunos días fuí a ver la nueva película de 
-  &lt;<span class="nt">span</span> <span class="na">translate</span>=<span class="s">&quot;no&quot;</span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
-&lt;/<span class="nt">p</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+  &lt;<span class="nt">span</span> <span class="bg"><span class="na">translate</span>=<span class="s">&quot;no&quot;</span></span>&gt;StarWars&lt;/<span class="nt">span</span>&gt;.
+&lt;/<span class="nt">p</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px;"></i></pre>
     </div>
-    <p>De esta forma, le indicamos al naevagador o a herramientas como <strong>Google translator</strong>, que esa frase
+    <p>De esta forma, le indicamos al navegador o a herramientas como <strong>Google translator</strong>, que esa frase
       específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica
       el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por
       defecto.</p>
     <hr>
-    <h4 id="titulos-tooltip"><a href="#titulos-tooltip">Títulos o tooltips</a></h4>
-    <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un
-      mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre elemento un
+    <h4 id="atributo-title"><a href="#atributo-title">El atributo title (títulos o tooltips)</a></h4>
+    <p>En la mayoría de las etiquetas <strong>HTML</strong> podemos indicar el atributo <strong>title</strong> para especificar un
+      mensaje de texto que aparezca cuando el usuario detenga el <strong><em>mouse</em></strong> sobre el elemento un
       instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que
-      muestra el texto en cuestión:</p>
+      muestra el texto en cuestión.</p>
+      <p>De esta forma, podemos usar este atributo sobre cualquier tipo de etiqueta <strong>HTML</strong>, aunque se suele usar sobre todo en las etiquetas de imágenes <span class="html-tag">img</span>,  de abreviaturas <span class="html-tag">abbr</span> entre otras:</p>
     <div class="highlight">
       <pre>&lt;<span class="nt">div</span>&gt;
   &lt;<span class="nt">img</span> 
-    <span class="na">src</span>=<span class="s">&quot;gandalf.jpg&quot;</span>
-    <span class="na">alt</span>=<span class="s">&quot;Gandalf el gris, utilizando un portátil para consultar su correo.&quot;</span>
-    <span class="na">title</span>=<span class="s">&quot;¡Este es Gandalf el gris!&quot;</span> /&gt;
-&lt;<span class="nt">div</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px;"></i></pre>
+    <span class="na">src</span>=<span class="s">&quot;//robohash.org/1&quot;</span>
+    <span class="na">alt</span>=<span class="s">&quot;robot aleatorio.&quot;</span>
+    <span class="bg"><span class="na">title</span>=<span class="s">&quot;¡Este es un robot generado al azar!&quot;</span></span> /&gt;
+&lt;<span class="nt">div</span>&gt;
+&lt;<span class="nt">p</span>&gt;El lenguaje de etiquetas &lt;<span class="nt">abbr</span> <span class="bg"><span class="na">title</span>=<span class="s">&quot;HyperText Markup Language&quot;</span></span>&gt;HTML&lt;/<span class="nt">abbr</span>&gt;&lt;/<span class="nt">p</span>&gt;
+<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px" title="Ver en codepen"></i></pre>
     </div>
-    <p><strong>El resultado sería el siguiente:</strong></p>
-    <p align="center">
-      <img src="./assets/Gandalf.gif" alt="Gandalf el gris" title="¡Este es Gandalf el gris!"
-        style="border: 2px solid #000; border-radius: 0; " />
-    </p>
     <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las
       imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no siempre es así.
       El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se
@@ -955,7 +976,7 @@
       atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.
     </p>
     <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
-      etiquetas <span class="tag">&lt;a&gt;</span> ( <em>enlaces</em> ) u otras.</p>
+      etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
     <hr>
     <h4 id="metadatos-datasets"><a href="#metadatos-datasets">Metadatos (datasets)</a></h4>
     <p>En HTML, veremos que la mayoría de los metadatos ( <em>información adicional</em> ) se incluyen en la etiqueta
