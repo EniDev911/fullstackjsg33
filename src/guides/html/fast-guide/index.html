@@ -67,6 +67,7 @@
             <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
             <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a></li>
             <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
+            <li><a href="#atributo-data"><strong>data-</strong> - metadatos</a></li>
           </ul>
         </li>
       </ul>
@@ -831,13 +832,13 @@
           </td>
         </tr>
         <tr>
-          <td data-label="atributo" class="link" onclick="{window.location.href = '#metadatos-datasets'}"><span class="td-attribute">data-*</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-data'}"><span class="td-attribute">data-*</span></td>
           <td data-label="valor"><em>nombre</em></td>
           <td data-label="descripción"><span>Metadatos en la propia etiqueta. Se puede usar cualquier nombre con prefijo <span
               class="td-attribute">data-</span>.</span></td>
         </tr>
         <tr>
-          <td data-label="atributo"><span class="td-attribute">accesskey</span></td>
+          <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-accesskey'}"><span class="td-attribute">accesskey</span></td>
           <td data-label="valor"><em>atajo</em></td>
           <td data-label="descripción">Combinación de teclas que puede pulsar el usuario para activar el elemento.</td>
         </tr>
@@ -978,9 +979,9 @@
     <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo,
       etiquetas <span class="tag">&lt;a&gt;</span> (<em>enlaces</em>) u otras.</p>
     <hr>
-    <h4 id="metadatos-datasets"><a href="#metadatos-datasets">Metadatos (datasets)</a></h4>
-    <p>En HTML, veremos que la mayoría de los metadatos ( <em>información adicional</em> ) se incluyen en la etiqueta
-      <span class="tag">head</span> del documento <strong>HTML</strong>. Sin embargo, también se puede incluir metadatos en la propia
+    <h4 id="atributo-data"><a href="#atributo-data">EL atributo data- (metadatos)</a></h4>
+    <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta
+      <span class="html-tag">head</span> del documento <strong>HTML</strong>. Sin embargo, también se puede incluir metadatos en la propia
       etiqueta a través de un atributo con prefijo <strong>data-</strong>.
     </p>
     <p>De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente orientada a
@@ -992,21 +993,21 @@
   <span class="na">data-modelo</span>=<span class="s">&quot;fiesta&quot;</span>
   <span class="na">data-color</span>=<span class="s">&quot;azul&quot;</span>
   <span class="na">data-asientos</span>=<span class="s">&quot;4&quot;</span>&gt;
-&lt;/<span class="nt">article</span>&gt; <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+&lt;/<span class="nt">article</span>&gt; <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right: 60px" title="Ver en codepen"></i></pre>
     </div>
     <p>
       En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span class="tag">&lt;article&gt;</span>, a
-      la que podremos acceder a través de javascript mediante la propiedad <strong>.dataset</strong> :</p>
+      la que podremos acceder a través de javascript mediante la propiedad <strong>.dataset</strong> y a su vez a la propiedad con el nombre que se indicó seguido del prefijo <strong>data-</strong>:</p>
     <div class="highlight">
       <pre><span class="kr">const</span> article = document.<span class="nt">getElementById</span>(<span class="s">&quot;auto&quot;</span>);
 
 article.<span class="nt">dataset</span>.<span class="nt">marca</span>; <span class="c1">// ford</span>
 article.<span class="nt">dataset</span>.<span class="nt">modelo</span>; <span class="c1">// fiesta</span>
 article.<span class="nt">dataset</span>.<span class="nt">color</span>; <span class="c1">// azul</span>
-article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span> <i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top:10px"></i></pre>
+article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span class="c1">// 4</span> <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i><i class="btn codepen" onclick="{createPen('js', this.parentNode.textContent)}" style="right: 60px" title="Ver en codepen"></i></pre>
     </div>
     <hr>
-    <h4 id="accesskey"><a href="#accesskey">Atajo de teclado (accesskey)</a></h4>
+    <h4 id="atributo-accesskey"><a href="#atributo-accesskey">Atajo de teclado (accesskey)</a></h4>
     <p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede
       pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un
       enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse
