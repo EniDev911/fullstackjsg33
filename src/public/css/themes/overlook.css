@@ -44,6 +44,11 @@
   background-color: #00000060;
   border-bottom: 2px solid #b4d;
  }
+ .highlight .dh{
+  font-weight: bold;
+  color: #f991af;
+ }
+
   .highlight .err {
     color: #a61717;
     background-color: #e3d2d2

@@ -1085,8 +1085,24 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
 <section class="markdown-body">
   <h3 id="estructura-de-un-documento-html"><a href="#estructura-de-un-documento-html">Estructura del documento HTML</a></h3>
 <p>Observa que tenemos una zona superior que es el <strong>tipo de documento.</strong> Luego, abrimos la etiqueta <span class="html-tag">html</span> que contendrá dos partes principales: la <strong>cabecera del documento</strong> y el <strong>cuerpo del documento</strong>:</p>
+<figure>
+  <img src="./assets/estructura-documento.png" alt="estructura-de-un-documento-html" class="border">
+  <figcaption>Estructura de un documento html</figcaption>
+</figure>
 <h4><a href="etiqueta-doctype">El DOCTYPE (tipo de documento)</a></h4>
-<p>El <span>!DOCTYPE</span> o <strong>tipo de documento</strong> es una etiqueta especial que se escribe en la primera línea del documento <strong>HTML</strong>. Debe ir especificado siempre para que el navegador sepa que tipo de documento <strong>HTML</strong> se trata.</p>
+<p>El <span class="html-tag">!DOCTYPE</span> o <strong>tipo de documento</strong> es una etiqueta especial que se escribe en la primera línea del documento <strong>HTML</strong>. Debe ir especificado siempre para que el navegador sepa que tipo de documento <strong>HTML</strong> se trata.</p>
+<p>Antes de comenzar un documento <strong>HTML</strong>, en su primera línea, es siempre conveniente indicar el tipo de documento a utilizar. Para indicar que se trata de un <strong>documento HTML5</strong> colocaremos la siguiente linea:</p>
+<div class="highlight">
+  <pre>&lt;!<span class="dh">DOCTYPE</span> <span class="nt">html</span>&gt; <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i></pre>
+</div>
+<p>En versiones anteriores, como <strong>HTML4</strong> o <strong>XHTML</strong>, el tipo de documento se especificaba en la primera línea de una forma más compleja. Hoy en día estos <strong>DOCTYPE</strong> no tiene sentido indicarlos:</p>
+<div class="highlight">
+  <pre>&lt;<span class="dh">DOCTYPE</span> <span class="nt">html</span> <span class="nb">PUBLIC</span> <span class="s">&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+  &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</span><i class="btn clone" onclick="{this.parentNode.textContent}"></i></pre>
+</div>
+<p>Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea donde se indica el <strong>tipo de documento</strong> del que se trata. De esta forma, el navegador ya está preparado para actuar adaptándose perfectamente a cada tipo de documento.</p>
+<p>En el caso de no indicar el tipo de documento en una página <strong>HTML</strong>, el navegador entra en el modo <strong><a href="//developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode" target="_blank">Quirk mode</a></strong> (<em>modo peculiar o modo no estándar</em>), donde se activa un <strong>modo de retrocompatibilidad</strong> con páginas antiguas, que procesará de forma diferente muchas etiquetas <strong>HTML</strong> o propiedades <strong>CSS</strong>.</p>
+<h4 id="etiqueta-head"><a href="#etiqueta-head">La etiqueta head (metadatos)</a></h4>
 </section>
 <section class="markdown-body">
     <h3 id="etiquetas-relacion"><a href='#etiquetas-relacion'>Etiquetas HTML de relación</a></h3>
