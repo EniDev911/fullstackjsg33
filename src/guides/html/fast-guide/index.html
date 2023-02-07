@@ -67,9 +67,11 @@
             <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
             <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a></li>
             <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
-            <li><a href="#atributo-data"><strong>data-</strong> - metadatos</a></li>
+            <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
+            <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a></li>
           </ul>
         </li>
+        <li><a href="#estructura-de-un-documento-html">Estructura del documento HTML</a></li>
       </ul>
     </details>
     <details>
@@ -1008,7 +1010,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </div>
     <hr>
     <h4 id="atributo-accesskey"><a href="#atributo-accesskey">Atajo de teclado (accesskey)</a></h4>
-    <p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede
+    <p>En <strong>HTML</strong> es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede
       pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un
       enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para cuando el usuario pulse
       <kbd>ALT</kbd> + <kbd>tecla</kbd>, se active ese elemento:
@@ -1016,14 +1018,14 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <div class="highlight">
       <pre>&lt;<span class="nt">form</span>&gt;
   <span class="c1">&lt;!-- Campo de texto --&gt;</span>
-  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;N&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+N)&quot;</span> /&gt;
+  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;N&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Campo 1 (ALT+N)&quot;</span> /&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Campo de texto --&gt;</span>
-  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;A&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Nombre (ALT+A)&quot;</span> /&gt;
+  &lt;<span class="nt">input</span> <span class="na">accesskey</span>=<span class="s">&quot;A&quot;</span> <span class="na">placeholder</span>=<span class="s">&quot;Campo 2 (ALT+A)&quot;</span> /&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Enlace HTML --&gt;</span>
   &lt;<span class="nt">a</span> <span class="na">accesskey</span>=<span class="s">&quot;L&quot;</span> <span class="na">href</span>=<span class="s">&quot;#&quot;</span>&gt;Enlace (ALT+L)&lt;/<span class="nt">a</span>&gt;
   <span class="c1" style="font-variant-ligatures:none">&lt;!-- Botón HTML --&gt;</span>
   &lt;<span class="nt">button</span> <span class="na">accesskey</span>=<span class="s">&quot;B&quot;</span>&gt;Botón (ALT+B)&lt;/<span class="nt">button</span>&gt;
-&lt;/<span class="nt">form</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+&lt;/<span class="nt">form</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}" title="Copiar"></i><i class="btn codepen" style="right: 60px;" title="Ver en codepen" onclick="{createPen('html', this.parentNode.textContent)}"></i></pre>
     </div>
     <p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si
       pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos
@@ -1076,8 +1078,15 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la
       incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
     <p><a href="#top"><img alt="boton-top"
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
+          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
     </p>
+</section>
+<!-- ESTRUCTURA DE UN DOCUMENTO -->
+<section class="markdown-body">
+  <h3 id="estructura-de-un-documento-html"><a href="#estructura-de-un-documento-html">Estructura del documento HTML</a></h3>
+<p>Observa que tenemos una zona superior que es el <strong>tipo de documento.</strong> Luego, abrimos la etiqueta <span class="html-tag">html</span> que contendrá dos partes principales: la <strong>cabecera del documento</strong> y el <strong>cuerpo del documento</strong>:</p>
+<h4><a href="etiqueta-doctype">El DOCTYPE (tipo de documento)</a></h4>
+<p>El <span>!DOCTYPE</span> o <strong>tipo de documento</strong> es una etiqueta especial que se escribe en la primera línea del documento <strong>HTML</strong>. Debe ir especificado siempre para que el navegador sepa que tipo de documento <strong>HTML</strong> se trata.</p>
 </section>
 <section class="markdown-body">
     <h3 id="etiquetas-relacion"><a href='#etiquetas-relacion'>Etiquetas HTML de relación</a></h3>
