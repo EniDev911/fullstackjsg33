@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradientes</title>
+	<link rel="stylesheet" href="../../../public/css/docs.css">
+	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+</head>
+<body>
+	<article class="markdown-body">
+		<p>El primer tipo de gradiente es el <strong>gradiente lineal</strong>, que permite crear fondos degradados que van en una dirección y cambian de un color a otro, dependiendo de la lista de colores indicadas por parámetro</p>
+		<h3>linear-gradient()</h3>
+		<p>La sintaxis a utilizar debe ser una de las siguientes:</p>
+		<table class="table">
+			<thead>
+				<th>Función y modalidad</th>
+				<th>Significado</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="función y modalidad"><strong>linear-gradient(color, color, ...)</strong></td>
+					<td data-label="significado">Gradiente de colores (hacia abajo).</td>
+				</tr>
+				<tr>
+					<td data-label="función y modalidad"><strong>linear-gradient(direction, color, color, ...)</strong></td>
+					<td data-label="significado">Gradiente con dirección específica.</td>
+				</tr>
+				<tr>
+					<td data-label="función y modalidad"><strong>linear-gradient(direction, color, size, color, size,...)</strong></td>
+					<td data-label="significado">Gradiente indicando donde comienza a cambiar el color</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>El ejemplo más básico de los anteriores es la primera modalidad, donde simplemente indicaremos los colores del gradiente uno detrás de otro, y como mínimo, deben haber dos colores:</p>
+		<div class="highlight">
+			<pre><span class="nb">.element</span> {
+  <span class="gu">background</span> : <span class="nt">linear-gradient</span>(blue, red);		
+} <i class="btn clone"></i></pre>
+		</div>
+	</article>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>XHR: XMLHttpRequest</title>
+	<link rel="stylesheet" href="../../../../public/css/docs.css">
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<article class="markdown-body">
+		<h3>¿Qué es XMLHttpRequest?</h3>
+		<p>El objeto <strong>XMLHttpRequest</strong> se creó originalmente para realizar peticiones HTTP sobre archivos <strong>.xml</strong> externos desde javascript. Actualmente, se realizan las mismas operaciones pero con archivos <strong>JSON</strong>, ya que son muchos más habituales en el ecosistema de javascript como <strong>almacenamiento ligero de datos</strong>.</p>
+		<p>El mecanismo principal de <strong>peticiones HTTP mediante XMLHttpRequest</strong> es simple, aunque se va complicando a medida que vamos realizando comprobaciones y detalles relacionados, ya que se realiza todo más a bajo nivel (<em>que ejercen un control más directo</em>) que su equivalente moderno <strong>fetch</strong></p>
+
+		<p>
+			<ul>
+				<li>El primer paso es crear un objeto <strong>XMLHttpRequest</strong> ( <em>XHR</em> )</li>
+				<li>Utilizando la instancia creada, se puede definir el tipo de petición utilizando el método <strong>open(method, url)</strong>, indicando el método HTTP y la URL a la que queremos hacer la petición.</li>
+				<li>Teniendo la petición preparada la haremos finalmente efectiva con el método <strong>.send()</strong>, el cuál lanzará la petición al servidor.</li>
+				<li>Para consultar el contenido de la propiedad <strong>.responsetext</strong>, para ello podemos utilizar <strong>console.log(xhr.responseText)</strong> (<em>texto de respuesta</em>) de nuestra instancia, abriendo la consola del navegador con <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>i</kbd> (<em>en Chrome</em>) comprobaremos que debería estar el contenido del archivo pedido</li>
+			</ul>
+		</p>
+
+	<h3>Política CORS</h3>
+	<p>Habrás notado en el ejemplo anterior que estamos realizando <strong>peticiones relativas</strong>, es decir, al  <strong>mismo dominio.</strong> Por defecto, en javascript, las peticiones al mismo dominio de la web donde nos encontramos se pueden realizar sin ninguna restricción. Sin embargo, si intentamos realizarlas a otros dominio diferente, probablemente nos aparezca un <strong>error de CORS</strong> (<em>Cross-Origin Resource Sharing</em>) similar al siguiente:</p>
+	<blockquote class="danger">
+		<p>Access to XMLHttpRequest at 'https://dominio.com/robots.txt' from origin 'https://midominio.com/' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is preset on the requested resource.</p>
+	</blockquote>
+
+	<h4>El objeto XMLHttpRequest</h4>
+	<p>Al crear un objeto <strong>XMLHttpRequest</strong> tenemos acceso a una serie de propiedades que forman parte de nuestra instancia. Entre ellas, se encuentran las siguientes:</p>
+	<table class="table">
+		<thead>
+			<th>Propiedad</th>
+			<th>Descripción</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td data-label="propiedad"><strong>.responseType</strong></td>
+				<td data-label="descripción"><span>Define el tipo de respuesta de <strong>.response: json, Blob</strong>, etc. Por defecto es <strong>text</strong>.</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.response</strong></td>
+				<td data-label="descripción"><span>Contenido parseado automáticamente basado en <strong>.responseType</strong>.</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.responseText</strong></td>
+				<td data-label="descripción"><span>Respuesta de la petición como texto plano o <code class="path">NULL</code>.</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.responseURL</strong></td>
+				<td data-label="descripción"><span>URL de la petición HTTP a realizar.</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.readyState</strong></td>
+				<td data-label="descripción"><span>Número que indica en que estado se encuentra la petición (ver más adelante).</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.timeout</strong></td>
+				<td data-label="descripción"><span>Milisegundos permitidos para realizar la petición HTTP. Por defecto, <strong>0</strong> (<em>sin límites</em>).</span></td>
+			</tr>
+			<tr>
+				<td data-label="propiedad"><strong>.status</strong></td>
+				<td data-label="descripción">Código de error HTTP de respuesta de la petición</td>
+			</tr>
+		</tbody>
+	</table>
+	</article>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="../../../public/css/docs.css">
+  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+	<title>SweetAlert2</title>
+</head>
+<body>
+	<article class="markdown-body">
+		<h4>Crear una alerta simple</h4>
+		<p>Mostrar una alerta simple, podría ser el 'hola mundo' de la librería</p>
+		<div class="highlight">
+			<pre><span class="gu">Swal</span>.<span class="nt">fire</span>(<span class="s">&quot;Esta es una alerta&quot;</span>); <i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+		</div>
+		<p>Podemos ver el resultado presionando el siguiente botón: <button class="btn" onclick="{Swal.fire('Esta es una alerta');}">VER ALERTA</button></p>
+		<blockquote class="info"><strong>Nota:</strong> la tipografía del texto es tomada de nuestra web, es decir, la librería no incluye ninguna tipografía.</blockquote>
+		<h4>Evento de alerta cerrada o aceptada</h4>
+		<p>Si queremos saber cuándo se cierra una alerta (es decir, que se presiona el botón de OK o que se cierra) espera a que se resuelva la promesa que el método <strong>.fire()</strong> devuelve</p>
+		<div class="highlight">
+			<pre><span class="gu">Swal</span>.<span class="nt">fire</span>(<span class="s">&quot;Esta es una alerta&quot;</span>)
+    .<span class="nt">then</span>(() <span class="nt">=&gt;</span> {
+        <span class="c1">// aquí la alerta se ha cerrado</span>
+        <span class="nb">console</span>.<span class="nt">log</span>(<span class="s">&quot;Alerta cerrada&quot;</span>);
+    });<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre></div>
+   <p>Podemos ver el resultado presionando el siguiente botón: <button class="btn" onclick="{Swal.fire('Esta es una alerta').then(() => { console.log('Alerta cerrada') });}">VER ALERTA</button> y luego revisar la consola del navegador con <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>I</kbd> (<em>google chrome</em>).</p>
+	<h4>Cambiar texto del botón de alerta con Sweet Alert 2</h4>
+	<p>Si no queremos que aparezca el texto <em>'OK'</em> en el botón, podemos invocar a <strong>Swal.fire</strong> pero con un objeto de propiedades. Solo debemos especificar las propiedades <strong>title</strong> y <strong>confirmButtonText</strong></p>
+	<div class="highlight">
+		<pre><span class="gu">Swal</span>.<span class="nt">fire</span>({
+    <span class="nx">title</span>: <span class="s">&quot;Mensaje enviado&quot;</span>,
+    <span class="nx">text</span>: <span class="s">&quot;El mensaje fue enviado exitosamente&quot;</span>,
+    <span class="nx">confirmButtonText</span>: <span class="s">&quot;Aceptar&quot;</span>
+})<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+	</div>
+   <p>Podemos ver el resultado presionando el siguiente botón: <button class="btn" onclick="{Swal.fire({
+    title: 'Mensaje enviado',
+    text: 'El mensaje fue enviado exitosamente',
+    confirmButtonText: 'Aceptar'
+})}">VER ALERTA</button></p>
+
+<h4>Crear una alerta que contenga una imagen personalizada</h4>
+<p>Para añadir una imagen debemos establecer la url del recurso en la propiedad <strong>imageUrl</strong> dentro del objeto al invocar el método <strong>fire()</strong></p>
+<div class="highlight">
+<pre><span class="gu">Swal</span>.<span class="nt">fire</span>({
+    <span class="nx">title</span>: <span class="s">&quot;Mensaje enviado&quot;</span>,
+    <span class="nx">text</span>: <span class="s">&quot;El mensaje fue enviado exitosamente&quot;</span>,
+    <span class="nx">imageUrl</span>: <span class="s">&quot;https://robohash.org/2&quot;</span>
+})<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>	
+</div>
+	</article>
+	<!-- SWEET ALERT -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  	<script src="../../../public/js/functions.js" type="module"></script>
+</body>
+</html>

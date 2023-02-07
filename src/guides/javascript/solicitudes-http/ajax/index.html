@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Solicitudes http - AJAX</title>
+	<link rel="stylesheet" href="../../../../public/css/docs.css">
+	<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+	<article class="markdown-body">
+		<h3>¿Qué es una petición HTTP?</h3>
+		<p>Una <strong>petición o solicitud HTTP</strong> es lo que suele denominarse a la acción por parte de un navegador de solicitar a un servidor web un recurso ya sea un documento o archivo, como archivos <strong>.html</strong>, <strong>.js</strong>, una imagen, una fuente tipográfica, etc. Por medio de esta petición, el navegador puede descargar ese archivo, alcamenacenarlo en una <strong>caché temporal de archivos del navegador</strong> y, finalmente, utilizarlo para mostrarlo en la página actual que lo ha solicitado.</p>
+		<h3>Peticiones HTTP mediante AJAX</h3>
+		<p>Con el pasar del tiempo y las constantes mejoras de rendimientos de la web, aparece una nueva modalidad para realizar peticiones, denominada <strong>AJAX</strong> (<em>Asynchronous javascript and XML</em>). Esta modalidad se basa en que la <strong>petición HTTP</strong> se realiza desde javascript, de forma transparente al usuario, descargando la información y pudiendo tratarla <strong>sin necesidad de mostrarla directamente en la página</strong>.</p>
+		<p>Esto produce un interesante cambio en el panorama que había hasta entonces, puesto que ahora podemos hacer actualizaciones de contenidos de forma <strong>parcial</strong>, de modo que se actualice una página en &lt;&lt;<strong>vivo</strong>&gt;&gt;, sin necesidad de recargar toda la página, sino solamente actualizando una pequeña parte de ella, pudiendo utilizar javascript para crear todo tipo de lógica de apoyo.</p>
+		<h3>Métodos de petición AJAX</h3>
+		<p>Existen varias formas de realizar <strong>peticiones HTTP mediante AJAX</strong>, pero las principales suelen ser <strong>XMLHttpRequest</strong> y <strong>fetch</strong> (<em>nativas, incluidas en el navegador por defecto</em>), además de librerías como <strong>axios</strong> o <strong>superagent</strong>:</p>
+		<table class="table">
+			<thead>
+				<th>Método</th>
+				<th>Descripción</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="método"><strong>XMLHttpRequest</strong></td>
+					<td data-label="descripción"><span>Abreviado como <strong>XHR</strong>. El más antiguo. Nativo</span></td>
+				</tr>
+				<tr>
+					<td data-label="método"><strong>fetch</strong></td>
+					<td data-label="descripción"><span>Nuevo sistema nativo de peticiones basado en promesas. Nativo</span></td>
+				</tr>
+				<tr>
+					<td data-label="método"><strong>Axios</strong></td>
+					<td data-label="descripción"><span>Librería basada en promesas para realizar peticiones en Node o en navegadores</span></td>
+				</tr>
+				<tr>
+					<td data-label="método"><strong>superagent</strong></td>
+					<td data-label="descripción"><span>Librería para realizar peticiones HTTP tanto en Node como en navegadores</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>MPA: Multiple Page Application</h3>
+		<p>Tradicionalmente, el sistema que se seguía para crear páginas o aplicaciones web se enmarcaba dentro de la categoría de páginas <strong>MPA</strong> (<em>Multiple Page Application</em>). Bajo este sistema, el navegador se descarga el archivo <strong>.html</strong>, lo lee y luego realiza las peticiones de los archivos restantes relacionados que encuentra en el documento HTML como archivos <strong>.css</strong>, <strong>.js</strong>, etc. Si el usuario pulsa en algún enlace, se descarga el <strong>.html</strong> de dicho enlace (<em>recargando la página completa</em>) y se repite el proceso.</p>
+	</article>
+</body>
+</html>

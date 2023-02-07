@@ -28,7 +28,6 @@
         HTMLResponse.innerHTML = `<ul>${template}</ul>`
       }
     }
-
     xhr.addEventListener("load", onRequestHandler);
     xhr.open("GET", `${API_URL}/users`);
     xhr.send();
