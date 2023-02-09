@@ -164,7 +164,9 @@ const createPen = (lang, content) => {
   const o = document.createElement("input");
       o.type = "hidden",
       o.name = "data",
-      o.value = JSON.stringify({title: document.title, [lang]: content}),
+      o.value = JSON.stringify({
+        title: document.title, 
+        [lang]: content}),
       e.insertAdjacentElement("afterbegin", o),
       document.body.appendChild(e),
       e.submit();

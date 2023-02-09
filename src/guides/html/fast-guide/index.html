@@ -75,6 +75,7 @@
     <details>
       <summary>Etiquetas de cabeceras</summary>
       <ul>
+        <li><a href="#etiqueta-de-metadatos">Etiquetas de metadatos</a></li>
        <li><a href="#enlaces">Enlaces</a></li>
       </ul>
     </details>
@@ -1376,7 +1377,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
 </div>
 <p>Con esto, el documento HTML estará relacionado con el documento CSS <strong>index.css</strong>, y aplicará todos los estilos CSS que se encuentren en él. El atributo <strong>type</strong> es opcional y no se suele indicar, puesto que el tipo por defecto de las hojas de estilos ya es <strong>text/css</strong>.</p>
     <!-- ETIQUETAS HTML DE METADATOS -->
-    <h4><a href="etiqueta-de-metadatos">Etiquetas HTML de metadatos</a></h4>
+    <h4 id="etiqueta-de-metadatos"><a href="#etiqueta-de-metadatos">Etiquetas HTML de metadatos</a></h4>
     <p>Quizás, la etiqueta con mayor números de posibilidades en la cabecera de un documento HTML es la etiqueta <span class="html-tag">meta</span>. En ella, ya través de los atributos <strong>name</strong> y <strong>content</strong> podemos indicar una gran cantidad de metadatos al documento. Veamos lo más conocidos:</p>
     <table class="table">
       <thead>
@@ -1432,9 +1433,35 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
   <pre>&lt;<span class="nt">head</span>&gt;
   &lt;<span class="nt">meta</span> <span class="nb">name</span>=<span class="s">&quot;theme-color&quot;</span> <span class="nb">content</span>=<span class="s">&quot;#212121&quot;</span> 
 &lt;/<span class="nt">head</span>&gt;
-<i class="btn clone" onclick="{this.parentNode.textContent}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right:60px" title="Ver en codepen"></i>
-</pre>
+<i class="btn clone" onclick="{this.parentNode.textContent}" title="Copiar"></i><i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" style="right:60px" title="Ver en codepen"></i></pre>
 </div>
+<figure>
+  <img src="./assets/theme-color.png" alt="theme color image" class="border">
+  <figcaption>Dispositivo móvil, navegador Google Chrome</figcaption>
+</figure>
+<blockquote class="info">
+<p>Sin embargo, actualmente el soporte para esta característica es muy irregular, y muchos navegadores aún no lo soportan. Por ejemplo, en <strong>Google chrome</strong>, sólo funciona en dispositivos móviles donde el sistema tenga el modo claro activado.</p>  
+</blockquote>
+<h4 id="metadatos-seo-para-google"><a href="#metadatos-seo-para-google">Metadatos SEO para Google</a></h4>
+<p>Algunas de las etiquetas <span class="html-tag">meta</span> son bien conocidas como etiquetas que pueden mejorar el <strong>SEO</strong> (<em>posicionamiento</em>) de una página en buscadores como Google. Al margen de etiquetas <span class="html-tag">meta</span> como <strong>description</strong> o <span class="html-tag">title</span>, que son principales en temas de posicionamiento, Google es capaz de leer otros metadatos que indicarán como realizar ciertas acciones:</p>
+<table class="table">
+  <thead>
+    <th>Valor name</th>
+    <th>Valor content</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="valor name"><strong>google</strong></td>
+      <td data-label="valor content"><strong>nositelinkssearchbox</strong></td>
+      <td data-label="descripción">Indica a Google que no muestre el minibuscador en los <a href="https://developers.google.com/search/docs/appearance/sitelinks?hl=es&visit_id=638115158710535948-1140770323&rd=1" target="_blank">sitelinks</a>.</td>
+    </tr>
+    <tr>
+      <td data-label="valor name"><strong>google</strong></td>
+      <td data-label="notranslate"><strong>notranslate</strong></td>
+    </tr>
+  </tbody>
+</table>
     <p><a href="#top"><img alt=""
     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a></p>
     </section>
