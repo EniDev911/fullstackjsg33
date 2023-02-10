@@ -8,16 +8,15 @@
   <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/table.css">
+  <script src="../../index.js" type="module"></script>
   <title>Guía HTML</title>
 </head>
-
 <body>
   <article>
     <section class="markdown-body">
     <h1 align="center">
       GUÍA HTML
     </h1>
-
     <span id="top"></span>
     <h4>HTML</h4>
     <ul>
@@ -75,8 +74,11 @@
     <details>
       <summary>Etiquetas de cabeceras</summary>
       <ul>
-        <li><a href="#etiqueta-de-metadatos">Etiquetas de metadatos</a></li>
-       <li><a href="#enlaces">Enlaces</a></li>
+        <li><a href="#etiqueta-de-metadatos">Etiquetas de metadatos</a>
+          <ul>
+            <li><a href="#tema-color-del-navegador">Tema de color del navegador</a></li>
+          </ul>
+        </li>
       </ul>
     </details>
     <ul>
@@ -359,9 +361,8 @@
             target="_blank">https://www.w3.org/TR/wai-aria-1.1/</a></p>
       </div>
     </div>
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a>
-    </p>
+    <guide-button data-href="#top"></guide-button>
+
     </section>
     <section class="markdown-body">
     <h3 id="editores-recomendados"><a href="#editores-recomendados">Editores recomendados</a></h3>
@@ -502,7 +503,7 @@
           Google Chrome
           </td>
           <td data-label="linux">
-            <img src="assets/icon/done.ico">
+            <img src="assets/icon/done.ico" alt="icon">
           </td>
           <td data-label="windows">
             <img src="assets/icon/done.ico">
@@ -616,9 +617,7 @@
         </tr>
       </tbody>
     </table>
-    <p><a href="#top"><img alt=""
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
-    </p>
+    <guide-button data-href="#top"></guide-button>
     </section>
 
     <section class="markdown-body">
@@ -1459,9 +1458,22 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <tr>
       <td data-label="valor name"><strong>google</strong></td>
       <td data-label="notranslate"><strong>notranslate</strong></td>
+      <td data-label="descripción">Indica a Google que no debe traducir la página.</td>
+    </tr>
+    <tr>
+      <td data-label="valor name"><strong>robots</strong></td>
+      <td data-label="valor content"><u>parámetros</u></td>
+      <td data-label="descripción">Indica al robot de un buscador si debe indexar o no la página.</td>
     </tr>
   </tbody>
 </table>
+<p>Un ejemplo de etiquetas con los atributos mencionados:</p>
+<div class="highlight">
+<pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">meta</span> <span class="nb">name</span>=<span class="s">&quot;google&quot;</span>
+  
+</pre>
+</div>
     <p><a href="#top"><img alt=""
     src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-blue?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=%23FAC173" /></a></p>
     </section>
@@ -3861,6 +3873,37 @@ Como podemos ver, lo interesante está en la etiqueta <span class="html-tag">sou
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <!-- functions -->
   <script src="../../../public/js/functions.js" type="module"></script>
+    <script>
+    function getFullscreenElement() {
+      return document.fullscreenElement
+        || document.webkitFullscreenElement // chrome safari
+        || document.mozFullscreenElement // firefox
+        || document.msFullscreenElement
+    }
+
+    function toggleFullscreen(ele) {
+      if (getFullscreenElement()) {
+        document.exitFullscreen();
+      } else {
+        // document.documentElement.requestFullscreen().catch(console.log);
+        ele.requestFullscreen().catch(console.log);
+      }
+    }
+    // document.addEventListener('dblclick', function () {
+    //   toggleFullscreen();
+    // })
+
+    document.addEventListener('fullscreenchange', function () {
+      console.log("full screen change")
+    })
+
+    const createImage = (pic) => {
+      const img = document.createElement('img');
+      return img.src = pic
+    }
+    console.log(createImage('01.jpg'))
+
+  </script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ const module_1 = document.getElementById("module-1"),
   innerCarousel_5 = document.getElementById("inner-carousel-5"),
   btns_module = document.querySelectorAll(".module");
 
-let template;
+  let template;
 
 /**
  *
