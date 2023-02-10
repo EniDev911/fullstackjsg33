@@ -10,6 +10,29 @@
   <link rel="stylesheet" href="./assets/css/table.css">
   <script src="../../index.js" type="module"></script>
   <title>Guía HTML</title>
+  <style>
+  details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+}
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    background: linear-gradient(#f26626 50%, #ed704b 0);
+    color: #fff;
+}
+
+details[open] {
+    padding: 0.5em;
+}
+details[open] summary {
+    border-bottom: 1px solid red;
+    margin-bottom: 0.5em;
+}
+
+  </style>
 </head>
 <body>
   <article>
@@ -22,7 +45,6 @@
     <ul>
       <li><a href="#resumen">Evolución de HTML</a></li>
     </ul>
-
     <h4 id="programas-recomendados">Programas recomendados &#x1f4bd;</h4>
     <ul>
       <li>
@@ -40,10 +62,9 @@
       <li><a href="#navegadores-recomendados">Navegadores recomendados</a></li>
     </ul>
     <h4 id="contenido">CONTENIDO</h4>
-    <details>
-      <summary>Introducción a HTML5</summary>
+    <enidev-details data-title="Introducción a HTML5">
       <ul>
-      <li><a href="#que-es-html">¿Qué es HTML?</a>
+        <li><a href="#que-es-html">¿Qué es HTML?</a>
           <ul>
             <li><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></li>
             <li><a href="#que-es-la-semantica">¿Qué es la semántica?</a></li>
@@ -70,7 +91,7 @@
         <li><a href="#estructura-de-un-documento-html">Estructura del documento HTML</a></li>
         <li><a href="#validacion-errores-html">Validación de errores de un documento HTML</a></li>
       </ul>
-    </details>
+    </enidev-details>
     <details>
       <summary>Etiquetas de cabeceras</summary>
       <ul>
@@ -362,7 +383,6 @@
       </div>
     </div>
     <guide-button data-href="#top"></guide-button>
-
     </section>
     <section class="markdown-body">
     <h3 id="editores-recomendados"><a href="#editores-recomendados">Editores recomendados</a></h3>
@@ -701,9 +721,7 @@
       <strong>Googlebot</strong> ( <em>el robot de búsqueda de Google</em> ) que es capaz de acceder a páginas web para
       analizar la información de la misma, entenderla e indexarla en su buscador.
     </p>
-  <p><a href="#top"><img alt="boton-top"
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
-    </p>
+    <guide-button data-href="#top"></guide-button>
   </section>
   <section class="markdown-body">
     <h3 id="estructura-etiqueta-html"><a href="#estructura-etiqueta-html">Estructura de una etiqueta HTML </a></h3>
@@ -785,9 +803,7 @@
       entre <span
         style="color:rgb(19, 79, 19); font-weight: bold; font-family: jetbrains-mono; font-variant-ligatures: none">&lt;!--
         --&gt;</span> para que sea ignorado.</p>
-  <p><a href="#top"><img alt="boton-top"
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
-    </p>
+    <guide-button data-href="#top"></guide-button>
 </section>
 <!-- ATRIBUTOS COMUNES -->
 <section class="markdown-body">
@@ -1076,9 +1092,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     </table>
     <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la
       incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
-    <p><a href="#top"><img alt="boton-top"
-          src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
-    </p>
+    <guide-button data-href="#top"></guide-button>
 </section>
 <!-- ESTRUCTURA DE UN DOCUMENTO -->
 <section class="markdown-body">
