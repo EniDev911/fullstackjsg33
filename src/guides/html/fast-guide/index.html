@@ -71,17 +71,21 @@
           <li><a href="#validacion-errores-html">Validación de errores de un documento HTML</a></li>
         </ul>
       </enidev-details>
-
-      <details>
-        <summary>Etiquetas de cabeceras</summary>
+      <enidev-details data-title="Etiquetas de cabeceras">
         <ul>
+          <li><a href="#etiquetas-head">Cabecera de un documento - (HEAD)</a>
+            <ul>
+              <li><a href="#etiqueta-title"><span class="html-tag">title</span> - título de página</a></li>
+              <li><a href="#la-etiqueta-base"><span class="html-tag">base</span> - base de los enlaces</a></li>
+            </ul>
+          </li>
           <li><a href="#etiqueta-de-metadatos">Etiquetas de metadatos</a>
             <ul>
               <li><a href="#tema-color-del-navegador">Tema de color del navegador</a></li>
             </ul>
           </li>
         </ul>
-      </details>
+      </enidev-details>
       <ul>
         <li><a href="#parrafos">De textos</a></li>
         <li><a href="#citas">Citas</a></li>
@@ -1263,9 +1267,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         escribir el símbolo <strong>!</strong> y pulsar <kbd>TAB</kbd> para que se nos autocomplete este fragmento de
         código base. Más adelante veremos más a detalle algunas de las etiquetas anteriores que aún no se han
         mencionado.</p>
-      <p><a href="#top"><img alt="boton-top"
-            src="https://img.shields.io/badge/regresar%20contenido%20principal-%E2%86%A9-orange?style=for-the-badge&amp;logo=html5&amp;logoColor=%23EBEBEB" /></a>
-      </p>
+    <guide-button data-href="#top"></guide-button>
     </section>
     <section class="markdown-body">
       <h3 id="validacion-errores-html"><a href="#validacion-errores-html">Validación de errores HTML</a></h3>
@@ -1378,7 +1380,7 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       <guide-button data-href="#top"></guide-button>
     </section>
     <section class="markdown-body">
-      <h3 id="etiquetas-relacion"><a href='#etiquetas-relacion'>Etiquetas HTML de relación</a></h3>
+      <h3 id="etiquetas-head"><a href='#etiquetas-head'>Cabecera de un documento (HEAD)</a></h3>
       <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML principales: la
         cabecera
         de la página <span class="html-tag">head</span> y el cuerpo de la página o
@@ -1401,17 +1403,17 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         </thead>
         <tbody>
           <tr>
-            <td data-label="etiqueta"><span class="td-tag">&lt;title&gt;</span></td>
+            <td data-label="etiqueta"><span class="html-tag">title</span></td>
             <td data-label="atributos"></td>
             <td data-label="descripción">Título de la página (pestaña o título del navegador o en buscadores).</td>
           </tr>
           <tr>
-            <td data-label="etiqueta"><span class="td-tag">&lt;base&gt;</span></td>
+            <td data-label="etiqueta"><span class="html-tag">base</span></td>
             <td data-label="atributos"><span><strong>href</strong>, <strong>target</strong></span></td>
             <td data-label="descripción">URL base del documento ( <em>usado para gestionar rutas relativas</em> ).</td>
           </tr>
           <tr>
-            <td data-label="etiqueta"><span class="td-tag">&lt;link&gt;</span></td>
+            <td data-label="etiqueta"><span class="html-tag">link</span></td>
             <td data-label="atributos"><span><strong>href</strong>, <strong>hreflang</strong>, <strong>rel</strong>,
                 <strong>media</strong>, <strong>type</strong></span></td>
             <td data-label="descripción">Establece una relación del documento actual con otro externo.</td>
@@ -1438,7 +1440,8 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         actualmemte también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas
         <span class="html-tag">style</span> y <span class="html-tag">script</span>.
       </p>
-      <h4 id="titulo-y-codificacion"><a href="#titulo-y-codificacion">Título y codificación</a></h4>
+      <!--Título de la pagina-->
+      <h4 id="etiqueta-title"><a href="#etiqueta-title">La etiqueta title</a></h4>
       <p>En el interior de la etiqueta <span class="html-tag">head</span> es aconsejable, como mínimo, indicar siempre
         las
         siguientes dos etiquetas:</p>
@@ -1448,7 +1451,14 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
   &lt;<span class="nt">meta</span> <span class="na">charset</span>=<span class="s">&quot;utf-8&quot;</span>/&gt;
 &lt;<span class="nt">head</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i> <i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" title="Ver en codepen" style="right: 60px"></i></pre>
       </div>
-      <p>En este ejemplo, la etiqueta <span class="html-tag">meta</span> indica
+      <p>La etiqueta <span class="html-tag">title</span> sirve para indicar un título para el documento actual. Es una etiqueta que debe aparecer de forma obligatoria en todo documento <strong>HTML</strong>, ya que siempre debería tener un título. El título puede servir para varias cosas:</p>
+        <p><ul>
+          <li>Determinará el título de la ventana o p pestaña del navegador</li>
+          <li>Si la página se indexa en Google, es muy posible que use ese título para el resultado en el buscador.</li>
+          <li>Es un título identificativo que pueden usarlo bots o sistemas automáticos que lean la página.</li>
+        </ul></p>
+      <h4 id="la-etiqueta-meta"><a href="#la-etiqueta-meta">La etiqueta meta</a></h4>
+      <p>En este ejemplo, incluimos también la etiqueta <span class="html-tag">meta</span> indica
         que el navegador utilice la <b>codificación
           UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación
         en
@@ -1463,6 +1473,38 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         <li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web.</li>
       </ol>
       <hr>
+      <h4 id="la-etiqueta-base"><a href="#la-etiqueta-base">La etiqueta base</a></h4>
+      <p>La etiqueta <span class="html-tag">base</span> se puede utilizar en el documento <strong>HTML</strong> para establecer una ruta base de los <strong>enlaces relativos</strong> utilizados en nuestro documento <strong>HTML</strong>.</p>
+      <p>Para entender mejor como funciona la etiqueta <span class="html-tag">base</span>, veamos el siguiente ejemplo:</p> 
+      <!-- Ejemplo etiqueta base      -->
+      <div class="highlight">
+<pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">title</span>&gt;Documento HTML sin usar etiqueta base&lt;/<span class="nt">title</span>&gt;
+&lt;/<span class="nt">head</span>&gt;
+&lt;<span class="nt">body</span>&gt;
+  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;index.html&quot</span>&gt;Página de inicio&lt;/<span class="nt">a</span>&gt;
+  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;/productos&quot</span>&gt;Página de productos&lt;/<span class="nt">a</span>&gt;
+&lt;/<span class="nt">body</span>&gt;</pre>
+<custom-button></custom-button>
+<custom-button data-btn="codepen" data-lang="html"></custom-button>
+</div>
+<p>En este caso, sucede lo siguiente: 
+  <ul>
+    <li>
+      El primer enlace nos lleva a <strong>https://latienda.com/index.html</strong>
+    </li>
+    <li>
+      El segundo enlace nos lleva a la página <strong>https://latienda.com/productos/</strong>
+    </li>
+  </ul>
+  Simplemente, el enlace se añade al final de la URL donde nos encontramos.
+</p>
+<p>
+  Veamos ahora un ejemplo donde utilizamos la etiqueta <span class="html-tag">base</span>:
+</p>
+<div class="highlight">
+
+</div>
       <h4 id="otros-documentos"><a href="#otros-documentos">Otros documentos</a></h4>
       <p>Como vimos en la tabla anterior, la etiqueta <span class="html-tag">link</span> permite establecer relaciones
         con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que

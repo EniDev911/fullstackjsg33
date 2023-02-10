@@ -12,7 +12,7 @@ template.innerHTML = /*html*/ `
     margin: -0.5em -0.5em 0;
     padding: 0.5em;
     background: linear-gradient(#f26626 50%, #ed704b 0);
-    color: #fff;
+    color: #fff;  
   }
 </style>
 <details>

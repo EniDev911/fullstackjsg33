@@ -10,7 +10,9 @@
     background: transparent;
     color: rgb(76, 67, 238);
   }
-
+  .highlight {
+    position: relative;
+  }
   .markdown-body .codehilite pre,
   .markdown-body .highlight pre,
   .markdown-body pre {

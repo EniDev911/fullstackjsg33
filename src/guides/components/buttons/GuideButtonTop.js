@@ -14,7 +14,6 @@ img {
   <img alt="button img" src="">
 </a>
 `
-
 class GuideButtonTop extends HTMLElement {
 	color = this.getAttribute('data-color') ?? 'orange';
 	logo = this.getAttribute('data-logo') ?? 'html5'
@@ -26,7 +25,6 @@ class GuideButtonTop extends HTMLElement {
 
 	connectedCallback() {
 		const shadow = this.attachShadow({ mode: "open" })
-		console.log(this.getAttribute('data-href'))
 		this.shadowRoot.appendChild(template.content.cloneNode(true));
 		shadow.querySelector('a').setAttribute('href', this.getAttribute('data-href'))
 		shadow.querySelector('img').setAttribute('src', this.badgeUrl)
