@@ -430,6 +430,10 @@ body .markdown-body {
   font-weight: bold;
   color:  #306dcb;
 }
+.html-attribute {
+  font-weight: bold;
+  color:  #306dcb;
+}
 .html-tag::before {
   content: "<";
 }

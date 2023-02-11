@@ -71,6 +71,7 @@
           <li><a href="#validacion-errores-html">Validación de errores de un documento HTML</a></li>
         </ul>
       </enidev-details>
+      <!-- ETIQUETAS DE CABECERA -->
       <enidev-details data-title="Etiquetas de cabeceras">
         <ul>
           <li><a href="#etiquetas-head">Cabecera de un documento - (HEAD)</a>
@@ -78,6 +79,7 @@
               <li><a href="#etiqueta-title"><span class="html-tag">title</span> - título de página</a></li>
               <li><a href="#la-etiqueta-meta"><span class="html-tag">meta</span> - codificación del documento</a></li>
               <li><a href="#la-etiqueta-base"><span class="html-tag">base</span> - base de los enlaces</a></li>
+              <li><a href="#la-etiqueta-link"><span class="html-tag">link</span> - relaciones con otros recursos</a></li>
             </ul>
           </li>
           <li><a href="#etiqueta-de-metadatos">Etiquetas de metadatos</a>
@@ -1420,17 +1422,17 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
             <td data-label="descripción">Establece una relación del documento actual con otro externo.</td>
           </tr>
           <tr>
-            <td data-label="etiqueta"><span class="td-tag">&lt;meta&gt;</span></td>
+            <td data-label="etiqueta" class="html-tag">meta</td>
             <td data-label="atributos"><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b></td>
             <td data-label="descripción">Establece un metadato específico en el documento actual.</td>
           </tr>
           <tr>
-            <td><span class="td-tag">&lt;style&gt;</span></td>
-            <td><strong>media</strong>, <strong>type</strong></td>
-            <td>Crea estilos CSS que afectarán únicamente al documento actual.</td>
+            <td data-label="etiqueta" class="html-tag">style</td>
+            <td data-label="atributos"><strong>media</strong>, <strong>type</strong></td>
+            <td data-label="descripción">Crea estilos CSS que afectarán únicamente al documento actual.</td>
           </tr>
           <tr>
-            <td data-label="etiqueta"><span class="td-tag">&lt;script&gt;</span></td>
+            <td data-label="etiqueta" class="html-tag">script</td>
             <td data-label="atributos"><span><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>, <b>defer</b></span>
             </td>
             <td data-label="descripción">Indica un script a cargar o ejecutar en la página actual.</td>
@@ -1449,8 +1451,10 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       <div class="highlight">
         <pre>&lt;<span class="nt">head</span>&gt;
   &lt;<span class="nt">title</span>&gt;Título del documento&lt;/<span class="nt">title</span>&gt;
-  &lt;<span class="nt">meta</span> <span class="na">charset</span>=<span class="s">&quot;utf-8&quot;</span>/&gt;
-&lt;<span class="nt">head</span>&gt;<i class="btn clone" onclick="{copy_clipboard(this.parentNode.textContent)}"></i> <i class="btn codepen" onclick="{createPen('html', this.parentNode.textContent)}" title="Ver en codepen" style="right: 60px"></i></pre>
+  &lt;<span class="nt">meta</span> <span class="na">charset</span>=<span class="s">&quot;utf-8&quot;</span>&gt;
+&lt;<span class="nt">head</span>&gt;</pre>
+<custom-button></custom-button>
+<custom-button data-btn="codepen" data-lang="html"></custom-button>
       </div>
       <p>La etiqueta <span class="html-tag">title</span> sirve para indicar un título para el documento actual. Es una etiqueta que debe aparecer de forma obligatoria en todo documento <strong>HTML</strong>, ya que siempre debería tener un título. El título puede servir para varias cosas:</p>
         <p><ul>
@@ -1458,7 +1462,6 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
           <li>Si la página se indexa en Google, es muy posible que use ese título para el resultado en el buscador.</li>
           <li>Es un título identificativo que pueden usarlo bots o sistemas automáticos que lean la página.</li>
         </ul></p>
-      <h4 id="la-etiqueta-meta"><a href="#la-etiqueta-meta">La etiqueta meta</a></h4>
       <p>En este ejemplo, incluimos también la etiqueta <span class="html-tag">meta</span> indica
         que el navegador utilice la <b>codificación
           UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación
@@ -1477,14 +1480,14 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
       <h4 id="la-etiqueta-base"><a href="#la-etiqueta-base">La etiqueta base</a></h4>
       <p>La etiqueta <span class="html-tag">base</span> se puede utilizar en el documento <strong>HTML</strong> para establecer una ruta base de los <strong>enlaces relativos</strong> utilizados en nuestro documento <strong>HTML</strong>.</p>
       <p>Para entender mejor como funciona la etiqueta <span class="html-tag">base</span>, veamos el siguiente ejemplo:</p> 
-      <!-- Ejemplo etiqueta base      -->
+      <!-- Ejemplo etiqueta base -->
       <div class="highlight">
 <pre>&lt;<span class="nt">head</span>&gt;
   &lt;<span class="nt">title</span>&gt;Documento HTML sin usar etiqueta base&lt;/<span class="nt">title</span>&gt;
 &lt;/<span class="nt">head</span>&gt;
 &lt;<span class="nt">body</span>&gt;
   &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;index.html&quot</span>&gt;Página de inicio&lt;/<span class="nt">a</span>&gt;
-  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;/productos&quot</span>&gt;Página de productos&lt;/<span class="nt">a</span>&gt;
+  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot; productos&quot</span>&gt;Página de productos&lt;/<span class="nt">a</span>&gt;
 &lt;/<span class="nt">body</span>&gt;</pre>
 <custom-button></custom-button>
 <custom-button data-btn="codepen" data-lang="html"></custom-button>
@@ -1497,22 +1500,114 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
     <li>
       El segundo enlace nos lleva a la página <strong>https://latienda.com/productos/</strong>
     </li>
-  </ul>
+  </ul><br>
   Simplemente, el enlace se añade al final de la URL donde nos encontramos.
 </p>
 <p>
   Veamos ahora un ejemplo donde utilizamos la etiqueta <span class="html-tag">base</span>:
 </p>
+  <!-- Ejemplo 2 etiqueta base -->
 <div class="highlight">
-
+<pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">title</span>&gt;Documento HTML usando la etiqueta base&lt;/<span class="nt">title</span>&gt;
+  <span class="bg">&lt;<span class="nt">base</span> <span class="nb">href</span>=<span class="s">&quot;https://latienda.com/productos/&quot;</span> <span class="nb">target</span>=<span class="s">&quot;_blank&quot;</span>&gt;</span>
+&lt;/<span class="nt">head</span>&gt;
+&lt;<span class="nt">body</span>&gt;
+  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;index.html&quot</span>&gt;Página de inicio&lt;/<span class="nt">a</span>&gt;
+  &lt;<span class="nt">a</span> <span class="nb">href</span>=<span class="s">&quot;categorias&quot;</span>&gt;Página de categorías de productos&lt;/<span class="nt">a</span>&gt;
+&lt;/<span class="nt">body</span>&gt;</pre>
+<custom-button></custom-button>
+<custom-button data-btn="codepen" data-lang="html"></custom-button>
 </div>
-      <h4 id="otros-documentos"><a href="#otros-documentos">Otros documentos</a></h4>
-      <p>Como vimos en la tabla anterior, la etiqueta <span class="html-tag">link</span> permite establecer relaciones
-        con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que
-        un documento HTML está relacionado con otro documento ( <em>independientemente del formato que sea</em> ) y así
-        relacionarse entre ellos.</p>
-      <p>Veamos algunos ejemplos de relaciones que se pueden establecer.</p>
+<p>Ahora, aunque nos encontremos en la página <strong>https://latienda.com/</strong>, hemos establecido la URL base en <strong>https://latienda.com/productos/</strong> para los productos, por lo que el sucederá lo siguiente:
+<ul>
+  <li>El primer enlace nos lleva a <strong>https://latienda.com/productos/index.html</strong></li>
+  <li>El segundo enlace nos lleva a <strong>https://latienda.com/productos/categorias</strong></li>
+</ul><br>
+Además, también hemos establecido el atributo <strong>target</strong> a <strong>_blank</strong>, por lo que los enlaces se abrirán en una pestaña nueva. El atributo <strong>target</strong> nos permite realizar ciertas tareas dependiedo su valor:
+</p>
+<table class="table">
+  <thead>
+    <th>Atributo target</th>
+    <th>Descripción</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="atributo target" class="html-attribute">_self</td>
+      <td data-label="descripción">El enlace se abre en la misma pestaña. Es el valor por defecto, incluso si se omite el atributo.</td>
+    </tr>
+    <tr>
+      <td data-label="atributo target" class="html-attribute">_blank</td>
+      <td data-label="descripción">El enlace se abre en una nueva pestaña o ventana.</td>
+    </tr>
+    <tr>
+      <td data-label="atributo target" ><span><span class="html-attribute">_parent</span> o <span class="html-attribute">_top</span></span></td>
+      <td data-label="descripción">El enlace se abre en un contexto superior al actual, si existe. En caso contrario, se actua como si se hubiera indicado <span class="html-attribute">_self</span>.</td>
+    </tr>
+  </tbody>
+</table>
+      <!-- <h4 id="la-etiqueta-meta"><a href="#la-etiqueta-meta">La etiqueta meta</a></h4> -->
+      <h4 id="la-etiqueta-link"><a href="#la-etiqueta-link">La etiqueta link (relación)</a></h4>
 
+      <p>La etiqueta <span class="html-tag">link</span> permite establecer relaciones
+        con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código <strong>HTML</strong> puede saber que
+        un documento está relacionado con otro documento (<em>independientemente del formato que sea</em>) y así relacionarse entre ellos.</p>
+      <p>Veamos algunos ejemplos de código para establecer relaciones con otros recursos:</p>
+      <div class="highlight">
+        <pre>&lt;<span class="nt">head</span>&gt;
+  &lt;<span class="nt">link</span> <span class="nb">rel</span>=<span class="s">&quot;stylesheet&quot;</span> <span class="nb">href</span>=<span class="s">&quot;index.css&quot;</span>&gt;
+  &lt;<span class="nt">link</span> <span class="nb">rel</span>=<span class="s">&quot;icon&quot;</span> <span class="nb">href</span>=<span class="s">&quot;favicon.png&quot;</span>&gt;
+&lt;/<span class="nt">head</span>&gt;</pre>
+<custom-button></custom-button>
+<custom-button data-btn="codepen" data-lang="html"></custom-button>
+      </div>
+      <p>Como se puede ver, el atributo <span class="html-attribute">rel</span> generalmente establece el <strong>tipo de relación</strong> que estamos determinando. Por otro lado, mediante el atributo <span class="html-attribute">href</span> establecemos la dirección hacia el documento o recurso externo.</p>
+      <p>Existen muchos tipos de relaciones, veamos algunos tipos:</p>
+      <table class="table">
+        <thead>
+          <th>Atributo rel</th>
+          <th>Descripción</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2" style="background-color: #c8cdc7;"><strong>Información visual</strong></td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">stylesheet</td>
+            <td data-label="descripción"><span>Establece una relación con un documento <strong>.css</strong> para aplicar sus estilos.</span></td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">icon</td>
+            <td data-label="descripción">Indica un icono para utilizar a modo de favicon (icono de pestaña).</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color: #c8cdc7;"><strong>Documento</strong></td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">alternate</td>
+            <td data-label="descripcion"><span>Indica una versión alternativa del documento actual.</span></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color: #c8cdc7;"><strong>Información adicional o datos</strong></td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">author</td>
+            <td data-label="descripción">Indica un enlace con más información sobre el author del documento actual.</td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">help</td>
+            <td data-label="descripción">Indica un enlace con información de ayuda.</td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">search</td>
+            <td data-label="descripción">Indica un enlace donde se puede encontrar un buscador del sitio actual.</td>
+          </tr>
+          <tr>
+            <td data-label="atributo rel" class="html-attribute">license</td>
+            <td data-label="descripción">Indica un enlace con la información de licencia de la página actual.</td>
+          </tr>
+        </tbody>
+      </table>
       <h4 id="versiones-alternativas"><a href='#versiones-alternativas'>Versiones alternativas</a></h4>
       <p>Con el valor <strong>alternate</strong> en el atributo <strong>rel</strong> de la etiqueta <span
           class="html-tag">link</span> podemos indicar que el documento actual tiene versiones alternativas en otros
@@ -1522,7 +1617,9 @@ article.<span class="nt">dataset</span>.<span class="nt">asientos</span>; <span 
         <pre>&lt;<span class="nt">head</span>&gt;
   &lt;<span class="nt">link</span> <span class="na">rel</span>=<span class="s">&quot;alternate&quot;</span> <span class="na">href</span>=<span class="s">&quot;document.pdf&quot;</span> <span class="na">type</span>=<span class="s">&quot;application/pdf&quot;</span> /&gt;
   &lt;<span class="nt">link</span> <span class="na">rel</span>=<span class="s">&quot;alternate&quot;</span> <span class="na">href</span>=<span class="s">&quot;document-en.html&quot;</span> <span class="na">hreflang</span>=<span class="s">&quot;en&quot;</span> /&gt;
-&lt;/<span class="nt">head</span>&gt;<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+&lt;/<span class="nt">head</span>&gt;</pre>
+<custom-button></custom-button>
+<custom-button data-btn="codepen" data-lang="html"></custom-button>
       </div>
       <h4 id="referencia-de-datos"><a href="#referencia-de-datos">Referencia de datos</a></h4>
       <p>El atributo <strong>rel</strong> también nos permite indicar el tipo de relación que tiene el documento

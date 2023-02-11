@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
   	<link rel="stylesheet" href="../../../public/css/docs.css">
   	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-
+	<script src="../../index.js" type="module"></script>
 </head>
 <body>
 	<article>
@@ -68,8 +68,12 @@
 			<div class="highlight">
 <pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
 
-<span class="nb">console</span>.<span class="nt">log</span>(util.<span class="nt">format</span>(<span class="s">&quot;Se llamaba %s y era %s&quot;</span>, <span class="s">&quot;Marco&quot;</span>, <span class="s">&quot;programador&quot;</span>));
-<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre></div>
+<span class="nb">console</span>.<span class="nt">log</span>(util.<span class="nt">format</span>(<span class="s">&quot;Se llamaba %s y era %s&quot;</span>, <span class="s">&quot;Marco&quot;</span>, <span class="s">&quot;programador&quot;</span>));</pre>
+<custom-button></custom-button>
+<custom-button data-btn="compiler"></custom-button>
+</div>
+
+
 <div class="highlight">
 <pre><span class="na">const</span> util = <span class="nt">require</span>(<span class="s">&quot;util&quot;</span>);
 
@@ -79,7 +83,9 @@
 
 <span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">10</span>));
 <span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">10<span class="nb">+</span>10</span>));
-<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">30</span>));<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">obtenerProbabilidad</span>(<span class="gu">30</span>));</pre>
+<custom-button></custom-button>
+<custom-button data-btn="compiler"></custom-button>
 </div>
 <!-- EJEMPLO 2 CON JSON -->
 <div class="highlight">
@@ -95,14 +101,15 @@
   { <span class="nx">nombre</span>: <span class="s">&quot;diego&quot;</span>, <span class="nx">edad</span>: <span class="gu">42</span> }
 ]
 
-<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">formateadorJSON</span>(personas));<i class="fa-solid fa-clone" onclick="{copy_clipboard(this.parentNode.textContent)}" style="top: 10px"></i></pre>
+<span class="nb">console</span>.<span class="nt">log</span>(<span class="nt">formateadorJSON</span>(personas));</pre>
+<custom-button></custom-button>
+<custom-button data-btn="compiler"></custom-button>
 </div>
 
 <iframe frameborder="0" width="100%" height="400px" src="https://replit.com/@marcocontreraas/formatear-cadenas?embed=true"></iframe>
 
 </section>
 
- <script src="../../../public/js/lib/fontawesome.bundle.js" crossorigin="anonymous"></script>
   <script src="../../../public/js/functions.js" type="module"></script>
 	</article>
 </body>

@@ -29,18 +29,28 @@ class CustomButton extends HTMLElement {
         if (this.getAttribute("data-btn") === "codepen") {
             this.button.style.background = "url(".concat(ASSETS, "codepen.svg", ")")
             this.button.style.right = "55px"
-        } else{
+            this.button.title = "Ver en Codepen"
+        } else if(this.getAttribute("data-btn") === "compiler") {
+            this.button.style.background = "url(".concat(ASSETS, "compiler.svg", ")")
+            this.button.style.right = "55px"
+            this.button.title = "Ejecutar"
+        } 
+        else {
             this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
+            this.button.title = "Copiar"
         }
+        // handleOnclick
         this.button.addEventListener("click", () => {
             if (this.getAttribute("data-btn") === "codepen") {
                 this.createPen(this.getAttribute("data-lang"), this.parentNode.firstElementChild.textContent);
-            } else {
+            } else if (this.getAttribute("data-btn") === "compiler") {
+                this.openCompiler(this.parentNode.firstElementChild.textContent)
+            }else {
                 this.copyClipboard(this.parentNode.firstElementChild.textContent);
                 this.button.style.background = "url(".concat(ASSETS, "clone-solid.svg", ")")
                 setTimeout(() => {
                     this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
-                }, 2000)
+                }, 1000)
             }
         })
     }
@@ -90,6 +100,34 @@ class CustomButton extends HTMLElement {
         this.shadowRoot.removeChild(e);
     }
 
+    openCompiler(content) {
+        const ifr = document.createElement("iframe");
+        ifr.src = 'https://onecompiler.com/embed/nodejs?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
+        ifr.width = "100%";
+        ifr.frameBorder = "0"
+        ifr.style.height = "100vh";
+        const childWindow = window.open("", "_blank");
+        childWindow.document.body.style.boxSizing = "border-box"
+        childWindow.document.body.style.padding = "0"
+        childWindow.document.body.style.margin = "0"
+        childWindow.document.body.appendChild(ifr);
+        childWindow.document.body.onload = () => {
+            ifr.contentWindow.postMessage({
+                eventType: 'populateCode',
+                language: 'nodejs',
+                files: [
+                    {
+                        "name": "index.js",
+                        "content": content
+                    }
+                ]
+            }, "*");
+
+            ifr.contentWindow.postMessage({
+                eventType: 'triggerRun'
+            }, '*')
+        }
+    }
 }
 
 customElements.define('custom-button', CustomButton)
