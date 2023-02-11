@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheatsheet</title>
+  <script src="../../index.js" type="module"></script>
+
+  <link rel="stylesheet" href="./highlight/styles/base16/default-dark.min.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="dark">
+  <article class="doc dark">
+    <h1>Cheatsheet PostgreSQL</h1>
+
+    <enidev-details data-title="Funciones Matemática" data-lang="postgresql">
+      <p>La función <strong>abs()</strong> nos retorna el valor absoluto</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT abs(-49);
+            </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <p>La función <strong>cbrt()</strong> nos retorna la raíz cúbica</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT cbrt(27);
+                </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <p>La función <strong>ceil()</strong> nos retorna el valor entero mayor más cercano</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT ceil(20.5);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <p>La función <strong>random()</strong> nos retorna un valor aleatorio entre 0.0 y 1.0</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT random();
+                            </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+    </enidev-details>
+    <enidev-details data-title="Funciones de cadenas" data-lang="postgresql">
+      <p>La función <strong>substring()</strong> nos permite extraer una subcadena</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT substring('enidev911' from 2 for 3);
+        </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--REVERSE-->
+      <p>La función <strong>reverse</strong> nos retorna la cadena en sentido inverso:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT reverse('enidev911');
+              </code></pre>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+        <custom-button></custom-button>
+      </div>
+      <!--CHAR_LENGTH-->
+      <p>La función <strong>char_length</strong> o <strong>character_length</strong> nos retorna la cadena en sentido
+        inverso:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT char_length('enidev911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+    </enidev-details>
+    <h3>Constraint CHECK</h3>
+    <p>
+      El <strong>contraint CHECK</strong> nos permite limitar el rango de valores que se puede colocar en una columna.
+    </p>
+    <h4>Verificar al crear una tabla</h4>
+    <p>EL siguiente código SQL crea un <strong>constraint CHECK</strong> en la columna <strong>rol</strong> cuando se
+      crea la tabla "Usuarios". El <strong>constraint CHECK</strong> asegura que el rol de un usuario puede ser
+      "<strong>usuario</strong>" o "<strong>administrador</strong>", si intentas registrar un valor diferente obtendrá
+      un error:</p>
+    <!--TABLA USUARIOS-->
+    <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(50),
+  nombre VARCHAR(50),
+  apellido VARCHAR(50),
+  rol VARCHAR(30),
+  CONSTRAINT CHK_ROL CHECK (rol = 'administrador' OR rol='usuario')
+);
+
+INSERT INTO usuarios (email, nombre, apellido, rol)
+VALUES
+('marco@gmail.com', 'marco', 'contreras', 'administrador'),
+('felipe@gmail', 'felipe', 'cruz', 'usuario'),
+('jorge@gmail', 'jorge', 'molina', 'usuario'),
+('mario@gmail', 'mario', 'gutierrez', 'usuario'),
+('jonathan@gmail', 'jonathan', 'villarroel', 'usuario');
+SELECT * FROM usuarios;
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
+
+
+  </article>
+  <script src="./highlight/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll()
+    let blockCode = document.querySelectorAll(".highlight");
+    for (var i = 0; i < blockCode.length; i++) {
+      // Creamos el evento mouseover para cada imagen
+      blockCode[i].addEventListener("mouseover", function (e) {
+        document.getElementById("mostrar").style.backgroundImage = "url('" + e.target.currentSrc + "')";
+      });
+
+      // Creamos el evento mouseout para cada imagen
+      blockCode[i].addEventListener("mouseout", function (e) {
+        document.getElementById("mostrar").style.backgroundImage = "";
+      });
+    }
+  </script>
+
+</body>
+
+</html>

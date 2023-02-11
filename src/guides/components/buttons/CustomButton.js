@@ -1,7 +1,7 @@
 const ASSETS = import.meta.url.substring(0, import.meta.url.lastIndexOf("/") + 1).concat("icons/");
 const template = document.createElement('template');
 template.innerHTML = /*html*/
-`
+    `
 <style>
   button {
     position: absolute;
@@ -20,7 +20,7 @@ template.innerHTML = /*html*/
 class CustomButton extends HTMLElement {
     constructor() {
         super()
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
     connectedCallback() {
         this.shadowRoot.appendChild(template.content.cloneNode(true))
@@ -30,11 +30,11 @@ class CustomButton extends HTMLElement {
             this.button.style.background = "url(".concat(ASSETS, "codepen.svg", ")")
             this.button.style.right = "55px"
             this.button.title = "Ver en Codepen"
-        } else if(this.getAttribute("data-btn") === "compiler") {
+        } else if (this.getAttribute("data-btn") === "compiler") {
             this.button.style.background = "url(".concat(ASSETS, "compiler.svg", ")")
             this.button.style.right = "55px"
             this.button.title = "Ejecutar"
-        } 
+        }
         else {
             this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
             this.button.title = "Copiar"
@@ -44,8 +44,8 @@ class CustomButton extends HTMLElement {
             if (this.getAttribute("data-btn") === "codepen") {
                 this.createPen(this.getAttribute("data-lang"), this.parentNode.firstElementChild.textContent);
             } else if (this.getAttribute("data-btn") === "compiler") {
-                this.openCompiler(this.parentNode.firstElementChild.textContent)
-            }else {
+                this.openCompiler(this.parentNode.firstElementChild.textContent, this.getAttribute("data-lang"), this.getAttribute("data-ext"))
+            } else {
                 this.copyClipboard(this.parentNode.firstElementChild.textContent);
                 this.button.style.background = "url(".concat(ASSETS, "clone-solid.svg", ")")
                 setTimeout(() => {
@@ -63,7 +63,7 @@ class CustomButton extends HTMLElement {
             throw TypeError("El argumento debe ser un String");
         }
         const areaText = document.createElement("textarea");
-        areaText.value = content;
+        areaText.value = content.trim();
         areaText.setAttribute("readonly", "");
         areaText.style.position = "absolute";
         areaText.style.left = "-9999px";
@@ -86,21 +86,21 @@ class CustomButton extends HTMLElement {
         }
         const e = document.createElement("form");
         e.action = "https://codepen.io/pen/define",
-        e.method = "POST",
-        e.target = "_blank",
-        e.style.position = "absolute",
-        e.style.left = "-9999px";
+            e.method = "POST",
+            e.target = "_blank",
+            e.style.position = "absolute",
+            e.style.left = "-9999px";
         const o = document.createElement("input");
         o.type = "hidden",
-        o.name = "data",
-        o.value = JSON.stringify({title: document.title, [lang]: content}),
-        e.insertAdjacentElement("afterbegin", o),
-        this.shadowRoot.appendChild(e),
-        e.submit();
+            o.name = "data",
+            o.value = JSON.stringify({ title: document.title, [lang]: content }),
+            e.insertAdjacentElement("afterbegin", o),
+            this.shadowRoot.appendChild(e),
+            e.submit();
         this.shadowRoot.removeChild(e);
     }
 
-    openCompiler(content) {
+    openCompiler(content, lang = "nodejs", ext = "js") {
         const ifr = document.createElement("iframe");
         ifr.src = 'https://onecompiler.com/embed/nodejs?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
         ifr.width = "100%";
@@ -114,11 +114,11 @@ class CustomButton extends HTMLElement {
         childWindow.document.body.onload = () => {
             ifr.contentWindow.postMessage({
                 eventType: 'populateCode',
-                language: 'nodejs',
+                language: lang,
                 files: [
                     {
-                        "name": "index.js",
-                        "content": content
+                        "name": "911." + ext,
+                        "content": content.trim()
                     }
                 ]
             }, "*");

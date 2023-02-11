@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/** === VARIABLES === **/
+:root {
+  --global-bg: #f1f1f1;
+  --light-gray: #f7f7f7;
+  --light-gray-2: #cfcfb9;
+  --dark-gray: #4f4f4f;
+  --dark-gray-2: #777;
+  --doc-bg: #f1f1f2;
+  --doc-border-radius: 0px;
+  --doc-text: #444;
+  --doc-text-weight: normal;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+@font-face {
+  font-family: encode-sans;
+  src: url('./fonts/EncodeSansSC.ttf');
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  font-family: encode-sans, sans-serif;
+  background: var(--global-bg);
+}
+
+.doc {
+  width: 100%;
+  padding: 45px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--doc-border-radius);
+  box-shadow: 2px 3px 9px var(--shadow);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: var(--doc-text);
+  background: var(--doc-bg);
+  font-weight: var(--doc-text-weight);
+  font-family: encode-sans, sans-serif;
+}
+
+.doc h1 {
+  display: none;
+  position: absolute;
+  transform: rotate(-10deg);
+  padding: 10px 50px;
+  top: 40px;
+  left: 10px;
+  background-color: #31648c;
+}
+
+.doc h1:before {
+  content: "🐘";
+  font-size: 40px;
+  position: absolute;
+  top: -35px;
+  left: 44%;
+}
+
+.doc .highlight {
+  position: relative;
+  background-color: #2a2c2d;
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #d2c1f2;
+}
+
+.highlight pre,
+.highlight pre {
+  height: 100%;
+  font-size: 18px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+p {
+  margin: 25px 0;
+  orphans: 3;
+  widows: 3;
+}
+
+body.dark {
+  --global-bg: #110;
+  margin: 0 !important;
+}
+
+.doc.dark {
+  --doc-bg: #222;
+  --doc-text: #f7f7f7;
+  --doc-border-radius: 3px;
+}
+
+button.btn {
+  border: 1;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  overflow: hidden;
+  word-break: normal;
+  word-break: keep-all;
+  border-collapse: collapse;
+}
+
+
+
+table thead {
+  /* background: #cfcfb9; */
+  background: #26262616;
+}
+
+table thead th,
+td {
+  padding: 10px;
+  border: 1px solid #cfcfb9;
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .doc {
+    width: 75%;
+    font-size: 17px;
+    margin: 50px auto;
+  }
+
+  .doc h1 {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+
+  .doc {
+    width: 75%;
+    font-size: 18px;
+    margin: 30px auto;
+  }
+}

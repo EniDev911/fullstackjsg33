@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nodejs FileSystem</title>
-	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
-  	<link rel="stylesheet" href="../../../public/css/docs.css">
-  	<link rel="stylesheet" href="../../../public/css/themes/overlook.css">
-  	<style>
-  		.highlight pre {
-    		background-color: #121212 !important;
-  		}
-  		ul {
-		  list-style-type: square;
-		}
-		li + li {
- 		  margin-top: 10px;
-		}
-  	</style>
-</head>
-<body>
-	<article class="markdown-body">
-		<h3 align="center">Nodejs FileSystem</h3>
-		<ul>
-			<li><a href="#trabajar-con-directorios">Trabajar con directorios</a></li>
-			<li><a href="#leer-archivos-grandes">Leer archivos grandes</a></li>
-		</ul>
 
-		<p>El módulo <strong>node:fs</strong> nos permite interactuar con el sistema de archivos.</p>
-		<p>Para utilizar la API basadas en promesas:</p>
-		<div class="highlight">
-			<pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;node:fs/promises&quot</span>);<i class="fa-solid fa-clone" style="font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-		</div>
-		<p><strong>Ecma Script Module ( <em>ESM</em> )</strong></p>
-		<div class="highlight">
-			<pre><span class="na">import</span> * <span class="na">as</span> fs = <span class="na">from</span>(<span class="s">&quot;node:fs/promises&quot</span>);</pre>
-		</div>
-		<hr>
-		<h4>Uso del método writeFile</h4>
-		<div class="highlight">
-			<pre><span class="c1">// fs.writeFile</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodejs FileSystem</title>
+  <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../public/css/docs.css">
+  <link rel="stylesheet" href="../../../public/css/themes/overlook.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body" style="background-color: #121212; color: #fff;">
+    <h3 align="center">Nodejs FileSystem</h3>
+    <ul>
+      <li><a href="#trabajar-con-directorios">Trabajar con directorios</a></li>
+      <li><a href="#leer-archivos-grandes">Leer archivos grandes</a></li>
+    </ul>
+
+    <p>El módulo <strong>node:fs</strong> nos permite interactuar con el sistema de archivos.</p>
+    <p>Para utilizar la API basadas en promesas:</p>
+    <div class="highlight">
+      <pre><span class="na">const</span> fs = <span class="na">require</span>(<span class="s">&quot;node:fs/promises&quot</span>);<i class="fa-solid fa-clone" style="font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
+    </div>
+    <p><strong>Ecma Script Module ( <em>ESM</em> )</strong></p>
+    <div class="highlight">
+      <pre><span class="na">import</span> * <span class="na">as</span> fs = <span class="na">from</span>(<span class="s">&quot;node:fs/promises&quot</span>);</pre>
+    </div>
+    <hr>
+    <h4>Uso del método writeFile</h4>
+    <div class="highlight">
+      <pre><span class="c1">// fs.writeFile</span>
 <span class="na">const</span> { <span class="nx">writeFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
 
 <span class="na">async function</span> writeToFile(<span class="nx">filename</span>, <span class="nx">data</span>){
@@ -51,11 +45,11 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-<hr>
-<h4>Uso del método appenFile</h4>
-<div class="highlight">
-	<pre><span class="c1">// appenFile.js</span>
+    </div>
+    <hr>
+    <h4>Uso del método appenFile</h4>
+    <div class="highlight">
+      <pre><span class="c1">// appenFile.js</span>
 <span class="na">const</span> { <span class="nx">appendFile</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
 
 <span class="na">async function</span> appendToFile(<span class="nx">filename</span>, <span class="nx">data</span>){
@@ -67,11 +61,11 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-<hr>
-<h4>Uso del método open</h4>
-<div class="highlight">
-	<pre><span class="c1">// openFileAndWrite.js</span>
+    </div>
+    <hr>
+    <h4>Uso del método open</h4>
+    <div class="highlight">
+      <pre><span class="c1">// openFileAndWrite.js</span>
 <span class="na">const</span> { <span class="nx">open</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
 
 <span class="na">async function</span> openFile(<span class="nx">filename</span>, <span class="nx">data</span>){
@@ -84,13 +78,14 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-<hr>
-<h3 id="trabajar-con-directorios">Trabajando con directorio</h3>
-<h4>Creando directorios</h4>
-<p>Para ello utilizamos el método <strong>mkdir</strong> para crear un directorio, tenemos que pasar el nombre del directorio como argumento:</p>
-<div class="highlight">
-	<pre><span class="c1">// fs.mkdir</span>
+    </div>
+    <hr>
+    <h3 id="trabajar-con-directorios">Trabajando con directorio</h3>
+    <h4>Creando directorios</h4>
+    <p>Para ello utilizamos el método <strong>mkdir</strong> para crear un directorio, tenemos que pasar el nombre del
+      directorio como argumento:</p>
+    <div class="highlight">
+      <pre><span class="c1">// fs.mkdir</span>
 <span class="na">const</span> { <span class="nx">mkdir</span> } = <span class="na">require</span>(<span class="s">&quot;fs/promises&quot;</span>);
 
 <span class="na">async function</span> createDirectory(<span class="nx">pathname</span>){
@@ -102,10 +97,10 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-<h4>Saber si existe un archivo</h4>
-<div class="highlight">
-	<pre><span class="na">const</span> { <span class="nx">statSync</span> } = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+    </div>
+    <h4>Saber si existe un archivo</h4>
+    <div class="highlight">
+      <pre><span class="na">const</span> { <span class="nx">statSync</span> } = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
 
 <span class="na">function</span> fileExists(<span class="nx">path</span>) {
   <span class="na">try</span> {
@@ -119,10 +114,10 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-<h4>Saber si existe un directorio</h4>
-<div class="highlight">
-	<pre><span class="na">const</span> { <span class="nx">statSync</span> } = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
+    </div>
+    <h4>Saber si existe un directorio</h4>
+    <div class="highlight">
+      <pre><span class="na">const</span> { <span class="nx">statSync</span> } = <span class="na">require</span>(<span class="s">&quot;fs&quot;</span>);
 
 <span class="na">function</span> directoryExists(<span class="nx">path</span>) {
   <span class="na">try</span> {
@@ -136,9 +131,10 @@
   }
 }
 <i class="fa-solid fa-clone" style="top:5px; font-size: 25px" onclick="{copy_clipboard(this.parentNode.textContent)}"></i></pre>
-</div>
-	</article>
+    </div>
+  </article>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <script src="../../../public/js/functions.js" type="module"></script>
 </body>
+
 </html>

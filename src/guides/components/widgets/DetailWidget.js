@@ -14,6 +14,7 @@ template.innerHTML = /*html*/ `
     background: linear-gradient(#f26626 50%, #ed704b 0);
     color: #fff;  
   }
+
 </style>
 <details>
   <summary></summary>
@@ -29,7 +30,12 @@ class DetailWidget extends HTMLElement {
   connectedCallback() {
     const shadow = this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    shadow.querySelector("summary").textContent = this.title;
+    const summary = shadow.querySelector("summary")
+    summary.textContent = this.title;
+    if (this.getAttribute("data-lang") === "postgresql") {
+      summary.style.background = "linear-gradient(#31648c 50%, #11446c 0)"
+    }
+
     shadow.querySelector("details").setAttribute("open", "true");
   }
 }
