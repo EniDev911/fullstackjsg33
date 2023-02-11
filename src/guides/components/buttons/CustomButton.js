@@ -1,4 +1,4 @@
-const ASSETS = "/src/public/images/button/"
+const ASSETS = import.meta.url.substring(0, import.meta.url.lastIndexOf("/") + 1).concat("icons/");
 const template = document.createElement('template');
 template.innerHTML = /*html*/
 `
@@ -11,7 +11,6 @@ template.innerHTML = /*html*/
     width: 28px;
     border: none;
     cursor: pointer;
-    background: url("/src/public/images/button/clone-regular.svg") no-repeat;
   }
 
 </style>
@@ -30,7 +29,8 @@ class CustomButton extends HTMLElement {
         if (this.getAttribute("data-btn") === "codepen") {
             this.button.style.background = "url(".concat(ASSETS, "codepen.svg", ")")
             this.button.style.right = "55px"
-
+        } else{
+            this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
         }
         this.button.addEventListener("click", () => {
             if (this.getAttribute("data-btn") === "codepen") {
