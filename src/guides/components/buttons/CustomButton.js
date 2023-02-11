@@ -101,31 +101,46 @@ class CustomButton extends HTMLElement {
     }
 
     openCompiler(content, lang = "nodejs", ext = "js") {
+
         const ifr = document.createElement("iframe");
-        ifr.src = 'https://onecompiler.com/embed/nodejs?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
+        ifr.src = 'https://onecompiler.com/embed/?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
         ifr.width = "100%";
         ifr.frameBorder = "0"
         ifr.style.height = "100vh";
+        ifr.allowFullscreen ="true";
         const childWindow = window.open("", "_blank");
         childWindow.document.body.style.boxSizing = "border-box"
         childWindow.document.body.style.padding = "0"
         childWindow.document.body.style.margin = "0"
         childWindow.document.body.appendChild(ifr);
-        childWindow.document.body.onload = () => {
-            ifr.contentWindow.postMessage({
-                eventType: 'populateCode',
-                language: lang,
-                files: [
-                    {
-                        "name": "911." + ext,
-                        "content": content.trim()
-                    }
-                ]
-            }, "*");
+        const eliminarCookies = () => {
+            childWindow.document.cookie.split(";").forEach(function(c) {
+            childWindow.document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+          });
+        }
+         ifr.onload = () =>{
+                ifr.contentWindow.postMessage({
+                        eventType: 'populateCode',
+                    language: lang,
+                    files: [
+                        {
+                            "name": "911." + ext,
+                            "content": content.trim()
+                        }
+                    ]
+                }, "*");
 
-            ifr.contentWindow.postMessage({
-                eventType: 'triggerRun'
-            }, '*')
+                ifr.contentWindow.postMessage({
+                    eventType: 'triggerRun'
+                }, '*')
+        }
+        childWindow.document.onreadystatechange = () => {
+            if (childWindow.document.readyState === "interactive") {
+                eliminarCookies()
+            } 
+            if (childWindow.document.readyState === "complete"){
+                childWindow.console.log(childWindow.document.cookie)
+            }
         }
     }
 }
