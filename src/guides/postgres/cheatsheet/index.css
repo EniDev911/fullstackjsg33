@@ -49,8 +49,8 @@ body {
   display: none;
   position: absolute;
   transform: rotate(-10deg);
-  padding: 10px 50px;
-  top: 40px;
+  padding: 8px 50px;
+  top: 35px;
   left: 10px;
   background-color: #31648c;
 }
@@ -61,6 +61,7 @@ body {
   position: absolute;
   top: -35px;
   left: 44%;
+  filter: drop-shadow(2px 3px 21px #ccc);
 }
 
 .doc .highlight {
