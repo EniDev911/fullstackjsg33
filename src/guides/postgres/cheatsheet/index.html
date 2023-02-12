@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cheatsheet</title>
   <script src="../../index.js" type="module"></script>
-
   <link rel="stylesheet" href="./highlight/styles/base16/default-dark.min.css">
   <link rel="stylesheet" href="./index.css">
 </head>
@@ -17,6 +16,8 @@
     <h1>Cheatsheet PostgreSQL</h1>
 
     <enidev-details data-title="Funciones Matemática" data-lang="postgresql">
+      <div class="container">
+      <!-- ABS -->
       <p>La función <strong>abs()</strong> nos retorna el valor absoluto</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -68,8 +69,11 @@ SELECT mod(9, 4);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
+      </div>
     </enidev-details>
     <enidev-details data-title="Funciones de cadenas" data-lang="postgresql">
+      <div class="container">
+      <!-- SUBSTRING -->
       <p>La función <strong>substring()</strong> nos permite extraer una subcadena</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -88,14 +92,72 @@ SELECT reverse('enidev911');
         <custom-button></custom-button>
       </div>
       <!--CHAR_LENGTH-->
-      <p>La función <strong>char_length</strong> o <strong>character_length</strong> nos retorna la cadena en sentido
-        inverso:</p>
+      <p>La función <strong>char_length(str)</strong> o <strong>character_length(str)</strong> nos retorna la longitud de la STR:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT char_length('enidev911');
       </code></pre>
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--RIGHT-->
+      <p>La función <strong>right(str text, n int)</strong> nos retorna los últimos N caracteres de STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT right('enidev911', 2);
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--LEFT-->
+      <p>La función <strong>left(str text, n int)</strong> nos retorna los primeros N caracteres de STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT left('enidev911', 2);
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--LTRIM-->
+      <p>La función <strong>ltrim(str text [, characters text])</strong> nos retorna el extracto de CHARACTERS de izquierda a derecha de STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT ltrim('911911911enidev911', '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      </div>
+    </enidev-details>
+
+    <enidev-details data-title="Comandos DML (Data Manipulation Language)" data-lang="postgresql">
+      <div class="container">
+
+        <p>1 INSERT</p>
+           <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS heros (
+  name VARCHAR(50)
+);
+CREATE TABLE IF NOT EXISTS herosDC (
+  name VARCHAR(50)
+);
+-- 1 primera forma 
+INSERT INTO heros (name) VALUES ('black adam');
+-- 2 forma (El nombre de la columna es opcional)
+INSERT INTO heros VALUES ('thor');
+-- 3 forma para múltiples tuplas
+INSERT INTO heros VALUES ('superman'), ('aquaman'), ('mera'), ('flash');
+-- 4 forma insertar en seleccionar (primero se ejecuta el select, luego el insert)
+INSERT INTO heros (name) SELECT ('batman');
+-- 5 forma insertar el resultado de una query de una tabla en otra tabla
+INSERT INTO herosDC SELECT name FROM heros WHERE name IN ('mera', 'flash');
+SELECT name as heros FROM heros;
+SELECT name as herosDC FROM herosDC;
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
       </div>
     </enidev-details>
     <h3>Constraint CHECK</h3>
@@ -137,18 +199,6 @@ SELECT * FROM usuarios;
   <script src="./highlight/highlight.min.js"></script>
   <script>
     hljs.highlightAll()
-    let blockCode = document.querySelectorAll(".highlight");
-    for (var i = 0; i < blockCode.length; i++) {
-      // Creamos el evento mouseover para cada imagen
-      blockCode[i].addEventListener("mouseover", function (e) {
-        document.getElementById("mostrar").style.backgroundImage = "url('" + e.target.currentSrc + "')";
-      });
-
-      // Creamos el evento mouseout para cada imagen
-      blockCode[i].addEventListener("mouseout", function (e) {
-        document.getElementById("mostrar").style.backgroundImage = "";
-      });
-    }
   </script>
 
 </body>

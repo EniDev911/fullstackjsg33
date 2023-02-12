@@ -45,6 +45,10 @@ body {
   font-family: encode-sans, sans-serif;
 }
 
+.container {
+  width: 90%;
+  margin: 30px auto;
+}
 .doc h1 {
   display: none;
   position: absolute;
@@ -53,6 +57,15 @@ body {
   top: 35px;
   left: 10px;
   background-color: #31648c;
+}
+.doc h1:hover {
+  animation: change-color 2s ease 0s infinite alternate;
+}
+
+
+@keyframes change-color {
+  from { background: rgb(28, 71, 85); }  /* Primer fotograma */
+  to { background: darkcyan; }  /* Segundo y último fotograma */
 }
 
 .doc h1:before {
