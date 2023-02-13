@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(to left, rgb(164, 164, 164), #e9e9e9);
+  background: linear-gradient(to left, #003148 50%, #fafafa 0%);
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@ body {
   width: 100%;
   max-width: 1000px;
   min-height: 1000px;
+  border: 1px solid #003148;
   margin: 50px;
   background: #fff;
   display: grid;

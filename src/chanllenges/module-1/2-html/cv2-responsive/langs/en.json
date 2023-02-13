@@ -1,28 +1,22 @@
 {
   "profile": {
-    "rol" : "Fullstack Developer",
+    "rol": "Fullstack Developer",
     "contact": "contact info",
-    "language" : "languages",
+    "language": "languages",
     "spanish": "spanish",
-    "english": "english",    
+    "english": "english",
     "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
-  
   },
-  "about":{
-    "description": "Chilean programmer, computer programming gratuated.<br><br>Currently a freelance python and javascript developer."
+  "about": {
+    "title": "Profile",
+    "description": "Chilean programmer, graduated in Computer Programming, I have several years of experience in web development. Passionate about new technologies and especially the Javascript ecosystem. I am currently a freelance developer and I am always willing to learn and share knowledge. I focus a lot on carrying out good development practices, both standards and compatibility."
   },
-  "education": [{
-      "title": "education",
-      "date": "2019 - 2021",
-      "first-career-title": "Computer programming",
-      "entity": "AIEP IP"
+  "education": {
+     "section-title": "education",
+     "first-career-title": "Computer programming",
+     "first-career-date": "2018 - 2020",
+     "first-career-entity": "AIEP IP"
   },
-  {
-      "title": "education",
-      "date": "2019 - 2021",
-      "second-career-title": "Computer programming",
-      "entity": "AIEP IP"
-  }],
   "experience": {
     "section-title": "experience",
     "first-job-title": "Desarrollador FullStack Java Jr",
@@ -31,5 +25,12 @@
     "second-job-title": "Java Junior Developer",
     "second-job-subtitle": "Java Junior Developer",
     "second-job-description": "Tasks to be done:<br>Implement agile methodologies, specifically SCRUM and using AWS S3 | Lambda for CI/CD"
+  },
+  "interest": {
+    "section-title": "intereses",
+    "hobby-1": "<i class='fa-solid fa-gamepad'></i> Gaming",
+    "hobby-2": "<i class='fa-solid fa-glasses'></i> Reading",
+    "hobby-3": "<i class='fa-solid fa-atom'></i> Ciences",
+    "hobby-4": "<i class='fa-solid fa-headphones-simple'></i> Music"
   }
 }

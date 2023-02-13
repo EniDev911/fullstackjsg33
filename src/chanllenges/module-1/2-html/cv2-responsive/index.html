@@ -7,10 +7,21 @@
   <meta name="description"
     content="Curriculum Vitae, Curriculum, cv, FullStack JavaScript CV, Chilean Programmer Marco Antonio Contreras Herrera, JS Fullstack in Chile">
   <title>Curriculum - Marco Antonio Contreras</title>
-  <title>Curriculum Vitae</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/style.css">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    body {
+      transition: all .2s ease-in-out;
+    }
+    a.link {
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,45 +45,45 @@
         <!-- CONTACT SECTION -->
         <h3 class="title" data-section="profile" data-value="contact">contact info</h3>
         <ul>
+          <!-- PHONE -->
           <li>
             <span class="icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
             <span class="text">+56 939131909</span>
           </li>
           <li>
-            <span class="icon"><a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"
-                title="send mail"><i class="fa-solid fa-envelope"></i></a></span>
-            <span class="text">enidev911@gmai.com</span>
+            <!-- MAIL -->
+            <a class="link" href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank" >
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text">enidev911@gmai.com</span>
+            </a>
           </li>
           <li>
-            <span class="icon"><i class="fa-brands fa-twitter-square"></i></span>
-            <span class="text">Twitter</span>
-          </li>
-          <li>
-            <span class="icon"><a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
-                rel="noreferrer" title="Go LinkedIn"><i class="fa-brands fa-linkedin"></i></a></span>
+            <!-- LINKEDIN -->
+            <a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
+                rel="noreferrer" class="link">
+            <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
             <span class="text">Linkedin</span>
+            </a>
           </li>
           <li>
-            <span class="icon"><a href="https://github.com/enidev911" target="_blank" title="Go Github"><i
-                  class="fa-brands fa-square-github"></i></a></span>
+            <!-- GITHUB -->
+            <a href="https://github.com/enidev911" target="_blank" class="link">
+            <span class="icon"><i
+                  class="fa-brands fa-square-github"></i></span>
             <span class="text">Github</span>
+            </a>
           </li>
 
         </ul>
       </div>
       <div class="contact_info education">
         <!-- EDUCATION SECTION -->
-        <h3 class="title" data-section="education" data-value="title">Education</h3>
+        <h3 class="title" data-section="education" data-value="section-title">Education</h3>
         <ul>
           <li>
-            <h5 data-section="education" data-value="date"></h5>
+            <h5 data-section="education" data-value="first-career-date"></h5>
             <h4 data-section="education" data-value="first-career-title">Computer Programming</h4>
-            <h4>AIEP IP</h4>
-          </li>
-          <li>
-            <h5 data-section="education" data-value="date">2019 - 2020</h5>
-            <h4 data-section="education" data-value="second-career-title">Programming compute</h4>
-            <h4>AIEP IP</h4>
+            <h4 data-section="education" data-value="first-career-entity">AIEP IP</h4>
           </li>
         </ul>
       </div>
@@ -105,7 +116,7 @@
       </div>
       <!-- Experience -->
       <div class="about">
-        <h2 class="title-about" data-section="experience" , data-value="section-title">Experience</h2>
+        <h2 class="title-about" data-section="experience" data-value="section-title">Experience</h2>
         <div class="box">
           <div class="year-company">
             <h5>2021 - Present</h5>
@@ -173,22 +184,18 @@
       </div>
       <!-- Interest -->
       <div class="about interest">
-        <h2 class="title-about">Interest</h2>
+        <h2 data-section="interest" data-value="section-title" class="title-about">Interest</h2>
         <ul>
-          <li>
-            <i class="fa-solid fa-gamepad"></i>
+          <li id="d" data-section="interest" data-value="hobby-1">
             Gaming
           </li>
-          <li>
-            <i class="fa-solid fa-glasses"></i>
+          <li data-section="interest" data-value="hobby-2">
             Reading
           </li>
-          <li>
-            <i class="fa-solid fa-atom"></i>
+          <li data-section="interest" data-value="hobby-3">
             Cience
           </li>
-          <li>
-            <i class="fa-solid fa-headphones-simple"></i>
+          <li data-section="interest" data-value="hobby-4">
             Music
           </li>
         </ul>
@@ -198,25 +205,37 @@
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <script>
     
-    flagsElement = document.getElementById("flags");
+    flagsElement = document.getElementById("flags")
     flagsElement.addEventListener("click", (e) => {
       changeLang(e.target.parentElement.dataset.lang);
     })
     const textsToChange = document.querySelectorAll("[data-section]");
 
     const changeLang = async language => {
+
+      textsToChange.forEach(ttc =>  {
+        ttc.style.animation=""
+        ttc.style.animationDuration=""
+      })
       const requestJSON = await fetch(`./langs/${language}.json`),
-        data = await requestJSON.json();
+            data = await requestJSON.json();
+  
+      
       textsToChange.forEach(textToChange => {
         const section = textToChange.dataset.section,
-          value = textToChange.dataset.value;
+        value = textToChange.dataset.value;
         textToChange.innerHTML = data[section][value];
+        textToChange.style.animation = "fadeIn"
+        textToChange.style.animationDuration = "2s"
       })
     }
 
+    changeLang('es')
+
     document.addEventListener("keydown", function (e) {
       if (e.keyCode == 13) {
-        toggleFullScreen();
+        toggleFullScreen();        
+
       }
     }, false);
 
