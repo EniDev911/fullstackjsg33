@@ -264,7 +264,14 @@
     
     flagsElement = document.getElementById("flags")
     flagsElement.addEventListener("click", (e) => {
-      changeLang(e.target.parentElement.dataset.lang);
+
+
+      const language = e.target.parentElement.dataset.lang;
+
+      if(language && language != localStorage.getItem('lang')){
+        localStorage.setItem('lang', language)
+        changeLang(language);
+      }
     })
     const textsToChange = document.querySelectorAll("[data-section]");
 
