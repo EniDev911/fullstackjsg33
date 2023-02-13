@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(to left, rgb(164, 164, 164), #e9e9e9);
+  background: linear-gradient(to left, #003148 50%, #fafafa 0%);
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@ body {
   width: 100%;
   max-width: 1000px;
   min-height: 1000px;
+  border: 1px solid #003148;
   margin: 50px;
   background: #fff;
   display: grid;
@@ -91,7 +92,7 @@ body {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  background: linear-gradient(to bottom, #000, #444);
+  background: linear-gradient(15deg, #000 , #003148);
 }
 
 .profile_text .profile_img img {
@@ -276,7 +277,7 @@ body {
 /* Media queries */
 @media (max-width: 1000px) {
   .container {
-    margin: 10px;
+    margin: 0;
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -295,12 +296,10 @@ body {
   }
 
   .interest ul {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .skills .box {
-    grid-template-columns: repeat(1, 1fr);
-  }
+ 
 }
 
 @media(hover: hover) {}

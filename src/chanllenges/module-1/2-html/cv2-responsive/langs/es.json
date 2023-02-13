@@ -10,20 +10,38 @@
   },
 
   "about": {
-    "title": "Acerca de mí",
-    "description": "Programador Chileno, títulado de la carrera de Programación Computacional, tengo 3 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de Javascript. Actualmente soy desarrollador freelancer y siempre estoy dispuesto para aprender y solucionar de la mejor forma problemas comunes a la hora de tomar requerimientos. Estoy enfocado desde un principio en llevar a cabo buenas practicas de desarrollo tanto a nivel de código como en el uso de las nuevas tecnologías respetan los estándares y compatibilidad."
+    "section-title": "Perfil profesional",
+    "description": "Programador Chileno, títulado de la carrera de Programación Computacional, tengo varios años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y en especial del ecosistema de Javascript. Actualmente soy desarrollador freelance y siempre estoy dispuesto para aprender y compartir el conocimiento. Me enfoco bastante en llevar a cabo buenas practicas de desarrollo tanto de los estándares y compatibilidad."
   },
   "education": {
-      "title": "educación",
-      "date": "2019 - 2021",
+      "section-title": "educación",
       "first-career-title": "Programación computacional",
-      "entity": "AIEP IP",
+      "first-career-date": "2018 - 2020",
+      "first-career-entity": "AIEP IP",
       "second-career-title": "Desarrollador fullstack Java"
   },
   "experience": {
     "section-title": "experiencia",
-    "first-job-title": "Desarrollador FullStack Java Jr",
-    "first-job-date": "Abril 2020 - Diciembre 2020",
-    "first-job-description": "Lorem Ipsum"
+    "first-job-date": "Abril 2020 - Presente",
+    "first-job-company": "EniDev911",
+    "first-job-rol": "Fullstack developer",
+    "first-job-description": "Administrar desarrollos completos, trabajando en base a los requisitos y las especificaciones de los clientes, elaborando detallada documentación sobre el análisis y avances de los proyectos.",
+    "second-job-date": "Abril 2019 - Febrero 2020",
+    "second-job-company": "TD digital",
+    "second-job-rol": "Jr fullstack developer java",
+    "second-job-description": "Abordé eficazmente problemas complejos. Implementación y actualización de módulos de aplicación bajo la dirección de desarrolladores de software senior. Trabajé con éxito tanto a nivel independiente como en equipo. Realicé tareas de pruebas automatizadas y desarrollé funciones complementarias de forma rutinaria.",
+    "thrid-job-date": "Enero 2018 - Enero 2019",
+    "thrid-job-company": "Polisoft",
+    "thrid-job-description": "Colaboración productiva con el equipo para conocer los requisitos y las especificaciones empresariales en torno a la gestión del producto."
+  },
+  "skills": {
+    "section-title": "competencias"
+  },
+  "interest" : {
+    "section-title" : "intereses",
+    "hobby-1": "<i class='fa-solid fa-gamepad'></i> Videojuegos",
+    "hobby-2": "<i class='fa-solid fa-glasses'></i> Leer",
+    "hobby-3": "<i class='fa-solid fa-atom'></i> Ciencias",
+    "hobby-4": "<i class='fa-solid fa-headphones-simple'></i> Música"
   }
 }

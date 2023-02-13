@@ -7,10 +7,21 @@
   <meta name="description"
     content="Curriculum Vitae, Curriculum, cv, FullStack JavaScript CV, Chilean Programmer Marco Antonio Contreras Herrera, JS Fullstack in Chile">
   <title>Curriculum - Marco Antonio Contreras</title>
-  <title>Curriculum Vitae</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/style.css">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    body {
+      transition: all .2s ease-in-out;
+    }
+    a.link {
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,45 +45,53 @@
         <!-- CONTACT SECTION -->
         <h3 class="title" data-section="profile" data-value="contact">contact info</h3>
         <ul>
+          <!-- PHONE -->
           <li>
             <span class="icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
             <span class="text">+56 939131909</span>
           </li>
           <li>
-            <span class="icon"><a href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank"
-                title="send mail"><i class="fa-solid fa-envelope"></i></a></span>
-            <span class="text">enidev911@gmai.com</span>
+            <!-- MAIL -->
+            <a class="link" href="mailto:enidev911@gmai.com?subject=hello marco" target="_blank" >
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text">enidev911@gmai.com</span>
+            </a>
           </li>
           <li>
-            <span class="icon"><i class="fa-brands fa-twitter-square"></i></span>
-            <span class="text">Twitter</span>
-          </li>
-          <li>
-            <span class="icon"><a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
-                rel="noreferrer" title="Go LinkedIn"><i class="fa-brands fa-linkedin"></i></a></span>
+            <!-- LINKEDIN -->
+            <a href="https://www.linkedin.com/in/marco-contreras-herrera-9b6952213/" target="_blank"
+                rel="noreferrer" class="link">
+            <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
             <span class="text">Linkedin</span>
+            </a>
           </li>
           <li>
-            <span class="icon"><a href="https://github.com/enidev911" target="_blank" title="Go Github"><i
-                  class="fa-brands fa-square-github"></i></a></span>
+            <!-- GITHUB -->
+            <a href="https://github.com/enidev911" target="_blank" class="link">
+            <span class="icon"><i
+                  class="fa-brands fa-square-github"></i></span>
             <span class="text">Github</span>
+            </a>
+          </li>
+          <li>
+            <!-- HACKKERRANK -->
+            <a href="https://www.hackerrank.com/enidev911" target="_blank" class="link">
+            <span class="icon">
+              <i class="fa-brands fa-hackerrank"></i></span>
+            <span class="text">Hackerrank</span>
+            </a>
           </li>
 
         </ul>
       </div>
       <div class="contact_info education">
         <!-- EDUCATION SECTION -->
-        <h3 class="title" data-section="education" data-value="title">Education</h3>
+        <h3 class="title" data-section="education" data-value="section-title">Education</h3>
         <ul>
           <li>
-            <h5 data-section="education" data-value="date"></h5>
+            <h5 data-section="education" data-value="first-career-date"></h5>
             <h4 data-section="education" data-value="first-career-title">Computer Programming</h4>
-            <h4>AIEP IP</h4>
-          </li>
-          <li>
-            <h5 data-section="education" data-value="date">2019 - 2020</h5>
-            <h4 data-section="education" data-value="second-career-title">Programming compute</h4>
-            <h4>AIEP IP</h4>
+            <h4 data-section="education" data-value="first-career-entity">AIEP IP</h4>
           </li>
         </ul>
       </div>
@@ -87,7 +106,7 @@
             </span>
           </li>
           <li>
-            <span class="text">Spanish</span>
+            <span class="text" data-section="profile" data-value="spanish">Spanish</span>
             <span class="percent">
               <div style="width: 80%;"></div>
             </span>
@@ -98,97 +117,142 @@
     <!-- END LEFT SIDE  -->
     <div class="right_side">
       <div class="about">
-        <h2 data-section="about" data-value="title" class="title-about">Profile</h2>
-        <p data-section="about" data-value="description">Chilean programmer, computer programmer graduated from the AIEP
-          institute.<br><br>Currently a fullstack
-          developer freelance.</p>
+        <h2 data-section="about" data-value="section-title" class="title-about">Profile</h2>
+        <p data-section="about" data-value="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quisquam maiores magnam, soluta culpa quo et odit assumenda pariatur labore voluptates, debitis dicta nihil. Ipsum, dicta dolores. Tempore, placeat modi.</p>
       </div>
       <!-- Experience -->
       <div class="about">
-        <h2 class="title-about" data-section="experience" , data-value="section-title">Experience</h2>
+        <h2 class="title-about" data-section="experience" data-value="section-title">Experience</h2>
         <div class="box">
           <div class="year-company">
-            <h5>2021 - Present</h5>
-            <h5>EniDev911</h5>
+            <h5 data-section="experience" data-value="first-job-date">2021 - Present</h5>
+            <h5 data-section="experience" data-value="first-job-company">EniDev911</h5>
           </div>
           <div class="text">
-            <h4>Fullstack freelance</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+            <h4 data-section="experience" data-value="first-job-rol">Fullstack freelance</h4>
+            <p data-section="experience" data-value="first-job-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
         <div class="box">
           <div class="year-company">
-            <h5>2019 - Present</h5>
-            <h5>Company Name</h5>
+            <h5 data-section="experience" data-value="second-job-date">2019 - Present</h5>
+            <h5 data-section="experience" data-value="second-job-company">Company Name</h5>
           </div>
           <div class="text">
-            <h4>Jr Fullstack Java</h4>
+            <h4 data-section="experience" data-value="second-job-rol">Jr Fullstack Java</h4>
             <p data-section="experience" data-value="second-job-description">Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
+        <!-- THRID JOB -->
         <div class="box">
           <div class="year-company">
-            <h5>2019 - Present</h5>
-            <h5>Company Name</h5>
+            <h5 data-section="experience" data-value="thrid-job-date">2019 - Present</h5>
+            <h5 data-section="experience" data-value="thrid-job-company">Company Name</h5>
           </div>
           <div class="text">
-            <h4>Jr Fullstack Java</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+            <h4>Jr Frontend</h4>
+            <p data-section="experience" data-value="thrid-job-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
       </div>
+      <!-- PROFESSIONAL SKILL -->
       <div class="about skills">
-        <h2 class="title-about">Professional Skills</h2>
-        <div class="box">
-          <h4>Html</h4>
-          <div class="percent">
-            <div style="width:90%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Css</h4>
-          <div class="percent">
-            <div style="width:75%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Javascript</h4>
-          <div class="percent">
-            <div style="width:85%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Figma</h4>
-          <div class="percent">
-            <div style="width:75%;"></div>
-          </div>
+        <style>
+          .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: #fff;
+          }
+          h4.skill-text {
+              text-transform: uppercase;
+              color: #848c99;
+              font-weight: 500;
+          }
+
+          .skill-icon {
+            color: #03a9f4;
+            font-size: 20px; 
+            width: 20px;
+          }
+          @media(max-width: 600px){
+            .skills-container {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+        </style>
+        <h2 class="title-about" data-section="skills" data-value="section-title">Professional Skills</h2>
+        <div class="skills-container">
+          <h4 class="skill-text">
+            <i class='fa-brands fa-html5 skill-icon'></i> 
+            Html5
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-css3-alt skill-icon'></i> 
+            Css
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-js skill-icon'></i> 
+            Javascript
+          </h4>
+          <h4 class="skill-text">
+            <i class='skill-icon' style="background: url('./assets/skills/typescript.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>
+            Typescript
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-git-alt skill-icon'></i> 
+            Git
+          </h4>
+          <h4 class="skill-text">
+            <i class="fa-brands fa-square-github skill-icon"></i>
+            Github
+          </h4>
+          <h4 class="skill-text">
+           <i class='skill-icon' style="background: url('./assets/skills/mongodb.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>
+            Mongodb
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-sass skill-icon'></i> 
+            Sass
+          </h4>
+          <h4 class="skill-text">
+        <i class='skill-icon' style="background: url('./assets/skills/react.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>     
+            React
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-python skill-icon'></i> 
+            Python
+          </h4>
+          <h4 class="skill-text">
+            <i class='skill-icon' style="background: url('./assets/skills/postgres.svg') no-repeat center; height: 20px; display: inline-block;"></i> 
+            Postgresql
+          </h4>
+     
+          <h4 class="skill-text">
+          <i class='skill-icon' style="background: url('./assets/skills/nodejs.svg') no-repeat center;  background-size: 100% 100%; height: 20px; display: inline-block;"></i>  
+            Nodejs</h4>
         </div>
       </div>
       <!-- Interest -->
       <div class="about interest">
-        <h2 class="title-about">Interest</h2>
+        <h2 data-section="interest" data-value="section-title" class="title-about">Interest</h2>
         <ul>
-          <li>
-            <i class="fa-solid fa-gamepad"></i>
+          <li id="d" data-section="interest" data-value="hobby-1">
             Gaming
           </li>
-          <li>
-            <i class="fa-solid fa-glasses"></i>
+          <li data-section="interest" data-value="hobby-2">
             Reading
           </li>
-          <li>
-            <i class="fa-solid fa-atom"></i>
+          <li data-section="interest" data-value="hobby-3">
             Cience
           </li>
-          <li>
-            <i class="fa-solid fa-headphones-simple"></i>
+          <li data-section="interest" data-value="hobby-4">
             Music
           </li>
         </ul>
@@ -198,25 +262,35 @@
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
   <script>
     
-    flagsElement = document.getElementById("flags");
+    flagsElement = document.getElementById("flags")
     flagsElement.addEventListener("click", (e) => {
       changeLang(e.target.parentElement.dataset.lang);
     })
     const textsToChange = document.querySelectorAll("[data-section]");
 
     const changeLang = async language => {
+
+      textsToChange.forEach(ttc =>  {
+        ttc.style.animation=""
+        ttc.style.animationDuration=""
+      })
       const requestJSON = await fetch(`./langs/${language}.json`),
-        data = await requestJSON.json();
+            data = await requestJSON.json();
+  
       textsToChange.forEach(textToChange => {
         const section = textToChange.dataset.section,
-          value = textToChange.dataset.value;
+        value = textToChange.dataset.value;
         textToChange.innerHTML = data[section][value];
+        textToChange.style.animation = "fadeIn"
+        textToChange.style.animationDuration = "2s"
       })
     }
 
+    changeLang('es')
+
     document.addEventListener("keydown", function (e) {
       if (e.keyCode == 13) {
-        toggleFullScreen();
+        toggleFullScreen();        
       }
     }, false);
 
