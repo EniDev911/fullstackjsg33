@@ -8,7 +8,7 @@
     "description": "4 años de experencia en desarrollo web. Apasionado por las nuevas tecnologías y la plataforma web en especial del ecosistema de CSS y Javascript. <br> Mi propósito es llevar la pasión de compartir el conocimiento y aprender buenas practica que respetan los estándares."
   },
   "about": {
-    "title": "Profile",
+    "section-title": "Profile",
     "description": "Chilean programmer, graduated in Computer Programming, I have several years of experience in web development. Passionate about new technologies and especially the Javascript ecosystem. I am currently a freelance developer and I am always willing to learn and share knowledge. I focus a lot on carrying out good development practices, both standards and compatibility."
   },
   "education": {
@@ -19,12 +19,20 @@
   },
   "experience": {
     "section-title": "experience",
-    "first-job-title": "Desarrollador FullStack Java Jr",
-    "first-job-date": "Abril 2020 - Diciembre 2020",
+    "first-job-rol": "FullStack PERN developer",
+    "first-job-date": "2020 - Present",
+    "first-job-company": "EniDev911",
     "first-job-description": "Lorem Ipsum",
-    "second-job-title": "Java Junior Developer",
-    "second-job-subtitle": "Java Junior Developer",
-    "second-job-description": "Tasks to be done:<br>Implement agile methodologies, specifically SCRUM and using AWS S3 | Lambda for CI/CD"
+    "second-job-date": "April 2019 - February 2020",
+    "second-job-rol": "Java Junior Developer",
+     "second-job-company": "TD digital",
+    "second-job-description": "Effectively tackled complex problems. Implementation and update of application modules under the direction of senior software developers. I worked successfully both independently and in a team. Performed automated testing tasks and built add-on features on a routine basis.",
+    "thrid-job-date": "Jan 2018 - Jan 2019",
+    "thrid-job-company": "polisoft",
+    "thrid-job-description": "Productive collaboration with team to understand business requirements and specifications around product stewardship."
+  },
+  "skills": {
+    "section-title": "PROFESSIONAL SKILLS"
   },
   "interest": {
     "section-title": "intereses",

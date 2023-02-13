@@ -73,6 +73,14 @@
             <span class="text">Github</span>
             </a>
           </li>
+          <li>
+            <!-- HACKKERRANK -->
+            <a href="https://www.hackerrank.com/enidev911" target="_blank" class="link">
+            <span class="icon">
+              <i class="fa-brands fa-hackerrank"></i></span>
+            <span class="text">Hackerrank</span>
+            </a>
+          </li>
 
         </ul>
       </div>
@@ -98,7 +106,7 @@
             </span>
           </li>
           <li>
-            <span class="text">Spanish</span>
+            <span class="text" data-section="profile" data-value="spanish">Spanish</span>
             <span class="percent">
               <div style="width: 80%;"></div>
             </span>
@@ -109,77 +117,126 @@
     <!-- END LEFT SIDE  -->
     <div class="right_side">
       <div class="about">
-        <h2 data-section="about" data-value="title" class="title-about">Profile</h2>
-        <p data-section="about" data-value="description">Chilean programmer, computer programmer graduated from the AIEP
-          institute.<br><br>Currently a fullstack
-          developer freelance.</p>
+        <h2 data-section="about" data-value="section-title" class="title-about">Profile</h2>
+        <p data-section="about" data-value="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, quisquam maiores magnam, soluta culpa quo et odit assumenda pariatur labore voluptates, debitis dicta nihil. Ipsum, dicta dolores. Tempore, placeat modi.</p>
       </div>
       <!-- Experience -->
       <div class="about">
         <h2 class="title-about" data-section="experience" data-value="section-title">Experience</h2>
         <div class="box">
           <div class="year-company">
-            <h5>2021 - Present</h5>
-            <h5>EniDev911</h5>
+            <h5 data-section="experience" data-value="first-job-date">2021 - Present</h5>
+            <h5 data-section="experience" data-value="first-job-company">EniDev911</h5>
           </div>
           <div class="text">
-            <h4>Fullstack freelance</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+            <h4 data-section="experience" data-value="first-job-rol">Fullstack freelance</h4>
+            <p data-section="experience" data-value="first-job-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
         <div class="box">
           <div class="year-company">
-            <h5>2019 - Present</h5>
-            <h5>Company Name</h5>
+            <h5 data-section="experience" data-value="second-job-date">2019 - Present</h5>
+            <h5 data-section="experience" data-value="second-job-company">Company Name</h5>
           </div>
           <div class="text">
-            <h4>Jr Fullstack Java</h4>
+            <h4 data-section="experience" data-value="second-job-rol">Jr Fullstack Java</h4>
             <p data-section="experience" data-value="second-job-description">Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
+        <!-- THRID JOB -->
         <div class="box">
           <div class="year-company">
-            <h5>2019 - Present</h5>
-            <h5>Company Name</h5>
+            <h5 data-section="experience" data-value="thrid-job-date">2019 - Present</h5>
+            <h5 data-section="experience" data-value="thrid-job-company">Company Name</h5>
           </div>
           <div class="text">
-            <h4>Jr Fullstack Java</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
+            <h4>Jr Frontend</h4>
+            <p data-section="experience" data-value="thrid-job-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos molestias dolores! Animi odio culpa
               dolore quam, quos, laborum placeat debitis consequuntur sint doloribus dolor distinctio, ab fugit nihil
               amet.</p>
           </div>
         </div>
       </div>
+      <!-- PROFESSIONAL SKILL -->
       <div class="about skills">
-        <h2 class="title-about">Professional Skills</h2>
-        <div class="box">
-          <h4>Html</h4>
-          <div class="percent">
-            <div style="width:90%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Css</h4>
-          <div class="percent">
-            <div style="width:75%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Javascript</h4>
-          <div class="percent">
-            <div style="width:85%;"></div>
-          </div>
-        </div>
-        <div class="box">
-          <h4>Figma</h4>
-          <div class="percent">
-            <div style="width:75%;"></div>
-          </div>
+        <style>
+          .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: #fff;
+          }
+          h4.skill-text {
+              text-transform: uppercase;
+              color: #848c99;
+              font-weight: 500;
+          }
+
+          .skill-icon {
+            color: #03a9f4;
+            font-size: 20px; 
+            width: 20px;
+          }
+          @media(max-width: 600px){
+            .skills-container {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+        </style>
+        <h2 class="title-about" data-section="skills" data-value="section-title">Professional Skills</h2>
+        <div class="skills-container">
+          <h4 class="skill-text">
+            <i class='fa-brands fa-html5 skill-icon'></i> 
+            Html5
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-css3-alt skill-icon'></i> 
+            Css
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-js skill-icon'></i> 
+            Javascript
+          </h4>
+          <h4 class="skill-text">
+            <i class='skill-icon' style="background: url('./assets/skills/typescript.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>
+            Typescript
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-git-alt skill-icon'></i> 
+            Git
+          </h4>
+          <h4 class="skill-text">
+            <i class="fa-brands fa-square-github skill-icon"></i>
+            Github
+          </h4>
+          <h4 class="skill-text">
+           <i class='skill-icon' style="background: url('./assets/skills/mongodb.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>
+            Mongodb
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-sass skill-icon'></i> 
+            Sass
+          </h4>
+          <h4 class="skill-text">
+        <i class='skill-icon' style="background: url('./assets/skills/react.svg') no-repeat center; background-size: 100% 100%; height: 19px; display: inline-block;"></i>     
+            React
+          </h4>
+          <h4 class="skill-text">
+            <i class='fa-brands fa-python skill-icon'></i> 
+            Python
+          </h4>
+          <h4 class="skill-text">
+            <i class='skill-icon' style="background: url('./assets/skills/postgres.svg') no-repeat center; height: 20px; display: inline-block;"></i> 
+            Postgresql
+          </h4>
+     
+          <h4 class="skill-text">
+          <i class='skill-icon' style="background: url('./assets/skills/nodejs.svg') no-repeat center;  background-size: 100% 100%; height: 20px; display: inline-block;"></i>  
+            Nodejs</h4>
         </div>
       </div>
       <!-- Interest -->
@@ -220,7 +277,6 @@
       const requestJSON = await fetch(`./langs/${language}.json`),
             data = await requestJSON.json();
   
-      
       textsToChange.forEach(textToChange => {
         const section = textToChange.dataset.section,
         value = textToChange.dataset.value;
@@ -235,7 +291,6 @@
     document.addEventListener("keydown", function (e) {
       if (e.keyCode == 13) {
         toggleFullScreen();        
-
       }
     }, false);
 
