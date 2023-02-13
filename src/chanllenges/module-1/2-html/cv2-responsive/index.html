@@ -263,12 +263,18 @@
   <script>
     
     flagsElement = document.getElementById("flags")
+    
+    document.onreadystatechange = () => {
+      if (document.readyState === "complete"){
+        localStorage.getItem('lang') 
+        ? changeLang(localStorage.getItem('lang'))
+        : changeLang('es')
+      }
+    }
+    
     flagsElement.addEventListener("click", (e) => {
-
-
       const language = e.target.parentElement.dataset.lang;
-
-      if(language && language != localStorage.getItem('lang')){
+        if(language && language != localStorage.getItem('lang')){
         localStorage.setItem('lang', language)
         changeLang(language);
       }
@@ -293,7 +299,6 @@
       })
     }
 
-    changeLang('es')
 
     document.addEventListener("keydown", function (e) {
       if (e.keyCode == 13) {
