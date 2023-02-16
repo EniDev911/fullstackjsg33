@@ -22,7 +22,7 @@
     "first-job-rol": "FullStack PERN developer",
     "first-job-date": "2020 - Present",
     "first-job-company": "EniDev911",
-    "first-job-description": "Lorem Ipsum",
+    "first-job-description": "Manage complete developments, working based on customer requirements and specifications, preparing detailed documentation on the analysis and progress of the projects.",
     "second-job-date": "April 2019 - February 2020",
     "second-job-rol": "Java Junior Developer",
      "second-job-company": "TD digital",
@@ -35,7 +35,7 @@
     "section-title": "PROFESSIONAL SKILLS"
   },
   "interest": {
-    "section-title": "intereses",
+    "section-title": "interests",
     "hobby-1": "<i class='fa-solid fa-gamepad'></i> Gaming",
     "hobby-2": "<i class='fa-solid fa-glasses'></i> Reading",
     "hobby-3": "<i class='fa-solid fa-atom'></i> Ciences",

@@ -9,15 +9,14 @@
   <title>Curriculum - Marco Antonio Contreras</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/print.css">
 
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <style>
-    body {
-      transition: all .2s ease-in-out;
-    }
+
     a.link {
       text-decoration: none;
     }
@@ -39,7 +38,7 @@
         <div class="profile_img">
           <img src="perfil2.png" alt="">
         </div>
-        <h2>Marco Contreras<br><span data-section="profile" data-value="rol">&#6590; Web Developer</span></h2>
+        <h2 id="name">Marco Contreras<br><span data-section="profile" data-value="rol">&#6590; Web Developer</span></h2>
       </div>
       <div class="contact_info">
         <!-- CONTACT SECTION -->
@@ -233,7 +232,6 @@
             <i class='skill-icon' style="background: url('./assets/skills/postgres.svg') no-repeat center; height: 20px; display: inline-block;"></i> 
             Postgresql
           </h4>
-     
           <h4 class="skill-text">
           <i class='skill-icon' style="background: url('./assets/skills/nodejs.svg') no-repeat center;  background-size: 100% 100%; height: 20px; display: inline-block;"></i>  
             Nodejs</h4>
@@ -263,8 +261,21 @@
   <script>
     
     flagsElement = document.getElementById("flags")
+    
+    document.onreadystatechange = () => {
+      if (document.readyState === "complete"){
+        localStorage.getItem('lang') 
+        ? changeLang(localStorage.getItem('lang'))
+        : changeLang('es')
+      }
+    }
+    
     flagsElement.addEventListener("click", (e) => {
-      changeLang(e.target.parentElement.dataset.lang);
+      const language = e.target.parentElement.dataset.lang;
+        if(language && language != localStorage.getItem('lang')){
+        localStorage.setItem('lang', language)
+        changeLang(language);
+      }
     })
     const textsToChange = document.querySelectorAll("[data-section]");
 
@@ -286,7 +297,6 @@
       })
     }
 
-    changeLang('es')
 
     document.addEventListener("keydown", function (e) {
       if (e.keyCode == 13) {
