@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
+    <!-- ogp : Meta Titulo -->
+  <meta property="og:title" content="PostgreSQL: CheatSheet">
+  <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/blog.forestadmin.com/2022/05/FA-article-PostgreSQL-cheatsheet--1-.png">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +12,52 @@
   <script src="../../index.js" type="module"></script>
   <link rel="stylesheet" href="./highlight/styles/base16/default-dark.min.css">
   <link rel="stylesheet" href="./index.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    h4 {
+      margin: 15px 0;
+    }
+    p {
+      line-height: 25px;
+    }
+    span.num,
+    span.double,
+    span.str {
+      background-color: rgb(11, 92, 95);
+      border-radius: 5px;
+      padding: 0 3px 5px 3px;
+      font-weight: 600;
+    }
+
+    span.double {
+      background-color: rgb(61, 143, 211);
+    }
+    span.str {
+      background-color: rgb(204, 127, 11);
+    }
+    span.num:before {
+      content: 'numeric';
+      font-size: 13px;
+    }
+    span.double:before {
+      content: 'double';
+      font-size: 13px;
+    }
+    span.str:before {
+      content: 'text';
+      font-size: 13px;
+    }
+    
+  </style>
 </head>
 
 <body class="dark">
   <article class="doc dark">
     <h1>Cheatsheet PostgreSQL</h1>
-
     <enidev-details data-title="Funciones Matemática" data-lang="postgresql">
       <div class="container">
       <!-- ABS -->
-      <p>La función <strong>abs()</strong> nos retorna el valor absoluto</p>
+      <p>La función <strong>abs(<span class="num"></span>)</strong> nos retorna el valor absoluto de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT abs(-49);
@@ -26,7 +65,7 @@ SELECT abs(-49);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
-      <p>La función <strong>cbrt()</strong> nos retorna la raíz cúbica</p>
+      <p>La función <strong>cbrt(<span class="num"></span>)</strong> nos retorna la raíz cúbica de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT cbrt(27);
@@ -34,7 +73,7 @@ SELECT cbrt(27);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
-      <p>La función <strong>ceil()</strong> nos retorna el valor entero mayor más cercano</p>
+      <p>La función <strong>ceil(<span class="num"></span>)</strong> nos retorna el valor entero mayor más cercano de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT ceil(20.5);
@@ -42,6 +81,44 @@ SELECT ceil(20.5);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
+<!-- DIV -->
+      <p>La función <strong>div(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna el resultado (cociente) de la operación de división de A (dividendo) entre B (divisor).</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT div(9, 4);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- EXP -->
+      <p>La función <strong>exp(<span class="num"></span> OR <span class="double"></span>)</strong> nos retorna la exponenciación de un número como se especifica en el argumento.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT exp(3) as Exponencial;
+SELECT exp(2.2) as Exponencial;
+  </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- FLOOR -->
+      <p>La función <strong>floor(<span class="num"></span> OR <span class="double"></span>)</strong> nos retorna el entero más cercano menor o igual que el argumento.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT floor(5.8);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- FACTORIAL -->
+      <p>La función <strong>factorial(<span class="num"></span>)</strong> nos retorna el factorial de <span class="num"></span>.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT factorial(5);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!-- RANDOM -->
       <p>La función <strong>random()</strong> nos retorna un valor aleatorio entre 0.0 y 1.0</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -51,7 +128,7 @@ SELECT random();
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
 <!-- POWER -->
-    <p>La función <strong>power(a, b)</strong> nos retorna A elevado a la potencia de B
+    <p>La función <strong>power(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna A elevado a la potencia de B
 </p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -61,7 +138,7 @@ SELECT power(5, 4);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
 <!-- MOD -->
-    <p>La función <strong>mod(a, b)</strong> nos retorna el módulo (resto) de la operación de división de A (dividendo) entre B (divisor).
+    <p>La función <strong>mod(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna el módulo (resto) de la operación de división de A (dividendo) entre B (divisor).
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT mod(9, 4);
@@ -73,35 +150,92 @@ SELECT mod(9, 4);
     </enidev-details>
     <enidev-details data-title="Funciones de cadenas" data-lang="postgresql">
       <div class="container">
-      <!-- SUBSTRING -->
-      <p>La función <strong>substring()</strong> nos permite extraer una subcadena</p>
-      <div class="highlight">
-        <pre><code class="language-postgresql">
-SELECT substring('enidev911' from 2 for 3);
-        </code></pre>
-        <custom-button></custom-button>
-        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-      </div>
-      <!--REVERSE-->
-      <p>La función <strong>reverse</strong> nos retorna la cadena en sentido inverso:</p>
-      <div class="highlight">
-        <pre><code class="language-postgresql">
-SELECT reverse('enidev911');
-              </code></pre>
-        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-        <custom-button></custom-button>
-      </div>
       <!--CHAR_LENGTH-->
-      <p>La función <strong>char_length(str)</strong> o <strong>character_length(str)</strong> nos retorna la longitud de la STR:</p>
+      <p>La función <strong>char_length(<span class="str"></span>)</strong> o <strong>character_length(<span class="str"></span>)</strong> nos retorna la longitud de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
-SELECT char_length('enidev911');
+SELECT char_length('enidev911') as "Cantidad de caracteres";
+SELECT character_length('enidev') as "Cantidad de caracteres";
       </code></pre>
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
+      <!--CHR-->
+      <p>La función <strong>chr(num <span class="num"></span>)</strong> nos retorna el carácter correspondiente al código (ascii) dado en el argumento:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT chr(169), chr(64);
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--CONCAT-->
+      <p>La función <strong>concat(str <span class="str"></span>, [str2 <span class="str"></span>, str3 <span class="str"></span>, ...])</strong> se utiliza para concatenar dos o más cadenas excepto cuando NULL es especificado:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT concat('eni', 'dev', NULL, '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--INITCAP-->
+      <p>La función <strong>initcap(str <span class="str"></span>)</strong> nos retorna STR con la primera letra de cada palabra en mayúscula y el resto a minúsculas:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT initcap('marco antonio contreras herrera');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--OCTET_LENGTH-->
+      <p>La función <strong>octec_length(str <span class="str"></span>)</strong> nos retorna el número de bytes en STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT octet_length('ñ'),octet_length('🧠'), octet_length('❤️');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!-- SPLIT_PART -->
+      <p>La función <strong>split_part(str<span class="str"></span>, delimiter <span class="str"></span>, field_num <span class="num"></span>)</strong> se utiliza para dividir STR dada en función de un delimitador indicado en DELIMITER y selecciona el campo deseado de la cadena indicado en FIELD_NUM, comenzando desde izquierda a derecha:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 1);
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 2);
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 3);
+        </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>    
+      <!-- SUBSTRING -->
+      <p>La función <strong>substring(<span class="str"></span>, str_pos, n_char)</strong> nos permite extraer una subcadena, donde <strong>str_pos</strong> es un <span class="num"></span> para la posición dentro de <span class="str"></span> desde donde comenzará la extracción y <strong>n_char</strong> es un <span class="num"></span> que es la cantidad de caracteres que se quieren extraer:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT substring('enidev911' from 2 for 3) as "Extracto del texto";
+        </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--REPEAT-->
+      <p>La función <strong>repeat(str <span class="str"></span>, n <span class="num"></span>)</strong> nos retorna STR repitida N cantidad de veces:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT repeat('?', 1),repeat('|', 2),repeat('-', 3),repeat('*', 4);
+              </code></pre>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+        <custom-button></custom-button>
+      </div>
+      <!--REVERSE-->
+      <p>La función <strong>reverse(<span class="str"></span>)</strong> nos retorna <span class="str"></span> en sentido inverso:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT reverse('enidev911') as "Texto invertido";
+              </code></pre>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+        <custom-button></custom-button>
+      </div>
       <!--RIGHT-->
-      <p>La función <strong>right(str text, n int)</strong> nos retorna los últimos N caracteres de STR:</p>
+      <p>La función <strong>right(<span class="str"></span>, n <span class="num"></span>)</strong> nos retorna los últimos N caracteres de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT right('enidev911', 2);
@@ -110,7 +244,7 @@ SELECT right('enidev911', 2);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
       <!--LEFT-->
-      <p>La función <strong>left(str text, n int)</strong> nos retorna los primeros N caracteres de STR:</p>
+      <p>La función <strong>left(<span class="str"></span>, n <span class="num"></span>)</strong> nos retorna los primeros N caracteres de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT left('enidev911', 2);
@@ -119,21 +253,124 @@ SELECT left('enidev911', 2);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
       <!--LTRIM-->
-      <p>La función <strong>ltrim(str text [, characters text])</strong> nos retorna el extracto de CHARACTERS de izquierda a derecha de STR:</p>
+      <p>La función <strong>ltrim(str <span class="str"></span> [, characters <span class="str"></span>])</strong> se utiliza para eliminar espacios en blancos, pero también nos retorna STR recortando el conjunto de caracteres que coincidan con el texto en CHARACTERS de izquierda a derecha:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
+SELECT ltrim('             enidev911');
 SELECT ltrim('911911911enidev911', '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--RTRIM-->
+      <p>La función <strong>rtrim(str <span class="str"></span> [, characters <span class="str"></span>])</strong> se utiliza para eliminar espacios en blancos, pero también nos retorna STR recortando el conjunto de caracteres que coincidan con el texto en CHARACTERS de derecha a izquierda:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT rtrim('enidev911            ');
+SELECT rtrim('enidev911 911911911', '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--TRANSLATE-->
+      <p>La función <strong>translate(str <span class="str"></span> , match_str <span class="str"></span>, replace_str <span class="str"></span>)</strong> se utiliza para intercambiar cualquier carácter en STR que coincida con MATCH_STR y será intercambiado por su equivalente en la misma posición en REPLACE_STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT translate('anidtav044', '04at', '91e');
       </code></pre>
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
       </div>
     </enidev-details>
-
+    <!-- DDL -->
+    <enidev-details data-title="Comandos DDL (Data Definition Language)" data-lang="postgresql">
+      <div class="container">
+<section>
+  <!-- CREATE -->
+        <h3>1. CREATE</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- 1 primera forma (si ejecutamos 2 veces, tendriamos un error) 
+CREATE TABLE heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- 2 forma (Con la cláusula IF NOT EXISTS evitamos el error)
+CREATE TABLE IF NOT EXISTS herosDC (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- mostrar las tablas creadas
+\dt
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>2. ALTER</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- le añadimos una nueva columna
+ALTER TABLE users ADD age INT;
+-- describimos la tabla 
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>3. TRUNCATE</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- truncamos la tabla (elimina rápidamente todas las filas o tuplas)
+TRUNCATE TABLE users;
+--- truncamos la tabla y reiniciamos el secuanciador auto-incrementable "SERIAL"
+TRUNCATE TABLE users RESTART IDENTITY;
+-- describimos la tabla 
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>4. DROP</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- eliminamos la tabla y con toda su estructura.
+DROP TABLE users;
+-- describimos la tabla (deberíamos obtener un error: Did not find any relation named "users")
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+      </div>
+    </enidev-details>
+<!-- DML -->
     <enidev-details data-title="Comandos DML (Data Manipulation Language)" data-lang="postgresql">
       <div class="container">
-
-        <p>1 INSERT</p>
+ <section>       
+        <h3>1. INSERT</h3>
            <div class="highlight">
       <pre style="tab-size: 2"><code class="language-postgresql">
 CREATE TABLE IF NOT EXISTS heros (
@@ -151,16 +388,94 @@ INSERT INTO heros VALUES ('superman'), ('aquaman'), ('mera'), ('flash');
 -- 4 forma insertar en seleccionar (primero se ejecuta el select, luego el insert)
 INSERT INTO heros (name) SELECT ('batman');
 -- 5 forma insertar el resultado de una query de una tabla en otra tabla
-INSERT INTO herosDC SELECT name FROM heros WHERE name IN ('mera', 'flash');
+INSERT INTO herosDC SELECT name FROM heros WHERE name IN ('black adam', 'mera', 'flash');
 SELECT name as heros FROM heros;
 SELECT name as herosDC FROM herosDC;
         </code></pre>
       <custom-button></custom-button>
       <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
     </div>
+</section>
+ <section>       
+        <h3>2. SELECT</h3>
+ <h4>Sintaxis</h4>
+<div class="highlight">
+<pre style="tab-size: 2"><code class="language-postgresql">
+SELECT column1, column2, ...
+FROM table_name
+[where condition]; 
+</code></pre></div>
+           <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+
+COPY heros (name) FROM stdin;
+afrodita
+aquaman
+batman
+deadman
+deadshot
+eviless
+lex luthor
+thor
+superman
+flash
+krypto
+joker
+\.
+-- 1. Seleccionar todos los campos (el comodín * no es recomendado)
+SELECT * FROM heros;
+-- 2. Seleccionar campos por campo (lo ideal)
+SELECT id, name as heros FROM heros;
+-- 3. Selccionar campos condicionadamente
+SELECT id, name as heros 
+FROM heros
+WHERE LEFT(name, 1) IN ('a', 'e', 'i', 'o', 'u');
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
+</section>
+ <section>       
+        <h3>3. UPDATE</h3>
+ <h4>Sintaxis</h4>
+<div class="highlight">
+<pre style="tab-size: 2"><code class="language-postgresql">
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre></div>
+           <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+
+COPY heros (name) FROM stdin;
+afroman
+aquamon
+batmin
+\.
+-- 1. ACTUALIZAMOS el registro 1  
+UPDATE heros SET name='afrodita' WHERE name='afroman';
+-- 2. ACTUALIZAMOS el registro 2
+UPDATE heros SET name='aquaman' WHERE name='aquamon';
+-- 3. ACTUALIZAMOS el registro 3
+UPDATE heros SET name='batman' WHERE name='batmin';
+-- 3. Vemos el cambio 
+SELECT id, name as heros FROM heros;
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
+</section>
       </div>
     </enidev-details>
-    <h3>Constraint CHECK</h3>
+    <!-- <h3>Constraint CHECK</h3>
     <p>
       El <strong>contraint CHECK</strong> nos permite limitar el rango de valores que se puede colocar en una columna.
     </p>
@@ -168,9 +483,9 @@ SELECT name as herosDC FROM herosDC;
     <p>EL siguiente código SQL crea un <strong>constraint CHECK</strong> en la columna <strong>rol</strong> cuando se
       crea la tabla "Usuarios". El <strong>constraint CHECK</strong> asegura que el rol de un usuario puede ser
       "<strong>usuario</strong>" o "<strong>administrador</strong>", si intentas registrar un valor diferente obtendrá
-      un error:</p>
+      un error:</p> -->
     <!--TABLA USUARIOS-->
-    <div class="highlight">
+    <!-- <div class="highlight">
       <pre style="tab-size: 2"><code class="language-postgresql">
 CREATE TABLE IF NOT EXISTS usuarios (
   id SERIAL PRIMARY KEY,
@@ -192,9 +507,7 @@ SELECT * FROM usuarios;
         </code></pre>
       <custom-button></custom-button>
       <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-    </div>
-
-
+    </div> -->
   </article>
   <script src="./highlight/highlight.min.js"></script>
   <script>

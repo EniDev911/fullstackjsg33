@@ -12,7 +12,11 @@ template.innerHTML = /*html*/
     border: none;
     cursor: pointer;
   }
-
+  @media(max-width: 768px){
+    button {
+        display: none;
+    }
+  }
 </style>
  <button>
  </button>

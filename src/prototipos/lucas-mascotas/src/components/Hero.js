@@ -6,6 +6,7 @@ template.innerHTML = /*html*/`
         width: 100%;
         margin-top: 100px;
         padding-bottom: 60px;
+        overflow: hidden;
     }
     .container__cover {
         max-width: 1200px;
@@ -40,7 +41,6 @@ template.innerHTML = /*html*/`
         position: relative;
         max-width: 600px;
         width: 600px;
-        border: 1px solid red;
     }
     .container__vector img {
         position: absolute;
