@@ -28,7 +28,6 @@ template.innerHTML = /*html*/`
         justify-content: center;
         align-items: center;
         height: 100%;
-        border: 1px solid red;
         color: #ccc;
     }
     header .logo img {
@@ -63,7 +62,9 @@ template.innerHTML = /*html*/`
         color: #f6f6f6;
         text-decoration: none;
         font-size: 14px;
-        transition: padding .2s ease-in-out;
+        transition-property: padding background;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.5, .09, .1, -.8);
         -webkit-user-select: none; /* Safari */
         -ms-user-select: none; /* IE 10 and IE 11 */
         user-select: none; /* Standard syntax */
@@ -95,6 +96,10 @@ template.innerHTML = /*html*/`
         background:#000;
     }
     @media(max-width:760px){
+        .container__header {
+            display: flex;
+            align-items: center;
+        }
         .btn__menu {
             display:flex;
         }
@@ -106,12 +111,15 @@ template.innerHTML = /*html*/`
             top:0;
             right: 0;
             padding: 0 40px;
+            display: none;
         }
         nav ul {
             flex-direction: column;
-            justify-content: center;
-            align-items: space-evenly;
         }
+        nav ul li {
+            margin: 20px 0;
+        }
+
     } 
 </style>
 <header>
@@ -135,33 +143,39 @@ template.innerHTML = /*html*/`
 `
 
 class Header extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: 'open'})
+        this.attachShadow({ mode: 'open' })
     }
-    connectedCallback(){
+    connectedCallback() {
         this.shadowRoot.appendChild(template.content.cloneNode(true))
         this.shadowRoot.querySelectorAll("a").forEach(link => {
             link.addEventListener('click', (e) => this.selectOption(e.target))
             console.log(link)
         })
+        this.shadowRoot.querySelector("button").addEventListener("click", this.collapseMenu);
         window.onscroll = () => {
             this.changeOnScroll();
         }
     }
 
-    selectOption(currentLink){
+    selectOption(currentLink) {
         this.shadowRoot.querySelectorAll("a").forEach(link => {
             link === currentLink ? link.classList.add("select") : link.classList.remove("select")
         })
     }
 
-    changeOnScroll(){
+    changeOnScroll() {
         const scroll = document.documentElement.scrollTop;
         const header = this.shadowRoot.querySelector("header");
         scroll > 20 ? header.classList.add("nav_mod") : header.classList.remove("nav_mod")
     }
-        
+
+    collapseMenu() {
+        const nav = this.shadowRoot.querySelector("nav");
+        nav.style.display = "flex";
+    }
+
 }
 
 customElements.define('custom-header', Header)
