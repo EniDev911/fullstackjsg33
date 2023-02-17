@@ -2,6 +2,9 @@
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
+    <!-- ogp : Meta Titulo -->
+  <meta property="og:title" content="PostgreSQL: CheatSheet">
+  <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/blog.forestadmin.com/2022/05/FA-article-PostgreSQL-cheatsheet--1-.png">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +13,11 @@
   <link rel="stylesheet" href="./highlight/styles/base16/default-dark.min.css">
   <link rel="stylesheet" href="./index.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    h4 {
+      margin: 15px 0;
+    }
+  </style>
 </head>
 
 <body class="dark">
@@ -214,7 +222,8 @@ DROP TABLE users;
 <!-- DML -->
     <enidev-details data-title="Comandos DML (Data Manipulation Language)" data-lang="postgresql">
       <div class="container">
-        <p>1 INSERT</p>
+ <section>       
+        <h3>1. INSERT</h3>
            <div class="highlight">
       <pre style="tab-size: 2"><code class="language-postgresql">
 CREATE TABLE IF NOT EXISTS heros (
@@ -239,6 +248,50 @@ SELECT name as herosDC FROM herosDC;
       <custom-button></custom-button>
       <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
     </div>
+</section>
+ <section>       
+        <h3>2. SELECT</h3>
+ <h4>Sintaxis</h4>
+<div class="highlight">
+<pre style="tab-size: 2"><code class="language-postgresql">
+SELECT column1, column2, ...
+FROM table_name
+[where condition]; 
+</code></pre></div>
+           <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+
+COPY heros (name) FROM stdin;
+afrodita
+aquaman
+batman
+deadman
+deadshot
+eviless
+lex luthor
+thor
+superman
+flash
+krypto
+joker
+\.
+-- 1. Seleccionar todos los campos (el comodín * no es recomendado)
+SELECT * FROM heros;
+-- 2. Seleccionar campos por campo (lo ideal)
+SELECT id, name as heros FROM heros;
+-- 3. Selccionar campos condicionadamente
+SELECT id, name as heros 
+FROM heros
+WHERE LEFT(name, 1) IN ('a', 'e', 'i', 'o', 'u');
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
+</section>
       </div>
     </enidev-details>
     <!-- <h3>Constraint CHECK</h3>
