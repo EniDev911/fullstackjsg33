@@ -28,7 +28,6 @@ template.innerHTML = /*html*/`
         justify-content: center;
         align-items: center;
         height: 100%;
-        border: 1px solid red;
         color: #ccc;
     }
     header .logo img {
@@ -41,7 +40,8 @@ template.innerHTML = /*html*/`
     }
     nav {
         height: 100%;
-        border: 1px solid red;
+        transition: right .2s ease;
+        z-index: -1;
     }
     nav ul {
         height: 100%;
@@ -82,6 +82,7 @@ template.innerHTML = /*html*/`
     }
     .btn__menu:hover {
         background:#333;
+        z-index: 999;
     }
     .select {
         background: #00ceba;;
@@ -94,24 +95,39 @@ template.innerHTML = /*html*/`
         box-shadow: 1px 1px 10px 0px #00000010;
         background:#000;
     }
+    .show_menu {
+        right: 0;
+    }
+
     @media(max-width:760px){
+        .container__header {
+            display: flex;
+            align-items: center;
+        }
         .btn__menu {
             display:flex;
         }
         nav {
             height: 100%;
             background:#111;
-            width: 100%;
             position:fixed;
             top:0;
-            right: 0;
-            padding: 0 40px;
+            width: 100%;
+            right: -100%;
+            padding: 0 10px;
+            border: 1px solid red;
         }
         nav ul {
             flex-direction: column;
-            justify-content: center;
-            align-items: space-evenly;
         }
+        nav ul li {
+            flex-basis: 20%;
+            border: 1px solid red;
+        }
+        .select {
+            border-radius: 0px;
+        }
+
     } 
 </style>
 <header>
@@ -129,7 +145,7 @@ template.innerHTML = /*html*/`
                 </ul>
             </nav>
         </div>
-        <div class="btn__menu"><i class="fas fa-bars" style="color: #fff;"></i></div>
+        <div class="btn__menu" id="menu"><i class="fas fa-bars" style="color: #fff;"></i></div>
     </div>
 </header>
 `
@@ -144,6 +160,9 @@ class Header extends HTMLElement {
         this.shadowRoot.querySelectorAll("a").forEach(link => {
             link.addEventListener('click', (e) => this.selectOption(e.target))
             console.log(link)
+        })
+        this.shadowRoot.getElementById("menu").addEventListener("click", () => {
+            this.showMenu();
         })
         window.onscroll = () => {
             this.changeOnScroll();
@@ -161,7 +180,11 @@ class Header extends HTMLElement {
         const header = this.shadowRoot.querySelector("header");
         scroll > 20 ? header.classList.add("nav_mod") : header.classList.remove("nav_mod")
     }
-        
+
+    showMenu(){
+        const nav = this.shadowRoot.querySelector("nav");
+        nav.classList.toggle("show_menu");
+    }
 }
 
 customElements.define('custom-header', Header)

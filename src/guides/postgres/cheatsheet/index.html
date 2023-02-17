@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
   <meta charset="UTF-8">
@@ -9,12 +9,12 @@
   <script src="../../index.js" type="module"></script>
   <link rel="stylesheet" href="./highlight/styles/base16/default-dark.min.css">
   <link rel="stylesheet" href="./index.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body class="dark">
   <article class="doc dark">
     <h1>Cheatsheet PostgreSQL</h1>
-
     <enidev-details data-title="Funciones Matemática" data-lang="postgresql">
       <div class="container">
       <!-- ABS -->
@@ -129,10 +129,91 @@ SELECT ltrim('911911911enidev911', '911');
       </div>
       </div>
     </enidev-details>
-
+    <!-- DDL -->
+    <enidev-details data-title="Comandos DDL (Data Definition Language)" data-lang="postgresql">
+      <div class="container">
+<section>
+        <h3>1. CREATE</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- 1 primera forma (si ejecutamos 2 veces, tendriamos un error) 
+CREATE TABLE heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- 2 forma (Con la cláusula IF NOT EXISTS evitamos el error)
+CREATE TABLE IF NOT EXISTS herosDC (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- mostrar las tablas creadas
+\dt
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>2. ALTER</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- le añadimos una nueva columna
+ALTER TABLE users ADD age INT;
+-- describimos la tabla 
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>3. TRUNCATE</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- truncamos la tabla (elimina rápidamente todas las filas o tuplas)
+TRUNCATE TABLE users;
+--- truncamos la tabla y reiniciamos el secuanciador auto-incrementable "SERIAL"
+TRUNCATE TABLE users RESTART IDENTITY;
+-- describimos la tabla 
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+<section>
+        <h3>4. DROP</h3>
+            <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+-- creamos una tabla 
+CREATE TABLE users (
+  id SERIAL,
+  name VARCHAR(50)
+);
+-- eliminamos la tabla y con toda su estructura.
+DROP TABLE users;
+-- describimos la tabla (deberíamos obtener un error: Did not find any relation named "users")
+\d users
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>      
+</section> 
+      </div>
+    </enidev-details>
+<!-- DML -->
     <enidev-details data-title="Comandos DML (Data Manipulation Language)" data-lang="postgresql">
       <div class="container">
-
         <p>1 INSERT</p>
            <div class="highlight">
       <pre style="tab-size: 2"><code class="language-postgresql">
@@ -151,7 +232,7 @@ INSERT INTO heros VALUES ('superman'), ('aquaman'), ('mera'), ('flash');
 -- 4 forma insertar en seleccionar (primero se ejecuta el select, luego el insert)
 INSERT INTO heros (name) SELECT ('batman');
 -- 5 forma insertar el resultado de una query de una tabla en otra tabla
-INSERT INTO herosDC SELECT name FROM heros WHERE name IN ('mera', 'flash');
+INSERT INTO herosDC SELECT name FROM heros WHERE name IN ('black adam', 'mera', 'flash');
 SELECT name as heros FROM heros;
 SELECT name as herosDC FROM herosDC;
         </code></pre>
@@ -160,7 +241,7 @@ SELECT name as herosDC FROM herosDC;
     </div>
       </div>
     </enidev-details>
-    <h3>Constraint CHECK</h3>
+    <!-- <h3>Constraint CHECK</h3>
     <p>
       El <strong>contraint CHECK</strong> nos permite limitar el rango de valores que se puede colocar en una columna.
     </p>
@@ -168,9 +249,9 @@ SELECT name as herosDC FROM herosDC;
     <p>EL siguiente código SQL crea un <strong>constraint CHECK</strong> en la columna <strong>rol</strong> cuando se
       crea la tabla "Usuarios". El <strong>constraint CHECK</strong> asegura que el rol de un usuario puede ser
       "<strong>usuario</strong>" o "<strong>administrador</strong>", si intentas registrar un valor diferente obtendrá
-      un error:</p>
+      un error:</p> -->
     <!--TABLA USUARIOS-->
-    <div class="highlight">
+    <!-- <div class="highlight">
       <pre style="tab-size: 2"><code class="language-postgresql">
 CREATE TABLE IF NOT EXISTS usuarios (
   id SERIAL PRIMARY KEY,
@@ -192,9 +273,7 @@ SELECT * FROM usuarios;
         </code></pre>
       <custom-button></custom-button>
       <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-    </div>
-
-
+    </div> -->
   </article>
   <script src="./highlight/highlight.min.js"></script>
   <script>
