@@ -21,24 +21,33 @@
       line-height: 25px;
     }
     span.num,
-    span.double {
+    span.double,
+    span.str {
       background-color: rgb(11, 92, 95);
       border-radius: 5px;
       padding: 0 3px 5px 3px;
       font-weight: 600;
     }
+
+    span.double {
+      background-color: rgb(61, 143, 211);
+    }
+    span.str {
+      background-color: rgb(204, 127, 11);
+    }
     span.num:before {
       content: 'numeric';
       font-size: 13px;
     }
-    span.double {
-      background-color: rgb(61, 143, 211);
-    }
     span.double:before {
       content: 'double';
       font-size: 13px;
-     }
-
+    }
+    span.str:before {
+      content: 'text';
+      font-size: 13px;
+    }
+    
   </style>
 </head>
 
@@ -141,35 +150,92 @@ SELECT mod(9, 4);
     </enidev-details>
     <enidev-details data-title="Funciones de cadenas" data-lang="postgresql">
       <div class="container">
-      <!-- SUBSTRING -->
-      <p>La función <strong>substring()</strong> nos permite extraer una subcadena</p>
-      <div class="highlight">
-        <pre><code class="language-postgresql">
-SELECT substring('enidev911' from 2 for 3);
-        </code></pre>
-        <custom-button></custom-button>
-        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-      </div>
-      <!--REVERSE-->
-      <p>La función <strong>reverse</strong> nos retorna la cadena en sentido inverso:</p>
-      <div class="highlight">
-        <pre><code class="language-postgresql">
-SELECT reverse('enidev911');
-              </code></pre>
-        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
-        <custom-button></custom-button>
-      </div>
       <!--CHAR_LENGTH-->
-      <p>La función <strong>char_length(str)</strong> o <strong>character_length(str)</strong> nos retorna la longitud de la STR:</p>
+      <p>La función <strong>char_length(<span class="str"></span>)</strong> o <strong>character_length(<span class="str"></span>)</strong> nos retorna la longitud de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
-SELECT char_length('enidev911');
+SELECT char_length('enidev911') as "Cantidad de caracteres";
+SELECT character_length('enidev') as "Cantidad de caracteres";
       </code></pre>
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
+      <!--CHR-->
+      <p>La función <strong>chr(num <span class="num"></span>)</strong> nos retorna el carácter correspondiente al código (ascii) dado en el argumento:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT chr(169), chr(64);
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--CONCAT-->
+      <p>La función <strong>concat(str <span class="str"></span>, [str2 <span class="str"></span>, str3 <span class="str"></span>, ...])</strong> se utiliza para concatenar dos o más cadenas excepto cuando NULL es especificado:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT concat('eni', 'dev', NULL, '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--INITCAP-->
+      <p>La función <strong>initcap(str <span class="str"></span>)</strong> nos retorna STR con la primera letra de cada palabra en mayúscula y el resto a minúsculas:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT initcap('marco antonio contreras herrera');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--OCTET_LENGTH-->
+      <p>La función <strong>octec_length(str <span class="str"></span>)</strong> nos retorna el número de bytes en STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT octet_length('ñ'),octet_length('🧠'), octet_length('❤️');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!-- SPLIT_PART -->
+      <p>La función <strong>split_part(str<span class="str"></span>, delimiter <span class="str"></span>, field_num <span class="num"></span>)</strong> se utiliza para dividir STR dada en función de un delimitador indicado en DELIMITER y selecciona el campo deseado de la cadena indicado en FIELD_NUM, comenzando desde izquierda a derecha:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 1);
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 2);
+SELECT split_part('postgresql-#-mysql-#-oracle', '-#-', 3);
+        </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>    
+      <!-- SUBSTRING -->
+      <p>La función <strong>substring(<span class="str"></span>, str_pos, n_char)</strong> nos permite extraer una subcadena, donde <strong>str_pos</strong> es un <span class="num"></span> para la posición dentro de <span class="str"></span> desde donde comenzará la extracción y <strong>n_char</strong> es un <span class="num"></span> que es la cantidad de caracteres que se quieren extraer:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT substring('enidev911' from 2 for 3) as "Extracto del texto";
+        </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--REPEAT-->
+      <p>La función <strong>repeat(str <span class="str"></span>, n <span class="num"></span>)</strong> nos retorna STR repitida N cantidad de veces:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT repeat('?', 1),repeat('|', 2),repeat('-', 3),repeat('*', 4);
+              </code></pre>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+        <custom-button></custom-button>
+      </div>
+      <!--REVERSE-->
+      <p>La función <strong>reverse(<span class="str"></span>)</strong> nos retorna <span class="str"></span> en sentido inverso:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT reverse('enidev911') as "Texto invertido";
+              </code></pre>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+        <custom-button></custom-button>
+      </div>
       <!--RIGHT-->
-      <p>La función <strong>right(str text, n int)</strong> nos retorna los últimos N caracteres de STR:</p>
+      <p>La función <strong>right(<span class="str"></span>, n <span class="num"></span>)</strong> nos retorna los últimos N caracteres de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT right('enidev911', 2);
@@ -178,7 +244,7 @@ SELECT right('enidev911', 2);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
       <!--LEFT-->
-      <p>La función <strong>left(str text, n int)</strong> nos retorna los primeros N caracteres de STR:</p>
+      <p>La función <strong>left(<span class="str"></span>, n <span class="num"></span>)</strong> nos retorna los primeros N caracteres de <span class="str"></span>:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT left('enidev911', 2);
@@ -187,10 +253,30 @@ SELECT left('enidev911', 2);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
       <!--LTRIM-->
-      <p>La función <strong>ltrim(str text [, characters text])</strong> nos retorna el extracto de CHARACTERS de izquierda a derecha de STR:</p>
+      <p>La función <strong>ltrim(str <span class="str"></span> [, characters <span class="str"></span>])</strong> se utiliza para eliminar espacios en blancos, pero también nos retorna STR recortando el conjunto de caracteres que coincidan con el texto en CHARACTERS de izquierda a derecha:</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
+SELECT ltrim('             enidev911');
 SELECT ltrim('911911911enidev911', '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--RTRIM-->
+      <p>La función <strong>rtrim(str <span class="str"></span> [, characters <span class="str"></span>])</strong> se utiliza para eliminar espacios en blancos, pero también nos retorna STR recortando el conjunto de caracteres que coincidan con el texto en CHARACTERS de derecha a izquierda:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT rtrim('enidev911            ');
+SELECT rtrim('enidev911 911911911', '911');
+      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!--TRANSLATE-->
+      <p>La función <strong>translate(str <span class="str"></span> , match_str <span class="str"></span>, replace_str <span class="str"></span>)</strong> se utiliza para intercambiar cualquier carácter en STR que coincida con MATCH_STR y será intercambiado por su equivalente en la misma posición en REPLACE_STR:</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT translate('anidtav044', '04at', '91e');
       </code></pre>
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
