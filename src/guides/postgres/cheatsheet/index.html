@@ -292,6 +292,40 @@ WHERE LEFT(name, 1) IN ('a', 'e', 'i', 'o', 'u');
       <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
     </div>
 </section>
+ <section>       
+        <h3>3. UPDATE</h3>
+ <h4>Sintaxis</h4>
+<div class="highlight">
+<pre style="tab-size: 2"><code class="language-postgresql">
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre></div>
+           <div class="highlight">
+      <pre style="tab-size: 2"><code class="language-postgresql">
+CREATE TABLE IF NOT EXISTS heros (
+  id SERIAL,
+  name VARCHAR(50)
+);
+
+COPY heros (name) FROM stdin;
+afroman
+aquamon
+batmin
+\.
+-- 1. ACTUALIZAMOS el registro 1  
+UPDATE heros SET name='afrodita' WHERE name='afroman';
+-- 2. ACTUALIZAMOS el registro 2
+UPDATE heros SET name='aquaman' WHERE name='aquamon';
+-- 3. ACTUALIZAMOS el registro 3
+UPDATE heros SET name='batman' WHERE name='batmin';
+-- 3. Vemos el cambio 
+SELECT id, name as heros FROM heros;
+        </code></pre>
+      <custom-button></custom-button>
+      <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+    </div>
+</section>
       </div>
     </enidev-details>
     <!-- <h3>Constraint CHECK</h3>
