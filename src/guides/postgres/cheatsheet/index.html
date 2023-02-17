@@ -17,6 +17,28 @@
     h4 {
       margin: 15px 0;
     }
+    p {
+      line-height: 25px;
+    }
+    span.num,
+    span.double {
+      background-color: rgb(11, 92, 95);
+      border-radius: 5px;
+      padding: 0 3px 5px 3px;
+      font-weight: 600;
+    }
+    span.num:before {
+      content: 'numeric';
+      font-size: 13px;
+    }
+    span.double {
+      background-color: rgb(61, 143, 211);
+    }
+    span.double:before {
+      content: 'double';
+      font-size: 13px;
+     }
+
   </style>
 </head>
 
@@ -26,7 +48,7 @@
     <enidev-details data-title="Funciones Matemática" data-lang="postgresql">
       <div class="container">
       <!-- ABS -->
-      <p>La función <strong>abs()</strong> nos retorna el valor absoluto</p>
+      <p>La función <strong>abs(<span class="num"></span>)</strong> nos retorna el valor absoluto de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT abs(-49);
@@ -34,7 +56,7 @@ SELECT abs(-49);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
-      <p>La función <strong>cbrt()</strong> nos retorna la raíz cúbica</p>
+      <p>La función <strong>cbrt(<span class="num"></span>)</strong> nos retorna la raíz cúbica de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT cbrt(27);
@@ -42,7 +64,7 @@ SELECT cbrt(27);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
-      <p>La función <strong>ceil()</strong> nos retorna el valor entero mayor más cercano</p>
+      <p>La función <strong>ceil(<span class="num"></span>)</strong> nos retorna el valor entero mayor más cercano de <span class="num"></span></p>
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT ceil(20.5);
@@ -50,6 +72,44 @@ SELECT ceil(20.5);
         <custom-button></custom-button>
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
+<!-- DIV -->
+      <p>La función <strong>div(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna el resultado (cociente) de la operación de división de A (dividendo) entre B (divisor).</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT div(9, 4);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- EXP -->
+      <p>La función <strong>exp(<span class="num"></span> OR <span class="double"></span>)</strong> nos retorna la exponenciación de un número como se especifica en el argumento.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT exp(3) as Exponencial;
+SELECT exp(2.2) as Exponencial;
+  </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- FLOOR -->
+      <p>La función <strong>floor(<span class="num"></span> OR <span class="double"></span>)</strong> nos retorna el entero más cercano menor o igual que el argumento.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT floor(5.8);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+<!-- FACTORIAL -->
+      <p>La función <strong>factorial(<span class="num"></span>)</strong> nos retorna el factorial de <span class="num"></span>.</p>
+      <div class="highlight">
+        <pre><code class="language-postgresql">
+SELECT factorial(5);
+                      </code></pre>
+        <custom-button></custom-button>
+        <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
+      </div>
+      <!-- RANDOM -->
       <p>La función <strong>random()</strong> nos retorna un valor aleatorio entre 0.0 y 1.0</p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -59,7 +119,7 @@ SELECT random();
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
 <!-- POWER -->
-    <p>La función <strong>power(a, b)</strong> nos retorna A elevado a la potencia de B
+    <p>La función <strong>power(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna A elevado a la potencia de B
 </p>
       <div class="highlight">
         <pre><code class="language-postgresql">
@@ -69,7 +129,7 @@ SELECT power(5, 4);
         <custom-button data-btn="compiler" data-lang="postgresql" data-ext="sql"></custom-button>
       </div>
 <!-- MOD -->
-    <p>La función <strong>mod(a, b)</strong> nos retorna el módulo (resto) de la operación de división de A (dividendo) entre B (divisor).
+    <p>La función <strong>mod(a <span class="num"></span>, b <span class="num"></span>)</strong> nos retorna el módulo (resto) de la operación de división de A (dividendo) entre B (divisor).
       <div class="highlight">
         <pre><code class="language-postgresql">
 SELECT mod(9, 4);
