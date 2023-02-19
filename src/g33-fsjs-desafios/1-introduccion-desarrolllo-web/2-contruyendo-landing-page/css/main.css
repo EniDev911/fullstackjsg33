@@ -1,0 +1,38 @@
+header {
+  background-color: #9dc;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  height: 100%;
+}
+
+.nav-item {
+  height: 100%;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  padding: 0 20px;
+  transition: all .3s ease;
+}
+
+@media(hover: hover) {
+  .nav-link:hover {
+    background: #04ce5c;
+    color: #f2f2f2;
+  }
+}

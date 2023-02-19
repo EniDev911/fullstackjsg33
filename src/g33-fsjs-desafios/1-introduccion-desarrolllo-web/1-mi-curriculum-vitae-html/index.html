@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <!-- ogp : Tipo de contenido -->
+    <meta property="og:type" content="website">
+    <!-- ogp : Meta URL -->
+    <meta property="og:url"
+        content="https://enidev911.github.io/fullstackjsg33/src/g33-fsjs-desafios/introduccion-desarrollo-web/mi-curriculum-vitae-html/index.html" />
+    <!-- ogp : Meta Titulo -->
+    <meta property="og:title" content="Desafío 1: Curriculum HTML">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi curriculum Vitae</title>
+    <link rel="stylesheet" href="./assets/print.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <h1>Curriculum Vitae</h1>
+        <img src="./assets/perfil.jpg" width="260" alt="cv photo"><br>
+        <h2>Marco Contreras</h2>
+    </header>
+    <!-- end header -->
+    <!-- main content -->
+    <main>
+        <!-- profile section -->
+        <section>
+            <h3>Profile</h3>
+            <p>Chilean programmer, graduated in Computer Programming, I have several years of experience in web
+                development. Passionate about new technologies and especially the Javascript ecosystem. I am currently a
+                freelance developer and I am always willing to learn and share knowledge. I focus a lot on carrying out
+                good development practices, both standards and compatibility.</p>
+        </section>
+        <!-- end section -->
+        <hr>
+        <!-- contact section -->
+        <section>
+            <h3>Contact</h3>
+            <ul>
+                <li>
+                    <img src="./assets/user.png" width="18" height="14" alt="icon">
+                    <strong>Full name</strong> : Marco Contreras
+                </li>
+                <li>
+                    <img src="./assets/email.png" width="18" height="14" alt="icon">
+                    <strong>Mail:</strong> <a href="mailto:enidev911@gmail.com"
+                        title="send mail">enidev911@gmail.com</a>
+                </li>
+                <li>
+                    <img src="./assets/map.png" width="18" height="14" alt="icon">
+                    <strong>Place of birth:</strong> Iquique - Chile
+                </li>
+                <li>
+                    <img src="./assets/github.png" width="18" alt="icon">
+                    <strong>Github:</strong> <a href="//github.com/enidev911" target="_blank"
+                        title="Go to github">enidev911</a>
+                </li>
+                <li>
+                    <img src="./assets/home.png" width="18" height="14" alt="icon">
+                    <strong>Address:</strong> Av. Suecia 327, Coquimbo
+                </li>
+            </ul>
+        </section>
+        <!-- end section -->
+        <hr>
+        <!-- section education -->
+        <section>
+            <h3>Education</h3>
+            <ul>
+                <li><strong>2019:</strong> Degree in computer programming from the AIEP professional institute.</li>
+                <strong>2009:</strong> I finished my high school at little college.
+                </li>
+            </ul>
+        </section>
+        <hr>
+        <!-- experience section -->
+        <section>
+            <h3>Experience</h3>
+            <ul>
+                <li>
+                    <strong>Date:</strong> 2020 - PRESENT<br>
+                    <strong>Company:</strong> ENIDEV911<br>
+                    <strong>Rol:</strong>Fullstack pern developer<br>
+
+                    <p><strong>Description:</strong> Manage complete developments, working based on customer
+                        requirements and specifications,
+                        preparing detailed
+                        documentation on the analysis and progress of the projects.</p>
+                </li>
+                <li style="list-style: none;">
+                    <hr>
+                </li>
+                <li>
+                    <strong>Date:</strong> APRIL 2019 - FEBRUARY 2020<br>
+                    <strong>Company:</strong> TD DIGITAL<br>
+                    <strong>Rol:</strong>Fullstack jr java developer<br>
+                    <p><strong>Description:</strong> Effectively tackled complex problems. Implementation and update of
+                        application modules under the direction of senior
+                        software developers. I worked successfully both independently and in a team. Performed automated
+                        testing tasks and built
+                        add-on features on a routine basis.</p>
+                </li>
+                <li style="list-style: none;">
+                    <hr>
+                </li>
+                <li>
+                    <strong>Date:</strong> JANUARY 2018 - JANUARY 2019<br>
+                    <strong>Company:</strong> POLISOFT<br>
+                    <strong>Rol:</strong>Jr Frontend<br>
+                    <p><strong>Description:</strong> Productive collaboration with team to understand business
+                        requirements and specifications around product stewardship.</p>
+                </li>
+            </ul>
+        </section>
+        <!-- print button -->
+        <button style="position: absolute; top:20px; right:30px;" onclick="{window.print()}">
+            <img src="./assets/print.png" alt="icon" width="30px">
+        </button>
+        <!-- google translate -->
+        <div id="google_translate_element" style="position: absolute; top: 20px; right: 120px;"></div>
+    </main>
+    <!-- end main -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es,en',
+                //OPTION LAYOUT : HORIZONTAL
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+                gaTrack: true
+            },
+                'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

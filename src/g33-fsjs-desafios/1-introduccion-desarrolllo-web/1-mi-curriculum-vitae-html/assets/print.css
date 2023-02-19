@@ -1,0 +1,37 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    img,
+    button,
+    #google_translate_element,
+    .goog-te-banner-frame,
+    .skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    h1,
+    h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    h2:after {
+        content: 'Web Development';
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+    }
+}

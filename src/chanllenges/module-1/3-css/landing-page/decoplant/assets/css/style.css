@@ -1,6 +1,7 @@
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
   width: 100%;
+  max-width: 100%;
 }
 
 .header {
@@ -20,17 +21,22 @@ body {
 
 .products {
   width: 80%;
-  margin: 0;
+  margin: 0 auto;
+}
+
+.products table {
+  border-collapse: collapse;
 }
 
 .products td {
   width: 50%;
   padding: 2em;
+  vertical-align: top;
 }
 
 .products img {
   width: 100%;
-  border: solid 1px #ddd;
+  border: solid 2px #b2ff94;
 }
 
 .footer {
@@ -40,4 +46,28 @@ body {
   color: white;
   text-align: center;
   font-weight: 900;
+}
+
+@media(max-width:768px) {
+  .products {
+    width: 100%;
+  }
+
+  .products tr {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .products tr td {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .products tr td:nth-child(odd) {
+    border: 1px solid red;
+    padding: 1em 0;
+  }
 }
