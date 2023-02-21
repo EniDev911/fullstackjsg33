@@ -4,6 +4,7 @@
     box-sizing: border-box;
     /* scroll-behavior: auto; */
 }
+
 :root {
     --headings: #358;
     --paragraphs: #444;
@@ -12,6 +13,7 @@
     --links: #4163f0;
     --hr: #999;
 }
+
 /* FONTS CODE*/
 @font-face {
     font-family: fa;
@@ -26,10 +28,11 @@
 
 body {
     width: 100%;
-    margin:0;
+    margin: 0;
     background: var(--main-background);
     transition: .3s ease all;
 }
+
 body.dark {
     --paragraphs: hsl(0, 0%, 83%);
     --doc-background: hsl(0, 0%, 15%);
@@ -41,13 +44,21 @@ body.dark {
 /* CUSTOM ELEMENTS*/
 enidev-details {
     display: block;
-    background:var(--doc-background);
+    background: var(--doc-background);
     margin: 0;
     padding: 0;
     border: 2px solid var(--paragraphs);
 }
 
-body .doc-body{
+/* enidev-header enidev-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--paragraphs);
+} */
+
+body .doc-body {
     font-family: encode-sans, sans-serif;
     padding: 45px;
     border: 1px solid #ccc;
@@ -74,7 +85,7 @@ body .doc-body{
     margin: 16px 0;
     background: var(--hr);
     border: 0 none;
-  }
+}
 
 .doc-body figure {
     border: thin #c0c0c0 solid;
@@ -97,7 +108,7 @@ figcaption {
 }
 
 
-  /*ENCABEZADOS*/
+/*ENCABEZADOS*/
 .doc-body h1,
 .doc-body h2,
 .doc-body h3,
@@ -146,6 +157,7 @@ figcaption {
 .doc-body i {
     margin: 0 8px;
 }
+
 /* LISTAS */
 .doc-body ul,
 .doc-body ol {
@@ -157,17 +169,19 @@ figcaption {
     system: fixed;
     symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
     suffix: " ";
-  }
+}
+
 .doc-body ul {
     list-style-type: square;
     list-style-position: inside;
 }
+
 /* KBD */
 .doc-body kbd {
     background-color: #ddd;
     background-image: -moz-linear-gradient(#fefefe, #ccc);
     background-image: -webkit-linear-gradient(#fefefe,
-        #ccc);
+            #ccc);
     background-repeat: repeat-x;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -178,17 +192,17 @@ figcaption {
       monospace; */
     box-shadow: 1px 2px 2px #00000080;
     margin: 0 3px;
-  }
+}
 
 /* MEDIA QUERIES */
-@media(min-width: 992px){
+@media(min-width: 992px) {
     .doc-body {
-        width:90%;
+        width: 90%;
         margin: 30px auto;
     }
 }
 
-@media(min-width: 1200px){
+@media(min-width: 1200px) {
     .doc-body {
         width: 80%;
         font-size: 18px;
@@ -196,7 +210,8 @@ figcaption {
 }
 
 /**HOVER*/
-@media(hover: hover){
+@media(hover: hover) {
+
     .doc-body a:active,
     .doc-body a:hover {
         outline: 0;

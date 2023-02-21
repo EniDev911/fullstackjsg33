@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,11 @@
     <script src="../main.js" type="module"></script>
     <link rel="stylesheet" href="../docs.css">
 </head>
+
 <body>
-    <enidev-button data-btn="theme"></enidev-button>
+    <enidev-header>
+        <enidev-button data-btn="theme"></enidev-button>
+    </enidev-header>
     <main>
         <article class="doc-body">
             <h1>GUÍA HTML5</h1>
@@ -28,16 +32,32 @@
         </article>
         <article class="doc-body">
             <h2 id="que-es-html"><a href="#que-es-html">¿Que es HTML?</a></h2>
-            <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema donde está almacenada esa página web.</p>
-            <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cuál nos mostrará exactamemte el esqueleto (<em>código con las etiquetas contenedoras y su contenido</em>). El navegador normalmente no nos muestra esa información literalmente, sino que interpreta y va dibujando los elementos de una página web.</p>
-            <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado <strong><abbr title="Hypertext Markup Language">HTML</abbr></strong>, que son las siglas de <strong>HyperTextMarkup Language</strong> (<em>Lenguaje de marcado de hypertexto</em>), o que es lo mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo tipo de información.</p>
+            <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que
+                nuestro navegador web está pidiendo un documento de texto al sistema donde está almacenada esa página
+                web.</p>
+            <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la
+                cuál nos mostrará exactamemte el esqueleto (<em>código con las etiquetas contenedoras y su
+                    contenido</em>). El navegador normalmente no nos muestra esa información literalmente, sino que
+                interpreta y va dibujando los elementos de una página web.</p>
+            <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado
+                <strong><abbr title="Hypertext Markup Language">HTML</abbr></strong>, que son las siglas de
+                <strong>HyperTextMarkup Language</strong> (<em>Lenguaje de marcado de hypertexto</em>), o que es lo
+                mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo tipo de información.
+            </p>
             <figure>
-              <img src="./images/html-browser-web.png" alt="como funciona html">
+                <img src="./images/html-browser-web.png" alt="como funciona html">
                 <figcaption>El navegador procesa un documento html y lo interpreta</figcaption>
             </figure>
             <h3 id="que-es-una-etiqueta-html"><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></h3>
-            <p>En el navegador <strong>Chrome</strong>, podemos pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que nos encontramos. Dicho documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje HTML</strong>.</p>
-            <p>Existen muchas etiquetas y cada una se utiliza para contener información y darle cierto <strong>significado a dicha información</strong>, dependiendo de la etiqueta que se trate. Las etiquetas <strong>HTML</strong> tienen la siguiente estructura:</p>
+            <p>En el navegador <strong>Chrome</strong>, podemos pulsar la combinación de teclas
+                <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que nos encontramos. Dicho
+                documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje
+                    HTML</strong>.
+            </p>
+            <p>Existen muchas etiquetas y cada una se utiliza para contener información y darle cierto
+                <strong>significado a dicha información</strong>, dependiendo de la etiqueta que se trate. Las etiquetas
+                <strong>HTML</strong> tienen la siguiente estructura:
+            </p>
             <figure>
                 <img src="./images/etiqueta-html.png" alt="etiqueta-html">
                 <figcaption>Etiqueta HTML, el navegador procesa una etiqueta y muestra su contenido</figcaption>
@@ -45,4 +65,5 @@
         </article>
     </main>
 </body>
+
 </html>
