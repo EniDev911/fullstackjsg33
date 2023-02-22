@@ -39,7 +39,7 @@ class CustomDetails extends HTMLElement {
       summary.style.background = "linear-gradient(#31648c 50%, #11446c 0)"
       shadow.querySelector("details").style.border = "1px solid #ccc"
     }
-    shadow.querySelector("details").setAttribute("open", "true");
+    this.shadowRoot.querySelector("details").setAttribute("open", "true");
   }
 }
 

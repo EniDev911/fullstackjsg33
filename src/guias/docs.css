@@ -11,6 +11,7 @@
     --main-background: #fff;
     --doc-background: #f1f1f1;
     --links: #4163f0;
+    --tags: #306dcb;
     --hr: #999;
 }
 
@@ -29,6 +30,7 @@
 body {
     width: 100%;
     margin: 0;
+    padding-top: 70px;
     background: var(--main-background);
     transition: .3s ease all;
 }
@@ -39,6 +41,7 @@ body.dark {
     --main-background: hsl(0, 0%, 10%);
     --headings: hsl(10, 10%, 90%);
     --links: hsl(10, 100%, 90%);
+    --tags: hsl(257, 41%, 77%);
 }
 
 /* CUSTOM ELEMENTS*/
@@ -49,7 +52,9 @@ enidev-details {
     padding: 0;
     border: 2px solid var(--paragraphs);
 }
-
+/* enidev-button {
+  pointer-events: all;
+} */
 /* enidev-header enidev-button {
     display: flex;
     align-items: center;
@@ -69,6 +74,7 @@ body .doc-body {
     font-weight: 500;
     color: var(--paragraphs);
     background-color: var(--doc-background);
+    
 }
 
 .doc-body a {
@@ -164,7 +170,42 @@ figcaption {
     padding: 0 0 0 2em;
     margin: 20px 0;
 }
+.doc-body ul>ul{
+    margin: 5px 0;
+}
 
+
+
+/*UTILITIES*/
+.html-tag {
+    font-weight: bold;
+    color:  var(--tags);
+}
+.html-tag::before {
+    content: "<";
+ }
+.html-tag::after {
+    content: ">";
+}
+
+.doc-body .highlight {
+    border: 1px solid #ccc;
+    position: relative;
+    pointer-events: none;
+}
+.doc-body .highlight::before {
+    content : 'monokay';
+    pointer-events: all;
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    cursor:pointer;
+    background-color: #306dcb;
+}
+.doc-body .highlight > * {
+    padding: 0;
+    margin: 0;
+}
 @counter-style winners-list {
     system: fixed;
     symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
@@ -178,20 +219,23 @@ figcaption {
 
 /* KBD */
 .doc-body kbd {
-    background-color: #ddd;
-    background-image: -moz-linear-gradient(#fefefe, #ccc);
-    background-image: -webkit-linear-gradient(#fefefe,
-            #ccc);
-    background-repeat: repeat-x;
+    background-color: var(--main-background);
     border-radius: 2px;
     border: 1px solid #ccc;
-    color: #444;
-    padding: 4px 5px 1px 5px;
+    color: var(--paragraphs);
+    font-family: Verdana;
+    font-weight: 600;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     /* font: 13px Consolas, "Liberation Mono", Menlo,
       Courier,
       monospace; */
     box-shadow: 1px 2px 2px #00000080;
     margin: 0 3px;
+    user-select: none;
+    border-radius: 2px 2px 8px 8px;
+    -webkit-user-select: none;
 }
 
 /* MEDIA QUERIES */
@@ -217,4 +261,17 @@ figcaption {
         outline: 0;
         text-decoration: underline;
     }
+}
+/**SELECTIONS */
+.doc-body p::selection,
+.doc-body strong::selection,
+.doc-body a::selection,
+.doc-body em::selection,
+.doc-body h1::selection,
+.doc-body h2::selection,
+.doc-body h3::selection,
+.doc-body h4::selection { 
+    color: var(--main-background); 
+    text-shadow: none;
+    background-color: var(--paragraphs);
 }

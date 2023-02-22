@@ -10,6 +10,8 @@ button {
     width: 28px;
     border: none;
     cursor: pointer;   
+    pointer-events: all;
+    z-index: 3;
 }
 @media(max-width: 768px){
     button {
@@ -36,24 +38,24 @@ class CustomButton extends HTMLElement {
             this.button.style.background = "url(".concat(ASSETS, "codepen.svg", ")")
             this.button.style.right = "55px"
             this.button.title = "Ver en Codepen"
-        } else if (this.getAttribute("data-btn") === "theme") {
-            this.button.style.background = "url(".concat(ASSETS, "sun.svg", ")")
-            this.button.title = "Cambiar modo"
-            this.button.style.position = "fixed"
-            this.button.style.right = "2%"
+        } else if (this.btn === "compiler") {
+            console.log("compiler")
+        } else {
+            this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
+            this.button.title = "Copiar"
         }
         // handleOnclick
         this.button.addEventListener("click", () => {
-            if (this.getAttribute("data-btn") === "codepen") {
+            if (this.btn === "codepen") {
                 this.createPen(this.getAttribute("data-lang"), this.parentNode.firstElementChild.textContent);
-            } else if (this.btn === "theme") {
-                document.body.classList.toggle("dark")
-                if(this.button.style.background.includes('sun.svg')){
-                    this.button.style.background = "url(".concat(ASSETS, "moon.svg", ")")
-                    this.button.style.backgroundSize = "100% 100%"
-                } else {
-                    this.button.style.background = "url(".concat(ASSETS, "sun.svg", ")")
-                }
+            } else if (this.btn === "compiler") {
+              console.log("compiler")
+            } else {
+                this.copyClipboard(this.parentNode.firstElementChild.textContent);
+                this.button.style.background = "url(".concat(ASSETS, "clone-solid.svg", ")")
+                setTimeout(() => {
+                    this.button.style.background = "url(".concat(ASSETS, "clone-regular.svg", ")")
+                }, 1000)
             }
         })
     }
@@ -73,6 +75,29 @@ class CustomButton extends HTMLElement {
         form.submit();
         this.shadowRoot.removeChild(form);
     }
+    copyClipboard(content) {
+        if (typeof content != "string") {
+            throw TypeError("El argumento debe ser un String");
+        }
+        const areaText = document.createElement("textarea");
+        areaText.value = content.trim();
+        areaText.setAttribute("readonly", "");
+        areaText.style.position = "absolute";
+        areaText.style.left = "-9999px";
+        this.shadowRoot.appendChild(areaText);
+        const selection = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+
+        areaText.select();
+        document.execCommand("copy");
+        this.shadowRoot.removeChild(areaText);
+
+        if (selection) {
+            document.getSelection().removeAllRanges();
+            document.getSelection().addRange(selection);
+        }
+    }
+
+
 }
 
 customElements.define('enidev-button', CustomButton);    

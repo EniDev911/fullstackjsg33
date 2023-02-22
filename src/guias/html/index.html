@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia HTML</title>
     <script src="../main.js" type="module"></script>
+    <link rel="stylesheet" href="../../public/css/themes/panda-syntax-dark.min.css">
     <link rel="stylesheet" href="../docs.css">
 </head>
 
 <body>
     <enidev-header>
-        <enidev-button data-btn="theme"></enidev-button>
+        <enidev-switch></enidev-switch>
     </enidev-header>
     <main>
         <article class="doc-body">
@@ -23,9 +24,14 @@
                     <li>
                         <a href="#que-es-html">¿Qué es HTML?</a>
                     </li>
-                    <li>
-                        <a href="#que-es-una-etiqueta-html">¿Qué es un etiqueta HTML?</a>
-                    </li>
+                    <ul>
+                        <li>
+                            <a href="#que-es-una-etiqueta-html">¿Qué es un etiqueta HTML?</a>
+                        </li>
+                        <li>
+                            <a href="#que-es-la-semantica">¿Qué es la semántica?</a>
+                        </li>
+                    </ul>
                 </ul>
             </enidev-details>
             <hr>
@@ -48,6 +54,7 @@
                 <img src="./images/html-browser-web.png" alt="como funciona html">
                 <figcaption>El navegador procesa un documento html y lo interpreta</figcaption>
             </figure>
+            <hr>
             <h3 id="que-es-una-etiqueta-html"><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></h3>
             <p>En el navegador <strong>Chrome</strong>, podemos pulsar la combinación de teclas
                 <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que nos encontramos. Dicho
@@ -62,6 +69,41 @@
                 <img src="./images/etiqueta-html.png" alt="etiqueta-html">
                 <figcaption>Etiqueta HTML, el navegador procesa una etiqueta y muestra su contenido</figcaption>
             </figure>
+            <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<em>en el ejemplo
+                    ilustrado anteriormente, es incorrecto utilizar la etiqueta
+                    <strong>&lt;&lt;etiqueta&gt;&gt;</strong></em>). En su lugar, existen una serie de etiquetas
+                concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar
+                según requiera la ocasión. Por norma general en <strong>HTML5</strong>, las etiquetas deben cerrarse
+                para indicar donde finaliza su contenido.</p>
+            <hr>
+            <h3 id="que-es-la-semantica"><a href="#que-es-la-semantica">¿Qué es la semántica?</a></h3>
+            <p>Uno de los <strong>principales objetivos de HTML5</strong> es introducir información en un documento de
+                forma que sea semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse
+                para el <strong>apartado de presentación</strong>, que se gestiona desde el <a
+                    href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><strong>lenguaje
+                        CSS</strong></a>. En el documento de <strong>HTML5</strong> debe aparecer información
+                correctamente individualizada, de modo que leer una <strong>página HTML</strong> comprendamos su
+                significado, y si queremos cambiar la apariencia, lo hagamos desde <strong>CSS</strong>. Esto es lo que
+                comúnmente se conoce como <strong>separación de la presentación del contenido</strong>.</p>
+            <p>Un ejemplo donde se ve claramente esto es con la etiqueta <span class="html-tag">b</span> de
+                <strong>HTML4</strong> y versiones anteriores. Dicha etiqueta se utilizaba para poner en
+                <strong>bold</strong> (<em>negrita</em>) un texto específico:</p>
+            <div class="highlight">
+                <pre><code class="language-html">
+&lt;p&gt;Hola, quiero resaltar esta &lt;b&gtpalabra&lt;/b&gt;.&lt;p&gt; 
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+            </div>
+            <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el <strong>HTML</strong>, algo que no se debe hacer en <strong>HTML5</strong>. La misión en <strong>HTML5</strong> es la de mantener sólo contenido de información con valor semántico. Por ello, la forma correcta de hacer lo mismo que en el ejemplo anterior para <strong>HTML5</strong> es la siguiente:</p>
+            <div class="highlight">
+                <pre><code class="language-html">
+&lt;p&gt;Hola, quiero resaltar esta &lt;strong&gtpalabra&lt;/strong&gt;.&lt;p&gt; 
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+            </div>
+            <p>En este nuevo ejemplo, se remplaza la etiqueta <span class="html-tag">b</span> (<em>negrita, característica de presentación sin información semántica</em>) por <span class="html-tag">strong</span>, una etiqueta que indica información semántica (<em><strong>importante</strong>, característica semántica</em>)</p>
         </article>
     </main>
 </body>

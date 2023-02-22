@@ -1,4 +1,6 @@
-const GUIAS = import.meta.url.substring(0, import.meta.url.lastIndexOf("/") + 1).concat("../", "guias/");
+const GUIAS = import.meta.url.substring(0, import.meta.url.lastIndexOf("/") + 1).concat("../", "guias/"),
+      BLOG =  'blog',
+      CONTACTO = 'contacto'
 const template = document.createElement("template");
 template.innerHTML = /*html*/`
 <style>
@@ -6,8 +8,9 @@ template.innerHTML = /*html*/`
     position: fixed;
     top:0;
     width: 100%;
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
+    z-index: 2;
   }
   .navbar {
     display: flex;
@@ -19,6 +22,10 @@ template.innerHTML = /*html*/`
   }
   nav.menu {
     height: 100%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
   .nav {
     display: flex;
@@ -30,7 +37,6 @@ template.innerHTML = /*html*/`
     width: 100%;
     transition: transform .2s ease;
     padding:0;
-    margin: 0 auto;
  }
  .nav li {
   height: 100%;
@@ -43,7 +49,9 @@ template.innerHTML = /*html*/`
   width:100%;
   align-items: center;
   text-decoration: none;
+  color: var(--links);
   margin: 0 20px;
+  font-family: sans-serif;
  }
 
 
@@ -54,6 +62,8 @@ template.innerHTML = /*html*/`
   }
   .nav {
     flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     width: auto;
     transform: translateX(0);
   }
@@ -66,8 +76,8 @@ template.innerHTML = /*html*/`
   <slot></slot>
     <ul class="nav">
       <li><a href=${GUIAS} class="nav-link">Guias</a></li>
-      <li><a href="../">Blog</a></li>
-      <li><a href="../">Contacto</a></li>
+      <li><a href=${BLOG}>Blog</a></li>
+      <li><a href=${CONTACTO}>Contacto</a></li>
     <ul>
   </nav>
 </div>
