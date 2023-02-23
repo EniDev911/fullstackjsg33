@@ -10,7 +10,7 @@ template.innerHTML = /*html*/`
     width: 100%;
     background-color: rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index: 3;
   }
   .navbar {
     display: flex;
@@ -84,7 +84,7 @@ template.innerHTML = /*html*/`
 </header>
 `
 
-class CustomHeader extends HTMLElement {
+export class CustomHeader extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' })
@@ -94,5 +94,3 @@ class CustomHeader extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
-
-customElements.define('enidev-header', CustomHeader);

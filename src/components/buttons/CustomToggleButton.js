@@ -46,8 +46,7 @@ template.innerHTML = /*html*/`
     <label for="toggle" class="switch"></label>
 </div>
 `
-customElements.define('enidev-switch',
-class CustomToggleButton extends HTMLElement {
+export class CustomToggleButton extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode : 'open'});
@@ -74,4 +73,3 @@ class CustomToggleButton extends HTMLElement {
         document.body.classList.toggle("dark");
     }
 }
-)

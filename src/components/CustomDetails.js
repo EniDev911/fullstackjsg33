@@ -22,7 +22,7 @@ template.innerHTML = /*html*/ `
 </details>
 `;
 
-class CustomDetails extends HTMLElement {
+export class CustomDetails extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -42,5 +42,3 @@ class CustomDetails extends HTMLElement {
     this.shadowRoot.querySelector("details").setAttribute("open", "true");
   }
 }
-
-customElements.define("enidev-details", CustomDetails);

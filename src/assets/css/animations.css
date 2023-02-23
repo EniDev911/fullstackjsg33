@@ -1,0 +1,4 @@
+@keyframes change-color {
+    from { transform: scale(1); }  /* Primer fotograma */
+    to { transform: scale(1.2); }  /* Segundo y último fotograma */
+}

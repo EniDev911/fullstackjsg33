@@ -1,12 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía HTML5 General</title>
+    <title>Guia HTML</title>
+    <script src="./index.js" type="module"></script>
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-    <script type="module" src="./index.js"></script>
+    <enidev-header>
+        <enidev-switch></enidev-switch>
+    </enidev-header>
+    <main>
+        <article class="doc-body">
+            <h1 align="center">GUÍA GENERAL HTML5</h1>
+            <a name="top" id="top"></a>
+            <enidev-details data-title="Introducción a HTML5">
+                <ul>
+                    <li>
+                        <a href="#que-es-html">¿Qué es HTML?</a>
+                        <ul>
+                            <li>
+                                <a href="#que-es-una-etiqueta-html">¿Qué es un etiqueta HTML?</a>
+                            </li>
+                            <li>
+                                <a href="#que-es-la-semantica">¿Qué es la semántica?</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#estructura-de-una-etiqueta">Estructura de una etiqueta</a>
+                        <ul>
+                            <li>
+                                <a href="#etiqueta-html">Etiqueta HTML</a>
+                            </li>
+                            <li>
+                                <a href="#atributo">Atributo</a>
+                            </li>
+                            <li>
+                                <a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a>
+                            </li>
+                            <li>
+                                <a href="#comentario-html">Comentario HTML</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </enidev-details>
+            <hr>
+        </article>
+        <article class="doc-body">
+            <h2 id="que-es-html"><a href="#que-es-html">¿Que es HTML?</a></h2>
+            <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que
+                nuestro navegador web está pidiendo un documento de texto al sistema donde está almacenada esa página
+                web.</p>
+            <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la
+                cuál nos mostrará exactamemte el esqueleto (<em>código con las etiquetas contenedoras y su
+                    contenido</em>). El navegador normalmente no nos muestra esa información literalmente, sino que
+                interpreta y va dibujando los elementos de una página web.</p>
+            <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado
+                <strong><abbr title="Hypertext Markup Language">HTML</abbr></strong>, que son las siglas de
+                <strong>HyperTextMarkup Language</strong> (<em>Lenguaje de marcado de hypertexto</em>), o que es lo
+                mismo, un lenguaje de etiqueta que permite incluir o hacer referencia a todo tipo de información.
+            </p>
+            <figure>
+                <img src="./images/html-browser-web.png" alt="como funciona html">
+                <figcaption>El navegador procesa un documento html y lo interpreta</figcaption>
+            </figure>
+            <hr>
+            <h3 id="que-es-una-etiqueta-html"><a href="#que-es-una-etiqueta-html">¿Qué es una etiqueta HTML?</a></h3>
+            <p>En el navegador <strong>Chrome</strong>, podemos pulsar la combinación de teclas
+                <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que nos encontramos. Dicho
+                documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje
+                    HTML</strong>.
+            </p>
+            <p>Existen muchas etiquetas y cada una se utiliza para contener información y darle cierto
+                <strong>significado a dicha información</strong>, dependiendo de la etiqueta que se trate. Las etiquetas
+                <strong>HTML</strong> tienen la siguiente estructura:
+            </p>
+            <figure>
+                <img src="./images/etiqueta-html.png" class="filter" alt="etiqueta-html">
+                <figcaption>Etiqueta HTML, el navegador procesa una etiqueta y muestra su contenido</figcaption>
+            </figure>
+            <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<em>en el ejemplo
+                    ilustrado anteriormente, es incorrecto utilizar la etiqueta
+                    <strong>&lt;&lt;etiqueta&gt;&gt;</strong></em>). En su lugar, existen una serie de etiquetas
+                concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar
+                según requiera la ocasión. Por norma general en <strong>HTML5</strong>, las etiquetas deben cerrarse
+                para indicar donde finaliza su contenido.</p>
+            <hr>
+            <h3 id="que-es-la-semantica"><a href="#que-es-la-semantica">¿Qué es la semántica?</a></h3>
+            <p>Uno de los <strong>principales objetivos de HTML5</strong> es introducir información en un documento de
+                forma que sea semántico y no visual. Esto quiere decir que todos los aspectos visuales deben dejarse
+                para el <strong>apartado de presentación</strong>, que se gestiona desde el <a
+                    href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><strong>lenguaje
+                        CSS</strong></a>. En el documento de <strong>HTML5</strong> debe aparecer información
+                correctamente individualizada, de modo que leer una <strong>página HTML</strong> comprendamos su
+                significado, y si queremos cambiar la apariencia, lo hagamos desde <strong>CSS</strong>. Esto es lo que
+                comúnmente se conoce como <strong>separación de la presentación del contenido</strong>.</p>
+            <p>Un ejemplo donde se ve claramente esto es con la etiqueta <span class="html-tag">b</span> de
+                <strong>HTML4</strong> y versiones anteriores. Dicha etiqueta se utilizaba para poner en
+                <strong>bold</strong> (<em>negrita</em>) un texto específico:
+            </p>
+            <div class="highlight">
+                <pre><code class="language-html">
+&lt;p&gt;Hola, quiero resaltar esta &lt;b&gtpalabra&lt;/b&gt;.&lt;p&gt; 
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+            </div>
+            <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el
+                <strong>HTML</strong>, algo que no se debe hacer en <strong>HTML5</strong>. La misión en
+                <strong>HTML5</strong> es la de mantener sólo contenido de información con valor semántico. Por ello, la
+                forma correcta de hacer lo mismo que en el ejemplo anterior para <strong>HTML5</strong> es la siguiente:
+            </p>
+            <div class="highlight">
+                <pre><code class="language-html">
+&lt;p&gt;Hola, quiero resaltar esta &lt;strong&gtpalabra&lt;/strong&gt;.&lt;p&gt; 
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+            </div>
+            <p>En este nuevo ejemplo, se remplaza la etiqueta <span class="html-tag">b</span> (<em>negrita,
+                    característica de presentación sin información semántica</em>) por <span
+                    class="html-tag">strong</span>, una etiqueta que indica información semántica
+                (<em><strong>importante</strong>, característica semántica</em>). De esta forma, en el documento
+                <strong>HTML5</strong> sólo se está añadiendo información particular sobre fragmentos de texto, y si
+                queremos dotar de presentación visual, lo haremos desde <strong>CSS</strong>. A modo de ejemplo
+                (<em><strong>¡Ya que esta guía no se trata de CSS!</strong></em>), la forma correcta de hacer los
+                estilos sería la siguiente:
+            </p>
+            <div class="highlight">
+                <pre><code class="language-css">
+strong {
+  font-weight: bold;
+  color: black;
+}
+                    </code></pre>
+                <enidev-button></enidev-button>
+                <enidev-button data-btn="codepen" data-lang="css"></enidev-button>
+            </div>
+            <p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>)
+                independientemente de la información y contenido que existe en <strong>HTML</strong>. Incluso podríamos
+                establecer el mismo estilo en el texto, para que visualmente se vea todo de forma uniforme, pero sin
+                embargo, al leer la página <strong>HTML</strong>, el navegador sabrá siempre que fragmentos de textos
+                son más importantes, aunque compartan el mismo estilo visual.</p>
+            <p>El objetivo de crear documentos <strong>HTML</strong> semánticos es que, aunque estamos acostumbrados a
+                crear páginas para usuarios (<em>o más concretamente para navegadores</em>), cada vez tenemos una
+                internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los
+                <strong>robot</strong> o <strong>crawlers</strong> de buscadores como <a
+                    href="https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=es-419"
+                    target="_blank"><strong>Goooglebot</strong></a> (<em>el robot de búsqueda de Google</em>) que es
+                capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su
+                buscador.
+            </p>
+            <enidev-button data-btn="top"></enidev-button>
+        </article>
+        <article class="doc-body">
+            <h2 id="estructura-de-una-etiqueta"><a href="#estructura-de-una-etiqueta">Estructura de una etiqueta
+                    HTML</a></h2>
+            <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y
+                muchas <strong>etiquetas HTML</strong> que indican que tipo de contenido se va a mostrar en el navegador
+                al cargar la página web.</p>
+            <p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
+            <figure>
+                <img src="./images/etiqueta-estructura.png" class="filter" alt="estructura de etiqueta html">
+                <figcaption>Estructura de una etiqueta HTML, etiqueta de apertura, atributo, contenido, etiqueta de
+                    cierre</figcaption>
+            </figure>
+            <hr>
+            <section>
+                <!--SECTION 1-->
+                <h3 id="etiqueta-html"><a href="#etiqueta-html">Etiqueta HTML</a></h3>
+                <p>La parte esencial de una etiqueta <strong>HTML</strong> es lo que se denomina <strong>etiqueta de
+                        apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocandola entre
+                    los <strong>símbolos mayor y menor que</strong> (<span class="html-tag"> </span>). Aunque no es
+                    terminantemente obligatorio, se
+                    recomienda y <strong>se considera una buena costumbre</strong> escribir <strong>las etiquetas HTML
+                        siempre en minúsculas</strong>.</p>
+                <p>En <strong>HTML5</strong> como mencionamos anteriormente, no se puede colocar cualquier palabra como
+                    etiqueta, sino que existe una serie específica de etiquetas, cada una con una misión y objetivo
+                    diferente. Por ejemplo, la etiqueta <span class="html-tag">strong</span>:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;strong&gt;contenido&lt;/strong&gt;
+                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
+                        etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe de la
+                    misma forma que la etiqueta de apertura, pero con la barra diagonal inmediatamente después del
+                    <strong>símbolo menor que</strong> <span class="html-tag">/ </span>.</p>
+            </section>
+            <hr>
+            <section>
+                <!--SECTION ATRIBUTO -->
+                <h3 id="atributo"><a href="#atributo">Atributo</a></h3>
+                <p>En algunas etiquetas <strong>HTML</strong>, existen algunos atributos específicos (<em>que pueden ser
+                        opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta
+                    (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par
+                    compuesto de <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta,
+                    separándola por espacio y antes del símbolo menor que de la etiqueta de apertura:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;strong id="dato"&gt;contenido&lt;/strong&gt;
+                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>En este caso, la etiqueta sería <span class="html-tag">strong</span>, el atributo
+                    <strong>id</strong>, el valor del atributo id sería <strong>dato</strong>, mientras que el contenido
+                    de la etiqueta es el texto <strong>contenido</strong>. Por otro lado, y al igual que las etiquetas,
+                    cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por
+                    comillas simples, <strong>se recomienda</strong> escribir el valor siempre <strong>entre comillas
+                        dobles</strong>.</p>
+                <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
+                <ul>
+                    <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle
+                        una serie de
+                        valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
+                    <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor
+                        libremente, como
+                        una
+                        dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
+                    <li><strong>Valores booleanos:</strong> Son los atributos que deben tener un valor verdadero
+                        (<em>true</em>) o
+                        un
+                        valor falso (<em>false</em>). En <strong>HTML5</strong> estos atributos se escriben sin valor
+                        (<em>solo el
+                            atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+                </ul>
+            </section>
+            <hr>
+            <section>
+                <!-- SECTION CONTENIDO DE LA ETIQUETA -->
+                <h3 id="contenido-de-la-etiqueta"><a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a></h3>
+                <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de
+                        cierre</em>)
+                    se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente
+                    ejemplo se ve
+                    como contiene un <strong>fragmento de texto</strong>:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;strong id="dato" class="clase1" lang="es"&gt;contenido&lt;/strong&gt;
+                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Ten en cuenta que una etiqueta puede tener varios <strong>pares atributo-valor</strong>, como se ve
+                    en el
+                    ejemplo anterior, pero
+                    nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría
+                    al anterior.
+                    El
+                    orden de los atributos no importa. Más adelante veremos que tipos de atributos existen y para que
+                    sirven.</p>
+                <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de
+                        etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más claro en los
+                    siguientes
+                    apartados sobre etiquetas. Un posible ejemplo sería el siguiente:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;div id="grupo-principal"&gt;
+  &lt;strong&gt;Contenido importante&lt;/strong&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Podemos observar en el ejemplo anterior que dentro de la etiqueta <span class="html-tag">div</span>
+                    vemos que
+                    no sólo hay un fragmento de
+                    texto, sino que además incluye otra etiqueta, <span class="html-tag">strong</span> en este caso.
+                    Esto ocurre en
+                    las
+                    etiquetas de agrupación, que iremos viendo pronto.</p>
+            </section>
+            <hr>
+            <section>
+                <!-- SECCION COMENTARIO HTML -->
+                <h3 id="comentario-html"><a href="#comentario-html">Comentario HTML</a></h3>
+                <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores.
+                  Se
+                  basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear
+                  la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo
+                  importante o simplemente introducir algún comentario que consideremos relevante:</p>
+                  <div class="highlight">
+                    <pre><code class="language-html">
+&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;
+                    </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto
+                  entre <span style="color: var(--comments);">&lt;!--
+                    --&gt;</span> para que sea ignorado.</p>
+            </section>
+            <enidev-button data-btn="top"></enidev-button>
+        </article>
+    </main>
 </body>
+
 </html>
