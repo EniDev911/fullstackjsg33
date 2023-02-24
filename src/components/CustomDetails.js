@@ -12,9 +12,6 @@ template.innerHTML = /*html*/ `
     background: linear-gradient(#f26626 50%, #ed704b 0);
     color: #fff;  
   }
-  ::host(*) { 
-    border: 1px solid red;
-  } 
 </style>
 <details open>
   <summary></summary>
@@ -39,6 +36,5 @@ export class CustomDetails extends HTMLElement {
       summary.style.background = "linear-gradient(#31648c 50%, #11446c 0)"
       shadow.querySelector("details").style.border = "1px solid #ccc"
     }
-    this.shadowRoot.querySelector("details").setAttribute("open", "true");
   }
 }

@@ -139,7 +139,6 @@ figcaption {
     color: var(--headings);
 }
 
-
 /*MARGENES ELEMENTOS*/
 .doc-body p,
 .doc-body blockquote,
@@ -245,6 +244,7 @@ figcaption {
     .doc-body {
         width: 90%;
         margin: 30px auto;
+        line-height: 30px;
     }
 }
 
@@ -252,6 +252,7 @@ figcaption {
     .doc-body {
         width: 80%;
         font-size: 20px;
+        letter-spacing: 1px;
     }
     .doc-body h1 {
         font-size: 48px;
@@ -263,7 +264,7 @@ figcaption {
         font-size: 28px;
     }
     .doc-body p {
-        line-height: 25px;
+        line-height: 27px;
     }
     .doc-body h1,
     .doc-body h2,

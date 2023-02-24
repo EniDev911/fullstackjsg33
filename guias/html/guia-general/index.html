@@ -48,6 +48,20 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#atributos-comunes">Atributos comunes en HTML</a>
+                        <ul>
+                            <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
+                            <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
+                            <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
+                            <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a>
+                            </li>
+                            <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
+                            <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
+                            <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </enidev-details>
             <hr>
@@ -194,7 +208,8 @@ strong {
                 <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de
                         etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe de la
                     misma forma que la etiqueta de apertura, pero con la barra diagonal inmediatamente después del
-                    <strong>símbolo menor que</strong> <span class="html-tag">/ </span>.</p>
+                    <strong>símbolo menor que</strong> <span class="html-tag">/ </span>.
+                </p>
             </section>
             <hr>
             <section>
@@ -217,7 +232,8 @@ strong {
                     de la etiqueta es el texto <strong>contenido</strong>. Por otro lado, y al igual que las etiquetas,
                     cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por
                     comillas simples, <strong>se recomienda</strong> escribir el valor siempre <strong>entre comillas
-                        dobles</strong>.</p>
+                        dobles</strong>.
+                </p>
                 <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
                 <ul>
                     <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle
@@ -284,24 +300,113 @@ strong {
             <section>
                 <!-- SECCION COMENTARIO HTML -->
                 <h3 id="comentario-html"><a href="#comentario-html">Comentario HTML</a></h3>
-                <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores.
-                  Se
-                  basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la hora de crear
-                  la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo
-                  importante o simplemente introducir algún comentario que consideremos relevante:</p>
-                  <div class="highlight">
+                <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o
+                    programadores.
+                    Se
+                    basa en introducir breves fragmentos de texto que el navegador ignorará y no tendrá en cuenta a la
+                    hora de crear
+                    la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle,
+                    explicar algo
+                    importante o simplemente introducir algún comentario que consideremos relevante:</p>
+                <div class="highlight">
                     <pre><code class="language-html">
 &lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --&gt;
                     </code></pre>
                     <enidev-button></enidev-button>
                     <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
                 </div>
-                <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos de texto
-                  entre <span style="color: var(--comments);">&lt;!--
-                    --&gt;</span> para que sea ignorado.</p>
+                <p>Como se puede ver, para introducir comentarios en el código HTML, basta con escribir los fragmentos
+                    de texto
+                    entre <span style="color: var(--comments);">&lt;!--
+                        --&gt;</span> para que sea ignorado.</p>
             </section>
             <enidev-button data-btn="top"></enidev-button>
         </article>
+        <article class="doc-body">
+            <h2 id="atributos-comunes"><a href="#atributos-comunes">Atributos comunes en HTML</a></h2>
+            <p>Como hemos visto, <strong>HTML</strong> está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene
+                una misión y tarea contendrá cierto contenido relacionado con su misión. Y además tenemos los
+                <strong>atributos</strong>, que son palabras claves de texto que modifican ligeramente el comportamiento
+                de la etiqueta que lo contiene.</p>
+            <p>A continuación, vemos una lista de <strong>atributos comunes</strong> que pueden ser utilizados en
+                <strong>cualquier etiqueta HTML</strong>.</p>
+            <table class="table">
+                <thead>
+                    <th>Atributo</th>
+                    <th>Valor</th>
+                    <th>Descripción</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-id'}"><span
+                                class="td-attribute">id</span></td>
+                        <td data-label="valor"><em>nombre</em></td>
+                        <td data-label="descripción">Establece un identificador a la etiqueta HTML (sólo una por página
+                            con ese
+                            nombre).</td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#clases-etiqueta'}">
+                            <span class="td-attribute">class</span></td>
+                        <td data-label="valor"><em>nombre</em></td>
+                        <td data-label="descripción">Establece una clase (género) a una etiqueta HTML (puede repetirse
+                            por página).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-lang'}"><span
+                                class="td-attribute">lang</span></td>
+                        <td data-label="valor"><em>idioma</em></td>
+                        <td data-label="descripción">Indica el idioma del contenido de la etiqueta HTML.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-translate'}">
+                            <span class="td-attribute">translate</span></td>
+                        <td data-label="valor"><span><strong>yes</strong> | no</span></td>
+                        <td data-label="descripción">Indica si el contenido de la etiqueta es traducible o no.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-title'}">
+                            <span class="td-attribute">title</span></td>
+                        <td data-label="valor"><em>título</em></td>
+                        <td data-label="descripción"><span>Mensaje mostrado en un <strong>tooltip</strong> (aviso
+                                emergente) al
+                                mover el
+                                <strong><em>mouse</em></strong> por encima.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-data'}"><span
+                                class="td-attribute">data-*</span></td>
+                        <td data-label="valor"><em>nombre</em></td>
+                        <td data-label="descripción"><span>Metadatos en la propia etiqueta. Se puede usar cualquier
+                                nombre con
+                                prefijo <span class="td-attribute">data-</span>.</span></td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-accesskey'}">
+                            <span class="td-attribute">accesskey</span></td>
+                        <td data-label="valor"><em>atajo</em></td>
+                        <td data-label="descripción">Combinación de teclas que puede pulsar el usuario para activar el
+                            elemento.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo"><span class="td-attribute">dir</span></td>
+                        <td data-label="valor"><span><strong>ltr</strong> | rtl</span></td>
+                        <td data-label="descripción"><span>Establece la direccionalidad del texto (<em>left to
+                                    right</em> o
+                                <em>right to left</em>)</span></td>
+                    </tr>
+                    <tr>
+                        <td data-label="atributo"><span class="td-attribute">style</span></td>
+                        <td data-label="valor"><em>estilos</em></td>
+                        <td data-label="descripción">Aplica propiedades CSS directamente al elemento en cuestión.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
     </main>
 </body>
 

@@ -175,7 +175,7 @@ body .markdown-body {
   overflow: hidden;
   word-break: normal;
   word-break: keep-all;
-  border-spacing: 2px;
+  border-spacing: 0px;
 }
 
 .markdown-body table th {
