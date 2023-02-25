@@ -1,4 +1,12 @@
 @import '../../../src/assets/css/docs.css';
-@import '../../../src/assets/css/table.css';
 @import '../../../src/assets/css/animations.css';
-@import '../../../src/assets/css/themes/vs2015.min.css'
+@import '../../../src/assets/css/themes/vs2015.min.css';
+
+table {
+    border: 2px solid #ccc;  
+}
+thead {
+    background: linear-gradient(#f26626 50%, #ed704b 0);
+    color: #fff;
+    border-radius: 0;
+}

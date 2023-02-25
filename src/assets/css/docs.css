@@ -150,7 +150,28 @@ figcaption {
     margin-top: 0;
     margin-bottom: 16px;
 }
-
+.doc-body table {
+	display: table;
+	box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2),
+	  0 2px 2px rgba(0, 0, 0, 0.2),
+	  -2px 0 2px rgba(0, 0, 0, 0.2),
+	  0 -2px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	width: 100%;
+	overflow: hidden;
+	word-break: normal;
+	word-break: keep-all;
+	border-spacing: 2px;
+}
+.doc-body table th {
+	font-weight: bold;
+	padding: 10px;
+	background: #26262616;
+}
+.doc-body table tbody td {
+	border: 1px solid #99999920;
+	padding: 8px;
+}
 .doc-body p {
     margin: 20px 0;
     position: relative;
