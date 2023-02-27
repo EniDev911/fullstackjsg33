@@ -327,9 +327,11 @@ strong {
             <p>Como hemos visto, <strong>HTML</strong> está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene
                 una misión y tarea contendrá cierto contenido relacionado con su misión. Y además tenemos los
                 <strong>atributos</strong>, que son palabras claves de texto que modifican ligeramente el comportamiento
-                de la etiqueta que lo contiene.</p>
+                de la etiqueta que lo contiene.
+            </p>
             <p>A continuación, vemos una lista de <strong>atributos comunes</strong> que pueden ser utilizados en
-                <strong>cualquier etiqueta HTML</strong>.</p>
+                <strong>cualquier etiqueta HTML</strong>.
+            </p>
             <table class="table">
                 <thead>
                     <th>Atributo</th>
@@ -347,7 +349,8 @@ strong {
                     </tr>
                     <tr>
                         <td data-label="atributo" class="link" onclick="{window.location.href = '#clases-etiqueta'}">
-                            <span class="td-attribute">class</span></td>
+                            <span class="td-attribute">class</span>
+                        </td>
                         <td data-label="valor"><em>nombre</em></td>
                         <td data-label="descripción">Establece una clase (género) a una etiqueta HTML (puede repetirse
                             por página).
@@ -361,13 +364,15 @@ strong {
                     </tr>
                     <tr>
                         <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-translate'}">
-                            <span class="td-attribute">translate</span></td>
+                            <span class="td-attribute">translate</span>
+                        </td>
                         <td data-label="valor"><span><strong>yes</strong> | no</span></td>
                         <td data-label="descripción">Indica si el contenido de la etiqueta es traducible o no.</td>
                     </tr>
                     <tr>
                         <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-title'}">
-                            <span class="td-attribute">title</span></td>
+                            <span class="td-attribute">title</span>
+                        </td>
                         <td data-label="valor"><em>título</em></td>
                         <td data-label="descripción"><span>Mensaje mostrado en un <strong>tooltip</strong> (aviso
                                 emergente) al
@@ -385,7 +390,8 @@ strong {
                     </tr>
                     <tr>
                         <td data-label="atributo" class="link" onclick="{window.location.href = '#atributo-accesskey'}">
-                            <span class="td-attribute">accesskey</span></td>
+                            <span class="td-attribute">accesskey</span>
+                        </td>
                         <td data-label="valor"><em>atajo</em></td>
                         <td data-label="descripción">Combinación de teclas que puede pulsar el usuario para activar el
                             elemento.
@@ -409,7 +415,35 @@ strong {
             <section>
                 <!-- SECTION ID ATRIBUTO -->
                 <h3 id="atributo-id"><a href="#atributo-id">Atributo id (identificador)</a></h3>
-                <p>En <strong>HTML</strong>, podemos darle un identificador a una etiqueta <strong>HTML</strong> y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong></p>
+                <p>En <strong>HTML</strong>, podemos darle un identificador a una etiqueta <strong>HTML</strong> y de
+                    esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el
+                    nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y
+                    puede contener letras mayúsculas, minúsculas, signos especiales (guión, guión bajo...) o números:
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;div id=&quot;pagina&quot;&gt;
+  &lt;div&gt;Aquí irá anuncio&lt;/div&gt;
+  &lt;div id=&quot;articulo&quot;&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div&gt;Aquí irá anuncio&lt;/div&gt;
+&lt;/div&gt;
+                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que
+                    <strong>sabemos que no se van a repetir en esa misma página</strong>.
+                </p>
+                <p>Uno de los detalles más importantes de los <strong>id</strong>, es que no pueden haber dos con el
+                    mismo nombre en una página. Ejemplos correctos de <strong>id</strong> podrían ser
+                    <strong>&lt;&lt;pagina&gt;&gt;</strong> (<em>para contener toda la página completa</em>) o
+                    <strong>&lt;&lt;header&gt;&gt;</strong> (<em>para contener la parte con el logo y la cabecera de la
+                        página</em>). Lo que debe quedar claro de los <strong>ids</strong>, es que <strong>no se puede
+                        tener el mismo id</strong> en más de una etiqueta <strong>HTML</strong> por página.
+                </p>
+                <enidev-alert>
+                    <p>Hasta que me olvides</p>
+                </enidev-alert>
             </section>
         </article>
 
