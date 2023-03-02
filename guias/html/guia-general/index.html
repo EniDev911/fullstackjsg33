@@ -442,8 +442,32 @@ strong {
                         tener el mismo id</strong> en más de una etiqueta <strong>HTML</strong> por página.
                 </p>
                 <enidev-alert>
-                    <p>Hasta que me olvides</p>
+                    <p>Más adelante en el apartado de <a href="#eblaces">enlaces o hipervínculos</a>, veremos que
+                        también podemos utilizarlo para acceder rápidamente, desde un enlace, a esa sección concreta de
+                        la página.</p>
                 </enidev-alert>
+            </section>
+            <hr>
+            <section>
+                <!-- ATRIBUTO CLASS -->
+                <h3 id="atributo-class"><a href="#atributo-class">Atributo class (clases)</a></h3>
+                <p>Las clases funcionan de forma muy similar a los <strong>id</strong>, pero son mucho más flexibles. En
+                    primer lugar, no tienen la limitación de los <strong>ids</strong>, por lo que su nombre se puede
+                    repetir y no es necesario que aparezca sólo una vez por página.</p>
+                <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos
+                    características comunes. Sigamos con el ejemplo anterior y añadiendole clases (<em>atributo
+                        class</em>) a las etiquetas:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;div id=&quot;pagina&quot;&gt;
+  &lt;div class=&quot;anuncio&quot;&gt;Aquí irá anuncio&lt;/div&gt;
+  &lt;div id=&quot;articulo&quot;&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div class=&quot;anuncio&quot;&gt;Aquí irá anuncio&lt;/div&gt;
+&lt;/div&gt;
+                                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
             </section>
         </article>
 
