@@ -38,7 +38,14 @@ export class CustomAlert extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
   }
+  alert = this.getAttribute("data-alert");
+
   connectedCallback() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.blockquote = this.shadowRoot.querySelector("blockquote");
+    if (this.alert === "danger") {
+      this.blockquote.style.background = "#f4563959";
+      this.blockquote.style.borderLeftColor = "#f4484999"
+    }
   }
 }

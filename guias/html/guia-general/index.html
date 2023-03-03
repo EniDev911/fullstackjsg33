@@ -19,50 +19,44 @@
             <h1 align="center">GUÍA GENERAL HTML5</h1>
             <a name="top" id="top"></a>
             <enidev-details data-title="Introducción a HTML5">
+                <a href="#que-es-html">¿Qué es HTML?</a>
                 <ul>
                     <li>
-                        <a href="#que-es-html">¿Qué es HTML?</a>
-                        <ul>
-                            <li>
-                                <a href="#que-es-una-etiqueta-html">¿Qué es un etiqueta HTML?</a>
-                            </li>
-                            <li>
-                                <a href="#que-es-la-semantica">¿Qué es la semántica?</a>
-                            </li>
-                        </ul>
+                        <a href="#que-es-una-etiqueta-html">¿Qué es un etiqueta HTML?</a>
                     </li>
                     <li>
-                        <a href="#estructura-de-una-etiqueta">Estructura de una etiqueta</a>
-                        <ul>
-                            <li>
-                                <a href="#etiqueta-html">Etiqueta HTML</a>
-                            </li>
-                            <li>
-                                <a href="#atributo">Atributo</a>
-                            </li>
-                            <li>
-                                <a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a>
-                            </li>
-                            <li>
-                                <a href="#comentario-html">Comentario HTML</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#atributos-comunes">Atributos comunes en HTML</a>
-                        <ul>
-                            <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
-                            <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
-                            <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
-                            <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a>
-                            </li>
-                            <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
-                            <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
-                            <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a>
-                            </li>
-                        </ul>
+                        <a href="#que-es-la-semantica">¿Qué es la semántica?</a>
                     </li>
                 </ul>
+                <a href="#estructura-de-una-etiqueta">Estructura de una etiqueta</a>
+                <ul>
+                    <li>
+                        <a href="#etiqueta-html">Etiqueta HTML</a>
+                    </li>
+                    <li>
+                        <a href="#atributo">Atributo</a>
+                    </li>
+                    <li>
+                        <a href="#contenido-de-la-etiqueta">Contenido de la etiqueta</a>
+                    </li>
+                    <li>
+                        <a href="#comentario-html">Comentario HTML</a>
+                    </li>
+                </ul>
+                <li>
+                    <a href="#atributos-comunes">Atributos comunes en HTML</a>
+                    <ul>
+                        <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
+                        <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
+                        <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
+                        <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a>
+                        </li>
+                        <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
+                        <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
+                        <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a>
+                        </li>
+                    </ul>
+                </li>
             </enidev-details>
             <hr>
         </article>
@@ -468,7 +462,126 @@ strong {
                     <enidev-button></enidev-button>
                     <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
                 </div>
+                <p>Como podemos ver, al tener la misma clase <strong>&lt;&lt;anuncio&gt;&gt;</strong>, podemos realizar
+                    acciones para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por
+                    separado. Un ejemplo de eso donde se puede ver bien su utilidad, es respecto a utilizar <strong>ids
+                        y clases para dar estilos CSS</strong>, donde aplicaremos unos estilos concretos a todas las
+                    etiquetas <strong>HTML</strong> que tengan la clase <strong>&lt;&lt;anuncio&gt;&gt;</strong>.</p>
+                <p>Además, una etiqueta puede tener múltiples clases, no una sola. Esto nos da más flexibilidad a la
+                    hora de crear clases específicas:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;div id=&quot;pagina&quot;&gt;
+  &lt;div class=&quot;anuncio primero&quot;&gt;Aquí irá anuncio&lt;/div&gt;
+  &lt;div id=&quot;articulo&quot;&gt;Aquí irá el contenido de texto del artículo&lt;/div&gt;
+  &lt;div class=&quot;anuncio ultimo&quot;&gt;Aquí irá anuncio&lt;/div&gt;
+&lt;/div&gt;
+                                                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Como se puede observar, en la primera etiqueta del anuncio hemos aplicado las clases
+                    <strong>anuncio</strong> y <strong>primero</strong>, mientras que en el último anuncio hemos
+                    aplicado las clases <strong>anuncio</strong> y <strong>ultimo</strong>. Esto nos permitiría asignar
+                    atributos comunes al anuncio en la <strong>clase anuncio</strong>, y atributos que sólo dependan de
+                    la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.
+                </p>
+                <enidev-alert data-alert="danger">
+                    <p>Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro
+                        de un mismo atributo <strong>class</strong>. No se debe nunca indicar varios atributos
+                        <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobrescribir
+                        el valor del último atributo <strong>class</strong> con los primeros.
+                    </p>
+                </enidev-alert>
             </section>
+            <hr>
+            <section>
+                <!-- ATRIBUTO LANG -->
+                <h3 id="atributo-lang"><a href="#atributo-lang">Atributo lang (idioma)</a></h3>
+                <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la estiqueta.
+                    El valor de dicho atributo tendrá que ser el <a href="https://es.wikipedia.org/wiki/ISO_639-1"
+                        target="_blank">código ISO 639-1</a> del idioma al que queremos hacer referencia. Aunque en
+                    principio podemos hacer esto en cualquier etiqueta <strong>HTML</strong>, es obligatorio hacerlo en
+                    la etiqueta <span class="html-tag">html</span> ya que es la etiqueta que engloba todo el documento.
+                </p>
+                <p>De esta forma, estaremos estableciendo el <strong>idioma</strong> en el que se encuentra el
+                    documento:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;!-- ... --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- ... --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                                                                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <!-- ATRIBUTO TRANSLATE -->
+                <h3 id="atributo-translate"><a href="#atributo-translate">El atributo translate (traducción)</a></h3>
+                <p>También podemos utilizar el atributo <strong>translate</strong>, el cuál acepta los valores
+                    <strong>yes</strong> y <strong>no</strong> (<em><strong>yes</strong>, es su valor
+                        predeterminado</em>) en las etiquetas <strong>HTML</strong> para indicar si el contenido de un
+                    texto es o no <strong>&lt;&lt;traducible&gt;&gt;</strong>.
+                </p>
+                <p>Si por ejemplo, tenemos un texto que no queremos que sea posible traducirlo, sino que queremos que
+                    conserve el texto original, podemos hacer lo siguiente:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;p&gt;
+  Hace algunos días fui a ver la nueva película de 
+  &lt;span translate=&quot;no&quot;&gt;StarWars&lt;/span&gt;.
+&lt;/p&gt;
+                    </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>De esta forma, le indicamos al navegador o a herramientas como <strong>Google translator</strong>,
+                    que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre.
+                    Por defecto, si no se indica el atributo <strong>translate</strong> en una etiqueta, es como si
+                    tuviera el valor <strong>yes</strong> por defecto.</p>
+            </section>
+            <hr>
+            <section>
+                <!-- ATRIBUTO TITLE -->
+                <h3 id="atributo-title"><a href="#atributo-title">El atributo title (títulos o tooltips)</a></h3>
+                <p>En la mayoría de las etiquetas <strong>HTML</strong> podemos indicar el atributo
+                    <strong>title</strong> para especificar un mensaje de texto que aparezca cuando el usuario detenga
+                    el <strong>mouse</strong> sobre el elemento un instante. Al usuario le aparece un pequeño aviso
+                    emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión.
+                </p>
+                <p>De esta forma, podemos usar este atributo sobre cualquier tipo de etiqueta <strong>HTML</strong>,
+                    aunque se suele usar sobre todo en las etiquetas de imágenes <span class="html-tag">img</span>, de
+                    abreviaturas <span class="html-tag">abbr</span> entre otras:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;div&gt;
+  &lt;img
+    src=&quot;//robohash.org/1&quot;
+    alt=&quot;robot aleatorio&quot;
+    title=&quot;¡Este es un robot generado al azar!&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;El lenguaje de etiquetas &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;&lt;/p&gt;
+                                    </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de
+                    las imágenes, que generalmente se tiende a confundir porque puede tener objetivos idénticos, pero no
+                    siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la
+                    imagen en el caso de que no se pueda ver por alguna razón (<em>por ejemplo cuando no es accesible en
+                        un servidor web</em>), mientras que el atributo <strong>title</strong> puede describir la
+                    imagen, pero no tiene porque ser una descripción alternativa.</p>
+                <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por
+                    ejemplo, la etiqueta <span class="html-tag">a</span> (<em>anchor, ancla, enlaces</em>) u otras.</p>
+            </section>
+            <hr>
         </article>
 
     </main>

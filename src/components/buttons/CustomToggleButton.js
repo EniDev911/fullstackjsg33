@@ -8,8 +8,8 @@ template.innerHTML = /*html*/`
     .switch {
         position: relative;
         display: inline-block;
-        width: 80px;
-        height: 40px;
+        width: 70px;
+        height: 30px;
         background: #fdfcf3;
         border-radius: 40px;
         cursor: pointer;
@@ -18,8 +18,8 @@ template.innerHTML = /*html*/`
     .switch::after {
         content: url(${ICONS.concat("sun.svg")});
         position: absolute;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         border-radius: 30px;
         top: 5px;
         left: 5px;
@@ -47,26 +47,26 @@ template.innerHTML = /*html*/`
 </div>
 `
 export class CustomToggleButton extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode : 'open'});
-        
+        this.attachShadow({ mode: 'open' });
+
     }
-    
-    connectedCallback(){
+
+    connectedCallback() {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector("input[type='checkbox']").addEventListener("click", () => {
             this.changeTheme();
         })
         this.checkbox = this.shadowRoot.querySelector("input[type='checkbox']");
-        if (localStorage.getItem('theme') === 'dark'){
+        if (localStorage.getItem('theme') === 'dark') {
             this.checkbox.checked = true;
         } else {
             this.checkbox.checked = false;
         }
     }
 
-    changeTheme(){
+    changeTheme() {
         this.checkbox = this.shadowRoot.querySelector("input[type='checkbox']");
         const isDark = localStorage.getItem('theme') === 'dark' ? '' : 'dark'
         localStorage.setItem('theme', isDark)

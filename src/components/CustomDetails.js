@@ -12,10 +12,35 @@ template.innerHTML = /*html*/ `
     background: linear-gradient(#f26626 50%, #ed704b 0);
     color: #fff;  
   }
+  ul {
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    width:100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border: 1px solid red;
+  }
+   ::slotted(a) {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid red;
+    padding: 10px;
+   }
+   ::slotted(a):before{
+    content: "=>";
+    padding: 0 10px;
+   }
+   ::slotted(ul) {
+      list-style-type: none;
+    }
 </style>
 <details open>
   <summary></summary>
-  <slot></slot> 
+  <ul>
+      <slot></slot>
+  </ul>
 </details>
 `;
 
@@ -28,7 +53,7 @@ export class CustomDetails extends HTMLElement {
   title = this.getAttribute("data-title") ?? "detalle";
 
   connectedCallback() {
-    
+
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     const summary = this.shadowRoot.querySelector("summary")
     summary.textContent = this.title;

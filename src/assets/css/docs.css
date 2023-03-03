@@ -19,8 +19,9 @@
 
 /* FONTS CODE*/
 @font-face {
-    font-family: fa;
-    src: url(../public/fonts/JetBrainsMono-Regular.ttf);
+    font-family: jetbrains-regular;
+    src: local('jetbrains-mono'),
+        url(../../../public/fonts/jetbrains-mono-regular.ttf);
 }
 
 /* FONTS NORMAL*/
@@ -98,6 +99,7 @@ body .doc-body {
 .doc-body figure img {
     width: 100%;
 }
+
 .doc-body figure img.filter {
     filter: var(---imgs);
 }
@@ -150,28 +152,32 @@ figcaption {
     margin-top: 0;
     margin-bottom: 16px;
 }
+
 .doc-body table {
-	display: table;
-	box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2),
-	  0 2px 2px rgba(0, 0, 0, 0.2),
-	  -2px 0 2px rgba(0, 0, 0, 0.2),
-	  0 -2px 2px rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
-	width: 100%;
-	overflow: hidden;
-	word-break: normal;
-	word-break: keep-all;
-	border-spacing: 2px;
+    display: table;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2),
+        0 2px 2px rgba(0, 0, 0, 0.2),
+        -2px 0 2px rgba(0, 0, 0, 0.2),
+        0 -2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    width: 100%;
+    overflow: hidden;
+    word-break: normal;
+    word-break: keep-all;
+    border-spacing: 2px;
 }
+
 .doc-body table th {
-	font-weight: bold;
-	padding: 10px;
-	background: #26262616;
+    font-weight: bold;
+    padding: 10px;
+    background: #26262616;
 }
+
 .doc-body table tbody td {
-	border: 1px solid #99999920;
-	padding: 8px;
+    border: 1px solid #99999920;
+    padding: 8px;
 }
+
 .doc-body p {
     margin: 20px 0;
     position: relative;
@@ -189,15 +195,17 @@ figcaption {
     margin: 20px 0;
     list-style-position: outside;
 }
+
 .doc-body ul {
     list-style-type: square;
 }
+
 .doc-body ul li {
     margin: 6px 0;
 }
 
 
-.doc-body ul>ul{
+.doc-body ul>ul {
     margin: 5px 0;
 }
 
@@ -206,11 +214,13 @@ figcaption {
 /*UTILITIES*/
 .html-tag {
     font-weight: bold;
-    color:  var(--tags);
+    color: var(--tags);
 }
+
 .html-tag::before {
     content: "<";
- }
+}
+
 .html-tag::after {
     content: ">";
 }
@@ -220,6 +230,17 @@ figcaption {
     position: relative;
     box-shadow: 2px 2px 12px #00000060;
 }
+
+.highlight code {
+    font-family: jetbrains-regular;
+    font-size: 1.1rem;
+}
+
+.highlight code pre span.bg {
+    background-color: #44338879;
+    border-bottom: 1px solid #438;
+}
+
 /* .doc-body .highlight::before {
     content : 'monokay'; 
     pointer-events: all;
@@ -229,10 +250,42 @@ figcaption {
     cursor:pointer;
     background-color: #306dcb;
 } */
-.doc-body .highlight > * {
+.doc-body .highlight>* {
     padding: 0;
     margin: 0;
 }
+
+.doc-body .highlight code::-webkit-scrollbar {
+    /* Tamaño del scroll en horizontal */
+    height: 10px;
+}
+
+/* Estilos barra (thumb) de scroll */
+.doc-body .highlight code::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+.doc-body .highlight code::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.doc-body .highlight code::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+.doc-body .highlight code::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+
+.doc-body .highlight code::-webkit-scrollbar-track:hover,
+.doc-body .highlight code::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}
+
+
+
 @counter-style winners-list {
     system: fixed;
     symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
@@ -275,18 +328,23 @@ figcaption {
         font-size: 20px;
         letter-spacing: 1px;
     }
+
     .doc-body h1 {
         font-size: 48px;
     }
+
     .doc-body h2 {
         font-size: 38px;
     }
+
     .doc-body h3 {
         font-size: 28px;
     }
+
     .doc-body p {
         line-height: 27px;
     }
+
     .doc-body h1,
     .doc-body h2,
     .doc-body h3 {
@@ -303,6 +361,7 @@ figcaption {
         text-decoration: underline;
     }
 }
+
 /**SELECTIONS */
 .doc-body p::selection,
 .doc-body strong::selection,
@@ -311,8 +370,8 @@ figcaption {
 .doc-body h1::selection,
 .doc-body h2::selection,
 .doc-body h3::selection,
-.doc-body h4::selection { 
-    color: var(--main-background); 
+.doc-body h4::selection {
+    color: var(--main-background);
     text-shadow: none;
     background-color: var(--paragraphs);
 }
