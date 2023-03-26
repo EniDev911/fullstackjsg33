@@ -64,6 +64,26 @@
                         <a href="#etiqueta-head">La etiqueta <strong>HEAD</strong> - metadatos</a>
                     </li>
                 </ul>
+                <a href="#validacion-errores-html">Validación de errores HTML</a>
+                <ul>
+                    <li>
+                        <a href="#validar-errores-de-sintaxis-html">Validar errores de sintaxis en HTML</a>
+                    </li>
+                    <li>
+                        <a href="#otras-vias-de-validacion">Otras vías de validación</a>
+                    </li>
+                </ul>
+            </enidev-details>
+            <enidev-details data-title="Etiquetas de cabeceras">
+                <a href="#cabecera-de-un-documento">Cabecera de un documento - <strong>(HEAD)</strong></a>
+                <ul>
+                    <li><a href="#la-etiqueta-title"><span class="html-tag">title</span> - título de página</a></li>
+                    <li><a href="#la-etiqueta-base"><span class="html-tag">base</span> - base de los enlaces</a></li>
+                    <li><a href="#la-etiqueta-meta"><span class="html-tag">meta</span> - codificación del documento</a>
+                    </li>
+                    <li><a href="#la-etiqueta-link"><span class="html-tag">link</span> - relaciones con otros
+                            recursos</a></li>
+                </ul>
             </enidev-details>
             <hr>
         </article>
@@ -799,7 +819,7 @@ strong {
                 <h3 id="etiqueta-head"><a href="#etiqueta-head">La etiqueta head (metadatos)</a></h3>
                 <p>Cuando hablamos de la etiqueta <span class="html-tag">head</span> de un documento
                     <strong>HTML</strong>, muchas
-                    veces se suele decir <strong>cabeceera HTML</strong>. Sin embargo, esta cabecera del documento
+                    veces se suele decir <strong>cabecera HTML</strong>. Sin embargo, esta cabecera del documento
                     <strong>HTML</strong> no es una parte visual de la página web, sino una parte de nuestro código
                     <strong>HTML</strong> donde se incluyen ciertas etiquetas de <strong>metadatos</strong>, es decir,
                     unas
@@ -1021,6 +1041,293 @@ strong {
                             </tr>
                         </tbody>
                     </table>
+            </section>
+            <hr>
+            <section>
+                <h3 id="otras-vias-de-validacion"><a href="#otras-vias-de-validacion">Otras vías de validación</a></h3>
+                <p>Existen otros mecanismos de validación al margen de esta herramienta de <strong>W3C</strong>. Podemos
+                    encontrar
+                    formas alternativas para validar documentos <strong>HTML</strong> desde el editor <strong>Visual
+                        Studio
+                        Code</strong>, desde una terminal de texto o desde scripts de <strong>NodeJS</strong>:</p>
+                <table class="table">
+                    <thead>
+                        <th>Herramienta</th>
+                        <th>Descripción</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="herramienta"><strong><a
+                                        href="https://marketplace.visualstudio.com/items?itemName=Umoxfo.vscode-w3cvalidation"
+                                        target="_blank">W3C Validation</a></strong></td>
+                            <td data-label="descripción"><span>Extensión de <strong><abbr title="Visual Studio Code">VS
+                                            Code</abbr></strong> para validar documentos mediante <strong>HTML
+                                        Validator</strong></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="herramienta"><strong><a
+                                        href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator"
+                                        target="_blank">W3C Web Validator</a></strong></td>
+                            <td data-label="descripción"><span>Extensión de <strong><abbr title="Visual Studio Code">VS
+                                            Code</abbr></strong> para validar problemas en tu código
+                                    <strong>HTML</strong> en un
+                                    clic.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="herramienta"><strong><a href="https://github.com/99x/w3c-link-validator"
+                                        target="_blank">W3C
+                                        Link Validator</a></strong></td>
+                            <td data-label="descripción"><span>Paquete NPM para validar <strong>HTML</strong> o buscar
+                                    links rotos desde
+                                    la terminal.</span>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <enidev-button data-btn="top"></enidev-button>
+        </article>
+        <article class="doc-body">
+            <section>
+                <h2 id="cabecera-de-un-documento"><a href='#cabecera-de-un-documento'>Cabecera de un documento
+                        (HEAD)</a></h2>
+                <p>Como sabemos la estructura de un documento HTML debía contener siempre dos etiquetas HTML
+                    principales: la
+                    cabecera
+                    de la página <span class="html-tag">head</span> y el cuerpo de la página o
+                    <span class="html-tag">body</span>. El primero de ellos, se encarga de contener <strong>etiquetas de
+                        metadatos</strong> (
+                    <em>información sobre
+                        el documento</em> ) así como establecer <strong>relaciones con otros documentos</strong>. El
+                    segundo de ellos,
+                    se encarga
+                    de la parte visual que se mostrará al usuario en su navegador.
+                </p>
+                <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera (<span
+                        class="html-tag">head</span>) del
+                    documento:</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Etiqueta</th>
+                            <th>Atributos</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="etiqueta"><span class="html-tag">title</span></td>
+                            <td data-label="atributos"></td>
+                            <td data-label="descripción">Título de la página (pestaña o título del navegador o en
+                                buscadores).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="etiqueta"><span class="html-tag">base</span></td>
+                            <td data-label="atributos"><span><strong>href</strong>, <strong>target</strong></span></td>
+                            <td data-label="descripción">URL base del documento ( <em>usado para gestionar rutas
+                                    relativas</em> ).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="etiqueta"><span class="html-tag">link</span></td>
+                            <td data-label="atributos"><span><strong>href</strong>, <strong>hreflang</strong>,
+                                    <strong>rel</strong>,
+                                    <strong>media</strong>, <strong>type</strong></span></td>
+                            <td data-label="descripción">Establece una relación del documento actual con otro externo.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="etiqueta" class="html-tag">meta</td>
+                            <td data-label="atributos"><b>name</b>, <b>content</b>, <b>http-equiv</b>, <b>charset</b>
+                            </td>
+                            <td data-label="descripción">Establece un metadato específico en el documento actual.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="etiqueta" class="html-tag">style</td>
+                            <td data-label="atributos"><strong>media</strong>, <strong>type</strong></td>
+                            <td data-label="descripción">Crea estilos CSS que afectarán únicamente al documento actual.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="etiqueta" class="html-tag">script</td>
+                            <td data-label="atributos"><span><b>src</b>, <b>type</b>, <b>charset</b>, <b>async</b>,
+                                    <b>defer</b></span>
+                            </td>
+                            <td data-label="descripción">Indica un script a cargar o ejecutar en la página actual.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Existen dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin
+                    embargo,
+                    actualmemte también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas
+                    <span class="html-tag">style</span> y <span class="html-tag">script</span>.
+                </p>
+            </section>
+            <hr>
+            <section>
+                <!--Título de la pagina-->
+                <h3 id="la-etiqueta-title"><a href="#la-etiqueta-title">La etiqueta title</a></h3>
+                <p>En el interior de la etiqueta <span class="html-tag">head</span> es aconsejable, como mínimo, indicar
+                    siempre
+                    las
+                    siguientes dos etiquetas:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;head&gt;
+  &lt;title&gt;Título del documento&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>La etiqueta <span class="html-tag">title</span> sirve para indicar un título para el documento
+                    actual. Es una
+                    etiqueta que debe aparecer de forma obligatoria en todo documento <strong>HTML</strong>, ya que
+                    siempre debería
+                    tener un título. El título puede servir para varias cosas:</p>
+                <p>
+                <ul>
+                    <li>Determinará el título de la ventana o p pestaña del navegador</li>
+                    <li>Si la página se indexa en Google, es muy posible que use ese título para el resultado en el
+                        buscador.</li>
+                    <li>Es un título identificativo que pueden usarlo bots o sistemas automáticos que lean la página.
+                    </li>
+                </ul>
+                </p>
+                <p>En este ejemplo, incluimos también la etiqueta <span class="html-tag">meta</span> indica
+                    que el navegador utilice la <b>codificación
+                        UTF-8</b> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma
+                    codificación
+                    en
+                    todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o caracteres
+                    como
+                    <code class="path">ñ, ¿, ¡</code> u otros.
+                </p>
+                <p>Para evitar ese tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
+                <ol>
+                    <li>Utilizar siempre la etiqueta <span class="html-tag">meta charset="utf-8"</span> en la cabecera
+                        del
+                        documento.</li>
+                    <li>Guardar el archivo HTML con codificación <strong>UTF-8</strong> en las opciones del editor a
+                        utilizar.</li>
+                    <li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web.</li>
+                </ol>
+            </section>
+            <hr>
+            <section>
+                <!-- etiqueta base -->
+                <h3 id="la-etiqueta-base"><a href="#la-etiqueta-base">La etiqueta base</a></h3>
+                <p>La etiqueta <span class="html-tag">base</span> se puede utilizar en el documento
+                    <strong>HTML</strong> para
+                    establecer una ruta base de los <strong>enlaces relativos</strong> utilizados en nuestro documento
+                    <strong>HTML</strong>.
+                </p>
+                <p>Para entender mejor como funciona la etiqueta <span class="html-tag">base</span>, veamos el siguiente
+                    ejemplo:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;head&gt;
+  &lt;title&gt;Documento HTML sin usar etiqueta base&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href="index.html"&gt;Página de inicio&lt;/a&gt;
+  &lt;a href="productos"&gt;Página de productos&lt;/a&gt;
+&lt;/body&gt;
+                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>En este caso, sucede lo siguiente:
+                <ul>
+                    <li>
+                        El primer enlace nos lleva a <strong>https://latienda.com/index.html</strong>
+                    </li>
+                    <li>
+                        El segundo enlace nos lleva a la página <strong>https://latienda.com/productos/</strong>
+                    </li>
+                </ul><br>
+                Simplemente, el enlace se añade al final de la URL donde nos encontramos.
+                </p>
+                <p>
+                    Veamos ahora un ejemplo donde utilizamos la etiqueta <span class="html-tag">base</span>:
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;head&gt;
+&lt;title&gt;Documento HTML usando etiqueta base&lt;/title&gt;
+&lt;base href="https://latienda.com/productos/" target="_blank"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href="index.html"&gt;Página de inicio&lt;/a&gt;
+  &lt;a href="productos"&gt;Página de productos&lt;/a&gt;
+&lt;/body&gt;                                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>Ahora, aunque nos encontremos en la página <strong>https://latienda.com/</strong>, hemos establecido
+                    la URL base en
+                    <strong>https://latienda.com/productos/</strong> para los productos, por lo que el sucederá lo
+                    siguiente:
+                <ul>
+                    <li>El primer enlace nos lleva a <strong>https://latienda.com/productos/index.html</strong></li>
+                    <li>El segundo enlace nos lleva a <strong>https://latienda.com/productos/categorias</strong></li>
+                </ul><br>
+                Además, también hemos establecido el atributo <strong>target</strong> a <strong>_blank</strong>, por lo
+                que los enlaces
+                se abrirán en una pestaña nueva. El atributo <strong>target</strong> nos permite realizar ciertas tareas
+                dependiedo su
+                valor:
+                </p>
+                <table class="table">
+                    <thead>
+                        <th>Atributo target</th>
+                        <th>Descripción</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="atributo target" class="html-attribute">_self</td>
+                            <td data-label="descripción">El enlace se abre en la misma pestaña. Es el valor por defecto,
+                                incluso si se
+                                omite el atributo.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="atributo target" class="html-attribute">_blank</td>
+                            <td data-label="descripción">El enlace se abre en una nueva pestaña o ventana.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="atributo target"><span><span class="html-attribute">_parent</span> o <span
+                                        class="html-attribute">_top</span></span></td>
+                            <td data-label="descripción">El enlace se abre en un contexto superior al actual, si existe.
+                                En caso
+                                contrario, se actua como si se hubiera indicado <span
+                                    class="html-attribute">_self</span>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <hr>
+            <section>
+                <h3 id="la-etiqueta-link"><a href="#la-etiqueta-link">La etiqueta link (relación)</a></h3>
+                <p>La etiqueta <span class="html-tag">link</span> permite establecer relaciones
+                    con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código
+                    <strong>HTML</strong>
+                    puede saber que
+                    un documento está relacionado con otro documento (<em>independientemente del formato que sea</em>) y
+                    así
+                    relacionarse entre ellos.
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;head&gt;
+  &lt;title&gt;Documento HTML con etiqueta link&lt;/title&gt;
+  &lt;link rel="stylesheet" href="index.css"&gt;
+  &lt;link rel="icon" href="favicon.png"&gt;
+&lt;/head&gt;
+ </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
             </section>
         </article>
     </main>

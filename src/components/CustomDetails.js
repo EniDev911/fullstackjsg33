@@ -34,7 +34,7 @@ template.innerHTML = /*html*/ `
       list-style-type: none;
     }
 </style>
-<details open>
+<details>
   <summary></summary>
   <ul>
       <slot></slot>
