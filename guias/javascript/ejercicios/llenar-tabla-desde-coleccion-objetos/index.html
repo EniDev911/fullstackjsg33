@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llenar una tabla desde una colección de objetos</title>
+  <script src="./index.js" type="module"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <enidev-header>
+    <enidev-switch></enidev-switch>
+  </enidev-header>
+  <article class="doc-body">
+    <h2 align="center">LLENAR UNA TABLA DE FORMA DINÁMICA</h2>
+    <p>Para comenzar necesitaremos usar los siguientes métodos:</p>
+    <ul>
+      <li><a href="//developer.mozilla.org/es/docs/Web/API/Document/createElement"
+          target="_blank"><code>document.createElement()</code></a></li>
+      <li>
+        <a href="//developer.mozilla.org/es/docs/Web/API/Document/querySelector">
+          <code>document.querySelector()</code>
+        </a>
+      </li>
+      <li>
+        <a href="//developer.mozilla.org/es/docs/Web/API/Node/appendChild">
+          <code>document.appendChild()</code>
+        </a>
+      </li>
+    </ul>
+    <p>Vamos a crear una estructura básica para este proyecto, la disposición para organizar los archivos y el código
+      como tal sería la siguiente:</p>
+    <div class="highlight">
+      <pre><code class="language-js">
+📂 proyecto // carpeta raíz
+|-- 📑 index.html // página principal
+|-- 📑 script.js // código de la funcionalidad
+</code></pre>
+    </div>
+    <p>Lo que vamos a dibujar como ejemplo será trazar una tabla <strong>HTML</strong> <span
+        class="html-tag">table</span> a partir de un <strong>arreglo de productos</strong>. Es decir vamos a dibujar una
+      tabla <strong>HTML</strong> con <strong>javascript</strong></p>
+    <hr>
+    <section>
+      <h3>Preparando el esqueleto</h3>
+      <p>Para comenzar a dibujar la tabla <strong>HTML</strong> con <strong>javascript</strong> hay que tener definido
+        previamente el encabezado de las columnas de la tabla, y con <strong>javascript</strong> solo vamos a
+        referenciar el cuerpo de la tabla donde mostraremos las respectivas filas y columnas a partir del arreglo de los
+        productos.</p>
+      <p>Por lo tanto, nuestro archivo <strong>index.html</strong> quedaría de la siguiente manera:</p>
+      <div class="highlight">
+        <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Index&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Tabla HTML dibujada con JS&lt;/h1&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Producto&lt;/th&gt;
+        &lt;th&gt;Precio&lt;/th&gt;
+        &lt;th&gt;Cantidad&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id="table-body"&gt;
+      &lt;!-- aquí se dibujará el cuerpo de la tabla con los datos --&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        <enidev-button></enidev-button>
+        <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+      </div>
+      <p>Tenemos la tabla <strong>HTML</strong> con un encabezado, y dentro de la misma tenemos un elemento <span
+          class="html-tag">tbody</span> con un identificador (<em><strong>id</strong></em>) <strong>table-body</strong>.
+      </p>
+      <p>Con la referencia a ese elemento es donde vamos a insertar las filas <span class="html-tag">tr</span> y las
+        correspondientes columnas <span class="html-tag">td</span>.</p>
+    </section>
+    <hr>
+    <section>
+      <h3>Colección de objetos</h3>
+      <p>El arreglo (<em>colección, vectores</em>) que vamos a dibujar va ser una colección de objetos que definiremos
+        en nuestro archivo <strong>script.js</strong>:</p>
+      <div class="highlight">
+        <pre><code class="language-js">
+const productos = [
+  {
+    nombre: "🖱️ Mouse Logitech",
+    precio: 200000,
+    cantidad: 100
+  },
+  {
+    nombre: "🖥️ Monitor AOC",
+    precio: 150000,
+    cantidad: 80
+  },
+  {
+    nombre: "⌨️ Teclado E-BLUE",
+    precio: 450000,
+    cantidad: 120
+  },
+  {
+    nombre: "💻 Laptop HP x360",
+    precio: 500000,
+    cantidad: 10
+  }
+]
+          </code></pre>
+        <enidev-button></enidev-button>
+        <enidev-button data-btn="codepen" data-lang="js"></enidev-button>
+      </div>
+      <p>Lo que haremos será recorrer la colección de objetos usando el método <strong>forEach()</strong> y por cada
+        objeto dentro de la matríz haremos lo siguiente:</p>
+      <ul>
+        <li>Creamos un elemento <span class="html-tag">tr</span> que representará una fila.</li>
+        <li>Creamos un nuevo elemento <span class="html-tag">td</span> para cada campo respectivamente
+          <strong>nombre</strong>, <strong>precio</strong> y <strong>cantidad</strong> de cada producto. Luego
+          establecemos el contenido de la columna, usando la propiedad <strong>textContent</strong> y asignando como
+          valor la propiedad del objeto producto actual.
+        </li>
+        <li>Al elemento <span class="html-tag">tr</span> le agregaremos un nuevo nodo hijo con el método
+          <strong>.appendChild()</strong>
+        </li>
+      </ul>
+    </section>
+  </article>
+</body>
+
+</html>

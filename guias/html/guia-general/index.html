@@ -43,20 +43,27 @@
                         <a href="#comentario-html">Comentario HTML</a>
                     </li>
                 </ul>
-                <li>
-                    <a href="#atributos-comunes">Atributos comunes en HTML</a>
-                    <ul>
-                        <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
-                        <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
-                        <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
-                        <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a>
-                        </li>
-                        <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
-                        <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
-                        <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a>
-                        </li>
-                    </ul>
-                </li>
+                <a href="#atributos-comunes">Atributos comunes en HTML</a>
+                <ul>
+                    <li><a href="#atributo-id"><strong>id</strong> - idetificador único</a></li>
+                    <li><a href="#atributo-class"><strong>class</strong> - clases</a></li>
+                    <li><a href="#atributo-lang"><strong>lang</strong> - idioma del contenido</a></li>
+                    <li><a href="#atributo-translate"><strong>translate</strong> - traducción del contenido</a>
+                    </li>
+                    <li><a href="#atributo-title"><strong>title</strong> - títulos o tooltips</a></li>
+                    <li><a href="#atributo-data"><strong>data-*</strong> - metadatos</a></li>
+                    <li><a href="#atributo-accesskey"><strong>accesskey</strong> - atajos desde el teclado</a>
+                    </li>
+                </ul>
+                <a href="#estructura-de-un-documento-html">Estructura del documento HTML</a>
+                <ul>
+                    <li>
+                        <a href="#el-doctype">El <strong>DOCTYPE</strong> - tipo de documento</a>
+                    </li>
+                    <li>
+                        <a href="#etiqueta-head">La etiqueta <strong>HEAD</strong> - metadatos</a>
+                    </li>
+                </ul>
             </enidev-details>
             <hr>
         </article>
@@ -582,8 +589,440 @@ strong {
                     ejemplo, la etiqueta <span class="html-tag">a</span> (<em>anchor, ancla, enlaces</em>) u otras.</p>
             </section>
             <hr>
-        </article>
+            <section>
+                <h3 id="atributo-data"><a href="#atributo-data">EL atributo data- (metadatos)</a></h3>
+                <p>En <strong>HTML</strong>, veremos que la mayoría de los metadatos (<i>información adicional</i>) se
+                    incluyen en la
+                    etiqueta <span class="html-tag">head</span> del documento <strong>HTML</strong>. Sin embargo,
+                    también se pueden incluir metadatos en la propia etiqueta a través de un atributo con el prefijo
+                    <strong>data.-</strong>.
+                </p>
+                <p>De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente
+                    orientada a utilizarse desde javascript:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;article
+  id=&quot;auto&quot;
+  data-marca=&quot;ford&quot;
+  data-modelo=&quot;fiesta&quot;
+  data-color=&quot;azul&quot; 
+  data-asientos=&quot;4&quot; /&gt;
+&lt;/article&gt;
+        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>En este ejemplo guardamos información sobre un vehiculo en la etiqueta <span
+                        class="html-tag">article</span>, a la que podremos acceder a través de
+                    <strong>javascript</strong> mediante la propiedad <strong>.dataset</strong> y a su vez a la
+                    propiedad
+                    con el
+                    nombre que se indicó seguido del prefijo <strong>data-</strong>:
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;h3&gt;Características del vehículo:&lt;/h3&gt;
+&lt;article 
+  id="auto" 
+  data-marca="ford" 
+  data-modelo="fiesta" 
+  data-color="azul" data-asientos="4"
+  data-motor="1.6 gasolina"&gt;
+&lt;/article&gt;
+&lt;!-- Script --&gt;
+&lt;script&gt;
+  const article = document.getElementById("auto");
+  const ul = document.createElement("ul");
+  
+  for (let i of Object.keys(article.dataset)) {
+    const li = document.createElement("li");
+    li.innerHTML = `&lt;strong&gt;${i}&lt;/strong&gt; : ${article.dataset[i]}`;
+    ul.appendChild(li);
+  }
 
+  document.body.appendChild(ul);
+&lt;/script&gt;
+                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <h3 id="atributo-accesskey"><a href="#atributo-accesskey">Atajo de teclado (accesskey)</a></h3>
+                <p>En <strong>HTML</strong>, es posible añadir el atributo <strong>accesskey</strong> para indicar un
+                    atajo de teclado que puede pulsar el usuario para activar ese elemento. En el siguiente ejemplo,
+                    tenemos 4 elementos: dos campos de texto un enlace y un botón. Cada uno de ellos tiene su atributo
+                    <strong>accesskey</strong> para cuando el usuario pulse <kbd>ALT</kbd>+<kbd>tecla</kbd>, se active
+                    ese elemento:
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;form&gt;
+  &lt;!-- Campo de texto --&gt;
+  &lt;input accesskey="N" placeholder="Campo 1 (ALT+N)" /&gt;
+  &lt;!-- Campo de texto --&gt;
+  &lt;input accesskey="A" placeholder="Campo 2 (ALT+A)" /&gt;
+  &lt;!-- Enlace HTML --&gt;
+  &lt;a accesskey="L" href="#"&gt;Enlace (ALT+L)&lt;/a&gt;
+  &lt;!-- Botón HTML --&gt;
+  &lt;button accesskey="B"&gt;Botón (ALT+B)&lt;/button&gt;
+&lt;/form&gt;
+                                        </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de
+                    texto, si
+                    pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si
+                    pulsamos
+                    <kbd>ALT</kbd>+<kbd>B</kbd> se pulsará el botón.
+                </p>
+                <p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre
+                    navegadores y
+                    sistemas. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el
+                    atributo
+                    <strong>accesskey</strong>, tendríamos que pulsar las siguientes combinaciones de teclas:
+                </p>
+                <table class="table">
+                    <thead>
+                        <th>Navegador</th>
+                        <th>Plataforma Windows</th>
+                        <th>Plataforma Linux</th>
+                        <th>Plataforma Mac</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="navegador"><strong>Chrome</strong></td>
+                            <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+                            <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+                            <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="navegador"><strong>Firefox</strong></td>
+                            <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> +
+                                    <kbd>A</kbd></span></td>
+                            <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>SHIFT</kbd> +
+                                    <kbd>A</kbd></span></td>
+                            <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>A</kbd></span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="navegador"><strong>IE/Edge</strong></td>
+                            <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+                            <td data-label="platadorma linux">No aplicable</td>
+                            <td data-label="plataforma mac">No aplicable</td>
+                        </tr>
+                        <tr>
+                            <td data-label="navegador"><strong>Safari</strong></td>
+                            <td data-label="plataforma windows">No aplicable</td>
+                            <td data-label="plataforma linux">No aplicable</td>
+                            <td data-label="plataforma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="navegador"><strong>Opera</strong></td>
+                            <td data-label="plataforma windows"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+                            <td data-label="plataforma linux"><span><kbd>ALT</kbd> + <kbd>A</kbd></span></td>
+                            <td data-label="platadorma mac"><span><kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>A</kbd></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de
+                    la incertidumbre
+                    de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
+                <enidev-button data-btn="top"></enidev-button>
+            </section>
+        </article>
+        <article class="doc-body">
+            <section>
+                <h3 id="estructura-de-un-documento-html"><a href="#estructura-de-un-documento-html">Estructura del
+                        documento
+                        HTML</a></h3>
+                <p>Observa que tenemos una zona superior que es el <strong>tipo de documento.</strong> Luego, abrimos la
+                    etiqueta
+                    <span class="html-tag">html</span> que contendrá dos partes principales: la <strong>cabecera del
+                        documento</strong> y el <strong>cuerpo del documento</strong>:
+                </p>
+                <figure>
+                    <img src="./images/estructura-documento.png" alt="estructura-de-un-documento-html" class="filter">
+                    <figcaption>Estructura de un documento html</figcaption>
+                </figure>
+            </section>
+            <section>
+                <h3 id="el-doctype"><a href="#el-doctype">EL DOCTYPE (tipo de documento)</a></h3>
+                <p>El <span class="html-tag">!DOCTYPE</span> o <strong>tipo de documento</strong> es una etiqueta
+                    especial que se
+                    escribe en la primera línea del documento <strong>HTML</strong>. Debe ir especificado siempre para
+                    que el
+                    navegador sepa que tipo de documento <strong>HTML</strong> se trata.</p>
+                <p>Antes de comenzar un documento <strong>HTML</strong>, en su primera línea, es siempre conveniente
+                    indicar el
+                    tipo de documento a utilizar. Para indicar que se trata de un <strong>documento HTML5</strong>
+                    colocaremos la
+                    siguiente linea:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+                </code></pre>
+                    <enidev-button></enidev-button>
+                    <enidev-button data-btn="codepen" data-lang="html"></enidev-button>
+                </div>
+                <p>En versiones anteriores, como <strong>HTML4</strong> o <strong>XHTML</strong>, el tipo de documento
+                    se
+                    especificaba en la primera línea de una forma más compleja. Hoy en día estos
+                    <strong>DOCTYPE</strong> no tiene
+                    sentido indicarlos:
+                </p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+    </code></pre>
+                </div>
+                <p>Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea
+                    donde se
+                    indica el <strong>tipo de documento</strong> del que se trata. De esta forma, el navegador ya está
+                    preparado
+                    para actuar adaptándose perfectamente a cada tipo de documento.</p>
+                <p>En el caso de no indicar el tipo de documento en una página <strong>HTML</strong>, el navegador entra
+                    en el
+                    modo <strong><a href="//developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode"
+                            target="_blank">Quirk mode</a></strong> (<em>modo peculiar o modo no estándar</em>), donde
+                    se activa un
+                    <strong>modo de retrocompatibilidad</strong> con páginas antiguas, que procesará de forma diferente
+                    muchas
+                    etiquetas <strong>HTML</strong> o propiedades <strong>CSS</strong>.
+                </p>
+            </section>
+            <section>
+                <h3 id="etiqueta-head"><a href="#etiqueta-head">La etiqueta head (metadatos)</a></h3>
+                <p>Cuando hablamos de la etiqueta <span class="html-tag">head</span> de un documento
+                    <strong>HTML</strong>, muchas
+                    veces se suele decir <strong>cabeceera HTML</strong>. Sin embargo, esta cabecera del documento
+                    <strong>HTML</strong> no es una parte visual de la página web, sino una parte de nuestro código
+                    <strong>HTML</strong> donde se incluyen ciertas etiquetas de <strong>metadatos</strong>, es decir,
+                    unas
+                    etiquetas que establecen ciertos datos que no tienen que verse necesariamente de forma visual.
+                </p>
+                <p>Algunos ejemplos de <strong>metadatos</strong> de un documento <strong>HTML</strong> podrían ser los
+                    siguientes:</p>
+                <p>
+                <ul>
+                    <li><strong>Título</strong> de la página web (<em>aparece en la pestaña del navegador</em>). Esta
+                        etiqueta es
+                        <strong>obligatoria</strong>.
+                    </li>
+                    <li><strong>Descripción</strong> de la página (<em>aparece en los resultados de los buscadores</em>)
+                    </li>
+                    <li><strong>Miniatura/preview</strong> de la página (aparece al poner el enlace redes sociales)</li>
+                    <li><strong>Icono</strong> de la página (<em>aparece en la pestaña del navegador</em>)</li>
+                </ul>
+                </p>
+                <enidev-alert>
+                    <p>También es el lugar indicado para incluir etiquetas que relacionen el documento actual con otros
+                        documentos
+                        externos (<em>por ejemplo, para cargar estilos definidos en archivos <strong>.css</strong> o
+                            cargar
+                            funcionalidades definidos en archivos javascript <strong>.js</strong></em>)</p>
+                </enidev-alert>
+
+                <h3 id="etiqueta-body"><a href="#etiqueta-body">La etiqueta body (cuerpo)</a></h3>
+                <p>
+                    La otra parte principal de un documento <strong>HTML</strong> es la etiqueta <span
+                        class="html-tag">body</span>.
+                    Todos los elementos visuales de una página se encuentran en el interior de la etiqueta <span
+                        class="html-tag">body</span>, por lo que es una de las partes más importantes de una página web.
+                    Esta sección
+                    va inmediatamente después del cierre de la etiqueta <span class="html-tag">/head</span>.
+                </p>
+                <p>En definitiva, la estructura de un documento <strong>HTML</strong> debe tener, como mínimo algo
+                    similar a lo
+                    siguiente:</p>
+                <div class="highlight">
+                    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf8"&gt;
+  &lt;title&gt;Título del documento&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- ... --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                </div>
+                <p>En muchos editores, disponen de una extensión llamada <strong><a href="https://docs.emmet.io/"
+                            target="_blank">EMMET</a></strong>, basta con guardar el archivo con extensión
+                    <strong>.html</strong> y
+                    escribir el símbolo <strong>!</strong> y pulsar <kbd>TAB</kbd> para que se nos autocomplete este
+                    fragmento de
+                    código base. Más adelante veremos más a detalle algunas de las etiquetas anteriores que aún no se
+                    han
+                    mencionado.
+                </p>
+            </section>
+            <enidev-button data-btn="top"></enidev-button>
+        </article>
+        <article class="doc-body">
+            <section>
+                <h2 id="validacion-errores-html"><a href="#validacion-errores-html">Validación de errores HTML</a></h2>
+                <p>Cuando estás empezando con tu primer documento <strong>HTML</strong> y quieres <strong>comprobar si
+                        hay
+                        errores</strong> o existe algún error en el código <strong>HTML</strong>, vamos a ver las
+                    herramientas que nos
+                    pueden ayudar a validar cada documento <strong>HTML</strong>, a diferencia de los programadores que
+                    están
+                    acostumbrados a los <strong>lenguajes de programación</strong>, donde si tienes un error en el
+                    código, se debe
+                    corregir antes de continuar, ya que en caso contrario no podremos utilizar ese programa.</p>
+                <p>En los <strong>lenguajes de marcas</strong> como <strong>HTML</strong>, los navegadores son más
+                    permisivos, ya
+                    que en el caso de encontrar un error, intentan <strong>deducir</strong> lo que realmente se quería
+                    indicar y
+                    continuan con la carga del documento. De esta forma tenemos un método más flexible a errores, pero
+                    también es un
+                    arma de doble filo donde podemos experimentar problemas derivados.</p>
+                <h4>Tipos de problemas</h4>
+                <p>En nuestro documento con código <strong>HTML</strong> podemos tener varios tipos de problemas. Vamos
+                    a
+                    desglosarlos en una tabla de categorías:</p>
+                <table class="table">
+                    <thead>
+                        <th>Tipo de error</th>
+                        <th>Descripción</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="tipo de error"><strong>Sintaxis</strong></td>
+                            <td data-label="descripción">El código está mal escrito y es incorrecto. El navegador podría
+                                no mostrar
+                                correctamente ciertos detalles.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="tipo de error"><strong>Accesibilidad</strong></td>
+                            <td data-label="descripcion">El código no tiene porque estar mal escrito o ser incorrecto,
+                                sin embargo,
+                                tiene problemas que harán que no se vean bien en determinados dispositivos o que un
+                                usuario no-vidente o
+                                similar no pueda utilizarla.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="tipo de error"><strong>posicionamiento (SEO)</strong></td>
+                            <td data-label="descripción">El código no tiene porque estar mal escrito o ser incorrecto,
+                                sin embargo, los
+                                buscadores como Google no aceptarán favorablemente la página y podría tener un
+                                rendimiento menor de
+                                posicionamiento <a href="https://es.wikipedia.org/wiki/Posicionamiento_en_buscadores"
+                                    target="_blank">SEO</a>.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="tipo de error"><strong>Usabilidad</strong></td>
+                            <td data-label="descripción">El código no tiene poque estar mal escrito o ser incorrecto,
+                                sin embargo, la
+                                forma en la que se disponen los elementos o está pensado puede fustrar al usuario final
+                                que utiliza la
+                                web.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <hr>
+            <section>
+                <h3 id="validar-errores-de-sintaxis-html"><a href="#validar-errores-de-sintaxis-html">Validar error de
+                        sintaxis HTML</a></h4>
+                    <p>Para asegurarnos que nuestro código está correctamente escrito, podemos utilizar un
+                        <strong>Validador
+                            HTML</strong>, que no es más que un sistema que analiza nuestro código y nos dice el número
+                        de
+                        errores que
+                        tenemos, junto a una breve descripción del mismo para facilitar su correción.
+                    </p>
+                    <p>Este proceso de validación se puede realizar mediante la herramienta oficial <strong><a
+                                href="https://validator.w3.org/" target="_blank">HTML Validator</a></strong> de W3C, un
+                        validador de código
+                        <strong>HTML5</strong>, donde podemos validar nuestra página de tres forma diferentes:
+                    </p>
+                    <p>
+                    <ul>
+                        <li><strong>by URI</strong>: Indicando la <strong>URL</strong> de la página que se quiere
+                            validar.
+                        </li>
+                        <li><strong>By File upload</strong>: Seleccionando el archivo <strong>.html</strong> a analizar
+                            y
+                            subiéndolo al
+                            validador.</li>
+                        <li><strong>By Direct Input</strong>: Pegando directamente el código <strong>HTML</strong> que
+                            se
+                            quiere
+                            analizar en la casilla de texto.</li>
+                    </ul>
+                    </p>
+                    <p>Además, si nos fijamos en la parte superior de la herramienta oficial de <strong>W3C</strong>,
+                        veremos que hay
+                        3 casillas disponibles para marcar, con las que podemos agregar nuevas características que se
+                        mostrarán tras la
+                        validación. Dicha características son las siguientes: </p>
+                    <p>
+                    <ul>
+                        <li><strong>Source</strong>: Nos muestra el código fuente, numerado por líneas. Útil para
+                            corregir
+                            problemas
+                            sobre la marcha o comprobar los errores en las líneas especificadas.</li>
+                        <li><strong>Outline</strong>: Nos muestra una especie de árbol o esquema de la página.</li>
+                        <li><strong>Image report</strong>: Genera un informe de las imágenes del sitio web, con una
+                            miniatura y sus
+                            características asociadas.</li>
+                    </ul>
+                    </p>
+                    <h4>Otras vías de validación</h4>
+                    <p>Existen otros mecanismos de validación al margen de esta herramienta de <strong>W3C</strong>.
+                        Podemos
+                        encontrar
+                        formas alternativas para validar documentos <strong>HTML</strong> desde el editor <strong>Visual
+                            Studio
+                            Code</strong>, desde una terminal de texto o desde scripts de <strong>NodeJS</strong>:</p>
+                    <table class="table">
+                        <thead>
+                            <th>Herramienta</th>
+                            <th>Descripción</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="herramienta"><strong><a
+                                            href="https://marketplace.visualstudio.com/items?itemName=Umoxfo.vscode-w3cvalidation"
+                                            target="_blank">W3C Validation</a></strong></td>
+                                <td data-label="descripción"><span>Extensión de <strong><abbr
+                                                title="Visual Studio Code">VS
+                                                Code</abbr></strong> para validar documentos mediante <strong>HTML
+                                            Validator</strong></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="herramienta"><strong><a
+                                            href="https://marketplace.visualstudio.com/items?itemName=CelianRiboulet.webvalidator"
+                                            target="_blank">W3C Web Validator</a></strong></td>
+                                <td data-label="descripción"><span>Extensión de <strong><abbr
+                                                title="Visual Studio Code">VS
+                                                Code</abbr></strong> para validar problemas en tu código
+                                        <strong>HTML</strong> en un
+                                        clic.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="herramienta"><strong><a href="https://github.com/99x/w3c-link-validator"
+                                            target="_blank">W3C
+                                            Link Validator</a></strong></td>
+                                <td data-label="descripción"><span>Paquete NPM para validar <strong>HTML</strong> o
+                                        buscar
+                                        links rotos desde
+                                        la terminal.</span>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+        </article>
     </main>
 </body>
 

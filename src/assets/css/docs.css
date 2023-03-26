@@ -27,7 +27,7 @@
 /* FONTS NORMAL*/
 @font-face {
     font-family: encode-sans;
-    src: url(../public/fonts/EncodeSansSemiExpanded-Regular.ttf);
+    src: url(../../../public/fonts/EncodeSansSemiExpanded-Regular.ttf);
 }
 
 body {
@@ -300,9 +300,8 @@ figcaption {
     color: var(--paragraphs);
     font-family: Verdana;
     font-weight: 600;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 15px;
+    padding: 2px 6px;
     /* font: 13px Consolas, "Liberation Mono", Menlo,
       Courier,
       monospace; */

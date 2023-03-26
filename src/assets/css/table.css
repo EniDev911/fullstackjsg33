@@ -2,39 +2,38 @@
 	display: table;
 	border-collapse: collapse;
 	box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2),
-	  0 2px 2px rgba(0, 0, 0, 0.2),
-	  -2px 0 2px rgba(0, 0, 0, 0.2),
-	  0 -2px 2px rgba(0, 0, 0, 0.2);
+		0 2px 2px rgba(0, 0, 0, 0.2),
+		-2px 0 2px rgba(0, 0, 0, 0.2),
+		0 -2px 2px rgba(0, 0, 0, 0.2);
 	border-radius: 3px;
 	width: 100%;
 	overflow: hidden;
 	word-break: normal;
 	word-break: keep-all;
-	border-spacing: 2px;
-  }
+}
+
 .doc-body table th {
 	font-weight: bold;
 	padding: 10px;
 	background: #26262616;
 }
-  
+
 .doc-body table tbody td {
-	border: 1px solid #99999920;
+	border: 1px solid #66666650;
 	padding: 8px;
 }
-  
+
 
 /* TABLES */
 
-
-
- /* ------ */
+/* ------ */
 
 .table td img {
 	height: 36px;
 	width: 36px;
 	vertical-align: middle;
 }
+
 .table th {
 	text-align: center;
 }
@@ -44,13 +43,17 @@
 		border: none;
 		box-shadow: none !important;
 	}
+
 	.table thead {
 		display: none;
 	}
 
-	.table, .table tbody, .table tr, .table td {
+	.table,
+	.table tbody,
+	.table tr,
+	.table td {
 		display: block;
-		width:  100%;
+		width: 100%;
 	}
 
 	.table tr {
@@ -65,13 +68,15 @@
 		position: relative;
 		width: 100%;
 	}
+
 	.table td img {
 		height: 32px;
 		width: 32px;
 		vertical-align: middle;
 	}
+
 	.table td:nth-child(even) {
-		background: #ddd;
+		background: transaparent;
 	}
 
 	.table td::before {
@@ -81,12 +86,13 @@
 		flex-basis: 50%;
 		margin-right: 10px;
 	}
+
 	.table td::before::first-letter {
 		text-transform: capitalize;
 	}
 
-	.table td::after  {
-		content:  attr(data-label2);
+	.table td::after {
+		content: attr(data-label2);
 		position: absolute;
 		right: 0;
 		font-weight: bold;

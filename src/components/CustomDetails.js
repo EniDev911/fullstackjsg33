@@ -19,13 +19,11 @@ template.innerHTML = /*html*/ `
     width:100%;
     box-sizing: border-box;
     padding: 10px 0;
-    border: 1px solid red;
   }
    ::slotted(a) {
     display: block;
     width: 100%;
     background-color: #fff;
-    border: 1px solid red;
     padding: 10px;
    }
    ::slotted(a):before{
